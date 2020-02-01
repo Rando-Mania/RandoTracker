@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Tracker 2.0 Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+
+		html{
+			color: #fff;
+		}
+
+		hr{
+			border-color:#f8b800;
+			width: 100%;
+		}
+
+		.panel#img{
+			display: grid;
+			grid-template-columns: repeat(2, auto);
+			place-items: center;
+		}
+
+		h2, hr{
+			grid-column-end: span 2;
+			width: 100%;
+		}
+
+		@font-face {
+            font-family: "Orbitron";
+            src: url("fonts/Orbitron-Bold_0.ttf") format("truetype");
+        }
+
+		h2{
+			margin-top: 0;
+			background-image: linear-gradient(45deg, #f8b800 98%, transparent 98.1%);
+			color: #000;
+			padding: .25em;
+			font-family: "Orbitron", sans-serif;
+		}
+
+		body{
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			margin: 0;
+			background-color: #666;
+			background-image: url('images/rm-generic.png');
+			background-size: 50%;
+		}
+
+		.layout{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 1em;
+			padding: 1em;
+		}
+
+		.layout > * {
+			background-image: linear-gradient(45deg, #000 98%, transparent 98.1%);
+			color: #fff;
+			padding: 1em;
+		}
+
+		.ds-grid {
+			display: grid;
+			grid-template-columns: 100px 100px 100px 100px 100px;
+		}
+
+		tr-ds,
+		tr-ds-stage {
+			display: block;
+		}
+
+		tr-ds-timediff,
+		tr-ds-timestamp {
+			display: inline;
+		}
+
+		.negative {
+			color: green;
+		}
+
+		.negative:before {
+			content: "-";
+		}
+
+		.positive {
+			color: red;
+		}
+
+		.positive:before {
+			content: "+";
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="panel">
+			<h2>Timer</h2>
+			Padding: <tr-timer target=".panel h2" toggle-class="italics" property="timer-test" include-padding="true"></tr-timer></br>
+			No Pads: <tr-timer property="timer-test"></tr-timer></br>
+			<tr-button-timer property="timer-test"></tr-button-timer></br>
+			<tr-input-timer property="timer-test"></tr-input-timer>
+		</div>
+		<div class="panel">
+			<h2>Dual Splits</h2>
+			<tr-ds timer="timer-test">
+				<tr-ds-stage stage="1" class="ds-grid">
+					<tr-ds-timediff player="1">0</tr-ds-timediff>
+					<tr-ds-timestamp player="1">00:00.0</tr-ds-timestamp>
+					<span>First</span>
+					<tr-ds-timestamp player="2">00:00.0</tr-ds-timestamp>
+					<tr-ds-timediff player="2">0</tr-ds-timediff>
+				</tr-ds-stage>
+
+				<tr-ds-stage stage="2" class="ds-grid">
+					<tr-ds-timediff player="1">0</tr-ds-timediff>
+					<tr-ds-timestamp player="1">00:00.0</tr-ds-timestamp>
+					<span>Second</span>
+					<tr-ds-timestamp player="2">00:00.0</tr-ds-timestamp>
+					<tr-ds-timediff player="2">0</tr-ds-timediff>
+				</tr-ds-stage>
+
+				<tr-ds-stage stage="3" class="ds-grid">
+					<tr-ds-timediff player="1">0</tr-ds-timediff>
+					<tr-ds-timestamp player="1">00:00.0</tr-ds-timestamp>
+					<span>Third</span>
+					<tr-ds-timestamp player="2">00:00.0</tr-ds-timestamp>
+					<tr-ds-timediff player="2">0</tr-ds-timediff>
+				</tr-ds-stage>
+
+				<tr-ds-stage stage="4" class="ds-grid">
+					<tr-ds-timediff player="1">0</tr-ds-timediff>
+					<tr-ds-timestamp player="1">00:00.0</tr-ds-timestamp>
+					<span>Fourth</span>
+					<tr-ds-timestamp player="2">00:00.0</tr-ds-timestamp>
+					<tr-ds-timediff player="2">0</tr-ds-timediff>
+				</tr-ds-stage>
+			</tr-ds>
+		</div>
+		<div class="panel">
+			<h2>Controls</h2>
+			<tr-ds timer="timer-test">
+				<tr-ds-controls timer="timer-test" player="1" opponent="2" adjustments="1,10"></tr-ds-controls>
+				<br/>
+				<br/>
+				<tr-ds-controls timer="timer-test" player="2" opponent="1" adjustments="1,10"></tr-ds-controls>
+			</tr-ds>
+		</div>
+	</div>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+	<script type="text/javascript" src="../components/components.js"></script>
+</body>
+</html>

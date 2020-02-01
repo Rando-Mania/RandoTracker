@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="two.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body{
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        grid-gap: 1em;
+    }
+    .player-container:nth-of-type(2){
+        justify-self: end;
+    }
+
+    #location_tracker{
+        grid-column: span 2;
+        justify-self: center;
+    }
+    </style>
+</head>
+<body>
+	<div class="player-container" style="position: relative; grid-area: 1 / 1;">
+        <div id="player_name_1" class="player-name border-2"></div>
+    </div>
+    <div class="player-container" style="position: relative; grid-area: 1 / 2;">
+        <div id="player_name_2" class="player-name border-2"></div>
+    </div>
+    <label style="position: relative; color:#fff; grid-area: 1 / 1 / 2 / span 2; justify-self: center; text-align: center;">
+        <input type="checkbox" keysanity onchange="Tracker.updateLayout('keysanity', this.checked)"/>
+        Keysanity
+    </label>
+    <div id="player_1_grid" class="item-grid border-3" keysanity data-child-player="1" style="position: relative;">
+        <span class="item" data-property="bow" data-open-dialog="#dialog_bow" data-image="images/icons/Bow with arrow trans.png"></span>
+        <span class="item" data-property="boomerang" data-open-dialog="#dialog_boomerang" data-image="images/icons/No Rang.png"></span>
+        <span class="item" data-toggle="true" data-property="lamp" data-class-toggle="selected" data-image="images/icons/Lamp.png"></span>
+        <span class="item" data-property="mush" data-open-dialog="#dialog_mush" data-image="images/icons/mush_no.png"></span>
+        <span class="item" data-toggle="true" data-property="cape" data-class-toggle="selected" data-image="images/icons/Cape.png"></span>
+        <span class="item" data-toggle="true" data-property="hookshot" data-class-toggle="selected" data-image="images/icons/Hook.png"></span>
+        <span class="item" data-property="rod" data-open-dialog="#dialog_rod" data-image="images/icons/rod_no.png"></span>
+        <span class="item" data-property="cane" data-open-dialog="#dialog_cane" data-image="images/icons/cane_no.png"></span>        
+        <span class="item" data-toggle="true" data-property="bombos" data-class-toggle="selected" data-image="images/icons/Bombos.png"></span>
+        <span class="item" data-toggle="true" data-property="ether" data-class-toggle="selected" data-image="images/icons/Ether.png"></span>
+        <span class="item" data-toggle="true" data-property="quake" data-class-toggle="selected" data-image="images/icons/Quake.png"></span>
+        <span class="item" data-property="bottle" data-open-dialog="#dialog_bottle" data-image="images/icons/Bottle No.png"></span>
+    
+        <span class="item" data-toggle="true" data-property="book" data-class-toggle="selected" data-image="images/icons/Book.png"></span>
+        <span class="item" data-toggle="true" data-property="mirror" data-class-toggle="selected" data-image="images/icons/Mirror.png"></span>
+        <span class="item" data-toggle="true" data-property="flute" data-class-toggle="selected" data-image="images/icons/Flute.png"></span>
+        <span class="item" data-toggle="true" data-property="boots" data-class-toggle="selected" data-image="images/icons/Boots.png"></span>        
+        <span class="item" data-toggle="true" data-property="hammer" data-class-toggle="selected" data-image="images/icons/Hammer.png"></span>
+        <span class="item" data-toggle="true" data-property="pearl" data-class-toggle="selected" data-image="images/icons/Pearl.png"></span> 
+        <span class="item" data-property="glove" data-open-dialog="#dialog_glove" data-image="images/icons/Glove No.png"></span>
+        <span class="item" data-toggle="true" data-property="flippers" data-class-toggle="selected" data-image="images/icons/Flippers.png"></span>
+        <span class="item" data-toggle="true" data-property="net" data-class-toggle="selected" data-image="images/icons/Net.png"></span>
+        <span class="item" data-property="sword" data-open-dialog="#dialog_sword" data-image="images/icons/Sword No.png"></span>
+        <span class="item" data-property="shield" data-open-dialog="#dialog_shield" data-image="images/icons/Shield_no.png"></span>
+        <span class="item" data-property="shirt" data-open-dialog="#dialog_shirt" data-image="images/icons/Shirt 1.png"></span>
+
+        <span class="item" data-toggle="true" data-property="greenp" data-class-toggle="selected" data-image="images/icons/Green P.png"></span>
+        <span class="item" data-toggle="true" data-property="bluep" data-class-toggle="selected" data-image="images/icons/Blue P.png"></span>
+        <span class="item" data-toggle="true" data-property="redp" data-class-toggle="selected" data-image="images/icons/Red P.png"></span>        
+        <span class="item" data-toggle="true" data-property="agahnim" data-class-toggle="selected" data-image="images/icons/Agahnim.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal1" data-class-toggle="selected" data-image="images/icons/Crystal 1.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal2" data-class-toggle="selected" data-image="images/icons/Crystal 2.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal3" data-class-toggle="selected" data-image="images/icons/Crystal 3.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal4" data-class-toggle="selected" data-image="images/icons/Crystal 4.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal5" data-class-toggle="selected" data-image="images/icons/Red_Crystal_5_32.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal6" data-class-toggle="selected" data-image="images/icons/Red_Crystal_6_32.png"></span>
+        <span class="item" data-toggle="true" data-property="crystal7" data-class-toggle="selected" data-image="images/icons/Crystal 7.png"></span>
+        <span class="item" data-toggle="true" data-property="ganon" data-class-toggle="selected" data-image="images/icons/ganon_whole.png"></span>
+
+        <span class="key-label ep">EP</span>
+        <span class="key-label dp">DP</span>
+        <span class="key-label toh">ToH</span>
+        <span class="key-label pod">PoD</span>
+        <span class="key-label sp">SP</span>
+        <span class="key-label sw">SW</span>
+        <span class="key-label tt">TT</span>
+        <span class="key-label ip">IP</span>
+        <span class="key-label mm">MM</span>
+        <span class="key-label tr">TR</span>
+        <span class="key-label aga">AgA</span>
+        <span class="key-label gt">GT</span>
+        
+        <span class="small item ep" data-toggle="true" data-property="big-key-ep" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item dp" data-toggle="true" data-property="big-key-dp" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item toh" data-toggle="true" data-property="big-key-toh" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item pod" data-toggle="true" data-property="big-key-pod" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item sp" data-toggle="true" data-property="big-key-sp" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item sw" data-toggle="true" data-property="big-key-sw" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item tt" data-toggle="true" data-property="big-key-tt" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item ip" data-toggle="true" data-property="big-key-ip" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item mm" data-toggle="true" data-property="big-key-mm" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span class="small item tr" data-toggle="true" data-property="big-key-tr" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        <span></span>
+        <span class="small item gt" data-toggle="true" data-property="big-key-gt" data-class-toggle="selected" data-image="images/icons/keys/Key_Big.png"></span>
+        
+        <span class="small item dp" data-toggle="true" data-property="small-key-dp" data-class-toggle="selected" data-image="images/icons/keys/Key_Small_1.png"></span>
+        <span class="small item toh" data-toggle="true" data-property="small-key-toh" data-class-toggle="selected" data-image="images/icons/keys/Key_Small_1.png"></span>
+        <span class="small item pod" data-property="small-key-pod" data-open-dialog="#dialog_smallkey" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item sp" data-toggle="true" data-property="small-key-sp" data-class-toggle="selected" data-image="images/icons/keys/Key_Small_1.png"></span>
+        <span class="small item sw" data-property="small-key-sw" data-open-dialog="#dialog_smallkey_3" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item tt" data-toggle="true" data-property="small-key-tt" data-class-toggle="selected" data-image="images/icons/keys/Key_Small_1.png"></span>
+        <span class="small item ip" data-property="small-key-ip" data-open-dialog="#dialog_smallkey_ip" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item mm" data-property="small-key-mm" data-open-dialog="#dialog_smallkey_mm" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item tr" data-property="small-key-tr" data-open-dialog="#dialog_smallkey_tr" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item aga" data-property="small-key-aga" data-open-dialog="#dialog_smallkey_aga" data-image="images/icons/keys/Key_Small_0.png"></span>
+        <span class="small item gt" data-property="small-key-gt" data-open-dialog="#dialog_smallkey_gt" data-image="images/icons/keys/Key_Small_0.png"></span>
+   </div>
+
+    <div class="item-grid border-3" keysanity data-child-player="2" data-copy-from="#player_1_grid" style="position: relative;">
+    </div>
+
+    <div id="location_tracker" style="position: relative;">
+        <span class="location-icon" data-label="EP" data-label-top="true" data-property="boss_loc_1" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Armos_Knights.png"></span>
+        <span class="location-icon" data-label="DP" data-label-top="true" data-property="boss_loc_2" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Lanmolas.png"></span>
+        <span class="location-icon" data-label="ToH" data-label-top="true" data-property="boss_loc_3" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Moldorm.png"></span>
+        <span class="location-icon" data-label="PoD" data-label-top="true" data-property="boss_loc_4" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Helmasaur_King.png"></span>
+        <span class="location-icon" data-label="SP" data-label-top="true" data-property="boss_loc_5" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Arrghus.png"></span>
+        <span class="location-icon" data-label="SW" data-label-top="true" data-property="boss_loc_6" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Mothula.png"></span>        
+        <span class="location-icon" data-label="TT" data-label-top="true" data-property="boss_loc_7" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Blind.png"></span>
+        <span class="location-icon" data-label="IP" data-label-top="true" data-property="boss_loc_8" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Kholdstare.png"></span>
+        <span class="location-icon" data-label="MM" data-label-top="true" data-property="boss_loc_9" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Vitreous.png"></span>
+        <span class="location-icon" data-label="TR" data-label-top="true" data-property="boss_loc_10" data-open-dialog="#dialog_bosses" data-image="images/icons/bosses/Boss_Icon_Trinexx.png"></span>
+        <span class="bottom-right location-icon" data-property="spell_1" data-open-dialog="#dialog_spell" data-image="images/icons/Boss_icon_blank.png"></span>
+        <span class="bottom-right location-icon" data-property="spell_2" data-open-dialog="#dialog_spell" data-image="images/icons/Boss_icon_blank.png"></span>
+        <span class="location-icon" data-property="loc_1" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_2" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_3" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_4" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_5" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_6" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_7" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_8" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_9" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="location-icon" data-property="loc_10" data-open-dialog="#dialog_loc" data-image="images/icons/Unchecked Crystal Trans.png"></span>
+    </div>
+</div>
+
+    <fieldset id="dialog_bow" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="bow" data-image="images/icons/Bow with arrow trans.png" data-value="images/icons/Bow with arrow trans.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bow" data-image="images/icons/Bow.png" data-value="images/icons/Bow.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bow" data-image="images/icons/Bow with arrow.png" data-value="images/icons/Bow with arrow.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bow" data-image="images/icons/Bow with Silver.png" data-value="images/icons/Bow with Silver.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bow" data-image="images/icons/Silver Arrow.png" data-value="images/icons/Silver Arrow.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_boomerang" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="boomerang" data-image="images/icons/No Rang.png" data-value="images/icons/No Rang.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="boomerang" data-image="images/icons/Blue Rang.png" data-value="images/icons/Blue Rang.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="boomerang" data-image="images/icons/Red Rang.png" data-value="images/icons/Red Rang.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="boomerang" data-image="images/icons/Blue_and_Red_rang.png" data-value="images/icons/Blue_and_Red_rang.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_mush" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="mush" data-image="images/icons/mush_no.png" data-value="images/icons/mush_no.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="mush" data-image="images/icons/Mush.png" data-value="images/icons/Mush.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="mush" data-image="images/icons/mush_powder.png" data-value="images/icons/mush_powder.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_rod" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="rod" data-image="images/icons/rod_no.png" data-value="images/icons/rod_no.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="rod" data-image="images/icons/rod_ice.png" data-value="images/icons/rod_ice.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="rod" data-image="images/icons/rod_fire.png" data-value="images/icons/rod_fire.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="rod" data-image="images/icons/rod_both.png" data-value="images/icons/rod_both.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_cane" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="cane" data-image="images/icons/cane_no.png" data-value="images/icons/cane_no.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="cane" data-image="images/icons/cane_blue.png" data-value="images/icons/cane_blue.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="cane" data-image="images/icons/cane_red.png" data-value="images/icons/cane_red.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="cane" data-image="images/icons/cane_both.png" data-value="images/icons/cane_both.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_bottle" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="bottle" data-image="images/icons/Bottle No.png" data-value="images/icons/Bottle No.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bottle" data-image="images/icons/Bottle 1.png" data-value="images/icons/Bottle 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bottle" data-image="images/icons/Bottle 2.png" data-value="images/icons/Bottle 2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bottle" data-image="images/icons/Bottle 3.png" data-value="images/icons/Bottle 3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bottle" data-image="images/icons/Bottle 4.png" data-value="images/icons/Bottle 4.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_glove" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="glove" data-image="images/icons/Glove No.png" data-value="images/icons/Glove No.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="glove" data-image="images/icons/Glove 1.png" data-value="images/icons/Glove 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="glove" data-image="images/icons/Glove 2.png" data-value="images/icons/Glove 2.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_sword" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="sword" data-image="images/icons/Sword No.png" data-value="images/icons/Sword No.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="sword" data-image="images/icons/Sword 1.png" data-value="images/icons/Sword 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="sword" data-image="images/icons/Sword 2.png" data-value="images/icons/Sword 2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="sword" data-image="images/icons/Sword 3.png" data-value="images/icons/Sword 3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="sword" data-image="images/icons/Sword 4.png" data-value="images/icons/Sword 4.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_shield" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="shield" data-image="images/icons/Shield_no.png" data-value="images/icons/Shield_no.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="shield" data-image="images/icons/Shield 1.png" data-value="images/icons/Shield 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="shield" data-image="images/icons/Shield 2.png" data-value="images/icons/Shield 2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="shield" data-image="images/icons/Shield 3.png" data-value="images/icons/Shield 3.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_shirt" class="dialog">
+        <span class="dialog-icon" data-set-prop="true" data-property="shirt" data-image="images/icons/Shirt 1.png" data-value="images/icons/Shirt 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="shirt" data-image="images/icons/Shirt 2.png" data-value="images/icons/Shirt 2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="shirt" data-image="images/icons/Shirt 3.png" data-value="images/icons/Shirt 3.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_bosses" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Not_Selected_trans.png" data-value="images/icons/bosses/Boss_Not_Selected_trans.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Armos_Knights.png" data-value="images/icons/bosses/Boss_Icon_Armos_Knights.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Lanmolas.png" data-value="images/icons/bosses/Boss_Icon_Lanmolas.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Moldorm.png" data-value="images/icons/bosses/Boss_Icon_Moldorm.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Helmasaur_King.png" data-value="images/icons/bosses/Boss_Icon_Helmasaur_King.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Arrghus.png" data-value="images/icons/bosses/Boss_Icon_Arrghus.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Mothula.png" data-value="images/icons/bosses/Boss_Icon_Mothula.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Blind.png" data-value="images/icons/bosses/Boss_Icon_Blind.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Kholdstare.png" data-value="images/icons/bosses/Boss_Icon_Kholdstare.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Vitreous.png" data-value="images/icons/bosses/Boss_Icon_Vitreous.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="bosses" data-image="images/icons/bosses/Boss_Icon_Trinexx.png" data-value="images/icons/bosses/Boss_Icon_Trinexx.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_loc" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Unchecked Crystal Trans.png" data-value="images/icons/Unchecked Crystal Trans.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal.png" data-value="images/icons/Crystal.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/crystal_red.png" data-value="images/icons/crystal_red.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Unchecked_P_Trans.png" data-value="images/icons/Unchecked_P_Trans.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Green P.png" data-value="images/icons/Green P.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Red P.png" data-value="images/icons/Red P.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Blue P.png" data-value="images/icons/Blue P.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal 1.png" data-value="images/icons/Crystal 1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal 2.png" data-value="images/icons/Crystal 2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal 3.png" data-value="images/icons/Crystal 3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal 4.png" data-value="images/icons/Crystal 4.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Red_Crystal_5_32.png" data-value="images/icons/Red_Crystal_5_32.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Red_Crystal_6_32.png" data-value="images/icons/Red_Crystal_6_32.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Crystal 7.png" data-value="images/icons/Crystal 7.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_spell" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Boss_icon_blank.png" data-value="images/icons/Boss_icon_blank.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Boss_icon_bombos.png" data-value="images/icons/Boss_icon_bombos.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Boss_icon_ether.png" data-value="images/icons/Boss_icon_ether.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/icons/Boss_icon_quake.png" data-value="images/icons/Boss_icon_quake.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_3.png" data-value="images/icons/keys/Key_Small_3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_4.png" data-value="images/icons/keys/Key_Small_4.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_5.png" data-value="images/icons/keys/Key_Small_5.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-pod" data-image="images/icons/keys/Key_Small_6.png" data-value="images/icons/keys/Key_Small_6.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_3" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-sw" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-sw" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-sw" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-sw" data-image="images/icons/keys/Key_Small_3.png" data-value="images/icons/keys/Key_Small_3.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_ip" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-ip" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-ip" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-ip" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_mm" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-mm" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-mm" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-mm" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-mm" data-image="images/icons/keys/Key_Small_3.png" data-value="images/icons/keys/Key_Small_3.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_tr" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-tr" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-tr" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-tr" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-tr" data-image="images/icons/keys/Key_Small_3.png" data-value="images/icons/keys/Key_Small_3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-tr" data-image="images/icons/keys/Key_Small_4.png" data-value="images/icons/keys/Key_Small_4.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_aga" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-aga" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-aga" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-aga" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_smallkey_gt" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-gt" data-image="images/icons/keys/Key_Small_0.png" data-value="images/icons/keys/Key_Small_0.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-gt" data-image="images/icons/keys/Key_Small_1.png" data-value="images/icons/keys/Key_Small_1.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-gt" data-image="images/icons/keys/Key_Small_2.png" data-value="images/icons/keys/Key_Small_2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-gt" data-image="images/icons/keys/Key_Small_3.png" data-value="images/icons/keys/Key_Small_3.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-property="small-key-gt" data-image="images/icons/keys/Key_Small_4.png" data-value="images/icons/keys/Key_Small_4.png"></span>
+    </fieldset>
+
+    <fieldset id="background-picker-p1" class="background-picker" style="position: relative;">
+        <legend>Background</legend>
+        <button onclick="Tracker.updateLayout('background-p1', 'images/ALTTPR_HC_nofinal.png');">Hyrule Castle</button>
+        <button onclick="Tracker.updateLayout('background-p1', 'images/ALTTPR_TR_nofinal.png');">Turtle Rock</button>
+        <button onclick="Tracker.updateLayout('background-p1', 'images/ALTTPR_MM_nofinal.png');">Misery Mire</button>
+        <button onclick="Tracker.updateLayout('background-p1', 'images/ALTTPR_EP_nofinal.png');">Eastern Palace</button>
+        <button onclick="Tracker.updateLayout('background-p1', 'images/ALTTPR_IP_Layout_No_Timer.png');">Ice Palace</button>
+    </fieldset>
+
+    <fieldset id="background-picker-p2" class="background-picker" style="position: relative;">
+        <legend>Background</legend>
+        <button onclick="Tracker.updateLayout('background-p2', 'images/ALTTPR_HC_nofinal.png');">Hyrule Castle</button>
+        <button onclick="Tracker.updateLayout('background-p2', 'images/ALTTPR_TR_nofinal.png');">Turtle Rock</button>
+        <button onclick="Tracker.updateLayout('background-p2', 'images/ALTTPR_MM_nofinal.png');">Misery Mire</button>
+        <button onclick="Tracker.updateLayout('background-p2', 'images/ALTTPR_EP_nofinal.png');">Eastern Palace</button>
+        <button onclick="Tracker.updateLayout('background-p2', 'images/ALTTPR_IP_Layout_No_Timer.png');">Ice Palace</button>
+    </fieldset>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer src="script/z3r.js"></script>
+    <script defer type="text/javascript">
+        (function(Tracker) {
+            Tracker.loaded = function() {
+                Tracker.init({
+                    playerCount: 2
+                }, function() {
+                    Z3R.init();
+                });
+            }
+        })(window.Tracker = window.Tracker || {});
+    </script>
+</body>
+</html>

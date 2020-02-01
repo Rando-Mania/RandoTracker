@@ -1,0 +1,189 @@
+<div id="menu_2">
+    <div id="menu_fill" class="fieldset">
+        <h4 class="legend">Marathon Auto-fill Menu</h4>
+        <div>
+            <label for="schedule_preloads">Pre-fill from <a href="https://horaro.org/randomania/2019">horaro.org</a>:</label>
+            <select id="schedule_preloads">
+            </select>
+        </div>
+    </div>
+    <div id="menu_game" class="fieldset">
+        <h4 class="legend">Game</h4>
+        <div>
+            <label>Game Name</label>
+            <tr-input-text class="game-name-input" property="game_name"></tr-input-text>
+        </div>
+        <div>
+            <label>Category</label>
+            <tr-input-text class="game-dev-input" property="game_category"></tr-input-text>
+        </div>
+        <div>
+            <label>Game System</label>
+            <tr-input-text class="game-system-input" property="game_system"></tr-input-text>
+        </div>
+        <div>
+            <label>Length Estimate</label>
+            <tr-input-text class="game-length-input" property="game_length"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_icons" class="fieldset">
+        <h4 class="legend">Tracking</h4>
+        <div>
+            <label for="tracking-icons-checkbox">Icon Set:</label>
+            <tr-select-toggle id="tracking-icons-checkbox">
+                <tr-option selected target=".tracking-icons-template" toggle-class="visually-hidden" value="no-icons">None</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="two-by-two" value="two-by-two">2x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="four-by-two" value="four-by-two">4x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="six-by-two" value="six-by-two">6x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="eight-by-two" value="eight-by-two">8x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="ten-by-two" value="ten-by-two">10x2</tr-option>
+
+                <tr-option target=".tracking-icons" toggle-class="two-by-four" value="two-by-four">2x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="four-by-four" value="four-by-four">4x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="six-by-four" value="six-by-four">6x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="eight-by-four" value="eight-by-four">8x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="ten-by-four" value="ten-by-four">10x4</tr-option>
+                
+                <tr-option value="dwr">DWR</tr-option>
+                <tr-option value="ffiv">FFIV</tr-option>
+                <tr-option value="lttp">LTTP</tr-option>
+                <tr-option value="z1r">Z1R</tr-option>
+                <tr-option value="ebac">EB:AC</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
+    <div id="menu_upnext" class="fieldset">
+        <h4 class="legend">Up Next</h4>
+        <div>
+            <label>Game Name</label>
+            <tr-input-text class="up-next-input" property="up-next"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <!-- <th>Pronoun</th> -->
+                    <th>Time</th>
+                    <!-- <th title="speaker">♫</th> -->
+                    <th title="winner">🏁</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="name-input" property="player_name"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="1" class="pronoun-input" property="player_pronoun"></tr-input-text></td> -->
+                    <td><tr-input-text player="1" class="time-input" property="player_final"></tr-input-text></td>
+                    <!-- <td><tr-input-toggle player="1" id="label-toggle-test" property="player-speaker"></tr-input-toggle></td> -->
+                    <td><tr-input-toggle-class player="1" id="win" property="toggle-win" target="#player_name_contain, #player_final_1_contain" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="name-input" property="player_name"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="2" class="pronoun-input" property="player_pronoun"></tr-input-text></td> -->
+                    <td><tr-input-text player="2" class="time-input" property="player_final"></tr-input-text></td>
+                    <!-- <td><tr-input-radio player="2" property="player-speaker" value="no-background" target="#player_speaker_2" toggle-class="no-background" checked></tr-input-radio></td> -->
+                    <td><tr-input-toggle-class player="2" id="win2" property="toggle-win" target="#player_name_contain_2, #player_final_2_contain" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="3" for="player-3">3</label></td>
+                    <td><tr-input-text player="3" class="name-input" property="player_name"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="3" class="pronoun-input" property="player_pronoun"></tr-input-text></td> -->
+                    <td><tr-input-text player="3" class="time-input" property="player_final"></tr-input-text></td>
+                    <!-- <td><tr-input-radio player="3" property="player-speaker" value="no-background" target="#player_speaker_3" toggle-class="no-background" checked></tr-input-radio></td> -->
+                    <td><tr-input-toggle-class player="3" id="win3" property="toggle-win" target="#player_name_contain_3, #player_final_3_contain" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="4" for="player-4">4</label></td>
+                    <td><tr-input-text player="4" class="name-input" property="player_name"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="4" class="pronoun-input" property="player_pronoun"></tr-input-text></td> -->
+                    <td><tr-input-text player="4" class="time-input" property="player_final"></tr-input-text></td>
+                    <!-- <td><tr-input-radio player="4" property="player-speaker" value="no-background" target="#player_speaker_4" toggle-class="no-background" checked></tr-input-radio></td> -->
+                    <td><tr-input-toggle-class player="4" id="win4" property="toggle-win" target="#player_name_contain_4, #player_final_4_contain" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_freetext" class="fieldset">
+        <h4 class="legend">Free Text</h4>
+        <tr-input-textarea rows="4" class="free-text-input" property="free-text"></tr-input-textarea>
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-toggle-class id="player_time_check" property="toggle-timer" target="#player-time-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="player_time_check">Hide Timer</label>
+        </div>
+        <div>
+            <tr-input-timer property="timer-test"></tr-input-timer>
+            <tr-button-timer property="timer-test"></tr-button-timer>
+        </div>
+    </div>
+    
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div>
+            <label>Commentator(s)</label>
+            <tr-input-text class="comm-input" property="comm"></tr-input-text>
+        </div>
+        <div>
+            <label>Restreamer</label>
+            <tr-input-text class="restreamer-input" property="restreamer"></tr-input-text>
+        </div>
+        <div>
+            <label>Tracker</label>
+            <tr-input-text class="tracker-input" property="tracker"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Layout Settings</h4>
+        
+        <!--div>
+            <tr-input-toggle id="loadscreen" property="loadscreen"></tr-input-toggle> <label for="loadscreen">Loadscreen</label>
+        </div-->
+        <div>
+            <label>Video Background:</label>
+            <tr-input-radio id="none" property="radio-test-toggle" value="no-background" target=".player-video" toggle-class="no-background" checked></tr-input-radio>
+            <label class="video-bgcolor" for="none"></label>
+            <tr-input-radio id="blue" property="radio-test-toggle" value="blue" target=".player-video" toggle-class="blue-background"></tr-input-radio>
+            <label class="video-bgcolor" for="blue"></label>
+            <tr-input-radio id="green" property="radio-test-toggle" value="green" target=".player-video" toggle-class="green-background"></tr-input-radio>
+            <label class="video-bgcolor" for="green"></label>
+            <tr-input-radio id="magenta" property="radio-test-toggle" value="magenta" target=".player-video" toggle-class="magenta-background"></tr-input-radio>
+            <label class="video-bgcolor" for="magenta"></label>
+        </div>
+        <div>
+            <tr-input-toggle-class id="rm_logo_check" property="toggle-logo" target="#rm-logo-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="rm_logo_check">Hide RM Logo</label>
+        </div>
+        <div>
+            <tr-input-toggle-class id="toggle-animation" property="toggle-animation" target=".bgcChange, .panel-wrap-outer, .panel-wrap-inner" toggle-class="pause-animations"></tr-input-toggle-class>
+            <label for="toggle-animation">Pause Animation</label>
+        </div>
+        <div>
+            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target="#four-three-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="toggle-4by3">Hide 4:3 Panel</label>
+        </div>
+    </div>
+
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">View</h4>
+        <tr-button-view view="4by3" title="4x3"></tr-button-view>
+        <tr-button-view view="tracker" title="Tracker"></tr-button-view>
+        <tr-button-view view="loadscreen" title="Loadscreen"></tr-button-view>
+        <tr-button-view view="calendar" title="RM Calendar"></tr-button-view>
+    </div>
+
+    <div id="menu_reset" class="fieldset">
+        <h4 class="legend">Reset</h4>
+        <tr-button-reset></tr-button-reset>
+    </div>
+</div>

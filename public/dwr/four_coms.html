@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+  <meta charset="utf-8">
+  <title>Dragon Warrior Randomizer Tracker</title>
+  <link rel="stylesheet" type="text/css" href="../shared/components.css">
+  <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+  <link rel="stylesheet" type="text/css" href="coms.css">
+  <link rel="stylesheet" type="text/css" href="two.css">
+  <link rel="stylesheet" type="text/css" href="icons.css">
+  <link rel="stylesheet" type="text/css" href="../content/tracker.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .coms {
+        width: 720px;
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 500px 500px ;
+        grid-gap: 16px;
+        font: normal 1em/1.4 Arial, Helvetica, sans-serif;
+    }
+    .coms > *{
+      background-color: #555;
+      padding: 16px
+    }
+
+    .player-wrapper {
+      display: grid;
+      grid-template-columns: 300px auto;
+    }
+
+    .player-wrapper > tr-player > tr-template > .stats {
+      display: grid;
+      grid-template-columns: 175px auto;
+      padding-top: 10px;
+      grid-row-gap: 1em;
+    }
+
+    .info {
+      width: 200px;
+    }
+
+    .stats tr-select,
+    .stats select {
+      display: inline;
+      min-width: 75px;
+    }
+
+.hidden {display: none;}
+.hide{display: none;}
+
+#scripts{
+  grid-area: 1 / 2 / 3;
+}
+
+#scripts article{
+  margin-bottom: 1em;
+}
+
+#scripts article div{
+  background-color: #333;
+  padding: .5em 1em;
+  text-indent: 1em;
+}
+
+#scripts h4{
+  padding-left: 2px;
+  margin-bottom: 1em;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+#scripts h4:hover{
+  background-color: #333;
+}
+  
+td:nth-of-type(2) {
+  text-align: left;
+}
+
+#scripts tr-text {
+  color: red;
+  font-weight: bold;
+}
+#scripts tr-text:before{
+  content: '[';
+}
+#scripts tr-text:after{
+  content: ']';
+}
+    .stat-color-explain h4{
+      margin: .5em 0 1em 0;
+      display: flex;
+      background: 
+        linear-gradient(to right, #d01000 0 calc(100% / 7), white calc(100% / 7) calc((100% / 7) * 3), #f88019 calc((100% / 7) * 3) calc((100% / 7) * 5), #28c021 calc((100% / 7) * 6) 100%) no-repeat bottom / 100% 5px;
+    }
+    .stat-color-explain span:first-of-type{flex: 1;}
+    .stat-color-explain span:nth-of-type(2){flex: 2;}
+    .stat-color-explain span:nth-of-type(3){flex: 2;}
+    .stat-color-explain span:nth-of-type(4){flex: 2;}
+
+    .explanations{display: flex;}
+    .explanations p {
+      flex: 0 1 50%;
+      background-color: #333;
+      padding: 16px;
+    }
+    .low{border-left: #d01000 3px solid;}
+    .caution{border-left: #f88019 3px solid;}
+    .gg{border-left: #28c021 3px solid;}
+
+    .explanations p+p {margin-left:1em;}
+
+    #tableData td{
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="coms">
+    <table>
+      <tr>
+        <th colspan="10">Player Stats</th>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>pronoun</td>
+        <td>build</td>
+        <td>LV</td>
+        <td>ST</td>
+        <td>AG</td>
+        <td>HP</td>
+        <td>MP</td>
+        <td>AP</td>
+        <td>DP</td>
+      </tr>
+      <tr>
+        <td><tr-text player="1" property="player-name"></tr-text></td>
+        <td><tr-text player="1" property="player-pronoun"></tr-text></td>
+        <td>
+          <tr-select player="1" property="build">
+            <tr-option value="0">STR/HP</tr-option>
+            <tr-option value="1">STR/AGI</tr-option>
+            <tr-option value="2">HP/MP</tr-option>
+            <tr-option value="3">AGI/MP</tr-option>
+          </tr-select>
+        </td>
+        <td><tr-text player="1" property="level"></tr-text></td>
+        <td><tr-text player="1" property="str"></tr-text></td>
+        <td><tr-text player="1" property="agi"></tr-text></td>
+        <td><tr-text player="1" property="hp"></tr-text></td>
+        <td><tr-text player="1" property="mp"></tr-text></td>
+        <td><tr-text player="1" property="ap"></tr-text></td>
+        <td><tr-text player="1" property="dp"></tr-text></td>
+      </tr>
+      <tr>
+        <td><tr-text player="2" property="player-name"></tr-text></td>
+        <td><tr-text player="2" property="player-pronoun"></tr-text></td>
+        <td>
+          <tr-select player="2" property="build">
+            <tr-option value="0">STR/HP</tr-option>
+            <tr-option value="1">STR/AGI</tr-option>
+            <tr-option value="2">HP/MP</tr-option>
+            <tr-option value="3">AGI/MP</tr-option>
+          </tr-select>
+        </td>
+        <td><tr-text player="2" property="level"></tr-text></td>
+        <td><tr-text player="2" property="str"></tr-text></td>
+        <td><tr-text player="2" property="agi"></tr-text></td>
+        <td><tr-text player="2" property="hp"></tr-text></td>
+        <td><tr-text player="2" property="mp"></tr-text></td>
+        <td><tr-text player="2" property="ap"></tr-text></td>
+        <td><tr-text player="2" property="dp"></tr-text></td>
+      </tr>
+      <tr>
+        <td><tr-text player="3" property="player-name"></tr-text></td>
+        <td><tr-text player="3" property="player-pronoun"></tr-text></td>
+        <td>
+          <tr-select player="3" property="build">
+            <tr-option value="0">STR/HP</tr-option>
+            <tr-option value="1">STR/AGI</tr-option>
+            <tr-option value="2">HP/MP</tr-option>
+            <tr-option value="3">AGI/MP</tr-option>
+          </tr-select>
+        </td>
+        <td><tr-text player="3" property="level"></tr-text></td>
+        <td><tr-text player="3" property="str"></tr-text></td>
+        <td><tr-text player="3" property="agi"></tr-text></td>
+        <td><tr-text player="3" property="hp"></tr-text></td>
+        <td><tr-text player="3" property="mp"></tr-text></td>
+        <td><tr-text player="3" property="ap"></tr-text></td>
+        <td><tr-text player="3" property="dp"></tr-text></td>
+      </tr>
+      <tr>
+        <td><tr-text player="4" property="player-name"></tr-text></td>
+        <td><tr-text player="4" property="player-pronoun"></tr-text></td>
+        <td>
+          <tr-select player="4" property="build">
+            <tr-option value="0">STR/HP</tr-option>
+            <tr-option value="1">STR/AGI</tr-option>
+            <tr-option value="2">HP/MP</tr-option>
+            <tr-option value="3">AGI/MP</tr-option>
+          </tr-select>
+        </td>
+        <td><tr-text player="4" property="level"></tr-text></td>
+        <td><tr-text player="4" property="str"></tr-text></td>
+        <td><tr-text player="4" property="agi"></tr-text></td>
+        <td><tr-text player="4" property="hp"></tr-text></td>
+        <td><tr-text player="4" property="mp"></tr-text></td>
+        <td><tr-text player="4" property="ap"></tr-text></td>
+        <td><tr-text player="4" property="dp"></tr-text></td>
+      </tr>
+    </table>
+    
+    <table>
+        <tr>
+          <th colspan="7">Item Time Stamps</th>
+        </tr>
+        <tr>
+          <td>Staff</td>
+          <td>Harp</td>
+          <td>Stone</td>
+          <td>Token</td>
+          <td>Flute</td>
+          <td>GPS</td>
+          <td>Drop</td>
+        </tr>
+        <tr>
+          <td><tr-timestamp player="1" property="staff"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="harp"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="stones"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="token"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="flute"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="gps"></tr-timestamp></td>
+          <td><tr-timestamp player="1" property="drop"></tr-timestamp></td>
+        </tr>
+        <tr>
+          <td><tr-timestamp player="2" property="staff"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="harp"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="stones"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="token"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="flute"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="gps"></tr-timestamp></td>
+          <td><tr-timestamp player="2" property="drop"></tr-timestamp></td>
+        </tr>
+        <tr>
+          <td><tr-timestamp player="3" property="staff"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="harp"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="stones"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="token"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="flute"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="gps"></tr-timestamp></td>
+          <td><tr-timestamp player="3" property="drop"></tr-timestamp></td>
+        </tr>
+        <tr>
+          <td><tr-timestamp player="4" property="staff"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="harp"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="stones"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="token"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="flute"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="gps"></tr-timestamp></td>
+          <td><tr-timestamp player="4" property="drop"></tr-timestamp></td>
+        </tr>
+      </table>
+
+      <div id="scripts">
+          <h3 style="text-align: center; font-weight: normal;">Scripts</h3>
+          <article>
+            <h4>Intro</h4>
+            <div class="hide">
+              <p>The object of Dragon Warrior is for our racers to find and defeat the Evil Dragonlord. They will need to collect certain key items to trade in for the Rainbow Drop, which will allow the runners to enter Charlock Castle, home of the Dragonlord. They
+                also will fight enemies one at a time to gain experience and levels to get stronger, as well as gold to purchase weapons, armor, and items to help in their quest.</p>
+              <p>What is randomized in DWR? The map, treasure chest & search spot contents, town & cave locations, weapon/armor shop contents, order of spells learned (guaranteed to learn all 10 spells by level 16), enemy locations, enemy spells & abilities. Also,
+                the Dragonlord, which in the vanilla version of Dragon Warrior has 130 hit points, has a range of 150-165 hit points!</p>
+            </div>
+          </article>
+          <article>
+            <h4>Enemy Zones</h4>
+            <div class="hide">
+              <p>Zone 0 has enemies ranging from Slime through Scorpion, Zones 1 & 2 has enemies up to Wolf.</p>
+            </div>
+          </article>
+          <article>
+            <h4>Defense Breaking</h4>
+            <div class="hide">
+              <p>When your defense points are the same as or higher than an enemy’s strength, a different attack range is calculated resulting in less damage, in some cases even zero hit points!</p>
+            </div>
+          </article>
+          <article>
+            <h4>Gold Grind</h4>
+            <div class="hide">
+              <p>Chests respawn every time you go to the overworld map. However, due to the programming limits at the time the game was made, the game only tracks up to eight chests as ‘opened’.</p> 
+              <p>Every chest opened beyond the eighth chest can be taken over and over again. </p>
+              <p>Typically this is done by taking at least two chests from a cave, then death warping back to Tantegel Castle, as three chests are marked as taken when you enter the throne room so you don’t take the opening chests more than once.</p>
+              <p>Then they’ll go to the castle treasure in the hopes that, by the ninth chest, they can continuously take at least 500 gold over and over again!</p>
+              <p>If they are able to do that, the runners will take advantage of this opportunity to get very powerful equipment,
+                such as the Flame Sword (+28 attack), Full Plate or Magic Armor (+24 defense), and Silver Shield (+20 defense).</p>
+            </div>
+          </article>
+          <article>
+            <h4>Closing</h4>
+            <div class="hide">
+              <p>Tune into the Randomania networks ______________.</p>
+              <p>For our restreamer <tr-text class="restreamers" property="restreamers"></tr-text>, our tracker(s) <tr-text class="trackers" property="trackers"></tr-text>, and my broadcast partner <tr-text class="commentators" property="commentators"></tr-text>, I’m <span>[your name]</span> saying _________________________________________.</p>
+            </div>
+          </article>
+          <article>
+            <h4>Chaos Mode</h4>
+            <div class="hide">
+              <p>For Chaos Mode, also randomized are the weapon & armor prices, enemy statistics (Strength, Agility, HP, Exp, & Gold), & the amount of experience needed to go from one level to the next. Plus, the Dragonlord, which in the vanilla version of the game
+                has 130 hit points, and in standard DWR has a range of 150-165 HP, in Chaos can have anywhere between 100-230 HP, and can cast either the spell of Sleep or Heal.</p>
+              </div>
+          </article>
+          <article>
+              <h4>Wet Noodle</h4>
+              <div class="hide">
+              <p>One monster in the beginning three zones of the game (the zone around Tantegel Castle & the zones directly north, south, east, & west) is guaranted to have 5HP or less. It will also not attack very hard, so the less HP our players lose when a monster
+                attacks, the more likely it is that it’s the low HP monster. The challenge is determining which of the 15 potential monsters it could be…</p>
+            </div>
+          </article>
+      </div>
+ 
+    <div class="stat-color-explain">
+      <h3>Stat Coloring Explanations</h3>
+      <h4><span>HP</span><span>24</span><span>93</span><span>101</span></h4>
+      <div class="explanations">
+        <p class="low">Red: the choice of 24 for the low threshold on HP is based on the fact that the baby breath can do up to 23 damage.</p>
+        <p class="gg">
+          green: as soon as we get to triple digits.*
+        </p>
+      </div>
+      <footer>*people say "97" a lot as the magic number, but this number should still be approached with "caution" imo as it opens up possibilities for needing to double heal if DP is low or if we roll poorly on our Healmore.  Once we get to about 101 HP, these factors are drastically reduced and are probably balanced by rare double attacks)</footer>        
+    
+
+      <h4><span>MP</span><span>8</span><span>64</span><span>104</span></h4>
+      <div class="explanations">
+        <p class="low">8 MP allows you to cast any spell at least once</p>
+        <p class="caution">caution and gg values are related to # of times you can cast HEALMORE</p>
+      </div>
+
+      <h4><span>ST</span><span>10</span><span>82</span><span>90</span></h4>
+      <h4><span>AP</span><span>10</span><span>124</span><span>132</span></h4>
+      <div class="explanations">
+        <p class="low">
+          10 AP allows 1 - 2 damage to a Magician, providing more options in the early game.
+        </p>
+        <p class="caution">
+          124 AP for the orange (below that and we hardly ever have enough MP to compensate)
+        </p>
+        <p class="gg">
+          132 AP for the green (from here we only need double digit MP to compensate). 
+        </p>
+      </div>
+      <div class="explanations">
+        <p>
+          These are also coupled together exactly 42 apart to account for Erdrick's Sword and Fighter's Ring.
+        </p>
+      </div>
+      
+      <h4><span>AG</span><span>10</span><span>60</span><span>72</span></h4>
+      <h4><span>DP</span><span>5</span><span>70</span><span>86</span></h4>
+      <div class="explanations">
+        <p class="caution">
+            The caution figures assume Erdrick's Armor, Dragon's Scale, Large Shield
+        </p>
+        <p class="gg">
+            high figures assume Silver Shield.  This is because obtaining the Silver Shield is not always reasonable, and also because agility is important for the dive as well as for the DL fight.
+        </p>
+        <p class="gg"> with AG at 72 and with full gear, the defense power will be 86, which is the crucial number for the DL2 fight, as it guarantees physical attacks are capped at 48.</p>
+      </div>
+    </div>
+    <div id="lvexp">
+      <h3 style="text-align: center;">Experience Levels</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Normal</th>
+            <th>Fast</th>
+            <th>V. Fast</th>
+          </tr>
+        </thead>
+        <tbody id="tableData"><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>2</td><td>7</td><td>5</td><td>3</td></tr><tr><td>3</td><td>23</td><td>17</td><td>11</td></tr><tr><td>4</td><td>47</td><td>35</td><td>23</td></tr><tr><td>5</td><td>110</td><td>82</td><td>55</td></tr><tr><td>6</td><td>220</td><td>165</td><td>110</td></tr><tr><td>7</td><td>450</td><td>337</td><td>225</td></tr><tr><td>8</td><td>800</td><td>600</td><td>400</td></tr><tr><td>9</td><td>1300</td><td>975</td><td>650</td></tr><tr><td>10</td><td>2000</td><td>1500</td><td>1000</td></tr><tr><td>11</td><td>2900</td><td>2175</td><td>1450</td></tr><tr><td>12</td><td>4000</td><td>3000</td><td>2000</td></tr><tr><td>13</td><td>5500</td><td>4125</td><td>2750</td></tr><tr><td>14</td><td>7500</td><td>5625</td><td>3750</td></tr><tr><td>15</td><td>10000</td><td>7500</td><td>5000</td></tr><tr><td>16</td><td>13000</td><td>9750</td><td>6500</td></tr><tr><td>17</td><td>16000</td><td>12000</td><td>8000</td></tr><tr><td>18</td><td>19000</td><td>14250</td><td>9500</td></tr><tr><td>19</td><td>22000</td><td>16500</td><td>11000</td></tr><tr><td>20</td><td>26000</td><td>19500</td><td>13000</td></tr><tr><td>21</td><td>30000</td><td>22500</td><td>15000</td></tr><tr><td>22</td><td>34000</td><td>25500</td><td>17000</td></tr><tr><td>23</td><td>38000</td><td>28500</td><td>19000</td></tr><tr><td>24</td><td>42000</td><td>31500</td><td>21000</td></tr><tr><td>25</td><td>46000</td><td>34500</td><td>23000</td></tr><tr><td>26</td><td>50000</td><td>37500</td><td>25000</td></tr><tr><td>27</td><td>54000</td><td>40500</td><td>27000</td></tr><tr><td>28</td><td>58000</td><td>43500</td><td>29000</td></tr><tr><td>29</td><td>62000</td><td>46500</td><td>31000</td></tr><tr><td>30</td><td>65535</td><td>49151</td><td>32767</td></tr></tbody>
+      </table>
+    </div>
+</div>
+  <tr-template href="four_menu.html"></tr-template>
+
+  <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+  <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+  <script type="text/javascript" src="../components/components.js"></script>
+  <script type="text/javascript" src="../components/tracker.js"></script>
+  <script type="text/javascript" src="script/dwr.js"></script>
+  <script>
+  var h4Els = document.querySelectorAll('#scripts h4');
+var divEls = document.querySelectorAll('#scripts article div');
+
+h4Els.forEach(
+  function(el){
+    el.addEventListener('click', function(){
+      el.nextElementSibling.classList.toggle('hide');
+      });
+  });
+</script>
+</body>
+</html>

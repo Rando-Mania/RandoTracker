@@ -1,0 +1,106 @@
+toggle-element {
+    display: none;
+}
+tr-text{
+    white-space: pre;
+}
+toggle-element[visible] {
+    display: initial;
+}
+
+tr-prop-text input {
+    width: 50px;
+}
+
+tr-image, figure{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+}
+
+tr-image img{
+    width: 32px;
+    height: 32px;
+}
+
+tr-image-toggle img {
+    width: 32px;
+    height: 32px;
+    opacity: .3; 
+}
+
+tr-image img:hover, tr-image-toggle img:hover, tr-toggle-class img:hover, .dialog img{
+    cursor: pointer;
+}
+
+tr-toggle-class, .in-active{
+    display: block;
+    cursor: default;
+    opacity: .3;
+} 
+tr-image-toggle img.active, tr-toggle-class.active {
+    opacity: 1;
+}
+
+tr-image img:not([src]){
+    opacity: .3;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAGFBMVEUAAADn3rWlpYRaUjF7e1oxKSHeSjmEISldt5M2AAAAAXRSTlMAQObYZgAAAGZJREFUKM99y0ENwEAIRNFawAIWsIAFLKyFtd9ZaMqBzM6B5L+Eh839DuYibgwqMRABO7H3uTage62VQkHQHFT+KQHVL90JBCgzGJyJhmNXQIbGhJKoF/SAEssXNfSApkwKWGcD2QuqpDS7XGEcJQAAAABJRU5ErkJggg==') no-repeat center / auto 100%;
+}
+
+tr-select {
+    display: block;
+}
+
+tr-image-option, tr-image-option.in-active{
+    display: none;
+}
+
+figure{
+    text-align: center;
+    margin: 0;
+}
+tr-label, figcaption{
+    order: 1;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: .75px;
+    font-size: 9px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+tr-timer{
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 200px;
+}
+tr-timer span{
+    width: 1em;
+    text-align: center;
+}
+
+.dialog{
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3, 32px);
+    border: 1px solid #fff;
+    padding: 4px;
+}
+
+.dialog img{
+    width: 32px;
+    height: 32px;
+}
+
+[scale-to-fit]{
+    display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}

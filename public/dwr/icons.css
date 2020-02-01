@@ -1,0 +1,158 @@
+.sprite-dw-trumpet-guy {
+    background-position: -64px 0;
+}
+
+.sprite-coordinatesguy {background-position: -96px 0;}
+
+.sprite-merchant {
+    background-position: -256px 0;
+}
+
+.sprite-slime-coin {
+	background-position: -244px 0;
+	background-size: 290px 76px;
+}
+
+.sprite {
+    background-image: url(images/item/item-sprite.png);
+    background-repeat: no-repeat;
+}
+
+.sprite-bridge-transparent {background-position: 0 0;}
+.sprite-drop {background-position: -32px 0;}
+.sprite-flute {background-position: -128px 0;}
+.sprite-gps {background-position: -160px 0;}
+.sprite-token, .sprite-token-frames {
+	background-position: 0 -78px;
+	}
+	.active .sprite-token-frames{
+		animation: token-spin steps(12) 1s;
+	}
+	@keyframes token-spin {
+		from{ background-position: 0 -78px; }
+		to{ background-position: -386px -78px;}
+	}
+
+.sprite-harp {background-position: -192px 0;}
+
+.sprite-key {background-position: -224px 0;}
+.sprite-ring {background-position: -288px 0;}
+.sprite-ring-e {background-position: -320px 0;}
+
+
+
+.sprite-staff-with-rain {
+	background-position: 0 -32px;
+}
+	[selected="selected"].sprite-staff-with-rain ~ img{
+		animation: rain .25s steps(4) 8;
+	}
+
+	@keyframes rain {
+		from{ background-position: 0 -32px;}
+		to{ background-position: -128px -32px;}
+	}
+
+.sprite-sunstone-frames {
+	background-position: -160px -46px;
+}
+	.active .sprite-sunstone-frames{
+		animation: glow .75s steps(3) 3;
+	}
+	@keyframes glow {
+		from{ background-position: -160px -46px;}
+		to{ background-position: -256px -46px;}
+	}
+
+tr-toggle[property="dwr"] tr-player {display: flex;}
+tr-toggle[property="dwr"] .player-grid[href="items_stats.html"] {
+    display: grid;
+    grid-template-columns: repeat(2,32px);
+    margin-right: 4px;
+}
+
+tr-image[property="drop"]{
+    grid-column: 2;
+}
+
+tr-image[property="staff"], .token-fig{
+    position: relative; top: 18px;
+}
+
+.sprite-bridge-transparent{
+	background-color: #0070ec;
+}
+[selected="selected"].sprite-bridge-transparent ~ img{
+	background-color: #0070ec;
+	animation: rainbow 2s 2 steps(1);
+}
+
+@keyframes rainbow {
+	from {background-color: #0070ec;}
+	8% {background-color: #3cbcfc;}
+	16% {background-color: #5c94fc;}
+	25% {background-color: #4088fc;}
+	33% {background-color: #f478fc;}
+	41% {background-color: #fc74b4;}
+	50% {background-color: #fc7460;}
+	58% {background-color: #fc9838;}
+	66% {background-color: #f0bc3c;}
+	75% {background-color: #80d010;}
+	83% {background-color: #4cdc48;}
+	92% {background-color: #58f898;}
+	to {background-color: #00e8d8;}
+}
+
+.equip-sprite {
+	background-image: url(images/equip-sprite.png);
+	/* background-size: 330px 229px; */
+	background-size: 192px 133px;
+    background-repeat: no-repeat;
+}
+.equip-sprite-scale {
+	background-position: 0px bottom;
+	background-size: 166px 115px;}
+.equip-sprite-scale-e {
+	background-position: -32px bottom;
+	background-size: 166px 115px;}
+.equip-sprite-necklace {
+	background-position: -64px bottom;
+	background-size: 166px 115px;}
+.equip-sprite-necklace-e {
+	background-position: -96px bottom;
+	background-size: 166px 115px;}
+
+[property="shield"] img, [property="weapon"] img, [property="armor"] img,
+[property="necklace"] img, [property="scale"] img{
+	transform: scale(1.2);
+}
+
+
+tr-label[property="key"], .sprite-key ~ figcaption{
+    font-size: 20px;
+    line-height: 0.5;
+}
+
+.equip-sprite-bamboo {background-position: 0 0px;}
+.equip-sprite-club {background-position: -32px 0px;}
+.equip-sprite-copper {background-position: -64px 0px;}
+.equip-sprite-axe {background-position: -96px 0px;}
+.equip-sprite-broad {background-position: -128px 0px;}
+.equip-sprite-flame {background-position: 0 -32px;}
+.equip-sprite-erdricks-sword{background-position: -32px -32px;}
+
+.equip-sprite-clothes {background-position: -64px -32px;}
+.equip-sprite-leather {background-position: -96px -32px;}
+.equip-sprite-chain {background-position: -128px -32px;}
+.equip-sprite-half {background-position: 0px -64px;}
+.equip-sprite-full {background-position: -32px -64px;}
+.equip-sprite-magic {background-position: -64px -64px;}
+.equip-sprite-erdricks-armor {background-position: -96px -64px;}
+
+.equip-sprite-small {background-position: -160px 0px;}
+.equip-sprite-large {background-position: -160px -32px;}
+.equip-sprite-silver {background-position: -160px -64px;}
+
+.symbol-no{
+	background-image: url(images/item/symbol-no.png);
+}

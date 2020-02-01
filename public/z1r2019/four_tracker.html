@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Zelda Randomizer Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon item" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+            --nameWidth: 170px;
+        }
+        .layout{
+            background-color: #000;
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-template-rows: repeat(2, auto);
+            grid-gap: 24px;
+            padding: 24px;
+        }
+        tr-toggle-class, .in-active{
+            justify-self: center; 
+        }
+        .item-locations{
+            grid-area: 1 / 3 / span 2 / 4;
+        }
+        .lvltri img{
+            width: 32px;
+            height: 30px; 
+        }
+        .player-grid{
+            position: relative;
+        }
+        </style>
+</head>
+<body>
+    <div class="layout">
+        <tr-player player="1">
+            <tr-template class="lvltri background-1" href="level-triforces.html"></tr-template>
+        </tr-player>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1"></tr-text>
+            </div>
+            <tr-player player="1">
+                <tr-template class="player-grid border-background-1" id="player-grid-1" href="four_icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2"></tr-text>
+            </div>
+            <tr-player player="2">
+                <tr-template class="player-grid border-background-1" id="player-grid-2" href="four_icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <tr-player player="2">
+            <tr-template class="lvltri background-1" href="level-triforces.html"></tr-template>
+        </tr-player>
+
+        <div class="item-locations background-1">
+            <tr-player player="1"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="2"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="3"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="4"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="5"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="6"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="7"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="8"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="9"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="10"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="11"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="12"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="13"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="14"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <tr-player player="15"><tr-template href="icon-locations.html"></tr-template></tr-player>
+            <img src="images/items/candle-1.png" alt="">
+            <img src="images/items/arrow-1.png" alt="">
+            <img src="images/items/bow.png" />
+            <img src="images/items/ladder.png" />
+            <img src="images/items/raft.png" />
+            <img src="images/items/recorder.png" />
+            <img src="images/items/bracelet.png" />
+            <img src="images/items/ring-1.png" alt="">
+            <img src="images/items/key-a.png" />
+            <img src="images/items/wand.png" />
+            <img src="images/items/book.png" />
+            <img src="images/items/boomerang-0.png" />
+            <img src="images/items/boomerang-1.png" />
+            <img src="images/items/white-sword.png" />
+            <img src="images/items/heart-0.png" />
+        </div>
+
+        <tr-player player="3">
+            <tr-template class="lvltri background-1" href="level-triforces.html"></tr-template>
+        </tr-player>
+        <div class="player-wrapper">           
+            <div class="player-name">
+                <tr-text scale-to-fit player="3" property="player_name_3" id="player_name_3"></tr-text>
+            </div>    
+            <tr-player player="3">
+                <tr-template class="player-grid border-background-1" id="player-grid-3" href="four_icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit player="4" property="player_name_4" id="player_name_4"></tr-text>
+            </div>
+            <tr-player player="4">
+                <tr-template  class="player-grid border-background-1" id="player-grid-4" href="four_icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <tr-player player="4">
+            <tr-template class="lvltri background-1" href="level-triforces.html"></tr-template>
+        </tr-player>
+    </div>
+    <tr-template href="four_menu.html"></tr-template>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

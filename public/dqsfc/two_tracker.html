@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Dragon Quest Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+    <link rel="stylesheet" type="text/css" href="../content/dualsplit.css">
+	<link rel="stylesheet" type="text/css" href="two.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="player_name_1" class="player-name" style="top: 10px; left: 20px;"></div>
+	<div id="player_name_2" class="player-name player-name-right" style="top: 10px; left: 775px;"></div>
+
+    <p style="position: absolute; top: 40px;">
+        <button type="button" style="width: 75px" onclick="DualSplit.split(1)">Split</button>
+        <button type="button" style="width: 75px" onclick="DualSplit.reverse(1)">Reverse</button>
+    </p>
+
+    <p style="position: absolute; top: 40px; left: 1070px">
+        <button type="button" style="width: 75px" onclick="DualSplit.split(2)">Split</button>
+        <button type="button" style="width: 75px" onclick="DualSplit.reverse(2)">Reverse</button>
+    </p>
+
+    <div id="timer" style="top: 10px; left: 420px;"></div>
+
+    <div class="split-labels" style="top: 50px; left: 576px;">
+        <div>Mountain</div>
+        <div>Grave</div>
+        <div>Golem</div>
+        <div>Dragons</div>
+        <div>Armor</div>
+        <div>Char</div>
+        <div>DL</div>
+        <div>The End</div>
+    </div>
+
+    <div id="player_1_splits" class="split-grid" data-child-player="1" style="top: 50px; left: 400px;">
+        <input type="text" data-split="0" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="1" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="2" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="3" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="4" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="5" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="6" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+        <input type="text" data-split="7" onchange="DualSplit.parseAndUpdateSplit(this)"></input><br/>
+    </div>
+
+    <div data-child-player="2" class="split-grid" data-copy-from="#player_1_splits" style="top: 50px; left: 740px;">
+    </div>
+
+    <div id="player_1_diff" class="split-grid" data-child-player="1" style="top: 50px; left: 250px;">
+        <div data-split-diff="0"></div>
+        <div data-split-diff="1"></div>
+        <div data-split-diff="2"></div>
+        <div data-split-diff="3"></div>
+        <div data-split-diff="4"></div>
+        <div data-split-diff="5"></div>
+        <div data-split-diff="6"></div>
+        <div data-split-diff="7"></div>
+    </div>
+
+    <div data-child-player="2" class="split-grid" data-copy-from="#player_1_diff" style="top: 50px; left: 940px;">
+    </div>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer src="../script/dualsplit.js"></script>
+    <script defer type="text/javascript">
+    	(function(Tracker) {
+    		Tracker.loaded = function() {
+    			Tracker.init(2, function() {
+                    DualSplit.init(8);
+                });
+    		}
+    	})(window.Tracker = window.Tracker || {});
+    </script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    --backgroundImg: url('images/Echoes-background.png');
+    --border1: solid 2px #fff;
+    --backgroundColor1: rgba(0,0,0,.75);
+    --vidWidth: 624px;
+    --vidAspect: 4 / 3;
+    --videoX: 10px; --videoY: 10px;
+    --nameWidth: 232px;
+    --nameX: 281px; --nameY: 10px;
+    --gridX: 10px; --gridY: 10px;
+    --speakerX: 290px; --speakerY: 618px;
+    --winX: 46px; --winY: 12px;
+    --finalX: 46px; --finalY: 491px;
+    --bestX: 869px; --bestY: 200px;
+}
+
+.border-1{border: var(--border1);}
+.background-1{background-color: var(--backgroundColor1);}
+.border-background-1 {
+    border: var(--border1);
+    background-color: var(--backgroundColor1);
+}
+.abs{position: absolute;}
+
+html{
+    background-color: #c7c7c7;
+}
+
+/* layout specific styles */
+@font-face {
+    font-family: "Economica-Bold";
+    src: url("fonts/Economica-Bold_0.ttf") format("truetype");
+    unicode-range: U+0030-003A;
+}
+@font-face {
+    font-family: "Economica";
+    src: url("fonts/Economica-Regular_0.ttf") format("truetype");
+}
+
+#layout{
+    font-family: 'Economica', sans-serif;
+    width: 1280px;
+    height: 720px;
+    color: #f9f9f9;
+    position: relative;
+    background-image: radial-gradient(circle, #1e8eab, #03110f);
+    background-image: var(--backgroundImg);
+}
+
+.full-layout{
+    position: absolute;
+    left: 0;
+    top: 0; 
+    width: 1280px;
+    height: 720px;
+}
+
+.player-video{
+    width: var(--vidWidth);
+    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    z-index: 2;
+}
+
+.player-video[player="1"]{border-image: url('images/vid1-border.png') 2 / 2px;}
+.player-video[player="2"]{border-image: url('images/vid2-border.png') 2 / 2px;}
+
+.player-name{
+    font-size: 36px;
+    width: calc(var(--nameWidth) + 8px * 2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(9, auto);
+    grid-template-rows: repeat(3, auto);
+    align-content: space-between;
+    padding: 16px 4px 14px;
+    width: 272px;
+    height: 221px;
+    image-rendering: pixelated;
+    /* transform: perspective(800px) rotate3d(0, 1, 0, 3deg); */
+    border: 2px solid;
+}
+
+tr-toggle-class img{background-size: auto 100%;}
+tr-toggle-class.active img{animation: icon-animate-12321 steps(1) 3 1s;}
+
+[property="missile_launcher"] img{background-image: url('images/icons/missile_frames.png')}
+[property="dark_beam"] img{background-image: url('images/icons/dark_beam_frames.png');}
+[property="light_beam"] img{background-image: url('images/icons/light_beam_frames.png');}
+[property="annihilator_beam"] img{background-image: url('images/icons/annihilator_beam_frames.png');}
+[property="dark_suit"] img{background-image: url('images/icons/dark_suit_frames.png');}
+[property="morph_ball_bombs"] {grid-column-start: 6;}
+[property="morph_ball_bombs"] img{background-image: url('images/icons/morph_ball_bombs_frames.png');}
+[property="violet_translator"] img{background-image: url('images/icons/violet_translator_frames.png');}
+
+
+[property="super_missile"] img{background-image: url('images/icons/super_missile_frames.png');}
+[property="dark_burst"] img{background-image: url('images/icons/dark_burst_frames.png');}
+[property="sun_burst"] img{background-image: url('images/icons/sun_burst_frames.png');}
+[property="sonic_boom"] img{background-image: url('images/icons/sonic_boom_frames.png');}
+[property="light_suit"] img{background-image: url('images/icons/light_suit_frames.png');}
+[property="power_bomb"] img{background-image: url('images/icons/power_bomb_frames.png');}
+[property="violet_translator"] img{background-image: url('images/icons/violet_translator_frames.png');}
+[property="emerald_translator"] img{background-image: url('images/icons/emerald_translator_frames.png');}
+[property="amber_translator"] img{background-image: url('images/icons/amber_translator_frames.png');}
+[property="cobalt_translator"] img{background-image: url('images/icons/cobalt_translator_frames.png');}
+
+[property="seeker_launcher"] img{background-image: url('images/icons/seeker_launcher_frames.png');}
+
+[property="space_jump_boots"] img{background-image: url('images/icons/space_jump_boots_frames.png');}
+[property="gravity_boost"] img{background-image: url('images/icons/gravity_boost_frames.png');}
+
+[property="energy_transfer_module"] img{background-image: url('images/icons/energy_transfer_module_frames.png');}
+[property="grapple_beam"] img{background-image: url('images/icons/grapple_beam_frames.png');}
+
+[property="dark_visor"] img{background-image: url('images/icons/dark_visor_frames.png');}
+[property="echo_visor"] img{background-image: url('images/icons/echo_visor_frames.png');}
+
+[property="boost_ball"] img{background-image: url('images/icons/boost_ball_frames.png');}
+[property="spider_ball"] img{background-image: url('images/icons/spider_ball_frames.png');}
+[property="screw_attack"] img{background-image: url('images/icons/screw_attack_frames.png');}
+
+[property="emerald_translator"] img{background-image: url('images/icons/emerald_translator_frames.png');}
+
+.player-grid .key{background-size: auto 100%; width: 40px; height: auto;}
+.key.agon-key{background-image: url('images/icons/red_key_frames.png');}
+.key.torvus-key{background-image: url('images/icons/red_key_frames.png');}
+.key.ing-hive-key{background-image: url('images/icons/red_key_frames.png');}
+.key.sky-temple-key{background-image: url('images/icons/sky_temple_key_frames.png');}
+
+@keyframes icon-animate-1213{
+    from, 50%{background-position-x: 0;}
+    25%{background-position-x: calc(var(--grid-img) * -1);}
+    75%{background-position-x: calc(var(--grid-img) * -2);}
+}
+
+@keyframes icon-animate-12321{
+    from{background-position-x: 0;}
+    25%,75%{background-position-x: calc(var(--grid-img) * -1);}
+    50%{background-position-x: calc(var(--grid-img) * -2);}
+}
+
+.keys{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-column-gap: 14px;
+    justify-self: center;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+}
+.keys figure{
+    position: relative;
+}
+.keys figcaption{
+    font-family: 'Economica', sans-serif;
+    font-size: 12px;
+    position: absolute;
+}
+
+/* .keys figcaption:nth-of-type(1){
+    top: -16px;
+    width: 100%;
+    text-align: center;
+} */
+
+.keys figcaption:nth-of-type(1){
+    right: 0px;
+    bottom: 0px;
+}
+
+.keys figcaption tr-text{
+    font-size: 18px;
+}
+
+#player-grid-1{border-image: url('images/grid1-border.png') repeat 7 2 / 7px 2px;}
+#player-grid-2{border-image: url('images/grid2-border.png') repeat 7 2 / 7px 2px;}
+
+.player-grid img{
+    --grid-img: 28px;
+    width: var(--grid-img);
+    height: var(--grid-img);
+}
+
+.speaker{
+    display: none;
+    mix-blend-mode: soft-light;
+    animation: .5s ease-in animate;
+}
+
+@keyframes animate {
+    from{transform-origin: 0 0;transform: scale(0);}
+    to{transform-origin: 150% 150%; transform: scale(1);}
+}
+@keyframes animate2 {
+    from{transform-origin: 100% 0%;transform: scale(0);}
+    to{transform-origin: 150% 150%; transform: scale(1);}
+}
+
+#player_speaker_2{
+    animation: .5s ease-in animate2;
+}
+
+.winner{
+    width: 199px;
+    height: 0;
+    transition: height .25s ease-out;
+    z-index: 3;
+    font-size: 44px;
+    text-align: center;
+    overflow: hidden;
+    image-rendering: pixelated;
+    background: url('images/winner-border-1.png') no-repeat top,
+                var(--backgroundImg) no-repeat -46px -660px / 1280px 720px;
+}
+#winner-2{
+    background: url('images/winner-border-1.png') no-repeat top,
+                var(--backgroundImg) no-repeat -1035px -660px / 1280px 720px;
+}
+
+.winner.tada{
+    height: 48px;
+    z-index: 3;
+}
+.best-of{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    display: none;
+}
+.best-of img{
+    width: 32px;
+    height: 32px;
+}
+
+.best-of-3, .best-of-5, .best-of-7{
+    display: grid;
+}
+.best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
+.best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
+.best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
+
+.player-final{
+    width: 199px;
+    background-color: #0d404b;
+    background: url('images/border-final-time.png') no-repeat bottom,
+                var(--backgroundImg) no-repeat calc(-1 * var(--finalX)) calc(-1 * var(--finalY)) / 1280px 720px;
+/* color: #f8612b;
+    color: #e0981f; */
+    text-align: center;
+    font-family: 'Economica-Bold', serif;
+    font-size: 36px;
+    transition: height .25s ease-out;
+    text-shadow: 0 0 5px #000;
+    overflow: hidden;
+    height: 48px;
+    image-rendering: pixelated;
+}
+
+.player-final:nth-of-type(2){
+    background: url('images/border-final-time.png') no-repeat bottom,
+                var(--backgroundImg) no-repeat -1035px -491px / 1280px 720px;
+}
+
+.player-final:empty{
+    height: 0;
+}
+
+.player-speaker > img{
+    width: 48px;
+    height: 48px;
+}
+
+tr-timer{
+	width: 218px;
+    height: 50px;
+    z-index: 1;
+	font-size: 46px;
+    border-style: none solid;
+    border-width: 0 2px;
+    border-image:linear-gradient(#d2f0fa, #abc7dc) 2 / 0 2px;
+    z-index: 3;
+    font-family: 'Economica-Bold', serif;
+}
+
+tr-timer span {
+    width: 19px;
+    text-align: center;
+}
+
+#production_team_swap{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4px;
+    padding: 4px;
+}
+
+#production_team_swap img{
+    margin: 0;
+    width: auto;
+    height: 1em;
+    z-index: 2;
+}
+
+#staff{
+    overflow: hidden;
+    font-size: 36px;
+    min-width: 250px;
+    min-height: 44px;
+    box-shadow: 0 1px 0 #d2f0fa, 0 2px 0 #abc7dc;
+    text-align: center;
+}
+
+#staff_panel_1, #staff_panel_2{
+    grid-area: 1/1;
+    display: grid;
+    align-items: center;
+}
+
+#staff_panel_1{grid-template-columns: auto 1fr;}
+#staff_panel_2{grid-template-columns: 1fr; font-size: .5em;}
+
+#commentator_contain, #restreamer_contain, #tracker_contain{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+#commentators, #restreamer, #tracker{
+    width: 206px;
+}
+
+.production-swap #staff_panel_1 {animation: panel-1-blinker 60s steps(1) infinite;}
+.production-swap #staff_panel_2 {animation: panel-2-blinker 60s steps(1) infinite;}
+
+@keyframes panel-1-blinker {
+    0%, 75% {opacity: 1;}
+    75.1%, 100% {opacity: 0;}
+    }
+    
+@keyframes panel-2-blinker {
+    0%, 75% {opacity: 0;}
+    75.1%, 100% {opacity: 1;}
+    }
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px currentColor;
+    z-index: 3;
+    }
+
+#production{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: end;
+}
+
+.bracket, .calendar{
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    display: none;
+}
+
+.calendar{ background-image: url(../shared/images/rm-generic-background.png);}
+
+/* Bracket Screen */
+
+.bracket{background: url(../shared/images/checkerboard.png);}
+
+.bracket iframe {
+    animation: rotateIn .75s linear;
+    perspective: 1200px;
+}
+
+@keyframes rotateIn {
+    from{transform: rotateY(90deg);}
+    to{transform: rotateY(0deg);}
+}
+
+/* Loading Screen */
+
+.loadscreen{
+    width: 1280px;
+    height: 720px;
+    background-color: #000;
+    background: url('../shared/images/rm-generic-background.png');
+    text-align: center;
+    animation: zoomIn .5s linear;
+    z-index: 50;
+    display: none;
+    color: #8ed4fd;
+    padding: 10px;
+}
+
+.loadscreen-content{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr calc(165px + 2em); 
+    border: solid 3px #2c4256;
+    border-image: url('images/DataNetwork.png') fill 129 63 178 43 / 64.5px 31.5px 89px 21.5px;
+    text-transform: uppercase;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.loadscreen-video-area{
+    background-size: contain;
+    display: grid;
+    place-items: center;
+}
+h2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+aside h1{
+    font-size: 2em;
+    padding: .1em;
+}
+
+#promos{
+    overflow: hidden;
+    height: 165px;
+    grid-column: 1/-1;
+    border-top: solid 3px #2c4256;
+}
+#all_promos_contain{
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 165px;
+    animation: move-promos 60s infinite;
+}
+
+@keyframes move-promos{
+    from{transform: translateY(0);}
+    28%{transform: translateY(0);}
+    33%{transform: translateY(-165px);}
+    61%{transform: translateY(-165px);}
+    66%{transform: translateY(-330px);}
+    to{transform: translateY(-330px);}
+}
+#all_promos_contain figure{
+    margin: 0 32px 8px;
+}
+
+#all_promos_contain figcaption{
+    font-size: 12px;
+}
+
+.display-none,
+#tracker_contain.display-none,
+#restreamer_contain.display-none,
+#commentator_contain.display-none{ display: none; }
+
+.show{ display: block; }
+.show-flex{ display: flex; }
+.show-grid{ display: grid; }
+
+#menu_2 {
+    display: grid;
+    grid-template-areas: "players layout team"
+                         "timer view reset";
+}
+
+#menu_layout div{
+    display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
+
+.menu-keys{
+    display: flex;
+    justify-content: space-around;
+}
+.menu-keys input[type="number"]{
+    width: 2.75em;
+    padding-left: 4px;
+}

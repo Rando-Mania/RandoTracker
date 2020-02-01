@@ -1,0 +1,98 @@
+<div id="menu_2">
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Final</th>
+                    <th>Win</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="name-input" property="player_name_1"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="final-input" property="player_final_1"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="1" id="win" property="toggle-class" target="#player_name_1" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="name-input" property="player_name_2"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="final-input" property="player_final_2"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="2" id="win" property="toggle-class" target="#player_name_2" toggle-class="winner"></tr-input-toggle-class></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Layout Settings</h4>
+        
+        <!--div>
+            <tr-input-toggle id="loadscreen" property="loadscreen"></tr-input-toggle> <label for="loadscreen">Loadscreen</label>
+        </div-->
+        <div>
+            <label>Video Background:</label>
+            <tr-select-toggle property="select-toggle-class-test" player="1">
+                <tr-option value="none">None</tr-option>
+                <tr-option target=".player-video" toggle-class="blue-background" value="blue">Blue</tr-option>
+                <tr-option target=".player-video" toggle-class="green-background" value="green">Green</tr-option>
+                <tr-option target=".player-video" toggle-class="magenta-background" value="magenta">Magenta</tr-option>
+            </tr-select-toggle>
+        </div>
+        <div>
+            <label>Overlay:</label>
+            <tr-select-toggle>
+                <tr-option value="none">None</tr-option>
+                <tr-option value="loadscreen">Loadscreen</tr-option>
+                <tr-option value="bracket">Tourney Bracket</tr-option>
+                <tr-option value="calendar">RM Calendar</tr-option>
+            </tr-select-toggle>
+        </div>
+        <div>
+            <label>Speaker:</label>
+            <tr-select-toggle property="player_speaker">
+                <tr-option player="0" value="0">None</tr-option>
+                <tr-option player="1" value="1">Player 1</tr-option>
+                <tr-option player="2" value="2">Player 2</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-text class="comm-input" property="comm"></tr-input-text>
+        </div>
+        <div>
+            <label>Restreamer:</label>
+            <tr-input-text class="restreamer-input" property="restreamer"></tr-input-text>
+        </div>
+        <div>
+            <label>Tracker:</label>
+            <tr-input-text class="tracker-input" property="tracker"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-timer property="timer-test"></tr-input-timer>
+            <tr-button-timer property="timer-test"></tr-button-timer>
+        </div>
+    </div>
+
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">View</h4>
+        <tr-button-view view="" title="Restream"></tr-button-view>
+        <tr-button-view view="tracker" title="Tracker"></tr-button-view>
+        <tr-button-view view="coms" title="Commentators"></tr-button-view>
+    </div>
+
+    <div id="menu_reset" class="fieldset">
+        <h4 class="legend">Reset</h4>
+        <tr-button-reset></tr-button-reset>
+    </div>
+
+</div>

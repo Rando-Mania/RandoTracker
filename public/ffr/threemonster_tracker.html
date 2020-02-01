@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy Monster Hunter Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="threemonster_tracker.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="player-container" style="top: 10px; left: 0px;">
+        <span id="player_name_1" class="player-name"></span>
+    </div>
+    <div class="player-container" style="top: 10px; left: 200px;">
+    	<span id="player_name_2" class="player-name"></span>
+    </div>
+    <div class="player-container" style="top: 10px; left: 400px;">
+        <span id="player_name_3" class="player-name"></span>
+    </div>
+
+    <div id="player_1_grid" data-child-player="1" class="item-grid" style="top: 40px; left: 30px;">
+        <span class="item" data-toggle="true" data-image="images/enemies/0000.png" data-class-toggle="selected" data-repeat="55"></span>
+    </div>
+
+    <div data-child-player="2" data-copy-from="#player_1_grid" class="item-grid" style="top: 40px; left: 230px;">
+    </div>
+
+    <div data-child-player="3" data-copy-from="#player_1_grid" class="item-grid" style="top: 40px; left: 430px;">
+    </div>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer type="text/javascript">
+    	(function(Tracker) {
+    		Tracker.loaded = function() {
+    			Tracker.init(3);
+
+                // Fix monster images
+                var monsterIcons = document.querySelectorAll(".item");
+
+                monsterIcons.forEach(function(currentValue, currentIndex, listObj) {
+                    var property = currentValue.dataset.index.padStart(4, "0");
+
+                    currentValue.dataset.property = property;
+                    currentValue.firstElementChild.src = "images/enemies/" + property + ".png";
+                });
+    		}
+    	})(window.Tracker = window.Tracker || {});
+    </script>
+</body>
+</html>

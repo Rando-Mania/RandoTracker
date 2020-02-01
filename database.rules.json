@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "games": {
+      "$gameName": {
+        "$playerCount": {
+          "$roomID": {
+            ".read": "auth != null",
+            ".write": "auth != null",
+            ".validate": "!$roomID.contains('.') && !$roomID.contains('/') && !$roomID.contains('\\\\') && (!newData.exists() || data.child('owner').exists() || newData.child('owner').exists())",
+            "owner": {
+              ".write": "(!data.child('owner').exists() && newData.child('owner').val() === auth.uid) || (data.child('owner').val() === auth.uid)",
+            },
+            "auth_keys": {
+              ".write": "auth.uid === data.parent().child('owner').val()",
+            }
+          }
+        }
+      }
+    },
+    "admin": {
+      "authorized": {
+        "$super_uid": {
+          ".read": "auth.uid === $super_uid",
+          ".write": "auth.uid === $super_uid && newData.val() === data.parent().parent().child('passcode').val()"
+        }
+      }
+    },
+    "users": {
+      ".read": "auth != null",
+      "$email": {
+        "$user_uid": {
+          ".read": "(auth.uid === $user_uid && auth.token.email.replace('.', '_').replace('.', '_') === $email) || root.child('users').child(auth.token.email.replace('.', '_').replace('.', '_')).child('isAdmin').val() == true",
+          ".write": "(auth.uid === $user_uid && auth.token.email.replace('.', '_').replace('.', '_') === $email)",
+        },
+        "isAdmin": {
+          ".read": "auth.token.email.replace('.', '_').replace('.', '_') === $email || root.child('users').child(auth.token.email.replace('.', '_').replace('.', '_')).child('isAdmin').val() == true",
+          ".write": false
+        },
+        "isApproved": {
+          ".read": "auth.token.email.replace('.', '_').replace('.', '_') === $email || root.child('users').child(auth.token.email.replace('.', '_').replace('.', '_')).child('isAdmin').val() == true",
+          ".write": "root.child('users').child(auth.token.email.replace('.', '_').replace('.', '_')).child('isAdmin').val() == true"
+        },
+        "displayName": {
+          ".read": "root.child('users').child(auth.token.email.replace('.', '_').replace('.', '_')).child('isAdmin').val() == true",
+          ".write": "auth.token.email.replace('.', '_').replace('.', '_') === $email"
+        }
+      }
+    },
+    "data": {
+      ".read": "auth.uid != null"
+    }
+  }
+}

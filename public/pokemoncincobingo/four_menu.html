@@ -1,0 +1,140 @@
+<div id="menu_2">
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>♫</th>
+                    <th>Final</th>
+                    <th>Win</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="name-input" property="player_name_1"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="1" id="speaker" property="toggle-speaker" target="#player_1_contain tr-image img" toggle-class="speaker-mask"></tr-input-toggle-class></td>
+                    <td><tr-input-text player="1" class="final-input" property="player_final_1"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="1" id="win" property="toggle-class" target="#winner-1" toggle-class="tada"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="name-input" property="player_name_2"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="2" id="speaker" property="toggle-speaker" target="#player_2_contain tr-image img" toggle-class="speaker-mask"></tr-input-toggle-class></td>
+                    <td><tr-input-text player="2" class="final-input" property="player_final_2"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="2" id="win" property="toggle-class" target="#winner-2" toggle-class="tada"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="3" for="player-3">3</label></td>
+                    <td><tr-input-text player="3" class="name-input" property="player_name_3"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="3" id="speaker" property="toggle-speaker" target="#player_3_contain tr-image img" toggle-class="speaker-mask"></tr-input-toggle-class></td>
+                    <td><tr-input-text player="3" class="final-input" property="player_final_3"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="3" id="win" property="toggle-class" target="#winner-3" toggle-class="tada"></tr-input-toggle-class></td>
+                </tr>
+                <tr>
+                    <td><label player="4" for="player-4">4</label></td>
+                    <td><tr-input-text player="4" class="name-input" property="player_name_4"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="4" id="speaker" property="toggle-speaker" target="#player_4_contain tr-image img" toggle-class="speaker-mask"></tr-input-toggle-class></td>
+                    <td><tr-input-text player="4" class="final-input" property="player_final_4"></tr-input-text></td>
+                    <td><tr-input-toggle-class player="4" id="win" property="toggle-class" target="#winner-4" toggle-class="tada"></tr-input-toggle-class></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Settings</h4>
+        <div id="menu_video_background">
+            <label>Video Background:</label>
+            <tr-input-radio id="white" property="video-bgcolor" value="white" target=".player-video, #bingo_board" toggle-class="white-background"></tr-input-radio>
+            <label class="video-bgcolor" for="white"></label>
+            <tr-input-radio id="blue" property="video-bgcolor" value="blue" target=".player-video, #bingo_board" toggle-class="blue-background"></tr-input-radio>
+            <label class="video-bgcolor" for="blue"></label>
+            <tr-input-radio checked id="green" property="video-bgcolor" value="green" target=".player-video, #bingo_board" toggle-class="green-background"></tr-input-radio>
+            <label class="video-bgcolor" for="green"></label>
+            <tr-input-radio id="magenta" property="video-bgcolor" value="magenta" target=".player-video, #bingo_board" toggle-class="magenta-background"></tr-input-radio>
+            <label class="video-bgcolor" for="magenta"></label>
+        </div>
+        <div>
+            <label for="title">Title:</label>
+            <tr-input-text class="title" property="title"></tr-input-text>
+        </div>
+        <div id="menu_overlays_contain">
+            <label>Overlays:</label>
+            <div>
+                <tr-input-radio id="none" property="radio-test-toggle" value="no-overlay" target=".layout" toggle-class="dummy" checked></tr-input-radio>
+                <label for="none">None</label>
+            </div>
+            <div>
+                <tr-input-radio id="load" property="radio-test-toggle" value="load" target=".loadscreen" toggle-class="show"></tr-input-radio>
+                <label for="load">Loading</label>
+            </div>
+            <!-- <div> 
+                <tr-input-radio id="bracket" property="radio-test-toggle" value="brac" target=".bracket" toggle-class="show-flex"></tr-input-radio>
+                <label for="bracket">Bracket</label>
+            </div> -->
+            <div>
+                <tr-input-radio id="calendar" property="radio-test-toggle" value="cal" target=".calendar" toggle-class="show-flex"></tr-input-radio>
+                <label for="calendar">RM Calendar</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-text class="comm-input" property="comm"></tr-input-text>
+        </div>
+        <div>
+            <label>Restreamer:</label>
+            <tr-input-text class="restreamer-input" property="restreamer"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-timer property="timer-test"></tr-input-timer>
+            <tr-button-timer property="timer-test"></tr-button-timer>
+        </div>
+    </div>
+
+    <div id="menu_reset" class="fieldset">
+        <h4 class="legend">Reset</h4>
+        <tr-button-reset></tr-button-reset>
+    </div>
+
+    <div id="menu_obs" class="fieldset">
+        <h4 class="legend">OBS positions/sizes</h4>
+        <table>
+            <col style="border-right: 1px #333 solid;"/>
+            <col style="padding-left: .25em;"/>
+            <col style="border-right: 1px #333 solid;" />
+            <!-- <tr>
+                <th></th><th colspan="2">Size</th><th colspan="2">Position</th>
+            </tr> -->
+            <tr>
+                <th></th><th>x</th><th>y</th><th>w</th><th>h</th>
+            </tr>    
+            <tr style="border-top: 1px solid #333;">
+                <td>Full Layout</td><td>0</td><td>0</td><td>1280</td><td>720</td>
+            </tr>
+            <tr>
+                <td>Video 1</td><td>21</td><td>21</td><td>375</td><td>338</td>
+            </tr>
+            <tr>
+                <td>Video 2</td><td>885</td><td>22</td><td>375</td><td>338</td>
+            </tr>
+            <tr>
+                <td>Video 3</td><td>21</td><td>363</td><td>375</td><td>338</td>
+            </tr>
+            <tr>
+                <td>Video 4</td><td>885</td><td>363</td><td>375</td><td>338</td>
+            </tr>
+            <tr>
+                <td>Bingo Board</td><td>420</td><td>162</td><td>440</td><td>397</td>
+            </tr>
+        </table>
+    </div>
+</div>

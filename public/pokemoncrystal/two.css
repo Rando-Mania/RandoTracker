@@ -1,0 +1,95 @@
+@font-face {
+	font-family: "POKEMON";
+	src: url("/pokemoncrystal/fonts/PKMN_RBYGSC.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Futura";
+	src: url("/pokemoncrystal/fonts/Futura Condensed Medium.otf") format("opentype");
+}
+
+body {
+	font-family: "Futura", sans-serif;
+	font-weight: bold;
+	background-color: #000;
+}
+
+.player-name {
+	position: absolute;
+	text-align: center;
+	color: #FFF;
+	width: 395px;
+	text-shadow: 4px 4px 0px #000;
+	text-align: center;
+	font-size: 38px;
+	letter-spacing: 3px;
+}
+
+.player-final {
+	position: absolute;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 28px;
+	width: 7em;
+	padding: 10px 17px;
+	text-align: center;
+	font-size: 32px;
+	letter-spacing: 4px;
+	box-shadow: inset 6px 6px 6px rgba(0,0,0,.5), inset -6px -6px 6px rgba(0,0,0,.5);
+	animation: fromLeft .3s linear;
+}
+
+#player_final_2 { animation-name: fromRight;}
+
+@keyframes fromLeft{from{ transform: translateX(-200%); }}
+@keyframes fromRight{from{ transform: translateX(200%); }}
+
+
+.player-speaker {
+	position: absolute;
+}
+
+.player-speaker img {
+	height: 60px;
+}
+
+.icon,
+.icon img {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 32px;
+	color: #FFF;
+	text-align: center;
+}
+
+#timer span:not(.dot):not(.colon) {
+	width: 22.27px;
+	display: inline-block;
+}
+
+#timer .ms {
+	font-size: 16px;
+	width: 16.19px !important;
+}
+
+#commentators {
+	color: #FFF;
+	font-size: 28px;
+	letter-spacing: 1px;
+	position: absolute;
+	height: 75px;
+	width: 390px;
+	line-height: 28px;
+	text-shadow: 2px 2px 2px #000;
+	font-weight: normal;
+}
+
+.dialog{
+	transform: translate(-160px);
+}

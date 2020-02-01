@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head profile="http://www.w3.org/2005/10/profile">
+  <meta charset="utf-8">
+  <title>RandoMania 4:3 Tracker</title>
+  <link rel="stylesheet" type="text/css" href="../content/tracker.css">
+  <link rel="stylesheet" type="text/css" href="four.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div id="players-1" class="contain">
+    <video id="player_video_1" src=""></video>
+    <video id="player_video_2" src=""></video>
+    <video id="player_video_3" src=""></video>
+    <video id="player_video_4" src=""></video>
+    <h1 id="player_name_1">Player 1</h1>
+    <h1 id="player_name_2">Player 2</h1>
+    <h1 id="player_name_3">Player 3</h1>
+    <h1 id="player_name_4">Player 4</h1>
+    <div class="tracker" id="player_tracker_1"></div>
+    <div class="tracker" id="player_tracker_2"></div>
+    <div class="tracker" id="player_tracker_3"></div>
+    <div class="tracker" id="player_tracker_4"></div>
+    <div class="speaker hidden" id="player_speaker_1">&#9835;</div>
+    <div class="speaker hidden" id="player_speaker_2">&#9835;</div>
+    <div class="speaker hidden" id="player_speaker_3">&#9835;</div>
+    <div class="speaker hidden" id="player_speaker_4">&#9835;</div>
+    <div class="final-time hidden" id="player_final_1"></div>
+    <div class="final-time hidden" id="player_final_2"></div>
+    <div class="final-time hidden" id="player_final_3"></div>
+    <div class="final-time hidden" id="player_final_4"></div>
+    <time id="timer"></time>
+    <h2 id="commentators" class="com"></h2>
+    <!--div id="rm-logo"><img src="images\rm-logo.png" alt="RM"/> RandoMania</div-->
+    <!--div id="game_name"></div-->
+  </div>
+
+  <div id="menu">
+    <fieldset>
+      <legend>4x3</legend>
+      <div>
+        <button id="1p-4by3" onclick="RM.setLayout('players-1')">1 Player</button>
+        <button id="2p-4by3" onclick="RM.setLayout('players-2')">2 Player</button>
+        <button id="3p-4by3" onclick="RM.setLayout('players-3')">3 Player</button>
+        <button id="4p-4by3" onclick="RM.setLayout('players-4')">4 Player</button>
+      </div>
+    </fieldset>
+    <!--fieldset>
+    <legend>16:9</legend>
+    <div>
+
+    </div>
+  </fieldset-->
+  </div>
+  <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="../script/tracker.js"></script>
+  <script src="scripts/rm.js"></script>
+  <script defer type="text/javascript">
+    (function (Tracker) {
+      Tracker.loaded = function () {
+        Tracker.init(4, function () {
+          RM.init();
+        });
+      }
+    })(window.Tracker = window.Tracker || {});
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>SMB3 Randomizer Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            background-color: #000;
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            grid-gap: 24px;
+            padding: 24px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <div class="player-wrapper">
+            <tr-player player="1">
+                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
+            </tr-player>
+        </div>
+                <div id="menu_player_background">
+            <label>
+                <tr-text player="1" scale-to-fit property="player-name"></tr-text>
+            </label>
+            <div class="menu-player-background">
+                <tr-input-radio checked id="p1-world-1" property="player-background-1" value="p1-world-1" target=".player-background-1" toggle-class="background-world-1"></tr-input-radio>
+                <label class="player-background" for="p1-world-1">1</label>
+                <tr-input-radio id="p1-world-2" property="player-background-1" value="p1-world-2" target=".player-background-1" toggle-class="background-world-2"></tr-input-radio>
+                <label class="player-background" for="p1-world-2">2</label>
+                <tr-input-radio id="p1-world-3" property="player-background-1" value="p1-world-3" target=".player-background-1" toggle-class="background-world-3"></tr-input-radio>
+                <label class="player-background" for="p1-world-3">3</label>
+                <tr-input-radio id="p1-world-4" property="player-background-1" value="p1-world-4" target=".player-background-1" toggle-class="background-world-4"></tr-input-radio>
+                <label class="player-background" for="p1-world-4">4</label>
+                <tr-input-radio id="p1-world-5" property="player-background-1" value="p1-world-5" target=".player-background-1" toggle-class="background-world-5"></tr-input-radio>
+                <label class="player-background" for="p1-world-5">5</label>
+                <tr-input-radio id="p1-world-6" property="player-background-1" value="p1-world-6" target=".player-background-1" toggle-class="background-world-6"></tr-input-radio>
+                <label class="player-background" for="p1-world-6">6</label>
+                <tr-input-radio id="p1-world-7" property="player-background-1" value="p1-world-7" target=".player-background-1" toggle-class="background-world-7"></tr-input-radio>
+                <label class="player-background" for="p1-world-7">7</label>
+                <tr-input-radio id="p1-world-8" property="player-background-1" value="p1-world-8" target=".player-background-1" toggle-class="background-world-8"></tr-input-radio>
+                <label class="player-background" for="p1-world-8">8</label>
+            </div>
+            <label>
+                <tr-text player="2" scale-to-fit property="player-name"></tr-text>
+            </label>
+            <div class="menu-player-background">
+                <tr-input-radio checked id="p2-world-1" property="player-background-2" value="p2-world-1" target=".player-background-2" toggle-class="background-world-1"></tr-input-radio>
+                <label class="player-background" for="p2-world-1">1</label>
+                <tr-input-radio id="p2-world-2" property="player-background-2" value="p2-world-2" target=".player-background-2" toggle-class="background-world-2"></tr-input-radio>
+                <label class="player-background" for="p2-world-2">2</label>
+                <tr-input-radio id="p2-world-3" property="player-background-2" value="p2-world-3" target=".player-background-2" toggle-class="background-world-3"></tr-input-radio>
+                <label class="player-background" for="p2-world-3">3</label>
+                <tr-input-radio id="p2-world-4" property="player-background-2" value="p2-world-4" target=".player-background-2" toggle-class="background-world-4"></tr-input-radio>
+                <label class="player-background" for="p2-world-4">4</label>
+                <tr-input-radio id="p2-world-5" property="player-background-2" value="p2-world-5" target=".player-background-2" toggle-class="background-world-5"></tr-input-radio>
+                <label class="player-background" for="p2-world-5">5</label>
+                <tr-input-radio id="p2-world-6" property="player-background-2" value="p2-world-6" target=".player-background-2" toggle-class="background-world-6"></tr-input-radio>
+                <label class="player-background" for="p2-world-6">6</label>
+                <tr-input-radio id="p2-world-7" property="player-background-2" value="p2-world-7" target=".player-background-2" toggle-class="background-world-7"></tr-input-radio>
+                <label class="player-background" for="p2-world-7">7</label>
+                <tr-input-radio id="p2-world-8" property="player-background-2" value="p2-world-8" target=".player-background-2" toggle-class="background-world-8"></tr-input-radio>
+                <label class="player-background" for="p2-world-8">8</label>
+            </div>
+            <label>
+                <tr-text player="3" scale-to-fit property="player-name"></tr-text>
+            </label>
+            <div class="menu-player-background">
+                <tr-input-radio checked id="p3-world-1" property="player-background-3" value="p3-world-1" target=".player-background-3" toggle-class="background-world-1"></tr-input-radio>
+                <label class="player-background" for="p3-world-1">1</label>
+                <tr-input-radio id="p3-world-2" property="player-background-3" value="p3-world-2" target=".player-background-3" toggle-class="background-world-2"></tr-input-radio>
+                <label class="player-background" for="p3-world-2">2</label>
+                <tr-input-radio id="p3-world-3" property="player-background-3" value="p3-world-3" target=".player-background-3" toggle-class="background-world-3"></tr-input-radio>
+                <label class="player-background" for="p3-world-3">3</label>
+                <tr-input-radio id="p3-world-4" property="player-background-3" value="p3-world-4" target=".player-background-3" toggle-class="background-world-4"></tr-input-radio>
+                <label class="player-background" for="p3-world-4">4</label>
+                <tr-input-radio id="p3-world-5" property="player-background-3" value="p3-world-5" target=".player-background-3" toggle-class="background-world-5"></tr-input-radio>
+                <label class="player-background" for="p3-world-5">5</label>
+                <tr-input-radio id="p3-world-6" property="player-background-3" value="p3-world-6" target=".player-background-3" toggle-class="background-world-6"></tr-input-radio>
+                <label class="player-background" for="p3-world-6">6</label>
+                <tr-input-radio id="p3-world-7" property="player-background-3" value="p3-world-7" target=".player-background-3" toggle-class="background-world-7"></tr-input-radio>
+                <label class="player-background" for="p3-world-7">7</label>
+                <tr-input-radio id="p3-world-8" property="player-background-3" value="p3-world-8" target=".player-background-3" toggle-class="background-world-8"></tr-input-radio>
+                <label class="player-background" for="p3-world-8">8</label>
+            </div>
+            <label>
+                <tr-text player="4" scale-to-fit property="player-name"></tr-text>
+            </label>
+            <div class="menu-player-background">
+                <tr-input-radio checked id="p4-world-1" property="player-background-4" value="p4-world-1" target=".player-background-4" toggle-class="background-world-1"></tr-input-radio>
+                <label class="player-background" for="p4-world-1">1</label>
+                <tr-input-radio id="p4-world-2" property="player-background-4" value="p4-world-2" target=".player-background-4" toggle-class="background-world-2"></tr-input-radio>
+                <label class="player-background" for="p4-world-2">2</label>
+                <tr-input-radio id="p4-world-3" property="player-background-4" value="p4-world-3" target=".player-background-4" toggle-class="background-world-3"></tr-input-radio>
+                <label class="player-background" for="p4-world-3">3</label>
+                <tr-input-radio id="p4-world-4" property="player-background-4" value="p4-world-4" target=".player-background-4" toggle-class="background-world-4"></tr-input-radio>
+                <label class="player-background" for="p4-world-4">4</label>
+                <tr-input-radio id="p4-world-5" property="player-background-4" value="p4-world-5" target=".player-background-4" toggle-class="background-world-5"></tr-input-radio>
+                <label class="player-background" for="p4-world-5">5</label>
+                <tr-input-radio id="p4-world-6" property="player-background-4" value="p4-world-6" target=".player-background-4" toggle-class="background-world-6"></tr-input-radio>
+                <label class="player-background" for="p4-world-6">6</label>
+                <tr-input-radio id="p4-world-7" property="player-background-4" value="p4-world-7" target=".player-background-4" toggle-class="background-world-7"></tr-input-radio>
+                <label class="player-background" for="p4-world-7">7</label>
+                <tr-input-radio id="p4-world-8" property="player-background-4" value="p4-world-8" target=".player-background-4" toggle-class="background-world-8"></tr-input-radio>
+                <label class="player-background" for="p4-world-8">8</label>
+            </div>
+        </div>
+
+        <!-- <h2>Controls</h2>
+        <tr-ds class="dual-split-input" timer="timer-test">
+            <tr-ds-controls timer="timer-test" player="1" opponent="2" adjustments="1"></tr-ds-controls>
+            
+            <tr-ds-controls timer="timer-test" player="2" opponent="1" adjustments="1"></tr-ds-controls>
+        
+            <tr-ds-controls timer="timer-test" player="3" opponent="4" adjustments="1"></tr-ds-controls>
+        
+            <tr-ds-controls timer="timer-test" player="4" opponent="3" adjustments="1"></tr-ds-controls>
+        </tr-ds> -->
+    </div>
+    <tr-template href="../shared/four_menu.html"></tr-template>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

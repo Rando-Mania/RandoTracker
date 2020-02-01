@@ -1,0 +1,210 @@
+<div id="menu_2">
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <button class="dummy-text-button" onclick="playerDummyText()"></button>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Record</th>
+                    <th>Pronoun</th>
+                    <th>Deaths</th>
+                    <th>♫</th>
+                    <th>Final</th>
+                    <th>Win</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number player="1" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
+                    <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-toggle player="1" class="win-input" property="player-winner"></tr-input-toggle></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number player="2" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
+                    <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-toggle player="2" class="win-input" property="player-winner"></tr-input-toggle></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Settings</h4>
+        <div>
+            <label>Video Background:</label>
+            <tr-select property="video-back-select">
+                <tr-option value="../shared/images/color_transparent_4by3.png">None</tr-option>
+                <tr-option value="images/dwr-weekly.png">Weekly</tr-option>
+                <tr-option value="images/2019tournback.png">Standard Tourney</tr-option>
+                <tr-option selected value="images/2020_league_backdrop_4by3.png">League 2020</tr-option>
+                <tr-option value="images/dwr-chaos.png">Chaos</tr-option>
+                <tr-option value="../shared/images/color_blue_4by3.png">Blue</tr-option>
+                <tr-option value="../shared/images/color_green_4by3.png">Green</tr-option>
+                <tr-option value="../shared/images/color_magenta_4by3.png">Magenta</tr-option>
+            </tr-select>
+        </div>
+        <div id="menu_best_of">
+            <label>Best of:</label>
+            <tr-input-radio id="best-of-no" property="best-of" value="best-of-no" target=".best-of, .load-best-of" toggle-class="best-of-no" checked></tr-input-radio>
+            <label id="menu-label-best-of-no" class="video-bgcolor" for="best-of-no">1</label>
+            <tr-input-radio id="best-of-3" property="best-of" value="best-of-3" target=".best-of, .load-best-of" toggle-class="best-of-3"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-3">3</label>
+            <tr-input-radio id="best-of-5" property="best-of" value="best-of-5" target=".best-of, .load-best-of" toggle-class="best-of-5"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-5">5</label>
+            <tr-input-radio id="best-of-7" property="best-of" value="best-of-7" target=".best-of, .load-best-of" toggle-class="best-of-7"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-7">7</label>
+        </div>
+        <div id="menu_overlays_contain">
+            <h4>Overlay:</h4>
+            <div class="menu-button-row">
+                <tr-input-radio id="none" property="radio-test-toggle" value="no-overlay" target=".layout, .overlay-label-none" toggle-class="show" checked></tr-input-radio>
+                <label class="overlay-label-none" for="none">None</label>
+                <tr-input-radio id="load" property="radio-test-toggle" value="load" target=".loadscreen-contain, .overlay-label-load" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-load" for="load">Loading</label>
+            <!-- <div> 
+                <tr-input-radio id="bracket" property="radio-test-toggle" value="brac" target=".bracket-contain" toggle-class="show"></tr-input-radio>
+                <label for="bracket">Bracket</label>
+            </div> -->
+                <tr-input-radio id="calendar" property="radio-test-toggle" value="cal" target=".calendar-contain, .overlay-label-calendar" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-calendar" for="calendar">Calendar</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <button class="dummy-text-button" onclick="staffDummyText()"></button>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-textarea class="comm-input" property="commentators"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Restreamer:</label>
+            <tr-input-textarea class="restreamer-input" property="restreamers"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Tracker:</label>
+            <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Layout:</label>
+            <div>capt_uhu / datyedyeguy</div>
+        </div>
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <tr-input-timer property="timer-test"></tr-input-timer>
+        <tr-button-timer property="timer-test"></tr-button-timer>
+    </div>
+
+    <div id="menu_other" class="fieldset">
+        <h4 class="legend">Other</h4>
+        <div>
+            <label>Coordinates:</label>
+            <tr-template href="over-world-items.html"></tr-template>
+            <tr-input-text class="coordinates" property="coordinates"></tr-input-text>
+        </div>
+        <div>
+            <label>League Flags</label>
+            <tr-select-toggle>
+                <tr-option selected value="none">None</tr-option>
+                <tr-option value="week-1">Week 1</tr-option>
+                <tr-option value="week-2">Week 2</tr-option>
+                <tr-option value="week-3">Week 3</tr-option>
+                <tr-option value="week-4">Week 4</tr-option>
+                <tr-option value="week-5">Week 5</tr-option>
+                <tr-option value="week-6">Week 6</tr-option>
+                <tr-option value="week-7">Week 7</tr-option>
+                <tr-option value="week-8-1">Week 8 Match 1</tr-option>
+                <tr-option value="week-8-2">Week 8 Match 2</tr-option>
+            </tr-select-toggle>
+        </div>
+        <div class="menu-repel-wrapper">
+            <tr-input-toggle-class id="permanent_repel" target="[property='repel']" toggle-class="spell-highlight" property="permanent-repel">
+                <label id="permanent_repel_label" for="permanent_repel">Permanent Repel:</label>
+            </tr-input-toggle-class>
+        </div>
+        <div class="menu-monster-wrapper">
+            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats">
+                <label id="monster_label" for="show_monster_stats">Display Monster Stats:</label>
+            </tr-input-toggle-class>
+            <div>
+                <label for="monster_select">Select Monster:</label>
+              <tr-select property="monster">
+                  <tr-option selected value="0">Slime</tr-option>
+                  <tr-option value="1">Red Slime</tr-option>
+                  <tr-option value="2">Drakee</tr-option>
+                  <tr-option value="3">Ghost</tr-option>
+                  <tr-option value="4">Magician</tr-option>
+                  <tr-option value="5">Magidrakee</tr-option>
+                  <tr-option value="6">Scorpion</tr-option>
+                  <tr-option value="7">Druin</tr-option>
+                  <tr-option value="8">Poltergeist</tr-option>
+                  <tr-option value="9">Droll</tr-option>
+                  <tr-option value="10">Drakeema</tr-option>
+                  <tr-option value="11">Skeleton</tr-option>
+                  <tr-option value="12">Warlock</tr-option>
+                  <tr-option value="13">Metal Scorpion</tr-option>
+                  <tr-option value="14">Wolf</tr-option>
+                  <tr-option value="15">Wraith</tr-option>
+                  <tr-option value="16">Metal Slime</tr-option>
+                  <tr-option value="17">Specter</tr-option>
+                  <tr-option value="18">Wolflord</tr-option>
+                  <tr-option value="19">Druinlord</tr-option>
+                  <tr-option value="20">Drollmagi</tr-option>
+                  <tr-option value="21">Wyvern</tr-option>
+                  <tr-option value="22">Rogue Scorpion</tr-option>
+                  <tr-option value="23">Wraith Knight</tr-option>
+                  <tr-option value="24">Golem</tr-option>
+                  <tr-option value="25">Goldman</tr-option>
+                  <tr-option value="26">Knight</tr-option>
+                  <tr-option value="27">Magiwyvern</tr-option>
+                  <tr-option value="28">Demon Knight</tr-option>
+                  <tr-option value="29">Werewolf</tr-option>
+                  <tr-option value="30">Green Dragon</tr-option>
+                  <tr-option value="31">Starwyvern</tr-option>
+                  <tr-option value="32">Wizard</tr-option>
+                  <tr-option value="33">Axe Knight</tr-option>
+                  <tr-option value="34">Blue Dragon</tr-option>
+                  <tr-option value="35">Stoneman</tr-option>
+                  <tr-option value="36">Armored Knight</tr-option>
+                  <tr-option value="37">Red Dragon</tr-option>
+                  <tr-option value="38">Dragonlord 1</tr-option>
+                  <tr-option value="39">Dragonlord 2</tr-option>
+              </tr-select>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">Views</h4>
+        <tr-button-view view="" title="Layout"></tr-button-view>
+        <tr-button-view view="tracker" title="Tracker"></tr-button-view>
+        <tr-button-view view="coms" title="Commentators"></tr-button-view>
+    </div>
+
+    <div id="menu_reset" class="fieldset">
+        <h4 class="legend">Reset</h4>
+        <tr-button-reset></tr-button-reset>
+        <tr-button-reset tracking="true"></tr-button-reset>
+    </div>
+
+    <div id="menu_playlist" class="fieldset">
+        <h4 class="legend">Playlist</h4>
+        <div id="player"></div>
+    </div>
+</div>

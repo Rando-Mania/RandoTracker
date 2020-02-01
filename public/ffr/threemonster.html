@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy Monster Hunter Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="threemonster.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="player-container" style="top: 10px; left: 0px;">
+        <span id="player_name_1" class="player-name"></span>
+    </div>
+    <div class="player-container" style="top: 10px; left: 1052px;">
+    	<span id="player_name_2" class="player-name"></span>
+    </div>
+    <div class="player-container" style="top: 438px; left: 632px;">
+        <span id="player_name_3" class="player-name"></span>
+    </div>
+    <div id="player_speaker_1" class="player-speaker hidden" style="top: 39px; left: 98px;"><img src="images/speaker.png"/></div>
+    <div id="player_speaker_2" class="player-speaker hidden" style="top: 39px; left: 1148px;"><img src="images/speaker.png"/></div>
+    <div id="player_speaker_3" class="player-speaker hidden" style="top: 468px; left: 730px;"><img src="images/speaker.png"/></div>
+    <div class="player-final-container" style="top: 470px; left: 0px;">
+        <span id="player_final_1" class="player-final"></span>
+    </div>
+
+    <div class="player-final-container" style="top: 470px; left: 1075px;">
+        <span id="player_final_2" class="player-final"></span>
+    </div>
+
+    <div class="player-final-container" style="top: 410px; left: 632px;">
+        <span id="player_final_3" class="player-final"></span>
+    </div>
+
+    <img src="images/mic2.png" style="top: 675px; left: 10px; height: 36px; position: absolute;" />
+    <div id="commentators" style="top: 675px; left: 45px;"></div>
+    <div id="timer" style="top: 680px; left: 415px;"></div>
+
+    <div id="player_1_grid_top" data-child-player="1" class="item-grid" style="top: 71px; left: 34px;">
+        <span class="item" data-toggle="true" data-image="images/enemies/0000.png" data-class-toggle="selected" data-repeat="25"></span>
+    </div>
+    <div id="player_1_grid_bottom" data-child-player="1" class="item-grid" style="top: 231px; left: 34px;">
+        <span class="item" data-toggle="true" data-image="images/enemies/0025.png" data-class-toggle="selected" data-repeat="30" data-index="25"></span>
+    </div>
+
+    <div data-child-player="2" data-copy-from="#player_1_grid_top" class="item-grid" style="top: 71px; left: 1086px;">
+    </div>
+    <div data-child-player="2" data-copy-from="#player_1_grid_bottom" class="item-grid" style="top: 231px; left: 1086px;">
+    </div>
+
+    <div data-child-player="3" class="item-grid-horizontal" style="top: 501px; left: 647px;">
+        <span class="item" data-toggle="true" data-image="images/enemies/0000.png" data-class-toggle="selected" data-repeat="55"></span>
+    </div>
+
+    <img style="position: absolute; top: 668px; left: 1140px; height: 56px;" src="images/logo-trans.png" />
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer type="text/javascript">
+    	(function(Tracker) {
+    		Tracker.loaded = function() {
+    			Tracker.init(3);
+
+                // Fix monster images
+                var monsterIcons = document.querySelectorAll(".item");
+
+                monsterIcons.forEach(function(currentValue, currentIndex, listObj) {
+                    var property = currentValue.dataset.index.padStart(4, "0");
+
+                    currentValue.dataset.property = property;
+                    currentValue.firstElementChild.src = "images/enemies/" + property + ".png";
+                });
+    		}
+    	})(window.Tracker = window.Tracker || {});
+    </script>
+</body>
+</html>

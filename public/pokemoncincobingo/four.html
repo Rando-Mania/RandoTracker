@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Pokemon Cinco Bingo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <style>
+    :root{
+        --videoX: 20px;
+        --videoY: 20px;
+        --nameX: 398px;
+        --nameY: 30px;
+        --winX: 437px;
+        --winY: 63px;
+        --finalX: 429px;
+        --finalY: 2px;
+    }
+    </style>
+</head>
+<body>
+	<div id="layout">
+        <div id="bingo_board" class="abs" style="left: 50%; transform: translateX(-50%); top: 160px;"></div>
+        <tr-text property="title" class="title abs" style="left: 50%; transform: translateX(-50%); top: 0px;">Cinco Bingo</tr-text>
+
+<!-- player 1 -->
+        <div player="1" class="player-video abs" style="left: var(--videoX); top: var(--videoY);"></div>
+
+        <tr-hide-if-empty target="#player_name_1" toggle-class="display-none" id="player_1_contain" class="player-contain abs" style="left: var(--nameX); top: var(--nameY);">
+            <div>
+                <tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1" class="player-name"></tr-text>
+            </div>
+            <tr-player player="1">
+                <tr-template href="bingosyncdots.html" class="player-grid"></tr-template>
+            </tr-player>
+        </tr-hide-if-empty>
+
+        <tr-text player="1" property="player_final_1" class="player-final abs" style="left: var(--finalX); top: var(--finalY);"></tr-text>
+        <img class="abs winner" id="winner-1" style="left: var(--winX); top: var(--winY);" src="images/Winner.png" alt="Winner">
+
+<!-- player 2 -->
+        <div player="2" class="player-video abs" style="right: var(--videoX); top: var(--videoY);"></div>
+
+        <tr-hide-if-empty target="#player_name_2" toggle-class="display-none" id="player_2_contain" class="player-contain abs" style="right: var(--nameX); top: var(--nameY);">
+            <tr-player player="2">
+                <tr-template href="bingosyncdots.html" class="player-grid"></tr-template>
+            </tr-player>
+            <div>
+                <tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2" class="player-name"></tr-text>
+            </div>
+        </tr-hide-if-empty>
+    
+        <tr-text player="2" property="player_final_2" class="player-final abs" style="right: var(--finalX); top: var(--finalY);"></tr-text>
+        <img class="abs winner" id="winner-2" style="right: var(--winX); top: var(--winY);" src="images/Winner.png" alt="Winner">
+
+<!-- player 3 -->
+
+        <div player="3" class="player-video abs" style="left: var(--videoX); bottom: var(--videoY);"></div>
+
+        <tr-hide-if-empty target="#player_name_3" toggle-class="display-none" id="player_3_contain" class="player-contain abs" style="left: var(--nameX); bottom: var(--nameY);">
+            <div>
+                <tr-text scale-to-fit player="3" property="player_name_3" id="player_name_3" class="player-name"></tr-text>
+            </div>
+            <tr-player player="3">
+                <tr-template href="bingosyncdots.html" class="player-grid"></tr-template>
+            </tr-player>
+        </tr-hide-if-empty>
+    
+        <tr-text player="3" property="player_final_3" class="player-final abs" style="left: var(--finalX); bottom: var(--finalY);"></tr-text>
+        <img class="abs winner" id="winner-3" style="left: var(--winX); bottom: var(--winY);" src="images/Winner.png" alt="Winner">
+
+<!-- player 4 -->
+
+        <div player="4" class="player-video abs" style="right: var(--videoX); bottom: var(--videoY);"></div>
+
+        <tr-hide-if-empty target="#player_name_4" toggle-class="display-none" id="player_4_contain" class="player-contain abs" style="right: var(--nameX); bottom: var(--nameY);">
+            <tr-player player="4">
+                <tr-template href="bingosyncdots.html" class="player-grid"></tr-template>
+            </tr-player>
+            <div>
+                <tr-text scale-to-fit player="4" property="player_name_4" id="player_name_4" class="player-name"></tr-text>
+            </div>
+
+        </tr-hide-if-empty>
+    
+        <tr-text player="4" property="player_final_4" class="player-final abs" style="right: var(--finalX); bottom: var(--finalY);"></tr-text>
+        <img class="abs winner" id="winner-4" style="right: var(--winX); bottom: var(--winY);" src="images/Winner.png" alt="Winner">
+
+
+        <tr-timer class="abs" property="timer-test" style="bottom: 97px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <div id="staff" class="abs" style="top: 100px; left: 50%; transform: translateX(-50%);">
+            <div id="staff_panel_1" class="comm">
+                <img src="images/pcb-mic-icon.png" alt="">
+                <tr-text property="comm">DefaultText1</tr-text>
+            </div>
+            <div id="staff_panel_2" class="restreamer">
+                <img src="images/monitor-mask-cirle.png" alt="">
+                <tr-text property="restreamer">DefaultText1</tr-text>
+            </div>
+        </div>
+    </div>
+
+    <div class="loadscreen abs" style="top: 0; left: 0;">
+        <div class="abs" id="loadscreen-video-area">
+            <h2>
+                <tr-text player="1" class="player-name" property="player_name_1">This</tr-text>
+                vs.
+                <tr-text player="2" class="player-name" property="player_name_2">Should</tr-text>
+                vs.
+                <tr-text player="3" class="player-name" property="player_name_3">Go</tr-text>
+                vs.
+                <tr-text player="4" class="player-name" property="player_name_4">Away</tr-text>
+            </h2>
+        </div>
+        <tr-template class="abs" style="top: 563px; left: 22px;" id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
+    </div>
+    
+    <!-- <div class="bracket abs" style="top: 0; left: 0;">
+        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div> -->
+    
+    <div class="calendar abs" style="top: 0; left: 0;">
+        <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="90%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+	
+	<tr-template href="four_menu.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

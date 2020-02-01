@@ -1,0 +1,77 @@
+<div id="menu_2" class="abs">
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <div id="menu_player_labels">
+            <span></span>
+            <span>Name</span>
+            <span>Time</span>
+        </div>
+        <tr-player player="1" class="player-inputs"> 
+            <label for="player-1">1</label>
+            <tr-input-text class="name-input" property="player_name"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final"></tr-input-text>
+        </tr-player>
+        <tr-player player="2" class="player-inputs">
+            <label for="player-2">2</label>
+            <tr-input-text class="name-input" property="player_name"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final"></tr-input-text>
+        </tr-player>
+        <tr-player player="3" class="player-inputs"> 
+            <label for="player-3">3</label>
+            <tr-input-text class="name-input" property="player_name"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final"></tr-input-text>
+        </tr-player>
+        <tr-player player="4" class="player-inputs">
+            <label for="player-4">4</label>
+            <tr-input-text class="name-input" property="player_name"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final"></tr-input-text>
+        </tr-player>
+    </div>
+    
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-timer property="timer"></tr-input-timer>
+            <tr-button-timer property="timer"></tr-button-timer>
+        </div>
+    </div>
+    
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Layout Settings</h4>
+        <div>
+            <label>Speaker:</label>
+            <tr-select-toggle property="player_speaker">
+                <tr-option player="0" value="0">None</tr-option>
+                <tr-option player="1" value="1">Player 1</tr-option>
+                <tr-option player="2" value="2">Player 2</tr-option>
+                <tr-option player="3" value="3">Player 3</tr-option>
+                <tr-option player="4" value="4">Player 4</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-textarea property="comm" rows="2"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Restreamer:</label>
+            <tr-input-text property="restreamer"></tr-input-text>
+        </div>
+        <div>
+            <label>Tracker:</label>
+            <tr-input-text property="tracker"></tr-input-text>
+        </div>
+    </div>
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">View Controls</h4>
+        <tr-button-view view="" title="Restream"></tr-button-view>
+        <tr-button-view view="tracker" title="Tracker"></tr-button-view>
+    </div>
+    <div id="menu_room" class="fieldset">
+        <h4 class="legend">Room Controls</h4>
+        <tr-button-reset></tr-button-reset>
+    </div>
+</div>

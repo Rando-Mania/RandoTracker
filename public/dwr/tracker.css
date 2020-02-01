@@ -1,0 +1,105 @@
+@font-face {
+	font-family: "DW";
+	src: url("/dwr/fonts/Warrior Quest I and II.ttf") format("truetype");
+}
+
+body {
+	font-family: "DW", sans-serif;
+	background-color: #000000;
+	color: white;
+}
+
+.player-name {
+	position: absolute;
+	color: #FFF;
+	font-size: 12px;
+	width: 300px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+.item-grid {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 46px 46px 46px;
+}
+
+.icon,
+.icon img {
+	width: 37px;
+	height: 37px;
+	text-align: center;
+}
+
+.icon-small,
+.icon-small img {
+	width: 34px;
+	height: 34px;
+}
+
+.icon img:not(.selected) {
+	opacity: 0.3;
+}
+
+.icon.weapon img,
+.icon.armor img,
+.icon.shield img,
+.icon.necklace img,
+.icon.ring img,
+.icon.scale img,
+.icon.win img {
+	opacity: 1;
+}
+
+.icon {
+	padding-bottom: 7px;
+}
+
+.dialog {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background-color: #000;
+}
+
+.dialog .icon img {
+	opacity: 1;
+}
+
+.dialog-icon,
+.dialog-icon img {
+	width: 34px;
+	height: 34px;
+}
+
+.dialog-icon {
+	display: inline-block;
+	text-align: center;
+}
+
+.dialog-icon .label {
+	display: block;
+}
+
+.label {
+	font-size: 6px;
+	color: #FFF;
+	position: relative;
+	line-height: 5;
+}
+
+.label-bottom {
+	top: -13px;
+}
+
+.stats {
+	font-size: 12px;
+	line-height: 20px;
+	position: absolute;
+	color: white;
+}
+
+.stats input {
+	width: 50px;
+}

@@ -1,0 +1,8 @@
+<svg width="394" height="234" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <path id="path" d="M27,1h339l27,21v33l-27,21h-339l-25,-21v-33z" stroke-width="2" fill="rgba(0,0,0,.3)"/>
+    </defs>
+    <use href="#path" stroke="#0f0"/>
+    <use href="#path" y="78" stroke="#f00"/>
+    <use href="#path" y="156" stroke="#f0f"/>
+</svg>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Dragon Warrior Randomizer Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="stylesheet" type="text/css" href="icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+            color: #fff;
+        }
+
+        .background-style-1 {
+            background-color: #473b25;
+            border: solid 1px #624438;
+            border-radius: 5px;
+            box-shadow: 0 0 0 1px #000, inset 0 0 6px #000;
+            padding: 12px;
+            font: 1em sans-serif;
+        }
+
+        .charname input{
+            width: 4em;
+        }
+
+        .tracker{
+            background: 
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(images/transparent-texture.png) #002e97;
+            padding: 24px;
+            font-family: "DWR", sans-serif;
+            letter-spacing: 2px;
+            display: grid;
+            grid-gap: 2em;
+        }
+
+        .player-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 24px;
+        }
+        .player-wrapper{
+            display: grid;
+        }
+        .player-name { grid-column: span 3;}
+        .player-wrapper [source="#player-template"]{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-row-gap: 1px;
+        }
+        .spells{
+            height: auto;
+        }
+        .layout select{
+            min-width: auto;
+        }
+        .stats{
+            width: auto;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        .tracker-runner-info{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1em 0;
+            box-shadow: 0 2px 2px -3px #fff, 0 -2px 2px -3px #fff;
+        }
+        .tracker-build-contain, .tracker-counter-contain, .tracker-name-contain {
+            font-size: 12px;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker">
+        <div>
+            <span id="rom_upload_wrapper" style="display: none">
+                <input id="rom_upload" type="file" accept=".nes" onchange="DWR.onROMUpload(this.files)" /> <span>← Upload ROM here</span>
+            </span>
+            <span id="auth_wrapper">
+                <button onclick="DWR.attemptAuth()">Input Password</button>
+            </span>
+        </div>
+        <div class="player-wrapper">
+            <template id="player-template">
+                <div class="background-1 tracker-runner-info full-width">
+                    <div class="tracker-name-contain">
+                        <h4>Player</h4>
+                        <tr-text property="player-name"></tr-text>
+                    </div>
+                    <div class="tracker-name-contain">
+                        <h4>Char. name</h4>
+                        <tr-input-text class="charname" property="character_name"></tr-input-text>
+                    </div>
+                    <div class="tracker-build-contain">
+                        <h4>Build</h4>
+                        <tr-select property="build">
+                            <tr-option value="0">ST/HP</tr-option>
+                            <tr-option value="1">ST/AG</tr-option>
+                            <tr-option value="2">HP/MP</tr-option>
+                            <tr-option value="3">AG/MP</tr-option>
+                        </tr-select>
+                    </div>
+                    <div class="tracker-counter-contain">
+                        <h4>counter</h4>
+                        <tr-input-number min="0" property="player-cod" oninput></tr-input-number>
+                    </div>
+                </div>
+                <div class="stats background-1">
+                    <table>
+                        <tr>
+                            <td>Level</td>
+                            <td><tr-input-number min="0" max="30" property="level" value="0" oninput></tr-input-number></td>
+                        </tr>
+                        <tr>
+                            <td>ST</td><td><tr-text property="str"></tr-text></td>
+                        </tr>
+                        <tr>
+                            <td>AG</td><td><tr-text property="agi"></tr-text></td>
+                        </tr>
+                        <tr>
+                            <td>HP</td><td><tr-text property="hp"></tr-text></td>
+                        </tr>
+                        <tr>
+                            <td>MP</td><td><tr-text property="mp"></tr-text></td>
+                        </tr>
+                        <tr>
+                            <td>AP</td><td><tr-text property="ap"></tr-text></td>
+                        </tr>
+                        <tr>
+                            <td>DP</td><td><tr-text property="dp"></tr-text></td>
+                        </tr>
+                    </table>
+                </div>
+                <tr-template class="player-grid background-1" href="items_plot_stats.html"></tr-template>
+                <tr-template class="spells background-1" href="spells.html"></tr-template>
+            </template>
+            <tr-player player="1">
+                <tr-template player="1" source="#player-template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#player-template"></tr-template>
+            </tr-player>
+            <div class="full-width" style="display: flex; justify-content: space-between;">
+                <div class="background-style-1 menu-button-row">
+                    <h4>Coordinates:</h4>
+                    <div>
+                        <tr-template href="over-world-items.html"></tr-template>
+                        <tr-input-text class="coordinates" property="coordinates"></tr-input-text>
+                    </div>
+                </div>
+                <div class="background-style-1 menu-button-row" style="width: 288px;">
+                    <h4>Panels:</h4>
+                    <div class="layout-buttons">
+                        <tr-input-radio id="items" property="player-panels" value="items" target="#layout .player-grid, .items-button" toggle-class="show-grid" checked></tr-input-radio>
+                        <label class="items-button" for="items">Items</label>
+                        <tr-input-radio id="stats" property="player-panels" value="stats" target="#layout .stats-and-spells, .stats-spells-button" toggle-class="show-flex"></tr-input-radio>
+                        <label class="stats-spells-button" for="stats">Stats/Spells</label>
+                        <button style="align-self: center; margin-left: 8px;" id="start_auto_play_panels">
+                            <svg style="position: relative;left: 1px;" width="14" height="14" viewbox="0 0 20 20">
+                                <path d="M0,0 L20,10 L0,20z" fill="#fff"/>
+                            </svg>
+                        </button>
+                        <button id="stop_auto_play_panels" style="display:none; align-self: center; margin-left: 8px;">
+                            <svg width="11" height="11" viewbox="0 0 20 20">
+                                <path d="M0,0 h20 v20 h-20z" fill="red"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="background-style-1">
+                    <div class="menu-monster-wrapper menu-button-row">
+                        <h4>Monster Stats:</h4>
+                        <div class="layout-buttons">
+                            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats">
+                            </tr-input-toggle-class>
+                            <tr-select property="monster">
+                                <tr-option selected value="0">Slime</tr-option>
+                                <tr-option value="1">Red Slime</tr-option>
+                                <tr-option value="2">Drakee</tr-option>
+                                <tr-option value="3">Ghost</tr-option>
+                                <tr-option value="4">Magician</tr-option>
+                                <tr-option value="5">Magidrakee</tr-option>
+                                <tr-option value="6">Scorpion</tr-option>
+                                <tr-option value="7">Druin</tr-option>
+                                <tr-option value="8">Poltergeist</tr-option>
+                                <tr-option value="9">Droll</tr-option>
+                                <tr-option value="10">Drakeema</tr-option>
+                                <tr-option value="11">Skeleton</tr-option>
+                                <tr-option value="12">Warlock</tr-option>
+                                <tr-option value="13">Metal Scorpion</tr-option>
+                                <tr-option value="14">Wolf</tr-option>
+                                <tr-option value="15">Wraith</tr-option>
+                                <tr-option value="16">Metal Slime</tr-option>
+                                <tr-option value="17">Specter</tr-option>
+                                <tr-option value="18">Wolflord</tr-option>
+                                <tr-option value="19">Druinlord</tr-option>
+                                <tr-option value="20">Drollmagi</tr-option>
+                                <tr-option value="21">Wyvern</tr-option>
+                                <tr-option value="22">Rogue Scorpion</tr-option>
+                                <tr-option value="23">Wraith Knight</tr-option>
+                                <tr-option value="24">Golem</tr-option>
+                                <tr-option value="25">Goldman</tr-option>
+                                <tr-option value="26">Knight</tr-option>
+                                <tr-option value="27">Magiwyvern</tr-option>
+                                <tr-option value="28">Demon Knight</tr-option>
+                                <tr-option value="29">Werewolf</tr-option>
+                                <tr-option value="30">Green Dragon</tr-option>
+                                <tr-option value="31">Starwyvern</tr-option>
+                                <tr-option value="32">Wizard</tr-option>
+                                <tr-option value="33">Axe Knight</tr-option>
+                                <tr-option value="34">Blue Dragon</tr-option>
+                                <tr-option value="35">Stoneman</tr-option>
+                                <tr-option value="36">Armored Knight</tr-option>
+                                <tr-option value="37">Red Dragon</tr-option>
+                                <tr-option value="38">Dragonlord 1</tr-option>
+                                <tr-option value="39">Dragonlord 2</tr-option>
+                            </tr-select>
+                                <!-- <div class="monster-table">                
+                                <tr-image property="monster_image"></tr-image>
+                                <table class="monster-table-stats">
+                                    <tr>
+                                        <th colspan="2">Stats</th>
+                                    </tr>
+                                    <tr>
+                                        <td>HP:</td><td><tr-text property="monster_hp"></tr-text></td>
+                                    </tr>
+                                    <tr>
+                                        <td>AG:</td><td><tr-text property="monster_agi"></tr-text></td>
+                                    </tr>
+                                    <tr>
+                                        <td>AP:</td><td><tr-text property="monster_ap"></tr-text></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DP:</td><td><tr-text property="monster_dp"></tr-text></td>
+                                    </tr>
+                                </table>
+                                <table class="monster-table-resist">
+                                    <tr>
+                                        <th colspan="2">Resist</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Dodge</td><td><tr-text property="monster_dodge"></tr-text> <span class="out-of-16">/16</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hurt:</td><td><tr-text property="monster_hurt"></tr-text> <span class="out-of-16">/16</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sleep:</td><td><tr-text property="monster_sleep"></tr-text> <span class="out-of-16">/16</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stop:</td><td><tr-text property="monster_stop"></tr-text> <span class="out-of-16">/16</span></td>
+                                    </tr>
+                                </table>
+                                <div class="monster-table-spoils">
+                                    E: <tr-text property="monster_exp"></tr-text>
+                                    G: <tr-text property="monster_gold"></tr-text>
+                                </div>
+                                <div class="monster-table-ai">AI: <tr-text property="monster_ai"></tr-text></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <tr-player player="3">
+                <tr-template source="#player-template"></tr-template>
+            </tr-player>
+            <tr-player player="4">
+                <tr-template source="#player-template"></tr-template>
+            </tr-player>
+        </div>
+    </div>
+    <tr-template href="four_menu.html"></tr-template>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/dwr.js"></script>
+</body>
+</html>

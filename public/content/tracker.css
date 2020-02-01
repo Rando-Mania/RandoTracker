@@ -1,0 +1,108 @@
+#settings {
+	font-family: Consolas;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+	max-height: 100vh;
+	overflow-y: auto;
+	color: #FFF;
+	background-color: #000;
+	padding-bottom: 24px;
+}
+
+#btnSettings {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background-color: #000;
+	color: #FFF;
+	font-size: 19px;
+}
+
+#btnSettings.active {
+	z-index: 11;
+}
+
+#settings p {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.settings-player {
+	width: 120px;
+}
+
+.settings-time {
+	width: 50px;
+}
+
+.settings-speaker input[type='checkbox'] + label:before {
+	content: "🔇";
+}
+
+.settings-speaker input[type='checkbox']:checked + label:before {
+	content: "🔊";
+}
+
+.settings-speaker input[type='checkbox'] {
+	display: none;
+}
+
+.settings-speaker label {
+	cursor: pointer;
+	min-width: 16px;
+}
+
+#settings-freetext input,
+#settings-freetext textarea,
+#settings-freetext select {
+	margin-left: 5px;
+}
+
+#settings_commentators {
+	resize: none;
+	width: 230px;
+}
+
+#settings_tracker {
+	resize: none;
+	width: 200px;
+}
+
+#settings-freetext textarea {
+	resize: none;
+}
+
+#settings-production p{
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+#settings-production p > {
+	flex: 1;
+}
+
+.hidden {
+	display: none;
+}
+
+.dialog {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background-color: #000;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+#tempURL {
+	font-size: 10px;
+}

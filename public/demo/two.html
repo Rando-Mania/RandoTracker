@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Tracker 2.0 Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	html{
+		color: #fff;
+	}
+	hr{
+		border-color:#f8b800;
+		width: 100%;
+	}
+	.panel#img{
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		place-items: center;
+
+	}
+	h2, hr{
+		grid-column-end: span 2;
+		width: 100%;
+	}
+
+		toggle-element {
+			display: none;
+		}
+
+		toggle-element[visible] {
+			display: initial;
+		}
+
+		tr-prop-text input {
+			width: 50px;
+		}
+
+		fieldset img, tr-image img{
+			width: auto;
+			height: 64px;
+		}
+
+		tr-image-toggle img {
+			width: auto;
+			height: 64px;
+			opacity: 0.3;
+		}
+
+		tr-image-toggle img.active {
+			opacity: 1;
+		}
+
+		tr-image img.fade,
+		.dialog img.fade {
+			opacity: 0.3;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		.italics {
+			font-style: italic;
+		}
+
+		tr-toggle-class {
+			opacity: 0.3
+		}
+
+		tr-toggle-class.toggle-active {
+			opacity: 1
+		}
+
+		*[toggle-target],
+		*[toggle-target-2] {
+			opacity: 0.3
+		}
+
+		*[toggle-target].toggled,
+		*[toggle-target-2].toggled {
+			opacity: 1
+		}
+
+		@font-face{ 
+	font-family: 'Orbitron';
+    src: 
+        local('Orbitron'),
+        url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
+	    url('../shared/fonts/orbitron-bold_0.woff') format('woff'),         
+        url('../shared/fonts/orbitron-bold_0.ttf') format('truetype');
+}
+		h2{
+
+			font-family: "Orbitron", sans-serif;
+		}
+
+		body{
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			margin: 0;
+			background-color: #666;
+			background-image: url('images/rm-generic.png');
+			background-size: 50%;
+		}
+
+		.layout{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 1em;
+			padding: 1em;
+		}
+		.layout > * {
+			background-image: linear-gradient(45deg, #000 98%, transparent 98.1%);
+			color: #fff;
+			padding: 1em;
+		}
+		h2{
+			margin-top: 0;
+			background-image: linear-gradient(45deg, #f8b800 98%, transparent 98.1%);
+			color: #000;
+			padding: .25em;
+		}
+		.dialog{
+			background-color: #000;
+			border: solid #fff 1px;
+			display: grid;
+			grid-template-columns: repeat(2, auto);	
+		}
+		.dialog figure{
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		.dialog figure img{
+			width: 32px;
+			height: 32px;
+		}
+		.copy-contain{
+			display: grid;
+			grid-template: auto auto / auto auto;
+			grid-gap: 1em;
+		}
+		.copy-contain label{
+			grid-column-end: span 2;
+		}
+		.copy-contain textarea{
+			width: 25em;
+			padding: .25em;
+			background-color: #000;
+			color: #f8b800;
+			font-family: 'Courier New', Courier, monospace;
+		}
+		.copy-contain button{
+			align-self: flex-end;
+		}
+
+	</style>
+</head>
+<body>
+	
+<div class="layout">
+<div class="panel" id="text">
+	<h2>Text</h2>
+
+	<h4>text input that updates a property</h4>
+	<div>
+		<tr-input-text property="test-text1"></tr-input-text> &rarr; 
+		<tr-text property="test-text1"></tr-text>
+	</div>
+	<div class="copy-contain">
+		<label for="story">Code:</label>
+		<textarea id="story" name="story" rows="3"><tr-input-text property="test-text1"></tr-input-text>
+<tr-text property="test-text1"></tr-text></textarea>
+<button onclick="myFunction()">Copy</button>
+	</div>
+
+<hr>
+	<h4>text input that updates a property oninput </h4>
+	<div>
+		<tr-input-text property="test-text2" oninput></tr-input-text> &rarr; 
+		<tr-text property="test-text2"></tr-text>
+	</div>
+
+	<h4>TextArea</h4>
+	<h5>`white-space: pre;` is necessary for line breaks!</h5>
+	<div>
+		<tr-input-textarea property="test-textarea" oninput></tr-input-textarea> &rarr;
+		<tr-text property="test-textarea" style="white-space: pre;"></tr-text>
+	</div>
+</div>
+
+<div class="panel" id="img">
+	<h2>Images</h2>
+	
+		<h4>Toggle class on clicked image</h4>
+		<div>
+		<tr-image-toggle class="active" property="test-img1" src="images/witch_doctor.png"></tr-image-toggle>
+	</div>
+	<!-- <pre><code>&lt;tr-image-toggle class="active" property="test-img1" src="images/witch_doctor.png"&gt;&lt;/tr-image-toggle&gt;</code></pre> -->
+
+	<hr>
+	
+
+		<h4>Display dialog on click</h4>
+		<div>
+		<tr-image property="test-img2">
+			<tr-image-option class-to-set="fade" class="fade" path="images/darthbear.png"></tr-image-option>
+			<tr-image-option path="images/darthbear.png"></tr-image-option>
+			<tr-image-option path="images/fierce_bear.png"></tr-image-option>
+			<tr-image-option path="images/grizzly.png"></tr-image-option>
+		</tr-image>
+	</div>
+
+	<hr>
+
+	<h4>Dialog w/ labels on click</h4>
+	<tr-image property="test-img3">
+		<tr-image-option path="images/witch_doctor.png" label="Witch!"></tr-image-option>
+		<tr-image-option path="images/baramos.png" label="Baramos!"></tr-image-option>
+	</tr-image>
+	<tr-label property="test-img3"></tr-label>
+</div>
+
+<div class="panel">
+	<h2>Toggle</h2>
+	
+	<div>
+		<tr-input-toggle id="label-toggle-test" checked property="toggle-prop"></tr-input-toggle>
+		<label for="label-toggle-test">Show/Hide</label>
+	</div>
+	
+	<tr-toggle property="toggle-prop">
+		Text to toggle is here!
+	</tr-toggle>
+	
+	<hr>
+	
+	<div>
+		<tr-input-toggle-class checked id="toggle-class" property="toggle-class" target="#img" toggle-class="bold"></tr-input-toggle-class>
+		<label for="toggle-class">toggle class on another element</label>
+	</div>
+</div>
+<div class="panel">
+	<h2>Select</h2>
+<div>
+	<tr-select property="select">
+		<tr-option value="">Blank</tr-option>
+		<tr-option selected value="This is text">Text</tr-option>
+		<tr-option value="images/baramos.png">Image</tr-option>
+	</tr-select>
+	<tr-text property="select"></tr-text>
+	<tr-image property="select"></tr-image>
+</div>
+<hr>
+<div>
+	<tr-select property="img-select">
+		<tr-option value="">Blank</tr-option>
+		<tr-option value="images/witch_doctor.png">Witch Doc</tr-option>
+		<tr-option selected value="images/baramos.png">Baramos</tr-option>
+	</tr-select>
+	<tr-image property="img-select"></tr-image>
+</div>
+<hr>
+	<div>
+		<tr-input-radio id="first" property="radio-test" value="first" checked></tr-input-radio>
+		<label for="first">first</label>
+		<tr-input-radio id="second" property="radio-test" value="second" label="second"></tr-input-radio>
+		<label for="second">second</label>
+		<tr-input-radio id="third" property="radio-test" value="third" label="third"></tr-input-radio>
+		<label for="third">third</label>
+		<br/>
+		Selected Radio: <tr-text property="radio-test"></tr-text>
+	</div>
+	<hr>
+	<div>
+		<tr-input-radio id="normal" property="radio-test-toggle" value="first" checked></tr-input-radio>
+		<label for="normal">Normal</label>
+		<tr-input-radio id="bold" property="radio-test-toggle" value="second" target="#radio-toggle-target" toggle-class="bold"></tr-input-radio>
+		<label for="bold">Bold</label>
+		<tr-input-radio id="italic" property="radio-test-toggle" value="third" target="#radio-toggle-target" toggle-class="italics"></tr-input-radio>
+		<label for="italic">Italic</label>
+		<br/>
+		<span id="radio-toggle-target">Selected Radio</span>
+	</div>
+</div>
+
+<div class="panel">
+	<h2>Players</h2>
+	<tr-player player="1">
+		<tr-template source="#player_info"></tr-template>
+	</tr-player>
+	<tr-player player="2">
+		<tr-template href="two_player.html"></tr-template>
+	</tr-player>
+	<tr-image property="img-select" player="1"></tr-image>
+	<tr-label property="img-select" player="1"></tr-label>
+
+	<template id="player_info">
+		<tr-input-text property="test-text1"></tr-input-text> &rarr; <tr-text property="test-text1"></tr-text>
+		<tr-image property="img-select"></tr-image>
+		<tr-select property="img-select">
+			<tr-option value="" label="LabelBlank">Blank</tr-option>
+			<tr-option selected value="images/witch_doctor.png" label="The Witch!">Witch Doc</tr-option>
+			<tr-option value="images/baramos.png" label="Big baddy">Baramos</tr-option>
+		</tr-select>
+		<tr-input-number property="num-test" value="2" min="0" max="10"></tr-input-number>
+		<tr-text property="num-test"></tr-text>
+	</template>
+
+	<h2>Player Speaker Test</h2>
+	<tr-player player="1">
+		Player 1
+		<tr-toggle property="player_speaker"><img src="images/speaker.png" /></tr-toggle>
+	</tr-player>
+	<tr-player player="2">
+		Player 2
+		<tr-toggle property="player_speaker"><img src="images/speaker.png" /></tr-toggle>
+	</tr-player>
+	<hr>
+	<tr-select-toggle property="player_speaker">
+		<tr-option player="0" value="0">None</tr-option>
+		<tr-option selected player="1" value="1">Player 1</tr-option>
+		<tr-option player="2" value="2">Player 2</tr-option>
+	</tr-select-toggle>
+</div>
+
+<div class="panel">
+	<h2>Toggle Class</h2>
+	<tr-player player="1">
+		<tr-toggle-class property="toggle-class-image" toggle-class="toggle-active">
+			<img src="images/baramos.png" />
+		</tr-toggle-class>
+		<tr-toggle-class property="toggle-class-text" toggle-class="toggle-active">
+			Text!
+		</tr-toggle-class>
+	</tr-player>
+
+	<h2>Select Toggle Class</h2>
+	<tr-player player="1">
+		<div toggle-target>
+			I can be toggled!
+		</div>
+		<div toggle-target-2>
+			I can also toggled!
+		</div>
+	</tr-player>
+	<tr-select-toggle property="select-toggle-class-test" player="1">
+		<tr-option value="none"></tr-option>
+		<tr-option target="div[toggle-target]" toggle-class="toggled" value="first">First Toggle</tr-option>
+		<tr-option target="div[toggle-target-2]" toggle-class="toggled" value="second">Second Toggle</tr-option>
+	</tr-select-toggle>
+</div>
+
+<div class="panel">
+	<h2>Timer</h2>
+	Padding: <tr-timer target=".panel h2" toggle-class="italics" property="timer-test" include-padding="true"></tr-timer><br/>
+	No Pads: <tr-timer property="timer-test"></tr-timer><br/>
+	<tr-button-timer property="timer-test"></tr-button-timer><br/>
+	<tr-input-timer property="timer-test"></tr-input-timer>
+</div>
+
+
+<div class="panel">
+	<h2>View Navigation</h2>
+	<tr-button-view view="" title="Main"></tr-button-view><br/>
+	<tr-button-view view="layout" title="Layout"></tr-button-view>
+	
+	<h2>Resets</h2>
+	<tr-button-reset></tr-button-reset>
+	<hr>
+</div>
+</div>
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+	<script type="text/javascript" src="../components/components.js"></script>
+	<script>
+		function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("story");
+  /* Select the text field */
+  copyText.select();
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+} 
+	</script>
+</body>
+</html>

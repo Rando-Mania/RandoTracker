@@ -1,0 +1,102 @@
+(function(RM) {
+	var updateLayout = function(layout) {
+		var layoutID = "players-4";
+
+		if (typeof(layout["__layout__"]) !== "undefined") {
+			layoutID = layout["__layout__"];
+		}
+
+		var container = document.querySelector(".contain");
+
+		container.id = layoutID;
+	};
+
+	RM.init = function() {
+		Tracker.onLayoutUpdate(updateLayout);
+	};
+
+	RM.setLayout = function(id) {
+		Tracker.updateLayout("__layout__", id);
+	};
+
+	RM.scheduleCallback = function(data) {
+		var listings = data.schedule.items;
+		var select = document.getElementById("schedule_preloads");
+
+		select.appendChild(document.createElement("option"));
+
+		listings.forEach(function(listing) {
+			var option = document.createElement("option");
+
+			option.textContent = listing.data[1];
+			option.data = listing;
+			select.appendChild(option);
+		});
+
+		select.onchange = function() {
+			var option = select.options[select.selectedIndex];
+			var listing = option.data;
+
+			if (!listing) {
+				return;
+			}
+
+			var updates = [
+				{
+					property: "game_name",
+					value: listing.data[1]
+				},
+				{
+					property: "game_system",
+					value: listing.data[3]
+				},
+				{
+					property: "game_length",
+					value: new Date(1000 * listing.length_t).toISOString().substr(11, 8)
+				},
+				{
+					property: "game_category",
+					value: listing.data[2]
+				}
+			];
+
+			if (select.selectedIndex < select.options.length - 1) {
+				updates.push({
+					property: "up-next",
+					value: select.options[select.selectedIndex+1].data.data[1]
+				});
+			} else {
+				updates.push({
+					property: "up-next",
+					value: ""
+				})
+			}
+
+			var players = listing.data[0].split(", ");
+
+			for (var pID = 1; pID <= 4; pID++) {
+				if (players.length < pID) {
+					updates.push({
+						property: "__p" + pID + "__player_name",
+						value: ""
+					});
+				} else {
+					updates.push({
+						property: "__p" + pID + "__player_name",
+						value: players[pID-1]
+					});
+				}
+			}
+
+			Tracker.updateLayoutMultiple(updates);
+		}
+	}
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+		let script = document.createElement("script");
+
+		script.type = "text/javascript";
+		script.src = "https://horaro.org/randomania/2019.json?named=true&callback=RM.scheduleCallback";
+		document.body.appendChild(script);
+	});
+})(window.RM = window.RM || {});

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            background-color: #000;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 24px;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-variant: small-caps;
+        }
+        .player-name{
+            font-size: 22px;
+            background-color: #111;
+            height: 32px;
+        }
+        
+        .tracker-layout tr-template[source="#player_tracker_template"]{
+            display: grid;
+            grid-gap: 9px;
+            position: relative;
+            background-color: #333;
+            padding: 9px;
+            border-radius: 3px;
+        }
+
+        .player-grid{
+            width: auto;
+            height: auto;
+            grid-gap: 2px;
+        }
+
+        .player-grid img, .dialog img{
+            width: 32px;
+            height: 32px;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: pixelated;
+        }
+        .player-speaker, .player-speaker img{
+            width: 32px;
+            height: 32px;
+            display: block;
+            align-self: center;
+        }
+        .player-winner{
+            position: absolute;
+            transform: translate(-100%, -50%);
+            left: 50%;
+            top: 5px;
+            background-color: transparent;
+        }
+
+        .player-winner img{
+            height: 25px;
+        }
+    
+        .player-final{
+            position: absolute;
+            transform: translate(100%, -50%);
+            right: 50%;
+            top: 5px;
+            background-color: transparent;
+        }
+        .player-speaker{
+            position: absolute;
+            right: -12px;
+            top: 24px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <template id="player_tracker_template">
+            <div class="player-name border-background-1">
+                <tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <tr-template class="player-grid border-background-1" href="icons.html"></tr-template>
+            <tr-text property="player-final" class="player-final"></tr-text>
+            <tr-toggle property="toggle-winner" class="player-winner">
+                <img src="../shared/images/winner.svg" alt="Winner">
+            </tr-toggle>
+        </template>
+        
+        <tr-player player="1">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+    </div>
+
+    <tr-template href="four_menu.html"></tr-template>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

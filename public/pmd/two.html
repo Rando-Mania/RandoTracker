@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Pokemon Mystery Dungeon Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<img src="images/background_2p.png" style="top: 0; left: 0; position: absolute; width: 1280px; height: 720px;" />
+
+	<div id="player_name_1" style="top: 459px; left: 42px;" class="player-name nowrap"></div>
+	<div id="player_name_2" style="top: 459px; left: 894px;" class="player-name nowrap"></div>
+	<div class="back-shadow-panel" id="panel_1" style="left: 38px; top: 467px;"></div>
+	<div class="back-shadow-panel" id="panel_2" style="left: 890px; top: 467px;"></div>
+
+	<div id="player_speaker_1" class="player-speaker hidden" style="top: 469px; left: 307px;">
+		<img src="images/speaker.png"/>
+	</div>
+	<div id="player_speaker_2" class="player-speaker hidden" style="top: 469px; left: 902px;">
+		<img src="images/speaker.png"/>
+	</div>
+
+	<div id="bestof3" class="score-tracker" style="top: 600px; left: 397px;">
+		<div class="row">
+			<div class="col-time" data-property="time1_1">
+				
+			</div>
+			<div class="col-medal">
+				<img data-property="round1_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 1
+			</div>
+			<div class="col-medal">
+				<img data-property="round1_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time1_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time2_1">
+				
+			</div>
+			<div class="col-medal">
+				<img data-property="round2_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 2
+			</div>
+			<div class="col-medal win">
+				<img data-property="round2_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time2_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time3_1">
+				
+			</div>
+			<div class="col-medal win">
+				<img data-property="round3_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 3
+			</div>
+			<div class="col-medal">
+				<img data-property="round3_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time3_2">
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="bestof5" class="hidden score-tracker" style="top: 600px; left: 438px;">
+		<div class="row">
+			<div class="col-time" data-property="time1_1">
+				
+			</div>
+			<div class="col-medal">
+				<img data-property="round1_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 1
+			</div>
+			<div class="col-medal">
+				<img data-property="round1_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time1_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time2_1">
+				
+			</div>
+			<div class="col-medal">
+				<img data-property="round2_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 2
+			</div>
+			<div class="col-medal win">
+				<img data-property="round2_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time2_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time3_1">
+				
+			</div>
+			<div class="col-medal win">
+				<img data-property="round3_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 3
+			</div>
+			<div class="col-medal">
+				<img data-property="round3_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time3_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time4_1">
+				
+			</div>
+			<div class="col-medal win">
+				<img data-property="round4_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 4
+			</div>
+			<div class="col-medal">
+				<img data-property="round4_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time4_2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-time" data-property="time5_1">
+				
+			</div>
+			<div class="col-medal win">
+				<img data-property="round5_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-round">
+				Round 5
+			</div>
+			<div class="col-medal">
+				<img data-property="round5_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" />
+			</div>
+			<div class="col-time" data-property="time5_2">
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="player_1_stats" class="stats" style="top: 501px; left: 38px">
+	</div>
+	
+	<div id="player_2_stats" class="stats" style="top: 501px; left: 999px">
+	</div>
+
+	<div class="com-container" style="top: 664px; left: 38px">
+		<img style="padding-left: 3px;" src="images/pixel-mic.png" />
+		<div style="position: absolute; left: 30px; top: 0px; padding-top: 3px; width: 270px" id="commentators" data-scale-to-fit="true">
+		</div>
+	</div>
+
+	<div class="track-container" style="top: 664px; left: 943px">
+		<img style="padding-left: 5px;" src="images/tracker.png" /><br/>
+		<img style="padding-left: 1px;" src="images/restreamer.png" />
+		<div style="position: absolute; left: 30px; top: 0px; width: 270px" id="trackers" data-scale-to-fit="true"></div>
+		<div style="position: absolute; left: 30px; top: 26px; width: 270px" id="restreamer" data-scale-to-fit="true"></div>
+	</div>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer src="https://underscorejs.org/underscore-min.js"></script>
+    <script defer src="scripts/pmd.js"></script>
+</body>
+</html>

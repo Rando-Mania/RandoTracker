@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy 4: FE Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="tracker.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="player_name_1" class="player-name" style="top: 11px; left: 20px;"></div>
+    <div id="player_name_2" class="player-name" style="top: 11px; left: 270px;"></div>
+	<div id="player_name_3" class="player-name" style="top: 225px; left: 20px;"></div>
+    <div id="player_name_4" class="player-name" style="top: 225px; left: 270px;"></div>
+
+    <div id="player_1_grid" class="item-grid" data-child-player="1" style="top: 55px; left: 50px; position: absolute;">
+    </div>
+
+    <div class="item-grid" data-child-player="2" data-copy-from="#player_1_grid" style="top: 55px; left: 300px;">
+    </div>
+
+    <div class="item-grid" data-child-player="3" data-copy-from="#player_1_grid" style="top: 264px; left: 50px;">
+    </div>
+
+    <div class="item-grid" data-child-player="4" data-copy-from="#player_1_grid" style="top: 264px; left: 300px;">
+    </div>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer src="script/fourteam.js"></script>
+</body>
+</html>

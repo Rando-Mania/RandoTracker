@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self' https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo; font-src 'self'; frame-src https://calendar.google.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://s.ytimg.com/yts/jsbin/www-widgetapi-vfleSrT7y/www-widgetapi.js https://www.youtube.com/iframe_api; style-src 'self' 'unsafe-inline'"> -->
+	<title>Dragon Warrior Randomizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="loading.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="stylesheet" type="text/css" href="icons.css">
+    <link rel="preload" href="images/background-ui-sprite.png" as="image" type="image/png">
+    <link rel="preload" href="images/item/item-sprite.png" as="image" type="image/png">
+    <link rel="preload" href="images/equip-sprite.png" as="image" type="image/png">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY1);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY2);}
+        [player="3"] .player-info {left: var(--nameX); bottom: var(--nameY2);}
+        [player="4"] .player-info {right: var(--nameX); bottom: var(--nameY1);}
+
+        [player="1"] .player-panels-contain {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-panels-contain {right: var(--gridX); top: var(--gridY2);}
+        [player="3"] .player-panels-contain {left: var(--gridX); bottom: var(--gridY2);}
+        [player="4"] .player-panels-contain {right: var(--gridX); bottom: var(--gridY);}
+        
+        [player="1"] .player-final {right: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {left: var(--finalX); top: var(--finalY2);}
+        [player="3"] .player-final {right: var(--finalX); bottom: var(--finalY2);}
+        [player="4"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX1); top: var(--speakerY1);}
+        [player="2"] .player-speaker {right: var(--speakerX2); top: var(--speakerY2);}
+        [player="3"] .player-speaker {left: var(--speakerX1); bottom: var(--speakerY2);}
+        [player="4"] .player-speaker {right: var(--speakerX2); bottom: var(--speakerY1);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY1);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY2);}
+        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY2);}
+        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY1);}
+    </style>
+</head>
+<body>
+	<div id="layout" class="map-background">
+        <template id="player_info_template">
+            <div class="border-1 player-video abs"></div>                
+            <div class="background-1 abs player-info">
+                <tr-text property="player-rank" class="player-rank"></tr-text>
+                <div class="player-info-right">
+                    <div class="player-name-contain">
+                        <tr-text scale-to-fit property="player-name" class="player-name"></tr-text> 
+                    </div>
+                    <tr-text property="player-record" class="player-record"></tr-text>
+                    <tr-text property="player-pronoun" class="player-pronoun"></tr-text>
+                    <tr-text property="player-cod" class="player-cod"></tr-text>
+                </div>
+            </div>
+            <tr-toggle property="toggle-speaker" class="abs player-speaker">&#9835;</tr-toggle>
+            <div class="player-panels-contain abs">
+                <tr-template class="player-grid background-1" href="items_plot_stats.html"></tr-template>
+                <div class="stats-and-spells">
+                    <tr-template class="stats background-1" href="hero_stats.html"></tr-template>
+                    <tr-template class="spells background-1" href="spells_4p.html"></tr-template>
+                </div>
+            </div>
+            <tr-text property="player-final" class="player-final border-background-1 abs"></tr-text>
+            <tr-toggle property="player-winner" class="player-winner abs">WIN!</tr-toggle>
+        </template>
+
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+<!-- timer/staff -->
+
+        <tr-timer class="abs" property="timer-test" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></tr-timer>
+        <tr-hide-if-empty class="staff abs" style="left: -2px; top: 50%; transform: translateY(-50%);" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+
+<!-- coordinates -->
+    <tr-hide-if-empty toggle-class="display-none" target="#coordinates" class="coordinates-contain abs" style="transform: translate(-50%,-50%); top: 50%; left: 83%;">
+        <tr-template href="over-world-items.html"></tr-template>
+        <tr-text property="coordinates" id="coordinates"></tr-text>
+    </tr-hide-if-empty>
+
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="left: var(--vsX); top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="left: var(--vsX); bottom: var(--vsY);">VS</tr-toggle>
+
+<!-- League -->
+
+        <tr-template href="league-flags.html"></tr-template>
+    </div>
+
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top: 0; left: 0;">
+    <div class="loadscreen abs" property="loadscreen" style="top: 0; left: 0;">
+        <aside class="flip-card">
+            <header>
+                <h1>
+                    <div id="d">Dragon</div>
+                    <div id="w"><span>W</span>arrio<span>r</span></div>
+                    <div id="r">Randomizer</div>
+                </h1>
+                <h4>
+                    <span>!DWR</span>
+                </h4>
+            </header>
+            <div class="flip-card-inner">
+                <article class="hero flip-card-front">
+                    <div class="subhead">
+                        <h3>RANDOMIZED HERO!</h3>
+                    </div>
+                    <div class="element bordered">
+                        <ul>
+                            <li>spell learning lvl/order</li>
+                            <li>different Hero sprites</li>
+                            <li>LEVELING Speed
+                                <ul>
+                                    <li>normal, +25% or +50%</li> 
+                                </ul>
+                            </li>
+                            <li>STAT GROWTH</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="map flip-card-back">
+                    <div class="subhead">
+                        <h3 class="angled">RANDOMIZED OVERWORLD!</h3>
+                    </div>
+                    <div class="element bordered">
+                        <ul>
+                            <li>Town/Cave Locations</li>
+                            <li>Weapon shop Prices</li>
+                            <li>Weapon shop items</li>
+                            <li>OVERWORLD MAP</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            <div class="flip-card-inner">
+                <article class="enemies flip-card-front">
+                    <div class="subhead">
+                        <h3 class="angled">RANDOMIZED ENEMIES!</h3>
+                    </div>
+                    <div class="element bordered">
+                        <ul>
+                            <li>Random Mini-Bosses</li>
+                            <li>Enemy Attacks</li>
+                            <li>Enemy Zones</li>
+                            <li>Enemy Stats</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="other flip-card-back">
+                    <div class="subhead">
+                        <h3 class="angled">Other Stuff!</h3>
+                    </div>
+                    <div class="element bordered">
+                        <ul>
+                            <li>Enable Death Necklace</li>
+                            <li>Short Charlock</li>
+                            <li>Big Swamp Mode</li>
+                            <li>Menu Wrapping</li>
+                            <li>No Keys Mode</li>
+                            <li>Fast Text</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </aside>
+        <main>
+            <header>
+                <h1><span>D</span>ragon Warrio<span>r</span></h1>
+                <h2>Randomizer</h2>
+            </header>
+            <h2>
+                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+                vs
+                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+                <span class="load-and-vs">
+                    <span class="load-vs">vs</span>
+                    <span class="load-and">and</span>
+                </span>
+                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
+                vs
+                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
+            </h2>
+            <div>
+                <h2 id="changeText">Randomizing Dragon Warrior...</h2>
+            </div>
+        </main>
+        <footer>
+            <tr-template id="promos_1" href="../shared/images/promos/all_promos.html"></tr-template>
+        </footer>
+    </div>
+    
+</div>
+
+
+<!-- <div class="bracket-contain abs map-background" style="top: 0; left: 0;">
+    <div class="bracket" style="width: 100%; height: 100%;">
+        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+</div> -->
+
+<!-- RM calendar -->
+<div class="calendar-contain abs map-background" style="top: 0; left: 0;">
+    <div class="calendar">
+        <iframe loading="lazy" src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+</div>
+
+<!-- monsters -->
+<div class="monster-contain abs" style="left: 0; top:0;">
+<tr-toggle property="show_monster_stats" class="monster_stats" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <tr-text property="monster_name"></tr-text>
+    <div class="monster-table">                
+        <tr-image property="monster_image"></tr-image>
+        <div class="monster-table-spoils">
+            E:<tr-text property="monster_exp"></tr-text>
+            G:<tr-text property="monster_gold"></tr-text>
+        </div>
+        <table class="monster-table-stats">
+            <tr>
+                <td class="monster-table-heading" colspan="2">Stats</td>
+            </tr>
+            <tr>
+                <td>HP:</td><td><tr-text property="monster_hp"></tr-text></td>
+            </tr>
+            <tr>
+                <td>AG:</td><td><tr-text property="monster_agi"></tr-text></td>
+            </tr>
+            <tr>
+                <td>AP:</td><td><tr-text property="monster_ap"></tr-text></td>
+            </tr>
+            <tr>
+                <td>DP:</td><td><tr-text property="monster_dp"></tr-text></td>
+            </tr>
+        </table>
+        <table class="monster-table-resist">
+            <tr>
+                <td class="monster-table-heading" colspan="2">Resist</td>
+            </tr>
+            <tr>
+                <td>Dodge</td><td><tr-text property="monster_dodge"></tr-text><span class="out-of-16">/64</span></td>
+            </tr>
+            <tr>
+                <td>Hurt:</td><td><tr-text property="monster_hurt"></tr-text><span class="out-of-16">/16</span></td>
+            </tr>
+            <tr>
+                <td>Sleep:</td><td><tr-text property="monster_sleep"></tr-text><span class="out-of-16">/16</span></td>
+            </tr>
+            <tr>
+                <td>Stop:</td><td><tr-text property="monster_stop"></tr-text><span class="out-of-16">/16</span></td>
+            </tr>
+        </table>
+        <div class="monster-table-ai">
+            <div class="heading">AI</div>
+            <div><tr-text scale-to-fit property="monster_ai"></tr-text></div>
+        </div>
+    </div>
+</tr-toggle>
+</div>
+
+    <tr-template href="four_menu.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/dwr.js"></script>
+</body>
+</html>

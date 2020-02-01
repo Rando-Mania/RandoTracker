@@ -1,0 +1,127 @@
+@font-face {
+	font-family: "POKEMON";
+	src: url("/pokemoncrystal/fonts/PKMN_RBYGSC.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Futura";
+	src: url("/pokemoncrystal/fonts/Futura Condensed Medium.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Pokemon Solid";
+	src: url("/pokemoncrystal/fonts/Pokemon Solid.ttf") format("truetype");
+}
+body {
+	font-family: "Futura", sans-serif;
+	background-color: #000000;
+}
+
+.player-name {
+	position: absolute;
+	text-align: center;
+	color: #FFF;
+	font-size: 18px;
+	width: 176px;
+	text-shadow: 2px 2px 2px #000;
+	text-align: center;
+	font-size: 32px;
+}
+
+.player-final {
+	position: absolute;
+	color: yellow;
+	width: 185px;
+	text-align: center;
+	font-size: 32px;
+	font-family: "Pokemon Solid";
+	color: #ffcb06;
+	line-height: 1;
+	letter-spacing: 4px;
+	text-shadow: rgba(0,0,0,1) 3px 3px 0;
+	z-index: 10;
+	-webkit-text-stroke: .5px blue;
+	animation: tada 1s;
+}
+
+@keyframes tada {
+	from {
+	  -webkit-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  
+	10%,
+	20% {
+	  -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+	  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+	}
+  
+	30%,
+	50%,
+	70%,
+	90% {
+	  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+	  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+	}
+  
+	40%,
+	60%,
+	80% {
+	  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+	  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+	}
+  
+	to {
+	  -webkit-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+  
+.player-speaker {
+	position: absolute;
+}
+
+.player-speaker img {
+	height: 40px;
+}
+
+.icon,
+.icon img {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 18px;
+	color: #FFF;
+	font-size: 32px;
+	text-align: center;
+}
+
+#timer span:not(.dot):not(.colon) {
+	width: 18.22px;
+	display: inline-block;
+}
+
+#timer .ms {
+	font-size: 12px;
+	width: 12.24px !important;
+}
+
+#commentators {
+	color: #FFF;
+	font-size: 24px;
+	letter-spacing: 1px;
+	position: absolute;
+	height: 45px;
+	width: 300px;
+	line-height: 22px;
+	text-shadow: 2px 2px 2px #000;
+}
+.dialog{
+	transform: translate(-160px);
+	z-index: 20;
+}

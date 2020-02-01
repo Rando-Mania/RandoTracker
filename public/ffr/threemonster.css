@@ -1,0 +1,114 @@
+@font-face {
+	font-family: "FF";
+	src: url("/ffr/fonts/Final-Fantasy.ttf") format("truetype");
+}
+
+body {
+	font-family: "FF", sans-serif;
+	background-image: url(images/bg-grass-3p-monster.png);
+	background-repeat: no-repeat;
+	background-color: #000000;
+}
+
+.player-container {
+	text-align: center;
+	width: 227px;
+	position: absolute;
+}
+
+.player-name {
+	color: #FFF;
+	font-size: 14px;
+	text-shadow: 2px 2px 2px #000;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid #FFF;
+	text-align: center;
+}
+
+.player-name:empty {
+	display: none;
+}
+
+.player-final-container {
+	text-align: center;
+	width: 227px;
+	position: absolute;
+}
+
+.player-final {
+	color: #90EE90;
+	text-shadow: 2px 2px 2px #2800FF;
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #90EE90;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.player-final:empty {
+	display: none;
+}
+
+.player-speaker {
+	position: absolute;
+}
+
+.player-speaker img {
+	height: 36px;
+}
+
+.item-grid {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 32px 32px 32px 32px 32px;
+}
+
+.item-grid-horizontal {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px;
+}
+
+.item,
+.item img {
+	width: 32px;
+	height: 32px;
+}
+
+.item img:not(.selected) {
+	filter: grey;
+	-webkit-filter: greyscale(1);
+	filter: grayscale(1);
+	opacity: 0.7;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 26px;
+	color: #FFF;
+	text-align: right;
+	text-shadow: 4px 4px 2px #000;
+}
+
+#timer span:not(.dot):not(.colon) {
+	width: 26px;
+	display: inline-block;
+}
+
+#timer .ms {
+	font-size: 14px;
+	width: 14px !important;
+}
+
+#commentators {
+	color: #FFF;
+	font-size: 14px;
+	position: absolute;
+	text-shadow: 4px 4px 2px #000;
+	vertical-align: middle;
+	height: 75px;
+	width: 400px;
+	line-height: 20px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Metroid Prime 2: Echoes Rando</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <meta name="designer" content="Ouro">
+    <meta name="developer" content="capt_uhu">
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+</head>
+<body>
+	<div id="layout">
+        <div player="1" class="border-1 player-video abs" style="left: var(--videoX); top: var(--videoY);"></div>
+        <div class="player-name abs background-1" style="left: var(--nameX); bottom: var(--nameY);">
+            <tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1"></tr-text>
+        </div>
+        <tr-player player="1">
+            <tr-template class="player-grid abs" id="player-grid-1" href="icons.html" style="left: var(--gridX); bottom: var(--gridY);"></tr-template>
+        </tr-player>
+        <tr-text player="1" property="player_final_1" class="player-final abs background-1" style="left: var(--finalX); top: var(--finalY);"></tr-text>
+        
+        <img class="abs speaker" id="player_speaker_1" style="left: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-solid.svg" alt="">
+        <div class="abs winner" id="winner-1" style="left: var(--winX); bottom: var(--winY);">WINNER</div>
+        <tr-player player="1">
+            <tr-template player="1" class="best-of abs" id="best-of-1" href="bestof.html" style="right: var(--bestX); bottom: var(--bestY);"></tr-template>
+        </tr-player>
+<!-- player 2 -->
+        <div player="2" class="border-1 player-video abs" style="right: var(--videoX); top: var(--videoY);"></div>
+
+        <div class="player-name abs background-1" style="right: var(--nameX); bottom: var(--nameY);">
+            <tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2"></tr-text>
+        </div>
+        <tr-player player="2">
+            <tr-template class="player-grid abs" id="player-grid-2" href="icons.html" style="right: var(--gridX); bottom: var(--gridY);"></tr-template>
+        </tr-player>
+        <tr-text player="2" property="player_final_2" class="player-final abs background-1" style="right: var(--finalX); top: var(--finalY);"></tr-text>
+
+        <img class="abs speaker" id="player_speaker_2" style="right: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-solid.svg" alt="">
+        <div class="abs winner" id="winner-2" style="right: var(--winX); bottom: var(--winY);">WINNER</div>
+        <tr-player player="2">
+            <tr-template class="best-of abs" id="best-of-2" href="bestof.html" style="left: var(--bestX); bottom: var(--bestY);"></tr-template>
+        </tr-player>
+<!-- timer/staff -->
+
+        <tr-timer class="abs background-1" property="timer-test" style="bottom: 10px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <tr-hide-if-empty id="staff" class="abs background-1" style="top: 487px; left: 50%; transform: translateX(-50%);" toggle-class="visually-hidden">
+            <tr-template href="production-team.html"></tr-template>
+        </tr-hide-if-empty>
+    </div>
+
+<!-- loadscreen -->
+    <div class="loadscreen abs" style="top: 0; left: 0;">
+        <div class="loadscreen-content">
+            <div class="loadscreen-video-area">
+                <h2>
+                    <tr-text player="1" class="player-name" property="player_name_1">This</tr-text>
+                    vs.
+                    <tr-text player="2" class="player-name" property="player_name_2">Should</tr-text>
+                </h2>
+            </div>
+            <aside>
+                <h1>RandoMania</h1>
+                <h2>Metroid Prime 2: Echoes</h2>
+            </aside>
+            <tr-template style="top: 563px; left: 22px;" id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
+        </div>
+    </div>
+
+<!-- bracket -->
+    <!-- <div class="bracket abs" style="top: 0; left: 0;">
+        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div> -->
+    
+<!-- RM calendar -->
+    <div class="calendar abs" style="top: 0; left: 0;">
+        <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="90%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+	
+	<tr-template href="two_menu.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

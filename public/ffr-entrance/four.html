@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy Randomizer Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="ffr.css">
+</head>
+<body>
+	<div id="layout">
+		<div id="logo" class="dialog-border abs-pos"><img src="images/logo.png"/></div>
+		<div id="team" class="dialog-border abs-pos">
+			<div id="staff_panel_1">
+				<img src="images/pixel-mic.png" />
+				<tr-text property="comm" scale-to-fit id="coms-text"></tr-text>
+			</div>
+			<div id="staff_panel_2">
+				<img src="images/restreamer.png" class="panel_2_icon" />
+				<img src="images/tracker.png" class="panel_2_icon" style="top: 30px" />
+				<tr-text property="restreamer" scale-to-fit id="restreamer-text"></tr-text>
+				<tr-text property="tracker" scale-to-fit id="tracker-text"></tr-text>
+			</div>
+		</div>
+		<div id="classes" class="dialog-border abs-pos">
+			<tr-image property="class_1">
+				<tr-image-option path="images/open2.png"></tr-image-option>
+				<tr-image-option path="images/blackbelt.png"></tr-image-option>
+				<tr-image-option path="images/blackmage.png"></tr-image-option>
+				<tr-image-option path="images/fighter.png"></tr-image-option>
+				<tr-image-option path="images/redmage.png"></tr-image-option>
+				<tr-image-option path="images/thief.png"></tr-image-option>
+				<tr-image-option path="images/whitemage.png"></tr-image-option>
+				<tr-image-option path="images/none.png"></tr-image-option>
+			</tr-image>
+			<tr-image property="class_2">
+				<tr-image-option path="images/open2.png"></tr-image-option>
+				<tr-image-option path="images/blackbelt.png"></tr-image-option>
+				<tr-image-option path="images/blackmage.png"></tr-image-option>
+				<tr-image-option path="images/fighter.png"></tr-image-option>
+				<tr-image-option path="images/redmage.png"></tr-image-option>
+				<tr-image-option path="images/thief.png"></tr-image-option>
+				<tr-image-option path="images/whitemage.png"></tr-image-option>
+				<tr-image-option path="images/none.png"></tr-image-option>
+			</tr-image>
+			<tr-image property="class_3">
+				<tr-image-option path="images/open2.png"></tr-image-option>
+				<tr-image-option path="images/blackbelt.png"></tr-image-option>
+				<tr-image-option path="images/blackmage.png"></tr-image-option>
+				<tr-image-option path="images/fighter.png"></tr-image-option>
+				<tr-image-option path="images/redmage.png"></tr-image-option>
+				<tr-image-option path="images/thief.png"></tr-image-option>
+				<tr-image-option path="images/whitemage.png"></tr-image-option>
+				<tr-image-option path="images/none.png"></tr-image-option>
+			</tr-image>
+			<tr-image property="class_4">
+				<tr-image-option path="images/open2.png"></tr-image-option>
+				<tr-image-option path="images/blackbelt.png"></tr-image-option>
+				<tr-image-option path="images/blackmage.png"></tr-image-option>
+				<tr-image-option path="images/fighter.png"></tr-image-option>
+				<tr-image-option path="images/redmage.png"></tr-image-option>
+				<tr-image-option path="images/thief.png"></tr-image-option>
+				<tr-image-option path="images/whitemage.png"></tr-image-option>
+				<tr-image-option path="images/none.png"></tr-image-option>
+			</tr-image>
+		</div>
+		<tr-timer class="dialog-border abs-pos" property="timer"></tr-timer>
+		<tr-player player="1">
+			<tr-template class="dialog-border abs-pos item-grid" style="top: 83px; left: 5px;" href="item_grid.html">
+			</tr-template>
+			<div class="dialog-border abs-pos name-wrapper" style="top: 295px; left: 3px">
+				<tr-text property="player_name" scale-to-fit></tr-text>
+			</div>
+			<div class="screen dialog-border abs-pos" style="top: 1px; left: 153px;"></div>
+			<tr-text class="dialog-border abs-pos final-wrapper" style="top: 330px; left: 3px;" property="player_final"></tr-text>
+			<tr-toggle property="player_speaker" class="speaker abs-pos" style="top: 325px; left: 58px;"><img src="images/speaker.png"/></tr-toggle>
+		</tr-player>
+		<tr-player player="2">
+			<tr-template class="dialog-border abs-pos item-grid" style="top: 83px; left: 1134px;" href="item_grid.html">
+			</tr-template>
+			<div class="dialog-border abs-pos name-wrapper" style="top: 295px; left: 1132px">
+				<tr-text property="player_name" scale-to-fit></tr-text>
+			</div>
+			<div class="screen dialog-border abs-pos" style="top: 1px; left: 720px;"></div>
+			<tr-text class="dialog-border abs-pos final-wrapper" style="top: 330px; left: 1132px;" property="player_final"></tr-text>
+			<tr-toggle property="player_speaker" class="speaker abs-pos" style="top: 325px; left: 1187px;"><img src="images/speaker.png"/></tr-toggle>
+		</tr-player>
+		<tr-player player="3">
+			<tr-template class="dialog-border abs-pos item-grid" style="top: 375px; left: 5px;" href="item_grid.html">
+			</tr-template>
+			<div class="dialog-border abs-pos name-wrapper" style="top: 584px; left: 3px">
+				<tr-text property="player_name" scale-to-fit></tr-text>
+			</div>
+			<div class="screen dialog-border abs-pos" style="top: 369px; left: 153px;"></div>
+			<tr-text class="dialog-border abs-pos final-wrapper" style="top: 619px; left: 3px;" property="player_final"></tr-text>
+			<tr-toggle property="player_speaker" class="speaker abs-pos" style="top: 614px; left: 58px;"><img src="images/speaker.png"/></tr-toggle>
+		</tr-player>
+		<tr-player player="4">
+			<tr-template class="dialog-border abs-pos item-grid" style="top: 375px; left: 1134px;" href="item_grid.html">
+			</tr-template>
+			<div class="dialog-border abs-pos name-wrapper" style="top: 584px; left: 1132px">
+				<tr-text property="player_name" scale-to-fit></tr-text>
+			</div>
+			<div class="screen dialog-border abs-pos" style="top: 369px; left: 720px;"></div>
+			<tr-text class="dialog-border abs-pos final-wrapper" style="top: 619px; left: 1132px;" property="player_final"></tr-text>
+			<tr-toggle property="player_speaker" class="speaker abs-pos" style="top: 614px; left: 1187px;"><img src="images/speaker.png"/></tr-toggle>
+		</tr-player>
+		<div class="abs-pos" style="top: 721px;">
+			<tr-template href="four_menu.html"></tr-template>
+		</div>
+		<div class="dialog-border abs-pos entrances">
+			<img src="images/entrances/Entrance_TPravoka.png" />
+			<div entrance="0">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TElfland.png" />
+			<div entrance="1">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TCrescentLake.png" />
+			<div entrance="2">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TMelmond.png" />
+			<div entrance="3">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TOnrac.png" />
+			<div entrance="4">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TGaia.png" />
+			<div entrance="5">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Lefein.png" />
+			<div entrance="6">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_ConCastle.png" />
+			<div entrance="7">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_ToF.png" />
+			<div entrance="8">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_DwarfCave.png" />
+			<div entrance="9">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_NWCastle.png" />
+			<div entrance="10">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_MarshCave.png" />
+			<div entrance="11">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_ElfCastle.png" />
+			<div entrance="12">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Matoya.png" />
+			<div entrance="13">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Gurgu.png" />
+			<div entrance="14">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_IceCave.png" />
+			<div entrance="15">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_CardiaPlains.png" />
+			<div entrance="16">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Cardia2Top.png" />
+			<div entrance="17">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Cardia2Bot.png" />
+			<div entrance="18">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_CardiaSwamp.png" />
+			<div entrance="19">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_CardiaTiny.png" />
+			<div entrance="20">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_CardiaForest.png" />
+			<div entrance="21">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Waterfall.png" />
+			<div entrance="22">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Ordeals.png" />
+			<div entrance="23">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Mirage.png" />
+			<div entrance="24">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_EarthCave.png" />
+			<div entrance="25">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TitanRight.png" />
+			<div entrance="26">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_TitanLeft.png" />
+			<div entrance="27">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+			<img src="images/entrances/Entrance_Sarda.png" />
+			<div entrance="28">
+				<tr-template href="entrance_row.html"></tr-template>
+			</div>
+		</div>
+	</div>
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+	<script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="scripts/ffr.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

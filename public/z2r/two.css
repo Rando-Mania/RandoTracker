@@ -1,0 +1,161 @@
+@font-face {
+	font-family: "Z1";
+	src: url("/z1r/fonts/PressStart2P.ttf") format("truetype");
+}
+
+body {
+	font-family: "Z1", sans-serif;
+	background-color: #000000;
+	color: #FFF;
+}
+
+.player_head{
+	font-size: 20px;
+	width: 592px;
+	height: 46px;
+	text-shadow: 2px 2px 2px #000;
+	color: #FFF;
+	display: flex;
+	align-items: center;
+}
+
+.player-name {
+	text-align: center;
+	padding: 0 1em;
+	flex: 510px;
+}
+
+.player-final {
+	position: absolute;
+	color: #90EE90;
+	text-shadow: 2px 2px 2px #2800FF;
+	width: 120px;
+	height: 20px;
+	padding-top: 5px;
+	text-align: center;
+	border: 1px solid #90EE90;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.player-speaker {
+	position: absolute;
+	border: solid 2px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.player-speaker img {
+	height: 29px;
+}
+
+.item-grid {
+	position: absolute;
+	display: grid;
+	grid-template-columns: repeat(4, 32px) 40px repeat(2, 32px);
+}
+
+.item-grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 32px);
+	grid-gap: 4px;
+	padding: 5px;
+	border: 2px solid rgba(255,255,255,.5);
+}
+
+span[data-property="tri-1"] img, span[data-property="tri-2"] img{
+	background-image: url(images/zelda_2_triforce_frames.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 96px 32px;
+	opacity: .3;
+}
+
+span[data-property="tri-1"] img.selected, span[data-property="tri-2"] img.selected{
+	opacity: 1;
+	animation: tri-shine steps(3) .5s 4;
+}
+
+@keyframes tri-shine {
+	from{ background-position: 0 0; }
+	to{ background-position: -96px 0;}
+}
+
+.item,
+.item img {
+	width: 32px;
+	height: 32px;
+	padding-bottom: 1px;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 18px;
+	color: #FFF;
+	text-align: right;
+}
+
+#timer .ms {
+	font-size: 12px;
+}
+
+#commentators {
+	display: flex;
+	align-items: center;
+	color: #FFF;
+	font-size: 14px;
+	position: absolute;
+	text-shadow: 2px 2px 2px #000;
+	height: 46px;
+	width: 350px;
+	line-height: 22px;
+	background-image: url('images/mic2.png');
+	background-repeat: no-repeat;
+	background-size: auto 40px;
+	background-position: 1px center;
+	padding-left: 41px;
+	animation: switch 60s steps(1) reverse infinite;
+}
+#staff{
+	display: grid;
+	grid-template-columns: 1fr;
+	height: 46px;
+	width: 389px;
+	position: absolute;
+	animation: switch 60s steps(1) infinite;
+}
+
+#restreamer{
+	line-height: 22px;
+	background-image: url('images/restreamer.png');
+	background-repeat: no-repeat;
+	background-size: auto 20px;
+	background-position: 11px center;
+	padding-left: 41px;
+	width: 350px;
+}
+
+#trackers{
+	line-height: 22px;
+	background-image: url('images/angel-on.png');
+	background-repeat: no-repeat;
+	background-size: auto 20px;
+	background-position: 11px center;
+	padding-left: 41px;
+	width: 350px;
+}
+
+@keyframes switch {
+	from{opacity:0;}
+	50%{opacity: 1;}
+	to{opacity: 1;}
+  }
+
+#background-picker {
+	width: 320px;
+	color: #FFF;
+}
+
+#background-picker button {
+	width: 95px;
+}

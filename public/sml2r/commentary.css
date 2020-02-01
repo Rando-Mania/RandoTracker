@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "GB";
+	src: url("/sml2r/fonts/Early GameBoy.ttf") format("truetype");
+}
+
+body {
+	font-family: "GB", sans-serif;
+	background-image: url(images/spoiler.png);
+	background-repeat: no-repeat;
+	background-color: #000000;
+}
+
+.buttons {
+	position: absolute;
+}
+
+.text {
+	position: absolute;
+	color: #000;
+	background-color: #FFF;
+	font-size: 10px;
+	padding-left: 2px;
+	padding-bottom: 1px;
+}
+
+.scrolling {
+	font-style: italic;
+}
+
+.swapped-exit {
+	text-decoration: underline;
+}

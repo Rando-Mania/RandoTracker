@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Final Fantasy Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="two.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <img data-property="background-p1" src="images/bg-overworld-p1.png" style="top: 0px; left: 0px; position: absolute;" />
+    <img data-property="background-p2" src="images/bg-overworld-p2.png" style="top: 0px; left: 640px; position: absolute;" />
+
+    <img class="logo" data-toggle="true" data-property="icon" data-class-toggle="selected" src="images/FFR2019RM.jpg" style="height: 432px; top: 72px; left: 70px; position: absolute;" />
+    <img class="logo" data-toggle="true" data-property="icon" data-class-toggle="selected" src="images/FFR2019RM.jpg" style="height: 432px; top: 72px; left: 709px; position: absolute;" />
+
+	<div class="player-container" style="top: 513px; left: 195px;">
+        <div id="player_name_1" data-scale-to-fit="true" class="player-name nowrap"></div>
+    </div>
+    <div class="player-container" style="top: 513px; left: 855px;">
+        <div id="player_name_2" data-scale-to-fit="true" class="player-name nowrap"></div>
+    </div>
+
+    <div data-property="p1-record" data-scale-to-fit="true" class="freetext-record nowrap" style="top: 513px; left: 510px;"></div>
+    <div data-property="p2-record" data-scale-to-fit="true" class="freetext-record nowrap" style="top: 513px; left: 691px;"></div>
+
+    <div id="player_speaker_1" class="player-speaker hidden" style="top: 513px; left: 425px;"><img src="images/speaker.png"/></div>
+    <div id="player_speaker_2" class="player-speaker hidden" style="top: 513px; left: 818px; transform: scaleX(-1);"><img src="images/speaker.png"/></div>
+
+    <div class="player-final-container" style="top: 513px; left: 2px;">
+        <div id="player_final_1" class="player-final"></div>
+    </div>
+    <div class="player-final-container" style="top: 513px; left: 1153px;">
+        <div id="player_final_2" class="player-final"></div>
+    </div>
+
+    <div id="class_tracker" style="top: 513px; left: 588px">
+        <span class="class-icon" data-property="class_1" data-open-dialog="#dialog_class" data-image="images/open2.png"></span>
+        <span class="class-icon" data-property="class_2" data-open-dialog="#dialog_class" data-image="images/open2.png"></span>
+        <span class="class-icon" data-property="class_3" data-open-dialog="#dialog_class" data-image="images/open2.png"></span>
+        <span class="class-icon" data-property="class_4" data-open-dialog="#dialog_class" data-image="images/open2.png"></span>
+    </div>
+
+    <img src="images/partyborder.png" style="position: absolute; top: 0px; left: 512px;" />
+
+    <img src="images/mic2.png" style="top: 0px; left: 520px; position: absolute; height: 30px" />
+    <div id="commentators" class="nowrap" data-scale-to-fit="true" style="top: 0px; left: 550px;"></div>
+    <div id="timer" style="top: 35px; left: 397px;"></div>
+
+    <div id="flags-container" style="top: 693px; left: 465px;">
+        <div id="flags" class="nowrap" data-property="flags" data-scale-to-fit="true"></div>
+    </div>
+
+    <div id="player_1_grid" class="item-grid" data-child-player="1" style="top: 588px; left: 10px; position: absolute;">
+        <span class="item" data-label-top="true" data-label="EARTH" data-toggle="true" data-property="earth" data-off-image="images/empty.png" data-on-image="images/earth.png" data-image="images/empty.png" ></span>
+        <span class="item" data-label-top="true" data-label="FIRE" data-toggle="true" data-property="fire" data-off-image="images/empty.png" data-on-image="images/fire.png" data-image="images/empty.png" ></span>
+        <span class="item" ></span>
+        <span class="item" data-label-top="true" data-property="slab" data-open-dialog="#dialog_slab" data-image="images/noslab.png"></span>
+        <span class="item" data-label-top="true" data-property="airship" data-open-dialog="#dialog_airship" data-image="images/nofloater.png"></span>
+        <span class="item" data-label-top="true" data-property="tail" data-open-dialog="#dialog_tail" data-image="images/notail.png"></span>
+        <span class="item" data-label-top="true" data-label="BOTTL" data-toggle="true" data-property="bottle" data-class-toggle="selected" data-image="images/bottle.png"></span>
+        <span class="item" data-label-top="true" data-label="OXYAL" data-toggle="true" data-property="oxyale" data-class-toggle="selected" data-image="images/oxyale.png"></span>
+        <span class="item" data-label-top="true" data-label="LUTE" data-toggle="true" data-property="lute" data-class-toggle="selected" data-image="images/lute.png"></span>
+        <span class="item" data-label-top="true" data-label="CROWN" data-toggle="true" data-property="crown" data-class-toggle="selected" data-image="images/crown.png"></span>
+        <span class="item" data-label-top="true" data-label="CRYST" data-toggle="true" data-property="cryst" data-class-toggle="selected" data-image="images/crystal.png"></span>
+        <span class="item" data-label-top="true" data-label="HERB" data-toggle="true" data-property="herb" data-class-toggle="selected" data-image="images/herb.png"></span>
+        <span class="item" ></span>
+        <span class="item" data-label-top="true" data-label="RIBBON" data-property="ribbon" data-open-dialog="#dialog_ribbon" data-image="images/ribbon.png"></span>
+        <span class="item" data-label-top="true" data-label="XCAL" data-toggle="true" data-property="xcal" data-class-toggle="selected" data-image="images/xcal.png"></span>
+        <span class="item" data-label-top="true" data-label="DEF" data-toggle="true" data-property="defense" data-class-toggle="selected" data-image="images/def.png"></span>
+        <span class="item" data-label-top="true" data-label="KAT" data-toggle="true" data-property="katana" data-class-toggle="selected" data-image="images/kat.png"></span>
+        <span class="item" data-label-top="true" data-label="MASA" data-toggle="true" data-property="masamune" data-class-toggle="selected" data-image="images/mas.png"></span>
+        <span class="item" data-label-top="true" data-label="VORP" data-toggle="true" data-property="vorpal" data-class-toggle="selected" data-image="images/vorp.png"></span>
+        <span id="gomode" class="item" data-label-top="true" data-label="MODE" data-toggle="true" data-property="gomode" data-off-image="images/empty.png" data-on-image="images/gomode.png" data-image="images/empty.png" ></span>
+
+        <span class="item" data-label-bottom="true" data-label="WATER" data-toggle="true" data-property="water" data-off-image="images/empty.png" data-on-image="images/water.png" data-image="images/empty.png" ></span>
+        <span class="item" data-label-bottom="true" data-label="WIND" data-toggle="true" data-property="wind" data-off-image="images/empty.png" data-on-image="images/wind.png" data-image="images/empty.png" ></span>
+        <span class="item" ></span>
+        <span class="item" data-label-bottom="true" data-label="ADAM" data-toggle="true" data-property="adamant" data-class-toggle="selected" data-image="images/adamant.png"></span>
+        <span class="item" data-label-bottom="true" data-label="KEY" data-toggle="true" data-property="key" data-class-toggle="selected" data-image="images/key.png"></span>
+        <span class="item" data-label-bottom="true" data-label="TNT" data-toggle="true" data-property="tnt" data-class-toggle="selected" data-image="images/tnt.png"></span>
+        <span class="item" data-label-bottom="true" data-label="CANOE" data-toggle="true" data-property="canoe" data-class-toggle="selected" data-image="images/canoe.png"></span>
+        <span class="item" data-label-bottom="true" data-label="SHIP" data-toggle="true" data-property="ship" data-class-toggle="selected" data-image="images/ship.png"></span>
+        <span class="item" data-label-bottom="true" data-label="RUBY" data-toggle="true" data-property="ruby" data-class-toggle="selected" data-image="images/ruby.png"></span>
+        <span class="item" data-label-bottom="true" data-label="ROD" data-toggle="true" data-property="rod" data-class-toggle="selected" data-image="images/rod.png"></span>
+        <span class="item" data-label-bottom="true" data-label="CUBE" data-toggle="true" data-property="cube" data-class-toggle="selected" data-image="images/cube.png"></span>
+        <span class="item" data-label-bottom="true" data-label="CHIME" data-toggle="true" data-property="chime" data-class-toggle="selected" data-image="images/chime.png"></span>
+        <span class="item" ></span>
+        <span class="item" data-label-bottom="true" data-label="POWER" data-toggle="true" data-property="power" data-class-toggle="selected" data-image="images/glove.png"></span>
+        <span class="item" data-label-bottom="true" data-label="SHIRT" data-toggle="true" data-property="white" data-class-toggle="selected" data-image="images/shirt.png"></span>
+        <span class="item invert" data-label-bottom="true" data-label="SHIRT" data-toggle="true" data-property="black" data-class-toggle="selected" data-image="images/shirt.png"></span>
+        <span class="item" data-label-bottom="true" data-label="THOR" data-toggle="true" data-property="thor" data-class-toggle="selected" data-image="images/hammer.png"></span>
+        <span class="item" data-label-bottom="true" data-label="DRAGON" data-toggle="true" data-property="armor" data-class-toggle="selected" data-image="images/armor.png"></span>
+        <span class="item" data-label-bottom="true" data-label="ZEUS" data-toggle="true" data-property="zeus" data-class-toggle="selected" data-image="images/zeus.png"></span>
+    </div>
+
+    <div class="item-grid" data-child-player="2" data-copy-from="#player_1_grid" style="top: 588px; left: 650px;">
+    </div>
+
+    <fieldset id="dialog_slab" class="dialog">
+        <span class="dialog-icon" data-label-bottom="true" data-label="&nbsp;" data-set-prop="true" data-property="slab" data-image="images/noslab.png" data-value="images/noslab.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="SLAB" data-set-prop="true" data-property="slab" data-image="images/slab.png" data-value="images/slab.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="READ" data-set-prop="true" data-property="slab" data-image="images/translated.png" data-value="images/translated.png"></span>
+        <!--<span class="dialog-icon" data-label-bottom="true" data-label="CHIME" data-set-prop="true" data-property="chime" data-image="images/chime.png" data-value="images/chime.png"></span>-->
+    </fieldset>
+
+    <fieldset id="dialog_rod" class="dialog">
+        <span class="dialog-icon" data-label-bottom="true" data-label="&nbsp;" data-set-prop="true" data-property="rod" data-image="images/noruby.png" data-value="images/noruby.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="RUBY" data-set-prop="true" data-property="rod" data-image="images/ruby.png" data-value="images/ruby.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="ROD" data-set-prop="true" data-property="rod" data-image="images/rod.png" data-value="images/rod.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_ribbon" class="dialog">
+        <span class="dialog-icon" data-label-bottom="true" data-label="RIBBON" data-set-prop="true" data-property="ribbon" data-image="images/ribbon.png" data-value="images/ribbon.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="RIBBON" data-set-prop="true" data-property="ribbon" data-image="images/ribbon1.png" data-value="images/ribbon1.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="RIBBON" data-set-prop="true" data-property="ribbon" data-image="images/ribbon2.png" data-value="images/ribbon2.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="RIBBON" data-set-prop="true" data-property="ribbon" data-image="images/ribbon3.png" data-value="images/ribbon3.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="RIBBON" data-set-prop="true" data-property="ribbon" data-image="images/ribbon4.png" data-value="images/ribbon4.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_airship" class="dialog">
+        <span class="dialog-icon" data-label-bottom="true" data-label="&nbsp;" data-set-prop="true" data-property="airship" data-image="images/nofloater.png" data-value="images/nofloater.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="FLOAT" data-set-prop="true" data-property="airship" data-image="images/floater.png" data-value="images/floater.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="A.SHIP" data-set-prop="true" data-property="airship" data-image="images/airship.png" data-value="images/airship.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_tail" class="dialog">
+        <span class="dialog-icon" data-label-bottom="true" data-label="&nbsp;" data-set-prop="true" data-property="tail" data-image="images/notail.png" data-value="images/notail.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="TAIL" data-set-prop="true" data-property="tail" data-image="images/tail.png" data-value="images/tail.png"></span>
+        <span class="dialog-icon" data-label-bottom="true" data-label="CLASS" data-set-prop="true" data-property="tail" data-image="images/bahamut.png" data-value="images/bahamut.png"></span>
+    </fieldset>
+
+    <fieldset id="dialog_class" class="dialog" style="width: 140px">
+        <span class="dialog-icon" data-set-prop="true" data-image="images/open2.png" data-value="images/open2.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/fighter.png" data-value="images/fighter.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/thief.png" data-value="images/thief.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/blackbelt.png" data-value="images/blackbelt.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/redmage.png" data-value="images/redmage.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/whitemage.png" data-value="images/whitemage.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/blackmage.png" data-value="images/blackmage.png"></span>
+        <span class="dialog-icon" data-set-prop="true" data-image="images/none.png" data-value="images/none.png"></span>
+    </fieldset>
+
+    <fieldset style="position: absolute; top: 730px; left: 0px;">
+        <legend>Player 1</legend>
+        <select data-property="background-p1" data-set-prop="true">
+            <option value="images/bg-overworld-p1.png">Overworld</option>
+            <option value="images/bg-earth-p1.png">Earth</option>
+            <option value="images/bg-sea-p1.png">Sea</option>
+            <option value="images/bg-ice-p1.png">Ice</option>
+            <option value="images/bg-marsh-p1.png">Marsh</option>
+            <option value="images/bg-mirage-p1.png">Mirage</option>
+            <option value="images/bg-ordeals-p1.png">Ordeals</option>
+            <option value="images/bg-sky-p1.png">Sky</option>
+            <option value="images/bg-temple-p1.png">Temple</option>
+            <option value="images/bg-volcano-p1.png">Volcano</option>
+            <option value="images/bg-waterfall-p1.png">Waterfall</option>
+        </select>
+    </fieldset>
+
+    <fieldset style="position: absolute; top: 730px; left: 150px;">
+        <legend>Player 2</legend>
+        <select data-property="background-p2" data-set-prop="true">
+            <option value="images/bg-overworld-p2.png">Overworld</option>
+            <option value="images/bg-earth-p2.png">Earth</option>
+            <option value="images/bg-sea-p2.png">Sea</option>
+            <option value="images/bg-ice-p2.png">Ice</option>
+            <option value="images/bg-marsh-p2.png">Marsh</option>
+            <option value="images/bg-mirage-p2.png">Mirage</option>
+            <option value="images/bg-ordeals-p2.png">Ordeals</option>
+            <option value="images/bg-sky-p2.png">Sky</option>
+            <option value="images/bg-temple-p2.png">Temple</option>
+            <option value="images/bg-volcano-p2.png">Volcano</option>
+            <option value="images/bg-waterfall-p2.png">Waterfall</option>
+        </select>
+    </fieldset>
+
+    <span style="position: absolute; left: 470px; top: 750px; color: #FFF">Click the logo to hide/show them all</span>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer type="text/javascript">
+    	(function(Tracker) {
+    		Tracker.loaded = function() {
+    			Tracker.init({
+                    playerCount: 2,
+                    freetext: [{
+                        label: "P1 Record",
+                        property: "p1-record",
+                    }, {
+                        label: "P2 Record",
+                        property: "p2-record"
+                    },{
+                        label: "Flags",
+                        property: "flags",
+                        onblur: false
+                    }]
+                });
+    		}
+    	})(window.Tracker = window.Tracker || {});
+    </script>
+</body>
+</html>

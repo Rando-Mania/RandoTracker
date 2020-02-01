@@ -1,0 +1,95 @@
+
+    #menu_2{
+        padding: 1em;
+        top: 0;
+        right: 0;
+        min-height: 400px;
+        background-color: #000;
+        color: #fff;
+        border: solid 2px;
+        width: 500px;
+    }
+    
+    #menu_2 .fieldset{
+        padding: 1.5em 1em;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        position: relative;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: .5em;
+    }
+    
+    #menu_2 .fieldset:not(:first-child){
+        margin-top: -1px;  
+    }
+    #menu_2 .fieldset .legend{
+        color: #fff;
+        background-color: #000;
+        position: absolute;
+        top: -.5em;
+        left: 1em;
+        padding: 0 .25em;
+        font-family: "Orbitron", sans-serif;
+        letter-spacing: 1px;
+    }
+    
+    /* #menu_players tr-player{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    [for="player-1"],[for="player-2"]{
+        grid-area: 1 / 1 / span 2;
+    } */
+
+    #menu_2 tr-player:nth-of-type(odd){
+        background-color: rgba(255,255,255,.2);
+    }
+
+    select{
+        min-width: 121px;
+    }
+    #menu_2 #layout_settings{
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .player-inputs{
+        display: grid;
+        grid-template-columns: 1em 9em 4em 8em 1em;
+        grid-gap: .5em;
+    }
+    
+    input[type="number"]{
+        width: 4em;
+    }
+
+    .name-input input{
+        width: 140px;
+    }
+
+    .final-input input{
+        width: 60px;
+    }
+
+    #menu_production div, #menu_layout div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #layout_settings div:not(:last-of-type) {
+        margin-bottom: .25em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    tr-input-timer input{
+        width: 5em;
+        text-align: right;
+    }
+
+    tr-button-timer button{
+        margin-left: .5em;
+    }

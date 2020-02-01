@@ -1,0 +1,18 @@
+<tr-class-if-full class="production-team-swap" toggle-class="production-swap" target=".staff-panel-1, .staff-panel-2">
+    <div class="staff-panel-1">
+        <tr-hide-if-empty class="commentators-contain" target=".commentators" toggle-class="display-none">
+            <img class="commentators-img" src="../shared/images/icons/blank.svg" alt="">
+            <tr-text scale-to-fit class="commentators" property="commentators"></tr-text>
+        </tr-hide-if-empty>
+    </div>
+    <div class="staff-panel-2">
+        <tr-hide-if-empty class="restreamers-contain" target=".restreamers" toggle-class="display-none">
+            <img class="restreamers-img" src="../shared/images/icons/blank.svg" alt="">
+            <tr-text scale-to-fit class="restreamers" property="restreamers"></tr-text>
+        </tr-hide-if-empty>
+        <tr-hide-if-empty class="trackers-contain" target=".tracker" toggle-class="display-none">
+            <img class="trackers-img" src="../shared/images/icons/blank.svg" alt="">
+            <tr-text scale-to-fit class="trackers" property="trackers"></tr-text>
+        </tr-hide-if-empty>
+    </div>
+</tr-class-if-full>

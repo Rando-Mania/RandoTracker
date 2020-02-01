@@ -1,0 +1,83 @@
+@font-face {
+	font-family: "Z1";
+	src: url("/z1r/fonts/PressStart2P.ttf") format("truetype");
+}
+
+body {
+	font-family: "Z1", sans-serif;
+	background-color: #000000;
+	color: #FFF;
+}
+
+.player-name {
+	position: absolute;
+	text-align: center;
+	color: #FFF;
+	font-size: 14px;
+	width: 400px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+.player-final {
+	position: absolute;
+	color: #90EE90;
+	text-shadow: 2px 2px 2px #2800FF;
+	width: 120px;
+	height: 20px;
+	padding-top: 5px;
+	text-align: center;
+	border: 1px solid #90EE90;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.player-speaker {
+	position: absolute;
+}
+
+.player-speaker img {
+	height: 32px;
+}
+
+.item-grid {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 32px 32px 32px 32px;
+}
+
+.item,
+.item img {
+	width: 32px;
+	height: 32px;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 18px;
+	color: #FFF;
+	text-align: right;
+}
+
+#timer .ms {
+	font-size: 12px;
+}
+
+#commentators {
+	color: #FFF;
+	font-size: 13px;
+	position: absolute;
+	text-shadow: 2px 2px 2px #000;
+	height: 75px;
+	width: 340px;
+	line-height: 22px;
+}
+
+#background-picker {
+	width: 320px;
+	color: #FFF;
+}
+
+#background-picker button {
+	width: 95px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Pokemon Mystery Dungeon Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="tracker">
+	<div id="player_name_1" style="top: 10px; left: 10px;" class="player-name nowrap"></div>
+	<div id="player_name_2" style="top: 10px; left: 435px;" class="player-name nowrap"></div>
+
+	<div id="player_1_stats" class="stats" style="top: 100px; left: 100px; position: absolute;">
+
+	</div>
+
+	<div id="player_2_stats" class="stats" style="top: 100px; left: 500px; position: absolute;">
+
+	</div>
+
+	<select data-property="pokemon_index" data-set-prop="true" data-player="1" style="position: absolute; top: 60px; left: 150px">
+		<option></option>
+	</select>
+
+	<select data-property="pokemon_index" data-set-prop="true" data-player="2" style="position: absolute; top: 60px; left: 550px">
+		<option></option>
+	</select>
+
+    <table style="position: absolute; left: 230px; top: 300px">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Winner</th>
+                <th>Round</th>
+                <th>Winner</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input class="track_timer" type="text" data-property="time1_1" onblur="Tracker.updateLayout('time1_1', this.value)" /></td>
+                <td><img data-property="round1_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td>Round 1</td>
+                <td><img data-property="round1_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td><input class="track_timer" type="text" data-property="time1_2" onblur="Tracker.updateLayout('time1_2', this.value)" /></td>
+            </tr>
+            <tr>
+                <td><input class="track_timer" type="text" data-property="time2_1" onblur="Tracker.updateLayout('time2_1', this.value)" /></td>
+                <td><img data-property="round2_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td>Round 2</td>
+                <td><img data-property="round2_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td><input class="track_timer" type="text" data-property="time2_2" onblur="Tracker.updateLayout('time2_2', this.value)" /></td>
+            </tr>
+            <tr>
+                <td><input class="track_timer" type="text" data-property="time3_1" onblur="Tracker.updateLayout('time3_1', this.value)" /></td>
+                <td><img data-property="round3_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td>Round 3</td>
+                <td><img data-property="round3_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td><input class="track_timer" type="text" data-property="time3_2" onblur="Tracker.updateLayout('time3_2', this.value)" /></td>
+            </tr>
+            <tr>
+                <td><input class="track_timer" type="text" data-property="time4_1" onblur="Tracker.updateLayout('time4_1', this.value)" /></td>
+                <td><img data-property="round4_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td>Round 4</td>
+                <td><img data-property="round4_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td><input class="track_timer" type="text" data-property="time4_2" onblur="Tracker.updateLayout('time4_2', this.value)" /></td>
+            </tr>
+            <tr>
+                <td><input class="track_timer" type="text" data-property="time5_1" onblur="Tracker.updateLayout('time5_1', this.value)" /></td>
+                <td><img data-property="round5_1" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td>Round 5</td>
+                <td><img data-property="round5_2" data-toggle="true" data-class-toggle="win" src="images/medal.png" /></td>
+                <td><input class="track_timer" type="text" data-property="time5_2" onblur="Tracker.updateLayout('time5_2', this.value)" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="../script/tracker.js"></script>
+    <script defer src="https://underscorejs.org/underscore-min.js"></script>
+    <script defer src="scripts/pmd.js"></script>
+</body>
+</html>

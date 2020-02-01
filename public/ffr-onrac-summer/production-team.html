@@ -1,0 +1,18 @@
+<tr-class-if-full id="production_team_swap" toggle-class="production-swap" target="#staff_panel_1, #staff_panel_2">
+    <div id="staff_panel_1">
+        <tr-hide-if-empty id="commentator_contain" target="#commentators" toggle-class="display-none">
+            <img src="../shared/images/icons/microphone-line.svg" alt="">
+            <tr-text scale-to-fit id="commentators" class="com" property="comm"></tr-text>
+        </tr-hide-if-empty>
+    </div>
+    <div id="staff_panel_2">
+        <tr-hide-if-empty id="restreamer_contain" target="#restreamer" toggle-class="display-none">
+            <img src="../shared/images/icons/display-line.svg" alt="">
+            <tr-text scale-to-fit id="restreamer" property="restreamer"></tr-text>
+        </tr-hide-if-empty>
+        <tr-hide-if-empty id="tracker_contain" target="#tracker" toggle-class="display-none">
+            <img src="../shared/images/icons/map-marker-line.svg" alt="">
+            <tr-text scale-to-fit id="tracker" property="tracker"></tr-text>
+        </tr-hide-if-empty>
+    </div>
+</tr-class-if-full>

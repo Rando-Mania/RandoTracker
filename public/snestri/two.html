@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Tracker 2.0 Layout Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="components.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="stylesheet" type="text/css" href="menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr" rel="stylesheet"> 
+</head>
+<body>
+    <div class="layout">
+        <tr-image player="1" class="layout-background abs" id="layout_background_1" property="bgi-1-select"></tr-image>
+        <tr-image player="2" class="layout-background abs" id="layout_background_2" property="bgi-2-select"></tr-image>
+
+        <tr-image class="video-background abs" id="video_background_1" style="top: 40px; left:40px;"  property="img-select"></tr-image>
+        <tr-image class="video-background abs" id="video_background_2" style="top: 40px; right:40px;"  property="img-select"></tr-image>
+
+        <div player="1" id="player_video_1" class="player-video border-1 abs" property="img-select" style="top: 40px; left: 40px;"></div>
+        
+        <tr-text player="1" id="player_name_1" class="player-name center-text background-style-1 border-1 abs" property="player_name_1" style="left: 294px; top: 483px;">DefaultText1</tr-text>
+        <!-- <tr-toggle player="1" class="border-1 player-speaker background-style-1 abs" property="player_speaker">♫</tr-toggle> -->
+        
+        <tr-player player="1">
+			<tr-template class="player-grid border-1 background-style-1 abs" id="player_grid_1_ffiv" style="left: 40px; top: 557px;" href="items_ffiv.html"></tr-template>
+            <tr-template class="player-grid border-1 background-style-1 abs" id="player_grid_1_lttp" style="left: 40px; top: 557px;" href="items_lttp.html"></tr-template>
+        </tr-player>		
+		<div player="1" id="player_game_1" class="player-game border-1 background-style-1 abs" style="left: 61px; top: 483px;">
+            <span>FFIV</span>
+            <span>SMW</span>
+            <span>LTTP</span>
+        </div>
+        <tr-text player="1" id="player_final_1" class="player-final center-text border-1 background-style-1 abs" property="player_final_1" style="left: 332px; bottom: 6px;"></tr-text>
+        
+        <div player="2" id="player_video_2" class="player-video border-2 abs" property="img-select" style="top: 40px; right:40px;"></div>
+        <tr-text player="2" id="player_name_2" class="player-name center-text border-2 background-style-1 abs" property="player_name_2" style="right: 294px; top: 483px;">DefaultText1</tr-text>
+        <!-- <tr-toggle player="2" class="border-2 background-style-1 player-speaker" property="player_speaker abs">♫</tr-toggle> -->
+		<tr-player player="2">
+            <tr-template class="player-grid border-2 background-style-1 abs" id="player_grid_2_ffiv" style="right: 40px; top: 557px;" href="items_ffiv.html"></tr-template>
+            <tr-template class="player-grid border-2 background-style-1 abs" id="player_grid_2_lttp" style="right: 40px; top: 557px;" href="items_lttp.html"></tr-template>
+		</tr-player>
+        <div player="2" id="player_game_2" class="player-game border-1 background-style-1 abs" style="right: 61px; top: 483px;">
+            <span>FFIV</span>
+            <span>SMW</span>
+            <span>LTTP</span>
+        </div>
+        <tr-text player="2" id="player_final_2" class="player-final center-text border-2 background-style-1 abs" property="player_final_2" style="right: 332px; bottom: 6px;"></tr-text>  
+
+        <tr-timer class="abs border-3 background-style-1" property="timer-test" style="bottom: 0px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <div id="staff" class="border-3 background-style-1 abs" style="top: 551px; left: 50%; transform: translateX(-50%);">
+            <div class="abs comm background-style-1" id="staff_panel_1">
+                <img src="images\mic-4.png" alt="">
+                <tr-text property="comm">DefaultText1</tr-text>    
+            </div>
+            <!-- <div class="abs comm background-style-1" id="staff_panel_2">
+                <tr-text id="restreamer" class="restreamer background-style-1" property="restreamer">DefaultText1</tr-text>
+                <tr-text id="tracker" class="tracker background-style-1" property="tracker">DefaultText1</tr-text>
+            </div> -->
+        </div>
+    </div>   
+
+<tr-toggle class="loadscreen abs" property="loadscreen" style="top: 0; left: 0;">
+    <h2>Welcome to RandoMania</h2>
+    <h1>Snes Triathlon</h1>
+    <h2>
+        <tr-text player="1" class="player-name border-background-1 border-2" property="player_name_1">DefaultText1</tr-text>
+        vs.
+        <tr-text player="2" class="player-name border-background-1 border-2" property="player_name_2">DefaultText2</tr-text>
+    </h2>
+    <!-- <tr-template id="promos_1" href="promos_1.html"></tr-template> -->
+</tr-toggle>
+
+<!-- <tr-toggle class="bracket abs" property="bracket" style="display: none; top: 0; left: 0;">
+    <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+</tr-toggle> -->
+
+
+<div id="menu_2">
+    <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <div class="player-inputs">
+            <div></div>
+            <label for="">Name</label>
+            <label>Time</label>
+            <label>Game</label>
+            <label for="">Winner</label>
+        </div>
+        <tr-player player="1" class="player-inputs"> 
+            <label for="player-1">1</label>
+            <tr-input-text class="name-input" property="player_name_1"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final_1"></tr-input-text>
+            <!-- <tr-input-number min="0" property="p1-cod" oninput></tr-input-number> -->
+            <div style="display: flex; justify-content: space-between;">
+                <tr-select label="PLAYER ONE" property="bgi-1-select">
+                    <tr-option selected target="#player_game_1, tr-player[player='1']" toggle-class="ffiv" value="images/ffiv_test.png">FFIV</tr-option>
+                    <tr-option target="#player_game_1, tr-player[player='1']" toggle-class="smw" value="images/smw_test.png">SMW</tr-option>
+                    <tr-option target="#player_game_1, tr-player[player='1']" toggle-class="lttp" value="images/lttp_test.png">LTTP</tr-option>
+                    <tr-option value="">None</tr-option>
+                </tr-select>
+            </div>
+            <div>
+                <tr-input-toggle-class id="win" property="toggle-class" target="#player_name_1" toggle-class="winner"></tr-input-toggle-class>
+            </div>
+        </tr-player>
+        <tr-player player="2" class="player-inputs">
+            <label for="player-2">2</label>
+            <tr-input-text class="name-input" property="player_name_2"></tr-input-text>
+            <tr-input-text class="final-input" property="player_final_2"></tr-input-text>
+            <!-- <tr-input-number min="0" property="p2-cod" oninput></tr-input-number> -->
+            <div style="display: flex; justify-content: space-between;">
+                <tr-select property="bgi-2-select">
+                    <tr-option selected target="#player_game_2, tr-player[player='2']" toggle-class="ffiv" value="images/ffiv_test.png">FFIV</tr-option>
+                    <tr-option target="#player_game_2, tr-player[player='2']" toggle-class="smw" value="images/smw_test.png">SMW</tr-option>
+                    <tr-option target="#player_game_2, tr-player[player='2']" toggle-class="lttp" value="images/lttp_test.png">LTTP</tr-option>
+                    <tr-option value="">None</tr-option>
+                </tr-select>
+            </div>
+            <div>
+                <tr-input-toggle-class id="win2" property="toggle-class" target="#player_name_2" toggle-class="winner"></tr-input-toggle-class>
+            </div>
+        </tr-player>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Layout Settings</h4>
+        
+        <!--div>
+            <tr-input-toggle id="loadscreen" property="loadscreen"></tr-input-toggle> <label for="loadscreen">Loadscreen</label>
+        </div-->
+        <div>
+            <label>Video Background:</label>
+            <tr-select property="img-select">
+                <tr-option selected value="images/color_green_4by3.png">Green</tr-option>
+                <tr-option value="images/color_magenta_4by3.png">Magenta</tr-option>
+                <tr-option value="images/color_blue_4by3.png">Blue</tr-option>
+                <tr-option value="">None</tr-option>
+            </tr-select>
+        </div>
+        <div>
+            <label>Overlay:</label>
+            <tr-select-toggle>
+                <tr-option value="none">None</tr-option>
+                <tr-option value="loadscreen">Loadscreen</tr-option>
+            </tr-select-toggle>
+        </div>
+        <!-- <div>
+            <label>Speaker:</label>
+            <tr-select-toggle property="player_speaker">
+                <tr-option player="0" value="0">None</tr-option>
+                <tr-option player="1" value="1">Player 1</tr-option>
+                <tr-option player="2" value="2">Player 2</tr-option>
+            </tr-select-toggle>
+        </div> -->
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-text class="comm-input" property="comm"></tr-input-text>
+        </div>
+        <!-- <div>
+            <label>Restreamer:</label>
+            <tr-input-text class="restreamer-input" property="restreamer"></tr-input-text>
+        </div>
+        <div>
+            <label>Tracker:</label>
+            <tr-input-text class="tracker-input" property="tracker"></tr-input-text>
+        </div> -->
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-timer property="timer-test"></tr-input-timer>
+            <tr-button-timer property="timer-test"></tr-button-timer>
+        </div>
+    </div>
+
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">View Controls</h4>
+    </div>
+
+    <div id="menu_room" class="fieldset">
+        <h4 class="legend">Room Controls</h4>
+    </div>
+
+</div>
+
+<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

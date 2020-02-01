@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Rando Tracker - Admin</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="content/admin.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="/__/firebase/5.2.0/firebase-app.js"></script>
+	<script src="/__/firebase/5.2.0/firebase-auth.js"></script>
+	<script src="/__/firebase/5.2.0/firebase-database.js"></script>
+	<script src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="script/admin.js"></script>
+</head>
+<body>
+	<nav>
+		<p class="center">
+			<b>RandoMania Tracker Admin</b>
+		</p>
+		<ul class="nav-list">
+			<li><a href="/">Home</a></li>
+		</ul>
+	</nav>
+	<div id="content">
+		<table id="tblUsers">
+			<thead>
+				<tr>
+					<th colspan="4"><h3>Accounts</h3></th>
+				</tr>
+				<tr>
+					<th title="Email associated with the account">E-mail</th>
+					<th title="Name provided from authentication">Display Name</th>
+					<th>Admin</th>
+					<th title="Enables ability to view layouts & create rooms">Approved</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="4">Loading...</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		Admin.init();
+	</script>
+</body>
+</html>

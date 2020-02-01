@@ -1,0 +1,31 @@
+#dualsplit {
+	font-family: Consolas;
+	position: absolute;
+	right: 64px;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+	max-height: 100vh;
+	overflow-y: auto;
+	color: #FFF;
+	background-color: #000;
+	padding-bottom: 24px;
+}
+
+#btnDualSplit {
+	position: absolute;
+	right: 64px;
+	bottom: 0;
+	z-index: -1;
+	background-color: #000;
+	color: #FFF;
+	font-size: 19px;
+}
+
+#btnDualSplit.active {
+	z-index: 11;
+}
+
+.button-split {
+	width: 51px;
+}

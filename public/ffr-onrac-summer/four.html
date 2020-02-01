@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>FF Onrac Summer Vacation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../shared/components.css">
+	<link rel="stylesheet" type="text/css" href="../shared/menu.css">
+	<link rel="stylesheet" type="text/css" href="four.css">
+</head>
+<body>
+	<div id="layout">
+		<div player="1" class="player-video abs" style="left: var(--videoX); top: var(--videoY);"></div>
+		<div class="player-name abs" style="left: var(--nameX); top: var(--nameY);">
+			<tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1"></tr-text>
+		</div>
+		<tr-player player="1">
+			<tr-template class="player-grid abs" id="player-grid-1" href="icons.html" style="left: var(--gridX); top: var(--gridY);"></tr-template>
+			<tr-template class="player-grid abs orbs" id="player-winorbs-1" href="winorbs.html" style="left: var(--winorbX); top: var(--winorbY);"></tr-template>
+		</tr-player>
+		<tr-text player="1" property="player_final_1" class="player-final abs" style="left: var(--finalX); top: var(--finalY);"></tr-text>
+		
+		<img class="abs speaker" id="player_speaker_1" style="left: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
+		<img class="abs winner" id="winner-1" style="left: var(--winX); top: var(--winY);" src="images/winner.svg" alt="Winner">
+
+<!-- player 2 -->
+		<div player="2" class="player-video abs" style="right: var(--videoX); top: var(--videoY);"></div>
+
+		<div class="player-name abs" style="right: var(--nameX); top: var(--nameY);">
+			<tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2"></tr-text>
+		</div>
+		<tr-player player="2">
+			<tr-template class="player-grid abs" id="player-grid-2" href="icons.html" style="right: var(--gridX); top: var(--gridY);"></tr-template>
+			<tr-template class="player-grid abs orbs" id="player-winorbs-2" href="winorbs.html" style="right: var(--winorbX); top: var(--winorbY);"></tr-template>
+		</tr-player>
+		<tr-text player="2" property="player_final_2" class="player-final abs" style="right: var(--finalX); top: var(--finalY);"></tr-text>
+
+		<img class="abs speaker" id="player_speaker_2" style="right: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
+		<img class="abs winner" id="winner-2" style="right: var(--winX); top: var(--winY);" src="images/winner.svg" alt="Winner">
+
+<!-- player 3 -->
+
+		<div player="3" class="player-video abs" style="left: var(--videoX); bottom: var(--videoY);"></div>
+
+		<div class="player-name abs" style="left: var(--nameX); bottom: var(--nameY);">
+			<tr-text scale-to-fit player="3" property="player_name_3" id="player_name_3"></tr-text>
+		</div>
+
+		<tr-player player="3">
+			<tr-template class="player-grid abs" id="player-grid-3" href="icons.html" style="left: var(--gridX); bottom: var(--gridY);"></tr-template>
+			<tr-template class="player-grid abs orbs" id="player-winorbs-3" href="winorbs.html" style="left: var(--winorbX); bottom: var(--winorbY);"></tr-template>
+		</tr-player>
+		<tr-text player="3" property="player_final_3" class="player-final abs" style="left: var(--finalX); bottom: var(--finalY);"></tr-text>
+		
+		<img class="abs speaker" id="player_speaker_3" style="left: var(--speakerX); bottom: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
+
+		<img class="abs winner" id="winner-3" style="left: var(--winX); bottom: var(--winY);" src="images/winner.svg" alt="Winner">
+
+<!-- player 4 -->
+
+		<div player="4" class="player-video abs" style="right: var(--videoX); bottom: var(--videoY);"></div>
+
+		<div class="player-name abs" style="right: var(--nameX); bottom: var(--nameY);">
+			<tr-text scale-to-fit player="4" property="player_name_4" id="player_name_4"></tr-text>
+		</div>
+		<tr-player player="4">
+			<tr-template class="player-grid abs" id="player-grid-4" href="icons.html" style="right: var(--gridX); bottom: var(--gridY);"></tr-template>
+			<tr-template class="player-grid abs orbs" id="player-winorbs-4" href="winorbs.html" style="right: var(--winorbX); bottom: var(--winorbY);"></tr-template>
+		</tr-player>
+		<tr-text player="4" property="player_final_4" class="player-final abs" style="right: var(--finalX); bottom: var(--finalY);"></tr-text>
+
+		<img class="abs speaker" id="player_speaker_4" style="right: var(--speakerX); bottom: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
+		<img class="abs winner" id="winner-4" style="right: var(--winX); bottom: var(--winY);" src="images/winner.svg" alt="Winner">
+
+<!-- timer/staff -->
+
+		<tr-timer class="abs" property="timer-test" style="top: 222px; left: 50%; transform: translateX(-50%);"></tr-timer>
+
+		<tr-hide-if-empty id="staff" class="abs" style="top: 430px; left: 50%; transform: translateX(-50%);" id="production_team" class="panel-wrap-outer" toggle-class="visually-hidden">
+			<tr-template href="production-team.html"></tr-template>
+		</tr-hide-if-empty>
+
+<!-- teams and flags -->
+<!--
+		<div class="team-name-contain" id="team-name-1-contain" style="position: absolute; top: 335px; left: var(--nameX);">
+			<tr-text scale-to-fit class="team-name" property="team-name-1"></tr-text>
+		</div>
+		<div class="team-name-contain" id="team-name-2-contain" style="position: absolute; top: 335px; right: var(--nameX); ">
+			<tr-text scale-to-fit class="team-name" property="team-name-2"></tr-text>
+		</div>
+-->
+
+		<tr-text class="seed-flags" property="seed-flags" style="margin: auto; position: relative; top: 282px;"></tr-text>
+<!--		<tr-template class="player-grid abs" id="heroes" href="heroes.html"></tr-template>-->
+	</div>
+
+<!-- loadscreen -->
+	<div class="loadscreen abs" style="top: 0; left: 0;">
+		<div class="abs" id="loadscreen-video-area">
+			<h2>
+				<tr-text player="1" class="player-name" property="player_name_1">This</tr-text>
+				and
+				<tr-text player="3" class="player-name" property="player_name_3">Should</tr-text>
+				vs.
+				<tr-text player="2" class="player-name" property="player_name_2">Go</tr-text>
+				and
+				<tr-text player="4" class="player-name" property="player_name_4">Away</tr-text>
+			</h2>
+		</div>
+		<tr-template class="abs" style="top: 563px; left: 22px;" id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
+	</div>
+	
+	<tr-template href="four_menu.html"></tr-template>
+
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+	<script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+	<script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+	<script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+	<script type="text/javascript" src="../components/components.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>

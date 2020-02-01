@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "DW";
+	src: url("/dwr/fonts/Warrior Quest I and II.ttf") format("truetype");
+}
+
+body {
+	font-family: "DW", sans-serif;
+	background-color: #000000;
+	color: white;
+}
+
+.player-name {
+	position: absolute;
+	font-size: 12px;
+	width: 300px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+.stats {
+	font-size: 12px;
+	line-height: 20px;
+	position: absolute;
+}
+
+.info {
+	font-size: 12px;
+}

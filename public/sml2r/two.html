@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Super Mario Land 2 Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="two.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<img src="images/2p_background.png" style="top: 0px; left: 0px; position: absolute;" />
+	<div id="player_name_1" data-scale-to-fit="true" class="player-name nowrap" style="top: 14px; left: 15px;"></div>
+	<div id="player_name_2" data-scale-to-fit="true" class="player-name nowrap player-name-right" style="top: 14px; left: 948px;"></div>
+	<div id="player_speaker_1" class="player-speaker hidden" style="top: 11px; left: 338px;"><img src="images/speaker_black.png"/></div>
+  <div id="player_speaker_2" class="player-speaker face-left hidden" style="top: 11px; left: 906px;"><img src="images/speaker_black.png"/></div>
+  <div id="player_final_1" class="player-final hidden" style="top: 619px; left: 140px;"></div>
+  <div id="player_final_2" class="player-final hidden" style="top: 619px; left: 998px;"></div>
+
+  <div id="commentators" data-scale-to-fit="true" class="nowrap" style="top: 651px; left: 515px;"></div>
+  <div id="timer" style="top: 12px; left: 440px;"></div>
+
+	<span id="player-icons" data-child-player="1" style="position: absolute; top: 625px; left: 13px;">
+		<span class="icon" data-toggle="true" data-property="tree" data-off-image="images/coins/tree_off.png" data-on-image="images/coins/tree_on.png" data-image="images/coins/tree_off.png" style="top: 50px; left: 0px;"></span>
+		<span class="icon" data-toggle="true" data-property="space" data-off-image="images/coins/space_off.png" data-on-image="images/coins/space_on.png" data-image="images/coins/space_off.png" style="top: 0px; left: 0px;"></span>
+		<span class="icon" data-toggle="true" data-property="macro" data-off-image="images/coins/macro_off.png" data-on-image="images/coins/macro_on.png" data-image="images/coins/macro_off.png" style="top: 50px; left: 41px;"></span>
+		<span class="icon" data-toggle="true" data-property="pumpkin" data-off-image="images/coins/pumpkin_off.png" data-on-image="images/coins/pumpkin_on.png" data-image="images/coins/pumpkin_off.png" style="top: 0px; left: 41px;"></span>
+		<span class="icon" data-toggle="true" data-property="mario" data-off-image="images/coins/mario_off.png" data-on-image="images/coins/mario_on.png" data-image="images/coins/mario_off.png" style="top: 0px; left: 82px;"></span>
+		<span class="icon" data-toggle="true" data-property="turtle" data-off-image="images/coins/turtle_off.png" data-on-image="images/coins/turtle_on.png" data-image="images/coins/turtle_off.png" style="top: 50px; left: 82px;"></span>
+	</span>
+
+	<span data-child-player="2" style="position: absolute; top: 625px; left: 1148px;" data-copy-from="#player-icons">
+	</span>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="../script/tracker.js"></script>
+  <script defer type="text/javascript">
+    	(function(Tracker) {
+    		Tracker.loaded = function() {
+    			Tracker.init({
+	    			playerCount: 2,
+	    			enableComsLayout: true
+	    		});
+    		}
+    	})(window.Tracker = window.Tracker || {});
+  </script>
+</body>
+</html>

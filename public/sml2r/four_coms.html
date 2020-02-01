@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Super Mario Land 2 Randomizer Tracker</title>
+	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
+	<link rel="stylesheet" type="text/css" href="tracker.css">
+	<link rel="stylesheet" type="text/css" href="commentary.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="player_name_1" class="player-name" style="top: 18px; left: 665px;"></div>
+	<div id="player_name_2" class="player-name" style="top: 38px; left: 815px;"></div>
+	<div id="player_name_3" class="player-name" style="top: 215px; left: 665px;"></div>
+	<div id="player_name_4" class="player-name" style="top: 235px; left: 815px;"></div>
+
+	<span id="player-icons" data-child-player="1" style="position: absolute; top: 40px; left: 665px;">
+		<span class="icon" data-toggle="true" data-property="tree" data-off-image="images/coins/tree_off.png" data-on-image="images/coins/tree_on.png" data-image="images/coins/tree_off.png" style="top: 50px; left: 0px;"></span>
+		<span class="icon" data-toggle="true" data-property="space" data-off-image="images/coins/space_off.png" data-on-image="images/coins/space_on.png" data-image="images/coins/space_off.png" style="top: 0px; left: 0px;"></span>
+		<span class="icon" data-toggle="true" data-property="macro" data-off-image="images/coins/macro_off.png" data-on-image="images/coins/macro_on.png" data-image="images/coins/macro_off.png" style="top: 50px; left: 41px;"></span>
+		<span class="icon" data-toggle="true" data-property="pumpkin" data-off-image="images/coins/pumpkin_off.png" data-on-image="images/coins/pumpkin_on.png" data-image="images/coins/pumpkin_off.png" style="top: 0px; left: 41px;"></span>
+		<span class="icon" data-toggle="true" data-property="mario" data-off-image="images/coins/mario_off.png" data-on-image="images/coins/mario_on.png" data-image="images/coins/mario_off.png" style="top: 0px; left: 82px;"></span>
+		<span class="icon" data-toggle="true" data-property="turtle" data-off-image="images/coins/turtle_off.png" data-on-image="images/coins/turtle_on.png" data-image="images/coins/turtle_off.png" style="top: 50px; left: 82px;"></span>
+	</span>
+
+	<span data-child-player="2" style="position: absolute; top: 60px; left: 815px;" data-copy-from="#player-icons">
+	</span>
+
+	<span data-child-player="3" style="position: absolute; top: 230px; left: 665px;" data-copy-from="#player-icons">
+	</span>
+
+	<span data-child-player="4" style="position: absolute; top: 250px; left: 815px;" data-copy-from="#player-icons">
+	</span>
+
+
+	<div id="buttons" class="buttons" style="top: 530px;">
+	<input type="file" id="fileupload" name="upload" accept=".gb,.gbc" />
+	<button id="reveal" onclick="buttonPress()" disabled>Reveal</button></div>
+
+	<div id="mushHouse" class="text hidden" style="top: 395px; left: 180px;"></div>
+	<div id="tree1" class="text hidden" style="top: 420px; left: 10px;"></div>
+	<div id="tree2" class="text hidden" style="top: 420px; left: 85px;"></div>
+	<div id="tree3" class="text hidden" style="top: 375px; left: 85px;"></div>
+	<div id="tree4" class="text hidden" style="top: 375px; left: 10px;"></div>
+	<div id="tree5" class="text hidden" style="top: 345px; left: 25px;"></div>
+	<div id="pump1" class="text hidden" style="top: 95px; left: 400px;"></div>
+	<div id="pump2" class="text hidden" style="top: 70px; left: 435px;"></div>
+	<div id="pump3" class="text hidden" style="top: 70px; left: 355px;"></div>
+	<div id="pump4" class="text hidden" style="top: 35px; left: 370px;"></div>
+	<div id="mario1" class="text hidden" style="top: 305px; left: 425px;"></div>
+	<div id="mario2" class="text hidden" style="top: 285px; left: 440px;"></div>
+	<div id="mario3" class="text hidden" style="top: 260px; left: 440px;"></div>
+	<div id="mario4" class="text hidden" style="top: 220px; left: 365px;"></div>
+	<div id="turt1" class="text hidden" style="top: 380px; left: 320px;"></div>
+	<div id="turt2" class="text hidden" style="top: 435px; left: 390px;"></div>
+	<div id="turt3" class="text hidden" style="top: 460px; left: 315px;"></div>
+	<div id="hippo" class="text hidden" style="top: 115px; left: 30px;"></div>
+	<div id="space1" class="text hidden" style="top: 235px; left: 45px;"></div>
+	<div id="space2" class="text hidden" style="top: 160px; left: 5px;"></div>
+	<div id="macro1" class="text hidden" style="top: 110px; left: 155px;"></div>
+	<div id="macro2" class="text hidden" style="top: 80px; left: 165px;"></div>
+	<div id="macro3" class="text hidden" style="top: 95px; left: 225px;"></div>
+	<div id="macro4" class="text hidden" style="top: 40px; left: 190px;"></div>
+	<div id="castle" class="text hidden" style="top: 245px; left: 225px;"></div>
+	<div id="misc" class="text hidden" style="top: 265px; left: 145px;"></div>
+	<div id="turtS" class="text hidden" style="top: 405px; left: 450px;"></div>
+	<div id="pumpS1" class="text hidden" style="top: 160px; left: 395px;"></div>
+	<div id="spaceS" class="text hidden" style="top: 190px; left: 120px;"></div>
+	<div id="treeS" class="text hidden" style="top: 455px; left: 125px;"></div>
+	<div id="macroS" class="text hidden" style="top: 40px; left: 115px;"></div>
+	<div id="pumpS2" class="text hidden" style="top: 100px; left: 300px;"></div>
+
+	<span id="key" style="position: absolute; top: 142px; left: 542px;">
+		<div id="normal" class="text" style="top: 0px; left: 0px;">normal</div>
+		<div id="moon" class="text" style="top: 50px; left: 0px; background-color: rgb(255,255,0);">moon</div>
+		<div id="space" class="text" style="top: 100px; left: 0px; background-color: rgb(0,255,255);">space</div>
+		<div id="scrolling" class="text scrolling" style="top: 150px; left: 0px;">scrolling</div>
+		<div id="swapped" class="text swapped-exit" style="top: 200px; left: 0px;">swapped exit</div>
+	</span>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="../script/tracker.js"></script>
+  <script defer src="script/spoiler.js"></script>
+	<script defer src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+  <script defer type="text/javascript">
+    (function(Tracker) {
+    	Tracker.loaded = function() {
+    		Tracker.init({
+    			playerCount: 4,
+    			enableComsLayout: true
+    		});
+    	}
+    })(window.Tracker = window.Tracker || {});
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+@font-face {
+	font-family: "Z1";
+	src: url("/z1r/fonts/PressStart2P.ttf") format("truetype");
+}
+
+body {
+	font-family: "Z1", sans-serif;
+	background-color: #000000;
+	color: #FFF;
+}
+
+.player-name {
+	position: absolute;
+	text-align: center;
+	color: #FFF;
+	font-size: 12px;
+	width: 400px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+.item-grid {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 32px 32px 32px 32px 40px 32px 32px;
+}
+
+.item,
+.item img {
+	width: 32px;
+	height: 32px;
+}
+
+#timer {
+	width: 300px;
+	position: absolute;
+	font-size: 18px;
+	color: #FFF;
+	text-align: right;
+}
+
+#commentators {
+	color: #FFF;
+	font-size: 13px;
+	position: absolute;
+	text-shadow: 2px 2px 2px #000;
+	height: 75px;
+	width: 500px;
+	line-height: 22px;
+}
+
+#background-picker {
+	width: 320px;
+	color: #FFF;
+}
+
+#background-picker button {
+	width: 95px;
+}
+
+.item-grid-2 {
+	position: absolute;
+	display: grid;
+	grid-template-columns: repeat(2, 32px);
+	grid-gap: 4px;
+	padding: 5px;
+	border: 2px solid rgba(255,255,255,.5);
+	width: 70px;
+}
+
+span[data-property="tri-1"] img, span[data-property="tri-2"] img{
+	background-image: url(images/zelda_2_triforce_frames.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 96px 32px;
+	opacity: .3;
+}
+
+span[data-property="tri-1"] img.selected, span[data-property="tri-2"] img.selected{
+	opacity: 1;
+	animation: tri-shine steps(3) .5s 4;
+}
+
+@keyframes tri-shine {
+	from{ background-position: 0 0; }
+	to{ background-position: -96px 0;}
+}

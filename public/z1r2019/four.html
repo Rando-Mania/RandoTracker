@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Zelda 1 Randomizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="preload" href="images/4p-backdrop.png" as="image" type="image/png">
+</head>
+<body>
+	<div id="layout">
+        <div class="abs" style="top: 5px; left: 50%; transform: translateX(-50%);">
+            <tr-hide-if-empty class="staff-panel-contain" toggle-class="visually-hidden">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
+            <tr-text property="header" class="header"></tr-text>
+        </div>
+        <div class="rm-logo abs" style="bottom: 28px; left: 431px;">
+                <div class="rm-logo-1">tracker by</div>
+                <div class="rm-logo-2">RandoMania</div>
+            </div>
+        <tr-player player="1">
+            <div class="border-1 player-video abs" style="left: var(--videoX); top: var(--videoY1);"></div>
+            <div class="player-name abs border-background-1" style="left: var(--nameX); top: var(--nameY1);">
+                <tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-background-1" id="player-grid-1" href="four_icons.html" style="left: var(--gridX); top: var(--gridY1);"></tr-template>
+            <tr-template class="lvltri abs background-1" href="level-triforces.html" style="left: var(--lvltriX); top: var(--lvltriY1);"></tr-template>
+            <tr-text property="player_final_1" class="player-final border-background-1 abs" style="left: var(--timerX); top: var(--timerY1);"></tr-text>
+
+            <div class="abs speaker border-2" id="player_speaker_1" style="left: var(--speakerX); top: var(--speakerY1);" alt=""><img src="../shared/images/icons/volume-up-solid.svg" alt=""></div>
+            <tr-text property="count" id="player_count_1" class="count border-background-1 abs" style="left: var(--countX); top: var(--countY1);"></tr-text>
+            <div class="abs winner" id="winner-1" style="left: var(--winX); top: var(--winY1);"><img src="images/three-triforce.png" alt=""/> <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div> <img src="images/three-triforce.png" alt=""/></div>
+        </tr-player>
+
+<!-- player 2 -->
+        <tr-player player="2">
+            <div class="border-1 player-video abs" style="right: var(--videoX); top: var(--videoY1);"></div>
+            <div class="player-name abs border-background-1" style="right: var(--nameX); top: var(--nameY1);">
+                <tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-background-1" id="player-grid-2" href="four_icons.html" style="right: var(--gridX); top: var(--gridY1);"></tr-template>
+            <tr-template class="lvltri abs background-1" href="level-triforces.html" style="right: var(--lvltriX); top: var(--lvltriY1);"></tr-template>
+            <tr-text property="player_final_2" class="player-final abs border-background-1" style="right: var(--timerX); top: var(--timerY1);"></tr-text>
+            
+            <div class="abs speaker border-background-1" id="player_speaker_2" style="right: var(--speakerX); top: var(--speakerY1);" alt=""> <img src="../shared/images/icons/volume-up-solid.svg" alt=""></div>
+            <tr-text property="count" id="player_count_2" class="count border-background-1 abs" style="right: var(--countX); top: var(--countY1);"></tr-text>
+            <div class="abs winner" id="winner-2" style="right: var(--winX); top: var(--winY1);"><img src="images/three-triforce.png" alt=""/> <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div> <img src="images/three-triforce.png" alt=""/></div>
+        </tr-player>
+
+<!-- player 3 -->
+        <tr-player player="3">
+            <div class="border-1 player-video abs" style="left: var(--videoX); bottom: var(--videoY2);"></div>
+            <div class="player-name abs border-background-1" style="left: var(--nameX); bottom: var(--nameY2);">
+                <tr-text scale-to-fit player="3" property="player_name_3" id="player_name_3"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-background-1" id="player-grid-3" href="four_icons.html" style="left: var(--gridX); bottom: var(--gridY2);"></tr-template>
+            <tr-template class="lvltri abs background-1" href="level-triforces.html" style="left: var(--lvltriX); bottom: var(--lvltriY2);"></tr-template>
+            <tr-text property="player_final_3" class="player-final abs border-background-1" style="left: var(--timerX); bottom: var(--timerY2);"></tr-text>
+            
+            <div class="abs speaker border-background-1" id="player_speaker_3" style="left: var(--speakerX); bottom: var(--speakerY2);" alt=""> <img src="../shared/images/icons/volume-up-solid.svg" alt=""></div>
+            <tr-text property="count" id="player_count_3" class="count border-background-1 abs" style="left: var(--countX); bottom: var(--countY2);"></tr-text>
+            <div class="abs winner" id="winner-3" style="left: var(--winX); bottom: var(--winY2);"><img src="images/three-triforce.png" alt=""/> <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div> <img src="images/three-triforce.png" alt=""/></div>
+
+        </tr-player>
+<!-- player 4 -->
+
+        <tr-player player="4">
+            <div class="border-1 player-video abs" style="right: var(--videoX); bottom: var(--videoY2);"></div>
+
+            <div class="player-name abs border-background-1" style="right: var(--nameX); bottom: var(--nameY2);">
+                <tr-text scale-to-fit player="4" property="player_name_4" id="player_name_4"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-background-1" id="player-grid-4" href="four_icons.html" style="right: var(--gridX); bottom: var(--gridY2);"></tr-template>
+            <tr-template class="lvltri abs background-1" href="level-triforces.html" style="right: var(--lvltriX); bottom: var(--lvltriY2);"></tr-template>
+            
+            <tr-text property="player_final_4" class="player-final abs border-background-1" style="right: var(--timerX); bottom: var(--timerY2);"></tr-text>
+            
+            <div class="abs speaker border-background-1" id="player_speaker_4" style="right: var(--speakerX); bottom: var(--speakerY2);" alt=""> <img src="../shared/images/icons/volume-up-solid.svg" alt=""></div>
+            <tr-text property="count" id="player_count_4" class="count border-background-1 abs" style="right: var(--countX); bottom: var(--countY2);"></tr-text>
+            <div class="abs winner" id="winner-4" style="right: var(--winX); bottom: var(--winY2);"><img src="images/three-triforce.png" alt=""/> <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div> <img src="images/three-triforce.png" alt=""/></div>
+        </tr-player>
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
+<!-- timer/staff -->
+
+<tr-timer class="abs border-background-1 border-color-1" property="timer-test" style="left: var(--timerX); top: var(--timerY1);"></tr-timer>
+<tr-timer class="abs border-background-1 border-color-2" property="timer-test" style="right: var(--timerX); top: var(--timerY1);"></tr-timer>
+<tr-timer class="abs border-background-1 border-color-3" property="timer-test" style="left: var(--timerX); bottom: var(--timerY2);"></tr-timer>
+<tr-timer class="abs border-background-1 border-color-4" property="timer-test" style="right: var(--timerX); bottom: var(--timerY2);"></tr-timer>
+
+<!-- item locations -->
+    <div class="item-locations abs background-1" style="left: 50%; transform: translateX(-50%); top: 151px;">
+        <tr-player player="1"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="2"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="3"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="4"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="5"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="6"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="7"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="8"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="9"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="10"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="11"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="12"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="13"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="14"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="15"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <img src="images/items/candle-1.png" alt="">
+        <img src="images/items/arrow-1.png" alt="">
+        <img src="images/items/bow.png" />
+        <img src="images/items/ladder.png" />
+        <img src="images/items/raft.png" />
+        <img src="images/items/recorder.png" />
+        <img src="images/items/bracelet.png" />
+        <img src="images/items/ring-1.png" alt="">
+        <img src="images/items/key-a.png" />
+        <img src="images/items/wand.png" />
+        <img src="images/items/book.png" />
+        <img src="images/items/boomerang-0.png" />
+        <img src="images/items/boomerang-1.png" />
+        <img src="images/items/white-sword.png" />
+        <img src="images/items/heart-0.png" />
+    </div>
+</div>
+
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top: 0; left: 0;">
+    <div class="loadscreen">
+        <div class="loadscreen-main">
+            <h1>
+                <img style="width: 300px; height: auto;" src="images/RandoLogo.png" alt="">
+            </h1>
+            <h2>
+                <tr-text player="1" class="player-name" property="player_name_1">Dummy</tr-text>
+                vs.
+                <tr-text player="2" class="player-name" property="player_name_2">Text</tr-text>
+                <span class="load-and-vs">
+                    <span class="load-vs">vs.</span>
+                    <span class="load-and">and</span>
+                </span>
+                <tr-text player="3" class="player-name" property="player_name_3">Text</tr-text>
+                vs.
+                <tr-text player="4" class="player-name" property="player_name_4">Text</tr-text>
+            </h2>
+            <h3>
+                on RandoMania
+            </h3>
+        </div>
+        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
+    </div>
+</div>
+
+<!-- bracket -->
+<!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+    <div class="bracket">
+        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+</div> -->
+
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <div class="calendar">
+        <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="90%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+    </div>
+</div>
+	
+	<tr-template href="four_menu.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+	<script type="text/javascript" src="../components/tracker.js"></script>
+</body>
+</html>
