@@ -817,6 +817,7 @@
 				};
 
 				if(this.list){
+					input.classList.add("awesomplete");
 					input.setAttribute("list", this.listValue);
 				}
 

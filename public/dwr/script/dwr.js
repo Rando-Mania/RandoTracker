@@ -601,42 +601,34 @@
 
 DWR.init();
 
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
+// youtube iframe
 
-  tag.src = "https://www.youtube.com/iframe_api";
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
   var player;
   function onYouTubeIframeAPIReady() {
-	  player = new YT.Player('player', {
-		  height: '180',
-		  width: '320',
-		  host: 'https://www.youtube.com',
+	  player = new YT.Player('existing-iframe-example', {
 		  events: {
 		  'onReady': onPlayerReady,
-		  'onStateChange': onStateChange,
+		  'onStateChange': onPlayerStateChange,
 		  }
 	  });
   }
-  // 4. The API will call this function when the video player is ready.
+
   function onPlayerReady(event) {
-	  player.cuePlaylist({
-		  listType:'playlist',
-		  list:'PLfmjA0PhR7tGuUTuv0iYbyMy2fCxnSahN',
-	  });
 	  player.setLoop(true);
 	  setTimeout( function() {
 		  event.target.setShuffle(true);
 		  player.playVideoAt(0);
 		  player.stopVideo();
-	  }, 1000);
+	  }, 3000);
   }
   
-  function onStateChange(event) {
+  function onPlayerStateChange(event) {
 	  if (event.data == 0) { // video ended
 		  player.setShuffle({'shufflePlaylist' : 1});
 	  }
