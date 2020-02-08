@@ -3,6 +3,7 @@
         <h4 class="legend">Players</h4>
         <button class="dummy-text-button" onclick="playerDummyText()"></button>
         <div id="menu_player_labels">
+            <tr-template href="../shared/names-list.html"></tr-template>
             <table>
                 <tr>
                     <th></th>
@@ -13,28 +14,28 @@
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
-                    <td><tr-input-text player="1" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="1" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
                     <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>                
                     <td><tr-input-toggle player="1" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-text player="2" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
                     <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="2" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="3" for="player-3">3</label></td>
-                    <td><tr-input-text player="3" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="3" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="3" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
                     <td><tr-input-text player="3" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="3" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="4" for="player-4">4</label></td>
-                    <td><tr-input-text player="4" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text player="4" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="4" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
                     <td><tr-input-text player="4" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="4" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
@@ -46,7 +47,7 @@
     <div id="menu_layout" class="fieldset">
         <h4 class="legend">Settings</h4>
         <div id="menu_video_background">
-            <label>Video Background:</label>
+            <label>Chroma/Color Key:</label>
             <tr-input-radio checked id="transparent" property="video-bgcolor" value="transparent" target=".player-video" toggle-class="transparent-background"></tr-input-radio>
             <label class="video-bgcolor" for="transparent"></label>
             <tr-input-radio id="blue" property="video-bgcolor" value="blue" target=".player-video" toggle-class="blue-background"></tr-input-radio>
@@ -109,6 +110,7 @@
         <tr-button-view view="" title="Layout"></tr-button-view>
         <tr-button-view view="tracker" title="Tracker"></tr-button-view>
         <tr-button-view view="coms" title="Commentators"></tr-button-view>
+        <tr-button-view view="loading" title="Load Screen"></tr-button-view>
     </div>
 
     <div id="menu_reset" class="fieldset">

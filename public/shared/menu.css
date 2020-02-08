@@ -75,6 +75,11 @@
     display: block;
     }
 
+#menu_2 .fieldset#menu_view{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 #menu_players table {
     border-collapse: collapse;
     padding: 1em;
@@ -205,6 +210,7 @@ input[type="checkbox"]:hover, input[type="radio"]:hover, select:hover, button:ho
 #menu_view button, #menu_reset button{
     width: 8em;
 }
+
 tr-button-view{
     width: 7em;
 }
