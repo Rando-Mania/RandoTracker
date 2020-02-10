@@ -1,0 +1,410 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.png'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png');
+    /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png'); */
+    /* --border1: solid 1px #fff;
+    --backgroundColor1: rgb(255 0 255 / .5); */
+    /* --backgroundColor1: #0c0946; */
+    --vidWidth: 584px;
+    --vidAspect: 4 / 3.03;
+    --videoX: 12px; --videoY: 10px;
+    --nameWidth: 298px;
+    --nameX: 12px; --nameY: 464px;
+    --recordX: 319px; --recordY: 464px;
+    --gridX: 12px; --gridY: 529px;
+    --grid2X: 169px; --grid2Y: 530px;
+    --speakerX: 386px; --speakerY: 473px;
+    --winX: 169px; --winY: 530px;
+    --finalX: 169px; --finalY: 591px;
+    --bestX: 869px; --bestY: 558px;
+    --timerX: 169px; --timerY: 591px;
+}
+
+.border-1{
+    border: var(--border1);
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    image-rendering: pixelated;
+}
+.background-1{background-color: var(--backgroundColor1);}
+.border-background-1 {  
+    border: var(--border1);
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    background-color: var(--backgroundColor1);
+    image-rendering: pixelated;
+}
+.abs{position: absolute;}
+
+html{
+    background-color: #c7c7c7;
+}
+
+@font-face {
+    font-family: "FF4";
+    src:
+        url("fonts/final_fantasy_iv-webfont.woff") format("woff2"),
+        url("fonts/final_fantasy_iv-webfont.woff") format("woff"),
+        url("fonts/Final Fantasy IV.ttf") format("truetype");
+}
+
+.layout{
+    font-family: "FF4", sans-serif;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    position: relative;
+    background: var(--backgroundImg);
+    background-color: silver;
+}
+
+.player-video{
+    width: var(--vidWidth);
+    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    z-index: 2;
+}
+
+.player-info{
+    color: #fff;
+    font-size: 18px;
+    height: 55px;
+    display: grid;
+    align-items: center;
+    z-index: 2;
+}
+
+.player-name{
+    width: calc(var(--nameWidth) + 5px * 2);
+    padding: 0 5px;
+}
+
+[player="1"] .player-info{text-align: left;}
+[player="2"] .player-info{text-align: right;}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+.record-contain{
+    width: 59px;
+    height: 55px;
+    display: grid;
+    padding: 10px 4px;
+    z-index: 1;
+}
+
+.player-grid{
+    display: grid;
+    grid-template: repeat(5, auto) / repeat(4, auto);
+    padding: 8px 7px;
+    width: 146px;
+    height: 181px;
+}
+
+.player-grid-2{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 7px;
+    padding: 7px 8px;
+    width: 209px;
+    height: 50px;
+}
+
+tr-image-toggle img.active, tr-toggle-class.active {
+    opacity: 1;
+    filter: grayscale(0) brightness(1);
+}
+
+.player-grid-2 tr-toggle-class.active{
+    animation: objective-blink .5s steps(1) 3;
+}
+
+@keyframes objective-blink{
+    from{filter: grayscale(0) brightness(1);}
+    50%{filter: grayscale(0) brightness(.5);}
+}
+
+tr-toggle-class, .in-active {
+    opacity: 1;
+    filter: grayscale(1) brightness(.5);
+}
+
+.player-grid img, .player-grid-2 img{
+    background-image: url(images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png);
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+[property="pass"] img{background-position: 25% 0;}
+[property="hook"] img{background-position: 50% 0;}
+[property="dark-crystal"] img{background-position: 75% 0;}
+
+[property="earth-crystal"] img{background-position: 0 25%;}
+[property="twin-harp"] img{background-position: 25% 25%;}
+[property="package"] img{background-position: 50% 25%;}
+[property="sand-ruby"] img{background-position: 75% 25%;}
+
+[property="baron-key"] img{background-position: 0 50%;}
+[property="magma-key"] img{background-position: 25% 50%;}
+[property="tower-key"] img{background-position: 50% 50%;}
+[property="luca-key"] img{background-position: 75% 50%;}
+
+[property="adamant"] img{background-position: 0 75%;}
+[property="legend-sword"] img{background-position: 25% 75%;}
+[property="pan"] img{background-position: 50% 75%;}
+[property="spoon"] img{background-position: 75% 75%;}
+
+[property="rat-tail"] img{background-position: 25% 100%;}
+[property="rat-tail"]{grid-column: 2;}
+[property="pink-tail"] img{background-position: 50% 100%;}
+
+
+[property="objective-one"] img{background-position: 100% 0;}
+[property="objective-two"] img{background-position: 100% 25%;}
+[property="objective-three"] img{background-position: 100% 50%;}
+[property="objective-four"] img{background-position: 100% 75%;}
+[property="objective-five"] img{background-position: 100% 100%;}
+
+.objectives-contain{
+    left: 451px;
+    top: 529px;
+    display: grid;
+    grid-template: repeat(5, auto) / auto auto ;
+}
+
+.objectives-contain > *{
+    margin-bottom: -2px;
+}
+
+.objective-label{
+    font-size: 19px;
+    width: 22px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 2px;
+}
+
+.objective-text-contain{
+    height: 24px;
+    margin-left: -1px;
+}
+
+.objectives-contain tr-text{
+    font-size: 14px;
+    padding: 4px;
+    z-index: 2;
+    width: 343px;
+}
+
+.player-speaker{
+    padding: 4px;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    background-position: 100% 0%;
+    opacity: 0.5;
+}
+
+[player="2"] .player-speaker{
+    transform: rotateY(180deg);
+}
+
+.player-winner{
+    width: 209px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 27px;
+    color: #fff;
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    padding: 0 .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-best-of{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    display: none;
+}
+.player-best-of img{
+    width: 32px;
+    height: 32px;
+    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
+    background-size: 100% 100%;
+}
+
+.best-of-3, .best-of-5, .best-of-7{
+    display: grid;
+}
+.best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
+.best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
+.best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
+
+
+.player-final:empty{
+    display:none;
+}
+
+tr-timer, .player-final{
+	width: 209px;
+    height: 50px;
+    z-index: 1;
+    font-size: 27px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3px;
+    display: flex;
+    letter-spacing: 1px;
+}
+
+.player-final{
+    color: #ffdd00;
+    text-shadow: 0 3px 0 #940000, 3px 0 0 #940000, 3px 3px 0 #940000;
+}
+
+.player-final, .player-winner{
+    background-color: #0c0946;
+    border: solid 1px #fff;
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+}
+
+tr-timer span {
+    width: 29px;
+    text-align: center;
+}
+
+.ms,.dot{
+    display: none;
+}
+.colon{
+    width: 26px;
+}
+
+.production-team-swap{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+    height: 100%;
+}
+
+.staff{
+    overflow: hidden;
+    font-size: 14px;
+    padding: 8px;
+    width: 366px;
+    height: 55px;
+}
+
+.staff-panel-1, .staff-panel-2{
+    grid-area: 1/1;
+    display: grid;
+    grid-gap: 5px;
+    align-items: center;
+}
+
+.staff-panel-1{grid-template-columns: auto 1fr;}
+.staff-panel-2{grid-template-columns: 1fr;}
+
+.commentators-contain, .restreamers-contain, .trackers-contain{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.commentators, .restreamers, .trackers{
+    width: 320px;
+}
+
+.staff img {
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    margin: 0 6px;
+    z-index: 2;
+    width: auto;
+    height: 1em;
+  }
+
+.commentators-img{background-position: 75% 0; transform: scale(3.1);}
+.restreamers-img{background-position: 0 0; transform: scale(1.4);}
+.trackers-img{background-position: 50% 0; transform: scale(1.4);}
+
+.production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
+.production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
+
+@keyframes panel-1-blinker {
+    0%, 75% {opacity: 1;}
+    75.1%, 100% {opacity: 0;}
+    }
+    
+@keyframes panel-2-blinker {
+    0%, 75% {opacity: 0;}
+    75.1%, 100% {opacity: 1;}
+    }
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px #fff;
+    z-index: 3;
+    }
+
+#production{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: end;
+}
+
+.display-none{ display: none; }
+
+.show{ display: block; }
+
+/* Menu */
+
+.menu-contain{
+    display: flex;
+}
+
+.menu-game-specific .fieldset.objectives-menu{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#menu_2 {
+    display: grid;
+    grid-template-areas:
+        "players layout team"
+        "timer view reset";
+}
+
+#menu_layout div{
+    display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
