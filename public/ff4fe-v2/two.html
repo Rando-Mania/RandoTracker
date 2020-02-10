@@ -9,12 +9,17 @@
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
     <!-- <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Main-Elements.png" as="image" type="image/png">preload background image -->
+    <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4-border.png" as="image" type="image/png">
+    <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
     
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+
+        [player="1"] .record-contain {left: var(--recordX); top: var(--recordY);}
+        [player="2"] .record-contain {right: var(--recordX); top: var(--recordY);}
     
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
         [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
@@ -41,13 +46,21 @@
 <body>
     <template id="player_info_template">
         <div class="border-1 player-video abs"></div>
-        <div class="player-name abs border-background-1">
-            <tr-text scale-to-fit property="player-name"></tr-text>
+        <div class="player-info abs border-background-1">
+            <div class="player-name">
+                <tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-text property="player-pronoun"></tr-text>
+        </div>
+        <tr-text property="player-pronoun"></tr-text>
+        <div class="record-contain abs border-background-1">
+            <div>W-L</div>
+            <tr-text property="player-record"></tr-text>
         </div>
         <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
         <tr-template class="player-grid-2 abs border-background-1" href="icons-two.html"></tr-template>
         <tr-text property="player-final" class="player-final abs border-background-1"></tr-text>
-        <tr-toggle property="toggle-speaker" class="abs player-speaker border-background-1">
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
             <img src="../shared/images/icons/blank.svg" alt="">
         </tr-toggle>
         <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
@@ -58,8 +71,8 @@
 	<div class="layout">
 
         <!-- timer/staff -->
-        <tr-timer class="player-timer abs background-1" include-padding="true" property="timer-test"></tr-timer>
-        <tr-timer class="player-timer abs background-1" include-padding="true" property="timer-test"></tr-timer>
+        <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
+        <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
         <tr-hide-if-empty class="staff abs border-background-1" style="top: 464px; left: 451px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
@@ -70,6 +83,33 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+
+        <div class="abs objectives-contain">
+            <div class="objective-label border-background-1">1</div>
+            <div scale-to-fit class="objective-text-contain border-background-1">
+                <tr-text scale-to-fit property="objective-one-text" class="objective-text"></tr-text>
+            </div>
+
+            <div class="objective-label border-background-1">2</div>
+            <div class="objective-text-contain border-background-1">
+                <tr-text scale-to-fit property="objective-two-text" class="objective-text"></tr-text>
+            </div>
+
+            <div class="objective-label border-background-1">3</div>
+            <div class="objective-text-contain border-background-1">
+                <tr-text scale-to-fit property="objective-three-text" class="objective-text"></tr-text>
+            </div>
+
+            <div class="objective-label border-background-1">4</div>
+            <div class="objective-text-contain border-background-1">
+                <tr-text scale-to-fit property="objective-four-text" class="objective-text"></tr-text>
+            </div>
+
+            <div class="objective-label border-background-1">5</div>
+            <div class="objective-text-contain border-background-1">
+                <tr-text scale-to-fit property="objective-five-text" class="objective-text"></tr-text>
+            </div>
+        </div>
     </div>
 
 <!-- loadscreen -->
@@ -88,8 +128,47 @@
     <div class="calendar-contain abs" style="top: 0; left: 0;">
         <tr-template href="../shared/calendar.html"></tr-template>
     </div>
-	
-	<tr-template href="../shared/two_menu.html"></tr-template>
+    
+    <div class="menu-contain">
+        <div class="menu-game-specific" style="padding: 1em; grid-template: 1fr / auto auto;">
+            <div id="menu_players" class="fieldset">
+                <h4 class="legend">Players</h4>
+                <div id="menu_player_labels">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Pronoun</th>
+                            <th>Record</th>
+                        </tr>
+                        <tr>
+                            <td><label player="1" for="player-1">1</label></td>
+                            <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                            <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                         </tr>
+                        <tr>
+                            <td><label player="2" for="player-2">2</label></td>
+                            <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                            <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="menu_objectives" class="fieldset objectives-menu">
+                <h4 class="legend">Objectives</h4>
+                <div>1</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
+                <div>2</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
+                <div>3</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
+                <div>4</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
+                <div>5</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+            </div>
+        </div>
+        <tr-template href="../shared/two_menu.html"></tr-template>
+    </div>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>

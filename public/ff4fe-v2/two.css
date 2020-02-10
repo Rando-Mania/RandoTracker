@@ -5,23 +5,24 @@
 }
 
 :root{
-    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements.png'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Bracket.png');
-    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Bracket.png');
-    --border1: solid 1px #fff;
-    --backgroundColor1: rgb(255 0 255 / .5);
+    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.png'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png');
+    /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png'); */
+    /* --border1: solid 1px #fff;
+    --backgroundColor1: rgb(255 0 255 / .5); */
     /* --backgroundColor1: #0c0946; */
-    --vidWidth: 586px;
-    --vidAspect: 4 / 3.04;
-    --videoX: 11px; --videoY: 9px;
-    --nameWidth: 300px;
-    --nameX: 11px; --nameY: 463px;
-    --gridX: 11px; --gridY: 528px;
-    --grid2X: 168px; --grid2Y: 528px;
-    --speakerX: 409px; --speakerY: 493px;
-    --winX: 202px; --winY: 525px;
-    --finalX: 168px; --finalY: 590px;
+    --vidWidth: 584px;
+    --vidAspect: 4 / 3.03;
+    --videoX: 12px; --videoY: 10px;
+    --nameWidth: 298px;
+    --nameX: 12px; --nameY: 464px;
+    --recordX: 319px; --recordY: 464px;
+    --gridX: 12px; --gridY: 529px;
+    --grid2X: 169px; --grid2Y: 530px;
+    --speakerX: 386px; --speakerY: 473px;
+    --winX: 169px; --winY: 530px;
+    --finalX: 169px; --finalY: 591px;
     --bestX: 869px; --bestY: 558px;
-    --timerX: 168px; --timerY: 590px;
+    --timerX: 169px; --timerY: 591px;
 }
 
 .border-1{
@@ -42,10 +43,12 @@ html{
     background-color: #c7c7c7;
 }
 
-
 @font-face {
-	font-family: "FF4";
-	src: url("/ff4fe/fonts/Final Fantasy IV.ttf") format("truetype");
+    font-family: "FF4";
+    src:
+        url("fonts/final_fantasy_iv-webfont.woff") format("woff2"),
+        url("fonts/final_fantasy_iv-webfont.woff") format("woff"),
+        url("fonts/Final Fantasy IV.ttf") format("truetype");
 }
 
 .layout{
@@ -64,27 +67,41 @@ html{
     z-index: 2;
 }
 
-.player-name{
+.player-info{
+    color: #fff;
     font-size: 18px;
-    width: calc(var(--nameWidth) + 5px * 2);
-    height: 56px;
-	color: #fff;
-    display: flex;
+    height: 55px;
+    display: grid;
     align-items: center;
+    z-index: 2;
+}
+
+.player-name{
+    width: calc(var(--nameWidth) + 5px * 2);
     padding: 0 5px;
 }
 
-[player="1"] [property="player-name"]{text-align: left;}
-[player="2"] [property="player-name"]{text-align: right;}
+[player="1"] .player-info{text-align: left;}
+[player="2"] .player-info{text-align: right;}
 
 .player-name tr-text{
     width: var(--nameWidth);
+}
+
+.record-contain{
+    width: 59px;
+    height: 55px;
+    display: grid;
+    padding: 10px 4px;
+    z-index: 1;
 }
 
 .player-grid{
     display: grid;
     grid-template: repeat(5, auto) / repeat(4, auto);
     padding: 8px 7px;
+    width: 146px;
+    height: 181px;
 }
 
 .player-grid-2{
@@ -92,11 +109,22 @@ html{
     grid-template-columns: repeat(5, auto);
     grid-gap: 7px;
     padding: 7px 8px;
+    width: 209px;
+    height: 50px;
 }
 
 tr-image-toggle img.active, tr-toggle-class.active {
     opacity: 1;
     filter: grayscale(0) brightness(1);
+}
+
+.player-grid-2 tr-toggle-class.active{
+    animation: objective-blink .5s steps(1) 3;
+}
+
+@keyframes objective-blink{
+    from{filter: grayscale(0) brightness(1);}
+    50%{filter: grayscale(0) brightness(.5);}
 }
 
 tr-toggle-class, .in-active {
@@ -141,6 +169,42 @@ tr-toggle-class, .in-active {
 [property="objective-four"] img{background-position: 100% 75%;}
 [property="objective-five"] img{background-position: 100% 100%;}
 
+.objectives-contain{
+    left: 451px;
+    top: 529px;
+    display: grid;
+    grid-template: repeat(5, auto) / auto auto ;
+}
+
+.objectives-contain > *{
+    margin-bottom: -2px;
+}
+
+.objective-label{
+    font-size: 19px;
+    width: 22px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 2px;
+}
+
+.objective-text-contain{
+    height: 24px;
+    margin-left: -1px;
+}
+
+.objectives-contain tr-text{
+    font-size: 14px;
+    padding: 4px;
+    z-index: 2;
+    width: 343px;
+}
+
 .player-speaker{
     padding: 4px;
 }
@@ -153,6 +217,7 @@ tr-toggle-class, .in-active {
     background-repeat: no-repeat;
     background-size: 500% 400%;
     background-position: 100% 0%;
+    opacity: 0.5;
 }
 
 [player="2"] .player-speaker{
@@ -160,10 +225,12 @@ tr-toggle-class, .in-active {
 }
 
 .player-winner{
-    height: 34px;
+    width: 209px;
+    height: 50px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 27px;
     color: #fff;
+    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
     padding: 0 .5em;
     display: flex;
     justify-content: center;
@@ -195,15 +262,26 @@ tr-toggle-class, .in-active {
 }
 
 tr-timer, .player-final{
-	width: 211px;
-    height: 52px;
+	width: 209px;
+    height: 50px;
     z-index: 1;
     font-size: 27px;
     justify-content: flex-end;
     align-items: center;
-    padding: 5px;
+    padding: 3px;
     display: flex;
     letter-spacing: 1px;
+}
+
+.player-final{
+    color: #ffdd00;
+    text-shadow: 0 3px 0 #940000, 3px 0 0 #940000, 3px 3px 0 #940000;
+}
+
+.player-final, .player-winner{
+    background-color: #0c0946;
+    border: solid 1px #fff;
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
 }
 
 tr-timer span {
@@ -222,6 +300,7 @@ tr-timer span {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 8px;
+    height: 100%;
 }
 
 .staff{
@@ -263,9 +342,9 @@ tr-timer span {
     height: 1em;
   }
 
-.commentators-img{background-position: 75% 0;transform: scale(2.5);}
-.restreamers-img{background-position: 0 0;}
-.trackers-img{background-position: 50% 0;}
+.commentators-img{background-position: 75% 0; transform: scale(3.1);}
+.restreamers-img{background-position: 0 0; transform: scale(1.4);}
+.trackers-img{background-position: 50% 0; transform: scale(1.4);}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
@@ -305,6 +384,15 @@ tr-timer span {
 .show{ display: block; }
 
 /* Menu */
+
+.menu-contain{
+    display: flex;
+}
+
+.menu-game-specific .fieldset.objectives-menu{
+    display: grid;
+    grid-template-columns: auto auto;
+}
 
 #menu_2 {
     display: grid;
