@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
-    <!-- <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Main-Elements.png" as="image" type="image/png">preload background image -->
+    <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png" as="image" type="image/png">
     <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4-border.png" as="image" type="image/png">
     <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png" as="image" type="image/png">
     <style>
@@ -47,10 +48,10 @@
     <template id="player_info_template">
         <div class="border-1 player-video abs"></div>
         <div class="player-info abs border-background-1">
-            <div class="player-name">
-                <tr-text scale-to-fit property="player-name"></tr-text>
+            <div class="player-name-contain">
+                <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
             </div>
-            <tr-text property="player-pronoun"></tr-text>
+            <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
         </div>
         <div class="record-contain abs border-background-1">
             <div>W-L</div>
@@ -129,25 +130,25 @@
     </div>
     
     <div class="menu-contain">
-        <div class="menu-game-specific" style="padding: 1em; grid-template: 1fr / auto auto;">
-            <div id="menu_players" class="fieldset">
+        <div class="menu-game-specific">
+            <div class="fieldset players-extra">
                 <h4 class="legend">Players</h4>
                 <div id="menu_player_labels">
                     <table>
                         <tr>
                             <th></th>
-                            <th>Pronoun</th>
                             <th>Record</th>
+                            <th>Pronoun</th>
                         </tr>
                         <tr>
                             <td><label player="1" for="player-1">1</label></td>
-                            <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                             <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                            <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                          </tr>
                         <tr>
                             <td><label player="2" for="player-2">2</label></td>
-                            <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                             <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                            <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                         </tr>
                     </table>
                 </div>
@@ -164,6 +165,10 @@
                 <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
                 <div>5</div>
                 <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+            </div>
+            <tr-template href="objective_options.html"></tr-template>
+            <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+                <h4 class="legend">Backgrounds</h4>
             </div>
         </div>
         <tr-template href="../shared/two_menu.html"></tr-template>
