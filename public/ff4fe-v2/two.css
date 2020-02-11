@@ -5,7 +5,7 @@
 }
 
 :root{
-    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.png'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png');
+    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.webp'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png'), linear-gradient(#e9d8c4, #fcc07c);
     /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png'); */
     /* --border1: solid 1px #fff;
     --backgroundColor1: rgb(255 0 255 / .5); */
@@ -27,7 +27,7 @@
 
 .border-1{
     border: var(--border1);
-    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    xborder-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
     image-rendering: pixelated;
 }
 .background-1{background-color: var(--backgroundColor1);}
@@ -74,18 +74,22 @@ html{
     display: grid;
     align-items: center;
     z-index: 2;
-}
-
-.player-name{
-    width: calc(var(--nameWidth) + 5px * 2);
-    padding: 0 5px;
+    padding: 8px;
 }
 
 [player="1"] .player-info{text-align: left;}
 [player="2"] .player-info{text-align: right;}
 
-.player-name tr-text{
+.player-name-contain{
     width: var(--nameWidth);
+}
+
+.player-name-contain tr-text{
+    width: var(--nameWidth);
+}
+
+.player-pronoun:empty{
+    display: none;
 }
 
 .record-contain{
@@ -94,6 +98,10 @@ html{
     display: grid;
     padding: 10px 4px;
     z-index: 1;
+}
+.record-contain *{
+    position: relative;
+    left: 2px; 
 }
 
 .player-grid{
@@ -200,7 +208,7 @@ tr-toggle-class, .in-active {
 
 .objectives-contain tr-text{
     font-size: 14px;
-    padding: 4px;
+    padding: 6px 6px 4px;
     z-index: 2;
     width: 343px;
 }
@@ -217,7 +225,7 @@ tr-toggle-class, .in-active {
     background-repeat: no-repeat;
     background-size: 500% 400%;
     background-position: 100% 0%;
-    opacity: 0.5;
+    filter: drop-shadow(0 0 1px #000);
 }
 
 [player="2"] .player-speaker{
@@ -318,7 +326,7 @@ tr-timer span {
     align-items: center;
 }
 
-.staff-panel-1{grid-template-columns: auto 1fr;}
+.staff-panel-1{grid-template-columns: auto 1fr; line-height: 1.5;}
 .staff-panel-2{grid-template-columns: 1fr;}
 
 .commentators-contain, .restreamers-contain, .trackers-contain{
@@ -329,7 +337,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 320px;
+    width: 307px;
 }
 
 .staff img {
@@ -342,7 +350,7 @@ tr-timer span {
     height: 1em;
   }
 
-.commentators-img{background-position: 75% 0; transform: scale(3.1);}
+.commentators-img{background-position: 75% 0; transform: translateY(-2px) scale(3.1);}
 .restreamers-img{background-position: 0 0; transform: scale(1.4);}
 .trackers-img{background-position: 50% 0; transform: scale(1.4);}
 
@@ -389,9 +397,41 @@ tr-timer span {
     display: flex;
 }
 
+.menu-contain .menu-game-specific{
+    padding: 1em 0 1em 1em;
+    /* margin-right: -1em; */
+    z-index: 1;
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    grid-gap: 0;
+    grid-template-areas:
+        "objectives player-extra"
+        "objectives background-extra";
+}
+
 .menu-game-specific .fieldset.objectives-menu{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template: auto auto / auto auto;
+}
+
+.objectives-menu{grid-area: objectives;}
+.players-extra-menu{grid-area: player-extra;}
+.backgrounds-menu{grid-area: background-extra;}
+
+
+.record-input input{width: 3em;}
+
+.pronoun-input input{width: 5em;} 
+
+.menu-contain table{
+    border-collapse: collapse;
+    padding: 1em;
+    table-layout: fixed;
+}
+
+.menu-contain th, .menu-contain td{
+    padding: .5em;
 }
 
 #menu_2 {
