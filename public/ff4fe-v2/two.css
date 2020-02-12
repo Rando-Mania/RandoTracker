@@ -6,9 +6,9 @@
 
 :root{
     --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.webp'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png'), linear-gradient(#e9d8c4, #fcc07c);
-    /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png'); */
-    /* --border1: solid 1px #fff;
-    --backgroundColor1: rgb(255 0 255 / .5); */
+    /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png');  */
+    /* --border1: solid 1px #fff; */
+    /* --backgroundColor1: rgb(255 0 255 / .5); */
     /* --backgroundColor1: #0c0946; */
     --vidWidth: 584px;
     --vidAspect: 4 / 3.03;
@@ -21,7 +21,7 @@
     --speakerX: 386px; --speakerY: 473px;
     --winX: 169px; --winY: 530px;
     --finalX: 169px; --finalY: 591px;
-    --bestX: 869px; --bestY: 558px;
+    --bestX: 390px; --bestY: 554px;
     --timerX: 169px; --timerY: 591px;
 }
 
@@ -33,7 +33,7 @@
 .background-1{background-color: var(--backgroundColor1);}
 .border-background-1 {  
     border: var(--border1);
-    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    xborder-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
@@ -71,6 +71,7 @@ html{
     color: #fff;
     font-size: 18px;
     height: 55px;
+    width: 309px;
     display: grid;
     align-items: center;
     z-index: 2;
@@ -198,11 +199,13 @@ tr-toggle-class, .in-active {
     text-align: center;
     position: relative;
     z-index: 1;
-    padding-left: 2px;
+    padding-left: 3px;
+    padding-top: 2.5px;
 }
 
 .objective-text-contain{
     height: 24px;
+    width: 345px;
     margin-left: -1px;
 }
 
@@ -247,14 +250,15 @@ tr-toggle-class, .in-active {
 
 .player-best-of{
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: 32px;
     display: none;
 }
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
-    background-size: 100% 100%;
+    background-image: url('images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png');
+    background-size: 500% 500%;
+    background-position: 75% 100%;
 }
 
 .best-of-3, .best-of-5, .best-of-7{
