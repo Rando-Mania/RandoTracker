@@ -1,35 +1,102 @@
 <style>
     .player-grid-ffiv{
         display: grid;
-        grid-template-columns: repeat(4, 24px);
-        grid-template-rows: repeat(5, 24px);
+        grid-template-columns: repeat(4, 32px);
+        grid-template-rows: repeat(5, 32px);
         justify-content: space-between;
         align-content: space-between;
-        grid-row-gap: 8px; 
+        grid-column-gap: 8px;
+        padding: 0;
     }
+
+    .player-grid-ffiv img{
+        background-image: url(images/icons/ff4fe-spritesheet.png);
+        width: 32px;
+        height: 32px;
+        display: block;
+    }
+
+[property="pass"] img{background-position: 25% 0;}
+[property="hook"] img{background-position: 50% 0;}
+[property="dark-crystal"] img{background-position: 75% 0;}
+
+[property="earth-crystal"] img{background-position: 0 25%;}
+[property="twin-harp"] img{background-position: 25% 25%;}
+[property="package"] img{background-position: 50% 25%;}
+[property="sand-ruby"] img{background-position: 75% 25%;}
+
+[property="baron-key"] img{background-position: 0 50%;}
+[property="magma-key"] img{background-position: 25% 50%;}
+[property="tower-key"] img{background-position: 50% 50%;}
+[property="luca-key"] img{background-position: 75% 50%;}
+
+[property="adamant"] img{background-position: 0 75%;}
+[property="legend-sword"] img{background-position: 25% 75%;}
+[property="pan"] img{background-position: 50% 75%;}
+[property="spoon"] img{background-position: 75% 75%;}
+
+[property="rat-tail"] img{background-position: 25% 100%;}
+[property="rat-tail"]{grid-column: 2;}
+[property="pink-tail"] img{background-position: 50% 100%;}
 </style>
 
 <div class="player-grid-ffiv">
-    <tr-image-toggle class="active" property="hecrystal" src="../ff4fe/images/FFIVFE-Icons-1THECrystal.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="pass" src="../ff4fe/images/FFIVFE-Icons-2Pass.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="hook" src="../ff4fe/images/FFIVFE-Icons-3Hook.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="darkcrystal" src="../ff4fe/images/FFIVFE-Icons-4DarkCrystal.png"></tr-image-toggle>
+    <tr-toggle-class property="the-crystal" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="pass" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="hook" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="dark-crystal" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
     
-    <tr-image-toggle class="active" property="earthcrystal" src="../ff4fe/images/FFIVFE-Icons-5EarthCrystal.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="twinharp" src="../ff4fe/images/FFIVFE-Icons-6TwinHarp.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="package" src="../ff4fe/images/FFIVFE-Icons-7Package.png"></tr-image-toggle>
-    <tr-image-toggle class="active" property="sandruby" src="../ff4fe/images/FFIVFE-Icons-8SandRuby.png"></tr-image-toggle>
+    <tr-toggle-class property="earth-crystal" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="twin-harp" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="package" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="sand-ruby" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
     
-    <tr-image-toggle class='active' property='baronkey' src='../ff4fe/images/FFIVFE-Icons-9BaronKey.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='magmakey' src='../ff4fe/images/FFIVFE-Icons-10MagmaKey.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='towerkey' src='../ff4fe/images/FFIVFE-Icons-11TowerKey.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='lucakey' src='../ff4fe/images/FFIVFE-Icons-12LucaKey.png'></tr-image-toggle>
+    <tr-toggle-class property="baron-key" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="magma-key" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="tower-key" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="luca-key" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
     
-    <tr-image-toggle class='active' property='adamant' src='../ff4fe/images/FFIVFE-Icons-13Adamant.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='legendsword' src='../ff4fe/images/FFIVFE-Icons-14LegendSword.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='pan' src='../ff4fe/images/FFIVFE-Icons-15Pan.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='spoon' src='../ff4fe/images/FFIVFE-Icons-16Spoon.png'></tr-image-toggle>
-
-    <tr-image-toggle class='active' property='rattail' src='../ff4fe/images/FFIVFE-Icons-17RatTail.png'></tr-image-toggle>
-    <tr-image-toggle class='active' property='pinktail' src='../ff4fe/images/FFIVFE-Icons-18PinkTail.png'></tr-image-toggle>
+    <tr-toggle-class property="adamant" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="legend-sword" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="pan" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="spoon" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    
+    <tr-toggle-class property="rat-tail" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
+    <tr-toggle-class property="pink-tail" toggle-class="active">
+        <img src="../shared/images/icons/blank.svg" />
+    </tr-toggle-class>
 </div>

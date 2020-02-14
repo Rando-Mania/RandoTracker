@@ -5,13 +5,11 @@
 }
 
 :root{
-    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.webp'), url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png'), linear-gradient(#e9d8c4, #fcc07c);
-    /* --backgroundImg: url('images/Fabul-Gauntlet-Assets/Mockup-Swiss.png');  */
-    /* --border1: solid 1px #fff; */
-    /* --backgroundColor1: rgb(255 0 255 / .5); */
-    /* --backgroundColor1: #0c0946; */
+    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png'), var(--swissFallback);
+    --border1: solid 1px #fff;
+    --backgroundColor1: #0c0946;
     --vidWidth: 584px;
-    --vidAspect: 4 / 3.03;
+    --vidAspect: 4 / 3.031;
     --videoX: 12px; --videoY: 10px;
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
@@ -23,17 +21,21 @@
     --finalX: 169px; --finalY: 591px;
     --bestX: 390px; --bestY: 554px;
     --timerX: 169px; --timerY: 591px;
+    --swissFallback: linear-gradient(#e9d8c4, #fcc07c);
+    --playinFallback: linear-gradient(#ccdde5, #7cd1fc);
+    --bracketFallback: linear-gradient(#9b95bd, #3428e9);
+    --finalsFallback: linear-gradient(#3b3a6c, #412352);
 }
 
 .border-1{
     border: var(--border1);
-    xborder-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
     image-rendering: pixelated;
 }
 .background-1{background-color: var(--backgroundColor1);}
 .border-background-1 {  
     border: var(--border1);
-    xborder-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
@@ -59,6 +61,24 @@ html{
     position: relative;
     background: var(--backgroundImg);
     background-color: silver;
+}
+
+.fabul-swiss{
+    background-image: var(--swissFallback);
+    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png), var(--swissFallback);
+}
+
+.fabul-playin{
+    background-image: var(--playinFallback);
+    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-PlayIn.png), var(--playinFallback);
+}
+.fabul-bracket{
+    background-image: var(--bracketFallback);
+    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Bracket.png), var(--bracketFallback);
+}
+.fabul-finals{
+    background-image: var(--finalsFallback);
+    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
 }
 
 .player-video{
@@ -260,7 +280,9 @@ tr-toggle-class, .in-active {
     background-size: 500% 500%;
     background-position: 75% 100%;
 }
-
+.player-best-of .active img{
+    background-position: 0 100%;
+}
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
 }

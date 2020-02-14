@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
-    <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Main-Elements-empty.webp" as="image" type="image/webp">
-    <link rel="preload" href="images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png" as="image" type="image/png">
     <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4-border.png" as="image" type="image/png">
     <link rel="preload" href="images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png" as="image" type="image/png">
     <style>
@@ -37,8 +35,8 @@
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
         [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
     
-        [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
-        [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
 
         tr-timer:nth-of-type(1) {left: var(--timerX); top: var(--timerY);}
         tr-timer:nth-of-type(2) {right: var(--timerX); top: var(--timerY);}
@@ -69,9 +67,8 @@
         <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
     </template>
 	<div class="layout">
-
         <!-- timer/staff -->
-        <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
+        <tr-timer class="player-timer abs border-background-1" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
         <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
         <tr-hide-if-empty class="staff abs border-background-1" style="top: 464px; left: 451px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
@@ -169,6 +166,15 @@
             <tr-template href="objective_options.html"></tr-template>
             <div id="menu_backgrounds" class="fieldset backgrounds-menu">
                 <h4 class="legend">Backgrounds</h4>
+                <div>
+                    <label>Layout:</label>
+                    <tr-select-toggle property="layout-back-select">
+                        <tr-option selected target=".layout, .tracker-layout" toggle-class="fabul-swiss" value="1">Fabul Swiss</tr-option>
+                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-playin" value="2">Fabul Play-in</tr-option>
+                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-bracket" value="3">Fabul Bracket</tr-option>
+                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-finals" value="4">Fabul Finals</tr-option>
+                    </tr-select-toggle>
+                </div>
             </div>
         </div>
         <tr-template href="../shared/two_menu.html"></tr-template>

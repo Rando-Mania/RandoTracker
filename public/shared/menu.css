@@ -97,6 +97,12 @@
     grid-gap: 5px;
 }
 
+button.dummy-text-button.disable, #menu_video_background input[type="radio"][id="screen"].disable{
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #000;
+}
+
 button.dummy-text-button{
     -webkit-appearance: none;
     appearance: none;
@@ -104,16 +110,16 @@ button.dummy-text-button{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
     border: none;
     box-shadow: none;
-    background-image: linear-gradient(to bottom right, transparent 75%, rgba(2555,255,255,.5) 0);
-    background-color: transparent;
+    background-color: rgba(2555,255,255,.5);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
 
 button.dummy-text-button:hover{
-    background-image: linear-gradient(to bottom right, transparent 75%, #f8b800 0);
+    background-color: #f8b800;
     box-shadow: none;
 }
 
@@ -296,18 +302,20 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 24px;
-      height: 24px;
+      width: 12px;
+      height: 12px;
       border: none;
       box-shadow: none;
-      background-image: linear-gradient(to bottom right, transparent 75%, rgba(2555,255,255,.5) 0);
-      background-color: transparent;
+      background-color: rgba(2555,255,255,.5);
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
 
   #menu_video_background input[type="radio"][id="screen"]:hover, #menu_video_background input[type="radio"][id="screen"]:checked{
-    background-image: linear-gradient(to bottom right, transparent 75%, #f8b800 0);
+    background-color: #f8b800;
     box-shadow: none;
     border: none;
+    width: 12px;
+    height: 12px;
 }
 
 .screen-background{

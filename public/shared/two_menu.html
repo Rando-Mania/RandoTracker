@@ -1,7 +1,7 @@
 <div id="menu_2">
     <div id="menu_players" class="fieldset">
         <h4 class="legend">Players</h4>
-        <button class="dummy-text-button" onclick="playerDummyText()"></button>
+        <button class="dummy-text-button" title="Dummy Text" onclick="playerDummyText()"></button>
         <div id="menu_player_labels">
             <tr-template href="../shared/names-list.html"></tr-template>
             <table>
@@ -42,7 +42,7 @@
             <label class="video-bgcolor" for="green"></label>
             <tr-input-radio id="magenta" property="video-bgcolor" value="magenta" target=".player-video" toggle-class="magenta-background"></tr-input-radio>
             <label class="video-bgcolor" for="magenta"></label>
-            <tr-input-radio id="screen" property="video-bgcolor" value="screen" target=".player-video" toggle-class="screen-background"></tr-input-radio>
+            <tr-input-radio id="screen" property="video-bgcolor" title="Screen Shots" value="screen" target=".player-video" toggle-class="screen-background"></tr-input-radio>
             <label class="video-bgcolor" for="screen"></label>
         </div>
         <div id="menu_overlays_contain">
@@ -75,7 +75,7 @@
 
     <div id="menu_production" class="fieldset">
         <h4 class="legend">Production Team</h4>
-        <button class="dummy-text-button" onclick="staffDummyText()"></button>
+        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
         <div>
             <label>Commentators:</label>
             <tr-input-textarea class="comm-input" property="commentators"></tr-input-textarea>
