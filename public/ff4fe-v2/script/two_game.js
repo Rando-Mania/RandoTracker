@@ -8,11 +8,15 @@ function playerDummyText() {
         {property: '__p1__player-final', value: '1:23:45'},
         {property: '__p1__toggle-speaker', value: 1},
         {property: '__p1__toggle-winner', value: 1},
+        {property: '__p1__player-pronoun', value: 'he/him'},
+        {property: '__p1__player-record', value: '1-2'},
 
         {property: '__p2__player-name', value: 'Yoda'},
         {property: '__p2__player-final', value: '1:23:45'},
         {property: '__p2__toggle-winner', value: 1},
-        {property: '__p2__toggle-speaker', value: 1}
+        {property: '__p2__toggle-speaker', value: 1},
+        {property: '__p2__player-pronoun', value: 'he/him'},
+        {property: '__p2__player-record', value: '1-2'},
     ]);
 }
 function staffDummyText() {

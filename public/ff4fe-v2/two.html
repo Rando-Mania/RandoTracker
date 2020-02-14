@@ -128,6 +128,20 @@
     
     <div class="menu-contain">
         <div class="menu-game-specific">
+            <div class="fieldset objectives-menu">
+                <h4 class="legend">Objectives</h4>
+                <div>1</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
+                <div>2</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
+                <div>3</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
+                <div>4</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
+                <div>5</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+            </div>
+            <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
             <div class="fieldset players-extra">
                 <h4 class="legend">Players</h4>
                 <div id="menu_player_labels">
@@ -150,20 +164,6 @@
                     </table>
                 </div>
             </div>
-            <div id="menu_objectives" class="fieldset objectives-menu">
-                <h4 class="legend">Objectives</h4>
-                <div>1</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
-                <div>2</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
-                <div>3</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
-                <div>4</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
-                <div>5</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
-            </div>
-            <tr-template href="objective_options.html"></tr-template>
             <div id="menu_backgrounds" class="fieldset backgrounds-menu">
                 <h4 class="legend">Backgrounds</h4>
                 <div>

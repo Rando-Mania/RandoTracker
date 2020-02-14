@@ -87,6 +87,8 @@ html{
     z-index: 2;
 }
 
+.transparent-background{background-color: #000;}
+
 .player-info{
     color: #fff;
     font-size: 18px;
@@ -440,6 +442,8 @@ tr-timer span {
     display: grid;
     grid-template: auto auto / auto auto;
 }
+
+.objectives-list-menu{display:none;}
 
 .objectives-menu{grid-area: objectives;}
 .players-extra-menu{grid-area: player-extra;}
