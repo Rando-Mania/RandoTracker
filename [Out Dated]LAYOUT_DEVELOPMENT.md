@@ -1,3 +1,7 @@
+# Don't use this file
+
+This is documentation for RandoTracker 1.0 and is therefore out of date. Use 2.0 documentation instead.
+
 # Layout Development
 
 This file is for all you layout developers out there.  It will detail how to setup your local development environment, along with what features are available to you so you create all the layouts that you want!  
