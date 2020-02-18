@@ -2,12 +2,10 @@
 <html>
 <head profile="http://www.w3.org/2005/10/profile">
     <meta charset="utf-8">
-    <title>Z3R Tracker Page</title>
+    <title>Tracker</title>
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon item" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         body{
@@ -18,51 +16,79 @@
             width: -webkit-max-content;
             width: max-content;
         }
-        .layout{
+        .tracker-layout{
             background-color: #000;
+            color: #fff;
             display: grid;
             grid-template-columns: repeat(2, auto);
             grid-gap: 24px;
             padding: 24px;
         }
+        .boss-info{
+            grid-column-end: span 2;
+            justify-self: center;
+        }
+        .player-name, .player-grid{
+            box-sizing: content-box;
+            border: 8px solid green;
+            border-image: url(images/border-ep.png) repeat 8 / 8px;
+            margin-bottom: -8px;
+        }
+        tr-template[source="#player_tracker_template"], #bosses{
+            display: grid;
+            justify-items: center;
+            position: relative;
+        }
+
+        .player-speaker{
+            position: absolute;
+            left: 192px;
+            top: 47px;
+        }
+        .player-winner, .player-final{
+            position: absolute;
+            left: 53px;
+        }
+        .player-winner{top: 48px;}
+        .player-final{top: 302px;}
     </style>
 </head>
 <body>
-    <div class="layout">
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="1" property="player_name_1" id="player_name_1"></tr-text>
+    <div class="tracker-layout">
+        <template id="player_tracker_template">
+            <div class="player-name border-background-1">
+                <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-player player="1">
-                <tr-template class="player-grid border-1 background-1" id="player-grid-1" href="icons-4p.html"></tr-template>
-            </tr-player>
+            <tr-template class="player-grid border-background-1" href="icons-4p.html"></tr-template>
+            <tr-text property="player-final" class="player-final"></tr-text>        
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <tr-toggle property="toggle-winner" class="player-winner">
+                <img src="../shared/images/winner.svg" alt="Winner">
+            </tr-toggle>
+        </template>
+        
+        <tr-player player="1">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+
+        <div class="boss-info">
+            <tr-template id="bosses" href="bosses.html"></tr-template>
         </div>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="2" property="player_name_2" id="player_name_2"></tr-text>
-            </div>
-            <tr-player player="2">
-                <tr-template class="player-grid border-1 background-1" id="player-grid-2" href="icons-4p.html"></tr-template>
-            </tr-player>
-        </div>
-        <div class="player-wrapper">           
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="3" property="player_name_3" id="player_name_3"></tr-text>
-            </div>    
-            <tr-player player="3">
-                <tr-template class="player-grid border-1 background-1" id="player-grid-3" href="icons-4p.html"></tr-template>
-            </tr-player>
-        </div>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="4" property="player_name_4" id="player_name_4"></tr-text>
-            </div>
-            <tr-player player="4">
-                <tr-template  class="player-grid border-1 background-1" id="player-grid-4" href="icons-4p.html"></tr-template>
-            </tr-player>
-        </div>
+
+        <tr-player player="3">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
     </div>
-    <tr-template href="four_menu.html"></tr-template>
+
+    <tr-template href="../shared/four_menu.html"></tr-template>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -72,5 +98,6 @@
     <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/four_game.js"></script>
 </body>
 </html>

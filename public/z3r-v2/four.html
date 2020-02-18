@@ -2,131 +2,96 @@
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>LTTPR Tracker</title>
+	<title>4 Player Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="images/icons/all-icons-sheet.png" as="image" type="image/png">
-    <link rel="preload" href="images/border-ep.png" as="image" type="image/png">
-    <link rel="preload" href="../shared/images/icons/blank.png" as="image" type="image/png">
-    <!-- <link rel="preload" href="../shared/images/icons/microphone-line.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="../shared/images/icons/display-line.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="../shared/images/icons/map-marker-line.svg" as="image" type="image/svg+xml"> -->
+    <link rel="preload" href="images/all-icons-sheet.png" as="image" type="image/png">
+    <link rel="preload" href="images/backgrounds-all.webp" as="image" type="image/webp">
+    <!-- <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/png"> -->
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
+        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
+
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
+        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+        
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="4"] .player-final {right: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
+        [player="4"] .player-speaker {right: var(--speakerX); bottom: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
+    </style>
 </head>
 <body>
-	<div class="layout ep">
-        <div player="1" class="border-1 player-video abs" style="left: var(--videoX); top: var(--videoY);"></div>
-        <div class="player-name abs border-background-1" style="left: var(--nameX); top: var(--nameY);">
-            <tr-text scale-to-fit player="1" property="player_name_1" id="player_name_1"></tr-text>
-        </div>
-        <tr-player player="1" class="player-grid-contain abs background-1 border-1" style="transform: translateX(-50%); left: var(--gridX); top: var(--gridY);">
-            <tr-template class="player-grid-left" href="icons-keysanity-left-4p.html"></tr-template>
-            <tr-template class="player-grid" href="icons-4p.html"></tr-template>
-            <tr-template class="player-grid-right" href="icons-keysanity-right-4p.html"></tr-template>
+	<div class="layout">
+        <template id="player_info_template">
+            <div class="border-1 player-video abs"></div>
+            <div class="player-name abs">
+                <tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-template class="player-grid abs" href="icons-4p.html"></tr-template>
+            <tr-text property="player-final" class="player-final abs"></tr-text>        
+            <tr-toggle property="toggle-speaker" class="abs player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <tr-toggle property="toggle-winner" class="abs player-winner">
+                <div>Winner</div>
+            </tr-toggle>
+        </template>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <tr-text player="1" property="player_final_1" class="player-final abs" style="left: var(--finalX); top: var(--finalY);"></tr-text>
-        
-        <img class="abs speaker" id="player_speaker_1" style="left: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
-        <img class="abs winner" id="winner-1" style="left: var(--winX); top: var(--winY);" src="../shared/images/winner.svg" alt="Winner">
-
-<!-- player 2 -->
-        <div player="2" class="border-1 player-video abs" style="right: var(--videoX); top: var(--videoY);"></div>
-
-        <div class="player-name abs border-background-1" style="right: var(--nameX); top: var(--nameY);">
-            <tr-text scale-to-fit player="2" property="player_name_2" id="player_name_2"></tr-text>
-        </div>
-        <tr-player player="2" class="player-grid-contain abs background-1 border-1" style="transform: translateX(50%); right: var(--gridX); top: var(--gridY);">
-            <tr-template class="player-grid-left" href="icons-keysanity-left-4p.html"></tr-template>
-            <tr-template class="player-grid" href="icons-4p.html"></tr-template>
-            <tr-template class="player-grid-right" href="icons-keysanity-right-4p.html"></tr-template>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <tr-text player="2" property="player_final_2" class="player-final abs" style="right: var(--finalX); top: var(--finalY);"></tr-text>
-
-        <img class="abs speaker" id="player_speaker_2" style="right: var(--speakerX); top: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
-        <img class="abs winner" id="winner-2" style="right: var(--winX); top: var(--winY);" src="../shared/images/winner.svg" alt="Winner">
-
-<!-- player 3 -->
-
-        <div player="3" class="border-1 player-video abs" style="left: var(--videoX); bottom: var(--videoY);"></div>
-
-        <div class="player-name abs border-background-1" style="left: var(--nameX); bottom: var(--nameY);">
-            <tr-text scale-to-fit player="3" property="player_name_3" id="player_name_3"></tr-text>
-        </div>
-
-        <tr-player player="3" class="player-grid-contain abs background-1 border-1" style="transform: translateX(-50%); left: var(--gridX); bottom: var(--gridY);">
-            <tr-template class="player-grid-left" href="icons-keysanity-left-4p.html"></tr-template>
-            <tr-template class="player-grid" href="icons-4p.html"></tr-template>
-            <tr-template class="player-grid-right" href="icons-keysanity-right-4p.html"></tr-template>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        
-        <tr-text player="3" property="player_final_3" class="player-final abs" style="left: var(--finalX); bottom: var(--finalY);"></tr-text>
-        
-        <img class="abs speaker" id="player_speaker_3" style="left: var(--speakerX); bottom: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
-        <img class="abs winner" id="winner-3" style="left: var(--winX); bottom: var(--winY);" src="../shared/images/winner.svg" alt="Winner">
-
-<!-- player 4 -->
-
-        <div player="4" class="border-1 player-video abs" style="right: var(--videoX); bottom: var(--videoY);"></div>
-
-        <div class="player-name abs border-background-1" style="right: var(--nameX); bottom: var(--nameY);">
-            <tr-text scale-to-fit player="4" property="player_name_4" id="player_name_4"></tr-text>
-        </div>
-        <tr-player player="4" class="player-grid-contain abs background-1 border-1" style="transform: translateX(50%); right: var(--gridX); bottom: var(--gridY);">
-            <tr-template class="player-grid-left" href="icons-keysanity-left-4p.html"></tr-template>
-            <tr-template class="player-grid" href="icons-4p.html"></tr-template>
-            <tr-template class="player-grid-right" href="icons-keysanity-right-4p.html"></tr-template>
+        <tr-player player="4">
+            <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
-        <tr-text player="4" property="player_final_4" class="player-final abs" style="right: var(--finalX); bottom: var(--finalY);"></tr-text>
-
-        <img class="abs speaker" id="player_speaker_4" style="right: var(--speakerX); bottom: var(--speakerY);" src="../shared/images/icons/volume-up-line.svg" alt="">
-        <img class="abs winner" id="winner-4" style="right: var(--winX); bottom: var(--winY);" src="../shared/images/winner.svg" alt="Winner">
+<!-- bosses -->
+        <div class="boss-info abs" style="transform: translate(-50%,-50%); top: 50%; left: 50%;">
+            <tr-template id="bosses" href="bosses.html"></tr-template>
+        </div>
 
 <!-- vs -->
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
-<!-- boss info -->
-
-    <div class="boss-info abs background-1" style="transform: translate(-50%,-50%); top: 50%; left: 50%;">
-        <tr-template id="bosses" href="bosses.html"></tr-template>
-    </div>
-
 <!-- timer/staff -->
 
-        <tr-timer class="abs border-background-1" property="timer-test" style="transform: translateY(-50%); top: 50%; right: 223px;"></tr-timer>
-        <tr-hide-if-empty id="staff" class="abs border-background-1" style="transform: translateY(-50%); top: 50%; left: 223px;" toggle-class="visually-hidden">
-            <tr-template href="production-team.html"></tr-template>
+        <tr-timer class="abs" property="timer-test" style="top: 324px; right: 231px;"></tr-timer>
+        <tr-hide-if-empty class="staff abs" style="top: 324px; left: 231px;" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
 
 <!-- loadscreen -->
-<div class="loadscreen-contain abs" style="top: 0; left: 0;">
-    <div class="loadscreen">
-        <div class="loadscreen-main">
-            <h1>
-                Link To The Past Randomizer
-            </h1>
-            <h2>
-                <tr-text player="1" class="player-name" property="player_name_1">Dummy</tr-text>
-                vs.
-                <tr-text player="2" class="player-name" property="player_name_2">Text</tr-text>
-                <span class="load-and-vs">
-                    <span class="load-vs">vs.</span>
-                    <span class="load-and">and</span>
-                </span>
-                <tr-text player="3" class="player-name" property="player_name_3">Text</tr-text>
-                vs.
-                <tr-text player="4" class="player-name" property="player_name_4">Text</tr-text>
-            </h2>
-            <h3>
-                on RandoMania
-            </h3>
-        </div>
-        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
-    </div>
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="four-loading-template.html"></tr-template>
 </div>
 
 <!-- bracket -->
@@ -138,20 +103,36 @@
 
 <!-- RM calendar -->
 <div class="calendar-contain abs" style="top: 0; left: 0;">
-    <div class="calendar">
-        <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="90%" height="90%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
+    <tr-template href="../shared/calendar.html"></tr-template>
 </div>
-	
-	<tr-template href="four_menu.html"></tr-template>
+    
+<div class="menu-contain">
+    <div class="menu-game-specific">
+        <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+            <h4 class="legend">Backgrounds</h4>
+            <div>
+                <label>Layout:</label>
+                <tr-select-toggle property="layout-back-select">
+                    <tr-option selected target=".layout" toggle-class="ep" value="0">Eastern Place</tr-option>
+                    <tr-option target=".layout" toggle-class="mm" value="1">Misery Mire</tr-option>
+                    <tr-option target=".layout" toggle-class="hc" value="2">Hyrule Castle</tr-option>
+                    <tr-option target=".layout" toggle-class="ip" value="3">Ice Palace</tr-option>
+                    <tr-option target=".layout" toggle-class="tr" value="4">Turtle Rock</tr-option>
+                </tr-select-toggle>
+            </div>
+        </div>
+    </div>
+	<tr-template href="../shared/four_menu.html"></tr-template>
+</div>
 
-	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
     <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
-	<script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/four_game.js"></script>
 </body>
 </html>
