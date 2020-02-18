@@ -24,6 +24,33 @@
             grid-gap: 24px;
             padding: 24px;
         }
+        .boss-info{
+            grid-column-end: span 2;
+            justify-self: center;
+        }
+        .player-name, .player-grid{
+            box-sizing: content-box;
+            border: 8px solid green;
+            border-image: url(images/border-ep.png) repeat 8 / 8px;
+            margin-bottom: -8px;
+        }
+        tr-template[source="#player_tracker_template"], #bosses{
+            display: grid;
+            justify-items: center;
+            position: relative;
+        }
+
+        .player-speaker{
+            position: absolute;
+            left: 192px;
+            top: 47px;
+        }
+        .player-winner, .player-final{
+            position: absolute;
+            left: 53px;
+        }
+        .player-winner{top: 48px;}
+        .player-final{top: 302px;}
     </style>
 </head>
 <body>
@@ -48,6 +75,11 @@
         <tr-player player="2">
             <tr-template source="#player_tracker_template"></tr-template>
         </tr-player>
+
+        <div class="boss-info">
+            <tr-template id="bosses" href="bosses.html"></tr-template>
+        </div>
+
         <tr-player player="3">
             <tr-template source="#player_tracker_template"></tr-template>
         </tr-player>

@@ -157,7 +157,8 @@ tr-toggle-class.active{
     display: grid;
     grid-template-columns: repeat(10, auto);
     grid-column-gap: 6px;
-    padding: 3px;    
+    padding: 3px;
+    background-image: url(images/smallchest-open.png);    
 }
 
 .lamp{background-position: var(--slot1) var(--slot1);}
@@ -190,6 +191,12 @@ tr-toggle-class.active{
     width: 16px;
     height: 16px;
     background-size: 144px 287.5px;
+    transition: transform .2s;
+}
+
+#bosses [property^="magic"] img:hover{
+    transform: scale(1.2);
+    transition: transform 0s;
 }
 
 #bosses [property^="magic"] img.no-magic{background-position: -80px -144px;}
