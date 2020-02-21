@@ -107,7 +107,7 @@
                     </div>
                     <div class="tracker-build-contain">
                         <h4>Build</h4>
-                        <tr-select property="build">
+                        <tr-select disabled property="build">
                             <tr-option value="0">ST/HP</tr-option>
                             <tr-option value="1">ST/AG</tr-option>
                             <tr-option value="2">HP/MP</tr-option>
@@ -159,7 +159,7 @@
                     <h4>Coordinates:</h4>
                     <div>
                         <tr-template href="over-world-items.html"></tr-template>
-                        <tr-input-text class="coordinates" property="coordinates"></tr-input-text>
+                        <tr-input-text oninput class="coordinates" property="coordinates"></tr-input-text>
                     </div>
                 </div>
                 <div class="background-style-1 menu-button-row" style="width: 288px;">

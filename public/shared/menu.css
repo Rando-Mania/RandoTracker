@@ -80,13 +80,13 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-#menu_players table {
+#menu_players table, .menu-contain table {
     border-collapse: collapse;
     padding: 1em;
     table-layout: fixed;
 }
 
-#menu_players th, #menu_players td{
+#menu_players th, #menu_players td, .menu-contain th, .menu-contain td{
     padding: .5em;
 }
 
@@ -207,6 +207,15 @@ tr-button-timer button{
 
 input[type="checkbox"]:hover, input[type="radio"]:hover, select:hover, button:hover{
     box-shadow: 0 0 0 2px #f8b800;
+}
+
+[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.disable{
+    display:none;
 }
 
 #menu_timer div{

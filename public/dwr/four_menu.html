@@ -80,9 +80,9 @@
                     <td><tr-input-text player="1" list="name_options" class="awesomplete name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                    <td><tr-input-number player="1" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-number oninput player="1" min="0" property="player-cod"></tr-input-number></td>
                     <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="1" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="1" class="win-input" property="player-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
@@ -91,9 +91,9 @@
                     <td><tr-input-text player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                    <td><tr-input-number player="2" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-number oninput player="2" min="0" property="player-cod"></tr-input-number></td>
                     <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="2" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="2" class="win-input" property="player-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
@@ -102,67 +102,20 @@
                     <td><tr-input-text player="3" class="name-input" list="name_options" property="player-name"></tr-input-text></td>                    
                     <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                    <td><tr-input-number player="3" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-number oninput player="3" min="0" property="player-cod"></tr-input-number></td>
                     <td><tr-input-toggle player="3" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="3" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="3" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="3" class="win-input" property="player-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="4" for="player-4">4</label></td>
                     <td><tr-input-text player="4" class="rank-input" property="player-rank"></tr-input-text></td>
-                    <td>
-                        <tr-input-text player="4" class="name-input" list="name_options"  property="player-name"></tr-input-text>
-                        <!-- <tr-select player="4" property="player-name">
-                            <tr-option value=""></tr-option>
-                            <tr-option value="AliGerBrap"></tr-option>
-                            <tr-option value="AmazingToaster"></tr-option>
-                            <tr-option value="Angel_FM"></tr-option>
-                            <tr-option value="ArchfieldMonk"></tr-option>
-                            <tr-option value="Asher1611"></tr-option>
-                            <tr-option value="bismark189"></tr-option>
-                            <tr-option value="bobski021"></tr-option>
-                            <tr-option value="Braxous_Muse"></tr-option>
-                            <tr-option value="brianwilliams42"></tr-option>
-                            <tr-option value="cdinprov">cdinprov 🍪</tr-option>
-                            <tr-option value="Centroid41"></tr-option>
-                            <tr-option value="couch_23">couch_23 🛋️</tr-option>
-                            <tr-option value="Cyberdark86"></tr-option>
-                            <tr-option value="DiabeetusThe2nd"></tr-option>
-                            <tr-option value="drjayphd"></tr-option>
-                            <tr-option value="Erimesi"></tr-option>
-                            <tr-option value="Fryteeth">Fryteeth 🦷</tr-option>
-                            <tr-option value="gameboyf9"></tr-option>
-                            <tr-option value="Guelph35"></tr-option>
-                            <tr-option value="Highspirits">HighSpirits 🍩</tr-option> 
-                            <tr-option value="Invenerable"></tr-option>
-                            <tr-option value="jackimuswedge"></tr-option>
-                            <tr-option value="jman1865"></tr-option>
-                            <tr-option value="kaiten619"></tr-option>
-                            <tr-option value="Leggystarscream"></tr-option>
-                            <tr-option value="LordoftheSynth"></tr-option>
-                            <tr-option value="MisterHomes"></tr-option>
-                            <tr-option value="MonsieurSlime"></tr-option>
-                            <tr-option value="nescardinality">nescardinality</tr-option>
-                            <tr-option value="ryguy3745"></tr-option>
-                            <tr-option value="SassageLink83"></tr-option>
-                            <tr-option value="Scorpion__Max">Scorpion__Max 🦂</tr-option>
-                            <tr-option value="Smashy"></tr-option>
-                            <tr-option value="sparkover">sparkover 🐻</tr-option>
-                            <tr-option value="thehangrycanuck"></tr-option>
-                            <tr-option value="theseawolf1"></tr-option>
-                            <tr-option value="TristalMTG"></tr-option>
-                            <tr-option value="Ursinedasyure"></tr-option>
-                            <tr-option value="VaeluV"></tr-option>
-                            <tr-option value="Vriaeliss"></tr-option>
-                            <tr-option value="WillWagnerMusic">WillWagnerMusic 🎵</tr-option>
-                            <tr-option value="Zman050778"></tr-option>
-                        </tr-select> -->
-                    </td>                    
+                    <td><tr-input-text player="4" class="name-input" list="name_options"  property="player-name"></tr-input-text></td>                    
                     <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                    <td><tr-input-number player="4" min="0" property="player-cod" oninput></tr-input-number></td>
+                    <td><tr-input-number oninput player="4" min="0" property="player-cod"></tr-input-number></td>
                     <td><tr-input-toggle player="4" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="4" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="4" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="4" class="win-input" property="player-winner"></tr-input-toggle></td>
                 </tr>
             </table>
@@ -260,7 +213,7 @@
         <div class="menu-label-input">
             <label>Coordinates:</label>
             <tr-template href="over-world-items.html"></tr-template>
-            <tr-input-text class="coordinates" property="coordinates"></tr-input-text>
+            <tr-input-text oninput class="coordinates" property="coordinates"></tr-input-text>
         </div>
         <div class="menu-label-input">
             <label>League Flags</label>
