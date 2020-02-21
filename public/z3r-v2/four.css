@@ -14,7 +14,9 @@
     --nameWidth: 184px;
     --nameX: 12px; --nameY: 8px;
     --gridX: 48px; --gridY: 56px;
-    --speakerX: 185px; --speakerY: 47px;
+    --gridkeys1X: 0px; --gridkeys1Y: 95px;
+    --gridkeys2X: 176px; --gridkeys2Y: 95px;
+    --speakerX: 184px; --speakerY: 53px;
     --winX: 48px; --winY: 56px;
     --finalX: 48px; --finalY: 309px;
     --vsX: 50%; --vsY: 9px;
@@ -59,23 +61,34 @@ html{
 	     url("fonts/RetGanon.ttf") format("truetype");
 }
 
-/* layout specific styles */
-/* @font-face {
-    font-family: "PressStart2P";
-    src: local('PressStart2P'),
-         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
-	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
-         url('../shared/fonts/pressstart2p.ttf') format('truetype');
-}*/
-
 .layout{
     font-family: "ROG", sans-serif;
     width: 1280px;
     height: 720px;
     color:#fff;
-    background-color: #383858;
     position: relative;
-    background: var(--backgroundImg);
+}
+
+.player-backdrop{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    background-image: var(--backgroundImg);
+    background-color: #383858;
+}
+
+.background-player-1{clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);}
+.background-player-2{clip-path: polygon(50% 0%, 100% 0, 100% 50%, 50% 50%);}
+.background-player-3{clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0% 100%);}
+.background-player-4{clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);}
+
+@supports (background-image:conic-gradient(transparent,  black)){
+    .player-backdrop{clip-path: none;}
+    .background-player-2{-webkit-mask-image: conic-gradient(from -2.5deg, transparent 0,  black 5deg 270deg, transparent 270deg 355deg);}
+    .background-player-3{-webkit-mask-image: conic-gradient(from 160deg, transparent 0, black 5deg 110deg, transparent 111deg 355deg);}
+    .background-player-4{-webkit-mask-image: conic-gradient(from 88deg, transparent 0,  black 5deg 91deg, transparent 93deg 355deg);}
 }
 
 .ep{background-position: 0 0; background-color: #383858;}
@@ -83,7 +96,6 @@ html{
 .hc{background-position: 100% 0; background-color: #373753;}
 .ip{background-position: 0 50%; background-color: #6068a8;}
 .tr{background-position: 0 100%; background-color: #e02020;
-    /* background: linear-gradient(to bottom right, rgba(255,255,255,.3), rgba(255,255,255,.1)), var(--backgroundImg); */
 }
 
 .player-video{
@@ -92,16 +104,23 @@ html{
     z-index: 2;
 }
 
+.player-info-contain{
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 6px;
+    width: 201px;
+}
+
 .player-name{
     font-family: "Triforce", sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     height: 32px;
-    width: calc(var(--nameWidth) + 8px * 2);
+    width: calc(var(--nameWidth));
 	color: #fff;
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 8px;
 }
 
 .player-name tr-text{
@@ -140,10 +159,13 @@ tr-toggle-class.active{
     opacity: 1;
 }
 
-.player-grid img[src$="blank.svg"], #bosses img[src$="blank.svg"], .dialog img[src$="blank.svg"]{
+.player-grid img[src$="blank.svg"], #bosses img[src$="blank.svg"], .dialog img[src$="blank.svg"],
+.player-grid-keys-1 img[src$="blank.svg"], .player-grid-keys-2 img[src$="blank.svg"]{
     background-image: url('images/all-icons-sheet.png');
     background-size: 288px 575px;
 }
+
+
 
 .boss-info{
     width: 380px;
@@ -288,8 +310,40 @@ tr-toggle-class.active{
 .crystal-red{background-position: var(--slot1) var(--slot8);}
 .crystal-blue{background-position: var(--slot2) var(--slot8);}
 
+.player-grid-keys-1, .player-grid-keys-2{
+    background-color: #000;
+    border: solid 8px green;
+    border-image: url(images/border-ep.png) repeat 8 / 8px; 
+    display: grid;
+    grid-template-columns: repeat(2, 16px);
+    grid-template-rows: repeat(12, 16px);
+    width: 48px;
+    display: none;
+}
+
+.player-grid-keys-1 img, .player-grid-keys-2 img, .player-grid-keys-1 tr-image img, .player-grid-keys-2 tr-image img{
+    width: 16px;
+    height: 16px;
+}
+
+.small-key-0{background-position: 0 -256px;}
+.small-key-1{background-position: -16px -256px;}
+.small-key-2{background-position: -32px -256px;}
+.small-key-3{background-position: 0px -272px;}
+.small-key-4{background-position: -16px -272px;}
+.small-key-5{background-position: -32px -272px;}
+.small-key-6{background-position: 0px -288px;}
+.big-key{background-position: -16px -288px;}
+
+.key-heading{
+    color: #fff;
+    grid-column-end: span 2;
+    text-align: center;
+    background-color: #282828;
+}
 .player-speaker{
     padding: 4px;
+    opacity: .9;
 }
 
 .player-speaker img{
@@ -342,6 +396,7 @@ tr-toggle-class.active{
 tr-timer{
 	width: 200px;
     height: 72px;
+    background-color: #282828;
     z-index: 1;
     font-size: 24px;
 }
@@ -362,6 +417,8 @@ tr-timer span {
     overflow: hidden;
     font-size: 24px;
     height: 72px;
+    width: 200px;
+    background-color: #282828;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -436,6 +493,24 @@ tr-timer span {
     padding: 4px;
 }
 
+.dialog[id$="key"]{
+    transform: translate(-22px, -22px);
+}
+
+.dialog[id$="key"] img{
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    background-size: 576px 1150px;
+}
+
+.dialog[id$="key"] .small-key-0{background-position: 0 -512px;}
+.dialog[id$="key"] .small-key-1{background-position: -32px -512px;}
+.dialog[id$="key"] .small-key-2{background-position: -64px -512px;}
+.dialog[id$="key"] .small-key-3{background-position: 0px -544px;}
+.dialog[id$="key"] .small-key-4{background-position: -32px -544px;}
+.dialog[id$="key"] .small-key-5{background-position: -64px -544px;}
+.dialog[id$="key"] .small-key-6{background-position: 0px -576px;}
+
 .view-container, .view-container-border{
     background-color: transparent;
 }
@@ -456,16 +531,21 @@ tr-timer span {
 
 .show{ display: block; }
 
-/* .show-flex{ display: flex; }
-.show-grid{ display: grid; } */
+/* .show-flex{ display: flex; }*/
+.show-grid{ display: grid; }
 
 .menu-contain{
     display: flex;
 }
+
 .menu-game-specific{
     color: #fff;
     background-color: #000;
     padding: 1em 0 1em 1em;
+}
+
+.number-input input{
+    width: 3em;
 }
 
 #menu_2 {
