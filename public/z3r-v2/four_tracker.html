@@ -34,6 +34,21 @@
             border-image: url(images/border-ep.png) repeat 8 / 8px;
             margin-bottom: -8px;
         }
+
+        .player-grid-contain{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: normal 14px Arial;
+        }
+        .player-grid-keys-1{
+            margin-right: -8px;
+            z-index: 2;
+        }
+        .player-grid-keys-2{
+            margin-left: -8px;
+            z-index: 2;
+        }
         tr-template[source="#player_tracker_template"], #bosses{
             display: grid;
             justify-items: center;
@@ -59,7 +74,11 @@
             <div class="player-name border-background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid border-background-1" href="icons-4p.html"></tr-template>
+            <div class="player-grid-contain">
+                <tr-template class="player-grid-keys-1 keys-panel" href="icons-keys-1.html"></tr-template>
+                <tr-template class="player-grid border-background-1" href="icons-4p.html"></tr-template>
+                <tr-template class="player-grid-keys-2 keys-panel" href="icons-keys-2.html"></tr-template>
+            </div>
             <tr-text property="player-final" class="player-final"></tr-text>        
             <tr-toggle property="toggle-speaker" class="player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
@@ -88,7 +107,10 @@
         </tr-player>
     </div>
 
-    <tr-template href="../shared/four_menu.html"></tr-template>
+    <div class="menu-contain">
+        <tr-template href="game_four_menu.html"></tr-template>
+        <tr-template href="../shared/four_menu.html"></tr-template>
+    </div>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
