@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>2 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="preload" href="images/layout.png" as="image" type="image/png"><!-- preload background image -->
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+    
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+    
+        [player="1"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); bottom: var(--winY);}
+    
+        [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+    </style>
+</head>
+<body>
+    <template id="player_info_template">
+        <div class="border-1 player-video abs"></div>
+        <div class="player-name abs">
+            <tr-text scale-to-fit property="player-name"></tr-text>
+        </div>
+        <tr-template class="player-grid abs background-1" href="icons.html"></tr-template>
+        <tr-text property="player-final" class="player-final abs"></tr-text>        
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <img src="../shared/images/icons/blank.svg" alt="">
+        </tr-toggle>
+        <tr-toggle property="toggle-winner" class="abs player-winner">
+            <img src="images/Winner.png" alt="">
+        </tr-toggle>
+        <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+    </template>
+	<div class="layout">
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+<!-- timer/staff -->
+
+        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 79px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <tr-hide-if-empty class="staff abs" style="bottom: 24px; left: 50%; transform: translateX(-50%);" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+    </div>
+
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="two-loading-template.html"></tr-template>
+    </div>
+
+<!-- bracket -->
+    <!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+        <div class="bracket">
+            <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+    </div> -->
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar.html"></tr-template>
+    </div>
+	
+	<tr-template href="../shared/two_menu.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/two_game.js"></script>
+</body>
+</html>
