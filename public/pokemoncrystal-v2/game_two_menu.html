@@ -1,0 +1,59 @@
+    <div class="menu-game-specific">
+        <!-- <div id="menu_backgrounds" class="fieldset">
+            <h4 class="legend">Players</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Pronoun</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+        </div> -->
+        <div id="game_mode" class="fieldset game-mode">
+            <h4 class="legend">Game Mode</h4>
+            <div>
+                <tr-select-toggle property="game-mode-select">
+                    <tr-option target=".layout" toggle-class="cinco-bingo" value="1">Cinco Bingo</tr-option>
+                    <tr-option selected target=".layout" toggle-class="key-item" value="2">Key Item</tr-option>
+                 </tr-select-toggle>
+            </div>
+        </div>
+        <div id="menu_obs" class="fieldset">
+            <h4 class="legend">OBS positions/sizes</h4>
+            <table>
+                <col style="border-right: 1px #333 solid;"/>
+                <col style="padding-left: .25em;"/>
+                <col style="border-right: 1px #333 solid;" />
+                <!-- <tr>
+                    <th></th><th colspan="2">Size</th><th colspan="2">Position</th>
+                </tr> -->
+                <tr>
+                    <th></th><th>x</th><th>y</th><th>w</th><th>h</th>
+                </tr>    
+                <tr style="border-top: 1px solid #333;">
+                    <td>Full Layout</td><td>0</td><td>0</td><td>1280</td><td>720</td>
+                </tr>
+                <tr>
+                    <td>Video 1</td><td>22</td><td>173</td><td>414</td><td>373</td>
+                </tr>
+                <tr>
+                    <td>Video 2</td><td>844</td><td>173</td><td>414</td><td>373</td>
+                </tr>
+                <tr>
+                    <td>Bingo Board</td><td>436</td><td>173</td><td>408</td><td>373</td>
+                </tr>
+            </table>
+        </div>
+    </div>
