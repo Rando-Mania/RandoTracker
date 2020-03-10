@@ -26,9 +26,10 @@
 }
 
 .border-1{border: var(--border1);}
-.borderImg{border-image: var(--borderImg);}
+.borderImg{border: var(--border1); border-image: var(--borderImg);}
 .background-1{background-color: var(--backgroundColor1);}
 .border-background-1 {
+	border: 1px solid #ffffff;
     border-image: var(--borderImg);
     background-color: var(--backgroundColor1);
 }
@@ -55,18 +56,24 @@ html{
     background: var(--backgroundImg);
 }
 
+
 .ffr-default{
-    background-image: var(--defaultfallback);
-    background-image: url(images/base-background.png), var(--defaultfallback);
+    background: var(--defaultfallback);
+    background: url(images/base-background.png), var(--defaultfallback);
 }
+.layout.ffr-default .border-background-1 {background-color: #000033;}
+
 .ffr-irongol{
-    background-image: var(--irongolfallback);
-    background-image: url(images/base-irongol.png), var(--irongolfallback);
+    background: var(--irongolfallback);
+    background: url(images/base-irongol.png), var(--irongolfallback);
 }
+.layout.ffr-irongol .border-background-1 {background-color: #330000;}
+
 .ffr-tourney{
-    background-image: var(--tourneyfallback);
-    background-image: url(images/base-tourney.png), var(--tourneyfallback);
+    background: var(--tourneyfallback);
+    background: url(images/base-tourney.png), var(--tourneyfallback);
 }
+.layout.ffr-tourney .border-background-1 {background-color: #003300;}
 
 .player-video{
     width: var(--vidWidth);
