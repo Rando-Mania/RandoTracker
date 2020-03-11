@@ -1,14 +1,15 @@
-* Install git
-* github
-* Firebase 
-https://firebase.google.com/docs/cli
+Things you'll need access to:
+* Rando-Mania RandoTracker git hub repository
+* Rando-tracker Firebase project
+* RandoTracker itself
 
-# Install Git
+
+## Install Git
 
 download and install git from [https://git-scm.com/downloads](https://git-scm.com/downloads) 
 
 
-## Clone the randoTracker repo to your computer
+### Clone the randoTracker repo to your computer
 
 1. right-click in the folder you'd like to use for the repo and click `Git Bash Here` 
 
@@ -28,13 +29,13 @@ Make your changes to the branch you just made.
 
 You'll need to `push` this branch live for anyone else to see it
 
-# Firebase setup
+## Firebase setup
 
 standalone binary or npm
 
 Firebase command line interface:  [https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)
 
-# Hook the folder up to the Firebase project
+## Hook the folder up to the Firebase project
 
 shift + right-click in the folder with the firebase.json file to open this foler in powershell: 
 
@@ -50,7 +51,7 @@ Initiate the folder to the firebase project:
   press `enter` to select the default (database.rules.json)
   y
 
-# Send changes to the live Github for others to see 
+## Send changes to the live Github for others to see 
 
 que the changes to be pushed (back to gitbash):
 	git add *
