@@ -1,131 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
-    <meta charset="utf-8">
-    <title>Final Fantasy 4: FE Randomizer Tracker</title>
-    <link rel="stylesheet" type="text/css" href="../content/tracker.css">
-    <link rel="stylesheet" type="text/css" href="fourhighway.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon item" type="image/x-icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<title>4 Player Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="preload" href="" as="image" type="image/png">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
+        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
+
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
+        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+        
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="4"] .player-final {right: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
+        [player="4"] .player-speaker {right: var(--speakerX); bottom: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
+    </style>
 </head>
 <body>
-    <img data-property="background" src="images/weekly/weeklyrace-monday.png" style="top: 0px; left: 0px; width: 1280px; position: absolute;" />
+	<div class="layout">
+        <template id="player_info_template">
+            <div class="border-1 player-video abs"></div>
+            <div class="player-name abs border-background-1">
+                <tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
+            <tr-text property="player-final" class="player-final abs"></tr-text>        
+            <tr-toggle property="toggle-speaker" class="abs player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
+                <div>Winner</div>
+            </tr-toggle>
+        </template>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
 
-    <span id="player_name_1" data-scale-to-fit="true" class="player-name" style="top: 17px; left: 473px;"></span>
-    <span id="player_name_2" data-scale-to-fit="true" class="player-name" style="top: 17px; left: 655px;"></span>
-    <span id="player_name_3" data-scale-to-fit="true" class="player-name" style="top: 685px; left: 473px;"></span>
-    <span id="player_name_4" data-scale-to-fit="true" class="player-name" style="top: 685px; left: 655px;"></span>
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
-    <div id="player_speaker_1" class="player-speaker hidden" style="top: 87px; left: 580px;"><img src="images/H2TZZ/H2TZZ-audio.png"/></div>
-    <div id="player_speaker_2" class="player-speaker hidden" style="top: 87px; left: 665px; transform: scaleX(-1)"><img src="images/H2TZZ/H2TZZ-audio.png"/></div>
-    <div id="player_speaker_3" class="player-speaker hidden" style="top: 600px; left: 580px;"><img src="images/H2TZZ/H2TZZ-audio.png"/></div>
-    <div id="player_speaker_4" class="player-speaker hidden" style="top: 600px; left: 665px; transform: scaleX(-1)"><img src="images/H2TZZ/H2TZZ-audio.png"/></div>
+<!-- timer/staff -->
 
-    <div data-property="p1-points" class="points" style="top: 165px; left: 573px;"></div>
-    <div data-property="p2-points" class="points" style="top: 165px; left: 675px;"></div>
-    <div data-property="p3-points" class="points" style="top: 523px; left: 573px;"></div>
-    <div data-property="p4-points" class="points" style="top: 523px; left: 675px;"></div>
-
-    <div id="timer" style="top: 53px; left: 459px;"></div>
-    <div id="timer" style="top: 53px; left: 696px;"></div>
-    <div id="timer" style="top: 649px; left: 459px;"></div>
-    <div id="timer" style="top: 649px; left: 696px;"></div>
-
-    <div data-property="p1-pronoun" class="pronouns" style="top: 45px; left: 574px; border-right-width: 1px; border-bottom-width: 1px"></div>
-    <div data-property="p2-pronoun" class="pronouns" style="top: 45px; left: 652px; border-left-width: 1px; border-bottom-width: 1px"></div>
-    <div data-property="p3-pronoun" class="pronouns" style="top: 640px; left: 574px; border-right-width: 1px; border-top-width: 1px"></div>
-    <div data-property="p4-pronoun" class="pronouns" style="top: 640px; left: 652px; border-left-width: 1px; border-top-width: 1px"></div>
-
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 48px; left: 459px;">
-        <div id="player_final_1" class="player-final hidden"></div>
-    </div>
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 48px; left: 696px;">
-        <div id="player_final_2" class="player-final hidden"></div>
-    </div>
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 643px; left: 459px;">
-        <div id="player_final_3" class="player-final hidden"></div>
-    </div>
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 643px; left: 696px;">
-        <div id="player_final_4" class="player-final hidden"></div>
-    </div>
-    
-    <span id="commentators" data-scale-to-fit="true" style="top: 394px; left: 537px; width: 230px;"></span>
-
-    <div id="flags" data-scale-to-fit="true" data-property="flags" style="top: 451px; left: 513px;"></div>
-
-    <div id="player_1_grid" class="item-grid" data-child-player="1" style="top: 84px; left: 478px; position: absolute;">
-
+        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 388px; left: 520px;"></tr-timer>
+        <tr-hide-if-empty class="staff abs" style="top: 400px; left: 520px;" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
     </div>
 
-    <div class="item-grid" data-child-player="2" data-copy-from="#player_1_grid" style="top: 84px; left: 716px;">
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="four-loading-template.html"></tr-template>
+</div>
+
+<!-- bracket -->
+<!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+    <div class="bracket">
+        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
     </div>
+</div> -->
 
-    <div class="item-grid" data-child-player="3" data-copy-from="#player_1_grid" style="top: 527px; left: 478px;">
-    </div>
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar.html"></tr-template>
+</div>
 
-    <div class="item-grid" data-child-player="4" data-copy-from="#player_1_grid" style="top: 527px; left: 716px;">
-    </div>
+<div class="menu-contain">
+    <tr-template href="game_four_menu.html"></tr-template>
+    <tr-template href="../shared/four_menu.html"></tr-template>
+</div>
 
-    <fieldset id="background-picker" style="position: absolute; top: 730px; left: 0px; color: white">
-        <legend>Background</legend>
-        <select data-property="background" data-set-prop="true">
-            <option value="images/weekly/weeklyrace-monday.png">Monday</option>
-            <option value="images/weekly/weeklyrace-friday.png">Friday</option>
-        </select>
-    </fieldset>
-
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script defer src="../script/tracker.js"></script>
-    <script defer type="text/javascript">
-        (function(Tracker) {
-            Tracker.loaded = function() {
-                Tracker.init({
-                    playerCount: 4,
-                    freetext: [, {
-                        label: "Flags",
-                        property: "flags",
-                        type: "textarea",
-                        onblur: true,
-                        rows: 4
-                    },{
-                        label: "P1 Place",
-                        property: "p1-points",
-                    }, {
-                        label: "P2 Place",
-                        property: "p2-points"
-                    }, {
-                        label: "P3 Place",
-                        property: "p3-points"
-                    }, {
-                        label: "P4 Place",
-                        property: "p4-points"
-                    },{
-                        label: "P1 Pronoun",
-                        property: "p1-pronoun",
-                    }, {
-                        label: "P2 Pronoun",
-                        property: "p2-pronoun"
-                    }, {
-                        label: "P3 Pronoun",
-                        property: "p3-pronoun"
-                    }, {
-                        label: "P4 Pronoun",
-                        property: "p4-pronoun"
-                    }],
-                    additionalLoads: [{
-                        path: "four_items.html",
-                        parentElementQuery: "#player_1_grid",
-                        callback: function() {
-                            //console.log("here");
-                        }
-                    }]
-                });
-            }
-        })(window.Tracker = window.Tracker || {});
-    </script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/four_game.js"></script>
 </body>
 </html>
