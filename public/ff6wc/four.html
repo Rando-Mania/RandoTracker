@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="" as="image" type="image/png">
+    <link rel="preload" href="images/BG_RANDOMANIA_1920x1080_4P.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -44,7 +44,7 @@
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>
+            <div class="player-video abs"></div>
             <div class="player-name abs border-background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
@@ -77,7 +77,7 @@
 <!-- timer/staff -->
 
         <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 388px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs" style="top: 400px; left: 520px;" toggle-class="wtf">
+        <tr-hide-if-empty class="staff abs background-1" style="top: 400px; left: 520px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
