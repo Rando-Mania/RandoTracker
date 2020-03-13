@@ -5,8 +5,8 @@
 }
 
 :root{
-    --backgroundImg: url('images/base-background.png'), var(--defaultfallback);
-    --border1: 1px solid #ffffff;
+    --backgroundImg: url('images/base-background.png');
+    --border1: 1px solid #fff;
     --borderImg: url('images/border.png') 6 / 6px round;
     --backgroundColor1: #000;
     --vidWidth: 439px;
@@ -20,9 +20,9 @@
     --winX: 476px; --winY: 55px;
     --finalX: 489px; --finalY: 8px;
     --vsX: 50%; --vsY: 30px;
-    --defaultfallback: #000055;
-    --irongolfallback: #550000;
-    --tourneyfallback: #005500;
+    --defaultfallbackColor: #005;
+    --irongolfallbackColor: #500;
+    --tourneyfallbackColor: #050;
 }
 
 .border-1{border: var(--border1);}
@@ -52,28 +52,24 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: silver;
-    background: var(--backgroundImg);
+    background: url(images/base-background.png) var(--defaultfallbackColor);
 }
 
 
 .ffr-default{
-    background: var(--defaultfallback);
-    background: url(images/base-background.png), var(--defaultfallback);
+    background: url(images/base-background.png) var(--defaultfallbackColor);
 }
-.layout.ffr-default .border-background-1 {background-color: #000033;}
+.layout.ffr-default .border-background-1 {background-color: var(--defaultfallbackColor);}
 
 .ffr-irongol{
-    background: var(--irongolfallback);
-    background: url(images/base-irongol.png), var(--irongolfallback);
+    background: url(images/base-irongol.png) var(--irongolfallbackColor);
 }
-.layout.ffr-irongol .border-background-1 {background-color: #330000;}
+.layout.ffr-irongol .border-background-1 {background-color: var(--irongolfallbackColor);}
 
 .ffr-tourney{
-    background: var(--tourneyfallback);
-    background: url(images/base-tourney.png), var(--tourneyfallback);
+    background: url(images/base-tourney.png) var(--tourneyfallbackColor);
 }
-.layout.ffr-tourney .border-background-1 {background-color: #003300;}
+.layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
 
 .player-video{
     width: var(--vidWidth);
