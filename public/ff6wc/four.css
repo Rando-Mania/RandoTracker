@@ -5,12 +5,12 @@
 }
 
 :root{
-    --backgroundImg: url('../shared/images/checkerboard.png');
+    --backgroundImg: url('images/BG_RANDOMANIA_1920x1080_4P.png') 0 0 / 100% 100%;
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
-    --vidWidth: 439px;
+    --vidWidth: 428px;
     --vidAspect: 4 / 3;
-    --videoX: 20px; --videoY: 20px;
+    --videoX: 10px; --videoY: 10px;
     --nameWidth: 140px;
     --nameX: 457px; --nameY: 20px;
     --gridX: 457px; --gridY: 68px;

@@ -7,7 +7,6 @@
         url('../shared/fonts/orbitron-bold_0.ttf') format('truetype');
 }
 
-
 .menu-contain{
     display: flex;
     background-color: #000;
@@ -316,10 +315,11 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     margin-right: .25em;
 }
 
+    #menu_video_background input[type="radio"][id="black"]{background-color: #000; margin-right: .25em;}
     #menu_video_background input[type="radio"][id="white"]{background-color: #fff; margin-right: .25em;}
-  #menu_video_background input[type="radio"][id="blue"]{background-color: #00f; margin-right: .25em;}
-  #menu_video_background input[type="radio"][id="green"]{background-color: #0f0; margin-right: .25em;}
-  #menu_video_background input[type="radio"][id="magenta"]{background-color: #f0f; margin-right: none;}
+    #menu_video_background input[type="radio"][id="blue"]{background-color: #00f; margin-right: .25em;}
+    #menu_video_background input[type="radio"][id="green"]{background-color: #0f0; margin-right: .25em;}
+    #menu_video_background input[type="radio"][id="magenta"]{background-color: #f0f; margin-right: none;}
 
   #menu_video_background input[type="radio"][id="screen"]{
       -webkit-appearance: none;
@@ -361,6 +361,7 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     background-position: 100% 100%;
 }
 
+.black-background{background-image: none; background-color: #000;}
 .white-background{background-image: none; background-color: #fff;}
 .blue-background{background-image: none; background-color: #00f;}
 .green-background{background-image: none; background-color: #0f0;}
