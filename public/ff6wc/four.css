@@ -7,25 +7,43 @@
 :root{
     --backgroundImg: url('images/BG_RANDOMANIA_1920x1080_4P.png') 0 0 / 100% 100%;
     --border1: solid 2px #fff;
-    --backgroundColor1: #000;
+    --backgroundColor1: rgba(0,0,0,.75);
     --vidWidth: 428px;
     --vidAspect: 4 / 3;
     --videoX: 10px; --videoY: 10px;
-    --nameWidth: 140px;
-    --nameX: 457px; --nameY: 20px;
-    --gridX: 457px; --gridY: 68px;
-    --speakerX: 591px; --speakerY: 72px;
+    --nameWidth: 160px;
+    --nameX: 441px; --nameY: 4px;
+    --gridX: 441px; --gridY: 51px;
+    --speakerX: 569px; --speakerY: 63px;
     --winX: 476px; --winY: 55px;
     --finalX: 489px; --finalY: 8px;
-    --vsX: 50%; --vsY: 30px;
+    --vsX: 50%; --vsY: 12px;
 }
 
 .border-1{border: var(--border1);}
 .background-1{background-color: var(--backgroundColor1);}
+
 .border-background-1 {
-    border: var(--border1);
-    background-color: var(--backgroundColor1);
+    background-image: url(images/ff6-window-gradient-small.png);
+    background-size: 100%;
+    background-position: 0;
+    border: solid 3px;
+    border-radius: 10px;
+    mix-blend-mode: hard-light;
 }
+.border-background-2{
+    background-image: url(images/ff6_window_gradient.png);
+    background-size: 100%;
+    background-position: 0;
+    border: solid 3px;
+    border-radius: 10px;
+    mix-blend-mode: hard-light;
+}
+
+.text-shadow{
+    filter: drop-shadow(2px 2px 2px #000) drop-shadow(-2px -2px 2px #000);
+}
+
 .abs{position: absolute;}
 
 html{
@@ -33,22 +51,41 @@ html{
 }
 
 /* layout specific styles */
-/* @font-face {
-    font-family: "PressStart2P";
-    src: local('PressStart2P'),
-         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
-	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
-         url('../shared/fonts/pressstart2p.ttf') format('truetype');
-}*/
+
+
+@font-face {
+    font-family: "FF6";
+    src: local('FF6'),
+         /* url('../shared/fonts/chicago.woff2') format('woff2'),
+	     url('../shared/fonts/chicago.woff') format('woff'),          */
+         url('fonts/final_fantasy_36_font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Chicago";
+    src: local('Chicago'),
+         url('../shared/fonts/chicago.woff2') format('woff2'),
+	     url('../shared/fonts/chicago.woff') format('woff'),         
+         url('../shared/fonts/chicago.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Ferrum";
+    src: local('Ferrum'),
+         /* url('../shared/fonts/chicago.woff2') format('woff2'),
+	     url('../shared/fonts/chicago.woff') format('woff'),          */
+         url('fonts/ferrum.otf') format('opentype');
+}
 
 .layout{
-    font-family: Arial, sans-serif;
+    font-family: 'FF6', 'Chicago', Arial, sans-serif;
     width: 1280px;
     height: 720px;
-    color:#fff;
+    color: #fff;
     position: relative;
-    background: var(--backgroundImg);
-    background-color: silver;
+    background-image: url('images/BG_RANDOMANIA_1920x1080_4P.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+    background-size: 100% 100%;
+    background-color: #21384a;
 }
 
 .player-video{
@@ -85,12 +122,14 @@ html{
 
 .player-grid img{
     width: 32px;
-    height: 32px;
+    height: 46px;
     display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    isolation: isolate;
 }
 
 .player-speaker{
-    background-color: #000;
     padding: 4px;
 }
 
@@ -135,14 +174,18 @@ html{
 }
 
 tr-timer{
-	width: 11em;
+	width: 200px;
     height: 53px;
     z-index: 1;
-	font-size: 24px;
+    font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
 }
 
 tr-timer span {
-    width: 26px;
+    width: 22px;
     text-align: center;
 }
 
@@ -155,7 +198,7 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 24px;
+    font-size: 19px;
 }
 
 .staff-panel-1, .staff-panel-2{
