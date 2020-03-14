@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <link rel="preload" href="images/BG_RANDOMANIA_1920x1080_4P.png" as="image" type="image/png">
+    <link rel="preload" href="images/ff6-window-gradient-small.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -50,7 +51,7 @@
             </div>
             <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
             <tr-text property="player-final" class="player-final abs"></tr-text>        
-            <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <tr-toggle property="toggle-speaker" class="abs player-speaker text-shadow">
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
             <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
@@ -71,13 +72,14 @@
         </tr-player>
 
 <!-- vs -->
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs text-shadow" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs text-shadow" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 388px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs background-1" style="top: 400px; left: 520px;" toggle-class="wtf">
+        <tr-timer class="abs text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="top: 431px; transform: translateX(-50%); left: 50%;"></tr-timer>
+        
+        <tr-hide-if-empty class="staff abs text-shadow" style="bottom: 301px; transform: translateX(-50%); left: 50%;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
