@@ -13,6 +13,29 @@
 		</div>
 	</div>
 
+   <div id="menu_backgrounds" class="fieldset">
+		<h4 class="legend">Players</h4>
+		<div id="menu_player_labels">
+			<table>
+				<tr>
+					<th></th>
+					<th>#</th>
+					<th>Pronoun</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+					<td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+					<td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
    <div id="menu_players" class="fieldset">
         <h4 class="legend">Players</h4>
         <button class="dummy-text-button" title="Dummy Text" onclick="playerDummyText()"></button>
@@ -74,7 +97,8 @@
                 <label class="overlay-label-calendar" for="calendar">Calendar</label>
             </div>
         </div>
-        <div id="menu_best_of">
+ <!--
+		<div id="menu_best_of">
             <label>Best of:</label>
             <tr-input-radio checked id="best-of-no" property="best-of" value="best-of-no" target=".player-best-of, .load-best-of" toggle-class="best-of-no"></tr-input-radio>
             <label id="menu-label-best-of-no" class="video-bgcolor" for="best-of-no">1</label>
@@ -85,6 +109,7 @@
             <tr-input-radio id="best-of-7" property="best-of" value="best-of-7" target=".player-best-of, .load-best-of" toggle-class="best-of-7"></tr-input-radio>
             <label class="video-bgcolor" for="best-of-7">7</label>
         </div>
+-->
     </div>
 
     <div id="menu_production" class="fieldset">
