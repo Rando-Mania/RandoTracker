@@ -8,6 +8,8 @@
     --backgroundImg: url('images/base-background.png');
     --border1: 1px solid #ffffff;
     --borderImg: url('images/border.png') 6 / 6px round;
+    --borderImgtop: url('images/border.png') 6 / 6px 6px 0 6px round;
+    --borderImgbot: url('images/border.png') 6 / 0 6px 6px 6px round;
     --backgroundColor1: #000;
     --vidWidth: 615px;
     --vidAspect: 4 / 3;
@@ -16,9 +18,10 @@
     --nameX: 20px; --nameY: 10px;
     --gridX: 20px; --gridY: 565px;
     --pronounX: 20px; --pronounY: 63px;
-    --speakerX: 280px; --speakerY: 565px;
-    --winX: 325px; --winY: 565px;
-    --finalX: 325px; --finalY: 560px;
+    --rankX: 103px; --rankY: 63px;
+    --speakerX: 200px; --speakerY: 60px;
+    --winX: 282px; --winY: 600px;
+    --finalX: 282px; --finalY: 565px;
     --bestX: 869px; --bestY: 558px;
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
@@ -33,6 +36,19 @@
     border-image: var(--borderImg);
     background-color: var(--backgroundColor1);
 }
+
+.border-background-2 {
+	border: 1px solid #ffffff;
+    border-image: var(--borderImgtop);
+    background-color: var(--backgroundColor1);
+}
+
+.border-background-3 {
+	border: 1px solid #ffffff;
+    border-image: var(--borderImgbot);
+    background-color: var(--backgroundColor1);
+}
+
 .abs{position: absolute;}
 
 html{
@@ -64,17 +80,17 @@ html{
 .ffr-default{
     background: url(images/base-background.png) var(--defaultfallbackColor);
 }
-.layout.ffr-default .border-background-1 {background-color: var(--defaultfallbackColor);}
+.layout.ffr-default .border-background-1, .layout.ffr-default .border-background-3 {background-color: var(--defaultfallbackColor);}
 
 .ffr-irongol{
     background: url(images/base-irongol.png) var(--irongolfallbackColor);
 }
-.layout.ffr-irongol .border-background-1 {background-color: var(--irongolfallbackColor);}
+.layout.ffr-irongol .border-background-1, .layout.ffr-irongol .border-background-3 {background-color: var(--irongolfallbackColor);}
 
 .ffr-tourney{
     background: url(images/base-tourney.png) var(--tourneyfallbackColor);
 }
-.layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
+.layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
 
 .player-name{
     font-size: 26px;
@@ -98,11 +114,15 @@ html{
     grid-gap: 4px;
 }
 
-.player-pronoun{
-    padding: 10px;
+.player-pronoun, .record-contain{
+    padding: 5px 10px 10px 10px;
     font-size: 10px;
 	text-align: center;
 	width: 80px;
+}
+
+.player-pronoun:empty, .record-contain:empty{
+  display: none;
 }
 
 .player-grid img{
@@ -129,13 +149,7 @@ html{
 }
 
 .player-winner{
-    height: 34px;
-    font-weight: bold;
-    font-size: 24px;
-    color: #fff;
-    padding: 0 .5em;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -158,12 +172,10 @@ html{
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
 
-.player-final{
+.player-final, .player-winner{
     font-size: 20px;
-    width: 5.5em;
-    background-color: #000;
-    color: #fff;
     text-align: center;
+	padding: 0 10px 5px 10px;
 }
 .player-final:empty{
     display:none;
@@ -193,8 +205,8 @@ tr-timer span {
     overflow: hidden;
     font-size: 24px;
     width: 450px;
-	height: 88px;
-	top: 10px; 
+	height: 78px;
+	top: 20px; 
 	left: 413px; 
 	text-align: center;
 }
@@ -278,10 +290,19 @@ tr-timer span {
         "timer view reset";
 }
 
+#menu_2 .fieldset .legend, .menu-game-specific .fieldset .legend{
+    z-index: 5;
+}
+
 #menu_layout div{
     display: block;
 }
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
+}
+
+.loadscreen .player-name{
+	text-align: center;
+	width: 100%;
 }
