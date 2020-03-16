@@ -16,10 +16,11 @@
     --nameX: 455px; --nameY: 12px;
     --gridX: 455px; --gridY: 65px;
     --pronounX: 555px; --pronounY: 65px;
-    --speakerX: 550px; --speakerY: 100px;
-    --winX: 476px; --winY: 55px;
-    --finalX: 489px; --finalY: 8px;
-    --vsX: 50%; --vsY: 30px;
+    --rankX: 555px; --rankY: 102px;
+    --speakerX: 550px; --speakerY: 175px;
+    --winX: 400px; --winY: 120px;
+    --finalX: 400px; --finalY: 80px;
+    --vsX: 50%; --vsY: 140px;
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
@@ -32,6 +33,11 @@
 	border: 1px solid #ffffff;
     border-image: var(--borderImg);
     background-color: var(--backgroundColor1);
+}
+.border-background-2 {
+	border: 1px solid #ffffff;
+    border-image: var(--borderImg);
+    background-color: #000000;
 }
 .abs{position: absolute;}
 
@@ -103,11 +109,15 @@ html{
     grid-gap: 4px;
 }
 
-.player-pronoun{
+.player-pronoun, .record-contain{
     padding: 10px;
     font-size: 10px;
 	text-align: center;
 	width: 80px;
+}
+
+.player-pronoun:empty, .record-contain:empty{
+  display: none;
 }
 
 .player-grid img{
@@ -134,22 +144,13 @@ html{
     transform: rotateY(180deg);
 }
 
-.player-winner{
-    height: 34px;
-    font: bold 28px 'Times New Roman', Times, serif;
-    color: #f8b800;
-    padding: 0 .5em;
+.player-winner, .player-final{
+    padding: 5px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.player-final{
     font-size: 20px;
-    width: 5.5em;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
+	z-index: 3;
 }
 
 .player-final:empty{
@@ -158,6 +159,7 @@ html{
 
 .vs{
     font-size: 24px;
+	text-shadow: 4px 4px #000000;
 }
 
 tr-timer{
@@ -183,6 +185,7 @@ tr-timer span {
     overflow: hidden;
     font-size: 24px;
 	width: 280px;
+	height: 80px;
 }
 
 .staff-panel-1, .staff-panel-2{

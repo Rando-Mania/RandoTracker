@@ -21,6 +21,9 @@
 
         [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
         [player="2"] .player-pronoun {right: var(--pronounX); top: var(--pronounY);}
+
+        [player="1"] .record-contain {left: var(--rankX); top: var(--rankY);}
+        [player="2"] .record-contain {right: var(--rankX); top: var(--rankY);}
     
         [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
         [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
@@ -42,13 +45,14 @@
 			<div class="player-name abs border-background-1">
 				<tr-text scale-to-fit property="player-name"></tr-text>
 			</div>
-			<tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs border-background-1"></tr-text>
-			<tr-text property="player-final" class="player-final abs"></tr-text>        
+			<tr-template class="player-grid abs border-background-3" href="icons.html"></tr-template>
+            <tr-text property="player-pronoun" class="player-pronoun abs border-background-3"></tr-text>
+			<tr-text property="player-number" class="record-contain abs border-background-3"></tr-text>
+			<tr-text property="player-final" class="player-final abs border-background-3"></tr-text>        
 			<tr-toggle property="toggle-speaker" class="abs player-speaker">
 				<img src="../shared/images/icons/blank.svg" alt="">
 			</tr-toggle>
-			<tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
+			<tr-toggle property="toggle-winner" class="abs player-winner border-background-3">
 				<div>Winner</div>
 			</tr-toggle>
 			<tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
@@ -63,7 +67,7 @@
 <!-- timer/staff -->
 
         <tr-timer class="abs border-background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
-        <tr-hide-if-empty class="staff abs border-background-1" toggle-class="wtf">
+        <tr-hide-if-empty class="staff abs border-background-2" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
