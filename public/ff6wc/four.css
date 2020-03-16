@@ -103,6 +103,7 @@ html{
     align-items: center;
     text-align: center;
     padding: 0 8px;
+    text-shadow: 2px 2px #000, -2px -2px #000;
 }
 
 .player-name tr-text{
