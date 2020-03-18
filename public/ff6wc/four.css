@@ -5,7 +5,7 @@
 }
 
 :root{
-    --backgroundImg: url('images/BG_RANDOMANIA_1920x1080_4P.png') 0 0 / 100% 100%;
+    --backgroundImg: url('images/ff6-airship-background.png') 0 0 / 100% 100%;
     --border1: solid 2px #fff;
     --backgroundColor1: rgba(0,0,0,.75);
     --vidWidth: 428px;
@@ -56,34 +56,26 @@ html{
 @font-face {
     font-family: "FF6";
     src: local('FF6'),
-         /* url('../shared/fonts/chicago.woff2') format('woff2'),
-	     url('../shared/fonts/chicago.woff') format('woff'),          */
-         url('fonts/final_fantasy_36_font.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Chicago";
-    src: local('Chicago'),
-         url('../shared/fonts/chicago.woff2') format('woff2'),
-	     url('../shared/fonts/chicago.woff') format('woff'),         
-         url('../shared/fonts/chicago.ttf') format('truetype');
+         url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+	     url('fonts/final-fantasy-36-font.woff') format('woff'),         
+         url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
 }
 
 @font-face {
     font-family: "Ferrum";
     src: local('Ferrum'),
-         /* url('../shared/fonts/chicago.woff2') format('woff2'),
-	     url('../shared/fonts/chicago.woff') format('woff'),          */
+         url('fonts/ferrum.woff2') format('woff2'),
+	     url('fonts/ferrum.woff') format('woff'),         
          url('fonts/ferrum.otf') format('opentype');
 }
 
 .layout{
-    font-family: 'FF6', 'Chicago', Arial, sans-serif;
+    font-family: 'FF6', Arial, sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
     position: relative;
-    background-image: url('images/BG_RANDOMANIA_1920x1080_4P.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);
     background-size: 100% 100%;
     background-color: #21384a;
 }
@@ -95,7 +87,7 @@ html{
 }
 
 .player-name{
-    font-size: 26px;
+    font-size: 32px;
     height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
 	color: #fff;
@@ -119,16 +111,37 @@ html{
     grid-template-columns: repeat(3, auto);
     padding: 4px;
     grid-gap: 4px;
+    font-size: 24px;
+    text-shadow: 2px 2px 2px #000, -2px -2px 2px #000;
 }
 
-.player-grid img{
-    width: 32px;
-    height: 46px;
+.player-grid .icon-slot{
+    width: 36px;
+    height: 80px;
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     isolation: isolate;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
 }
+
+.counter{
+    position: absolute;
+}
+
+.out-of{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: gold;
+}
+
+.player-grid .icon-slot.magicite{background-image: url(images/magicite_gba.png); background-size: 80%;}
+.terra{background-image: url(images/terra.png);}
+.dragons{background-image: url(images/red-dragon.png);}
 
 .player-speaker{
     padding: 4px;
@@ -199,7 +212,7 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 19px;
+    font-size: 27px;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -228,7 +241,7 @@ tr-timer span {
     margin: 0 6px;
     z-index: 2;
     width: auto;
-    height: 1em;
+    height: .9em;
   }
 
 .commentators-img{background-position: 75% 0;}
