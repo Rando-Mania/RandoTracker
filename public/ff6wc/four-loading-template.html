@@ -4,9 +4,9 @@
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
+    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+    background-size: 100% 100%;
+    background-color: #21384a;
     color: #fff;
     text-align: center;
     z-index: 50;
@@ -103,9 +103,8 @@
     </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <h1>
-                Game Name
-            </h1>
+            <h1><img src="images/ff6-title.png" width="373" alt=""></h1>
+            <h1><img src="images/ff6-subtitle.png" width="280" alt=""></h1>
             <h2>
                 <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
                 vs.

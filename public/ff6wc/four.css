@@ -37,7 +37,7 @@
     background-position: 0;
     border: solid 3px;
     border-radius: 10px;
-    mix-blend-mode: hard-light;
+    
 }
 
 .text-shadow{
@@ -162,13 +162,17 @@ html{
 }
 
 .player-winner{
-    height: 34px;
-    font: bold 28px 'Times New Roman', Times, serif;
-    color: #f8b800;
-    padding: 0 .5em;
+    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
+    border: 3px solid;
+    padding: .25em .25em .1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    border-radius: 10px;
+    color: #f8b800;
+    background-color: #000;
+
 }
 
 .player-final{
@@ -192,13 +196,13 @@ tr-timer{
     height: 53px;
     z-index: 1;
     font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
 }
 
 tr-timer span {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
+    color: transparent;
     width: 22px;
     text-align: center;
 }

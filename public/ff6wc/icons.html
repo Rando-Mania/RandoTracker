@@ -16,10 +16,12 @@
     <!-- out of 3-14 -->
 </div>
 
-<div class="icon-slot dragons">
-    <div class="counter">
-        <tr-text oninput property="dragon-count">?</tr-text>
+<tr-toggle property="player-dragons" >
+    <div class="icon-slot dragons">
+        <div class="counter">
+            <tr-text oninput property="dragon-count">?</tr-text>
+        </div>
+        <div class="out-of">8</div>
+        <!-- not always required? -->
     </div>
-    <div class="out-of">8</div>
-    <!-- not always required? -->
-</div>
+</tr-toggle>
