@@ -21,10 +21,10 @@
         [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
         [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
 
-        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
-        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
-        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+        .player-grid:nth-of-type(1) {left: var(--gridX); top: var(--gridY);}
+        .player-grid:nth-of-type(2) {right: var(--gridX); top: var(--gridY);}
+        .player-grid:nth-of-type(3) {left: var(--gridX); bottom: var(--gridY);}
+        .player-grid:nth-of-type(4) {right: var(--gridX); bottom: var(--gridY);}
         
         [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
         [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
@@ -49,27 +49,134 @@
             <div class="player-name abs border-background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
             <tr-text property="player-final" class="player-final abs"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker text-shadow">
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
-            <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
-                <div>Winner</div>
+            <tr-toggle property="toggle-winner" class="abs player-winner">
+                <div>WINNER</div>
             </tr-toggle>
         </template>
+        
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+        <div class="player-grid abs border-background-1">
+            <div class="icon-slot magicite">
+                <div class="counter">
+                    <tr-text player="1" oninput property="magicite-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="magicite-goal">?</tr-text>
+                </div>
+            </div>
+            <div class="icon-slot terra">
+                <div class="counter">
+                    <tr-text player="1" oninput property="player-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="player-goal">?</tr-text>
+                </div>
+            </div>            
+            <tr-toggle property="player-dragons">
+                <div class="icon-slot dragons">
+                    <div class="counter">
+                        <tr-text player="1" oninput property="dragon-count">?</tr-text>
+                    </div>
+                    <div class="out-of">8</div>
+                </div>
+            </tr-toggle>
+        </div>
+        
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+        <div class="player-grid abs border-background-1">
+            <div class="icon-slot magicite">
+                <div class="counter">
+                    <tr-text player="2" oninput property="magicite-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="magicite-goal">?</tr-text>
+                </div>
+            </div>
+            <div class="icon-slot terra">
+                <div class="counter">
+                    <tr-text player="2" oninput property="player-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="player-goal">?</tr-text>
+                </div>
+            </div>            
+            <tr-toggle property="player-dragons">
+                <div class="icon-slot dragons">
+                    <div class="counter">
+                        <tr-text player="2" oninput property="dragon-count">?</tr-text>
+                    </div>
+                    <div class="out-of">8</div>
+                </div>
+            </tr-toggle>
+        </div>
+        
         <tr-player player="3">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+        <div class="player-grid abs border-background-1">
+            <div class="icon-slot magicite">
+                <div class="counter">
+                    <tr-text player="3" oninput property="magicite-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="magicite-goal">?</tr-text>
+                </div>
+            </div>
+            <div class="icon-slot terra">
+                <div class="counter">
+                    <tr-text player="3" oninput property="player-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="player-goal">?</tr-text>
+                </div>
+            </div>            
+            <tr-toggle property="player-dragons">
+                <div class="icon-slot dragons">
+                    <div class="counter">
+                        <tr-text player="3" oninput property="dragon-count">?</tr-text>
+                    </div>
+                    <div class="out-of">8</div>
+                </div>
+            </tr-toggle>
+        </div>
+        
         <tr-player player="4">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+        <div class="player-grid abs border-background-1">
+            <div class="icon-slot magicite">
+                <div class="counter">
+                    <tr-text player="4" oninput property="magicite-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="magicite-goal">?</tr-text>
+                </div>
+            </div>
+            <div class="icon-slot terra">
+                <div class="counter">
+                    <tr-text player="4" oninput property="player-count">?</tr-text>
+                </div>
+                <div class="out-of">
+                    <tr-text oninput property="player-goal">?</tr-text>
+                </div>
+            </div>            
+            <tr-toggle property="player-dragons">
+                <div class="icon-slot dragons">
+                    <div class="counter">
+                        <tr-text player="4" oninput property="dragon-count">?</tr-text>
+                    </div>
+                    <div class="out-of">8</div>
+                </div>
+            </tr-toggle>
+        </div>
 
 <!-- vs -->
         <tr-toggle property="toggle-vs" class="abs vs text-shadow" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
