@@ -8,11 +8,12 @@
     --backgroundImg: url('images/base-background.png');
     --border1: 1px solid #fff;
     --borderImg: url('images/border.png') 6 / 6px round;
+    --borderImg2: url('images/border-yellow.png') 6 / 6px round;
     --backgroundColor1: #000;
     --vidWidth: 439px;
     --vidAspect: 4 / 3;
     --videoX: 12px; --videoY: 12px;
-    --nameWidth: 165px;
+    --nameWidth: 175px;
     --nameX: 455px; --nameY: 12px;
     --gridX: 455px; --gridY: 65px;
     --pronounX: 555px; --pronounY: 65px;
@@ -24,6 +25,7 @@
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
+    --darkfallbackColor: #005;
 }
 
 .border-1{border: var(--border1);}
@@ -61,7 +63,6 @@ html{
     background: url(images/base-background.png) var(--defaultfallbackColor);
 }
 
-
 .ffr-default{
     background: url(images/base-background.png) var(--defaultfallbackColor);
 }
@@ -76,6 +77,12 @@ html{
     background: url(images/base-tourney.png) var(--tourneyfallbackColor);
 }
 .layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
+.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
+
+.ffr-dark{
+    background: url(images/base-dark.png) var(--darkfallbackColor);
+}
+.layout.ffr-dark .border-background-1 {background-color: var(--darkfallbackColor);}
 
 .player-video{
     width: var(--vidWidth);
@@ -110,10 +117,10 @@ html{
 }
 
 .player-pronoun, .record-contain{
-    padding: 10px;
-    font-size: 10px;
+    padding: 8px;
+    font-size: 12px;
 	text-align: center;
-	width: 80px;
+	width: 90px;
 }
 
 .player-pronoun:empty, .record-contain:empty{
