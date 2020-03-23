@@ -1,4 +1,13 @@
 <div class="menu-game-specific">
+    <div id="menu_playlist" class="fieldset">
+        <h4 class="legend">Playlist</h4>
+        <iframe id="existing-iframe-example"
+            frameborder="0"
+            allowfullscreen="1"
+            width="360" height="203"
+            src="https://www.youtube.com/embed/?listType=playlist&list=PLK0RcH8HFT9e5Js4Pb0J4drohlUt1xK_Z&loop=1&rel=0&enablejsapi=1">
+        </iframe>
+    </div>
     <div id="menu_backgrounds" class="fieldset">
         <h4 class="legend">Players</h4>
         <div id="menu_player_labels">
@@ -33,16 +42,16 @@
                     <td><tr-input-number oninput player="4" min="1" max="14" value="1" property="player-count"></tr-input-number></td>
                     <td><tr-input-number oninput player="4" min="0" max="8" value="0" property="dragon-count"></tr-input-number></td>
                 </tr>
-                <tr>
-                    <td colspan="3"><tr-input-toggle id="dragon_toggle" class="dragons-input" property="player-dragons">
-                        <label for="dragon_toggle">Toggle Dragons</label>
-                    </tr-input-toggle></td>
-                </tr>
             </table>
         </div>
     </div>
     <div id="menu_backgrounds" class="fieldset">
         <h4 class="legend">Goals</h4>
+        <div class="dragon-toggle-contain">
+            <tr-input-toggle id="dragon_toggle" class="dragons-input" property="player-dragons">
+                <label for="dragon_toggle">Toggle Dragons</label>
+            </tr-input-toggle>
+        </div>
         <div id="goal_labels">
             <table>
                 <tr>
