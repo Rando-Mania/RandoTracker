@@ -298,20 +298,11 @@ tr-timer span {
 /* .show-flex{ display: flex; }
 .show-grid{ display: grid; } */
 
-
-.menu-game-specific {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.menu-contain{
+    grid-template-columns: repeat(6, auto);
 }
 
 #menu_playlist{grid-area: 1 / 1 / 3;}
-
-#menu_2 {
-    display: grid;
-    grid-template-areas: 
-        "players layout team"
-        "timer view reset";
-}
 
 #menu_layout div{
     display: block;
