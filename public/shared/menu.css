@@ -18,7 +18,7 @@
     height: min-content;
 }
 
-.menu-contain tr-template, .menu-game-specific, .menu-general{
+.menu-contain > tr-template, .menu-game-specific, .menu-general{
     display: contents
 }
 
@@ -417,4 +417,8 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     border: none;
     margin-right: auto;
     width: auto;
+}
+
+#menu_layout_credits td:nth-of-type(1){
+    font-weight: bold;
 }
