@@ -250,17 +250,18 @@ tr-label, #layout figcaption{
 }
 
 [property="repel"].spell-highlight{
-    color: #f88019;
     position: relative;
+    opacity: 1;
 }
 
-[property="repel"].spell-highlight:after{
-    content: '∞';
+tr-toggle-class[property="repel"].spell-highlight:after{
+    content: 'REPEL∞';
     position: absolute;
-    right: -.4em;
-    top: -.5em;
-    font-size: 19px;
+    right: -.7em;
+    top: 0em;
+    font-size: inherit;
     font-weight: bold;
+    color: #f88019;
 }
 
 [property="hurt+"]{

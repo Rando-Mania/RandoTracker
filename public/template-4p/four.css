@@ -160,7 +160,6 @@ tr-timer span {
 
 .staff-panel-1, .staff-panel-2{
     grid-area: 1/1;
-    background-color: #000;
     display: grid;
     align-items: center;
 }
@@ -241,13 +240,6 @@ tr-timer span {
 
 /* .show-flex{ display: flex; }
 .show-grid{ display: grid; } */
-
-#menu_2 {
-    display: grid;
-    grid-template-areas: 
-        "players layout team"
-        "timer view reset";
-}
 
 #menu_layout div{
     display: block;

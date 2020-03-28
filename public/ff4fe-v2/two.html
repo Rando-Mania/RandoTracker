@@ -19,6 +19,9 @@
 
         [player="1"] .record-contain {left: var(--recordX); top: var(--recordY);}
         [player="2"] .record-contain {right: var(--recordX); top: var(--recordY);}
+
+        [player="1"] .seed-contain {left: var(--recordX); top: var(--recordY);}
+        [player="2"] .seed-contain {right: var(--recordX); top: var(--recordY);}
     
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
         [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
@@ -54,6 +57,10 @@
         <div class="record-contain abs border-background-1">
             <div>W-L</div>
             <tr-text property="player-record"></tr-text>
+        </div>
+        <div class="seed-contain abs border-background-1">
+            <div>Seed</div>
+            <tr-text property="player-seed"></tr-text>
         </div>
         <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
         <tr-template class="player-grid-2 abs border-background-1" href="icons-two.html"></tr-template>
@@ -125,60 +132,8 @@
     <div class="calendar-contain abs" style="top: 0; left: 0;">
         <tr-template href="../shared/calendar.html"></tr-template>
     </div>
-    
-    <div class="menu-contain">
-        <div class="menu-game-specific">
-            <div class="fieldset objectives-menu">
-                <h4 class="legend">Objectives</h4>
-                <div>1</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
-                <div>2</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
-                <div>3</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
-                <div>4</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
-                <div>5</div>
-                <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
-            </div>
-            <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
-            <div class="fieldset players-extra">
-                <h4 class="legend">Players</h4>
-                <div id="menu_player_labels">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Record</th>
-                            <th>Pronoun</th>
-                        </tr>
-                        <tr>
-                            <td><label player="1" for="player-1">1</label></td>
-                            <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
-                            <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                         </tr>
-                        <tr>
-                            <td><label player="2" for="player-2">2</label></td>
-                            <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
-                            <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div id="menu_backgrounds" class="fieldset backgrounds-menu">
-                <h4 class="legend">Backgrounds</h4>
-                <div>
-                    <label>Layout:</label>
-                    <tr-select-toggle property="layout-back-select">
-                        <tr-option selected target=".layout, .tracker-layout" toggle-class="fabul-swiss" value="1">Fabul Swiss</tr-option>
-                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-playin" value="2">Fabul Play-in</tr-option>
-                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-bracket" value="3">Fabul Bracket</tr-option>
-                        <tr-option target=".layout, .tracker-layout" toggle-class="fabul-finals" value="4">Fabul Finals</tr-option>
-                    </tr-select-toggle>
-                </div>
-            </div>
-        </div>
-        <tr-template href="../shared/two_menu.html"></tr-template>
-    </div>
+
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>

@@ -59,7 +59,7 @@
 <!-- timer/staff -->
 
         <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="top: 490px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs" style="top: 560px; left: 520px;" toggle-class="wtf">
+        <tr-hide-if-empty class="staff abs background-1" style="top: 560px; left: 520px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
@@ -81,10 +81,7 @@
         <tr-template href="../shared/calendar.html"></tr-template>
     </div>
 	
-	<div class="menu-contain">
-        <tr-template href="game_two_menu.html"></tr-template>
-        <tr-template href="../shared/two_menu.html"></tr-template>
-    </div>
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>

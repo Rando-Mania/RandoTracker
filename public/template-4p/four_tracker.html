@@ -38,7 +38,7 @@
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
             <tr-toggle property="toggle-winner" class="player-winner">
-                <img src="../shared/images/winner.svg" alt="Winner">
+                <div>Winner</div>
             </tr-toggle>
         </template>
         
@@ -56,11 +56,8 @@
         </tr-player>
     </div>
 
-    <div class="menu-contain">
-        <!-- <tr-template href="game_four_menu.html"></tr-template> -->
-        <tr-template href="../shared/four_menu.html"></tr-template>
-    </div>
-
+    <tr-template href="../shared/four-menus-contain.html"></tr-template>
+    
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

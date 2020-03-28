@@ -1,0 +1,154 @@
+<div id="menu_2">
+   <div id="menu_pronouns" class="fieldset">
+		<h4 class="legend">Players Misc.</h4>
+		<div id="menu_player_labels">
+			<table>
+				<tr>
+					<th></th>
+					<th>#</th>
+					<th>Pronoun</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+					<td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+					<td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div id="menu_backgrounds" class="fieldset backgrounds-menu">
+		<h4 class="legend">Backgrounds</h4>
+		<div>
+
+			<label>Layout:</label>
+			<tr-select-toggle property="layout-back-select">
+				<tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
+				<tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
+				<tr-option target=".layout, .tracker-layout" toggle-class="ffr-tourney" value="3">ST 2020</tr-option>
+				<tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="4">FFR AD</tr-option>
+			</tr-select-toggle>
+
+		</div>
+	</div>
+	
+   <div id="menu_players" class="fieldset">
+        <h4 class="legend">Players</h4>
+        <button class="dummy-text-button" title="Dummy Text" onclick="playerDummyText()"></button>
+        <div id="menu_player_labels">
+            <tr-template href="player-name-options.html"></tr-template>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>♫</th>
+                    <th>Final</th>
+                    <th>Win</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
+                    <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-toggle player="1" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
+                    <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-toggle player="2" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Settings</h4>
+        <div id="menu_video_background">
+            <label>Chroma/Color Key:</label>
+            <tr-input-radio checked id="transparent" property="video-bgcolor" value="transparent" target=".player-video" toggle-class="transparent-background"></tr-input-radio>
+            <label class="video-bgcolor" for="transparent"></label>
+            <tr-input-radio id="blue" property="video-bgcolor" value="blue" target=".player-video" toggle-class="blue-background"></tr-input-radio>
+            <label class="video-bgcolor" for="blue"></label>
+            <tr-input-radio id="green" property="video-bgcolor" value="green" target=".player-video" toggle-class="green-background"></tr-input-radio>
+            <label class="video-bgcolor" for="green"></label>
+            <tr-input-radio id="magenta" property="video-bgcolor" value="magenta" target=".player-video" toggle-class="magenta-background"></tr-input-radio>
+            <label class="video-bgcolor" for="magenta"></label>
+            <tr-input-radio id="screen" property="video-bgcolor" title="Screen Shots" value="screen" target=".player-video" toggle-class="screen-background"></tr-input-radio>
+            <label class="video-bgcolor" for="screen"></label>
+        </div>
+        <div id="menu_overlays_contain">
+            <label>Overlays:</label>
+            <div class="menu-button-row">
+                <tr-input-radio checked id="none" property="radio-test-toggle" value="no-overlay" target=".layout, .overlay-label-none" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-none" for="none">None</label>
+                <tr-input-radio id="load" property="radio-test-toggle" value="load" target=".loadscreen-contain, .overlay-label-load" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-load" for="load">Loading</label>
+            <!--
+                <tr-input-radio id="bracket" property="radio-test-toggle" value="brac" target=".bracket-contain" toggle-class="show"></tr-input-radio>
+                <label for="bracket">Bracket</label>
+            -->
+                <tr-input-radio id="calendar" property="radio-test-toggle" value="cal" target=".calendar-contain, .overlay-label-calendar" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-calendar" for="calendar">Calendar</label>
+            </div>
+        </div>
+ <!--
+		<div id="menu_best_of">
+            <label>Best of:</label>
+            <tr-input-radio checked id="best-of-no" property="best-of" value="best-of-no" target=".player-best-of, .load-best-of" toggle-class="best-of-no"></tr-input-radio>
+            <label id="menu-label-best-of-no" class="video-bgcolor" for="best-of-no">1</label>
+            <tr-input-radio id="best-of-3" property="best-of" value="best-of-3" target=".player-best-of, .load-best-of" toggle-class="best-of-3"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-3">3</label>
+            <tr-input-radio id="best-of-5" property="best-of" value="best-of-5" target=".player-best-of, .load-best-of" toggle-class="best-of-5"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-5">5</label>
+            <tr-input-radio id="best-of-7" property="best-of" value="best-of-7" target=".player-best-of, .load-best-of" toggle-class="best-of-7"></tr-input-radio>
+            <label class="video-bgcolor" for="best-of-7">7</label>
+        </div>
+-->
+    </div>
+
+    <div id="menu_production" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
+        <div>
+            <label>Commentators:</label>
+            <tr-input-textarea class="comm-input" property="commentators"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Restreamer:</label>
+            <tr-input-textarea class="restreamer-input" property="restreamers"></tr-input-textarea>
+        </div>
+        <div>
+            <label>Tracker:</label>
+            <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
+        </div>
+    </div>
+
+    <div id="menu_timer" class="fieldset">
+        <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-timer property="timer-test"></tr-input-timer>
+            <tr-button-timer property="timer-test"></tr-button-timer>
+        </div>
+    </div>
+
+    <div id="menu_view" class="fieldset">
+        <h4 class="legend">View Controls</h4>
+        <tr-button-view view="" title="Layout"></tr-button-view>
+        <tr-button-view view="tracker" title="Tracker"></tr-button-view>
+        <tr-button-view view="coms" title="Commentators"></tr-button-view>
+        <tr-button-view view="loading" title="Load Screen"></tr-button-view>
+    </div>
+
+    <div id="menu_reset" class="fieldset">
+        <h4 class="legend">Reset</h4>
+        <tr-button-reset></tr-button-reset>
+        <tr-button-reset tracking="true"></tr-button-reset>
+    </div>
+</div>

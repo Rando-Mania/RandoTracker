@@ -1,0 +1,321 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    --backgroundImg: url('images/ff6-airship-background.png') 0 0 / 100% 100%;
+    --border1: solid 2px #fff;
+    --backgroundColor1: rgba(0,0,0,.75);
+    --vidWidth: 428px;
+    --vidAspect: 4 / 3;
+    --videoX: 10px; --videoY: 10px;
+    --nameWidth: 160px;
+    --nameX: 441px; --nameY: 4px;
+    --gridX: 441px; --gridY: 51px;
+    --speakerX: 569px; --speakerY: 63px;
+    --winX: 441px; --winY: 97px;
+    --finalX: 441px; --finalY: 51px;
+    --vsX: 50%; --vsY: 11px;
+}
+
+.border-1{border: var(--border1);}
+.background-1{background-color: var(--backgroundColor1);}
+
+.border-background-1 {
+    background-image: url(images/ff6-window-gradient-small.png);
+    background-size: 100%;
+    background-position: 0;
+    border: solid 3px;
+    border-radius: 10px;
+    mix-blend-mode: hard-light;
+}
+
+.text-shadow{
+    filter: drop-shadow(2px 2px 2px #000) drop-shadow(-2px -2px 2px #000);
+}
+
+.abs{position: absolute;}
+
+html{
+    background-color: #c7c7c7;
+}
+
+/* layout specific styles */
+
+
+@font-face {
+    font-family: "FF6";
+    src: local('FF6'),
+         url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+	     url('fonts/final-fantasy-36-font.woff') format('woff'),         
+         url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Ferrum";
+    src: local('Ferrum'),
+         url('fonts/ferrum.woff2') format('woff2'),
+	     url('fonts/ferrum.woff') format('woff'),         
+         url('fonts/ferrum.otf') format('opentype');
+}
+
+.layout{
+    font-family: 'FF6', Arial, sans-serif;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    position: relative;
+    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+    background-size: 100% 100%;
+    background-color: #21384a;
+}
+
+.player-video{
+    width: var(--vidWidth);
+    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    z-index: 2;
+}
+
+.player-name{
+    font-size: 32px;
+    height: 50px;
+    width: calc(var(--nameWidth) + 8px * 2);
+	color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+    text-shadow: 2px 2px #000, -2px -2px #000;
+}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+.player-name:empty{
+    display: none;
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 4px;
+    grid-gap: 4px;
+    font-size: 24px;
+    text-shadow: 2px 2px 2px #000, -2px -2px 2px #000;
+}
+
+.player-grid .icon-slot{
+    width: 36px;
+    height: 80px;
+    display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    isolation: isolate;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.counter{
+    position: absolute;
+}
+
+.out-of{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: gold;
+}
+
+.player-grid .icon-slot.magicite{background-image: url(images/magicite_gba.png); background-size: 80%;}
+.terra{background-image: url(images/terra.png);}
+.dragons{background-image: url(images/red-dragon.png);}
+
+.player-speaker{
+    padding: 4px;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    background-position: 100% 0%;
+}
+
+[player="2"] .player-speaker, [player="4"] .player-speaker{
+    transform: rotateY(180deg);
+}
+
+.player-winner{
+    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
+    border: 3px solid;
+    padding: .25em .25em .1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    border-radius: 10px;
+    color: #f8b800;
+    background-color: #000;
+}
+
+.player-final{
+    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
+    border: 3px solid;
+    padding: .25em .25em .1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    border-radius: 10px;
+    color: #f8b800;
+    background-color: #000;
+}
+
+.player-final:empty{
+    display:none;
+}
+
+.vs{
+    font: bold 32px / 1 'Ferrum', 'Times New Roman', Times, serif;
+}
+
+tr-timer{
+	width: 200px;
+    height: 53px;
+    z-index: 1;
+    font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
+}
+
+tr-timer span {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
+    color: transparent;
+    width: 22px;
+    text-align: center;
+}
+
+.production-team-swap{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+    padding: 8px;
+}
+
+.staff{
+    overflow: hidden;
+    font-size: 27px;
+}
+
+.staff-panel-1, .staff-panel-2{
+    grid-area: 1/1;
+    display: grid;
+    align-items: center;
+}
+
+.staff-panel-1{grid-template-columns: auto 1fr;}
+.staff-panel-2{grid-template-columns: 1fr;}
+
+.commentators-contain, .restreamers-contain, .trackers-contain{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.commentators, .restreamers, .trackers{
+    width: 230px;
+}
+
+.staff img {
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    margin: 0 6px;
+    z-index: 2;
+    width: auto;
+    height: .9em;
+  }
+
+.commentators-img{background-position: 75% 0;}
+.restreamers-img{background-position: 0 0;}
+.trackers-img{background-position: 50% 0;}
+
+
+.production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
+.production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
+
+@keyframes panel-1-blinker {
+    0%, 75% {opacity: 1;}
+    75.1%, 100% {opacity: 0;}
+    }
+    
+@keyframes panel-2-blinker {
+    0%, 75% {opacity: 0;}
+    75.1%, 100% {opacity: 1;}
+    }
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px #fff;
+    z-index: 3;
+    }
+
+.view-container, .view-container-border{
+    background-color: transparent;
+}
+
+/* Bracket Screen */
+
+/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
+
+.bracket-contain iframe {
+    animation: rotateIn .75s linear;
+    perspective: 1200px;
+}
+
+ */
+
+
+.display-none{ display: none; }
+
+.show{ display: block; }
+
+/* .show-flex{ display: flex; }
+.show-grid{ display: grid; } */
+
+.menu-contain{
+    grid-template-columns: repeat(6, auto);
+}
+
+#menu_playlist{grid-area: 1 / 1 / 3;}
+
+#menu_layout div{
+    display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
+
+.dragon-toggle-contain{
+    background-color: #000;
+    position: absolute;
+    top: -7px;
+    right: 19px;
+    padding: 0 .25em;
+}

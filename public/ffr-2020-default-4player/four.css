@@ -1,0 +1,294 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    --backgroundImg: url('images/base-background.png');
+    --border1: 1px solid #fff;
+    --borderImg: url('images/border.png') 6 / 6px round;
+    --borderImg2: url('images/border-yellow.png') 6 / 6px round;
+    --backgroundColor1: #000;
+    --vidWidth: 435px;
+    --vidAspect: 4 / 3;
+    --videoX: 12px; --videoY: 12px;
+    --nameWidth: 173px;
+    --nameX: 449px; --nameY: 12px;
+    --gridX: 449px; --gridY: 64px;
+    --pronounX: 548px; --pronounY: 64px;
+    --rankX: 548px; --rankY: 100px;
+    --speakerX: 550px; --speakerY: 175px;
+    --winX: 400px; --winY: 120px;
+    --finalX: 400px; --finalY: 80px;
+    --vsX: 50%; --vsY: 140px;
+    --defaultfallbackColor: #005;
+    --irongolfallbackColor: #500;
+    --tourneyfallbackColor: #050;
+    --darkfallbackColor: #005;
+}
+
+.border-1{border: var(--border1);}
+.borderImg{border: var(--border1); border-image: var(--borderImg);}
+.background-1{background-color: var(--backgroundColor1);}
+.border-background-1 {
+	border: 1px solid #ffffff;
+    border-image: var(--borderImg);
+    background-color: var(--backgroundColor1);
+}
+.border-background-2 {
+	border: 1px solid #ffffff;
+    border-image: var(--borderImg);
+    background-color: #000000;
+}
+.abs{position: absolute;}
+
+html{
+    background-color: #c7c7c7;
+}
+
+/* layout specific styles */
+@font-face {
+    font-family: "Chicago";
+    src: local('Chicago'),   
+         url('fonts/Chicago.ttf') format('truetype');
+}
+
+.layout{
+    font-family: Chicago, Arial, sans-serif;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    position: relative;
+    background: url(images/base-background.png) var(--defaultfallbackColor);
+}
+
+.ffr-default{
+    background: url(images/base-background.png) var(--defaultfallbackColor);
+}
+.layout.ffr-default .border-background-1 {background-color: var(--defaultfallbackColor);}
+
+.ffr-irongol{
+    background: url(images/base-irongol.png) var(--irongolfallbackColor);
+}
+.layout.ffr-irongol .border-background-1 {background-color: var(--irongolfallbackColor);}
+
+.ffr-tourney{
+    background: url(images/base-tourney.png) var(--tourneyfallbackColor);
+}
+.layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
+.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
+
+.ffr-dark{
+    background: url(images/base-dark.png) var(--darkfallbackColor);
+}
+.layout.ffr-dark .border-background-1 {background-color: var(--darkfallbackColor);}
+
+.player-video{
+    width: var(--vidWidth);
+    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    z-index: 2;
+}
+
+.player-name{
+    font-size: 26px;
+    height: 50px;
+    width: calc(var(--nameWidth) + 8px * 2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+.player-name:empty{
+    display: none;
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding: 10px;
+    grid-gap: 4px;
+}
+
+.player-pronoun, .record-contain{
+    padding: 8px;
+    font-size: 12px;
+	text-align: center;
+	width: 90px;
+}
+
+.player-pronoun:empty, .record-contain:empty{
+  display: none;
+}
+
+.player-grid img{
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.player-speaker{
+    padding: 4px;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    background-position: 100% 0%;
+}
+
+[player="2"] .player-speaker, [player="4"] .player-speaker{
+    transform: rotateY(180deg);
+}
+
+.player-winner, .player-final{
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+	z-index: 3;
+}
+
+.player-final:empty{
+    display:none;
+}
+
+.vs{
+    font-size: 24px;
+	text-shadow: 4px 4px #000000;
+}
+
+tr-timer{
+	width: 11em;
+    height: 53px;
+    z-index: 1;
+	font-size: 24px;
+}
+
+tr-timer span {
+    width: 26px;
+    text-align: center;
+}
+
+.production-team-swap{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+    padding: 8px;
+}
+
+.staff{
+    overflow: hidden;
+    font-size: 24px;
+	width: 280px;
+	height: 80px;
+}
+
+.staff-panel-1, .staff-panel-2{
+    grid-area: 1/1;
+    display: grid;
+    align-items: center;
+}
+
+.staff-panel-1{grid-template-columns: auto 1fr;}
+.staff-panel-2{grid-template-columns: 1fr;}
+
+.commentators-contain, .restreamers-contain, .trackers-contain{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.commentators, .restreamers, .trackers{
+    width: 230px;
+}
+
+.staff img {
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+    margin: 0 6px;
+    z-index: 2;
+    width: auto;
+    height: 1em;
+  }
+
+.commentators-img{background-position: 75% 0;}
+.restreamers-img{background-position: 0 0;}
+.trackers-img{background-position: 50% 0;}
+
+
+.production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
+.production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
+
+@keyframes panel-1-blinker {
+    0%, 75% {opacity: 1;}
+    75.1%, 100% {opacity: 0;}
+    }
+    
+@keyframes panel-2-blinker {
+    0%, 75% {opacity: 0;}
+    75.1%, 100% {opacity: 1;}
+    }
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px #fff;
+    z-index: 3;
+    }
+
+.view-container, .view-container-border{
+    background-color: transparent;
+}
+
+/* Bracket Screen */
+
+/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
+
+.bracket-contain iframe {
+    animation: rotateIn .75s linear;
+    perspective: 1200px;
+}
+
+ */
+
+
+.display-none{ display: none; }
+
+.show{ display: block; }
+
+/* .show-flex{ display: flex; }
+.show-grid{ display: grid; } */
+
+#menu_2 {
+    display: grid;
+    grid-template-areas: 
+        "players layout team"
+        "timer view reset";
+}
+
+#menu_layout div{
+    display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
