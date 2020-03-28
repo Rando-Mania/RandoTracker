@@ -548,10 +548,6 @@ tr-timer span {
 /* .show-flex{ display: flex; }*/
 .show-grid{ display: grid; }
 
-.menu-contain{
-    display: flex;
-}
-
 .menu-game-specific{
     color: #fff;
     background-color: #000;

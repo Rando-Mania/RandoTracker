@@ -115,16 +115,20 @@ html{
     display: none;
 }
 
-.record-contain{
+.record-contain, .seed-contain{
     width: 59px;
     height: 55px;
     display: grid;
     padding: 10px 4px;
     z-index: 1;
+    text-align: center;
 }
-.record-contain *{
+.record-contain *, .seed-contain *{
     position: relative;
     left: 2px; 
+}
+.seed-contain div{
+    font-size: 12px;
 }
 
 .player-grid{
@@ -421,8 +425,8 @@ tr-timer span {
 
 /* Menu */
 
-.menu-contain{
-    display: flex;
+.menu-contain {
+    grid-template-columns: repeat(5, auto);
 }
 
 .menu-contain .menu-game-specific{
@@ -431,11 +435,6 @@ tr-timer span {
     z-index: 1;
     background-color: #000;
     color: #fff;
-    display: grid;
-    grid-gap: 0;
-    grid-template-areas:
-        "objectives player-extra"
-        "objectives background-extra";
 }
 
 .menu-game-specific .fieldset.objectives-menu{
@@ -445,12 +444,7 @@ tr-timer span {
 
 .objectives-list-menu{display:none;}
 
-.objectives-menu{grid-area: objectives;}
-.players-extra-menu{grid-area: player-extra;}
-.backgrounds-menu{grid-area: background-extra;}
-
-
-.record-input input{width: 3em;}
+.record-input input, .seed-input input{width: 3em;}
 
 .pronoun-input input{width: 5em;} 
 

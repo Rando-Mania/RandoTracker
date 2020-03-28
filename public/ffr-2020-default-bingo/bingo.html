@@ -70,7 +70,7 @@
         <tr-hide-if-empty id="staff-names" class="staff abs border-background-2" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
- 		<tr-bingo class="player-video abs borderImg" id="play-field"></tr>
+ 		<div class="player-video abs borderImg" id="play-field"></div>
    </div>
 
 <!-- loadscreen -->
@@ -90,10 +90,7 @@
     <tr-template href="../shared/calendar.html"></tr-template>
 </div>
 
-<div class="menu-contain">
-    <tr-template href="game_four_menu.html"></tr-template>
-    <tr-template href="four_menu.html"></tr-template>
-</div>
+<tr-template href="two-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
