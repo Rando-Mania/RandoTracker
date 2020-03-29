@@ -1,58 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>Pokemon Randomizer Tracker</title>
-	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
-	<link rel="stylesheet" type="text/css" href="two.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="preload" href="images/Crystal_v3_2p_no_title.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/crystal-sprites.png" as="image" type="image/png">
+    <!-- <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml"> -->
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+    
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+    
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+    
+        [player="1"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); bottom: var(--winY);}
+    
+        [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+    </style>
 </head>
 <body>
-	<span data-player="1" data-toggle="true" data-property="color" data-image="images/White Dot.png" class="icon" style="top: 561px; left: 405px;" data-open-dialog="#dialog_color" ></span>
-	<span data-player="2" data-toggle="true" data-property="color" data-image="images/White Dot.png" class="icon" style="top: 561px; left: 836px;" data-open-dialog="#dialog_color" ></span>
+    <template id="icons">
+        <div class="row-1">
+            <tr-toggle-class property="rod-old" toggle-class="active">
+                <img title="rod-old" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="rod-good" toggle-class="active">
+                <img title="rod-good" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="rod-super" toggle-class="active">
+                <img title="rod-super" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        
+            <tr-toggle-class property="bicycle" toggle-class="active">
+                <img title="bicycle" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="ss-ticket" toggle-class="active">
+                <img title="ss-ticket" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="pass" toggle-class="active">
+                <img title="pass" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+        
+        <div class="row-2">
+            <tr-toggle-class property="squirt_bottle" toggle-class="active">
+                <img title="squirt_bottle" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="secret_potion" toggle-class="active">
+                <img title="secret_potion" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="basement_key" toggle-class="active">
+                <img title="basement_key" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="card_key" toggle-class="active">
+                <img title="card_key" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="machine_part" toggle-class="active">
+                <img title="machine_part" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="lost_item" toggle-class="active">
+                <img title="lost_item" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+        
+        <div class="row-3">
+            <tr-toggle-class property="mystery_egg" toggle-class="active">
+                <img title="mystery_egg" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="coin_case" toggle-class="active">
+                <img title="coin_case" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="blue_card" toggle-class="active">
+                <img title="blue_card" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="item_finder" toggle-class="active">
+                <img title="item_finder" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="red_scale" toggle-class="active">
+                <img title="red_scale" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="clear_bell" toggle-class="active">
+                <img title="clear_bell" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="silver_wing" toggle-class="active">
+                <img title="silver_wing" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+        
+        <div class="row-4">
+            <tr-toggle-class property="hm_cut" toggle-class="active">
+                <img title="hm_cut" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm_fly" toggle-class="active">
+                <img title="hm_fly" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm_surf" toggle-class="active">
+                <img title="hm_surf" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm-strength" toggle-class="active">
+                <img title="hm-strength" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm-flash" toggle-class="active">
+                <img title="hm-flash" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm-whirlpool" toggle-class="active">
+                <img title="hm-whirlpool" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="hm-waterfall" toggle-class="active">
+                <img title="hm-waterfall" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+        
+        <div class="row-5">
+            <tr-toggle-class property="badge-zephyr" toggle-class="active">
+                <img title="badge-zephyr" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-hive" toggle-class="active">
+                <img title="badge-hive" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-plain" toggle-class="active">
+                <img title="badge-plain" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-fog" toggle-class="active">
+                <img title="badge-fog" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-storm" toggle-class="active">
+                <img title="badge-storm" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-mineral" toggle-class="active">
+                <img title="badge-mineral" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-glacier" toggle-class="active">
+                <img title="badge-glacier" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-rising" toggle-class="active">
+                <img title="badge-rising" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+        
+        <div class="row-6">
+            <tr-toggle-class property="badge-boulder" toggle-class="active">
+                <img title="badge-boulder" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-cascade" toggle-class="active">
+                <img title="badge-cascade" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-thunder" toggle-class="active">
+                <img title="badge-thunder" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-rainbow" toggle-class="active">
+                <img title="badge-rainbow" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-soul" toggle-class="active">
+                <img title="badge-soul" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-marsh" toggle-class="active">
+                <img title="badge-marsh" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-volcano" toggle-class="active">
+                <img title="badge-volcano" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+            <tr-toggle-class property="badge-earth" toggle-class="active">
+                <img title="badge-earth" src="../shared/images/icons/blank.svg"/>
+            </tr-toggle-class>
+        </div>
+    </template>
+    <template id="player_info_template">
+        <div class="player-video abs"></div>        
+        <div class="player-info abs">
+            <tr-template href="bingosyncdots.html" class="player-grid-2"></tr-template>
+            <tr-text property="player-name" class="player-name"></tr-text>
+        </div>
+        <tr-template class="player-grid abs" source="#icons"></tr-template>
+        <tr-text property="player-final" class="player-final abs"></tr-text>        
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <img src="../shared/images/icons/blank.svg" alt="">
+        </tr-toggle>
+        <tr-toggle property="toggle-winner" class="abs player-winner">
+            <img src="images/Winner.png" alt="">
+        </tr-toggle>
+        <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+    </template>
+	<div class="layout">
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <div class="player-video bingo-board abs"></div>
+        <div class="title title-bingo abs">Randomizer Cinco Bingo</div>
+        <div class="title title-item abs">Key Item Randomizer</div>
 
-	<img src="images/Crystal Tourney v2.png" style="pointer-events: none; position: absolute; top: 0; left: 0; width: 1280px; height: 720px"/>
+<!-- timer/staff -->
 
-	<div id="player_name_1" data-scale-to-fit="true" class="player-name nowrap" style="top: 557px; left: 7px;"></div>
-	<div id="player_name_2" data-scale-to-fit="true" class="player-name nowrap" style="top: 557px; left: 879px;"></div>
-	<div id="player_speaker_1" class="player-speaker hidden" style="top: 635px; left: 50px;"><img src="images/speaker.png"/></div>
-	<div id="player_speaker_2" class="player-speaker hidden" style="top: 635px; left: 1170px;"><img src="images/speaker.png"/></div>
-	<div id="player_final_1" class="player-final" style="top: 637px; left: 74px;"></div>
-	<div id="player_final_2" class="player-final" style="top: 637px; left: 950px;"></div>
+        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 79px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <tr-hide-if-empty class="staff abs" style="top: 682px; left: 50%; transform: translate(-50%, -50%);" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+    </div>
 
-	<img src="images/mic2.png" style="top: 645px; left: 420px; height: 40px; position: absolute;" />
-	<div id="commentators" class="nowrap" data-scale-to-fit="true" style="top: 637px; left: 465px"></div>
-	<div id="timer" style="top: 560px; left: 492px"></div>
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="two-loading-template.html"></tr-template>
+    </div>
 
-	<fieldset id="dialog_color" class="dialog" style="width: 320px">
-			<span data-set-prop="true" data-property="color" data-image="images/new-orange-dot.png" data-value="images/new-orange-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-red-dot.png" data-value="images/new-red-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-blue-dot.png" data-value="images/new-blue-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-green-dot.png" data-value="images/new-green-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-purple-dot.png" data-value="images/new-purple-dot.png"></span>
-			
-			<span data-set-prop="true" data-property="color" data-image="images/White Dot.png" data-value="images/White Dot.png"></span>
+<!-- bracket -->
+    <!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+        <div class="bracket">
+            <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+    </div> -->
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar.html"></tr-template>
+    </div>
 	
-			<span data-set-prop="true" data-property="color" data-image="images/navy-dot.svg" data-value="images/navy-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/teal-dot.svg" data-value="images/teal-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/brown-dot.svg" data-value="images/brown-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/Pink Dot.png" data-value="images/Pink Dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/Yellow Dot.png" data-value="images/Yellow Dot.png"></span>
-
-			<span data-set-prop="true" data-property="color" data-image="images/Black Dot.png" data-value="images/Black Dot.png"></span>
-	</fieldset>
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-	<script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-	<script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
-	<script defer src="/__/firebase/init.js"></script>
-	<script defer src="../script/tracker.js"></script>
-	<script defer type="text/javascript">
-		(function(Tracker) {
-			Tracker.loaded = function() {
-				Tracker.init(2);
-			}
-		})(window.Tracker = window.Tracker || {});
-	</script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/two_game.js"></script>
 </body>
 </html>

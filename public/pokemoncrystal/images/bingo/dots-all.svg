@@ -1,0 +1,62 @@
+<svg width="144" height="192" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="orange-gradient">
+        <stop offset="0%" stop-color="#FF9C12"/>
+        <stop offset="100%" stop-color="#D0800F"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="red-gradient">
+        <stop offset="0%" stop-color="#FF4944"/>
+        <stop offset="100%" stop-color="#CE302C"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="blue-gradient">
+        <stop offset="0%" stop-color="#409CFF"/>
+        <stop offset="100%" stop-color=" #088CBD"/>
+      </linearGradient>
+
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="green-gradient">
+        <stop offset="0%" stop-color="#31D814"/>
+        <stop offset="100%" stop-color="#20A00A"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="purple-gradient">
+        <stop offset="0%" stop-color="#822dbf"/>
+        <stop offset="100%" stop-color="#7120ab"/>
+      </linearGradient>
+
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="navy-gradient">
+        <stop offset="0%" stop-color="#0d48b5"/>
+        <stop offset="100%" stop-color="#022b75"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="teal-gradient">
+        <stop offset="0%" stop-color="#419695"/>
+        <stop offset="100%" stop-color="#2e7372"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="brown-gradient">
+        <stop offset="0%" stop-color="#ab5c23"/>
+        <stop offset="100%" stop-color="#6d3811"/>
+      </linearGradient>
+
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="pink-gradient">
+        <stop offset="0%" stop-color="#ed86aa"/>
+        <stop offset="100%" stop-color="#cc6e8f"/>
+      </linearGradient>
+      <linearGradient x1="0" x2="0" y1="0" y2="1" id="yellow-gradient">
+         <stop offset="0%" stop-color="#d8d014"/>
+        <stop offset="100%" stop-color="#c1ba0b"/>
+      </linearGradient>
+  </defs>
+  <circle fill="url(#orange-gradient)" cx="24" cy="24" r="24"/>
+  <circle fill="url(#red-gradient)" cx="72" cy="24" r="24"/>
+  <circle fill="url(#blue-gradient)" cx="120" cy="24" r="24"/>
+  
+  <circle fill="url(#green-gradient)" cx="24" cy="72" r="24"/>
+  <circle fill="url(#purple-gradient)" cx="72" cy="72" r="24"/>
+  <circle fill="#fff" cx="120" cy="72" r="24"/>
+
+  <circle fill="url(#navy-gradient)" cx="24" cy="120" r="24"/>
+  <circle fill="url(#teal-gradient)" cx="72" cy="120" r="24"/>
+  <circle fill="url(#brown-gradient)" cx="120" cy="120" r="24"/>
+
+  <circle fill="url(#pink-gradient)" cx="24" cy="168" r="24"/>
+  <circle fill="url(#yellow-gradient)" cx="72" cy="168" r="24"/>
+  <circle fill="#000" cx="120" cy="168" r="24"/>
+</svg>

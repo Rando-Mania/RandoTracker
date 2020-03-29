@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head profile="http://www.w3.org/2005/10/profile">
-	<meta charset="utf-8">
-	<title>Pokemon Randomizer Tracker</title>
-	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
-	<link rel="stylesheet" type="text/css" href="four.css">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="icon item" type="image/x-icon" href="favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	.tracker-layout{
-		display:grid;
-		grid-template-columns: 20em 45px;
-		grid-gap: .5em
-	}
-	.tracker-layout > *{
-		position: relative;
-	}
-	.dialog{
-		transform: translate(-160px) ;
-	}
-	</style>
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            background-color: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 24px;
+            padding: 24px;
+        }
+    </style>
 </head>
 <body>
-	<div class="tracker-layout">
-		<div id="player_name_1" class="player-name"></div>
-		<span data-player="1" data-toggle="true" data-property="color" data-image="images/White Dot.png" class="icon" data-open-dialog="#dialog_color" ></span>
+    <div class="tracker-layout">
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
+            </div>
+            <tr-player player="1">
+                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
+            </div>
+            <tr-player player="2">
+                <tr-template class="player-grid border-background-1" id="player-grid-2" href="icons.html"></tr-template>
+            </tr-player>
+        </div>
+    </div>
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
-		<div id="player_name_2" class="player-name"></div>
-		<span data-player="2" data-toggle="true" data-property="color" data-image="images/White Dot.png" class="icon" data-open-dialog="#dialog_color" ></span>
-	</div>
-
-	<fieldset id="dialog_color" class="dialog" style="width: 320px">
-			<span data-set-prop="true" data-property="color" data-image="images/new-orange-dot.png" data-value="images/new-orange-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-red-dot.png" data-value="images/new-red-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-blue-dot.png" data-value="images/new-blue-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-green-dot.png" data-value="images/new-green-dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/new-purple-dot.png" data-value="images/new-purple-dot.png"></span>
-			
-			<span data-set-prop="true" data-property="color" data-image="images/White Dot.png" data-value="images/White Dot.png"></span>
-	
-			<span data-set-prop="true" data-property="color" data-image="images/navy-dot.svg" data-value="images/navy-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/teal-dot.svg" data-value="images/teal-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/brown-dot.svg" data-value="images/brown-dot.svg"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/Pink Dot.png" data-value="images/Pink Dot.png"></span>
-			<span data-set-prop="true" data-property="color" data-image="images/Yellow Dot.png" data-value="images/Yellow Dot.png"></span>
-
-			<span data-set-prop="true" data-property="color" data-image="images/Black Dot.png" data-value="images/Black Dot.png"></span>
-	</fieldset>
-
-	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-	<script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-	<script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
-	<script defer src="/__/firebase/init.js"></script>
-	<script defer src="../script/tracker.js"></script>
-	<script defer type="text/javascript">
-		(function(Tracker) {
-			Tracker.loaded = function() {
-				Tracker.init(4);
-			}
-		})(window.Tracker = window.Tracker || {});
-	</script>
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/two_game.js"></script>
 </body>
 </html>
