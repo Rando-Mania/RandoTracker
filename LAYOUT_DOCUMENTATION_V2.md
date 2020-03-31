@@ -295,7 +295,11 @@ Used to output text based database entries onto a layout. Pairs with a `tr-input
 
 `scale-to-fit` is an attribute for horizontally scaling overflowing text to fit in a fixed width container. Accomplished through a `transform: scaleX();` and a `margin-left`.
 
-Container must be a block element (components.css takes care of this)? And have a width?
+Trouble shooting:
+
+- Container must be a block element (components.css takes care of this)
+- must have a width?
+- `player-name:empty{ display: none;}` will cause a `transform: scaleX(0)'
 
 ```
 <tr-text scale-to-fit property="player-name"></tr-text>
