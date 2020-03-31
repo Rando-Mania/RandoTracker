@@ -2,23 +2,23 @@
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>4 Player Template</title>
+	<title>Pokemon Crystal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="" as="image" type="image/png">
+    <link rel="preload" href="images/Crystal_v3_blank_bg.webp" as="image" type="image/webp">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
         [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
         [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
     
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
-        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
-        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+        [player="3"] .player-info {left: var(--nameX); bottom: var(--nameY);}
+        [player="4"] .player-info {right: var(--nameX); bottom: var(--nameY);}
 
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
         [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
@@ -45,16 +45,18 @@
 	<div class="layout">
         <template id="player_info_template">
             <div class="border-1 player-video abs"></div>
-            <div class="player-name abs border-background-1">
-                <tr-text scale-to-fit property="player-name"></tr-text>
+            <div class="player-info abs background-1">
+                <div class="player-name-contain">
+                    <tr-text scale-to-fit property="player-name" class="player-name"></tr-text>
+                </div>
+                <tr-template href="bingosyncdots.html" class="player-grid-2"></tr-template>
             </div>
-            <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
             <tr-text property="player-final" class="player-final abs"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
-            <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
-                <div>Winner</div>
+            <tr-toggle property="toggle-winner" class="abs player-winner">
+                <img src="images/Winner.png" alt="Winner">
             </tr-toggle>
         </template>
         <tr-player player="1">
@@ -69,17 +71,19 @@
         <tr-player player="4">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-
+        <div class="abs bingo-board border-1 player-video" style="transform: translate(-50%, -50%); left: 50%; top: 50%;"></div>
 <!-- vs -->
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 388px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs background-1" style="top: 400px; left: 520px;" toggle-class="wtf">
+        <tr-timer class="abs" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 97px; left: 50%; transform: translateX(-50%);"></tr-timer>
+        <tr-hide-if-empty class="staff abs background-1" style="top: 120px; left: 50%; transform: translate(-50%, -50%);" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
+
+        <tr-text class="abs title" property="layout-title" style="left: 50%; transform: translateX(-50%); top: 0px;"></tr-text>
     </div>
 
 <!-- loadscreen -->
@@ -95,9 +99,9 @@
 </div> -->
 
 <!-- RM calendar -->
-<div class="calendar-contain abs" style="top: 0; left: 0;">
+<!-- <div class="calendar-contain abs" style="top: 0; left: 0;">
     <tr-template href="../shared/calendar.html"></tr-template>
-</div>
+</div> -->
 
 <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
