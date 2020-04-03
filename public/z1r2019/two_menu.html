@@ -1,6 +1,7 @@
 <div id="menu_2">
     <div id="menu_players" class="fieldset">
         <h4 class="legend">Players</h4>
+        <tr-template href="player-name-options.html"></tr-template>
         <div id="menu_player_labels">
             <table>
                 <tr>
@@ -12,14 +13,14 @@
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
-                    <td><tr-input-text player="1" class="name-input" property="player_name_1"></tr-input-text></td>
+                    <td><tr-input-text player="1" list="name_options" class="name-input" property="player_name_1"></tr-input-text></td>
                     <td><tr-input-toggle-class player="1" id="menu_speaker_1" property="toggle-speaker" target="#player_speaker_1" toggle-class="show"></tr-input-toggle-class></td>
                     <td><tr-input-text player="1" class="final-input" property="player_final_1"></tr-input-text></td>
                     <td><tr-input-toggle-class player="1" id="menu_win_1" property="toggle-class" target="#winner-1" toggle-class="tada"></tr-input-toggle-class></td>
                 </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-text player="2" class="name-input" property="player_name_2"></tr-input-text></td>
+                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player_name_2"></tr-input-text></td>
                     <td><tr-input-toggle-class player="2" id="menu_speaker_2" property="toggle-speaker" target="#player_speaker_2" toggle-class="show"></tr-input-toggle-class></td>
                     <td><tr-input-text player="2" class="final-input" property="player_final_2"></tr-input-text></td>
                     <td><tr-input-toggle-class player="2" id="menu_win_2" property="toggle-class" target="#winner-2" toggle-class="tada"></tr-input-toggle-class></td>
