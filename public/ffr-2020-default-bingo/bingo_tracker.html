@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="four.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
         body{
             display: grid;
             grid-template-columns: repeat(2, auto);
@@ -28,32 +31,25 @@
 </head>
 <body>
     <div class="tracker-layout">
-        <template id="player_tracker_template">
-            <div class="player-name border-background-1">
-                <tr-text scale-to-fit property="player-name"></tr-text>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
             </div>
-            <tr-template class="player-grid border-background-1" href="icons.html"></tr-template>
-            <tr-text property="player-final" class="player-final"></tr-text>        
-            <tr-toggle property="toggle-speaker" class="player-speaker">
-                <img src="../shared/images/icons/blank.svg" alt="">
-            </tr-toggle>
-            <tr-toggle property="toggle-winner" class="player-winner">
-                <img src="../shared/images/winner.svg" alt="Winner">
-            </tr-toggle>
-        </template>
-        
-        <tr-player player="1">
-            <tr-template source="#player_tracker_template"></tr-template>
-        </tr-player>
-        <tr-player player="3">
-            <tr-template source="#player_tracker_template"></tr-template>
-        </tr-player>
+            <tr-player player="1">
+                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
+            </tr-player>
+        </div>
+        <div class="player-wrapper">
+            <div class="player-name">
+                <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
+            </div>
+            <tr-player player="2">
+                <tr-template class="player-grid border-background-1" id="player-grid-2" href="icons.html"></tr-template>
+            </tr-player>
+        </div>
     </div>
-
-    <div class="menu-contain">
-        <!-- <tr-template href="game_four_menu.html"></tr-template> -->
-        <tr-template href="../shared/four_menu.html"></tr-template>
-    </div>
+    
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -63,6 +59,6 @@
     <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="script/four_game.js"></script>
+    <script type="text/javascript" src="../shared/script/two_game.js"></script>
 </body>
 </html>

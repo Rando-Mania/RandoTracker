@@ -62,8 +62,10 @@ html{
 /* layout specific styles */
 @font-face {
     font-family: "Chicago";
-    src: local('Chicago'),   
-         url('fonts/Chicago.ttf') format('truetype');
+    src: local('Chicago'),
+         url('../shared/fonts/chicago.woff2') format('woff2'),
+         url('../shared/fonts/chicago.woff') format('woff'),
+         url('../shared/fonts/chicago.ttf') format('truetype');
 }
 
 .layout{
