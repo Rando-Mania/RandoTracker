@@ -2,7 +2,7 @@
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>FFR 4-Player Basic</title>
+	<title>FFR 2-Player Basic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
@@ -11,28 +11,28 @@
     <link rel="preload" href="images/base-background.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
-        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        [player="2"] .player-video {left: var(--videoX); bottom: var(--videoY);}
     
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
+        [player="2"] .player-name {left: var(--nameX); bottom: var(--nameY);}
 
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
+        [player="2"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
 
         [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
-        [player="3"] .player-pronoun {left: var(--pronounX); bottom: var(--pronounY);}
+        [player="2"] .player-pronoun {left: var(--pronounX); bottom: var(--pronounY);}
 
         [player="1"] .record-contain {left: var(--rankX); top: var(--rankY);}
-        [player="3"] .record-contain {left: var(--rankX); bottom: var(--rankY);}
+        [player="2"] .record-contain {left: var(--rankX); bottom: var(--rankY);}
         
         [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
-        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="2"] .player-final {left: var(--finalX); bottom: var(--finalY);}
     
         [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
-        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
+        [player="2"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
     
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
-        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="2"] .player-winner {left: var(--winX); bottom: var(--winY);}
     </style>
 </head>
 <body>
@@ -56,26 +56,22 @@
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <tr-player player="3">
+        <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+        <div class="player-video abs borderImg" id="play-field"></div>
 
-<!-- vs 
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
--->
 <!-- timer/staff -->
 
         <tr-timer id="staff-timer" class="abs border-background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
         <tr-hide-if-empty id="staff-names" class="staff abs border-background-2" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
- 		<div class="player-video abs borderImg" id="play-field"></div>
    </div>
 
 <!-- loadscreen -->
 <div class="loadscreen-contain abs" style="top:0; left: 0;">
-    <tr-template href="four-loading-template.html"></tr-template>
+    <tr-template href="two-loading-template.html"></tr-template>
 </div>
 
 <!-- bracket -->
@@ -90,7 +86,7 @@
     <tr-template href="../shared/calendar.html"></tr-template>
 </div>
 
-<tr-template href="two-menus-contain.html"></tr-template>
+<tr-template href="../shared/two-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -100,6 +96,6 @@
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="script/four_game.js"></script>
+    <script type="text/javascript" src="../shared/script/two_game.js"></script>
 </body>
 </html>
