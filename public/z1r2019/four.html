@@ -94,22 +94,41 @@
 <tr-timer class="abs border-background-1 border-color-4" property="timer-test" style="right: var(--timerX); bottom: var(--timerY2);"></tr-timer>
 
 <!-- item locations -->
+<template id="location_options">
+    <tr-image property="item-location">
+        <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
+        <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
+        <tr-image-option path="images/items/oldman.png"></tr-image-option>
+        <tr-image-option path="images/items/armos.png"></tr-image-option>
+        <tr-image-option path="images/items/coast.png"></tr-image-option>
+        <tr-image-option path="images/items/merchant.png"></tr-image-option>
+        <tr-label property="item-location"></tr-label>
+    </tr-image>
+</template>
     <div class="item-locations abs background-1" style="left: 50%; transform: translateX(-50%); top: 151px;">
-        <tr-player player="1"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="2"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="3"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="4"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="5"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="6"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="7"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="8"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="9"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="10"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="11"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="12"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="13"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="14"><tr-template href="icon-locations.html"></tr-template></tr-player>
-        <tr-player player="15"><tr-template href="icon-locations.html"></tr-template></tr-player>
+        <tr-player player="1"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="2"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="3"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="4"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="5"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="6"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="7"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="8"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="9"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="10"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="11"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="12"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="13"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="14"><tr-template source="#location_options"></tr-template></tr-player>
+        <tr-player player="15"><tr-template source="#location_options"></tr-template></tr-player>
         <img src="images/items/candle-1.png" alt="">
         <img src="images/items/arrow-1.png" alt="">
         <img src="images/items/bow.png" />
