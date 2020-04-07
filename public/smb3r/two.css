@@ -425,28 +425,6 @@ tr-timer span {
     align-content: end;
 }
 
-/* Bracket/Calendar Screen */
-
-.bracket-contain, .calendar-contain{
-    width: 1280px;
-    height: 720px;
-    z-index: 50;
-    display: none;
-    padding: 40px;
-}
-
-.bracket, .calendar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.calendar-contain{ 
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
-}
 
 /* Bracket Screen */
 
