@@ -1,54 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head profile="http://www.w3.org/2005/10/profile">
-    <meta charset="utf-8">
-    <title>Tracker</title>
-    <link rel="stylesheet" type="text/css" href="../shared/components.css">
-    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-    <link rel="stylesheet" type="text/css" href="two.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-        :root{
-            --nameWidth: 200px;
-        }
-        body{
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-gap: 16px;
-            width: -moz-max-content;
-            width: -webkit-max-content;
-            width: max-content;
-        }
-        .tracker-layout{
-            background-color: #000;
-            color: #fff;
-            display: grid;
-            grid-template-columns: repeat(1, auto);
-            grid-gap: 24px;
-            padding: 24px;
-        }
-        .player-name{
-            color: #fff;
-        }
-
-        .menu-player-background{
-            display: grid; 
-    grid-template-columns: repeat(8, auto);
-    grid-gap: 8px;
-    margin: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="tracker-layout">
-        <tr-player player="1">
-            <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
-        </tr-player>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
-            </div>
-            <div class="menu-player-background" id="menu_player_background">
+<div class="menu-game-specific">
+    <div id="menu_layout" class="fieldset">
+        <h4 class="legend">Player Backgrounds</h4>
+        <div id="menu_player_background">
+            <label>Player 1 World:</label>
+            <div class="menu-player-background">
                 <tr-input-radio checked id="p1-world-1" property="player-background-1" value="p1-world-1" target=".player-background-1" toggle-class="background-world-1"></tr-input-radio>
                 <label class="player-background" for="p1-world-1">1</label>
                 <tr-input-radio id="p1-world-2" property="player-background-1" value="p1-world-2" target=".player-background-1" toggle-class="background-world-2"></tr-input-radio>
@@ -66,11 +21,7 @@
                 <tr-input-radio id="p1-world-8" property="player-background-1" value="p1-world-8" target=".player-background-1" toggle-class="background-world-8"></tr-input-radio>
                 <label class="player-background" for="p1-world-8">8</label>
             </div>
-        </div>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
-            </div>
+            <label>Player 2 World:</label>
             <div class="menu-player-background">
                 <tr-input-radio checked id="p2-world-1" property="player-background-2" value="p2-world-1" target=".player-background-2" toggle-class="background-world-1"></tr-input-radio>
                 <label class="player-background" for="p2-world-1">1</label>
@@ -91,16 +42,19 @@
             </div>
         </div>
     </div>
-
-    <tr-template href="../shared/two-menus-contain.html"></tr-template>
-
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
-    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
-    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
-    <script type="text/javascript" src="../components/components.js"></script>
-    <script type="text/javascript" src="../components/tracker.js"></script>
-</body>
-</html>
+    <div id="menu_credits" class="fieldset">
+        <h4 class="legend">Credits</h4>
+        <div id="menu_layout_credits">
+            <table>
+                <tr>
+                    <td>Art:</td>
+                    <td>gameboyf9, capt_uhu</td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td>capt_uhu</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
