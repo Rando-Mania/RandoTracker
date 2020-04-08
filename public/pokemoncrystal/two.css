@@ -151,9 +151,10 @@ html{
     width: 29px;
     height: 29px;
     display: block;
-    background-image: url(images/crystal-sprites-v2.png);
+    background-image: url(images/crystal-sprites.png);
+    background-image: url(images/crystal-sprites.webp);
     background-size: 1100% 1100%;
-    image-rendering: pixelated;
+    /* image-rendering: pixelated; */
 }
 
 [property="rod-old"] img{background-position: 0 0;}
@@ -394,7 +395,13 @@ tr-timer span {
   }
 
 .commentators-img{background-position: 75% 33%;}
-.restreamers-img{background-position: 0 33%;}
+.staff img.restreamers-img{
+    background: transparent url('images/monitor-masked.png') 0 0 / 100% 100%;
+    box-shadow: none;
+    border-radius: 0;
+    height: 1.2em;
+    margin: 0 10px 0 2px;
+}
 .trackers-img{background-position: 50% 33%;}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}

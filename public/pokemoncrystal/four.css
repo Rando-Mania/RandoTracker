@@ -285,16 +285,24 @@ tr-timer span {
     background-image: url("../shared/images/icons/sprite.svg");
     background-repeat: no-repeat;
     background-size: 500% 400%;
-    margin: 0 6px;
+    margin: 0 10px 0 6px;
     z-index: 2;
     width: auto;
-    height: 1em;
+    height: .8em;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff;
   }
 
-.commentators-img{background-position: 75% 0;}
-.restreamers-img{background-position: 0 0;}
-.trackers-img{background-position: 50% 0;}
-
+.commentators-img{background-position: 75% 33%;}
+.staff img.restreamers-img{
+    background: transparent url('images/monitor-masked.png') 0 0 / 100% 100%;
+    box-shadow: none;
+    border-radius: 0;
+    height: 1.2em;
+    margin: 0 10px 0 2px;
+}
+.trackers-img{background-position: 50% 33%;}
 
 .production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
 .production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
