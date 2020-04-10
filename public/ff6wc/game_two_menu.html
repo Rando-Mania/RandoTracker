@@ -1,0 +1,75 @@
+    <div class="menu-game-specific">
+        <div id="menu_playlist" class="fieldset">
+            <h4 class="legend">Playlist</h4>
+            <iframe id="existing-iframe-example"
+                frameborder="0"
+                allowfullscreen="1"
+                width="360" height="203"
+                src="https://www.youtube.com/embed/?listType=playlist&list=PLK0RcH8HFT9e5Js4Pb0J4drohlUt1xK_Z&loop=1&rel=0&enablejsapi=1">
+            </iframe>
+        </div>
+        <div id="menu_player_trackers" class="fieldset">
+            <h4 class="legend">Players</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Magicite</th>
+                        <th>Members</th>
+                        <th>Dragons</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><tr-input-number oninput player="1" min="0" max="26" value="0" property="magicite-count"></tr-input-number></td>
+                        <td><tr-input-number oninput player="1" min="1" max="14" value="1" property="player-count"></tr-input-number></td>
+                        <td><tr-input-number oninput player="1" min="0" max="8" value="0" property="dragon-count"></tr-input-number></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><tr-input-number oninput player="2" min="0" max="26" value="0" property="magicite-count"></tr-input-number></td>
+                        <td><tr-input-number oninput player="2" min="1" max="14" value="1" property="player-count"></tr-input-number></td>
+                        <td><tr-input-number oninput player="2" min="0" max="8" value="0" property="dragon-count"></tr-input-number></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_goals" class="fieldset">
+            <h4 class="legend">Goals</h4>
+            <div class="dragon-toggle-contain">
+                <tr-input-toggle id="dragon_toggle" class="dragons-input" property="player-dragons">
+                    <label for="dragon_toggle">Toggle Dragons</label>
+                </tr-input-toggle>
+            </div>
+            <div id="goal_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Magicite</th>
+                        <th>Members</th>
+                        <th>Dragons</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><tr-input-number oninput min="0" max="26" value="0" property="magicite-goal"></tr-input-number></td>
+                        <td><tr-input-number oninput min="0" max="14" value="1" property="player-goal"></tr-input-number></td>
+                        <td><tr-input-number oninput min="0" max="8" value="8" property="dragon-goal"></tr-input-number></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>Marth SR</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>capt_uhu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
