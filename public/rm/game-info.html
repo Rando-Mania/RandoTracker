@@ -1,20 +1,38 @@
-<div class="panel-wrap-inner" style="width: 288px;">    
-    <div class="panel-full-width-contain" style="width: 288px;">
-        <tr-text scale-to-fit style="width: 272px; display:block;" property="game_name" id="game_name"></tr-text>
-        <tr-text scale-to-fit style="width: 272px; display:block;" property="game_category" id="game_category"></tr-text>
-    </div>
-    <tr-hide-if-empty class="meta-panel" style="height: 18px; width: 288px;" target="#system, #est" toggle-class="visually-hidden">
-        <tr-hide-if-empty class="meta-left-bottom" toggle-class="visually-hidden">
-            <svg style="position: absolute; left: 0;" viewBox="0 0 118 18" width="118px" height="18px" xmlns="http://www.w3.org/2000/svg">
-                <path class="bgcChange" d="M 0,0 h100 l18,18 h-118z"/>
+<div class="card game-info">    
+    <svg class="rainbow-fill card-border" width="288" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+    </svg>
+    <tr-hide-if-empty class="card-head" target=".system, .est" toggle-class="visually-hidden">
+        <tr-hide-if-empty class="abs left card-head-left" target=".system" toggle-class="visually-hidden">
+            <svg class="abs left rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
             </svg>
-            <tr-text scale-to-fit style="position: absolute; left: 0;" property="game_system" id="system"></tr-text>
+            <tr-text scale-to-fit property="game_system" class="abs left card-head-label system"></tr-text>
         </tr-hide-if-empty>
-        <tr-hide-if-empty class="meta-right-bottom" toggle-class="visually-hidden">
-            <svg viewBox="0 0 118 18" width="118px" height="18px" xmlns="http://www.w3.org/2000/svg">
-                <path class="bgcChange" d="M 118,0 h-100 l-18,18 h118z"/>
+        <tr-hide-if-empty class="abs right card-head-right" target="est" toggle-class="visually-hidden">
+            <svg class="rainbow-fill abs right" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,0 h118 v18 h-100z"/>
+                <path d="M 0,0 h118 v18 h-100z"/>
+                <path d="M 0,0 h118 v18 h-100z"/>
+                <path d="M 0,0 h118 v18 h-100z"/>
+                <path d="M 0,0 h118 v18 h-100z"/>
+                <path d="M 0,0 h118 v18 h-100z"/>
             </svg>
-            <tr-text scale-to-fit style="position: absolute; right: 0;" property="game_length" id="est"></tr-text>
+            <tr-text scale-to-fit property="game_length" class="abs right est card-head-label"></tr-text>
         </tr-hide-if-empty>
     </tr-hide-if-empty>
+    <div class="card-body">
+        <tr-text scale-to-fit property="game_name" class="game-name"></tr-text>
+        <tr-text scale-to-fit property="game_category" class="game-category"></tr-text>
+    </div>
 </div>

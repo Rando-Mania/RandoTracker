@@ -32,12 +32,12 @@
         <div>
             <label for="tracking-icons-checkbox">Icon Set:</label>
             <tr-select-toggle id="tracking-icons-checkbox">
-                <tr-option selected target="#tracking-icons-template" toggle-class="visually-hidden" value="no-icons">None</tr-option>
-                <tr-option target="#tracking_icons" toggle-class="one-row" value="one-row">1 Row</tr-option>
-                <tr-option target="#tracking_icons" toggle-class="two-rows" value="two-rows">2 Rows</tr-option>
-                <tr-option target="#tracking_icons" toggle-class="three-rows" value="three-rows">3 Rows</tr-option>
-                <tr-option target="#tracking_icons" toggle-class="four-rows" value="four-rows">4 Rows</tr-option>
-                <tr-option target="#tracking_icons" toggle-class="five-rows" value="five-rows">5 Rows</tr-option>
+                <tr-option selected target=".tracking-icons" toggle-class="visually-hidden" value="no-icons">None</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="one-row" value="one-row">1 Row</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="two-rows" value="two-rows">2 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="three-rows" value="three-rows">3 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="four-rows" value="four-rows">4 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="five-rows" value="five-rows">5 Rows</tr-option>
                 <tr-option value="dwr">DWR</tr-option>
                 <tr-option value="ffiv">FFIV</tr-option>
                 <tr-option value="lttp">LTTP</tr-option>
@@ -80,7 +80,7 @@
     <div id="menu_timer" class="fieldset">
         <h4 class="legend">Timer</h4>
         <div>
-            <tr-input-toggle-class id="player_time_check" property="toggle-timer" target="#player-time-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <tr-input-toggle-class id="player_time_check" property="toggle-timer" target=".timer" toggle-class="visually-hidden"></tr-input-toggle-class>
             <label for="player_time_check">Hide Timer</label>
         </div>
         <div>
@@ -94,15 +94,15 @@
         <h4 class="legend">Production Team</h4>
         <div>
             <label>Commentator(s)</label>
-            <tr-input-text class="comm-input" property="comm"></tr-input-text>
+            <tr-input-text class="commentator-input" property="commentators"></tr-input-text>
         </div>
         <div>
             <label>Restreamer</label>
-            <tr-input-text class="restreamer-input" property="restreamer"></tr-input-text>
+            <tr-input-text class="restreamer-input" property="restreamers"></tr-input-text>
         </div>
         <div>
             <label>Tracker</label>
-            <tr-input-text class="tracker-input" property="tracker"></tr-input-text>
+            <tr-input-text class="tracker-input" property="trackers"></tr-input-text>
         </div>
     </div>
 
@@ -124,15 +124,15 @@
             <label class="video-bgcolor" for="magenta"></label>
         </div>
         <div>
-            <tr-input-toggle-class id="rm_logo_check" property="toggle-logo" target="#rm-logo-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <tr-input-toggle-class id="rm_logo_check" property="toggle-logo" target=".rm-logo" toggle-class="visually-hidden"></tr-input-toggle-class>
             <label for="rm_logo_check">Hide RM Logo</label>
         </div>
         <div>
-            <tr-input-toggle-class id="toggle-animation" property="toggle-animation" target=".bgcChange, .panel-wrap-outer, .panel-wrap-inner" toggle-class="pause-animations"></tr-input-toggle-class>
+            <tr-input-toggle-class id="toggle-animation" property="toggle-animation" target=".layout" toggle-class="pause-animations"></tr-input-toggle-class>
             <label for="toggle-animation">Pause Animation</label>
         </div>
         <div>
-            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target="#four-three-template" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target=".four-three" toggle-class="visually-hidden"></tr-input-toggle-class>
             <label for="toggle-4by3">Hide 4:3 Panel</label>
         </div>
     </div>

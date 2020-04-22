@@ -1,20 +1,26 @@
-<div class="panel-wrap-inner extra-padding-top">
-    <tr-player player="1">
-    <div class="meta-panel">
-        <tr-hide-if-empty class="meta-right-top" toggle-class="visually-hidden">
-            <svg class="rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 0,0 h118 v18 h-100z"/>
-                <path d="M 0,0 h118 v18 h-100z"/>
-                <path d="M 0,0 h118 v18 h-100z"/>
-                <path d="M 0,0 h118 v18 h-100z"/>
-                <path d="M 0,0 h118 v18 h-100z"/>
-                <path d="M 0,0 h118 v18 h-100z"/>
+<div class="card">
+    <svg class="rainbow-fill card-border" width="288" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+        <path d="M0,0h288v1h-288z"/>
+    </svg>
+    <tr-hide-if-empty class="card-head" target=".player-pronoun" toggle-class="visually-hidden">
+        <div class="card-head-left">
+            <svg class="abs left rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
+                <path d="M 0,0 h118 l-18,18 h-100z"/>
             </svg>
-            <tr-text scale-to-fit property="player_pronoun" id="runner_pronoun"></tr-text>
-        </tr-hide-if-empty>
+            <tr-text player="1" scale-to-fit class="abs left card-head-label player-pronoun" property="player_pronoun"></tr-text>
+        </div>
+    </tr-hide-if-empty>
+    <div class="card-body">
+        <tr-text player="1" scale-to-fit class="player-name" property="player_name"></tr-text>
     </div>
-    <div class="panel-full-width-contain">
-        <tr-text scale-to-fit property="player_name" id="player_name_1"></tr-text>
-    </div>
-</tr-player>
 </div>

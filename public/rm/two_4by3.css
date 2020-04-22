@@ -23,7 +23,7 @@
     height: 0;
     background-color: #ddd;
   }
-  
+
   .layout {
     font-family: "Orbitron", sans-serif;
     background:
@@ -568,19 +568,6 @@ tr-toggle[property="dwr"] .player-grid {
 }
 #variable_panel_area > *{
   width: 288px;
-}
-#free_text{
-  width: 264px;
-}
-
-#free_text_wrap{
- padding: 13px;
- width: 288px;
-}
-#free_text_wrap svg{
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 textarea{
