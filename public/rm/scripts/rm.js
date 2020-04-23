@@ -43,19 +43,19 @@
 
 			var updates = [
 				{
-					property: "game_name",
+					property: "game-name",
 					value: listing.data[1]
 				},
 				{
-					property: "game_system",
+					property: "game-system",
 					value: listing.data[3]
 				},
 				{
-					property: "game_length",
+					property: "game-length",
 					value: new Date(1000 * listing.length_t).toISOString().substr(11, 8)
 				},
 				{
-					property: "game_category",
+					property: "game-category",
 					value: listing.data[2]
 				}
 			];
@@ -77,12 +77,12 @@
 			for (var pID = 1; pID <= 4; pID++) {
 				if (players.length < pID) {
 					updates.push({
-						property: "__p" + pID + "__player_name",
+						property: "__p" + pID + "__player-name",
 						value: ""
 					});
 				} else {
 					updates.push({
-						property: "__p" + pID + "__player_name",
+						property: "__p" + pID + "__player-name",
 						value: players[pID-1]
 					});
 				}

@@ -45,15 +45,22 @@
     grid-template-columns: calc(1280px - 320px) 320px;
 }
 
-#player_video_1.blue-background{background-color: #00f;}
-#player_video_1.green-background{background-color: #0f0;}
-#player_video_1.magenta-background{background-color: #f0f;}
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 720px;
+}
 
 .player-video{
     width: calc(var(--vHeight) * 4/3);
     height: var(--vHeight);
     background-color: #000;
 }
+
+.player-video.magenta-background{background-color: #f0f;}
+.player-video.green-background{background-color: #0f0;}
+.player-video.blue-background{background-color: #00f;}
 
 aside{
     padding: 1em;
@@ -390,31 +397,33 @@ select{
     padding: 5px;
   }
 
-  #menu_2{
+  .menu-contain {
     display: grid;
-    grid-template-areas: 
-    "prefill prefill  prefill"
-    "game    icons    icons"
-    "game    upnext   upnext"
-    "players freetext freetext"
-    "timer   layout   layout"
-    "team    view     reset";
-    height: 720px;
-    border: none;
-    margin-left: 16px;
+    grid-template-areas:
+      "prefill prefill  prefill  prefill"
+      "game    game     icons    icons" 
+      "game    game     upnext   upnext"
+      "players pronouns freetext freetext"
+      "timer   timer    layout   layout" 
+      "team    team     view     reset"
+      "other   other    credits credits";
   }
 
-  #menu_fill{grid-area: prefill;}
-  #menu_timer{grid-area: timer;}
-  #menu_players{grid-area: players;}
-  #menu_layout{grid-area: layout;}
-  #menu_game{grid-area: game;}
-  #menu_production{grid-area: team;}
-  #menu_view{grid-area: view;}
-  #menu_reset{grid-area: reset;}
-  #menu_upnext{grid-area: upnext;}
-  #menu_icons{grid-area: icons;}
-  #menu_freetext{grid-area: freetext;}
+.menu-game-specific #menu_fill{grid-area: prefill;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-game-specific #menu_game{grid-area: game;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+.menu-game-specific #menu_up_next{grid-area: upnext;}
+.menu-game-specific #menu_icons{grid-area: icons;}
+.menu-game-specific #menu_free_text{grid-area: freetext;}
+.menu-game-specific #menu_players_extra{grid-area: pronouns;}
+.menu-game-specific #menu_other{grid-area: other;}
+.menu-game-specific #menu_credits{grid-area: credits;}
+
 
   #menu_player_labels, #menu_players tr-player{
     display: block;
@@ -424,7 +433,7 @@ table {
   border-collapse: collapse;
   padding: 1em;
   table-layout: fixed;
-  width: 300px;
+  width: 150px;
 }
 th, td{
   padding: .5em;
@@ -446,6 +455,12 @@ th:nth-child(3) {width: 7em;}
   #menu_timer input[type="text"]{
     width: 6em;
   }
+
+  .menu-general .fieldset#menu_view, #menu_2 .fieldset#menu_view{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
   .fieldset{
     margin: -1px 0 0 -1px;
   }
@@ -480,20 +495,3 @@ th:nth-child(3) {width: 7em;}
   .pause-animations #player_time, .pause-animations svg path, .pause-animations tr-timer[running="true"]:after{
     animation-play-state: paused;
   }
-
-  .video-bgcolor{
-    width: 24px;
-    height: 24px;
-    border: 1px solid #333;
-  }
-
-  .video-bgcolor:hover{box-shadow: 0 0 0 2px #f8b800;}
-
-  tr-input-radio input:checked + .video-bgcolor{
-    border: 1px solid #fff;
-
-  }
-
-  label[for="blue"]{background-color: #00f;}
-  label[for="green"]{background-color: #0f0;}
-  label[for="magenta"]{background-color: #f0f;}

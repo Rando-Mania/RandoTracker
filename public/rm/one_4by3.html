@@ -13,19 +13,23 @@
 
 <body>
     <div class="layout">
-        <div class="card-body player-video"></div>
+        <main>
+            <div class="card-body player-video"></div>
+        </main>
         <aside>
             <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
                 <tr-template href="game-info.html"></tr-template>
             </tr-hide-if-empty>
-
-            <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target="#player_name_1, #runner_pronoun">
-                <tr-template href="player-name.html"></tr-template>
+   
+            <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+                <tr-player player="1">
+                    <tr-template href="player-name.html"></tr-template>
+                </tr-player>
             </tr-hide-if-empty>
- 
-            <tr-template id="player-time-template" href="timer.html"></tr-template>
 
-            <tr-template id="tracking-icons-template" href="tracking-icons.html"></tr-template>            
+            <tr-template href="tracking-icons.html"></tr-template>
+
+            <tr-template id="player-time-template" href="timer.html"></tr-template>            
 
             <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
                 <tr-template href="../shared/production-team.html"></tr-template>
@@ -45,7 +49,7 @@
         </aside>
     </div>
 
-    <tr-template href="one_menu.html"></tr-template>
+    <tr-template href="../shared/one-menus-contain.html"></tr-template>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -55,7 +59,8 @@
     <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
-	<script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/one_game.js"></script>
 </body>
 
 </html>
