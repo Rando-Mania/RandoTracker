@@ -1,0 +1,117 @@
+<div class="menu-game-specific">
+    <div id="menu_fill" class="fieldset">
+        <h4 class="legend">Marathon Auto-fill Menu</h4>
+        <div>
+            <label for="schedule_preloads">Pre-fill from <a href="https://horaro.org/randomania/2019">horaro.org</a>:</label>
+            <select id="schedule_preloads">
+            </select>
+        </div>
+    </div>
+    <div id="menu_players_extra" class="fieldset">
+        <h4 class="legend">Players Extra</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <!-- <th>#</th> -->
+                    <th>Pronoun</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <!-- <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td> -->
+                    <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <!-- <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td> -->
+                    <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_game" class="fieldset">
+        <h4 class="legend">Game</h4>
+        <div>
+            <label>Game Name</label>
+            <tr-input-text class="game-name-input" property="game-name"></tr-input-text>
+        </div>
+        <div>
+            <label>Category</label>
+            <tr-input-text class="game-dev-input" property="game-category"></tr-input-text>
+        </div>
+        <div>
+            <label>Game System</label>
+            <tr-input-text class="game-system-input" property="game-system"></tr-input-text>
+        </div>
+        <div>
+            <label>Length Estimate</label>
+            <tr-input-text class="game-length-input" property="game-length"></tr-input-text>
+        </div>
+    </div>
+
+    <div id="menu_icons" class="fieldset">
+        <h4 class="legend">Tracking</h4>
+        <div>
+            <label for="tracking-icons-checkbox">Icon Set:</label>
+            <tr-select-toggle id="tracking-icons-checkbox">
+                <tr-option selected target=".tracking-icons" toggle-class="visually-hidden" value="no-icons">None</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="one-row" value="one-row">1 Row</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="two-rows" value="two-rows">2 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="three-rows" value="three-rows">3 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="four-rows" value="four-rows">4 Rows</tr-option>
+                <tr-option target=".tracking-icons .card-body" toggle-class="five-rows" value="five-rows">5 Rows</tr-option>
+                <!-- <tr-option value="dwr">DWR</tr-option> -->
+                <tr-option value="ffiv">FFIV</tr-option>
+                <!-- <tr-option value="lttp">LTTP</tr-option> -->
+                <tr-option value="z1r">Z1R</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
+    <div id="menu_up_next" class="fieldset">
+        <h4 class="legend">Up Next</h4>
+        <div>
+            <label>Game Name</label>
+            <tr-input-text class="up-next-input" property="up-next"></tr-input-text>
+        </div>
+    </div>
+
+
+    <div id="menu_free_text" class="fieldset">
+        <h4 class="legend">Free Text</h4>
+        <tr-input-textarea rows="4" class="free-text-input" property="free-text"></tr-input-textarea>
+    </div>
+
+    <div id="menu_other" class="fieldset">
+        <h4 class="legend">Other</h4>
+        <div>
+            <tr-input-toggle-class id="rm_logo_check" property="toggle-logo" target=".rm-logo" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="rm_logo_check">Hide RM Logo</label>
+        </div>
+        <div>
+            <tr-input-toggle-class id="toggle-animation" property="toggle-animation" target=".layout" toggle-class="pause-animations"></tr-input-toggle-class>
+            <label for="toggle-animation">Pause Animation</label>
+        </div>
+        <div>
+            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target=".four-three" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="toggle-4by3">Hide 4:3 Panel</label>
+        </div>
+    </div>
+
+    <div id="menu_credits" class="fieldset">
+        <h4 class="legend">Credits</h4>
+        <div id="menu_layout_credits">
+            <table>
+                <tr>
+                    <td>Art:</td>
+                    <td>capt_uhu</td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td>capt_uhu</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -4,13 +4,20 @@
     padding: 0;
   }
 
-  @font-face{ 
-    font-family: 'Orbitron';
-      src: 
-        local('Orbitron'),
-        url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
-        url('../shared/fonts/orbitron-bold_0.woff') format('woff'),         
-        url('../shared/fonts/orbitron-bold_0.ttf') format('truetype');
+  @font-face {
+    font-family: "Orbitron";
+    src: local('Orbitron'),
+      url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
+      url('../shared/fonts/orbitron-bold_0.woff') format('woff'),
+      url("../shared/fonts/Orbitron-Bold_0.ttf") format("truetype");
+  }
+          
+  @font-face {
+    font-family: "Roboto";
+    src: local('Roboto'),
+    url('../shared/fonts/roboto-medium.woff2') format('woff2'),
+    url('../shared/fonts/roboto-medium.woff') format('woff'),
+    url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
   }
 
   html{
@@ -73,13 +80,6 @@ svg path{
 .rainbow-fill path:nth-of-type(4){fill: #007800; animation-name: fade-3;}
 .rainbow-fill path:nth-of-type(5){fill: #f8b800; animation-name: fade-2;}
 .rainbow-fill path:nth-of-type(6){fill: #f83800; animation-name: fade;}
-
-.rainbow-stroke path:nth-of-type(1){stroke: #940084; animation: none;}
-.rainbow-stroke path:nth-of-type(2){stroke: #0058f8; animation-name: fade-5;}
-.rainbow-stroke path:nth-of-type(3){stroke: #3cbcfc; animation-name: fade-4;}
-.rainbow-stroke path:nth-of-type(4){stroke: #007800; animation-name: fade-3;}
-.rainbow-stroke path:nth-of-type(5){stroke: #f8b800; animation-name: fade-2;}
-.rainbow-stroke path:nth-of-type(6){stroke: #f83800; animation-name: fade;}
 
 .rainbow-stroke, .rainbow-stroke path{
   width: 100%;
@@ -154,67 +154,38 @@ aside > *{
 #player_name_1, #player_name_2{
   text-align: center;
 }
-.meta-left-bottom, .meta-left-top, .meta-right-bottom, .meta-right-top{
-  font-size: 15px;
-  color: #000;
+.player-inputs{
+  grid-gap: 0 5px;
+  padding: 5px;
 }
 
-.meta-panel{
-  display: flex;
-  height: 18px;
-  width: 100%;
+.menu-contain {
+  display: grid;
+  grid-template-areas:
+    "prefill prefill  prefill  prefill"
+    "game    game     icons    icons" 
+    "game    game     upnext   upnext"
+    "players pronouns freetext freetext"
+    "timer   timer    layout   layout" 
+    "team    team     view     reset"
+    "other   other    credits credits";
 }
 
-.meta-right-bottom tr-text, .meta-right-top tr-text, .meta-right-top svg, .meta-right-bottom svg {
-  right: 0;
-  transform-origin: left center;  
-}
+.menu-game-specific #menu_fill{grid-area: prefill;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-game-specific #menu_game{grid-area: game;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+.menu-game-specific #menu_up_next{grid-area: upnext;}
+.menu-game-specific #menu_icons{grid-area: icons;}
+.menu-game-specific #menu_free_text{grid-area: freetext;}
+.menu-game-specific #menu_players_extra{grid-area: pronouns;}
+.menu-game-specific #menu_other{grid-area: other;}
+.menu-game-specific #menu_credits{grid-area: credits;}
 
-.meta-left-top > tr-text, .meta-left-top > div {
-  display: block;
-  width: 7em;
-  text-align: center;
-  position: relative;
-}
-
-.meta-right-top > tr-text, .meta-right-top > div {
-  width: 105px !important;
-  text-align: center;
-  position: absolute;
-  right: 0;
-}
-.meta-left-top svg{position: absolute; left: 0;}
-.meta-right-top svg{position: absolute; right: 0;}
-.meta-left-bottom svg{position: absolute; left: 0;}
-.meta-right-bottom svg{position: absolute; right: 0;}
-
-.meta-right-top > tr-text, .meta-right-top > div {
-  display: block;
-  width: 7em;
-  text-align: center;
-}
-
-.meta-left-bottom > tr-text {
-  display: block;
-  width: 7em;
-  text-align: center;
-}
-
-
-.meta-right-bottom > tr-text {
-  display: block;
-  width: 7em;
-  text-align: center;
-}
-
-#game_name_author {
-  font-size: 20px;
-  width: 288px;
-  justify-self: center;
-  align-self: center;
-  z-index: 2;
-  grid-area: 1 / 2;
-}
 
 .player-speaker{
   position: absolute;
@@ -233,27 +204,9 @@ aside > *{
   top: 490px;
 }
 
-#up_next_contain {
-  grid-area: 2 / 3;
-  width: 288px;
-  justify-self: center;
-}
 
-.panel-wrap-outer{
-  padding: 1px 0 0;
-  position: relative;
-  overflow: hidden;
-}
 
-.panel-wrap-outer > svg{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
 
-#game_category{
-  font-size: 16px;
-}
 
 #player_name_1{
   padding-top: 4px;
@@ -373,189 +326,161 @@ tr-toggle[property="dwr"] .player-grid {
   font-size: 1.5em;
 }
 
-.production-team-swap{
+.card, .staff{
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 8px;
+  margin-bottom: 16px;
+  background-color: #111;
 }
 
-.staff{
-  overflow: hidden;
+.card-head{
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
-}
-
-.staff-panel-1, .staff-panel-2{
-  grid-area: 1/1;
-  background-color: #000;
-  display: grid;
-  align-items: center;
-  padding: 8px;
-}
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
-
-.commentators-contain, .restreamers-contain, .trackers-contain{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-}
-
-.commentators, .restreamers, .trackers{
-  width: 230px;
-}
-
-.staff img {
-  background-image: url("../shared/images/icons/sprite.svg");
-  background-repeat: no-repeat;
-  background-size: 500% 400%;
-  margin: 0 6px;
-  z-index: 2;
-  width: auto;
+  color: #000;
+  position: relative;
+  z-index: 0;
   height: 1em;
 }
 
-.commentators-img{background-position: 75% 0;}
-.restreamers-img{background-position: 0 0;}
-.trackers-img{background-position: 50% 0;}
-
-.production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
-.production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
-
-@keyframes panel-1-blinker {
-  0%, 75% {opacity: 1;}
-  75.1%, 100% {opacity: 0;}
-  }
-  
-@keyframes panel-2-blinker {
-  0%, 75% {opacity: 0;}
-  75.1%, 100% {opacity: 1;}
-  }
-#game_swap{
-  display: grid;
+.card-head-label{
+  line-height: 1;
+  padding: 0 .25em;
 }
 
-#game_panel_1, #game_panel_2{
-  grid-area: 1 / 1;
-  font-size: 1em;
-  align-self: center;
-  height: 100%;
+.card-head-left, .card-head-right{
+  width: 118px;
 }
 
-#game_panel_2{
-  font-size: .75em;
-}
-@keyframes game-name-blinker {
-  0% {opacity: 1;}
-  25% {opacity: 1;}
-  100% {opacity: 0;}
-}
+.abs {position: absolute;}
+.top {top: 0;}
+.left {left: 0;}
+.right {right: 0;}
 
-@keyframes game-next-blinker {
-  0% {opacity: 0;}
-  75% {opacity: 1;}
-  100% {opacity: 1;}
+tr-text[scale-to-fit].right {
+  transform-origin: -5% 50%;
 }
 
-#game_swap.game-swap #game_panel_1 {
-  animation: game-name-blinker 60s steps(1) infinite;
+.card-body{
+  padding: 4px;
+  text-align: center;
 }
 
-#game_swap.game-swap #game_panel_2 {
-  animation: game-next-blinker 60s steps(1) infinite;
+.card-body tr-text{
+  width: 280px;
+}
+.card-head tr-text{
+  width: 100px;
+  text-align: center;
 }
 
-#production_team{
-  width: 288px;
-  justify-self: center;
-  align-self: center;
+.rm-logo .card-body{
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  tr-timer{
-    width: 239px;
-    position: relative;
-    z-index: 1;
-  }
 
-  #player_time{
-    border: none;
-    padding: 1px 0;
-  }
+.rm-logo-img{
+  height: 1em;
+  margin-right: .25em;
+}
 
-  #player-time-template{
-    grid-area: 1 / 3;
-    justify-self: center;
-    align-self: center;
-  }
+tr-template{
+  display: contents;
+}
 
-  #player_time.panel-wrap-outer{
-    overflow: visible;
-  }
+.card.timer{
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
 
-  #player_time .panel-wrap-inner{
-    background-color: rgba(0,0,0,.75);
-    overflow: hidden;
-  }
+.timer .card-back{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 
-  #player_time .panel-wrap-inner:after{
-    content: url('images/zelda_hex_alpha_text.png');
+.timer .card{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.timer .card-body{
+  background-color: transparent;
+  padding: 1px 0;
+}
+
+tr-timer{
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+tr-timer:after{
+    content: '';
+    background-image: url('images/zelda_hex_alpha_text.png'), linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75));
     position: absolute;
+    width: 100%;
+    height: 200%;
     top: 0;
     left: 0;
-    z-index: 0;
-    animation: scroll 180s linear infinite;
+    z-index: -1;
+    animation: scroll 40s linear infinite;
     animation-play-state: paused;
-  }
+}
 
- @keyframes scroll {
+tr-timer[running="true"]:after{
+  animation-play-state: running;
+}
+
+@keyframes scroll {
     from{ transform: translateY(0); }
-    to{ transform: translateY( calc(-100% + 94px) );}
-} 
+    to{ transform: translateY(50%);}
+}
 
-
-  #player_time .timer-scroll.panel-wrap-inner:after{
-    animation-play-state: running;
-  }
-
-
-  #timer span:not(.dot):not(.colon) {
-    width: 19.92px !important;
-    display: inline-block;
-    text-align: right;
+  svg.card-border{
+    width:100%;
   }
   
-  #timer .ms {
-    width: 19.92px !important;
-    text-align: right;
-  }
-
-
-  #rm_logo{
-    overflow: hidden;
-  }
-
-  #rm_logo div {
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  svg path{
+    animation: fade 240s linear alternate infinite;
   }
   
-  #rm_logo img {
-    height: 1em;
-    margin-right: .25em;
+  .rainbow-fill path:nth-of-type(1){fill: #940084; animation: none;}
+  .rainbow-fill path:nth-of-type(2){fill: #0058f8; animation-name: fade-5;}
+  .rainbow-fill path:nth-of-type(3){fill: #3cbcfc; animation-name: fade-4;}
+  .rainbow-fill path:nth-of-type(4){fill: #007800; animation-name: fade-3;}
+  .rainbow-fill path:nth-of-type(5){fill: #f8b800; animation-name: fade-2;}
+  .rainbow-fill path:nth-of-type(6){fill: #f83800; animation-name: fade;}
+  
+  @keyframes fade {
+    from {opacity: 1;}
+    20%, to {opacity: 0;}
   }
   
-  /* @keyframes slide-from-left {
-    from {
-      transform: translateX(-100%);
-    }
+  @keyframes fade-2 {
+    from, 20% {opacity: 1;}
+    40%, to {opacity: 0;}
   }
   
-  @keyframes slide-from-right {
-    from {
-      transform: translateX(100%);
-    }
-  } */
+  @keyframes fade-3 {
+    from, 40% {opacity: 1;}
+    60%, to {opacity: 0;}
+  }
+  
+  @keyframes fade-4 {
+    from, 60% {opacity: 1;}
+    80%, to {opacity: 0;}
+  }
+  
+  @keyframes fade-5 {
+    from, 80% {opacity: 1;}
+    to {opacity: 0;}
+  }
 
 #variable_panel_area{
   grid-area: 2 / 2 / span 2 / span 3;

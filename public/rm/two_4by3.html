@@ -14,126 +14,47 @@
 
 <body>
     <div class="layout">
-        <header id="videos_contain">
-            <div class="player-video-contain">
-                <svg id="player_video_1" width="600" height="450" viewbox="0 0 600 450" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <g id="rainbow" class="rainbow-stroke" stroke-width="2" fill="none">
-                        <path d="M0,0h600v450h-600z"/>
-                        <path d="M0,0h600v450h-600z"/>
-                        <path d="M0,0h600v450h-600z"/>
-                        <path d="M0,0h600v450h-600z"/> 
-                        <path d="M0,0h600v450h-600z"/>
-                        <path d="M0,0h600v450h-600z"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="player-video-contain">
-                <svg id="player_video_2" width="600" height="450" viewbox="0 0 600 450" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <use href="#rainbow"/>
-                </svg>
-            </div>
-        </header>
-        <aside>
-            <tr-hide-if-empty id="player_name_contain" class="panel-wrap-outer" toggle-class="visually-hidden" target="#player_name_1, #runner_pronoun">
-                <svg class="rainbow-fill" width="362" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/> 
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                </svg>
+        <div class="card-body player-video"></div>
+        <div class="card-body player-video"></div>
+        <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
+            <tr-template href="game-info.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+            <tr-player player="1">
                 <tr-template href="player-name.html"></tr-template>
-            </tr-hide-if-empty>
-            
-            <tr-toggle player="1" id="player_speaker_1" property="toggle-speaker" class="player-speaker">♫</tr-toggle>
+            </tr-player>
+        </tr-hide-if-empty>
 
-            <tr-hide-if-empty id="player_name_contain_2" class="panel-wrap-outer" toggle-class="visually-hidden" target="#player_name_2, #runner_pronoun">
-                <svg class="rainbow-fill" width="362" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/> 
-                    <path d="M0,0h362v1h-362z"/>
-                    <path d="M0,0h362v1h-362z"/>
-                </svg>
-                <tr-template href="player-name-2.html"></tr-template>
-            </tr-hide-if-empty>
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+            <tr-player player="2">
+                <tr-template href="player-name.html"></tr-template>
+            </tr-player>
+        </tr-hide-if-empty>
 
-            <tr-toggle player="2" id="player_speaker_2" property="toggle-speaker" class="player-speaker">♫</tr-toggle>
-            
-            <tr-hide-if-empty id="player_final_1_contain" toggle-class="visually-hidden" target="#player_final_1">
-                <div class="final-time-contain panel-wrap-outer">
-                    <svg class="rainbow-fill" width="210" height="50" viewbox="0 0 210 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/> 
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                    </svg>   
-                    <div class="panel-wrap-inner">
-                        <tr-text player="1" property="player_final" id="player_final_1" class="player-final"></tr-text>
-                    </div>
-                </div>
-            </tr-hide-if-empty>
+        <tr-template href="tracking-icons.html"></tr-template>
+        <tr-template href="tracking-icons-2.html"></tr-template>
 
-            <tr-hide-if-empty id="player_final_2_contain" toggle-class="visually-hidden" target="#player_final_2">
-                <div class="final-time-contain panel-wrap-outer">
-                    <svg class="rainbow-fill" width="210" height="50" viewbox="0 0 210 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                        <path d="M0,0h210v50h-210z"/>
-                    </svg>   
-                    <div class="panel-wrap-inner">
-                        <tr-text player="2" property="player_final" id="player_final_2" class="player-final"></tr-text>
-                    </div>
-                </div>
-            </tr-hide-if-empty>
- 
-            <tr-template id="player-time-template" href="timer.html"></tr-template>
-            
-            <tr-template id="tracking-icons-template" href="tracking-icons.html"></tr-template>
-            <tr-template id="tracking-icons-template-2" href="tracking-icons-2.html"></tr-template>            
-            <div id="variable_panel_area">
-                <tr-hide-if-empty id="game_name_author" class="panel-wrap-outer" target="#game_panel_1, #up_next" toggle-class="visually-hidden">
-                    <svg class="rainbow-fill" width="288" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/> 
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                    </svg>
-                    <tr-template href="game-and-upnext.html"></tr-template>
-                </tr-hide-if-empty>
-                <tr-hide-if-empty id="production_team" class="staff panel-wrap-outer" toggle-class="visually-hidden">
-                    <svg class="rainbow-fill" width="288" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                        <path d="M0,0h288v1h-288z"/>
-                    </svg>
-                    <tr-template href="../shared/production-team.html"></tr-template>
-                </tr-hide-if-empty>
-    
-                <tr-hide-if-empty class="panel-wrap-outer" target="#free_text" toggle-class="visually-hidden">
-                    <tr-template href="free-text.html"></tr-template>
-                </tr-hide-if-empty>
-    
-                <tr-template id="rm-logo-template" class="visually-hidden" href="rm-logo.html"></tr-template>
-    
-                <tr-template id="four-three-template" class="visually-hidden" href="4by3-panel.html"></tr-template>
-            </div>
-        </aside>
+        <tr-template id="player-time-template" href="timer.html"></tr-template>            
+
+        <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
+            <tr-template href="free-text.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
+            <tr-template href="up-next.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-template id="rm-logo-template" class="visually-hidden" href="rm-logo.html"></tr-template>
+
+        <tr-template id="four-three-template" href="4by3-panel.html"></tr-template>
     </div>
 
-    <tr-template href="two_menu.html"></tr-template>
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -143,7 +64,8 @@
     <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
-	<script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/two_game.js"></script>
 </body>
 
 </html>

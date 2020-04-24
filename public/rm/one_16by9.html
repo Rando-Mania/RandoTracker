@@ -7,9 +7,9 @@
   <link rel="stylesheet" type="text/css" href="../shared/components.css">
   <link rel="stylesheet" type="text/css" href="../shared/menu.css">
   <link rel="stylesheet" type="text/css" href="one_4by3.css">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
+  <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
   <style>
       .player-video{
         --vHeight: 540px;
@@ -26,34 +26,34 @@
         </main>
         <aside>
             <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-                <tr-template href="game-info.html"></tr-template>
+                <tr-template href="templates/cards/game-info.html"></tr-template>
             </tr-hide-if-empty>
    
             <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
                 <tr-player player="1">
-                    <tr-template href="player-name.html"></tr-template>
+                    <tr-template href="templates/cards/player-name.html"></tr-template>
                 </tr-player>
             </tr-hide-if-empty>
 
-            <tr-template href="tracking-icons.html"></tr-template>
+            <tr-template href="templates/cards/tracking-icons.html"></tr-template>
 
-            <tr-template id="player-time-template" href="timer.html"></tr-template>            
+            <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
 
             <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
                 <tr-template href="../shared/production-team.html"></tr-template>
             </tr-hide-if-empty>
 
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
-                <tr-template href="free-text.html"></tr-template>
+                <tr-template href="templates/cards/free-text.html"></tr-template>
             </tr-hide-if-empty>
 
             <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-                <tr-template href="up-next.html"></tr-template>
+                <tr-template href="templates/cards/up-next.html"></tr-template>
             </tr-hide-if-empty>
 
-            <tr-template id="rm-logo-template" class="visually-hidden" href="rm-logo.html"></tr-template>
+            <tr-template id="rm-logo-template" class="visually-hidden" href="templates/cards/rm-logo.html"></tr-template>
 
-            <tr-template id="four-three-template" href="4by3-panel.html"></tr-template>
+            <tr-template id="four-three-template" href="templates/cards/4by3-panel.html"></tr-template>
         </aside>
     </div>
 
