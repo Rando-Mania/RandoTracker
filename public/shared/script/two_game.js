@@ -4,6 +4,14 @@ if ('paintWorklet' in CSS) {
 
 function playerDummyText() {
     Tracker.updateLayoutMultiple([
+
+        {property: 'game-name', value: 'Star Wars'},
+        {property: 'game-category', value: 'Sci-fi'},
+        {property: 'game-system', value: 'Movie'},
+        {property: 'game-length', value: '2:00:00'},
+        {property: 'up-next', value: 'next game'},
+        {property: 'free-text', value: 'free text'},
+        
         {property: '__p1__player-name', value: 'Yoda'},
         {property: '__p1__player-pronoun', value: 'they/them'},
         {property: '__p1__player-number', value: 21},

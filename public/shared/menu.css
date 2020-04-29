@@ -326,7 +326,7 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     #menu_video_background input[type="radio"][id="white"]{background-color: #fff; margin-right: .25em;}
     #menu_video_background input[type="radio"][id="blue"]{background-color: #00f; margin-right: .25em;}
     #menu_video_background input[type="radio"][id="green"]{background-color: #0f0; margin-right: .25em;}
-    #menu_video_background input[type="radio"][id="magenta"]{background-color: #f0f; margin-right: none;}
+    #menu_video_background input[type="radio"][id="magenta"]{background-color: #f0f; margin-right: .25em;}
 
   #menu_video_background input[type="radio"][id="screen"]{
       -webkit-appearance: none;
@@ -369,7 +369,7 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
 }
 
 .black-background{background-image: none; background-color: #000;}
-.white-background{background-image: none; background-color: #fff;}
+.transparent-background{background-image: none; background-color: transparent;}
 .blue-background{background-image: none; background-color: #00f;}
 .green-background{background-image: none; background-color: #0f0;}
 .magenta-background{background-image: none; background-color: #f0f;}

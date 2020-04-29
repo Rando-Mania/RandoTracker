@@ -1,71 +1,125 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
-  <meta charset="utf-8">
-  <title>RandoMania 2p 4:3 Tracker</title>
-  <link rel="stylesheet" type="text/css" href="../shared/components.css">
-  <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-  <link rel="stylesheet" type="text/css" href="two_4by3.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
-  <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
+	<meta charset="utf-8">
+	<title>2 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="marathon-menu.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
+    <link rel="stylesheet" type="text/css" href="two_4by3.css">
+    <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
+    <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="preconnect" href="https://apis.google.com">
+    <link rel="preconnect" href="https://clients6.google.com">
+    <link rel="preconnect" href="https://calendar.google.com">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+    
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+    
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+    
+        [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+    </style>
 </head>
-
 <body>
-    <div class="layout">
-        <div class="card-body player-video"></div>
-        <div class="card-body player-video"></div>
-        <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-            <tr-template href="game-info.html"></tr-template>
+    <template id="player_info_template">
+        <div class="border-1 player-video abs"></div>
+
+        <tr-hide-if-empty class="player-name abs" id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
         </tr-hide-if-empty>
 
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+        <tr-hide-if-empty class="player-name abs" toggle-class="visually-hidden" target="#player_final">
+            <tr-template href="templates/cards/final.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <img src="../shared/images/icons/blank.svg" alt="">
+        </tr-toggle>
+        
+        <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+    </template>
+	<div class="layout">
+        <div>
             <tr-player player="1">
-                <tr-template href="player-name.html"></tr-template>
+                <tr-template source="#player_info_template"></tr-template>
             </tr-player>
-        </tr-hide-if-empty>
-
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
             <tr-player player="2">
-                <tr-template href="player-name.html"></tr-template>
+                <tr-template source="#player_info_template"></tr-template>
             </tr-player>
-        </tr-hide-if-empty>
+        </div>
+<!-- timer/staff -->
+        <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
+        <div class="cards">        
+            <tr-template id="tracking-icons-template" href="templates/cards/tracking-icons.html"></tr-template>
 
-        <tr-template href="tracking-icons.html"></tr-template>
-        <tr-template href="tracking-icons-2.html"></tr-template>
+            <div class="variable-panels">
 
-        <tr-template id="player-time-template" href="timer.html"></tr-template>            
+                <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
+                    <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
+                </tr-hide-if-empty>
 
-        <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
-            <tr-template href="../shared/production-team.html"></tr-template>
-        </tr-hide-if-empty>
+                <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
+                    <tr-template href="templates/cards/free-text.html"></tr-template>
+                </tr-hide-if-empty>
 
-        <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
-            <tr-template href="free-text.html"></tr-template>
-        </tr-hide-if-empty>
+                <tr-template id="rm-logo-template" class="visually-hidden" href="templates/cards/rm-logo.html"></tr-template>
 
-        <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-            <tr-template href="up-next.html"></tr-template>
-        </tr-hide-if-empty>
+                <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
+                    <tr-template href="../shared/production-team.html"></tr-template>
+                </tr-hide-if-empty>
+            </div>
 
-        <tr-template id="rm-logo-template" class="visually-hidden" href="rm-logo.html"></tr-template>
-
-        <tr-template id="four-three-template" href="4by3-panel.html"></tr-template>
+            <tr-template id="tracking-icons-template-2" href="templates/cards/tracking-icons-2.html"></tr-template>
+        </div>
     </div>
 
-    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="two_menu_loading.html"></tr-template>
+    </div>
 
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+<!-- bracket -->
+    <!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+        <div class="bracket">
+            <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+    </div> -->
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar.html"></tr-template>
+    </div>
+	
+    <tr-template href="two-menus-contain.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script src="scripts/rm.js"></script>
     <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/two_game.js"></script>
 </body>
-
 </html>

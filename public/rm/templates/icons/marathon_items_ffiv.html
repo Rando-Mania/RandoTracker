@@ -1,18 +1,19 @@
 <style>
     .player-grid-ffiv{
         display: grid;
-        grid-template-columns: repeat(4, 32px);
-        grid-template-rows: repeat(5, 32px);
-        justify-content: space-between;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(5, auto);
         align-content: space-between;
         grid-column-gap: 8px;
         padding: 0;
+        width: auto;
     }
 
     .player-grid-ffiv img{
         background-image: url(images/icons/ff4fe-spritesheet.png);
-        width: 32px;
-        height: 32px;
+        background-size: 500% 500%;
+        width: 28px;
+        height: 28px;
         display: block;
     }
 

@@ -1,0 +1,94 @@
+   /* menu */
+
+#menu_game.fieldset{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 1em
+  }
+  
+  #menu_game div{
+    font-size: 14px;
+    display: grid;
+    grid-gap: .25em
+  }
+  
+  input[type="text"], textarea{
+    width: 100%;
+    background: #222 linear-gradient(45deg, currentColor, currentColor) -370px bottom / 100% 1px no-repeat;
+    color: #f8b800;
+    border: none;
+    padding: 4px;
+    outline: none;
+    transition: background-position .2s, color .1s;
+    font-weight: bold;
+  }
+  
+  input[type="text"]:focus, textarea:focus{
+    background-position: 0 bottom;
+  }
+  
+  select{
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .col-span-2{
+    grid-column-end: span 2;
+  }
+  
+    .player-inputs{
+      grid-gap: 0 5px;
+      padding: 5px;
+    }
+  
+  .menu-game-specific #menu_fill{grid-area: prefill;}
+  .menu-general #menu_timer{grid-area: timer;}
+  .menu-general #menu_players{grid-area: players;}
+  .menu-general #menu_layout{grid-area: layout;}
+  .menu-game-specific #menu_game{grid-area: game;}
+  .menu-general #menu_production{grid-area: team;}
+  .menu-general #menu_view{grid-area: view;}
+  .menu-general #menu_reset{grid-area: reset;}
+  .menu-game-specific #menu_up_next{grid-area: upnext;}
+  .menu-game-specific #menu_icons{grid-area: icons;}
+  .menu-game-specific #menu_free_text{grid-area: freetext;}
+  .menu-game-specific #menu_players_extra{grid-area: pronouns;}
+  .menu-game-specific #menu_other{grid-area: other;}
+  .menu-game-specific #menu_credits{grid-area: credits;}
+  
+  
+    #menu_player_labels, #menu_players tr-player{
+      display: block;
+    }
+    
+  table {
+    border-collapse: collapse;
+    padding: 1em;
+    table-layout: fixed;
+    width: 150px;
+  }
+  th, td{
+    padding: .5em;
+  }
+  
+  #menu_fill div{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  #menu_timer div{
+      align-self: center;
+      justify-self: center;
+    }
+    #menu_timer input[type="text"]{
+      width: 6em;
+    }
+  
+    .menu-general .fieldset#menu_view, #menu_2 .fieldset#menu_view{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+  }
+  
+    .fieldset{
+      margin: -1px 0 0 -1px;
+    }

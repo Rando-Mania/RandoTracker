@@ -55,16 +55,25 @@
         <div>
             <label for="tracking-icons-checkbox">Icon Set:</label>
             <tr-select-toggle id="tracking-icons-checkbox">
-                <tr-option selected target=".tracking-icons" toggle-class="visually-hidden" value="no-icons">None</tr-option>
-                <tr-option target=".tracking-icons .card-body" toggle-class="one-row" value="one-row">1 Row</tr-option>
-                <tr-option target=".tracking-icons .card-body" toggle-class="two-rows" value="two-rows">2 Rows</tr-option>
-                <tr-option target=".tracking-icons .card-body" toggle-class="three-rows" value="three-rows">3 Rows</tr-option>
-                <tr-option target=".tracking-icons .card-body" toggle-class="four-rows" value="four-rows">4 Rows</tr-option>
-                <tr-option target=".tracking-icons .card-body" toggle-class="five-rows" value="five-rows">5 Rows</tr-option>
+                <tr-option selected target="#tracking-icons-template, #tracking-icons-template-2" toggle-class="visually-hidden" value="no-icons">None</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="two-by-two" value="two-by-two">2x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="four-by-two" value="four-by-two">4x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="six-by-two" value="six-by-two">6x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="eight-by-two" value="eight-by-two">8x2</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="ten-by-two" value="ten-by-two">10x2</tr-option>
+
+                <tr-option target=".tracking-icons" toggle-class="two-by-four" value="two-by-four">2x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="four-by-four" value="four-by-four">4x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="six-by-four" value="six-by-four">6x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="eight-by-four" value="eight-by-four">8x4</tr-option>
+                <tr-option target=".tracking-icons" toggle-class="ten-by-four" value="ten-by-four">10x4</tr-option>
+                
                 <!-- <tr-option value="dwr">DWR</tr-option> -->
                 <tr-option value="ffiv">FFIV</tr-option>
                 <!-- <tr-option value="lttp">LTTP</tr-option> -->
                 <tr-option value="z1r">Z1R</tr-option>
+                <tr-option value="ebac">EB:AC</tr-option>
+                <!-- <tr-option value="ww">WW</tr-option> -->
             </tr-select-toggle>
         </div>
     </div>
@@ -92,10 +101,6 @@
         <div>
             <tr-input-toggle-class id="toggle-animation" property="toggle-animation" target=".layout" toggle-class="pause-animations"></tr-input-toggle-class>
             <label for="toggle-animation">Pause Animation</label>
-        </div>
-        <div>
-            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target=".four-three" toggle-class="visually-hidden"></tr-input-toggle-class>
-            <label for="toggle-4by3">Hide 4:3 Panel</label>
         </div>
     </div>
 

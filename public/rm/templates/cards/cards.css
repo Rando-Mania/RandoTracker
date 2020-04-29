@@ -1,27 +1,60 @@
 .card, .staff{
     display: grid;
-    margin-bottom: 16px;
     background-color: #111;
+    width: 288px;
   }
-  
+
+  .player-name .card{
+    width: auto;
+  }
+
+  .player-name-contain{
+    width: var(--nameWidth);
+  }
+
   .card-head{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: #000;
-    position: relative;
     z-index: 0;
     height: 1em;
+    position: relative;
   }
-  
+
+  .card-head-left{
+    display: grid;
+    grid-template: 1fr / 1fr;
+    position: absolute;
+    left: 0;
+  }
+  .card-head-left > * {
+    grid-area: 1 / 1;
+  }
+
+  .card-head-right{
+    display: grid;
+    grid-template: 1fr / 1fr;
+    position: absolute;
+    right: 0;
+  }
+  .card-head-right > * {
+    grid-area: 1 / 1;
+  }
+
   .card-head-label{
     line-height: 1;
     padding: 0 .25em;
+    position: relative;
   }
   
   .card-head-left, .card-head-right{
     width: 118px;
   }
   
+  .card-head-right .card-head-label{
+    justify-self: end;
+  }
+
   .abs {position: absolute;}
   .top {top: 0;}
   .left {left: 0;}
@@ -65,12 +98,19 @@
     z-index: 0;
     width: 100%;
   }
+
+  .staff{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
   
   .timer .card-back{
     position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
+    height: 100%;
+    width: 100%;
   }
   
   .timer .card{
@@ -114,11 +154,53 @@
       to{ transform: translateY(-50%);}
   }
   
-    svg.card-border{
-      width:100%;
+  #game_swap{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .game-panel-1, .game-panel-2{
+    grid-area: 1/1;
+    background-color: #000;
+    display: grid;
+    align-items: center;
+}
+
+.game-panel-1{grid-template-columns: auto 1fr;}
+.game-panel-2{grid-template-columns: 1fr;}
+
+.game-swap .game-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
+.game-swap .game-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
+
+    .card-border, .card-back{
+      position: relative;
+    }
+    .card-border{
+      height: 1px;
+    }
+    .card-back{
+      height: 18px;
+    }
+
+    .card-head-left .card-back{
+      clip-path: polygon(0 0, 118px 0, 100px 18px, 0 18px);
+    }
+
+    .card-head-right .card-back{
+      clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px);
+    }
+
+    .bottom .card-back{
+      transform: rotateX(180deg);
+    }
+
+    .card-border > div, .card-back > div{
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
     
-    svg path{
+    .card-border > div, .card-back > div{
       animation: fade 240s linear alternate infinite;
     }
     
@@ -128,6 +210,13 @@
     .rainbow-fill path:nth-of-type(4){fill: #007800; animation-name: fade-3;}
     .rainbow-fill path:nth-of-type(5){fill: #f8b800; animation-name: fade-2;}
     .rainbow-fill path:nth-of-type(6){fill: #f83800; animation-name: fade;}
+
+    .rainbow-fill div:nth-of-type(1){background-color: #940084; animation: none;}
+    .rainbow-fill div:nth-of-type(2){background-color: #0058f8; animation-name: fade-5;}
+    .rainbow-fill div:nth-of-type(3){background-color: #3cbcfc; animation-name: fade-4;}
+    .rainbow-fill div:nth-of-type(4){background-color: #007800; animation-name: fade-3;}
+    .rainbow-fill div:nth-of-type(5){background-color: #f8b800; animation-name: fade-2;}
+    .rainbow-fill div:nth-of-type(6){background-color: #f83800; animation-name: fade;}
     
     @keyframes fade {
       from {opacity: 1;}

@@ -1,51 +1,59 @@
-<tr-class-if-full id="game_swap" toggle-class="game-swap" class="panel-wrap-inner" target="#game_panel_1, #upnext">
-    <tr-hide-if-empty toggle-class="visually-hidden" target="#game_name, #game_dev, #system, #est" id="game_panel_1">
-        <div class="panel-full-width-contain" style="width: 288px;">
-            <tr-text scale-to-fit style="width: 272px;" property="game_name" id="game_name"></tr-text>
-            <tr-text scale-to-fit style="width: 272px;" property="game_category" id="game_category"></tr-text>
+<tr-class-if-full id="game_swap" toggle-class="game-swap" target=".game-panel-1, .game-panel-2">
+    <tr-hide-if-empty toggle-class="visually-hidden" target="#game_name, #game_dev, #system, #game_length" class="game-panel-1">
+        <div class="card">
+            <tr-template href="../rm/templates/cards/border.html"></tr-template>
+            <div class="card-body">
+                <tr-text scale-to-fit property="game-name" id="game_name"></tr-text>
+                <tr-text scale-to-fit property="game-category" id="game_category"></tr-text>
+            </div>
+            <tr-hide-if-empty class="card-head bottom" target="#system, #game_length" toggle-class="visually-hidden">
+                <tr-hide-if-empty target="#system" toggle-class="visually-hidden">
+                    <div class="card-head-left">
+                        <div class="rainbow-fill card-back">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <tr-text scale-to-fit class="card-head-label game-system" property="game-system" id="system"></tr-text>
+                    </div>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target="#game_length" toggle-class="visually-hidden">
+                    <div class="card-head-right">
+                        <div class="rainbow-fill card-back">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <tr-text scale-to-fit class="card-head-label game-length" property="game-length" id="game_length"></tr-text>
+                    </div>
+                </tr-hide-if-empty>
+            </tr-hide-if-empty>
         </div>
-        <tr-hide-if-empty class="meta-panel" style="height: 18px; width: 288px;" target="#system, #est" toggle-class="visually-hidden">
-            <tr-hide-if-empty class="meta-left-bottom" toggle-class="visually-hidden">
-                <svg class="rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                    <path d="M 118,18 h-118 v-18 h100z"/>
-                </svg>
-                <tr-text scale-to-fit style="position: absolute; left: 0; bottom: 0;" property="game_system" id="system"></tr-text>
-            </tr-hide-if-empty>
-            <tr-hide-if-empty class="meta-right-bottom" toggle-class="visually-hidden">
-                <svg class="rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                    <path d="M 0,18 h118 v-18 h-100z"/>
-                </svg>
-                <tr-text scale-to-fit style="position: absolute; right: 0; bottom: 0;" property="game_length" id="est"></tr-text>
-            </tr-hide-if-empty>
-        </tr-hide-if-empty>
     </tr-hide-if-empty>
-    <tr-hide-if-empty toggle-class="visually-hidden" target="#up_next" id="game_panel_2">
-        <div class="panel-wrap-inner extra-padding-top">
-            <div class="meta-panel" style="height: 18px; width: 288px;">
-                <div class="meta-left-top">
-                    <svg class="rainbow-fill" viewbox="0 0 118 18" width="118" height="18" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                        <path d="M 118,0 h-118 v18 h100z"/>
-                    </svg>
-                    <div style="position: relative;" id="up_next_label">Up Next</div>
+    <tr-hide-if-empty toggle-class="visually-hidden" target="#up_next" class="game-panel-2">
+        <div class="card">
+            <tr-template href="../rm/templates/cards/border.html"></tr-template>
+            <div class="card-head">
+                <div class="card-head-left">
+                    <div class="rainbow-fill card-back">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="card-head-label">Up Next</div>
                 </div>
             </div>
-            <div class="panel-full-width-contain" style="width: 288px;">
-                <tr-text scale-to-fit style="width: 288px; display:block;" id="up_next" property="up-next"></tr-text>
+            <div class="card-body">
+                <tr-text scale-to-fit id="up_next" property="up-next"></tr-text>
             </div>
         </div>
     </tr-hide-if-empty>
