@@ -104,12 +104,13 @@ footer tr-template div{
     main header{
         display: grid;
         grid-template-columns: 1fr auto 1fr;
-        grid-column-gap: 1em;
+        grid-column-gap: 1.25em;
     }
     main header img{
         display: block;
-        width: 4em;
-        height: 4em;
+        width: 3em;
+        height: 3em;
+        align-self: center;
         image-rendering: -moz-crisp-edges;
         image-rendering: pixelated;
     }
@@ -154,33 +155,30 @@ footer tr-template div{
     </div>
     </main>
       <aside>
-        <tr-hide-if-empty id="game_name_author" class="panel-wrap-outer" toggle-class="visually-hidden">
+        <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
             <tr-template href="game-info.html"></tr-template>
         </tr-hide-if-empty>
 
-        <tr-hide-if-empty id="player_name_contain" class="panel-wrap-outer" toggle-class="visually-hidden" target="#player_name_1, #runner_pronoun">
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+          <tr-player player="1">
             <tr-template href="player-name.html"></tr-template>
+          </tr-player>
         </tr-hide-if-empty>          
 
-        <tr-hide-if-empty id="production_team" class="panel-wrap-outer" toggle-class="visually-hidden">
-            <tr-template href="production-team.html"></tr-template>
+        <tr-hide-if-empty id="production_team" toggle-class="visually-hidden">
+            <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
 
-        <tr-hide-if-empty id="up_next_contain" class="panel-wrap-outer" target="#up_next" toggle-class="visually-hidden">
+        <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
             <tr-template href="up-next.html"></tr-template>
         </tr-hide-if-empty>
       </aside>
       <footer>
-        <div id="promo_container">
-          <!-- https://www.debigare.com/randomizers/ -->
-          <tr-template id="promos_1" href="../shared/promos/promos_1.html"></tr-template>
-          <tr-template id="promos_2" href="../shared/promos/promos_2.html"></tr-template>
-          <tr-template id="promos_4" href="../shared/promos/promos_4.html"></tr-template>
-        </div>
+        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
       </footer>
   </div>
 
-  <tr-template href="one_menu.html"></tr-template>
+  <tr-template href="../shared/one-menus-contain.html"></tr-template>
 
   <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
   <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -191,6 +189,7 @@ footer tr-template div{
   <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
   <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
   <script type="text/javascript" src="../components/components.js"></script>
+  <script type="text/javascript" src="../shared/script/one_game.js"></script>
 </body>
 
 </html>

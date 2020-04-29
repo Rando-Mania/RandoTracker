@@ -8,37 +8,16 @@
                 <tr>
                     <th></th>
                     <th>Name</th>
-                    <th>♫</th>
+                    <!-- <th>♫</th>
                     <th>Final</th>
-                    <th>🏳️</th>
+                    <th>Win</th> -->
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
                     <td><tr-input-text player="1" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
-                    <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
+                    <!-- <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
                     <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>                
-                    <td><tr-input-toggle player="1" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
-                </tr>
-                <tr>
-                    <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
-                    <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
-                    <td><tr-input-toggle player="2" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
-                </tr>
-                <tr>
-                    <td><label player="3" for="player-3">3</label></td>
-                    <td><tr-input-text player="3" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
-                    <td><tr-input-toggle player="3" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="3" class="final-input" property="player-final"></tr-input-text></td>
-                    <td><tr-input-toggle player="3" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
-                </tr>
-                <tr>
-                    <td><label player="4" for="player-4">4</label></td>
-                    <td><tr-input-text player="4" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
-                    <td><tr-input-toggle player="4" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="4" class="final-input" property="player-final"></tr-input-text></td>
-                    <td><tr-input-toggle player="4" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
+                    <td><tr-input-toggle player="1" class="winner-input" property="toggle-winner"></tr-input-toggle></td> -->
                 </tr>
             </table>
         </div>
@@ -56,8 +35,6 @@
             <label class="video-bgcolor" for="green"></label>
             <tr-input-radio id="magenta" property="video-bgcolor" value="magenta" target=".player-video" toggle-class="magenta-background"></tr-input-radio>
             <label class="video-bgcolor" for="magenta"></label>
-            <tr-input-radio id="transparent" property="video-bgcolor" value="transparent" target=".player-video" toggle-class="transparent-background"></tr-input-radio>
-            <label class="video-bgcolor" for="transparent"></label>
             <tr-input-radio title="Screen Shots" id="screen" property="video-bgcolor" value="screen" target=".player-video" toggle-class="screen-background"></tr-input-radio>
             <label class="video-bgcolor" for="screen"></label>
         </div>
@@ -75,10 +52,6 @@
                 <tr-input-radio id="calendar" property="radio-test-toggle" value="cal" target=".calendar-contain, .overlay-label-calendar" toggle-class="show"></tr-input-radio>
                 <label class="overlay-label-calendar" for="calendar">Calendar</label>
             </div>
-        </div>
-        <div>
-            <tr-input-toggle-class id="menu_vs" property="toggle-vs" target=".load-and-vs" toggle-class="show-and"></tr-input-toggle-class>
-            <label for="menu_vs">Two 1 vs 1</label>
         </div>
     </div>
 
@@ -99,8 +72,13 @@
         </div>
     </div>
 
+
     <div id="menu_timer" class="fieldset">
         <h4 class="legend">Timer</h4>
+        <div>
+            <tr-input-toggle-class id="player_time_check" property="toggle-timer" target=".timer" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <label for="player_time_check">Hide Timer</label>
+        </div>
         <div>
             <tr-input-timer property="timer-test"></tr-input-timer>
             <tr-button-timer property="timer-test"></tr-button-timer>

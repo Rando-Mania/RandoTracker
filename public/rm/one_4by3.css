@@ -4,19 +4,24 @@
     padding: 0;
   }
 
-  @font-face {
-    font-family: "Orbitron";
-    src: url("fonts/Orbitron-Bold_0.ttf") format("truetype");
-  }
-
-  @font-face {
-    font-family: "Roboto";
-    src: url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "Orbitron";
+  src: local('Orbitron'),
+    url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
+    url('../shared/fonts/orbitron-bold_0.woff') format('woff'),
+    url("../shared/fonts/Orbitron-Bold_0.ttf") format("truetype");
+}
+        
+@font-face {
+  font-family: "Roboto";
+  src: local('Roboto'),
+  url('../shared/fonts/roboto-medium.woff2') format('woff2'),
+  url('../shared/fonts/roboto-medium.woff') format('woff'),
+  url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
+}
 
   html{
-    --vHeight: 719px;
-    --altColor: gray;
+    --vHeight: 720px;
   }
 
   body {
@@ -40,152 +45,41 @@
     grid-template-columns: calc(1280px - 320px) 320px;
 }
 
-#player_video_1.blue-background{background-color: #00f;}
-#player_video_1.green-background{background-color: #0f0;}
-#player_video_1.magenta-background{background-color: #f0f;}
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 720px;
+}
 
-#player_video_1{
+.player-video{
     width: calc(var(--vHeight) * 4/3);
     height: var(--vHeight);
     background-color: #000;
 }
 
+.player-video.magenta-background{background-color: #f0f;}
+.player-video.green-background{background-color: #0f0;}
+.player-video.blue-background{background-color: #00f;}
+
 aside{
     padding: 1em;
     display: flex;
-    align-items: center;
     flex-direction: column;
     position: relative;
     z-index: 0;
 }
 
-aside > *{
-    width: 288px;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    grid-gap: .5em;
-    background-color: #000;
-    overflow: hidden;
+.card, .staff{
+  margin-bottom: 16px;
 }
-
-aside > * + *{
-  margin-top: 16px;
-}
-
-.panel-wrap-inner{
-  position: relative;
-  background-color: #000;
-  height: 100%;
-}
-.panel-full-width-contain{
-  padding: 4px;
-  width: 288px;
-}
-
-#player_name_1{
-  width: 272px !important;
-}
-
-.meta-left-bottom, .meta-left-top, .meta-right-bottom, .meta-right-top{
-  font-size: 15px;
-  color: #000;
-}
-
-.meta-panel{
-  display: flex;
-  height: 18px;
-  width: 288px;
-}
-
-.meta-right-bottom tr-text, .meta-right-top tr-text {
-  transform-origin: left center;
-}
-
-.meta-left-top > tr-text, .meta-left-top > div {
-  display: block;
-  width: 7em;
-  text-align: center;
-  position: relative;
-}
-
-.meta-right-top > tr-text, .meta-right-top > div {
-  width: 105px !important;
-  text-align: center;
-  position: absolute;
-  right: 0;
-}
-
-.meta-left-bottom > tr-text {
-  display: block;
-  width: 7em;
-  text-align: center;
-}
-
-
-.meta-right-bottom > tr-text {
-  display: block;
-  width: 7em;
-  text-align: center;
-}
-
-.meta-left-top svg{position: absolute; left: 0;}
-.meta-right-top svg{position: absolute; right: 0;}
-.meta-left-bottom svg{position: absolute; left: 0;}
-.meta-right-bottom svg{position: absolute; right: 0;}
-
-#game_name_author {
-  font-size: 20px;
-}
-
-.panel-wrap-outer{
-  animation: bgcChange 240s linear infinite;
-  padding: 1px 0 0;
-}
-
-#game_category{
-  font-size: 16px;
-}
-
-/* #game_name_author:after{
-    content: url('images/zelda_hex.png');
-    position: absolute;
-    top: 0;
-    will-change: transform;
-    z-index: -1;
-    animation: scroll 90s linear infinite;
-} */
-
-#player_name_1{
-  padding-top: 4px;
-}
-
-@keyframes scroll {
-    from{ transform: translateY(0); }
-    to{ transform: translateY( calc(-100% + 94px) );}
-}
-
-.bgcChange {
-    font-size: 15px;
-    color: #000;
-    animation: 240s bgcChange linear infinite;
-    background-color: transparent;
-  }
-
-@keyframes bgcChange {
-    from{ fill: #f83800; background-color: #f83800;}
-    16.6%{ fill: #f8b800; background-color: #f8b800;}
-    33.3%{ fill: #007800; background-color: #007800;}    
-    50%{ fill: #0058f8; background-color: #0058f8;}
-    66.6%{ fill: #3cbcfc; background-color: #3cbcfc;}
-    83.3%{ fill: #940084; background-color: #940084;}
-    to{ fill: #f83800; background-color: #f83800;}
-  }
-
 
 tr-toggle[property="dwr"]{
   display: flex;
+}
+
+.game-name, .player-name{
+  font-size: 20px;
 }
 
 tr-toggle[property="dwr"] .player-grid {
@@ -202,72 +96,6 @@ tr-toggle[property="dwr"] .player-grid {
     height: 32px;
   }
 
-#player_name_1,
-#timer {
-  font-size: 1.5em;
-}
-
-#panel_1, #panel_2{
-  grid-area: 1 / 1;
-  font-size: 1em;
-}
-
-#panel_2{
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  grid-gap: 4px;
-}
-
-#panel_1 img,
-#panel_2 img{
-  width: 1em;
-}
-
-#commentator_contain, #restreamer_contain, #tracker_contain{
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  align-items: center;
-}
-
-#tracker, #restreamer, #commentator{
-  width: 245px;
-}
-@keyframes blinker {
-  0% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 1;}
-}
-
-#prod_team_swap{
-  display: grid;
-  padding: 8px;
-}
-
-#prod_team_swap.production-swap #panel_1 {
-  animation: blinker 60s steps(1) infinite;
-}
-
-#prod_team_swap.production-swap #panel_2 {
-  animation: blinker 60s steps(1) infinite reverse;
-}
-
-  tr-timer{
-    width: auto;
-  }
-
-  #player_time{
-    border: none;
-    padding: 1px 0;
-  }
-
-  #player_time .panel-wrap-inner{
-    background-color: transparent;
-    background-image: url('images/zelda_hex_alpha_text.png'), linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75));
-    animation: scroll 45s linear infinite;
-    animation-play-state: paused;
-  }
-
   #player_time .timer-scroll{
     animation-play-state: running;
   }
@@ -275,6 +103,8 @@ tr-toggle[property="dwr"] .player-grid {
   @keyframes scroll {
     to{background-position-y: -680px, 0;}
   }
+
+  /* timer */
 
   #timer span:not(.dot):not(.colon) {
     width: 19.92px !important;
@@ -286,36 +116,12 @@ tr-toggle[property="dwr"] .player-grid {
     width: 19.92px !important;
     text-align: right;
   }
-
-  #rm_logo div {
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #rm_logo img {
-    height: 38px;
-    margin-right: .25em;
-  }
-  
-  /* @keyframes slide-from-left {
-    from {
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes slide-from-right {
-    from {
-      transform: translateX(100%);
-    }
-  } */
   
 textarea{
   width: 15em;
 }
 
-  .hidden {
+  .hidden, .display-none {
     display: none;
   }
 
@@ -335,120 +141,21 @@ textarea{
   .four-rows{height: calc(32px * 4 + 16px * 4);}
   .five-rows{height: calc(32px * 5 + 16px * 5);}
 
-  #game_name_author:empty, #game_name:empty, #dev_name:empty, 
-  #player_name_1:empty, #free_text:empty,
-  #runner_pronoun:empty{
-    position: absolute !important;
-    left: 400%;
-    height: 1px; width: 1px;
-    overflow: hidden;
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  }
 
   /* menu */
 
-#menu_game.fieldset{
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 1em
-}
-
-#menu_game div{
-  font-size: 14px;
-  display: grid;
-  grid-gap: .25em
-}
-
-input[type="text"], textarea{
-  width: 100%;
-  background: #222 linear-gradient(45deg, currentColor, currentColor) -370px bottom / 100% 1px no-repeat;
-  color: #f8b800;
-  border: none;
-  padding: 4px;
-  outline: none;
-  transition: background-position .2s, color .1s;
-  font-weight: bold;
-}
-
-input[type="text"]:focus, textarea:focus{
-  background-position: 0 bottom;
-}
-
-select{
-  background-color: #333;
-  color: #fff;
-}
-
-.col-span-2{
-  grid-column-end: span 2;
-}
-
-  .player-inputs{
-    grid-gap: 0 5px;
-    padding: 5px;
-  }
-
-  #menu_2{
+  .menu-contain {
     display: grid;
-    grid-template-areas: 
-    "prefill prefill  prefill"
-    "game    icons    icons"
-    "game    upnext   upnext"
-    "players freetext freetext"
-    "timer   layout   layout"
-    "team    view     reset";
-    height: 720px;
-    border: none;
-    margin-left: 16px;
-  }
-
-  #menu_fill{grid-area: prefill;}
-  #menu_timer{grid-area: timer;}
-  #menu_players{grid-area: players;}
-  #menu_layout{grid-area: layout;}
-  #menu_game{grid-area: game;}
-  #menu_production{grid-area: team;}
-  #menu_view{grid-area: view;}
-  #menu_reset{grid-area: reset;}
-  #menu_upnext{grid-area: upnext;}
-  #menu_icons{grid-area: icons;}
-  #menu_freetext{grid-area: freetext;}
-
-  #menu_player_labels, #menu_players tr-player{
-    display: block;
+    grid-template-areas:
+      "prefill prefill  prefill  prefill"
+      "game    game     icons    icons" 
+      "game    game     upnext   upnext"
+      "players pronouns freetext freetext"
+      "timer   timer    layout   layout" 
+      "team    team     view     reset"
+      "other   other    credits credits";
   }
   
-table {
-  border-collapse: collapse;
-  padding: 1em;
-  table-layout: fixed;
-  width: 300px;
-}
-th, td{
-  padding: .5em;
-}
-
-th:nth-child(1) {width: 2em;}
-th:nth-child(2) {width: 10em;}
-th:nth-child(3) {width: 7em;}
-
-#menu_fill div{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#menu_timer div{
-    align-self: center;
-    justify-self: center;
-  }
-  #menu_timer input[type="text"]{
-    width: 6em;
-  }
-  .fieldset{
-    margin: -1px 0 0 -1px;
-  }
-
   .calendar, .loadscreen{
     background: 
       linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
@@ -476,23 +183,6 @@ th:nth-child(3) {width: 7em;}
     to{ background-position: 0 bottom; }
   }
 
-  .pause-animations, #player_time .pause-animations{
+  .pause-animations #player_time, .pause-animations tr-timer[running="true"]:after{
     animation-play-state: paused;
   }
-
-  .video-bgcolor{
-    width: 24px;
-    height: 24px;
-    border: 1px solid #333;
-  }
-
-  .video-bgcolor:hover{box-shadow: 0 0 0 2px #f8b800;}
-
-  tr-input-radio input:checked + .video-bgcolor{
-    border: 1px solid #fff;
-
-  }
-
-  label[for="blue"]{background-color: #00f;}
-  label[for="green"]{background-color: #0f0;}
-  label[for="magenta"]{background-color: #f0f;}
