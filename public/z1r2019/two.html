@@ -133,9 +133,12 @@
                 <img class="-wand" src="../shared/images/icons/blank.png" />
             </tr-toggle-class>
             
-            <tr-toggle-class property="book" toggle-class="active">
-                <img class="-book" src="../shared/images/icons/blank.png" />
-            </tr-toggle-class>
+            <tr-image property="book">
+                <tr-image-option class-to-set="-book in-active" class="-book in-active" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-book" class="-book" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-shield in-active" class="-shield in-active" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-shield" class="-shield" path="../shared/images/icons/blank.png"></tr-image-option>
+            </tr-image>
             
             <tr-toggle-class property="boomerang-0" toggle-class="active">
                 <img class="-boomerang-0" src="../shared/images/icons/blank.png" />
