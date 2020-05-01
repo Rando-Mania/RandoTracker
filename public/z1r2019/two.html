@@ -27,15 +27,12 @@
         <tr-timer class="abs" property="timer-test" style="left: var(--timeX); top: var(--timeY);"></tr-timer>
         <tr-timer class="abs" property="timer-test" style="right: var(--timeX); top: var(--timeY);"></tr-timer>
         
-        <div class="abs staff-left" style="transform: translateY(-50%); top: 58px; left: 82px;">
-            <tr-hide-if-empty class="staff-panel-contain" toggle-class="visually-hidden">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
-        </div>
+        <tr-hide-if-empty class="abs staff-left" style="transform: translate(-50%, -50%); top: 58px; left: 22%;" toggle-class="visually-hidden">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
 
-        <div class="abs staff-right" style="transform: translateY(-50%); top: 58px; right: 82px;">
-            <tr-text property="header" class="header"></tr-text>
-        </div>
+        <tr-text property="header" class="abs staff-right header" style="transform: translate(50%,-50%); top: 58px; right: 22%;"></tr-text>
+
 
 <!-- templates-->
         <template id="level_tri_forces_template">
