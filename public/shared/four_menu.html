@@ -10,7 +10,7 @@
                     <th>Name</th>
                     <th>♫</th>
                     <th>Final</th>
-                    <th>Win</th>
+                    <th>🏳️</th>
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
@@ -47,7 +47,7 @@
     <div id="menu_layout" class="fieldset">
         <h4 class="legend">Settings</h4>
         <div id="menu_video_background">
-            <label>Chroma Key:</label>
+            <label>Color Key:</label>
             <tr-input-radio checked id="black" property="video-bgcolor" value="black" target=".player-video" toggle-class="black-background"></tr-input-radio>
             <label class="video-bgcolor" for="black"></label>
             <tr-input-radio id="blue" property="video-bgcolor" value="blue" target=".player-video" toggle-class="blue-background"></tr-input-radio>
@@ -56,6 +56,8 @@
             <label class="video-bgcolor" for="green"></label>
             <tr-input-radio id="magenta" property="video-bgcolor" value="magenta" target=".player-video" toggle-class="magenta-background"></tr-input-radio>
             <label class="video-bgcolor" for="magenta"></label>
+            <tr-input-radio id="transparent" property="video-bgcolor" value="transparent" target=".player-video" toggle-class="transparent-background"></tr-input-radio>
+            <label class="video-bgcolor" for="transparent"></label>
             <tr-input-radio title="Screen Shots" id="screen" property="video-bgcolor" value="screen" target=".player-video" toggle-class="screen-background"></tr-input-radio>
             <label class="video-bgcolor" for="screen"></label>
         </div>

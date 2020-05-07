@@ -27,15 +27,12 @@
         <tr-timer class="abs" property="timer-test" style="left: var(--timeX); top: var(--timeY);"></tr-timer>
         <tr-timer class="abs" property="timer-test" style="right: var(--timeX); top: var(--timeY);"></tr-timer>
         
-        <div class="abs staff-left" style="transform: translateY(-50%); top: 58px; left: 82px;">
-            <tr-hide-if-empty class="staff-panel-contain" toggle-class="visually-hidden">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
-        </div>
+        <tr-hide-if-empty class="abs staff-left" style="transform: translate(-50%, -50%); top: 58px; left: 22%;" toggle-class="visually-hidden">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
 
-        <div class="abs staff-right" style="transform: translateY(-50%); top: 58px; right: 82px;">
-            <tr-text property="header" class="header"></tr-text>
-        </div>
+        <tr-text property="header" class="abs staff-right header" style="transform: translate(50%,-50%); top: 58px; right: 22%;"></tr-text>
+
 
 <!-- templates-->
         <template id="level_tri_forces_template">
@@ -133,9 +130,12 @@
                 <img class="-wand" src="../shared/images/icons/blank.png" />
             </tr-toggle-class>
             
-            <tr-toggle-class property="book" toggle-class="active">
-                <img class="-book" src="../shared/images/icons/blank.png" />
-            </tr-toggle-class>
+            <tr-image property="book">
+                <tr-image-option class-to-set="-book in-active" class="-book in-active" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-book" class="-book" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-shield in-active" class="-shield in-active" path="../shared/images/icons/blank.png"></tr-image-option>
+                <tr-image-option class-to-set="-shield" class="-shield" path="../shared/images/icons/blank.png"></tr-image-option>
+            </tr-image>
             
             <tr-toggle-class property="boomerang-0" toggle-class="active">
                 <img class="-boomerang-0" src="../shared/images/icons/blank.png" />
@@ -195,247 +195,42 @@
             <tr-player player="1">
                 <tr-template class="player-grid" source="#two_icons"></tr-template>
             </tr-player>
+<!-- item locations -->
+        <template id="location_options">
+            <tr-image property="item-location">
+                <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
+                <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
+                <tr-image-option path="images/items/oldman.png"></tr-image-option>
+                <tr-image-option path="images/items/armos.png"></tr-image-option>
+                <tr-image-option path="images/items/coast.png"></tr-image-option>
+                <tr-image-option path="images/items/merchant.png"></tr-image-option>
+                <tr-label property="item-location"></tr-label>
+            </tr-image>
+        </template>
             <div class="item-locations">
-                <tr-image property="item-location-1">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-1"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-2">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-2"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-3">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-3"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-4">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-4"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-5">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-5"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-6">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-6"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-7">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-7"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-8">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-8"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-9">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-9"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-10">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-10"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-11">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-11"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-12">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-12"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-13">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-13"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-14">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-14"></tr-label>
-                </tr-image>
-                <tr-image property="item-location-15">
-                    <tr-image-option path="../shared/images/icons/blank.png" label="?"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="1"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="2"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="3"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="4"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="5"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="6"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="7"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="8"></tr-image-option>
-                    <tr-image-option path="../shared/images/icons/blank.png" label="9"></tr-image-option>
-                    <tr-image-option class-to-set="-oldman" class="-oldman" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-armos" class="-armos" path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-image-option class-to-set="-coast" class="-coast"  path="../shared/images/icons/blank.png"></tr-image-option>
-                    <tr-label property="item-location-15"></tr-label>
-                </tr-image>
+                <tr-player player="1"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="2"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="3"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="4"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="5"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="6"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="7"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="8"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="9"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="10"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="11"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="12"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="13"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="14"><tr-template source="#location_options"></tr-template></tr-player>
+                <tr-player player="15"><tr-template source="#location_options"></tr-template></tr-player>
             </div>
             <tr-player player="2">
                 <tr-template class="player-grid" source="#two_icons"></tr-template>

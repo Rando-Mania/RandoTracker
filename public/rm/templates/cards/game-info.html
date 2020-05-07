@@ -1,0 +1,31 @@
+<div class="card game-info">    
+    <tr-template href="../rm/templates/cards/border.html"></tr-template>
+    <tr-hide-if-empty class="card-head" target=".system, .est" toggle-class="visually-hidden">
+        <tr-hide-if-empty class="abs left card-head-left" target=".system" toggle-class="visually-hidden">
+            <div class="rainbow-fill card-back">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <tr-text scale-to-fit property="game-system" class="abs left card-head-label system"></tr-text>
+        </tr-hide-if-empty>
+        <tr-hide-if-empty class="abs right card-head-right" target="est" toggle-class="visually-hidden">
+            <div class="rainbow-fill card-back">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <tr-text scale-to-fit property="game-length" class="abs right est card-head-label"></tr-text>
+        </tr-hide-if-empty>
+    </tr-hide-if-empty>
+    <div class="card-body">
+        <tr-text scale-to-fit property="game-name" class="game-name"></tr-text>
+        <tr-text scale-to-fit property="game-category" class="game-category"></tr-text>
+    </div>
+</div>

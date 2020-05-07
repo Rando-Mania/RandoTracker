@@ -103,6 +103,7 @@ html{
 .-recorder {background-position: -144px 0;}
 .-ring-0 {background-position: -144px -36px;}
 .-ring-1 {background-position: -144px -72px;}
+.-shield {background-position: -72px -180px;}
 .-sword-0 {background-position: -144px -108px;}
 .-sword-2 {background-position: 0 -144px;}
 .-wand {background-position: -36px -144px;}
@@ -324,16 +325,17 @@ tr-timer span {
 }
 
 .header{
-    background: url('images/staff-back-all.svg') no-repeat 0 50% / 394px 300%;
+    background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%;
     text-align: center;
-    width: 394px;
+    min-width: 394px;
     min-height: 78px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: -2px auto;
-    padding: 12px;
-    line-height: 1.2  
+    padding: 12px 18px;
+    line-height: 1.2;  
+    font-size: 16px;
 }
 
 .production-team-swap{

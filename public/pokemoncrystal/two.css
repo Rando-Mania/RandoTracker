@@ -152,8 +152,9 @@ html{
     height: 29px;
     display: block;
     background-image: url(images/crystal-sprites.png);
+    background-image: url(images/crystal-sprites.webp);
     background-size: 1100% 1100%;
-    image-rendering: pixelated;
+    /* image-rendering: pixelated; */
 }
 
 [property="rod-old"] img{background-position: 0 0;}
@@ -186,23 +187,23 @@ html{
 [property="hm-whirlpool"] img{background-position: 50% 30%;}
 [property="hm-waterfall"] img{background-position: 60% 30%;}
 
-[property="badge-zephyr"] img{background-position: 0 40%;}
-[property="badge-hive"] img{background-position: 10% 40%;}
-[property="badge-plain"] img{background-position: 20% 40%;}
-[property="badge-fog"] img{background-position: 30% 40%;}
-[property="badge-storm"] img{background-position: 40% 40%;}
-[property="badge-mineral"] img{background-position: 50% 40%;}
-[property="badge-glacier"] img{background-position: 60% 40%;}
-[property="badge-rising"] img{background-position: 70% 40%;}
+[property="badge-zephyr"] img{background-position: 0 60%;}
+[property="badge-hive"] img{background-position: 10% 60%;}
+[property="badge-plain"] img{background-position: 20% 60%;}
+[property="badge-fog"] img{background-position: 30% 60%;}
+[property="badge-storm"] img{background-position: 40% 60%;}
+[property="badge-mineral"] img{background-position: 50% 60%;}
+[property="badge-glacier"] img{background-position: 60% 60%;}
+[property="badge-rising"] img{background-position: 70% 60%;}
 
-[property="badge-boulder"] img{background-position: 0 50%;}
-[property="badge-cascade"] img{background-position: 10% 50%;}
-[property="badge-thunder"] img{background-position: 20% 50%;}
-[property="badge-rainbow"] img{background-position: 30% 50%;}
-[property="badge-soul"] img{background-position: 40% 50%;}
-[property="badge-marsh"] img{background-position: 50% 50%;}
-[property="badge-volcano"] img{background-position: 60% 50%;}
-[property="badge-earth"] img{background-position: 70% 50%;}
+[property="badge-boulder"] img{background-position: 0 70%;}
+[property="badge-cascade"] img{background-position: 10% 70%;}
+[property="badge-thunder"] img{background-position: 20% 70%;}
+[property="badge-rainbow"] img{background-position: 30% 70%;}
+[property="badge-soul"] img{background-position: 40% 70%;}
+[property="badge-marsh"] img{background-position: 50% 70%;}
+[property="badge-volcano"] img{background-position: 60% 70%;}
+[property="badge-earth"] img{background-position: 70% 70%;}
 
 .player-grid-2 img, .dialog img{
     width: 32px;
@@ -394,7 +395,13 @@ tr-timer span {
   }
 
 .commentators-img{background-position: 75% 33%;}
-.restreamers-img{background-position: 0 33%;}
+.staff img.restreamers-img{
+    background: transparent url('images/monitor-masked.png') 0 0 / 100% 100%;
+    box-shadow: none;
+    border-radius: 0;
+    height: 1.2em;
+    margin: 0 10px 0 2px;
+}
 .trackers-img{background-position: 50% 33%;}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}

@@ -2,6 +2,7 @@
     <div id="menu_players" class="fieldset">
         <h4 class="legend">Players</h4>
         <div id="menu_player_labels">
+            <tr-template href="player-name-options.html"></tr-template>
             <table>
                 <tr>
                     <th></th>
@@ -14,7 +15,7 @@
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
-                    <td><tr-input-text player="1" class="name-input" property="player_name_1"></tr-input-text></td>
+                    <td><tr-input-text player="1" list="name_options" class="name-input" property="player_name_1"></tr-input-text></td>
                     <td><tr-input-text player="1" property="count"></tr-input-text></td>
                     <td><tr-input-toggle-class player="1" id="speaker" property="toggle-speaker" target="#player_speaker_1" toggle-class="show-flex"></tr-input-toggle-class></td>
                     <td><tr-input-text player="1" class="final-input" property="player_final_1"></tr-input-text></td>
@@ -23,7 +24,7 @@
                 </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-text player="2" class="name-input" property="player_name_2"></tr-input-text></td>
+                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player_name_2"></tr-input-text></td>
                     <td><tr-input-text player="2" property="count"></tr-input-text></td>
                     <td><tr-input-toggle-class player="2" id="speaker" property="toggle-speaker" target="#player_speaker_2" toggle-class="show-flex"></tr-input-toggle-class></td>
                     <td><tr-input-text player="2" class="final-input" property="player_final_2"></tr-input-text></td>
@@ -32,7 +33,7 @@
                 </tr>
                 <tr>
                     <td><label player="3" for="player-3">3</label></td>
-                    <td><tr-input-text player="3" class="name-input" property="player_name_3"></tr-input-text></td>
+                    <td><tr-input-text player="3" list="name_options" class="name-input" property="player_name_3"></tr-input-text></td>
                     <td><tr-input-text player="3" property="count"></tr-input-text></td>
                     <td><tr-input-toggle-class player="3" id="speaker" property="toggle-speaker" target="#player_speaker_3" toggle-class="show-flex"></tr-input-toggle-class></td>
                     <td><tr-input-text player="3" class="final-input" property="player_final_3"></tr-input-text></td>
@@ -41,7 +42,7 @@
                 </tr>
                 <tr>
                     <td><label player="4" for="player-4">4</label></td>
-                    <td><tr-input-text player="4" class="name-input" property="player_name_4"></tr-input-text></td>
+                    <td><tr-input-text player="4" list="name_options" class="name-input" property="player_name_4"></tr-input-text></td>
                     <td><tr-input-text player="4" property="count"></tr-input-text></td>
                     <td><tr-input-toggle-class player="4" id="speaker" property="toggle-speaker" target="#player_speaker_4" toggle-class="show-flex"></tr-input-toggle-class></td>
                     <td><tr-input-text player="4" class="final-input" property="player_final_4"></tr-input-text></td>
