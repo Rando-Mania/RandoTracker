@@ -1,0 +1,184 @@
+<div class="menu-game-specific">
+    <div id="menu_players_extra" class="fieldset">
+        <h4 class="legend">Players Extra</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Rank</th>
+                    <th>Record</th>
+                    <th>Pronoun</th>
+                    <th>Deaths</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number oninput player="1" min="0" property="player-cod"></tr-input-number></td>
+                </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number oninput player="2" min="0" property="player-cod"></tr-input-number></td>
+                </tr>
+                <tr>
+                    <td><label player="3" for="player-3">3</label></td>
+                    <td><tr-input-text player="3" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number oninput player="3" min="0" property="player-cod"></tr-input-number></td>
+                </tr>
+                <tr>
+                    <td><label player="4" for="player-4">4</label></td>
+                    <td><tr-input-text player="4" class="rank-input" property="player-rank"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number oninput player="4" min="0" property="player-cod"></tr-input-number></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_settings_extra" class="fieldset">
+        <h4 class="legend">Settings</h4>
+        <div class="menu-label-input">
+            <label>Video Background Image:</label>
+            <tr-select-toggle property="video-bgImage">
+                <tr-option value="none" target=".player-video" toggle-class="none">none</tr-option>
+                <tr-option selected value="weekly" target=".player-video" toggle-class="weekly-background">Weekly</tr-option>
+                <tr-option value="tourney" target=".player-video" toggle-class="tourney-background">Tourney</tr-option>
+                <tr-option value="chaos" target=".player-video" toggle-class="chaos-background">Chaos</tr-option>
+                <tr-option value="league" target=".player-video" toggle-class="league-background">League</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
+    <div id="menu_other" class="fieldset">
+        <h4 class="legend">Other</h4>
+        <div class="menu-button-row">
+            <h4>Panels:</h4>
+            <div class="layout-buttons">
+                <tr-input-radio id="items" property="player-panels" value="items" target="#layout .player-grid, .items-button" toggle-class="show-grid" checked></tr-input-radio>
+                <label class="items-button" for="items">Items</label>
+                <tr-input-radio id="stats" property="player-panels" value="stats" target="#layout .stats-and-spells, .stats-spells-button" toggle-class="show-flex"></tr-input-radio>
+                <label class="stats-spells-button" for="stats">Stats/Spells</label>
+                <span style="margin-left: .5em; align-self: center;">
+                    <!-- <button id="start_auto_play_panels">
+                        <svg style="position: relative;left: 1px;" width="14" height="14" viewbox="0 0 20 20">
+                            <path d="M0,0 L20,10 L0,20z" fill="#fff"/>
+                        </svg>
+                    </button>
+                    <button id="stop_auto_play_panels" style="display:none;">
+                        <svg width="11" height="11" viewbox="0 0 20 20">
+                            <path d="M0,0 h20 v20 h-20z" fill="red"/>
+                        </svg>
+                    </button> -->
+                </span>
+            </div>
+        </div>
+        <div class="menu-label-input">
+            <label>Coordinates:</label>
+            <tr-template href="over-world-items.html"></tr-template>
+            <tr-input-text oninput class="coordinates" property="coordinates"></tr-input-text>
+        </div>
+        <div class="menu-label-input">
+            <label>League Flags</label>
+            <tr-select-toggle>
+                <tr-option selected value="none">None</tr-option>
+                <tr-option value="week-1">Week 1</tr-option>
+                <tr-option value="week-2">Week 2</tr-option>
+                <tr-option value="week-3">Week 3</tr-option>
+                <tr-option value="week-4">Week 4</tr-option>
+                <tr-option value="week-5">Week 5</tr-option>
+                <tr-option value="week-6">Week 6</tr-option>
+                <tr-option value="week-7">Week 7</tr-option>
+                <tr-option value="week-8-1">Week 8 Match 1</tr-option>
+                <tr-option value="week-8-2">Week 8 Match 2</tr-option>
+            </tr-select-toggle>
+        </div>
+        <div class="menu-repel-wrapper">
+            <tr-input-toggle-class id="permanent_repel" target="[property='repel']" toggle-class="spell-highlight" property="permanent-repel">
+                <label id="permanent_repel_label" for="permanent_repel">Permanent Repel:</label>
+            </tr-input-toggle-class>
+        </div>
+        <div class="menu-monster-wrapper">
+            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats">
+                <label id="monster_label" for="show_monster_stats">Display Monster Stats:</label>
+            </tr-input-toggle-class>
+            <div>
+                <label for="monster_select">Select Monster:</label>
+              <tr-select property="monster">
+                  <tr-option selected value="0">Slime</tr-option>
+                  <tr-option value="1">Red Slime</tr-option>
+                  <tr-option value="2">Drakee</tr-option>
+                  <tr-option value="3">Ghost</tr-option>
+                  <tr-option value="4">Magician</tr-option>
+                  <tr-option value="5">Magidrakee</tr-option>
+                  <tr-option value="6">Scorpion</tr-option>
+                  <tr-option value="7">Druin</tr-option>
+                  <tr-option value="8">Poltergeist</tr-option>
+                  <tr-option value="9">Droll</tr-option>
+                  <tr-option value="10">Drakeema</tr-option>
+                  <tr-option value="11">Skeleton</tr-option>
+                  <tr-option value="12">Warlock</tr-option>
+                  <tr-option value="13">Metal Scorpion</tr-option>
+                  <tr-option value="14">Wolf</tr-option>
+                  <tr-option value="15">Wraith</tr-option>
+                  <tr-option value="16">Metal Slime</tr-option>
+                  <tr-option value="17">Specter</tr-option>
+                  <tr-option value="18">Wolflord</tr-option>
+                  <tr-option value="19">Druinlord</tr-option>
+                  <tr-option value="20">Drollmagi</tr-option>
+                  <tr-option value="21">Wyvern</tr-option>
+                  <tr-option value="22">Rogue Scorpion</tr-option>
+                  <tr-option value="23">Wraith Knight</tr-option>
+                  <tr-option value="24">Golem</tr-option>
+                  <tr-option value="25">Goldman</tr-option>
+                  <tr-option value="26">Knight</tr-option>
+                  <tr-option value="27">Magiwyvern</tr-option>
+                  <tr-option value="28">Demon Knight</tr-option>
+                  <tr-option value="29">Werewolf</tr-option>
+                  <tr-option value="30">Green Dragon</tr-option>
+                  <tr-option value="31">Starwyvern</tr-option>
+                  <tr-option value="32">Wizard</tr-option>
+                  <tr-option value="33">Axe Knight</tr-option>
+                  <tr-option value="34">Blue Dragon</tr-option>
+                  <tr-option value="35">Stoneman</tr-option>
+                  <tr-option value="36">Armored Knight</tr-option>
+                  <tr-option value="37">Red Dragon</tr-option>
+                  <tr-option value="38">Dragonlord 1</tr-option>
+                  <tr-option value="39">Dragonlord 2</tr-option>
+              </tr-select>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu_credits" class="fieldset">
+        <h4 class="legend">Credits</h4>
+        <div id="menu_layout_credits">
+            <table>
+                <tr>
+                    <td>Art:</td>
+                    <td>capt_uhu</td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td>capt_uhu, datyedyeguy, <br/>brianwilliams42</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="menu_playlist" class="fieldset">
+        <h4 class="legend">Playlist</h4>
+        <iframe id="existing-iframe-example"
+            frameborder="0"
+            allowfullscreen="1"
+            width="360" height="203"
+            src="https://www.youtube.com/embed/?listType=playlist&list=PLfmjA0PhR7tGuUTuv0iYbyMy2fCxnSahN&loop=1&rel=0&enablejsapi=1">
+        </iframe>
+    </div>
+</div>
