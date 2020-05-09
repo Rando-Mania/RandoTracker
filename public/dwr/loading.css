@@ -17,16 +17,13 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-.loadscreen{
+.loadscreen-main{
   display: grid;
   grid-template-columns: calc(36px * 8) 1fr;
   grid-template-rows: 1fr auto;
   grid-gap: 1em;
   width: 1280px;
   height: 720px;
-  padding: 32px;
-  background-color: #000;
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop.png') 50% 60% / 100%;
   font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
   color: #fff;
   text-shadow: 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
@@ -137,6 +134,7 @@
 
 .loadscreen main{
   text-align: center;
+  height: 100%;
   display: grid;
   grid-template-columns: 70%;
   grid-template-rows: repeat(4, auto);
