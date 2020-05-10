@@ -42,7 +42,7 @@
       <div id="firebaseui-auth-container"></div>
     </div>
     <div id="not_approved" style="display: none;">
-      <h1>Account is not authorized to access</h1>
+      <h1>Account is not authorized access</h1>
       <h3>Please reach out to a Randomania Admin to be granted access</h3>
     </div>
     <div id="auth" style="display: none;">
@@ -81,9 +81,19 @@
           <h3>Castlevania: Aria of Sorrow</h3>
           <a onclick="goToRoom('castlevaniaAoS/two.html')">2 Player</a>
         </div> -->
-        <!-- <div data-console="snes">
+        <!-- <div class="test" data-console="nes">
+          <h3>Crystalis</h3>
+          <a onclick="goToRoom('crystalis/two.html')">2 Player</a>
+          <a onclick="goToRoom('crystalis/four.html')">4 Player</a>
+        </div> -->
+        <div data-console="snes">
           <h3>Dragon Quest SFC</h3>
           <a onclick="goToRoom('dqsfc/two.html')">2 Player</a>
+        </div>
+        <!-- <div data-console="nes">
+          <h3>Dragon Warrior</h3>
+          <a onclick="goToRoom('dwr/two.html')">2 Player</a>
+          <a onclick="goToRoom('dwr/four.html')">4 Player</a>
         </div> -->
         <div data-console="nes">
           <h3>Dragon Warrior</h3>
@@ -91,17 +101,57 @@
           <a onclick="goToRoom('dwr/four.html')">4 Player</a>
         </div>
 
+<!-- Final Fantasy Randomizer Current -->
+
         <div data-console="nes">
           <h3>Final Fantasy</h3>
           <a onclick="goToRoom('ffr-2020-default-2player/two.html')">2 Player</a>
           <a onclick="goToRoom('ffr-2020-default-3player/three.html')">3 Player</a>
           <a onclick="goToRoom('ffr-2020-default-4player/four.html')">4 Player</a>
         </div>
-        <div data-console="nes">
+        <div data-console="nes" class="test">
           <h3>Final Fantasy Specials</h3>
           <a onclick="goToRoom('ffr-2020-default-bingo/bingo.html')">Bingo</a>
+          <a onclick="goToRoom('ffr-2020-default-2cams/two.html')">Cam View</a>
           <a onclick="goToRoom('ffr-2020-default-reveal/reveal.html')">Reveal</a>
         </div>
+
+<!-- Final Fantasy Randomizer Old -->
+
+		<!-- <div data-console="nes">
+          <h3>Final Fantasy 2v2</h3>
+          <a onclick="goToRoom('ffr-community/four.html')">4 Player</a>
+        </div> -->
+        <!-- <div data-console="nes">
+          <h3>Final Fantasy Onrac Vacation</h3>
+          <a onclick="goToRoom('ffr-onrac-summer/four.html')">4 Player</a>
+        </div> -->
+       <!-- <div data-console="nes">
+          <h3>Final Fantasy NPC Shuffle</h3>
+          <a onclick="goToRoom('ffr-npc/two.html')">2 Player</a>
+          <a onclick="goToRoom('ffr-npc/four.html')">4 Player</a>
+        </div> -->
+        <!-- <div data-console="nes">
+          <h3>Final Fantasy Entrance Shuffle</h3>
+          <a onclick="goToRoom('ffr-entrance/four.html')">4 Player</a>
+        </div> -->
+        <!-- <div data-console="nes">
+          <h3>Final Fantasy Chaos Rush</h3>
+          <a onclick="goToRoom('ffr-chaos/four.html')">4 Player</a>
+        </div> -->
+        <!-- <div data-console="nes">
+          <h3>Final Fantasy: Monster Hunter</h3>
+          <a onclick="goToRoom('ffr/threemonster.html')">3 Player</a>
+        </div> -->        <!-- <div data-console="nes">
+          <h3>Final Fantasy</h3>
+          <a onclick="goToRoom('ffr/two.html')">2 Player</a>
+          <a onclick="goToRoom('ffr/four.html')">4 Player</a>
+        </div> -->
+        <!-- <div class="test" data-console="nes">
+          <h3>Final Fantasy 2.0</h3>
+          <a onclick="goToRoom('ffr-v2/two.html')">2 Player</a>
+          <a onclick="goToRoom('ffr-v2/four.html')">4 Player</a>
+        </div> -->
       
 <!-- Final Fantasy 4 -->
 
@@ -110,24 +160,46 @@
           <a onclick="goToRoom('ff4fe/two.html')">2 Player</a>
           <a onclick="goToRoom('ff4fe/four.html')">4 Player</a>
         </div>
-        <div data-console="snes">
+        <div class="new" data-console="snes">
           <h3>FF4FE: Fabul Gauntlet</h3>
           <a onclick="goToRoom('ff4fe-v2/two.html')">2 Player</a>
         </div>
+        <!-- <div data-console="snes">
+          <h3>FF4: FE Workshop Invitational</h3>
+          <a onclick="goToRoom('ff4fe/twowif.html')">2 Player</a>
+          <a onclick="goToRoom('ff4fe/fourwif.html')">4 Player</a>
+        </div> -->
         <div data-console="snes">
           <h3>FF4: H2TZZ</h3>
           <a onclick="goToRoom('ff4fe/fourhighway.html')">4 Player</a>
         </div>
-
         <div data-console="snes">
-          <h3>FF6 WC</h3>
-          <a onclick="goToRoom('ff6wc/two.html')">2 Player</a>
+          <h3>FF4: Template</h3>
+          <a onclick="goToRoom('ff4fe/fourtemplate.html')">4 Player</a>
+        </div>
+        <div data-console="snes">
+          <h3>FF4: Twinsday</h3>
+          <a onclick="goToRoom('ff4fe/fourteam.html')">4 Player</a>
+        </div>
+
+        <div class="test" data-console="snes">
+          <h3>FF6WC</h3>
           <a onclick="goToRoom('ff6wc/four.html')">4 Player</a>
         </div>
+
+      <!-- <div data-console="snes">
+        <h3>Mega Man X</h3>
+        <a onclick="goToRoom('mmx/two.html')">2 Player</a>
+      </div> -->
+      <!-- <div class="test" data-console="gc">
+        <h3>Metroid Prime 2: Echos</h3>
+        <a onclick="goToRoom('mp2r/two.html')">2 Player</a>
+      </div> -->
       <div data-console="gb">
         <h3>Pokemon Crystal</h3>
-        <a onclick="goToRoom('pokemoncrystal/two.html')">2 Player</a>
-        <a onclick="goToRoom('pokemoncrystal/four.html')">4 Player</a>
+        <a onclick="goToRoom('pokemoncrystal-v2/two.html')">2 Player (v2)</a>
+        <a onclick="goToRoom('pokemoncincobingo/two.html')">2 Player</a>
+        <a onclick="goToRoom('pokemoncincobingo/four.html')">4 Player</a>
       </div>
         <div data-console="ds">
           <h3>Pokemon Mystery Dungeon</h3>
@@ -142,13 +214,23 @@
           <a onclick="goToRoom('smb3r/two.html')">2 Player</a>
           <a onclick="goToRoom('smb3r/four.html')">4 Player</a>
         </div>
+        <div class="new" data-console="nes">
+          <h3>Super Mario Bros 3</h3>
+          <a onclick="goToRoom('smb3r-v2/two.html')">2 Player</a>
+          <a onclick="goToRoom('smb3r-v2/four.html')">4 Player</a>
+        </div>
         <div data-console="gb">
           <h3>Super Mario Land 2</h3>
           <a onclick="goToRoom('sml2r/two.html')">2 Player</a>
           <a onclick="goToRoom('sml2r/four.html')">4 Player</a>
         </div>
         <div data-console="nes">
-          <h3>Legend of Zelda</h3>
+          <h3>Z1R: Battle Royale</h3>
+          <a onclick="goToRoom('z1r/two.html')">2 Player</a>
+          <a onclick="goToRoom('z1r/four.html')">4 Player</a>
+        </div>
+        <div data-console="nes">
+          <h3>Z1R: Summer Tourney</h3>
           <a onclick="goToRoom('z1r2019/two.html')">2 Player</a>
           <a onclick="goToRoom('z1r2019/four.html')">4 Player</a>
         </div>
@@ -162,9 +244,9 @@
           <a onclick="goToRoom('z3r/two.html')">2 Player</a>
         </div>
         <div class="test" data-console="snes">
-          <h3>Link to the Past</h3> 
-          <a onclick="goToRoom('z3r-v2/four.html')">4 Player</a>
-        </div>
+            <h3>Link to the Past</h3> 
+            <a onclick="goToRoom('z3r-v2/four.html')">4 Player</a>
+          </div>
         <!-- <div class="test" data-console="n64">
           <h3>Ocarina of Time</h3>
           <a onclick="goToRoom('ootr/two.html')">2 Player</a>
