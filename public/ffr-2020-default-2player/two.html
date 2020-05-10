@@ -34,8 +34,8 @@
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
         [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
     
-        [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
-        [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
     </style>
 </head>
 <body>
@@ -89,7 +89,7 @@
         <tr-template href="../shared/calendar.html"></tr-template>
     </div>
 	
-    <tr-template href="two-menus-contain.html"></tr-template>
+	<tr-template href="two_menu.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -99,6 +99,6 @@
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="../shared/script/two_game.js"></script>
+    <script type="text/javascript" src="script/two_game.js"></script>
 </body>
 </html>
