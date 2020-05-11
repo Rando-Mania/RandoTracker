@@ -6,10 +6,9 @@
   <title>RandoMania 1p Loadscreen</title>
   <link rel="stylesheet" type="text/css" href="../shared/components.css">
   <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-  <link rel="stylesheet" type="text/css" href="marathon-menu.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
   <link rel="stylesheet" type="text/css" href="one_4by3.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{
@@ -19,14 +18,13 @@
     }
 
     .loadscreen{
-      font-family: "Orbitron", sans-serif;
-      letter-spacing: 2px;
+        font-family: "Orbitron", sans-serif;
+        letter-spacing: 2px;
       padding: 1em;
       position: relative;
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1fr auto;
     }
-
     main{
         text-align: center;
         display: grid;
@@ -53,7 +51,48 @@
     tr-template{
         position: relative;
     }
+ 
+footer{
+  grid-column-end: span 2;
+  height: 200px;
+  overflow: hidden;
+}
 
+#promo_container{
+  animation: promo-flip 60s infinite;
+}
+
+@keyframes promo-flip{
+  from{transform: translateY(0);}
+  30%{transform: translateY(0);}
+  33%{transform: translateY(-190px);}
+  63%{transform: translateY(-190px);}
+  66%{transform: translateY(-385px);}
+  to{transform: translateY(-385px);}
+}
+
+footer tr-template div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  padding: 12px;
+}
+    footer figure{
+      background-color: #000;
+      margin:0;
+      width: auto;
+     }
+     footer figure img{
+         display: block;
+         margin: auto;
+        height: 150px;
+        background-color: #000;
+     }
+     footer figure figcaption{
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+     }
     
     aside{
       font-family: orbitron, arial;
@@ -95,43 +134,6 @@
   position: relative;
 }
 
-
-footer{
-  grid-column-end: span 2;
-  height: 150px;
-  overflow: hidden;
-}
-
-#promos{
-    grid-column: 1 / -1;
-    overflow: hidden;
-    width: 1236px;
-    height: 150px;
-}
-#all_promos_contain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-    from, 22%{transform: translateY(0);}
-    25%, 47%{transform: translateY(-155px);}
-    50%, 72%{transform: translateY(-315px);}
-    75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-    margin: 0 32px 8px;
-}
-
-#all_promos_contain figcaption{
-    font-size: 12px;
-}
-
   </style>
 </head>
 
@@ -141,11 +143,11 @@ footer{
     <main>
         <header>
             <img src="images/dq3-dice.png" alt="RM" />
-            <h1>Super Week</h1>
-            <h2>June 26th - July 5th, 2020</h2>
+            <h1> RandoMania Marathon</h1>
+            <h2>April 19-21, 2019</h2>
             <img src="images/dq3-dice.png" alt="RM" />
         </header>
-        <h3>!superweek</h3>
+        <h3>!marathon</h3>
     <div class="collage">
         <img src="images/gannon_dungeon.png" alt=""/>
         <img src="images/axe-knight.png" alt=""/>
@@ -154,21 +156,21 @@ footer{
     </main>
       <aside>
         <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-            <tr-template href="templates/cards/game-info.html"></tr-template>
+            <tr-template href="game-info.html"></tr-template>
         </tr-hide-if-empty>
 
         <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
           <tr-player player="1">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
+            <tr-template href="player-name.html"></tr-template>
           </tr-player>
         </tr-hide-if-empty>          
 
-        <tr-hide-if-empty class="staff" toggle-class="visually-hidden">
+        <tr-hide-if-empty id="production_team" toggle-class="visually-hidden">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
 
         <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-            <tr-template href="templates/cards/up-next.html"></tr-template>
+            <tr-template href="up-next.html"></tr-template>
         </tr-hide-if-empty>
       </aside>
       <footer>
