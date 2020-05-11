@@ -25,7 +25,12 @@
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
+    --rushfallbackColor: #005;
     --darkfallbackColor: #005;
+    --duck1fallbackColor: #005;
+    --duck2fallbackColor: #005;
+    --duck3fallbackColor: #005;
+    --duck4fallbackColor: #005;
 }
 
 .border-1{border: var(--border1);}
@@ -50,10 +55,8 @@ html{
 /* layout specific styles */
 @font-face {
     font-family: "Chicago";
-    src: local('Chicago'),
-         url('../shared/fonts/chicago.woff2') format('woff2'),
-         url('../shared/fonts/chicago.woff') format('woff'),
-         url('../shared/fonts/chicago.ttf') format('truetype');
+    src: local('Chicago'),   
+         url('fonts/Chicago.ttf') format('truetype');
 }
 
 .layout{
@@ -81,10 +84,38 @@ html{
 .layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
 .layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
 
+.ffr-rush{
+    background: url(images/base-rush.png) var(--rushfallbackColor);
+}
+.layout.ffr-rush .border-background-1 {background-color: var(--rushfallbackColor);}
+.layout.ffr-rush .player-grid {display: none;}
+.layout.ffr-rush [player="1"] .player-pronoun, .layout.ffr-rush [player="1"] .player-speaker, .layout.ffr-rush [player="1"] .record-contain, .layout.ffr-rush [player="3"] .player-speaker, .layout.ffr-rush [player="3"] .player-pronoun, .layout.ffr-rush [player="3"] .record-contain{left: 449px;}
+.layout.ffr-rush [player="2"] .player-pronoun, .layout.ffr-rush [player="2"] .player-speaker, .layout.ffr-rush [player="2"] .record-contain, .layout.ffr-rush [player="4"] .player-speaker, .layout.ffr-rush [player="4"] .player-pronoun, .layout.ffr-rush [player="4"] .record-contain{right: 449px;}
+
 .ffr-dark{
     background: url(images/base-dark.png) var(--darkfallbackColor);
 }
 .layout.ffr-dark .border-background-1 {background-color: var(--darkfallbackColor);}
+
+.ffr-duck1{
+    background: url(images/base-duck1.png) var(--duck1fallbackColor);
+}
+.layout.ffr-duck1 .border-background-1 {background-color: var(--duck1fallbackColor);}
+
+.ffr-duck2{
+    background: url(images/base-duck2.png) var(--duck2fallbackColor);
+}
+.layout.ffr-duck2 .border-background-1 {background-color: var(--duck2fallbackColor);}
+
+.ffr-duck3{
+    background: url(images/base-duck3.png) var(--duck3fallbackColor);
+}
+.layout.ffr-duck3 .border-background-1 {background-color: var(--duck3fallbackColor);}
+
+.ffr-duck4{
+    background: url(images/base-duck4.png) var(--duck4fallbackColor);
+}
+.layout.ffr-duck4 .border-background-1 {background-color: var(--duck4fallbackColor);}
 
 .player-video{
     width: var(--vidWidth);

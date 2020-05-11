@@ -25,10 +25,11 @@
     --speakerX: 245px; --speakerY: 60px;
     --winX: 125px; --winY: 652px;
     --finalX: 20px; --finalY: 652px;
-    --bestX: 869px; --bestY: 558px;
+    --bestX: 285px; --bestY: 65px;
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
+    --rushfallbackColor: #005;
     --darkfallbackColor: #005;
 }
 
@@ -62,10 +63,8 @@ html{
 /* layout specific styles */
 @font-face {
     font-family: "Chicago";
-    src: local('Chicago'),
-         url('../shared/fonts/chicago.woff2') format('woff2'),
-         url('../shared/fonts/chicago.woff') format('woff'),
-         url('../shared/fonts/chicago.ttf') format('truetype');
+    src: local('Chicago'),   
+         url('fonts/Chicago.ttf') format('truetype');
 }
 
 .layout{
@@ -100,6 +99,14 @@ html{
 .layout.ffr-tourney .border-background-2 {border-image: var(--borderImgtop2);}
 .layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
 .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
+
+.ffr-rush{
+    background: url(images/base-rush.png) var(--rushfallbackColor);
+}
+.layout.ffr-rush .border-background-1, .layout.ffr-rush .border-background-3 {background-color: var(--rushfallbackColor);}
+.layout.ffr-rush .player-grid {display: none;}
+.layout.ffr-rush tr-timer {left: 20px; top: 620px;}
+.layout.ffr-rush .player-final, .layout.ffr-rush .player-winner{margin-top: -86px}
 
 .ffr-dark{
     background: url(images/base-dark.png) var(--darkfallbackColor);
@@ -175,7 +182,7 @@ html{
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
+    background-image: url('images/win-orb-on.png');
     background-size: 100% 100%;
 }
 
