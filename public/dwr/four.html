@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="loading.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <link rel="stylesheet" type="text/css" href="icons.css">
-    <link rel="stylesheet" type="text/css" href="awesomplete.css">
-    <link rel="stylesheet" type="text/css" href="awesomplete.base.css">
+    <!-- <link rel="stylesheet" type="text/css" href="awesomplete.css">
+    <link rel="stylesheet" type="text/css" href="awesomplete.base.css"> -->
     <link rel="preload" href="images/background-ui-sprite.png" as="image" type="image/png">
     <link rel="preload" href="images/item/item-sprite.png" as="image" type="image/png">
     <link rel="preload" href="images/equip-sprite.png" as="image" type="image/png">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <tr-text property="player-final" class="player-final border-background-1 abs"></tr-text>
-            <tr-toggle property="player-winner" class="player-winner abs">WIN!</tr-toggle>
+            <tr-toggle property="toggle-winner" class="player-winner abs">WIN!</tr-toggle>
         </template>
 
         <tr-player player="1">
@@ -109,124 +109,16 @@
         <tr-template href="league-flags.html"></tr-template>
     </div>
 
-<!-- loadscreen -->
-<div class="loadscreen-contain abs" style="top: 0; left: 0;">
-    <div class="loadscreen abs" property="loadscreen" style="top: 0; left: 0;">
-        <aside class="flip-card">
-            <header>
-                <h1>
-                    <div id="d">Dragon</div>
-                    <div id="w"><span>W</span>arrio<span>r</span></div>
-                    <div id="r">Randomizer</div>
-                </h1>
-                <h4>
-                    <span>!DWR</span>
-                </h4>
-            </header>
-            <div class="flip-card-inner">
-                <article class="hero flip-card-front">
-                    <div class="subhead">
-                        <h3>RANDOMIZED HERO!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>spell learning lvl/order</li>
-                            <li>different Hero sprites</li>
-                            <li>LEVELING Speed
-                                <ul>
-                                    <li>normal, +25% or +50%</li> 
-                                </ul>
-                            </li>
-                            <li>STAT GROWTH</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="map flip-card-back">
-                    <div class="subhead">
-                        <h3 class="angled">RANDOMIZED OVERWORLD!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Town/Cave Locations</li>
-                            <li>Weapon shop Prices</li>
-                            <li>Weapon shop items</li>
-                            <li>OVERWORLD MAP</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-            <div class="flip-card-inner">
-                <article class="enemies flip-card-front">
-                    <div class="subhead">
-                        <h3 class="angled">RANDOMIZED ENEMIES!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Random Mini-Bosses</li>
-                            <li>Enemy Attacks</li>
-                            <li>Enemy Zones</li>
-                            <li>Enemy Stats</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="other flip-card-back">
-                    <div class="subhead">
-                        <h3 class="angled">Other Stuff!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Enable Death Necklace</li>
-                            <li>Short Charlock</li>
-                            <li>Big Swamp Mode</li>
-                            <li>Menu Wrapping</li>
-                            <li>No Keys Mode</li>
-                            <li>Fast Text</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </aside>
-        <main>
-            <header>
-                <h1><span>D</span>ragon Warrio<span>r</span></h1>
-                <h2>Randomizer</h2>
-            </header>
-            <h2>
-                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-                vs
-                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
-                <span class="load-and-vs">
-                    <span class="load-vs">vs</span>
-                    <span class="load-and">and</span>
-                </span>
-                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
-                vs
-                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
-            </h2>
-            <div>
-                <h2 id="changeText">Randomizing Dragon Warrior...</h2>
-            </div>
-        </main>
-        <footer>
-            <tr-template id="promos_1" href="../shared/images/promos/all_promos.html"></tr-template>
-        </footer>
-    </div>
-    
+    <!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="four-loading-template.html"></tr-template>
 </div>
-
 
 <!-- <div class="bracket-contain abs map-background" style="top: 0; left: 0;">
     <div class="bracket" style="width: 100%; height: 100%;">
         <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
     </div>
 </div> -->
-
-<!-- RM calendar -->
-<div class="calendar-contain abs map-background" style="top: 0; left: 0;">
-    <div class="calendar">
-        <iframe loading="lazy" src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
-</div>
 
 <!-- monsters -->
 <div class="monster-contain abs" style="left: 0; top:0;">
@@ -280,7 +172,13 @@
 </tr-toggle>
 </div>
 
-    <tr-template href="four_menu.html"></tr-template>
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar.html"></tr-template>
+</div>
+
+<tr-template href="../shared/four-menus-contain.html"></tr-template>
+
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>

@@ -98,9 +98,10 @@
     display: block;
     }
 
-.menu-general .fieldset#menu_view, #menu_2 .fieldset#menu_view{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.menu-general .fieldset#menu_view, #menu_2 .fieldset#menu_view, #menu_reset{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #menu_players table, .menu-contain table {
@@ -307,6 +308,11 @@ button.active{
 }
 
 textarea, select, input, button { outline: none; vertical-align: middle;}
+
+#menu_layout #menu_video_background{
+    display: flex;
+    width: 240px;
+}
 
 #menu_video_background input[type="radio"]:hover{
     box-shadow: 0 0 0 2px #f8b800;

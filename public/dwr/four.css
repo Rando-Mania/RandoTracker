@@ -764,86 +764,6 @@ tr-timer span {
     justify-items: center;
     align-content: end;
 }
-.bracket-contain, .calendar-contain{
-    width: 1280px;
-    height: 720px;
-    z-index: 50;
-    display: none;
-    padding: 40px;
-}
-
-.bracket, .calendar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.calendar{ 
-    background-image: url(../shared/images/rm-generic-half.png);
-    background-color: #000;
-}
-
-/* Bracket Screen */
-
-.bracket iframe {
-    animation: rotateIn .75s linear;
-    perspective: 1200px;
-}
-
-@keyframes rotateIn {
-    from{transform: rotateY(90deg);}
-    to{transform: rotateY(0deg);}
-}
-
-/* Loading Screen */
-
-.loadscreen-contain{
-    width: 1280px;
-    height: 720px;
-    background-color: #000;
-    background-image: url(../shared/images/rm-generic-half.png);
-    color: #fff;
-    animation: zoomIn .5s linear;
-    z-index: 50;
-    display: none;
-    font-family: 'Orbitron', sans-serif;
-}
-
-.loadscreen{
-    height: 100%;
-    display: grid;
-    padding: 1em;
-}
-
-.loadscreen h2{
-    display: grid;
-    grid-gap: .75em;
-    font-size: 1.3em;
-}
-
-.load-and{
-    margin: 1em auto;
-    display: none;
-}
-
-.show-and .load-and{display: block;}
-.show-and .load-vs{display: none;}
-
-#promos{
-    overflow: hidden;
-    width: 100%;
- 
-}
-
-@keyframes move-promos{
-    from{transform: translateY(0);}
-    28%{transform: translateY(0);}
-    33%{transform: translateY(-160px);}
-    61%{transform: translateY(-160px);}
-    66%{transform: translateY(-320px);}
-    to{transform: translateY(-320px);}
-}
 
 .display-none,
 #tracker_contain.display-none,
@@ -858,14 +778,27 @@ tr-timer span {
     text-align: center;
 }
 
-#menu_2{
-    grid-template-areas: 
-        "players players dwr    team team"
-        "timer   play    layout view reset";
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+.menu-contain{
+    grid-template-columns: repeat(5, auto);
+    grid-template-areas:
+        "players  players-2 settings-game team  team"
+        "players  players-2 layout        team  team"
+        "playlist timer     dwr           view  reset"
+        "playlist credits   dwr           view  reset";
     }
 
+#menu_players_extra{grid-area: players-2;}
 #menu_other{grid-area: dwr;}
-#menu_playlist {grid-area: play;}
+#menu_playlist {grid-area: playlist;}
+#menu_credits {grid-area: credits;}
+#menu_settings_extra {grid-area: settings-game;}
 
 .highlight{
     background-color: #f8b800;
@@ -890,24 +823,3 @@ tr-timer span {
 #stop_auto_play_panels{
     background-image: none;
 }
-
-/* .menu-name-input-contain{
-    position: relative;
-}
-
-.menu-name-input-contain tr-input-text{
-    position: relative;
-    z-index: 2;
-}
-
-.menu-name-input-contain tr-select{
-    z-index: 1; 
-    position: absolute;
-    top: 8px; 
-    right: -.5em;
-}
-
-[property="player-name"] select{
-    width: 156px;
-    height: 22px;
-} */

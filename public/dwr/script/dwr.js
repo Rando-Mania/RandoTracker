@@ -690,7 +690,7 @@ function playerDummyText() {
 		{property: '__p1__player-cod', value: 15},
 		{property: '__p1__toggle-speaker', value: 1},
 		{property: '__p1__player-final', value: '1:23:45'},
-		{property: '__p1__player-winner', value: 1},
+		{property: '__p1__toggle-winner', value: 1},
 		
 		{property: '__p2__player-rank', value: '4'},
 		{property: '__p2__player-name', value: 'Yoda'},
@@ -699,7 +699,7 @@ function playerDummyText() {
 		{property: '__p2__player-cod', value: 66},
 		{property: '__p2__toggle-speaker', value: 1},
 		{property: '__p2__player-final', value: '1:23:45'},
-		{property: '__p2__player-winner', value: 1},
+		{property: '__p2__toggle-winner', value: 1},
 		
 		{property: '__p3__player-rank', value: '2'},
 		{property: '__p3__player-name', value: 'AlbusPercivalWulfricBrianDumbledor'},
@@ -708,7 +708,7 @@ function playerDummyText() {
 		{property: '__p3__player-cod', value: 5},
 		{property: '__p3__toggle-speaker', value: 1},
 		{property: '__p3__player-final', value: '1:23:45'},
-		{property: '__p3__player-winner', value: 1},
+		{property: '__p3__toggle-winner', value: 1},
 		
 		{property: '__p4__player-rank', value: 6},
 		{property: '__p4__player-name', value: 'SeverusSnape'},
@@ -717,7 +717,7 @@ function playerDummyText() {
 		{property: '__p4__player-cod', value: 5},
 		{property: '__p4__toggle-speaker', value: 1},
 		{property: '__p4__player-final', value: '1:23:45'},
-		{property: '__p4__player-winner', value: 1},
+		{property: '__p4__toggle-winner', value: 1},
 	]);
 }
 function staffDummyText() {
