@@ -156,7 +156,7 @@ textarea{
       "other   other    credits credits";
   }
   
-  .loadscreen{
+  .calendar, .loadscreen{
     background: 
       linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
       url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
