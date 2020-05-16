@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
     <link rel="stylesheet" type="text/css" href="two_4by3.css">
     <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
+    <link rel="preload" href="../shared/images/winner-border.png" as="image" type="image/png">
     <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
     <link rel="preconnect" href="https://www.googleapis.com">
     <link rel="preconnect" href="https://apis.google.com">
@@ -21,20 +22,17 @@
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
     
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
     
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
         [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
     
-        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
-        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+        [player="1"] .player-final-contain {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final-contain {right: var(--finalX); top: var(--finalY);}
     
         [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
         [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
-    
-        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
-        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
     
         [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
@@ -44,12 +42,8 @@
     <template id="player_info_template">
         <div class="border-1 player-video abs"></div>
 
-        <tr-hide-if-empty class="player-name abs" id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+        <tr-hide-if-empty class="abs player-info" id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
             <tr-template href="templates/cards/player-name.html"></tr-template>
-        </tr-hide-if-empty>
-
-        <tr-hide-if-empty class="player-name abs" toggle-class="visually-hidden" target="#player_final">
-            <tr-template href="templates/cards/final.html"></tr-template>
         </tr-hide-if-empty>
 
         <tr-toggle property="toggle-speaker" class="abs player-speaker">
@@ -62,9 +56,15 @@
         <div>
             <tr-player player="1">
                 <tr-template source="#player_info_template"></tr-template>
+                <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='1'] #player_final">
+                    <tr-template href="templates/cards/final-winner.html"></tr-template>
+                </tr-hide-if-empty>
             </tr-player>
             <tr-player player="2">
                 <tr-template source="#player_info_template"></tr-template>
+                <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='2'] #player_final">
+                    <tr-template href="templates/cards/final-winner.html"></tr-template>
+                </tr-hide-if-empty>
             </tr-player>
         </div>
 <!-- timer/staff -->

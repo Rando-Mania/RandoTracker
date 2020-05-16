@@ -55,7 +55,6 @@ main{
 .player-video{
     width: calc(var(--vHeight) * 4/3);
     height: var(--vHeight);
-    background-color: #000;
 }
 
 .player-video.magenta-background{background-color: #f0f;}
