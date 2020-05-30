@@ -183,11 +183,11 @@
     }
 
     .card-head-left .card-back{
-      clip-path: polygon(0 0, 118px 0, 100px 18px, 0 18px);
+      clip-path: polygon(0 0, 118px 0, 118px 3px, 115px 3px, 115px 6px, 112px 6px, 112px 9px, 109px 9px, 109px 12px, 106px 12px, 106px 15px, 103px 15px, 103px 18px, 100px 18px, 0 18px);
     }
 
     .card-head-right .card-back{
-      clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px);
+      clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px, 15px 18px, 15px 15px, 12px 15px, 12px 12px, 9px 12px, 9px 9px, 6px 9px, 6px 6px, 3px 6px, 3px 3px, 0 3px);
     }
 
     .bottom .card-back{

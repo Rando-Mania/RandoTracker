@@ -15,7 +15,7 @@
     --nameX: 16px; --nameY: 486px;
     --speakerX: 409px; --speakerY: 493px;
     --winX: 202px; --winY: 525px;
-    --finalX: 130px; --finalY: 58px;
+    --finalX: 130px; --finalY: 538px;
     --bestX: 869px; --bestY: 558px;
 }
 
@@ -63,13 +63,18 @@ html{
     display: grid;
     grid-row-gap: var(--spacing);
     grid-template-columns: 1fr;
-    grid-template-rows: 563px auto; 
+    grid-template-rows: 563px auto;
+    overflow: hidden;
   }
 
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
+}
+
+.player-info .card{
+    width: 381px;
 }
 
 .player-name{
@@ -110,17 +115,6 @@ html{
     transform: rotateY(180deg);
 }
 
-.player-winner{
-    height: 34px;
-    font-weight: bold;
-    font-size: 24px;
-    color: #fff;
-    padding: 0 .5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .player-best-of{
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -140,15 +134,102 @@ html{
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
 
-.player-final{
+
+.player-final-contain{
     font-size: 20px;
-    width: 5.5em;
-    background-color: #000;
     color: #fff;
     text-align: center;
+    z-index: 4;
+    transform: translate(0);
+    /* border-top: solid #fff 1px; */
 }
+
+.player-final-contain:not(.visually-hidden){
+    animation: drive 1.5s linear;
+}
+
+@keyframes drive{
+    from{transform: translate(-300%);}
+    to{transform: translate(0px);}
+}
+
+.player-final-contain:not(.visually-hidden) .slime-and-rope-contain{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    animation: leave 3s 2.1s forwards;
+}
+
+@keyframes leave {
+    from{ transform: translateX(0);}
+    to{ transform: translateX(1280px);}
+  }
+
+/* rope */
+
+.player-final-contain:not(.visually-hidden) .rope{
+    background-image: url('images/rope.png');
+    background-size: 100%;
+    width: 80px;
+    height: 40px;
+    opacity: 1;
+    animation: disappear .1s 2s linear forwards;
+}
+
+@keyframes disappear{
+    from, 99%{opacity: 1;}
+    to{ opacity: 0;}
+}
+
+/* slime  */
+
+.player-final-contain:not(.visually-hidden) .slime{
+    background-image: url('images/excite-slime.png');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    right: 10px;
+    animation: idle .1s steps(2) infinite;
+}
+
+@keyframes idle {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(-5%);}
+  }
+
+.player-final-contain .card{  
+    width: auto;
+    display: grid;
+    place-content: center;
+    background-color: #000;
+}
+
+.player-final-contain .player-winner{
+    grid-area: 1/ 1;
+    padding: 18px 12px;
+}
+
+.player-final-contain .card-body{
+    padding: 18px 12px;
+    grid-area: 1/ 1;
+}
+
+tr-text#player_final{
+    margin: 18px 12px;
+    letter-spacing: 5px;
+}
+
 .player-final:empty{
     display:none;
+}
+
+.player-winner{
+    border: dashed 12px #fff;
+    border-image: url('../shared/images/winner-border.png') round 12 / 12px;
+    height: 36px;
 }
 
 .card.timer{
@@ -232,6 +313,7 @@ tr-timer span {
 .variable-panels{
     display: flex;
     place-content: space-around; 
+    place-items: center;
     flex-wrap: wrap;
     align-self: stretch;
     height: 100%;

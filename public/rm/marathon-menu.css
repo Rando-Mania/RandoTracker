@@ -13,7 +13,6 @@
   }
   
   input[type="text"], textarea{
-    width: 100%;
     background: #222 linear-gradient(45deg, currentColor, currentColor) -370px bottom / 100% 1px no-repeat;
     color: #f8b800;
     border: none;
@@ -65,7 +64,6 @@
     border-collapse: collapse;
     padding: 1em;
     table-layout: fixed;
-    width: 150px;
   }
   th, td{
     padding: .5em;
