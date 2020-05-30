@@ -42,7 +42,11 @@
     background-color: #000;
     letter-spacing: 2px;
     display: grid;
-    grid-template-columns: calc(1280px - 320px) 320px;
+    grid-template-columns: 960px 320px;
+}
+
+.layout.show{
+  display: grid;
 }
 
 main{
@@ -154,22 +158,6 @@ textarea{
       "team    team     view     reset"
       "other   other    credits credits";
   }
-  
-  .loadscreen{
-    background: 
-      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-      url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
-      url('images/rm-generic-take2-edges-roberts.png') 320px 360px / 50% 50% repeat-x;
-    height: 720px;
-    width: 1280px;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .dialog{
     border: none;
@@ -184,4 +172,8 @@ textarea{
 
   .pause-animations #player_time, .pause-animations tr-timer[running="true"]:after{
     animation-play-state: paused;
+  }
+  
+  .show{
+    display: block;
   }

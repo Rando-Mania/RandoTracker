@@ -313,6 +313,7 @@ tr-timer span {
 .variable-panels{
     display: flex;
     place-content: space-around; 
+    place-items: center;
     flex-wrap: wrap;
     align-self: stretch;
     height: 100%;

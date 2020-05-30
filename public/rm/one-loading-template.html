@@ -1,31 +1,45 @@
-<!DOCTYPE html>
-<html>
-
-<head profile="http://www.w3.org/2005/10/profile">
-  <meta charset="utf-8">
-  <title>RandoMania 2p Loadscreen</title>
-  <link rel="stylesheet" type="text/css" href="../shared/components.css">
-  <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-  <link rel="stylesheet" type="text/css" href="marathon-menu.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
-  <link rel="stylesheet" type="text/css" href="two_4by3.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      display: grid;
-      grid-template-columns: 1280px auto;
-      color: #fafafa;
-    }
-
+<style>
     .loadscreen{
-      font-family: "Orbitron", sans-serif;
-      letter-spacing: 2px;
-      padding: 1em;
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 320px;
-    }
+    background: 
+      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+      url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
+      url('images/rm-generic-take2-edges-roberts.png') 320px 360px / 50% 50% repeat-x;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 2px;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    align-content: space-between;
+    width: 1280px;
+    height: 720px;
+  }
+
+    .loadscreen-contain, .one-loading{
+    width: 1280px;
+    height: 720px;
+    background: url(../shared/images/rm-generic-half.png);
+    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    animation: zoomIn .5s linear;
+    z-index: 50;
+    display: none;
+    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-variant: small-caps;
+}
+
+.loadscreen-contain.show, .one-loading{
+    display: block;
+}
+
+.one-loading.show{
+  display: flex;
+}
 
     main{
         text-align: center;
@@ -55,7 +69,7 @@
     }
 
     
-    aside{
+    .loadscreen aside{
       font-family: orbitron, arial;
       letter-spacing: 2px;
       display: grid;
@@ -133,10 +147,6 @@ footer{
 }
 
   </style>
-</head>
-
-<body>
-
   <div class="loadscreen">
     <main>
         <header>
@@ -163,12 +173,6 @@ footer{
           </tr-player>
         </tr-hide-if-empty>          
 
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-          <tr-player player="2">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
-          </tr-player>
-        </tr-hide-if-empty>  
-
         <tr-hide-if-empty class="staff" toggle-class="visually-hidden">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
@@ -181,19 +185,3 @@ footer{
         <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
       </footer>
   </div>
-
-  <tr-template href="../shared/two-menus-contain.html"></tr-template>
-
-  <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
-  <script defer src="/__/firebase/init.js"></script>
-  <script type="text/javascript" src="../components/tracker.js"></script>
-  <script src="scripts/rm.js"></script>
-  <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
-  <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
-  <script type="text/javascript" src="../components/components.js"></script>
-  <script type="text/javascript" src="../shared/script/two_game.js"></script>
-</body>
-
-</html>

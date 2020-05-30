@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png'), var(--swissFallback);
     --border1: solid 1px #fff;
     --backgroundColor1: #0c0946;
     --vidWidth: 584px;
@@ -13,7 +12,6 @@
     --videoX: 12px; --videoY: 10px;
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
-    --recordX: 319px; --recordY: 464px;
     --gridX: 12px; --gridY: 529px;
     --grid2X: 169px; --grid2Y: 530px;
     --speakerX: 386px; --speakerY: 473px;
@@ -59,8 +57,7 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
-    background-color: silver;
+    background-color: var(--backgroundColor1);
 }
 
 .fabul-swiss{
@@ -81,27 +78,52 @@ html{
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
 }
 
+.lunar-racing{
+    background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);
+}
+.mysidian-jumping{
+    background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png);
+}
+.special-feature{
+    background-image: url(images/ccs/CCS-BG-SpecialFeature.png);
+}
+.sunday-splashdash{
+    background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);
+}
+.underground-racing{
+    background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);
+}
+
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
 }
 
-.transparent-background{background-color: #000;}
+.transparent-background{background-color: transparent;}
 
 .player-info{
     color: #fff;
     font-size: 18px;
     height: 55px;
-    width: 309px;
-    display: grid;
+    width: 366px;
+    display: flex;
     align-items: center;
     z-index: 2;
-    padding: 8px;
 }
 
 [player="1"] .player-info{text-align: left;}
-[player="2"] .player-info{text-align: right;}
+[player="2"] .player-info{
+    text-align: right;
+    flex-direction: row-reverse;}
+
+.name-pronoun-contain{
+    padding: 8px 0 8px 8px;
+}
+
+[player="2"] .name-pronoun-contain{
+    padding: 8px 8px 8px 0;
+}
 
 .player-name-contain{
     width: var(--nameWidth);
@@ -116,17 +138,13 @@ html{
 }
 
 .record-contain, .seed-contain{
-    width: 59px;
+    flex: 59px 0 0;
     height: 55px;
-    display: grid;
-    padding: 10px 4px;
+    padding: 10px 1px;
     z-index: 1;
     text-align: center;
 }
-.record-contain *, .seed-contain *{
-    position: relative;
-    left: 2px; 
-}
+
 .seed-contain div{
     font-size: 12px;
 }
@@ -140,12 +158,18 @@ html{
 }
 
 .player-grid-2{
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 7px;
+    display: flex;
+    justify-content: space-around;
     padding: 7px 8px;
     width: 209px;
     height: 50px;
+}
+
+.player-grid-2 tr-class-if-full{
+    display: none;
+}
+.player-grid-2 tr-class-if-full.show-objective{
+    display: block;
 }
 
 tr-image-toggle img.active, tr-toggle-class.active {
@@ -207,12 +231,20 @@ tr-toggle-class, .in-active {
 .objectives-contain{
     left: 451px;
     top: 529px;
-    display: grid;
-    grid-template: repeat(5, auto) / auto auto ;
+    display: flex;
+    flex-direction: column;
 }
 
 .objectives-contain > *{
     margin-bottom: -2px;
+}
+
+.objective-contain{
+    visibility: collapse;
+    display: flex;
+}
+.objective-contain.show-objective{
+    visibility: initial;
 }
 
 .objective-label{
@@ -239,7 +271,8 @@ tr-toggle-class, .in-active {
     font-size: 14px;
     padding: 6px 6px 4px;
     z-index: 2;
-    width: 343px;
+    width: 345px;
+    height: 24px;
 }
 
 .player-speaker{
