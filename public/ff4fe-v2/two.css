@@ -27,13 +27,13 @@
 
 .border-1{
     border: var(--border1);
-    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
     image-rendering: pixelated;
 }
 .background-1{background-color: var(--backgroundColor1);}
 .border-background-1 {  
     border: var(--border1);
-    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
@@ -192,7 +192,7 @@ tr-toggle-class, .in-active {
 }
 
 .player-grid img, .player-grid-2 img{
-    background-image: url(images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png);
+    background-image: url(images/ff4fe-spritesheet.png);
     width: 32px;
     height: 32px;
     display: block;
@@ -315,7 +315,7 @@ tr-toggle-class, .in-active {
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/Fabul-Gauntlet-Assets/ff4fe-spritesheet.png');
+    background-image: url('images/ff4fe-spritesheet.png');
     background-size: 500% 500%;
     background-position: 75% 100%;
 }
@@ -354,7 +354,7 @@ tr-timer, .player-final{
 .player-final, .player-winner{
     background-color: #0c0946;
     border: solid 1px #fff;
-    border-image: url(images/Fabul-Gauntlet-Assets/ff4-border.png) 3 / 3px / 1px;
+    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
 }
 
 tr-timer span {
