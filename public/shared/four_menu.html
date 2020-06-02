@@ -1,7 +1,6 @@
 <div class="menu-general">
     <div id="menu_players" class="fieldset">
         <h4 class="legend">Players</h4>
-        <button class="dummy-text-button" title="Dummy Text" onclick="playerDummyText()"></button>
         <div id="menu_player_labels">
             <tr-template href="player-name-options.html"></tr-template>
             <table>
@@ -42,6 +41,7 @@
                 </tr>
             </table>
         </div>
+        <button class="dummy-text-button" title="Dummy Text" onclick="playerDummyText()"></button>
     </div>
 
     <div id="menu_layout" class="fieldset">
@@ -86,7 +86,6 @@
 
     <div id="menu_production" class="fieldset">
         <h4 class="legend">Production Team</h4>
-        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
         <div>
             <label>Commentators:</label>
             <tr-input-textarea class="comm-input" property="commentators"></tr-input-textarea>
@@ -99,6 +98,7 @@
             <label>Tracker:</label>
             <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
         </div>
+        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
     </div>
 
     <div id="menu_timer" class="fieldset">
@@ -114,6 +114,7 @@
         <tr-button-view view="" title="Layout"></tr-button-view>
         <tr-button-view view="tracker" title="Tracker"></tr-button-view>
         <tr-button-view view="loading" title="Load Screen"></tr-button-view>
+        <!-- <tr-button-view view="calendar" title="Calendar"></tr-button-view> -->
     </div>
 
     <div id="menu_reset" class="fieldset">

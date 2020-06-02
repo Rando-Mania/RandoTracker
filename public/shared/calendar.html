@@ -1,110 +1,35 @@
-<style>
-    
-/* Bracket/Calendar Screen */
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <style>
+        .abs{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
 
-.bracket-contain, .calendar-contain{
-    width: 1280px;
-    height: 720px;
-    z-index: 50;
-    display: none;
-    padding: 40px;
-}
-
-.bracket, .calendar{
-    height: 100%;
-    display: grid;
-    grid-gap: 2em;
-    grid-template-rows: auto auto 1fr;
-    justify-items: center;
-    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-variant: small-caps;
-}
-
-.calendar-contain{ 
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
-}
-
-.calendar-contain.show{
-    display: block;
-}
-
-.calendar-header{
-    text-align: center;
-    color: #fff;
-}
-
-.calendar-channel-links {
-    display: flex;
-    justify-content: space-between;
-    width: 66%;
-    align-items: center;
-    margin-bottom: 12px;
-    text-shadow: rgba(0,0,0,.75) 0 0 2px;
-  }
-  
-  .calendar-channel-links a,
-  .calendar-channel-links .tbd {
-    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-variant: small-caps;
-    padding: 4px 12px;
-    color: #fff;
-    border: 2px solid;
-    border-radius: 3px;
-    border-color: var(--dark);
-    background-color: var(--light);
-    text-decoration: none;
-  }
-  
-  .calendar-channel-links a:hover {
-    border-color: var(--light);
-    background-color: var(--dark);
-  }
-  
-  .rando-1 {
-    --dark: #5229A3;
-    --light: #8C66D9;
-  }
-  
-  .rando-2 {
-    --dark: #BE6D00;
-    --light: #F2A640;
-  }
-  
-  .rando-3 {
-    --dark: #1B887A;
-    --light: #59BFB3;
-  }
-  
-  .rando-4 {
-    --dark: #B1365F;
-    --light: #E67399;
-  }
-  
-    .tbd {
-    --dark: #333;
-    --light: #737373;
-  }
-
-.calendar-contain iframe {
-    animation: rotateIn .5s linear;
-    perspective: 1200px;
-}
-
-@keyframes rotateIn {
-    from{transform: rotateY(90deg);}
-    to{transform: rotateY(0deg);}
-} 
-</style>
-<div class="calendar">
-    <h1 class="calendar-header">RandoMania Calendar</h1>
-    <div class="calendar-channel-links">
-        <a class="rando-1" href="https://www.twitch.tv/randomania">Randomania</a>
-        <a class="rando-2" href="https://www.twitch.tv/randomania2">Randomania2</a>
-        <a class="rando-3" href="https://www.twitch.tv/randomania3">Randomania3</a>
-        <a class="rando-4" href="https://www.twitch.tv/randomania4">Randomania4</a>
-        <p class="tbd" title="To Be Determined">TBD</p>
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar-template.html"></tr-template>
     </div>
-    <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=800&wkst=1&bgcolor=%23FFFFFF&src=r1rdp26dimaan1tel3ipm6ldts%40group.calendar.google.com&color=%23333333&src=1gshgr0lqhlshsamav8fs7fhh0%40group.calendar.google.com&color=%235229A3&src=k7s258k0c27bqsuifjhshekllc%40group.calendar.google.com&color=%23BE6D00&src=3t9q3mi0l2b1ltdfj7flf4uer8%40group.calendar.google.com&color=%231B887A&src=rtue3obeet9h0ccar2chrdjihc%40group.calendar.google.com&color=%23B1365F&ctz=America%2FNew_York" width="90%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-</div>
+    
+    <tr-template href="../shared/four-menus-contain.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/four_game.js"></script>
+</body>
+</html>

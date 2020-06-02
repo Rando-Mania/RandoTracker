@@ -498,21 +498,6 @@ td:nth-of-type(2){
             position: absolute;
         }
 
-        .bracket-contain, .calendar-contain{
-            width: 1280px;
-            height: 720px;
-            z-index: 50;
-            display: none;
-            padding: 40px;
-        }
-
-        .bracket, .calendar{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
         .production{
             display: grid;
             justify-items: center;
