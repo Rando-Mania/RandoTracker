@@ -1,23 +1,6 @@
-    <div class="menu-game-specific">
-		<div id="menu_backgrounds" class="fieldset backgrounds-menu">
-			<h4 class="legend">Backgrounds</h4>
-			<div>
-				<label>Layout:</label>
-				<tr-select-toggle property="layout-back-select">
-					<tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-tourney" value="3">ST 2020</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-rush" value="4">Chaos Rush</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="5">FFR AD</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck1" value="6">Duck Derby 1</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck2" value="7">Duck Derby 2</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck3" value="8">Duck Derby 3</tr-option>
-					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck4" value="9">Duck Derby 4</tr-option>
-				</tr-select-toggle>
-			</div>
-		</div>
 
-       <div id="menu_backgrounds" class="fieldset">
+    <div class="menu-game-specific">
+        <div id="menu_backgrounds" class="fieldset">
             <h4 class="legend">Players</h4>
             <div id="menu_player_labels">
                 <table>
@@ -45,6 +28,38 @@
                         <td>4</td>
                         <td><tr-input-text player="4" class="number-input" property="player-number"></tr-input-text></td>
                         <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+		<div id="menu_backgrounds" class="fieldset backgrounds-menu">
+			<h4 class="legend">Backgrounds</h4>
+			<div>
+				<label>Layout:</label>
+				<tr-select-toggle property="layout-back-select">
+					<tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-tourney" value="3">ST 2020</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-rush" value="4">Chaos Rush</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="5">FFR AD</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck1" value="6">Duck Derby 1</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck2" value="7">Duck Derby 2</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck3" value="8">Duck Derby 3</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-duck4" value="9">Duck Derby 4</tr-option>
+				</tr-select-toggle>
+			</div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>darkmoon</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>darkmoon</td>
                     </tr>
                 </table>
             </div>

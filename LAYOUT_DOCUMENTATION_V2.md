@@ -2,126 +2,6 @@
 
 This details out all of the different components that you have available to you, along with all their options and interworkings.  Hopefully it's a useful resource for layout development.
 
-# Tracker
-
-`components/tracker.js` is the main driver for the layout system.  It has a few public methods & events that you can use for any custom development/features that are needed for specific layouts (See DWR and its ROM Parsing)
-
-### Tracker.onUpdateLayout(data)
-
-This is an callback that you can override in order to modify `data` that is about to be sent to the server to be updated.  Useful if you want multiple pieces of data to be updated at once based on one element changing.
-
-### Tracker.getLayoutData(callback)
-
-This is a method you can call, providing a `callback` that accepts a data object, in order to get the current state of the room's data.
-
-```
-Tracker.getLayoutData(function(data) {
-    if (data["player-panels"] == "items") {
-        ...
-    } else {
-        ...
-    }
-});
-```
-
-### Tracker.updateLayout(property, value)
-
-Call this to update a specific data `property` with a specific `value`.
-
-```
-Tracker.updateLayout('commentators','Chewbacca\nJar Jar Binks');
-```
-
-If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
-
-```
-Tracker.updateLayout('__p1__player-name','AnakinSkywalker');
-```
-
-### Tracker.updateLayoutMultiple(updates)
-
-Call this to send multiple data updates at once.  `updates` is an array of objects that contain a `property` and `value` attribute.
-
-```
-Tracker.updateLayoutMultiple([
-    {property: 'commentators', value: 'Chewbacca\nJar Jar Binks'},
-    {property: 'restreamers', value: 'R2D2'},
-    {property: 'trackers', value: 'C3PO, BB-8'}
-]);
-```
-
-If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
-
-```
-Tracker.updateLayoutMultiple([
-    {property: '__p1__player-name', value: 'AnakinSkywalker'},
-    {property: '__p2__player-final', value: '1:23:45'},
-    {property: '__p2__toggle-winner', value: 1}
-]);
-```
-
-### Tracker.getPropertyAttribute(node, propertyOverride, playerOverride)
-
-Used extensively in components, this gets you what the property name is for a specific node.  Takes into account `player` attributes, parent `tr-player` tags, and so on.
-
-If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
-
-### Tracker.getLabelPropertyName(property)
-
-Used to get the name of the label property that is tied to a specific property.  Used by components to avoid collisions.
-
-### Tracker.getTimestampPropertyName(property)
-
-Used to get the name of the timestamp property that is tied to a specific property   Used by components to avoid collisions.
-
-### Tracker.parseMS(ms)
-
-Used to take a millisecond value and return an object with `hours`, `minutes`, `seconds`, and `ms`.  Useful for timers.
-
-### Tracker.dateToText(time, includePadding)
-
-Used to return in plain text what the `time` object represents.  It is assumed that `time` is an object returned by `Tracker.parseMS`.  `includePadding` determines whether or not to padd out leading `0` on hours and minutes.
-
-### Tracker.dateToTags(time, includePadding)
-
-Used to return `span` elements that can be used to display the time that the `time` object represents.  It is assumed that `time` is an object returned by `Tracker.parseMS`.  This allows customization of the display as `:` and `.`, along with `ms` have classes that can be used to hide/customize these elements via CSS.
-
-### Tracker.getServerTime `async`
-
-async function that returns the timestamp the server is using for `now`.  Useful for timers, timestamps, etc.  AVOID USING LOCAL TIME IF AT ALL POSSIBLE.
-
-### Tracker.timerToTimeValue(timer)
-
-Parses a string into the number of `ms` that it represents.  Useful for manual input of times.  Example would be `1:00:00` for one hour.
-
-### Tracker.resetRoom(trackingOnly)
-
-Clears out all data in the current room.  `trackingOnly` removes all properties EXCEPT properties that contain `name`, `comm`, `restream`, `tracker`, or `best`.  Useful for best-of-3 matches/etc.  Fires a `tr-reset` event.
-
-### Tracker.openView(view)
-
-Redirects the browser to the specified `page` of the room.  Common examples include tracker/comms versions of the main view.
-
-### Tracker.getCurrentView
-
-Used by components to determine what is the current view.
-
-### Tracker.attemptToBeSuper(passcode, callback)
-
-Attempts with the provided `passcode` for the current user to be super/elevated.  Useful for ROM dumping, etc.  `callback` is called with a true/false argument with the results of the attempt.
-
-### Tracker.isUserSuper(callback)
-
-Checks if the current user is already super.  `callback` is provided a true/false argument with the results.
-
-### Tracker.setActiveTimer(property)
-
-Specifies the property that represents which timer is considered 'active'.  Used to calculate timestamps.
-
-### Tracker.downloadTemplate(href)
-
-Queues the file to be downloaded by the Tracker.  A `tr-template` event will be fired when it is downloaded (or pulled from local cache).  The `detail` of the event will contain the `href` specified, along with the `content` of the download.  Any errors are printed to the console.
-
 # Components
 
 In addition to this document the components can be seen in action on the "Component Demos" linked on the RandoTracker homepage.
@@ -298,8 +178,8 @@ Used to output text based database entries onto a layout. Pairs with a `tr-input
 Trouble shooting:
 
 - Container must be a block element (components.css takes care of this)
-- must have a width?
-- `player-name:empty{ display: none;}` will cause a `transform: scaleX(0)'
+- must have a width
+- because _`scale-to-fit`_ is computed at load time adding a default `display: none;` to a _`scale-to-fit`_ element will compute to `transform: scaleX(0)` causing the element to disappear.  Use `visibility: hidden;` or `visibility: collapse;` to hide an element instead. 
 
 ```
 <tr-text scale-to-fit property="player-name"></tr-text>
@@ -426,3 +306,124 @@ Displays the difference of time that this stage provided for said player/stage a
 ### tr-ds-controls
 
 This creates the Split/Reverse buttons that control splitting for the two players specified (henceforce known as `player` and `opponent`).  Set the `timer` attribute to the name of the timer to use for split timings.  Set `player` and `opponent` to the ids of the two players that are competing.  Set `adjustments` to the increments that you want to allow the user to use to adjust.  Defaults to `1,10`.  Comma delimited values are acceptable.
+
+
+# Tracker
+
+`components/tracker.js` is the main driver for the layout system.  It has a few public methods & events that you can use for any custom development/features that are needed for specific layouts (See DWR and its ROM Parsing)
+
+### Tracker.onUpdateLayout(data)
+
+This is an callback that you can override in order to modify `data` that is about to be sent to the server to be updated.  Useful if you want multiple pieces of data to be updated at once based on one element changing.
+
+### Tracker.getLayoutData(callback)
+
+This is a method you can call, providing a `callback` that accepts a data object, in order to get the current state of the room's data.
+
+```
+Tracker.getLayoutData(function(data) {
+    if (data["player-panels"] == "items") {
+        ...
+    } else {
+        ...
+    }
+});
+```
+
+### Tracker.updateLayout(property, value)
+
+Call this to update a specific data `property` with a specific `value`.
+
+```
+Tracker.updateLayout('commentators','Chewbacca\nJar Jar Binks');
+```
+
+If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
+
+```
+Tracker.updateLayout('__p1__player-name','AnakinSkywalker');
+```
+
+### Tracker.updateLayoutMultiple(updates)
+
+Call this to send multiple data updates at once.  `updates` is an array of objects that contain a `property` and `value` attribute.
+
+```
+Tracker.updateLayoutMultiple([
+    {property: 'commentators', value: 'Chewbacca\nJar Jar Binks'},
+    {property: 'restreamers', value: 'R2D2'},
+    {property: 'trackers', value: 'C3PO, BB-8'}
+]);
+```
+
+If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
+
+```
+Tracker.updateLayoutMultiple([
+    {property: '__p1__player-name', value: 'AnakinSkywalker'},
+    {property: '__p2__player-final', value: '1:23:45'},
+    {property: '__p2__toggle-winner', value: 1}
+]);
+```
+
+### Tracker.getPropertyAttribute(node, propertyOverride, playerOverride)
+
+Used extensively in components, this gets you what the property name is for a specific node.  Takes into account `player` attributes, parent `tr-player` tags, and so on.
+
+If an attribute is player specific, then the property name should be pre-pended with `__p#__`, where # is the `player` attribute value. Double underscore is used to avoid collisions.
+
+### Tracker.getLabelPropertyName(property)
+
+Used to get the name of the label property that is tied to a specific property.  Used by components to avoid collisions.
+
+### Tracker.getTimestampPropertyName(property)
+
+Used to get the name of the timestamp property that is tied to a specific property   Used by components to avoid collisions.
+
+### Tracker.parseMS(ms)
+
+Used to take a millisecond value and return an object with `hours`, `minutes`, `seconds`, and `ms`.  Useful for timers.
+
+### Tracker.dateToText(time, includePadding)
+
+Used to return in plain text what the `time` object represents.  It is assumed that `time` is an object returned by `Tracker.parseMS`.  `includePadding` determines whether or not to padd out leading `0` on hours and minutes.
+
+### Tracker.dateToTags(time, includePadding)
+
+Used to return `span` elements that can be used to display the time that the `time` object represents.  It is assumed that `time` is an object returned by `Tracker.parseMS`.  This allows customization of the display as `:` and `.`, along with `ms` have classes that can be used to hide/customize these elements via CSS.
+
+### Tracker.getServerTime `async`
+
+async function that returns the timestamp the server is using for `now`.  Useful for timers, timestamps, etc.  AVOID USING LOCAL TIME IF AT ALL POSSIBLE.
+
+### Tracker.timerToTimeValue(timer)
+
+Parses a string into the number of `ms` that it represents.  Useful for manual input of times.  Example would be `1:00:00` for one hour.
+
+### Tracker.resetRoom(trackingOnly)
+
+Clears out all data in the current room.  `trackingOnly` removes all properties EXCEPT properties that contain `name`, `comm`, `restream`, `tracker`, or `best`.  Useful for best-of-3 matches/etc.  Fires a `tr-reset` event.
+
+### Tracker.openView(view)
+
+Redirects the browser to the specified `page` of the room.  Common examples include tracker/comms versions of the main view.
+
+### Tracker.getCurrentView
+
+Used by components to determine what is the current view.
+
+### Tracker.attemptToBeSuper(passcode, callback)
+
+Attempts with the provided `passcode` for the current user to be super/elevated.  Useful for ROM dumping, etc.  `callback` is called with a true/false argument with the results of the attempt.
+
+### Tracker.isUserSuper(callback)
+
+Checks if the current user is already super.  `callback` is provided a true/false argument with the results.
+
+### Tracker.setActiveTimer(property)
+
+Specifies the property that represents which timer is considered 'active'.  Used to calculate timestamps.
+
+### Tracker.downloadTemplate(href)
+
+Queues the file to be downloaded by the Tracker.  A `tr-template` event will be fired when it is downloaded (or pulled from local cache).  The `detail` of the event will contain the `href` specified, along with the `content` of the download.  Any errors are printed to the console.
