@@ -4,9 +4,7 @@
 .loadscreen-contain, .two-loading{
     width: 1280px;
     height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
+    background-color: var(--backgroundColor1);
     color: #fff;
     animation: zoomIn .5s linear;
     z-index: 50;
@@ -15,7 +13,7 @@
 }
 
 .loadscreen-contain.underground-racing, .two-loading.underground-racing{ 
-    background-image: url('images/ccs/ccs-urc-loading.png');
+    background-image: url('images/ccs/unknown2.png');
 }
 
 .loadscreen-contain.show, .two-loading{
@@ -63,31 +61,81 @@
 .load-best-of.best-of-5, .load-best-of.best-of-5 > .best-of-5{display: block;}
 .load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
 
-.flame{
-    display: none;
-    width: 36px;
-    height: 56px;
-    background-color: #fff;
-    background-image: url(images/ccs/ff4-fire-sprite.png);
-    background-size: 400% 100%;
-    image-rendering: pixelated;
+.underground-racing .header{
+    width: 680px;
+    height: 171px;
+    left: 285px;
+    top: -16px;
+    background-image: url('images/ccs/community-club-showcase-title.png');
+    background-size: 680px 171px;
+    z-index: 3;
 }
 
-[player="1"] .flame {left: var(--flameX); top: var(--flameY);}
-[player="2"] .flame {right: var(--flameX); top: var(--flameY);}
+.underground-racing .top-flames{
+    width: 1020px;
+    height: 80px;
+    left: 34px;
+    top: 42px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 80px, 240px 80px, 240px 0, 960px 0, 960px 80px, 1020px 80px, 1020px 0);
+}
+
+.underground-racing .top-flames:after{
+    content: '';
+    width: 100%;
+    height: 300%;
+    background-image: url('images/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    animation: flicker-top .2s steps(3, jump-none) alternate infinite;
+}
+
+@keyframes flicker-top {
+    from{transform: translateY(0);}
+    to{transform: translateY(-160px);}
+}
+
+.underground-racing .bottom-flames{
+    width: 50px;
+    height: 80px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.underground-racing .bottom-flames:after{
+    content: '';
+    width: 50px;
+    height: 480px;
+    background-image: url('images/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    transform: translateY(-240px);
+    animation: flicker-bottom .2s steps(3, jump-none) alternate infinite;
+}
+
+@keyframes flicker-bottom {
+    from{transform: translateY(-240px);}
+    to{transform: translateY(-400px);}
+}
+
+.underground-racing [player="1"] .bottom-flames {left: var(--flameX); top: var(--flameY);}
+.underground-racing [player="2"] .bottom-flames {right: var(--flameX); top: var(--flameY);}
 
 [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
 [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
 
 .loadscreen-main{
     --nameWidth: 298px;
-    --nameX: 246px; --nameY: 446px;
-    --flameX: 200px; --flameY: 603px;
+    --nameX: 247px; --nameY: 448px;
+    --flameX: 199px; --flameY: 602px;
 }
 
 </style>
 <div class="loadscreen">
     <div class="loadscreen-main">
+
+        <div class="abs header"></div>
+
         <template id="player_info_load_template">
             <div class="player-info abs background-1 border-1">
                 <div class="name-pronoun-contain">
@@ -105,8 +153,10 @@
                     <tr-text property="player-seed"></tr-text>
                 </tr-hide-if-empty>
             </div>
-            <div class="flame abs"></div>
+            <div class="bottom-flames abs"></div>
         </template>
+
+        <div class="abs top-flames"></div>
 
         <tr-player player="1">
             <tr-template source="#player_info_load_template"></tr-template>

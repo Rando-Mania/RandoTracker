@@ -30,13 +30,18 @@
     border-image: url(images/ff4-border.png) 3 / 3px / 1px;
     image-rendering: pixelated;
 }
-.background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {  
+
+.background-1{
+    background-color: var(--backgroundColor1);
+}
+
+.border-background-1 {
     border: var(--border1);
     border-image: url(images/ff4-border.png) 3 / 3px / 1px;
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
+
 .abs{position: absolute;}
 
 html{
