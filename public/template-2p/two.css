@@ -1,8 +1,18 @@
+/*  =============
+    global styles
+    ============= */
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
+
+html{
+    background-color: #c7c7c7;
+}
+
+/* variables */
 
 :root{
     --backgroundImg: url('../shared/images/checkerboard.png');
@@ -20,19 +30,24 @@
     --bestX: 869px; --bestY: 558px;
 }
 
+/* helper classes */
+
 .border-1{border: var(--border1);}
+
 .background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-    border: var(--border1);
-    background-color: var(--backgroundColor1);
-}
+
 .abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
+.display-grid{display: grid;}
 
-/* layout specific styles */
+.ai-c{align-items: center;}
+
+.jc-c{justify-content: center;}
+
+/*  ==========
+    Typography
+    ========== */
+
 /* @font-face {
     font-family: "PressStart2P";
     src: local('PressStart2P'),
@@ -40,6 +55,14 @@ html{
 	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
          url('../shared/fonts/pressstart2p.ttf') format('truetype');
 }*/
+
+.fs-small{ font-size: 20px; }
+.fs-medium{ font-size: 24px; }
+.fs-large{ font-size: 26px; }
+
+/*  ==========
+    Components
+    ========== */
 
 .layout{
     font-family: Arial, sans-serif;
@@ -58,7 +81,6 @@ html{
 }
 
 .player-name{
-    font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
     height: 50px;
 	color: #fff;
@@ -105,7 +127,6 @@ html{
 .player-winner{
     height: 34px;
     font-weight: bold;
-    font-size: 24px;
     color: #fff;
     padding: 0 .5em;
     display: flex;
@@ -133,7 +154,6 @@ html{
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
 
 .player-final{
-    font-size: 20px;
     width: 5.5em;
     background-color: #000;
     color: #fff;
@@ -147,7 +167,6 @@ tr-timer{
 	width: 11em;
     height: 53px;
     z-index: 1;
-	font-size: 24px;
 }
 tr-timer span {
     width: 26px;
@@ -163,7 +182,6 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 24px;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -237,7 +255,9 @@ tr-timer span {
 
 .show{ display: block; }
 
-/* Menu */
+/*  ==========
+    Menu
+    ========== */
 
 #menu_2 {
     display: grid;

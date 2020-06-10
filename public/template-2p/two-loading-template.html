@@ -50,11 +50,18 @@
 
 .loadscreen-main{
     display: grid;
-    grid-gap: 1em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 3fr 1fr;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    justify-items: center;
     height: 100%;
     width: 100%;
+}
+
+.loading-rm{
+    grid-column: span 2;
 }
 
 .loadscreen-main *{
@@ -100,22 +107,32 @@
 </style>
 <div class="loadscreen">
     <div class="loadscreen-main">
-        <h1>
-            Game Name
-        </h1>
-        <h2>
-            <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-            vs.
-            <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
-        </h2>
-        <div class="load-best-of">
-            <p class="best-of-3">Best of 3</p>
-            <p class="best-of-5">Best of 5</p>
-            <p class="best-of-7">Best of 7</p>
+        <div class="load-logo">
+            <h1>
+                Game Name/Logo
+            </h1>
         </div>
-        <h3>
-            on RandoMania
-        </h3>
+
+        <div class="load-players">
+            <h1>
+                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+            </h1>
+            <h2>vs.</h2>
+            <h1>
+                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+            </h1>
+        </div>
+
+        <div class="loading-rm">
+            <div class="load-best-of">
+                <p class="best-of-3">Best of 3</p>
+                <p class="best-of-5">Best of 5</p>
+                <p class="best-of-7">Best of 7</p>
+            </div>
+            <h3>
+                on RandoMania
+            </h3>
+        </div>
     </div>
     <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
 </div>

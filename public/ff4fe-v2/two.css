@@ -83,19 +83,19 @@ html{
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
 }
 
-.lunar-racing{
+.layout.ccs-lunar-racing{
     background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);
 }
-.mysidian-jumping{
+.layout.ccs-mysidian-jumping{
     background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png);
 }
-.special-feature{
+.layout.ccs-special-feature{
     background-image: url(images/ccs/CCS-BG-SpecialFeature.png);
 }
-.sunday-splashdash{
+.layout.ccs-sunday-splashdash{
     background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);
 }
-.underground-racing{
+.layout.ccs-underground-racing{
     background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);
 }
 
