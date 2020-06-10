@@ -109,12 +109,12 @@
     background-image: url('images/ccs/flame-frames.png');
     background-size: 80px 480px;
     position: absolute;
-    animation: flicker-top .2s steps(3, jump-none) alternate infinite;
+    animation: flicker-top .2s steps(3) alternate infinite;
 }
 
 @keyframes flicker-top {
     from{transform: translateY(0);}
-    to{transform: translateY(-160px);}
+    to{transform: translateY(-240px);}
 }
 
 [class*="ccs-"] .bottom-flames{
@@ -132,12 +132,12 @@
     background-size: 80px 480px;
     position: absolute;
     transform: translateY(-240px);
-    animation: flicker-bottom .2s steps(3, jump-none) alternate infinite;
+    animation: flicker-bottom .2s steps(3) alternate infinite;
 }
 
 @keyframes flicker-bottom {
     from{transform: translateY(-240px);}
-    to{transform: translateY(-400px);}
+    to{transform: translateY(-480px);}
 }
 
 [class*="ccs-"] [player="1"] .bottom-flames {left: var(--flameX); top: var(--flameY);}
