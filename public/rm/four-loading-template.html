@@ -1,5 +1,5 @@
 <style>
-    .loadscreen{
+  .loadscreen{
     background: 
       linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
       url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
@@ -18,7 +18,7 @@
     height: 720px;
   }
 
-    .loadscreen-contain, .one-loading{
+  .loadscreen-contain, .two-loading{
     width: 1280px;
     height: 720px;
     background: url(../shared/images/rm-generic-half.png);
@@ -33,15 +33,15 @@
     visibility: hidden;
 }
 
-.loadscreen-contain.show, .one-loading{
+.loadscreen-contain.show, .two-loading{
   visibility: visible;
 }
 
-.one-loading.show{
+.two-loading.show{
   display: flex;
 }
 
-    main{
+main{
         text-align: center;
         display: grid;
        align-content: space-around;
@@ -68,12 +68,12 @@
         position: relative;
     }
 
-    
     .loadscreen aside{
       font-family: orbitron, arial;
       letter-spacing: 2px;
       display: grid;
       grid-template-columns: 1fr;
+      grid-row: span 2;
       grid-gap: 3em;
     }
     main header{
@@ -111,42 +111,43 @@
 
 
 footer{
-  grid-column-end: span 2;
   height: 150px;
   overflow: hidden;
 }
-
 #promos{
-    grid-column: 1 / -1;
-    overflow: hidden;
-    width: 1236px;
-    height: 150px;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  width: 1236px;
+  height: 150px;
 }
 #all_promos_contain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    animation: move-promos 60s infinite;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  animation: move-promos 60s infinite;
 }
 
 @keyframes move-promos{
-    from, 22%{transform: translateY(0);}
-    25%, 47%{transform: translateY(-155px);}
-    50%, 72%{transform: translateY(-315px);}
-    75%, to{transform: translateY(-470px);}
+  from, 22%{transform: translateY(0);}
+  25%, 47%{transform: translateY(-155px);}
+  50%, 72%{transform: translateY(-315px);}
+  75%, to{transform: translateY(-470px);}
 }
 #all_promos_contain figure{
-    margin: 0 32px 8px;
+  margin: 0 32px 8px;
 }
 
 #all_promos_contain figcaption{
-    font-size: 12px;
+  font-size: 12px;
 }
 
-  </style>
+.loadscreen .card-border, .loadscreen tr-hide-if-empty.card-head{
+  width: 288px;
+}
+</style>
   <div class="loadscreen">
     <main>
         <header>
@@ -172,6 +173,24 @@ footer{
             <tr-template href="templates/cards/player-name.html"></tr-template>
           </tr-player>
         </tr-hide-if-empty>          
+
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+          <tr-player player="2">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+          </tr-player>
+        </tr-hide-if-empty>
+
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+          <tr-player player="3">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+          </tr-player>
+        </tr-hide-if-empty>  
+
+        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+          <tr-player player="4">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+          </tr-player>
+        </tr-hide-if-empty>  
 
         <tr-hide-if-empty class="staff" toggle-class="visually-hidden">
             <tr-template href="../shared/production-team.html"></tr-template>

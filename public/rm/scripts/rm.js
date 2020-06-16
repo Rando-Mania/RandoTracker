@@ -96,7 +96,7 @@
 		let script = document.createElement("script");
 
 		script.type = "text/javascript";
-		script.src = "https://horaro.org/randomania/2019.json?named=true&callback=RM.scheduleCallback";
+		script.src = "https://horaro.org/randomania2020/superweek.json?named=true&callback=RM.scheduleCallback";
 		document.body.appendChild(script);
 	});
 })(window.RM = window.RM || {});
