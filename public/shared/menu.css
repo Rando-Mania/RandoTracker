@@ -119,11 +119,15 @@
 }
 
 #menu_timer{
-    flex-direction: row;
     justify-content: center;
     justify-items: center;
     align-items: center;
     gap: 5px;
+}
+
+#timer-input-buttons{
+    display: flex;
+    flex-direction: row;
 }
 
 button.dummy-text-button.disable, #menu_video_background input[type="radio"][id="screen"].disable{

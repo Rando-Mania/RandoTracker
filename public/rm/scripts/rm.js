@@ -28,7 +28,7 @@
 		listings.forEach(function(listing) {
 			var option = document.createElement("option");
 
-			option.textContent = listing.data[1];
+			option.textContent = listing.data[0];
 			option.data = listing;
 			select.appendChild(option);
 		});
@@ -44,7 +44,7 @@
 			var updates = [
 				{
 					property: "game-name",
-					value: listing.data[1]
+					value: listing.data[0]
 				},
 				{
 					property: "game-system",
@@ -63,7 +63,7 @@
 			if (select.selectedIndex < select.options.length - 1) {
 				updates.push({
 					property: "up-next",
-					value: select.options[select.selectedIndex+1].data.data[1]
+					value: select.options[select.selectedIndex+1].data.data[0]
 				});
 			} else {
 				updates.push({
@@ -72,7 +72,7 @@
 				})
 			}
 
-			var players = listing.data[0].split(", ");
+			var players = listing.data[1].split(", ");
 
 			for (var pID = 1; pID <= 4; pID++) {
 				if (players.length < pID) {

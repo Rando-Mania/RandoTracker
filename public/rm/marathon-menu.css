@@ -82,11 +82,6 @@
       width: 6em;
     }
   
-    .menu-general .fieldset#menu_view, #menu_2 .fieldset#menu_view{
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-  }
-  
     .fieldset{
       margin: -1px 0 0 -1px;
     }
