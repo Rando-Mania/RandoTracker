@@ -86,10 +86,14 @@ html{
 .card-body tr-text {
     width: 175px;
 }
+
+.layout .cards .card-body tr-text {
+    width: 255px;
+}
+
 .player-info .card{
     width: 175px;
 }
-
 
 .player-name{
     font-size: 18px;
@@ -382,17 +386,6 @@ tr-timer span {
 .view-container, .view-container-border{
     background-color: transparent;
 }
-
-/* Bracket Screen */
-
-/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
-
-.bracket-contain iframe {
-    animation: rotateIn .75s linear;
-    perspective: 1200px;
-}
-
- */
 
 
 .display-none{ display: none; }

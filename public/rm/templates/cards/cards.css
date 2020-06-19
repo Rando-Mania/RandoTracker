@@ -203,13 +203,6 @@
     .card-border > div, .card-back > div{
       animation: fade 240s linear alternate infinite;
     }
-    
-    .rainbow-fill path:nth-of-type(1){fill: #940084; animation: none;}
-    .rainbow-fill path:nth-of-type(2){fill: #0058f8; animation-name: fade-5;}
-    .rainbow-fill path:nth-of-type(3){fill: #3cbcfc; animation-name: fade-4;}
-    .rainbow-fill path:nth-of-type(4){fill: #007800; animation-name: fade-3;}
-    .rainbow-fill path:nth-of-type(5){fill: #f8b800; animation-name: fade-2;}
-    .rainbow-fill path:nth-of-type(6){fill: #f83800; animation-name: fade;}
 
     .rainbow-fill div:nth-of-type(1){background-color: #940084; animation: none;}
     .rainbow-fill div:nth-of-type(2){background-color: #0058f8; animation-name: fade-5;}

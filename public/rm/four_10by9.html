@@ -49,6 +49,15 @@
             left: 50%; 
             top: 50%;
         }
+
+        :root{
+            --vidWidth: 372px;
+            --vidAspect: 10 / 9;
+            --nameX: 397px;
+            --gridX: 397px;
+            --speakerX: 543px;
+            --speakerX2: 398px;
+        }
     </style>
 </head>
 <body>
@@ -97,9 +106,7 @@
         <div class="abs cards"> 
             <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
 
-
             <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
-
 
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
@@ -134,11 +141,11 @@
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script src="scripts/rm.js"></script>
     <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
+    <script src="scripts/rm.js"></script>
 </body>
 </html>
