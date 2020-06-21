@@ -163,7 +163,7 @@ input{
   transition: height .5s;
 }
 
-.games div{
+.games > div{
   margin-right: 20px;
   margin-bottom: 24px;
   background-color: rgba(34,34,34,.7);
@@ -189,6 +189,13 @@ input{
   margin: .5em 0;
 }
 
+.link-grid{
+  width: 100%;
+  height: 100%; 
+  text-align: center; 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+}
 .games a{
   text-align: center; 
 }

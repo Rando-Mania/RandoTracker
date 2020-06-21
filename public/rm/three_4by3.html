@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>3 Player 4:3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="marathon-menu.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">  
+    <link rel="stylesheet" type="text/css" href="three_4by3.css">
+    <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
+    <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        .cards {right: var(--videoX); bottom: var(--videoY);}
+                
+    
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+        [player="3"] .player-info {left: var(--nameX); bottom: var(--nameY);}
+
+        #tracking_icons_1 {left: var(--gridX); top: var(--gridY);}
+        #tracking_icons_2 {right: var(--gridX); top: var(--gridY);}
+        #tracking_icons_3 {left: var(--gridX); bottom: var(--gridY);}
+        
+        [player="1"] .player-final-contain {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final-contain {right: var(--finalX); top: var(--finalY);}
+        [player="3"] .player-final-contain {left: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX2); top: var(--speakerY);}
+        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY2);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+
+    </style>
+</head>
+<body>
+    <template id="player_info_template">
+        <div class="border-1 player-video abs"></div>
+
+        <tr-hide-if-empty class="abs player-info" id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <img src="../shared/images/icons/blank.svg" alt="">
+        </tr-toggle>
+    </template>
+	<div class="layout">
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+            <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='1'] #player_final">
+                <tr-template href="templates/cards/final-winner.html"></tr-template>
+            </tr-hide-if-empty>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+            <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='2'] #player_final">
+                <tr-template href="templates/cards/final-winner.html"></tr-template>
+            </tr-hide-if-empty>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
+            <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='3'] #player_final">
+                <tr-template href="templates/cards/final-winner.html"></tr-template>
+            </tr-hide-if-empty>
+        </tr-player>
+            <tr-template id="tracking-icons-template" href="templates/cards/tracking-icons.html"></tr-template>
+            <tr-template id="tracking-icons-template-2" href="templates/cards/tracking-icons-2.html"></tr-template>
+            <tr-template id="tracking-icons-template-3" href="templates/cards/tracking-icons-3.html"></tr-template>
+<!-- timer/staff -->
+        <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
+        <div class="abs cards"> 
+            <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
+
+
+            <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
+                <tr-template href="templates/cards/free-text.html"></tr-template>
+            </tr-hide-if-empty>
+
+            <tr-template id="rm-logo-template" class="visually-hidden" href="templates/cards/rm-logo.html"></tr-template>
+
+            <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
+        </div>
+    </div>
+
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
+
+
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="three-loading-template.html"></tr-template>
+</div>
+
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar-template.html"></tr-template>
+</div>
+
+<tr-template href="../shared/three-menus-contain.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="scripts/rm.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/three_game.js"></script>
+</body>
+</html>
