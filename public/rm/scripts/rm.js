@@ -93,10 +93,12 @@
 	}
 
 	document.addEventListener("DOMContentLoaded", function(event) {
-		let script = document.createElement("script");
+		setTimeout(function(){
+			let script = document.createElement("script");
 
-		script.type = "text/javascript";
-		script.src = "https://horaro.org/randomania2020/superweek.json?named=true&callback=RM.scheduleCallback";
-		document.body.appendChild(script);
+			script.type = "text/javascript";
+			script.src = "https://horaro.org/randomania2020/superweek.json?named=true&callback=RM.scheduleCallback";
+			document.body.appendChild(script);
+		}, 8000)
 	});
 })(window.RM = window.RM || {});
