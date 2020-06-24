@@ -1,0 +1,64 @@
+    <div class="menu-game-specific">
+		<div id="menu_backgrounds" class="fieldset backgrounds-menu">
+			<h4 class="legend">Backgrounds</h4>
+			<div>
+				<label>Layout:</label>
+				<tr-select-toggle property="layout-back-select">
+					<tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-tourney" value="3">Co-Op 2020</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="4">FFR AD</tr-option>
+				</tr-select-toggle>
+			</div>
+		</div>
+
+		<div class="fieldset">
+            <h4 class="legend">Players and Teams</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Pronoun</th>
+                    </tr>
+                    <tr>
+                        <td>1/1</td>
+                        <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>1/2</td>
+                        <td><tr-input-text player="3" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2/1</td>
+                        <td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2/2</td>
+                        <td><tr-input-text player="4" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+			
+            <div id="team_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Team</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><tr-input-text player="1" class="team-input" property="team-name"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><tr-input-text player="2" class="team-input" property="team-name"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
