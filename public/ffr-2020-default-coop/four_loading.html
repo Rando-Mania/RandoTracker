@@ -2,25 +2,28 @@
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>Calendar</title>
+	<title>4 Player Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="preload" href="" as="image" type="image/png">
     <style>
-        .calendar-contain .abs{
+        .loadscreen-contain .abs, .four-loading .abs{
             position: relative;
         }
     </style>
 </head>
 <body>
-
-    <div class="calendar-contain abs" style="top: 0; left: 0;">
-        <tr-template href="../shared/calendar-template.html"></tr-template>
+    <div class="four-loading">
+        <tr-template href="four-loading-template.html"></tr-template>
     </div>
     
-    <tr-template href="../shared/four-menus-contain.html"></tr-template>
+	<div class="menu-contain">
+        <!-- <tr-template href="game_four_menu.html"></tr-template> -->
+        <tr-template href="../shared/four_menu.html"></tr-template>
+    </div>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -30,6 +33,6 @@
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="../shared/script/four_game.js"></script>
+    <script type="text/javascript" src="script/game.js"></script>
 </body>
 </html>
