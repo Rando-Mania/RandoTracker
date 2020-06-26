@@ -1,5 +1,5 @@
 <style>
-    #z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, .dialog img{
+    #z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, [id*="z1r-"].dialog img{
         background-image: url(images/icons/icon-sheet-z1r.png);
         background-size: 300% auto;
     }
@@ -39,7 +39,7 @@
         justify-content: space-between;
     }
 
-    [property="bow"] img{
+    [property="z1r-bow"] img{
         background-position: 0 0;
     }
 
@@ -55,11 +55,11 @@ tr-image{
         background-position: 100% 0;
     }
 
-    [property="recorder"] img{
+    [property="z1r-recorder"] img{
         background-position: 0 25%;
     }
 
-    [property="bracelet"] img{
+    [property="z1r-bracelet"] img{
         background-position: 50% 75%;
     }
 
@@ -73,10 +73,10 @@ tr-image{
     }
 
 
-    [property="raft"] img{
+    [property="z1r-raft"] img{
         background-position: 100% 100%;
     }
-    [property="ladder"] img{
+    [property="z1r-ladder"] img{
         background-position: 100% 75%;
     }
     .old-man{
@@ -95,49 +95,49 @@ tr-image{
 
 <div id="z1r-row-1">
     <figure>
-        <tr-toggle-class property="tri-1" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-1" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>1</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-2" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-2" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>2</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-3" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-3" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>3</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-4" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-4" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>4</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-5" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-5" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>5</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-6" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-6" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>6</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-7" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-7" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>7</figcaption>
     </figure>
     <figure>
-        <tr-toggle-class property="tri-8" toggle-class="active">
+        <tr-toggle-class property="z1r-tri-8" toggle-class="active">
             <img src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>8</figcaption>
@@ -146,7 +146,7 @@ tr-image{
 
 
 <div id="z1r-row-2">
-    <tr-image-toggle class="active" property="bow" src="../shared/images/icons/blank.svg"></tr-image-toggle>
+    <tr-image-toggle class="active" property="z1r-bow" src="../shared/images/icons/blank.svg"></tr-image-toggle>
     <tr-image property="z1r-arrow">
         <tr-image-option class="arrow-wood in-active" class-to-set="in-active arrow-no" path="../shared/images/icons/blank.svg"></tr-image-option>
         <tr-image-option class="arrow-wood" class-to-set="arrow-wood" path="../shared/images/icons/blank.svg"></tr-image-option>
@@ -155,16 +155,16 @@ tr-image{
 
     <div style="grid-column-end: span 3;"></div>
     
-    <tr-image-toggle style="grid-area: 1 / -3;" class="active" property="recorder" src="../shared/images/icons/blank.svg"></tr-image-toggle>
-    <tr-image-toggle style="grid-area: 1 / -2;" class="active" property="bracelet" src="../shared/images/icons/blank.svg"></tr-image-toggle>
+    <tr-image-toggle style="grid-area: 1 / -3;" class="active" property="z1r-recorder" src="../shared/images/icons/blank.svg"></tr-image-toggle>
+    <tr-image-toggle style="grid-area: 1 / -2;" class="active" property="z1r-bracelet" src="../shared/images/icons/blank.svg"></tr-image-toggle>
 </div>
 
 <div id="z1r-row-3">
-    <tr-image-toggle style="grid-area: 2 / 1;" class="active" property="ladder" src="../shared/images/icons/blank.svg"></tr-image-toggle>
+    <tr-image-toggle style="grid-area: 2 / 1;" class="active" property="z1r-ladder" src="../shared/images/icons/blank.svg"></tr-image-toggle>
 
     <img class="fire" src="../shared/images/icons/blank.svg" alt="">
     <img class="old-man" src="../shared/images/icons/blank.svg" alt="">
     <img class="fire" src="../shared/images/icons/blank.svg" alt="">
 
-    <tr-image-toggle style="grid-area: 2 / -2;" class="active" property="raft" src="../shared/images/icons/blank.svg"></tr-image-toggle>
+    <tr-image-toggle style="grid-area: 2 / -2;" class="active" property="z1r-raft" src="../shared/images/icons/blank.svg"></tr-image-toggle>
 </div>

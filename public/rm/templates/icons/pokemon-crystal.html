@@ -1,0 +1,208 @@
+<style>
+    .player-grid .poke{
+    display: flex;
+    justify-content: center;
+}
+
+.player-grid .poke img{
+    width: 29px;
+    height: 29px;
+    display: block;
+    background-image: url(images/icons/crystal-sprites.png);
+    background-image: url(images/icons/crystal-sprites.webp);
+    background-size: 1100% 1100%;
+    /* image-rendering: pixelated; */
+}
+
+[property="poke-crystal-rod-old"] img{background-position: 0 0;}
+[property="poke-crystal-rod-good"] img{background-position: 10% 0;}
+[property="poke-crystal-rod-super"] img{background-position: 20% 0;}
+[property="poke-crystal-bicycle"] img{background-position: 30% 0;}
+[property="poke-crystal-ss-ticket"] img{background-position: 40% 0;}
+[property="poke-crystal-pass"] img{background-position: 50% 0;}
+
+[property="poke-crystal-squirt_bottle"] img{background-position: 0 10%;}
+[property="poke-crystal-secret_potion"] img{background-position: 10% 10%;}
+[property="poke-crystal-basement_key"] img{background-position: 20% 10%;}
+[property="poke-crystal-card_key"] img{background-position: 30% 10%;}
+[property="poke-crystal-machine_part"] img{background-position: 40% 10%;}
+[property="poke-crystal-lost_item"] img{background-position: 50% 10%;}
+
+[property="poke-crystal-mystery_egg"] img{background-position: 0 20%;}
+[property="poke-crystal-coin_case"] img{background-position: 10% 20%;}
+[property="poke-crystal-blue_card"] img{background-position: 20% 20%;}
+[property="poke-crystal-item_finder"] img{background-position: 30% 20%;}
+[property="poke-crystal-red_scale"] img{background-position: 40% 20%;}
+[property="poke-crystal-clear_bell"] img{background-position: 50% 20%;}
+[property="poke-crystal-silver_wing"] img{background-position: 60% 20%;}
+
+[property="poke-crystal-hm_cut"] img{background-position: 0 30%;}
+[property="poke-crystal-hm_fly"] img{background-position: 10% 30%;}
+[property="poke-crystal-hm_surf"] img{background-position: 20% 30%;}
+[property="poke-crystal-hm-strength"] img{background-position: 30% 30%;}
+[property="poke-crystal-hm-flash"] img{background-position: 40% 30%;}
+[property="poke-crystal-hm-whirlpool"] img{background-position: 50% 30%;}
+[property="poke-crystal-hm-waterfall"] img{background-position: 60% 30%;}
+
+[property="poke-crystal-badge-zephyr"] img{background-position: 0 60%;}
+[property="poke-crystal-badge-hive"] img{background-position: 10% 60%;}
+[property="poke-crystal-badge-plain"] img{background-position: 20% 60%;}
+[property="poke-crystal-badge-fog"] img{background-position: 30% 60%;}
+[property="poke-crystal-badge-storm"] img{background-position: 40% 60%;}
+[property="poke-crystal-badge-mineral"] img{background-position: 50% 60%;}
+[property="poke-crystal-badge-glacier"] img{background-position: 60% 60%;}
+[property="poke-crystal-badge-rising"] img{background-position: 70% 60%;}
+
+[property="poke-crystal-badge-boulder"] img{background-position: 0 70%;}
+[property="poke-crystal-badge-cascade"] img{background-position: 10% 70%;}
+[property="poke-crystal-badge-thunder"] img{background-position: 20% 70%;}
+[property="poke-crystal-badge-rainbow"] img{background-position: 30% 70%;}
+[property="poke-crystal-badge-soul"] img{background-position: 40% 70%;}
+[property="poke-crystal-badge-marsh"] img{background-position: 50% 70%;}
+[property="poke-crystal-badge-volcano"] img{background-position: 60% 70%;}
+[property="poke-crystal-badge-earth"] img{background-position: 70% 70%;}
+</style>
+<div class="row-1 poke">
+    <tr-toggle-class property="poke-crystal-rod-old" toggle-class="active">
+        <img title="rod-old" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-rod-good" toggle-class="active">
+        <img title="rod-good" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-rod-super" toggle-class="active">
+        <img title="rod-super" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="poke-crystal-bicycle" toggle-class="active">
+        <img title="bicycle" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-ss-ticket" toggle-class="active">
+        <img title="ss-ticket" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-pass" toggle-class="active">
+        <img title="pass" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-2 poke">
+    <tr-toggle-class property="poke-crystal-squirt_bottle" toggle-class="active">
+        <img title="squirt_bottle" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-secret_potion" toggle-class="active">
+        <img title="secret_potion" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-basement_key" toggle-class="active">
+        <img title="basement_key" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-card_key" toggle-class="active">
+        <img title="card_key" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-machine_part" toggle-class="active">
+        <img title="machine_part" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-lost_item" toggle-class="active">
+        <img title="lost_item" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-3  poke">
+    <tr-toggle-class property="poke-crystal-mystery_egg" toggle-class="active">
+        <img title="mystery_egg" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-coin_case" toggle-class="active">
+        <img title="coin_case" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-blue_card" toggle-class="active">
+        <img title="blue_card" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-item_finder" toggle-class="active">
+        <img title="item_finder" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-red_scale" toggle-class="active">
+        <img title="red_scale" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-clear_bell" toggle-class="active">
+        <img title="clear_bell" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-silver_wing" toggle-class="active">
+        <img title="silver_wing" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-4 poke">
+    <tr-toggle-class property="poke-crystal-hm_cut" toggle-class="active">
+        <img title="hm_cut" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm_fly" toggle-class="active">
+        <img title="hm_fly" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm_surf" toggle-class="active">
+        <img title="hm_surf" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm-strength" toggle-class="active">
+        <img title="hm-strength" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm-flash" toggle-class="active">
+        <img title="hm-flash" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm-whirlpool" toggle-class="active">
+        <img title="hm-whirlpool" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-hm-waterfall" toggle-class="active">
+        <img title="hm-waterfall" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-5 poke">
+    <tr-toggle-class property="poke-crystal-badge-zephyr" toggle-class="active">
+        <img title="badge-zephyr" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-hive" toggle-class="active">
+        <img title="badge-hive" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-plain" toggle-class="active">
+        <img title="badge-plain" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-fog" toggle-class="active">
+        <img title="badge-fog" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-storm" toggle-class="active">
+        <img title="badge-storm" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-mineral" toggle-class="active">
+        <img title="badge-mineral" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-glacier" toggle-class="active">
+        <img title="badge-glacier" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-rising" toggle-class="active">
+        <img title="badge-rising" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-6 poke">
+    <tr-toggle-class property="poke-crystal-badge-boulder" toggle-class="active">
+        <img title="badge-boulder" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-cascade" toggle-class="active">
+        <img title="badge-cascade" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-thunder" toggle-class="active">
+        <img title="badge-thunder" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-rainbow" toggle-class="active">
+        <img title="badge-rainbow" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-soul" toggle-class="active">
+        <img title="badge-soul" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-marsh" toggle-class="active">
+        <img title="badge-marsh" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-volcano" toggle-class="active">
+        <img title="badge-volcano" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="poke-crystal-badge-earth" toggle-class="active">
+        <img title="badge-earth" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
