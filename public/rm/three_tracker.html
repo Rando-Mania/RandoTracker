@@ -6,41 +6,58 @@
   <title>RandoMania 3p Tracker</title>
   <link rel="stylesheet" type="text/css" href="../shared/components.css">
   <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+  <link rel="stylesheet" type="text/css" href="marathon-menu.css">
+  <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
+  <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
   <link rel="stylesheet" type="text/css" href="three_4by3.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: repeat(2, auto);
       color: #fff;
+    }
+    aside{
+      background: 
+        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+        url('images/rm-generic-take2-edges-roberts.png') 0 0 / 640px 360px;
+      padding: 12px;
+      gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 280px);
     }
   </style>
 </head>
 
 <body>
+  <aside>
+    <div>
+      <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+        <tr-player player="1">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+        </tr-player>
+      </tr-hide-if-empty>
+      <tr-template href="templates/cards/tracking-icons.html"></tr-template>
+    </div>
+    <div>
+      <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+        <tr-player player="2">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+        </tr-player>
+      </tr-hide-if-empty>
+      <tr-template href="templates/cards/tracking-icons-2.html"></tr-template>
+    </div>
+    <div>  
+      <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+        <tr-player player="3">
+            <tr-template href="templates/cards/player-name.html"></tr-template>
+        </tr-player>
+      </tr-hide-if-empty>
+      <tr-template href="templates/cards/tracking-icons-3.html"></tr-template>
+    </div>
+  </aside>
 
-  <div class="tracker">
-        <div class="panel-wrap-outer" id="tracking_icons" property="tracking-icons">
-            <div class="panel-full-width-contain panel-wrap-inner">
-                <tr-toggle property="dwr">
-                    <tr-template class="player-grid" href="../dwr2/items_plot.html"></tr-template>
-                    <tr-template class="player-grid" href="../dwr2/items_stats.html"></tr-template>
-                </tr-toggle>
-                <tr-toggle property="ffiv">
-                    <tr-template class="player-grid" href="../snestri/items_ffiv.html"></tr-template>
-                </tr-toggle>
-                <tr-toggle property="lttp">
-                    <tr-template class="player-grid" href="../snestri/items_lttp.html"></tr-template>
-                </tr-toggle>
-                <tr-toggle property="z1r">
-                    <tr-template class="player-grid" href="z1r_marathon_items.html"></tr-template>
-                </tr-toggle>
-            </div>
-        </div>
-
-  </div>
-
-  <tr-template href="one_menu.html"></tr-template>
+  <tr-template href="../shared/three-menus-contain.html"></tr-template>
 
   <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
   <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
@@ -51,6 +68,7 @@
   <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
   <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
   <script type="text/javascript" src="../components/components.js"></script>
+  <script type="text/javascript" src="../shared/script/three_game.js"></script>
 </body>
 
 </html>

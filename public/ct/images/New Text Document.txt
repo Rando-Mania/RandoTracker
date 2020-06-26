@@ -1,0 +1,30 @@
+crono 0 0
+lucca -34px 0 
+marle -68px 0
+frog -102px 0
+robo -136px 0
+ayla -170px 0
+magus -204px 0
+
+herosmedal -16px -34px
+benthilt -51px -34px
+bentsword -85px -34px
+masamune -119px -34px
+gatekey -153px -34px
+dreamstone -187px -34px
+
+tomaspop -16px -68px
+pendant  -51px -68px
+prismshard -85px -68px
+	moonstone -119px -68px
+	moonstone
+	sunstone
+jerky   -153px -68px
+robosribbon -187px -68px
+
+magic  -16px -102px
+tools -51px -102px
+clone -85px -102px
+ctrigger -119px -102px
+rubyknife -153px -102px
+gomode -187px -102px
