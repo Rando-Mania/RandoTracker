@@ -1,0 +1,143 @@
+<style>
+    .player-grid .jets{
+    display: flex;
+    justify-content: center;
+}
+
+.player-grid [property*="ct-jets-"] img, .dialog[id*="ct-jets-"] img{
+    width: 34px;
+    height: 34px;
+    display: block;
+    background-image: url(images/icons/chrono-trigger-sprite.png);
+    background-size: 236px 134px;
+    background-repeat: no-repeat;
+    mix-blend-mode: lighten;
+    image-rendering: pixelated;
+}
+
+[property="ct-jets-crono"] img{background-position: 0 0;}
+[property="ct-jets-lucca"] img{background-position: -34px 0;}
+[property="ct-jets-marle"] img{background-position: -68px 0;}
+[property="ct-jets-frog"] img{background-position: -102px 0;}
+[property="ct-jets-robo"] img{background-position: -136px 0;}
+[property="ct-jets-ayla"] img{background-position: -170px 0;}
+[property="ct-jets-magus"] img{background-position: -204px 0;}
+
+[property="ct-jets-herosmedal"] img{background-position: -16px -34px;}
+[property="ct-jets-benthilt"] img{background-position: -51px -34px;}
+[property="ct-jets-bentsword"] img{background-position: -85px -34px;}
+[property="ct-jets-masamune"] img{background-position: -119px -34px;}
+[property="ct-jets-gatekey"] img{background-position: -153px -34px;}
+[property="ct-jets-dreamstone"] img{background-position: -187px -34px;}
+
+
+[property="ct-jets-tomaspop"] img{background-position: -16px -68px;}
+[property="ct-jets-pendant"] img{background-position: -51px -68px;}
+[property="ct-jets-prismshard"] img{background-position: -85px -68px;}
+
+img.ct-jets-moonstone{background-position: -119px -68px;}
+img.ct-jets-sunstone{
+    background-image: url(images/icons/sunstone.png) !important;
+    background-position: 0 0 !important;
+    background-size: 100% 100% !important;
+}
+
+[property="ct-jets-jerky"] img{background-position: -153px -68px;}
+[property="ct-jets-robosribbon"] img{background-position: -187px -68px;}
+
+[property="ct-jets-magic"] img{background-position: -16px -102px;}
+[property="ct-jets-tools"] img{background-position: -51px -102px;}
+[property="ct-jets-clone"] img{background-position: -85px -102px;}
+[property="ct-jets-ctrigger"] img{background-position: -119px -102px;}
+[property="ct-jets-rubyknife"] img{background-position: -153px -102px;}
+[property="ct-jets-gomode"] img{background-position: -187px -102px;}
+
+</style>
+<div class="row-1 jets">
+    <tr-toggle-class property="ct-jets-crono" toggle-class="active">
+        <img title="crono" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-lucca" toggle-class="active">
+        <img title="lucca" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-marle" toggle-class="active">
+        <img title="marle" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-frog" toggle-class="active">
+        <img title="frog" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-robo" toggle-class="active">
+        <img title="robo" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-ayla" toggle-class="active">
+        <img title="ayla" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-magus" toggle-class="active">
+        <img title="magus" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-2 jets">
+    <tr-toggle-class property="ct-jets-herosmedal" toggle-class="active">
+        <img title="herosmedal" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-benthilt" toggle-class="active">
+        <img title="benthilt" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-bentsword" toggle-class="active">
+        <img title="bentsword" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-masamune" toggle-class="active">
+        <img title="masamune" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-gatekey" toggle-class="active">
+        <img title="gatekey" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-dreamstone" toggle-class="active">
+        <img title="dreamstone" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-3 jets">
+    <tr-toggle-class property="ct-jets-tomaspop" toggle-class="active">
+        <img title="tomaspop" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-pendant" toggle-class="active">
+        <img title="pendant" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-prismshard" toggle-class="active">
+        <img title="prismshard" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-image property="ct-jets-moonstone">
+        <tr-image-option class="ct-jets-moonstone in-active" class-to-set="in-active ct-jets-moonstone" path="../shared/images/icons/blank.svg"></tr-image-option>
+        <tr-image-option class="ct-jets-moonstone" class-to-set="ct-jets-moonstone" path="../shared/images/icons/blank.svg"></tr-image-option>
+        <tr-image-option class="ct-jets-sunstone" class-to-set="ct-jets-sunstone" path="../shared/images/icons/blank.svg"></tr-image-option>
+    </tr-image>
+    <tr-toggle-class property="ct-jets-jerky" toggle-class="active">
+        <img title="jerky" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-robosribbon" toggle-class="active">
+        <img title="robosribbon" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="row-4 jets">
+    <tr-toggle-class property="ct-jets-magic" toggle-class="active">
+        <img title="magic" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-tools" toggle-class="active">
+        <img title="tools" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-clone" toggle-class="active">
+        <img title="clone" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-ctrigger" toggle-class="active">
+        <img title="ctrigger" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-rubyknife" toggle-class="active">
+        <img title="rubyknife" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ct-jets-gomode" toggle-class="active">
+        <img title="gomode" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>

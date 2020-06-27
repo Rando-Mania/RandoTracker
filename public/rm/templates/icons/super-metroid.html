@@ -1,0 +1,118 @@
+<style>
+    .player-grid .super-metroid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 2px 6px;
+    padding: 3px;
+}
+
+.player-grid [property*="super-metroid-"] img, .dialog[id*="super-metroid-"] img{
+    width: 34px;
+    height: 34px;
+    display: block;
+    background-image: url(images/icons/super-metroid-icons.png);
+    background-size: 208px 168px;
+    background-repeat: no-repeat;
+    mix-blend-mode: lighten;
+    image-rendering: pixelated;
+}
+
+[property="super-metroid-boss1"] img{background-position: 0 0;}
+[property="super-metroid-charge"] img{background-position: -44px 0;}
+[property="super-metroid-varia"] img{background-position: -88px 0;}
+[property="super-metroid-morph"] img{background-position: -132px 0;}
+[property="super-metroid-boots"] img{background-position: -176px 0;}
+
+[property="super-metroid-boss2"] img{background-position: 0 -34px;}
+[property="super-metroid-ice"] img{background-position: -44px -34px;}
+[property="super-metroid-gravity"] img{background-position: -88px -34px;}
+[property="super-metroid-bombs"] img{background-position: -132px -34px;}
+[property="super-metroid-spacejump"] img{background-position: -176px -34px;}
+
+[property="super-metroid-boss3"] img{background-position: 0 -68px;}
+[property="super-metroid-wave"] img{background-position: -44px -68px;}
+
+[property="super-metroid-springball"] img{background-position: -132px -68px;}
+[property="super-metroid-run"] img{background-position: -176px -68px;}
+
+[property="super-metroid-ridely"] img{background-position: 0 -102px;}
+[property="super-metroid-spazer"] img{background-position: -44px -102px;}
+[property="super-metroid-grapple"] img{background-position: -88px -102px;}
+[property="super-metroid-screwattack"] img{background-position: -132px -102px;}
+
+[property="super-metroid-plasma"] img{background-position: -44px -136px;}
+[property="super-metroid-xray"] img{background-position: -88px -136px;}
+
+
+
+</style>
+<div class="super-metroid">
+    <tr-toggle-class property="super-metroid-boss1" toggle-class="active">
+        <img title="boss1" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-boss2" toggle-class="active">
+        <img title="boss2" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-boss3" toggle-class="active">
+        <img title="boss3" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-ridely" toggle-class="active">
+        <img title="ridely" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+
+    <tr-toggle-class property="super-metroid-charge" toggle-class="active">
+        <img title="charge" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-ice" toggle-class="active">
+        <img title="ice" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-wave" toggle-class="active">
+        <img title="wave" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-spazer" toggle-class="active">
+        <img title="spazer" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-plasma" toggle-class="active">
+        <img title="plasma" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+
+    <tr-toggle-class property="super-metroid-morph" toggle-class="active">
+        <img title="morph" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-bombs" toggle-class="active">
+        <img title="bombs" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-springball" toggle-class="active">
+        <img title="springball" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+
+    <tr-toggle-class property="super-metroid-varia" toggle-class="active">
+        <img title="varia" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-gravity" toggle-class="active">
+        <img title="gravity" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="super-metroid-boots" toggle-class="active">
+        <img title="boots" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-run" toggle-class="active">
+        <img title="run" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-spacejump" toggle-class="active">
+        <img title="spacejump" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-screwattack" toggle-class="active">
+        <img title="screwattack" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="super-metroid-grapple" toggle-class="active">
+        <img title="grapple" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="super-metroid-xray" toggle-class="active">
+        <img title="xray" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
