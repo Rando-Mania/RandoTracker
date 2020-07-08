@@ -429,14 +429,17 @@ td:nth-of-type(2) {
   <script type="text/javascript" src="script/dwr.js"></script>
   <script>
   var h4Els = document.querySelectorAll('#scripts h4');
-var divEls = document.querySelectorAll('#scripts article div');
+  var divEls = document.querySelectorAll('#scripts article div');
 
-h4Els.forEach(
-  function(el){
-    el.addEventListener('click', function(){
-      el.nextElementSibling.classList.toggle('hide');
-      });
-  });
-</script>
+  h4Els.forEach(
+    function(el){
+      el.addEventListener('click', function(){
+        el.nextElementSibling.classList.toggle('hide');
+        });
+    });
+
+  // var tableEl = document.getElementById("tableData");
+
+  </script>
 </body>
 </html>
