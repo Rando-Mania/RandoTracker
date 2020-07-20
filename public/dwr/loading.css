@@ -17,11 +17,21 @@
   font-family: 'Orbitron', sans-serif;
 }
 
+.four-loading, .two-loading{
+  display: block;
+}
+
+.loadscreen-contain.show {
+  animation: zoomIn .5s;
+  display: block;
+}
+
 .loadscreen-main{
   display: grid;
   grid-template-columns: calc(36px * 8) 1fr;
   grid-template-rows: 1fr auto;
-  grid-gap: 1em;
+  gap: 1em;
+  padding: 1em;
   width: 1280px;
   height: 720px;
   font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;

@@ -42,7 +42,6 @@
         <tr-image property="video-back-select" class="player-video abs" id="player_video_1" style="left: 0; top: 0;"></tr-image>
         <tr-image property="video-back-select" class="player-video abs" id="player_video_2" style="right: 0; top: 0;"></tr-image>
 
-<!-- player 1 -->
         <template id="player_info_template">
             <div class="background-1 abs player-info">
                 <tr-text property="player-rank" class="player-rank"></tr-text>
@@ -92,108 +91,10 @@
         <tr-template href="league-flags.html"></tr-template>
     </div>
 
-<div class="loadscreen-contain abs" style="top: 0; left: 0;">
-    <div class="loadscreen abs" property="loadscreen">
-    <aside class="flip-card">
-        <header>
-            <h1>
-                <div id="d">Dragon</div>
-                <div id="w"><span>W</span>arrio<span>r</span></div>
-                <div id="r">Randomizer</div>
-            </h1>
-            <h4>
-                <span>!DWR</span>
-            </h4>
-        </header>
-        <div class="flip-card-inner">
-            <article class="hero flip-card-front">
-                <div class="subhead">
-                    <h3>RANDOMIZED HERO!</h3>
-                </div>
-                <div class="element bordered">
-                    <ul>
-                        <li>spell learning lvl/order</li>
-                        <li>different Hero sprites</li>
-                        <li>LEVELING Speed
-                            <ul>
-                                <li>normal, +25% or +50%</li> 
-                            </ul>
-                        </li>
-                        <li>STAT GROWTH</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="map flip-card-back">
-                <div class="subhead">
-                    <h3 class="angled">RANDOMIZED OVERWORLD!</h3>
-                </div>
-                <div class="element bordered">
-                    <ul>
-                        <li>Town/Cave Locations</li>
-                        <li>Weapon shop Prices</li>
-                        <li>Weapon shop items</li>
-                        <li>OVERWORLD MAP</li>
-                    </ul>
-                </div>
-            </article>
-        </div>
-        <div class="flip-card-inner">
-            <article class="enemies flip-card-front">
-                <div class="subhead">
-                    <h3 class="angled">RANDOMIZED ENEMIES!</h3>
-                </div>
-                <div class="element bordered">
-                    <ul>
-                        <li>Random Mini-Bosses</li>
-                        <li>Enemy Attacks</li>
-                        <li>Enemy Zones</li>
-                        <li>Enemy Stats</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="other flip-card-back">
-                <div class="subhead">
-                    <h3 class="angled">Other Stuff!</h3>
-                </div>
-                <div class="element bordered">
-                    <ul>
-                        <li>Enable Death Necklace</li>
-                        <li>Short Charlock</li>
-                        <li>Big Swamp Mode</li>
-                        <li>Menu Wrapping</li>
-                        <li>No Keys Mode</li>
-                        <li>Fast Text</li>
-                    </ul>
-                </div>
-            </article>
-        </div>
-    </aside>
-    <main>
-        <header>
-            <h1><span>D</span>ragon Warrio<span>r</span></h1>
-            <h2>Randomizer</h2>
-        </header>
-        <div class="loadscreen-player-names">
-            <tr-text player="1" class="player-name" property="player-name">DefaultText1</tr-text>
-            vs
-            <tr-text player="2" class="player-name" property="player-name">DefaultText2</tr-text>
-        </div>
-        <div>
-            <h2 id="changeText">Randomizing Dragon Warrior...</h2>
-        </div>
-    </main>
-    <footer>
-        <tr-template id="promos_1" href="../shared/images/promos/all_promos.html"></tr-template>
-    </footer>
+    <!-- loadscreen -->
+    <div class="loadscreen-contain map-background abs" style="top:0; left: 0;">
+        <tr-template href="two-loading-template.html"></tr-template>
     </div>
-</div>
-
-<!-- <div class="bracket-contain abs map-background" style="top: 0; left: 0;">
-    <div class="bracket" style="width: 90%; height: 90%;">
-        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
-</div> -->
-
 
 <!-- RM calendar -->
 <div class="calendar-contain abs map-background" style="top: 0; left: 0;">
@@ -252,7 +153,7 @@
     </tr-toggle>
 </div>
 
-<tr-template href="two_menu.html"></tr-template>
+<tr-template href="../shared/two-menus-contain.html"></tr-template>
 
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
