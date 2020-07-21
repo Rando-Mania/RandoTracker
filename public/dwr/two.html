@@ -39,10 +39,8 @@
 </head>
 <body>
     <div class="layout map-background">
-        <tr-image property="video-back-select" class="player-video abs" id="player_video_1" style="left: 0; top: 0;"></tr-image>
-        <tr-image property="video-back-select" class="player-video abs" id="player_video_2" style="right: 0; top: 0;"></tr-image>
-
         <template id="player_info_template">
+            <div class="border-1 player-video abs"></div> 
             <div class="background-1 abs player-info">
                 <tr-text property="player-rank" class="player-rank"></tr-text>
                 <div class="player-info-right">
@@ -62,9 +60,9 @@
                 <tr-template class="player-grid background-color-1" href="items_stats.html"></tr-template>
                 <tr-template class="background-color-1" href="hero_stats.html"></tr-template>
                 <tr-template class="spells" href="spells.html"></tr-template>
-                <tr-text property="player_final" class="player-final load-top-down background-color-1"></tr-text>
+                <tr-text property="player-final" class="player-final load-top-down background-color-1"></tr-text>
             </div>
-            <tr-toggle property="player-winner" class="player-winner abs">WINNER!</tr-toggle>     
+            <tr-toggle property="toggle-winner" class="player-winner abs">WINNER!</tr-toggle>     
             <tr-template class="best-of abs" href="bestof.html"></tr-template>
         </template>
 

@@ -4,14 +4,14 @@
     --background-color-1: rgba(0,0,0,.75);
     --background-color-2: rgba(0,0,0,1);
     line-height: 1;
-    --vidWidth: 438px;
+    --vidWidth: 641px;
     --vidAspect: 4 / 3;
-    --videoX: 0px; --videoY: 480px;
+    --videoX: 0px; --videoY: 0px;
     --nameWidth: 367px;
     --nameX: -2px; --nameY: 480px;
     --gridX: -2px; --gridY: -2px;
     --speakerX: 406px; --speakerY: 491px;
-    --finalX: 579px; --finalY: 40px;
+    --finalX: 5px; --finalY: -23px;
     --winX: 43px; --winY: 128px;
     --bestX: 460px; --bestY: 494px;
 }
@@ -89,19 +89,26 @@
 }
 
 .player-video{
-    --w: calc( 1280px / 2);
-    width: var(--w);
-    height: calc( var(--w) * 3/4);
     border: solid 2px;
     grid-column: span 2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.player-video img{
-    width: 100%;
-    height: auto;
+
+.player-video{
+    width: var(--vidWidth);
+    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    z-index: 2;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+.weekly-background{background-image: url('images/dwr-weekly.png');}
+.tourney-background{background-image: url('images/layout_2020.png');}
+.chaos-background{background-image: url('images/dwr-chaos.png');}
+.league-background{background-image: url('images/2020_league_backdrop_4by3.png');}
+
 .player-info{
     height: 57px;
     align-items: center;
@@ -278,8 +285,7 @@
     display:none;
 }
 
-#player_final_1::after,
-#player_final_2::after {
+.player-final::after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -292,11 +298,11 @@
     animation: fire-breath steps(9) 1.2s;
 }
 
-#player_final_1::after {
+[player="1"] .player-final::after {
     transform: rotateY(180deg);
     right: -50px;
 }
-#player_final_2::after {
+[player="2"] .player-final::after {
     left: -50px;
 }
 
