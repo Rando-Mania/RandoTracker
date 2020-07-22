@@ -206,6 +206,10 @@
   font-weight: normal;
 }
 
+#loading_runners{
+  display: grid;
+  gap: 1em;
+}
 
 .loadscreen main div{
   display: flex;
@@ -287,3 +291,18 @@ footer{
 .flip-card-back {
   animation: card-flip 60s infinite;
 } 
+
+.load-vs{
+  display: block;
+}
+.load-and{
+  display: none;
+  margin: 1.1em 0;
+}
+
+.show-and .load-vs{
+  display: none;
+}
+.show-and .load-and{
+  display: block;
+}
