@@ -83,20 +83,21 @@ html{
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
 }
 
-.layout.ccs-lunar-racing{
-    background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);
-}
-.layout.ccs-mysidian-jumping{
-    background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png);
-}
-.layout.ccs-special-feature{
-    background-image: url(images/ccs/CCS-BG-SpecialFeature.png);
-}
-.layout.ccs-sunday-splashdash{
-    background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);
-}
-.layout.ccs-underground-racing{
-    background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);
+.layout.ccs-lunar-racing{background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);}
+.layout.ccs-mysidian-jumping{background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png);}
+.layout.ccs-special-feature{background-image: url(images/ccs/CCS-BG-SpecialFeature.png);}
+.layout.ccs-sunday-splashdash{background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);}
+.layout.ccs-underground-racing{background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);}
+
+.layout.threemus-zone-group{background-image: url(images/3musZone/3musZone-1-BG-GroupStage.png);}
+.layout.threemus-zone-magma{background-image: url(images/3musZone/3musZone-2-BG-MagmaRoute.png);}
+.layout.threemus-zone-hook{background-image: url(images/3musZone/3musZone-3-BG-HookRoute.png);}
+.layout.threemus-zone-lunar{background-image: url(images/3musZone/3musZone-4-BG-LunarTable.png);}
+.layout.threemus-zone-playoffs{background-image: url(images/3musZone/3musZone-5-BG-Playoffs.png);}
+.layout.threemus-zone-finals{background-image: url(images/3musZone/3musZone-6-BG-TheFinals.png);}
+
+[class*="threemus-zone"]{
+    --backgroundColor1: #191668;
 }
 
 .player-video{
@@ -106,6 +107,10 @@ html{
 }
 
 .transparent-background{background-color: transparent;}
+.black-background{
+    background-color: #000;
+    background-image: url(images/3musZone/The-End.png);
+}
 
 .player-info{
     color: #fff;
@@ -475,9 +480,8 @@ tr-timer span {
     color: #fff;
 }
 
-.menu-game-specific .fieldset.objectives-menu{
-    display: grid;
-    grid-template: auto auto / auto auto;
+.menu-game-specific .fieldset.objectives-menu > div{
+    display: flex;
 }
 
 .objectives-list-menu{display:none;}

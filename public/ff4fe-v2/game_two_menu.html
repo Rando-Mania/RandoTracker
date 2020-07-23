@@ -1,16 +1,26 @@
 <div class="menu-game-specific">
     <div class="fieldset objectives-menu">
         <h4 class="legend">Objectives</h4>
-        <div>1</div>
-        <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
-        <div>2</div>
-        <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
-        <div>3</div>
-        <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
-        <div>4</div>
-        <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
-        <div>5</div>
-        <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+        <div>
+            <div>1</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
+        </div>
+        <div>
+            <div>2</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
+        </div>
+        <div>
+            <div>3</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
+        </div>
+        <div>
+            <div>4</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
+        </div>
+        <div>
+            <div>5</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+        </div>
     </div>
     <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
     <div id="menu_credits" class="fieldset">
@@ -57,6 +67,13 @@
         <h4 class="legend">Background</h4>
         <div>
             <tr-select-toggle property="layout-back-select">
+            <!-- 3musZone -->
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-group" value="11">3musZone Group</tr-option>
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-magma" value="12">3musZone Magma</tr-option>
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-hook" value="13">3musZone Hook</tr-option>
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-lunar" value="14">3musZone Lunar</tr-option>
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-playoffs" value="15">3musZone Playoffs</tr-option>
+            <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="threemus-zone-finals" value="16">3musZone Finals</tr-option> 
             <!-- community club showcase -->
             <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-lunar-racing" value="2">Lunar Racing (CCS)</tr-option>
             <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-mysidian-jumping" value="3">Mysidian Jumping (CCS)</tr-option>
@@ -64,10 +81,10 @@
             <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-sunday-splashdash" value="5">Sunday Splashdash (CCS)</tr-option>
             <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-underground-racing" value="6">Underground Racing (CCS)</tr-option>
             <!-- fabul gauntlet -->
-                <tr-option selected target=".layout, .tracker-layout" toggle-class="fabul-swiss" value="7">Fabul Swiss</tr-option>
-                <tr-option target=".layout, .tracker-layout" toggle-class="fabul-playin" value="8">Fabul Play-in</tr-option>
-                <tr-option target=".layout, .tracker-layout" toggle-class="fabul-bracket" value="9">Fabul Bracket</tr-option>
-                <tr-option target=".layout, .tracker-layout" toggle-class="fabul-finals" value="10">Fabul Finals</tr-option>
+            <!-- <tr-option target=".layout, .tracker-layout" toggle-class="fabul-swiss" value="7">Fabul Swiss</tr-option> -->
+            <!-- <tr-option target=".layout, .tracker-layout" toggle-class="fabul-playin" value="8">Fabul Play-in</tr-option> -->
+            <!-- <tr-option target=".layout, .tracker-layout" toggle-class="fabul-bracket" value="9">Fabul Bracket</tr-option> -->
+            <!-- <tr-option target=".layout, .tracker-layout" toggle-class="fabul-finals" value="10">Fabul Finals</tr-option> -->
             </tr-select-toggle>
         </div>
     </div>
