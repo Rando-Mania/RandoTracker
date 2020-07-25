@@ -12,28 +12,90 @@
     font-family: 'FF4', sans-serif;
 }
 
+.loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
+    font-family: 'Permanent Marker', cursive;
+  width: 1280px;
+  height: 720px;
+  background-color: #346766;
+  --threemus-fallback:
+    linear-gradient(#e5edcc, #e5edcc) no-repeat 515px 387px / 246px 151px,
+    linear-gradient(#1a4442, #1a4442) no-repeat 341px 352px / 598px 261px,
+    repeating-linear-gradient(transparent 1px 3px, rgba(255,255,255,.1) 4px 6px) no-repeat 0 0 / 100% 100%,
+    linear-gradient(#8673a8 5%, #346766, #608193) no-repeat 0 0 / 100% 100%;
+    background: var(--threemus-fallback);
+}
+
+.loadscreen-contain[class*="threemus-"] .loadscreen-main, .two-loading[class*="threemus-"] .loadscreen-main{
+    --nameWidth: 227px;
+    --nameX: 507px;
+    text-align: center;
+}
+
+.loadscreen-contain[class*="threemus-"] .loadscreen-main [player="1"] .player-info, .two-loading[class*="threemus-"] .loadscreen-main [player="1"] .player-info{
+    --nameY: 380px;
+}
+
+.loadscreen-contain[class*="threemus-"] .player-info, .two-loading[class*="threemus-"] .player-info{
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+}
+
+.loadscreen-contain[class*="threemus-"] .player-pronoun, .two-loading[class*="threemus-"] .player-pronoun{
+    display: none;
+}
+
+.loadscreen-contain[class*="threemus-"] .border-background-1, .two-loading[class*="threemus-"] .border-background-1{
+    border: none;
+    background-color: transparent;
+}
+.loadscreen-contain[class*="threemus-"] .background-1, .two-loading[class*="threemus-"] .background-1{
+    background-color: transparent;
+}
+.loadscreen-contain[class*="threemus-"] .border-1, .two-loading[class*="threemus-"] .border-1{
+    border: none;
+}
+
+.loadscreen-contain[class*="threemus-"] .record-contain, .two-loading[class*="threemus-"] .record-contain,
+.loadscreen-contain[class*="threemus-"] .seed-contain, .two-loading[class*="threemus-"] .seed-contain{
+    display: none;
+}
+
+.loadscreen-contain.threemus-zone-group, .two-loading.threemus-zone-group{
+    background: url('images/3musZone/3musZone-1-Splash-GroupStage.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-magma, .two-loading.threemus-zone-magma{
+    background: url('images/3musZone/3musZone-2-Splash-MagmaRoute.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-hook, .two-loading.threemus-zone-hook{
+    background: url('images/3musZone/3musZone-3-Splash-HookRoute.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-lunar, .two-loading.threemus-zone-lunar{
+    background: url('images/3musZone/3musZone-4-Splash-LunarTable.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-playoffs, .two-loading.threemus-zone-playoffs{
+    background: url('images/3musZone/3musZone-5-Splash-Playoffs.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-finals, .two-loading.threemus-zone-finals{
+    background: url('images/3musZone/3musZone-6-Splash-Finals.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+
 .loadscreen-contain[class*="ccs-"], .two-loading[class*="ccs-"]{
     --ccs-load-fallback: linear-gradient(to right, #d1d1b9 40px, transparent 40px 1240px, #d1d1b9 1240px 1280px), linear-gradient(#d1d1b9 58px, #898981 58px 218px, #680835 218px 538px, #898981 538px 698px, #604f3e 698px 720px);
     background-image: var(--ccs-load-fallback);
 }
-
-
 .loadscreen-contain.ccs-lunar-racing, .two-loading.ccs-lunar-racing{
     background-image: url('images/ccs/splash-LRC.png'), var(--ccs-load-fallback);
 }
-
 .loadscreen-contain.ccs-mysidian-jumping, .two-loading.ccs-mysidian-jumping{
     background-image: url('images/ccs/splash-MJC.png'), var(--ccs-load-fallback);
 }
-
 .loadscreen-contain.ccs-special-feature, .two-loading.ccs-special-feature{
     background-image: url('images/ccs/splash-Special.png'), var(--ccs-load-fallback);
 }
-
 .loadscreen-contain.ccs-sunday-splashdash, .two-loading.ccs-sunday-splashdash{
     background-image: url('images/ccs/splash-Slapdash.png'), var(--ccs-load-fallback);
 }
-
 .loadscreen-contain.ccs-underground-racing, .two-loading.ccs-underground-racing{
     background-image: url('images/ccs/splash-URC.png'), var(--ccs-load-fallback);
 }
@@ -154,6 +216,7 @@
 
 </style>
 <div class="loadscreen">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
     <div class="loadscreen-main">
 
         <div class="abs header"></div>

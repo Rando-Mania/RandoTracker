@@ -332,6 +332,18 @@ tr-toggle-class, .in-active {
 .player-best-of .active img{
     background-position: 0 100%;
 }
+
+[class*="threemus-"] .player-best-of img{
+    width: 40px;
+    height: 40px;
+    background-image: url('images/3musZone/BestOf-Default.png');
+    background-size: 100% 100%;
+}
+[class*="threemus-"] .player-best-of .active img{
+    background-image: url('images/3musZone/BestOf-Win.png');
+    background-size: 100% 100%;
+}
+
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
 }
