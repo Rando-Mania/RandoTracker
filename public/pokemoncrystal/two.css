@@ -40,7 +40,6 @@ html{
 @font-face {
     font-family: "Abel Regular";
     src: local('Abel Regular'),
-         local('Abel-Regular'),
          url('fonts/abel-regular.woff2') format('woff2'),
 	     url('fonts/abel-regular.woff') format('woff'),         
          url('fonts/Abel-Regular.ttf') format('truetype');
@@ -53,13 +52,9 @@ html{
     color: #fff;
     position: relative;
     background-color: #0d1632;
+    background-image: var(--conicalFallback);
     background-image: var(--backgroundImg);
-}
-
-@supports (background-image: repeating-conic-gradient(#0d1632, #436295)) {
-    .layout{
-        background-image: var(--backgroundImg), var(--conicalFallback);
-    }
+    background-image: var(--backgroundImg), var(--conicalFallback);
 }
 
 .title{
