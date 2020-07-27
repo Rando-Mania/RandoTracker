@@ -52,9 +52,13 @@ html{
     color: #fff;
     position: relative;
     background-color: #0d1632;
-    background-image: var(--conicalFallback);
     background-image: var(--backgroundImg);
-    background-image: var(--backgroundImg), var(--conicalFallback);
+}
+@supports (background-image:conic-gradient(#fff,#000)){
+    .layout{
+        background-image: var(--conicalFallback);
+        background-image: var(--backgroundImg), var(--conicalFallback);
+    }
 }
 
 .title{
