@@ -12,6 +12,10 @@
     font-family: 'FF4', sans-serif;
 }
 
+.two-loading{
+    position: relative;
+}
+
 .loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
     font-family: 'Permanent Marker', cursive;
   width: 1280px;
@@ -30,13 +34,49 @@
     --nameX: 507px;
     text-align: center;
 }
+.loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
+    overflow: hidden;
+}
+
+.loadscreen-contain[class*="threemus-"]::before, .two-loading[class*="threemus-"]::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    left: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(transparent 0 3px, rgba(0,0,0,.1) 3px 6px);
+    animation: lines 20s infinite linear;
+}
+
+@keyframes lines {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(50%);}    
+}
+
+.loadscreen-contain[class*="threemus-"]::after, .two-loading[class*="threemus-"]::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(transparent 50%, rgba(0,0,0,.1) 51%);
+    animation: single-line 4s infinite linear;
+    z-index: 2;
+}
+
+@keyframes single-line {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(-1440px);}    
+}
 
 .loadscreen-contain[class*="threemus-"] .loadscreen-main [player="1"] .player-info, .two-loading[class*="threemus-"] .loadscreen-main [player="1"] .player-info{
     --nameY: 380px;
 }
 
 .loadscreen-contain[class*="threemus-"] .player-info, .two-loading[class*="threemus-"] .player-info{
-    color: #000;
+    color: rgba(0,0,0,.8);
     font-size: 24px;
     text-align: center;
 }
@@ -55,10 +95,25 @@
 .loadscreen-contain[class*="threemus-"] .border-1, .two-loading[class*="threemus-"] .border-1{
     border: none;
 }
-
 .loadscreen-contain[class*="threemus-"] .record-contain, .two-loading[class*="threemus-"] .record-contain,
 .loadscreen-contain[class*="threemus-"] .seed-contain, .two-loading[class*="threemus-"] .seed-contain{
-    display: none;
+    position: relative;
+}
+
+.loadscreen-contain[class*="threemus-"] .record-contain::before, .two-loading[class*="threemus-"] .record-contain::before,
+.loadscreen-contain[class*="threemus-"] .seed-contain::before, .two-loading[class*="threemus-"] .seed-contain::before{
+    content:'[';
+    position: absolute;
+    left: 0;
+    top: 29%;
+}
+.loadscreen-contain[class*="threemus-"] .record-contain::after, .two-loading[class*="threemus-"] .record-contain::after,
+.loadscreen-contain[class*="threemus-"] .seed-contain::after, .two-loading[class*="threemus-"] .seed-contain::after
+{
+    content:']';
+    position: absolute;
+    right: 0;
+    top: 29%;
 }
 
 .loadscreen-contain.threemus-zone-group, .two-loading.threemus-zone-group{
