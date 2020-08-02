@@ -193,7 +193,8 @@ html{
 [property="badge-storm"] img{background-position: 40% 60%;}
 [property="badge-mineral"] img{background-position: 50% 60%;}
 [property="badge-glacier"] img{background-position: 60% 60%;}
-[property="badge-rising"] img{background-position: 70% 60%;}
+[property="badge-rising"] img{background-position: 70% 60%;
+    filter: drop-shadow(.5px 0 rgba(255,255,255,.25)) drop-shadow(-.5px 0px rgba(255,255,255,.25)) drop-shadow(0 -.5px rgba(255,255,255,.25)) drop-shadow(0 .5px rgba(255,255,255,.25));}
 
 [property="badge-boulder"] img{background-position: 0 70%;}
 [property="badge-cascade"] img{background-position: 10% 70%;}
