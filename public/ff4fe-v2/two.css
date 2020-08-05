@@ -369,13 +369,13 @@ tr-timer, .player-final{
 
 .player-final{
     color: #ffdd00;
-    text-shadow: 0 3px 0 #940000, 3px 0 0 #940000, 3px 3px 0 #940000;
+    --text-shadow-color: #940000;
+    text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
 }
 
-.player-final, .player-winner{
-    background-color: #0c0946;
-    border: solid 1px #fff;
-    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+[class*="threemus-zone"] .player-final{
+    color: #fcf037;
+    --text-shadow-color: #c50ec5;
 }
 
 tr-timer span {
