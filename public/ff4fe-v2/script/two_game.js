@@ -26,3 +26,12 @@ function staffDummyText() {
         {property: 'trackers', value: 'C3PO, BB-8'}
     ]);
 }
+// tracker.init(){
+//     Tracker.getLayoutData(function(data) {
+//         if (data["11"] || data["12"] || data["13"] || data["14"] || data["15"] || data["16"]) {
+//             Tracker.updateLayout('objective-one-text','Have Kokkol forge Legend Sword with Adamant')
+//         } else {
+//             Tracker.updateLayout('objective-one-text','')
+//         }
+//     });
+// }
