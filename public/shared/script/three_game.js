@@ -13,17 +13,17 @@ function playerDummyText() {
         {property: '__p1__toggle-winner', value: 1},
         
         {property: '__p2__player-name', value: 'Yoda'},
-        {property: '__p2__player-pronoun', value: 'they/them'},
-        {property: '__p2__player-number', value: 21},
-        {property: '__p2__player-final', value: '1:23:45'},
-        {property: '__p2__toggle-winner', value: 1},
+        {property: '__p2__player-pronoun', value: ''},
+        {property: '__p2__player-number', value: ''},
+        {property: '__p2__player-final', value: ''},
+        {property: '__p2__toggle-winner', value: 0},
         {property: '__p2__toggle-speaker', value: 1},
         
-        {property: '__p3__player-name', value: 'AlbusPercivalWulfricBrianDumbledor'},
-        {property: '__p3__player-pronoun', value: 'she/her'},
-        {property: '__p3__player-number', value: 3},
+        {property: '__p3__player-name', value: 'The_GreenLeaf_Effect'},
+        {property: '__p3__player-pronoun', value: 'he/him'},
+        {property: '__p3__player-number', value: ''},
         {property: '__p3__player-final', value: '1:23:45'},
-        {property: '__p3__toggle-winner', value: 1},
+        {property: '__p3__toggle-winner', value: 0},
         {property: '__p3__toggle-speaker', value: 1},
     ]);
 }
