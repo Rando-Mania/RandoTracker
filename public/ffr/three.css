@@ -80,6 +80,7 @@ html{
 
 .ffr-tourney{
     background: url(images/3p/base-tourney.png) var(--tourneyfallbackColor);
+    background: url(images/3p/base-tourney.webp) var(--tourneyfallbackColor);
 }
 .layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
 .layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}

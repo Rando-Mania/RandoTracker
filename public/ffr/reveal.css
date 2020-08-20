@@ -90,6 +90,7 @@ html{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
+    border-radius: 8px;
 }
 
 .ffr-default{
@@ -104,6 +105,7 @@ html{
 
 .ffr-tourney{
     background: url(images/1p/base-tourney.png) var(--tourneyfallbackColor);
+    background: url(images/1p/base-tourney.webp) var(--tourneyfallbackColor);
 }
 .layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1 {border-image: var(--borderImg2);}
 .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
@@ -164,6 +166,54 @@ html{
     height: 32px;
     display: block;
 }
+
+.player-grid img, .dialog img{
+    background-image: url('images/retro_tracker/ffr-items-sprite-2020.png');
+    background-size: 500% 1100%;
+}
+
+.earth-off{background-position: 0 40%;}
+.earth-on{background-position: 0 50%;}
+.fire-off{background-position: 25% 40%;}
+.fire-on{background-position: 25% 50%;}
+.water-off{background-position: 50% 40%;}
+.water-on{background-position: 50% 50%;}
+.air-off{background-position: 75% 40%;}
+.air-on{background-position: 75% 50%;}
+
+.bridge-off{background-position: 0 60%;}
+.bridge-on{background-position: 0 70%;}
+.canal-off{background-position: 25% 60%;}
+.canal-on{background-position: 25% 70%;}
+.ship-off{background-position: 50% 60%;}
+.ship-on{background-position: 50% 70%;}
+.canoe-off{background-position: 75% 60%;}
+.canoe-on{background-position: 75% 70%;}
+
+.floater{background-position: 0 30%;}
+.ship{background-position: 25% 30%;}
+.crown{background-position: 0 0;}
+.key{background-position: 25% 0;}
+.lute{background-position: 50% 0;}
+
+.crystal{background-position: 75% 80%;}
+.herb{background-position: 100% 0;}
+.tnt{background-position: 0 10%;}
+.ruby{background-position: 25% 10%;}
+
+.tail{background-position: 50% 10%;}
+.bottle{background-position: 75% 10%;}
+.adamant{background-position: 75% 0px;}
+
+.slab-0{background-position: 50% 30%;}
+.slab-1{background-position: 75% 30%;}
+.slab-2{background-position: 100% 30%;}
+
+.rod{background-position: 0 20%;}
+.oxyale{background-position: 25% 20%;}
+.chime{background-position: 100% 10%;}
+.cube{background-position: 75% 20%;}
+
 .player-speaker{
     padding: 4px;
 }
@@ -178,36 +228,6 @@ html{
     background-position: 100% 0%;
 }
 
-/*
-[player="2"] .player-speaker{
-    transform: rotateY(180deg);
-}
-
-
-.player-winner{
-    display: flex;
-    align-items: center;
-}
-
-.player-best-of{
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    display: none;
-}
-.player-best-of img{
-    width: 32px;
-    height: 32px;
-    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
-    background-size: 100% 100%;
-}
-
-.best-of-3, .best-of-5, .best-of-7{
-    display: grid;
-}
-.best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
-.best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
-.best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
-*/
 
 .player-final, .player-winner{
     font-size: 20px;

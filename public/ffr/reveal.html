@@ -23,21 +23,18 @@
 </head>
 <body>
 	<div class="layout">
- 		<template id="player_info_template">
+        <tr-player player="1">
 			<div class="borderImg player-video abs"></div>
 			<div class="player-name abs border-background-3">
 				<tr-text scale-to-fit property="player-name"></tr-text>
 			</div>
-			<tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
+			<tr-template class="player-grid abs border-background-1" href="icons-2020.html"></tr-template>
             <tr-text property="player-pronoun" class="player-pronoun abs border-background-3"></tr-text>
 			<tr-text property="player-number" class="record-contain abs border-background-3"></tr-text>
 			<tr-text property="player-final" class="player-final abs border-background-3"></tr-text>        
 			<tr-toggle property="toggle-speaker" class="abs player-speaker">
 				<img src="../shared/images/icons/blank.svg" alt="">
 			</tr-toggle>
-		</template>
-        <tr-player player="1">
-            <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
 <!-- timer/staff -->
@@ -49,23 +46,16 @@
     </div>
 
 <!-- loadscreen -->
-    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
-        <tr-template href="two-loading-template.html"></tr-template>
-    </div>
+<div class="loadscreen-contain abs" style="top: 0; left: 0;">
+    <tr-template href="reveal-loading-template.html"></tr-template>
+</div>
 
-<!-- bracket -->
-    <!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
-        <div class="bracket">
-            <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-        </div>
-    </div> -->
-    
 <!-- RM calendar -->
-    <div class="calendar-contain abs" style="top: 0; left: 0;">
-        <tr-template href="../shared/calendar-template.html"></tr-template>
-    </div>
-	
-	<tr-template href="reveal_menu.html"></tr-template>
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar-template.html"></tr-template>
+</div>
+
+<tr-template href="../shared/one-menus-contain.html"></tr-template>
 
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
