@@ -44,10 +44,6 @@
 
 .abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
-
 @font-face {
     font-family: "FF4";
     src:
@@ -81,6 +77,8 @@ html{
     background-image: var(--finalsFallback);
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
 }
+
+.layout.trans{background-color: transparent; background-image: none;}
 
 .layout.ccs-lunar-racing{background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);}
 .layout.ccs-mysidian-jumping{background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png);}
