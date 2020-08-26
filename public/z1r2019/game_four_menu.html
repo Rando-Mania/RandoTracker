@@ -1,0 +1,56 @@
+    <div class="menu-game-specific">
+        <div id="menu_players" class="fieldset">
+            <h4 class="legend">Players Extra</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Place</th>
+                        <th>Done</th>
+                    </tr>
+                    <tr>
+                        <td><label player="1" for="player-1">1</label></td>
+                        <td><tr-input-text player="1" property="player-count"></tr-input-text></td>
+                        <td><tr-input-toggle-class player="1" class="done-input" property="player-done" target="[player='1'] .done" toggle-class="show"></tr-input-toggle-class></td>
+                    </tr>
+                    <tr>
+                        <td><label player="2" for="player-2">2</label></td>
+                        <td><tr-input-text player="2" property="player-count"></tr-input-text></td>
+                        <td><tr-input-toggle-class player="2" class="done-input" property="player-done" target="[player='2'] .done" toggle-class="show"></tr-input-toggle-class></td>
+                    </tr>
+                    <tr>
+                        <td><label player="3" for="player-3">3</label></td>
+                        <td><tr-input-text player="3" property="player-count"></tr-input-text></td>
+                        <td><tr-input-toggle-class player="3" class="done-input" property="player-done" target="[player='3'] .done" toggle-class="show"></tr-input-toggle-class></td>
+                    </tr>
+                    <tr>
+                        <td><label player="4" for="player-4">4</label></td>
+                        <td><tr-input-text player="4" property="player-count"></tr-input-text></td>
+                        <td><tr-input-toggle-class player="4" class="done-input" property="player-done" target="[player='4'] .done" toggle-class="show"></tr-input-toggle-class></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_layout" class="fieldset">
+            <h4 class="legend">Settings</h4>
+            <div class="">
+                <label>Header</label>
+                <tr-input-textarea class="header-input" property="header"></tr-input-textarea>
+            </div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>CrimsonAvix</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>captuhu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>

@@ -172,9 +172,9 @@ input{
   flex: 142px 0 1;
   height: 157px;
   border: 10.5px solid #111;
-  border-image: linear-gradient( to bottom right, #333, #111) 13; 
+  border-image: linear-gradient( to bottom right, #333, #111) 13;
   border-image: url('atari-cart.jpg') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px;
-  border-image: url('atari-cart.webp') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px;
+  /* border-image: url('atari-cart.avif') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px; */
   border-radius: 4px;
   overflow: hidden;
   display: grid;
