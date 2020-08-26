@@ -100,6 +100,8 @@ article{
   color: #fff;
   background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.png);
   background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 640px 360px;
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.avif);
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.avif) 0 0 / auto auto, paint(fallbackImage) 0 0 / 640px 360px;
   background-color: rgba(0,0,0,.3);
   position: relative;
   overflow: hidden;
@@ -117,7 +119,9 @@ article:after{
   top: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events:none;
@@ -174,7 +178,6 @@ input{
   border: 10.5px solid #111;
   border-image: linear-gradient( to bottom right, #333, #111) 13;
   border-image: url('atari-cart.jpg') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px;
-  /* border-image: url('atari-cart.avif') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px; */
   border-radius: 4px;
   overflow: hidden;
   display: grid;

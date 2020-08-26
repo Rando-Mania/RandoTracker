@@ -1,5 +1,4 @@
 :root{
-    --backgroundImg: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100%;
     --border-1: 2px solid rgba(255,255,255,.8);;
     --background-color-1: rgba(0,0,0,.75);
     --background-color-2: rgba(0,0,0,1);
@@ -57,10 +56,11 @@
     position: relative;
 }
 
-
 .map-background{
     background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop.png') 50% 60% / 100% #002e97;}
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop.png') 50% 60% / 100% #002e97;
+    background: 
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop.avif') 50% 60% / 100% #002e97;}
 
 .player-panels-contain{
     height: min-content;
@@ -223,14 +223,14 @@
     to{opacity: 1;}
 }
 
-.best-of{
+.player-best-of{
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-gap: 2px;
     display: none;
     z-index: 5;
 }
-.best-of img{
+.player-best-of img{
     width: 32px;
     height: 32px;
 }
@@ -246,7 +246,7 @@
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
 
-.best-of .active img{
+.player-best-of .active img{
     animation: medal-spin 1s steps(8);
 }
 

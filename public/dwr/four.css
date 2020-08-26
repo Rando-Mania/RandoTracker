@@ -5,8 +5,7 @@
 }
 
 :root{
-    --backgroundImg: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100%;
-    --border1: 2px solid rgba(255,255,255,.8);;
+    --border1: 2px solid rgba(255,255,255,.8);
     --backgroundColor1: rgba(0,0,0,.75);
     --backgroundColor2: rgba(0,0,0,1);
     --vidWidth: 438px;
@@ -30,7 +29,9 @@
 }
 .map-background{
     background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100% #002e97;}
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100% #002e97;
+    background: 
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.avif') 50% 46% / 100% #002e97;}
 .abs{position: absolute;}
 
 html{
