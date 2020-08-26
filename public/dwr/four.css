@@ -29,9 +29,7 @@
 }
 .map-background{
     background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100% #002e97;
-    background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.avif') 50% 46% / 100% #002e97;}
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100% #002e97;}
 .abs{position: absolute;}
 
 html{
