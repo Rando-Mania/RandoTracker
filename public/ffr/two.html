@@ -12,6 +12,9 @@
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+
+        [player="1"] .player-cam {left: var(--camX); top: var(--camY);}
+        [player="2"] .player-cam {right: var(--camX); top: var(--camY);}
     
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
@@ -41,7 +44,8 @@
 <body>
 	<div class="layout">
  		<template id="player_info_template">
-			<div class="borderImg player-video abs"></div>
+            <div class="borderImg player-video abs"></div>
+            <div class="player-cam player-video borderImg abs"></div>
 			<div class="player-name abs border-background-1">
 				<tr-text scale-to-fit property="player-name"></tr-text>
 			</div>
