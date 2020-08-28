@@ -24,15 +24,19 @@
         <div id="menu_backgrounds" class="fieldset backgrounds-menu">
             <h4 class="legend">Backgrounds</h4>
             <div>
-    
-                <label>Layout:</label>
+                <label for="cams-toggle">Cameras:</label>
+                <tr-input-toggle-class id="cams-toggle" class="show-cams-toggle-input" target=".layout" toggle-class="show-cams" property="toggle-cams"></tr-input-toggle-class>
+            </div>
+            <div>
+                <label>Image:</label>
                 <tr-select-toggle property="layout-back-select">
                     <tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
                     <tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
                     <tr-option target=".layout, .tracker-layout" toggle-class="ffr-tourney" value="3">ST 2020</tr-option>
                     <tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="4">FFR AD</tr-option>
+                    <tr-option target=".layout, .tracker-layout" toggle-class="ffr-rush" value="5">Rush</tr-option>
+                    <tr-option target=".layout, .tracker-layout" toggle-class="ffr-duckling" value="6">Duckling</tr-option>
                 </tr-select-toggle>
-    
             </div>
         </div>
         <div id="menu_credits" class="fieldset">
