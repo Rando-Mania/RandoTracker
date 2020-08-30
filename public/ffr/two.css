@@ -29,8 +29,10 @@
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
+    --leaguefallbackColor: #005;
     --rushfallbackColor: #005;
     --darkfallbackColor: #005;
+    --ducklingfallbackColor: #005;
 }
 
 .layout.show-cams{
@@ -129,6 +131,11 @@ html{
 .layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
 .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
 
+.ffr-league{
+    background: url(images/2p/base-league.png) var(--leaguefallbackColor);
+}
+.layout.ffr-league .border-background-1, .layout.ffr-league .border-background-3 {background-color: var(--leaguefallbackColor);}
+
 .ffr-rush{
     background: url(images/2p/base-rush.png) var(--rushfallbackColor);
 }
@@ -142,6 +149,11 @@ html{
 }
 .layout.ffr-dark .border-background-1, .layout.ffr-dark .border-background-3 {background-color: var(--darkfallbackColor);}
 
+.ffr-duckling{
+    background: url(images/2p/base-background.png) var(--ducklingfallbackColor);
+}
+.layout.ffr-duckling .border-background-1, .layout.ffr-duckling .border-background-3 {background-color: var(--ducklingfallbackColor);}
+
 .layout.show-cams.ffr-default{
     background-image: url(images/2p-cam/base-background.png);
 }
@@ -149,9 +161,12 @@ html{
     background-image: url(images/2p-cam/base-irongol.png);
     background-image: url(images/2p-cam/base-irongol.webp);
 }
-/* .layout.show-cams.ffr-tourney{
+.layout.show-cams.ffr-tourney{
     background-image: url(images/2p-cam/base-tourney.png);
-} */
+}
+.layout.show-cams.ffr-league{
+    background-image: url(images/2p-cam/base-league.png);
+}
 .layout.show-cams.ffr-rush{
     background-image: url(images/2p-cam/base-rush.png);
 }

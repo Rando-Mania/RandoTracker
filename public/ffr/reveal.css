@@ -29,6 +29,7 @@
     --defaultfallbackColor: #005;
     --irongolfallbackColor: #500;
     --tourneyfallbackColor: #050;
+    --leaguefallbackColor: #005;
     --rushfallbackColor: #005;
     --darkfallbackColor: #005;
     --duckfallbackColor: #005;
@@ -111,6 +112,11 @@ html{
 .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
 .layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
 .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
+
+.ffr-league{
+    background: url(images/1p/base-league.png) var(--leaguefallbackColor);
+}
+.layout.ffr-league .border-background-1, .layout.ffr-league .border-background-3 {background-color: var(--leaguefallbackColor);}
 
 .ffr-rush{
     background: url(images/1p/base-rush.png) var(--rushfallbackColor);
