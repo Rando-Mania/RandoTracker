@@ -150,7 +150,7 @@ html{
 .layout.ffr-dark .border-background-1, .layout.ffr-dark .border-background-3 {background-color: var(--darkfallbackColor);}
 
 .ffr-duckling{
-    background: url(images/2p/base-background.png) var(--ducklingfallbackColor);
+    background: url(images/2p/base-duckling.png) var(--ducklingfallbackColor);
 }
 .layout.ffr-duckling .border-background-1, .layout.ffr-duckling .border-background-3 {background-color: var(--ducklingfallbackColor);}
 
