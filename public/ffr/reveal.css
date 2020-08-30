@@ -86,6 +86,11 @@ html{
     --border-inside-color: #f7e86e;
 }
 
+.ffr-league{
+    background: url(images/1p/base-league.png) var(--leaguefallbackColor);
+}
+.layout.ffr-league .border-background-1, .layout.ffr-league .border-background-3 {background-color: var(--leaguefallbackColor);}
+
 .ffr-rush{
     background: url(images/1p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
     --backgroundColor2: #005;
