@@ -5,15 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('images/1p/base-background.png');
-    --border1: 1px solid #ffffff;
-    --borderImg: url('images/border.png') 6 / 6px round;
-    --borderImg2: url('images/border-yellow.png') 6 / 6px round;
-    --borderImgtop: url('images/border.png') 6 / 6px 6px 0 6px round;
-    --borderImgtop2: url('images/border-yellow.png') 6 / 6px 6px 0 6px round;
-    --borderImgbot: url('images/border.png') 6 / 0 6px 6px 6px round;
-    --borderImgbot2: url('images/border-yellow.png') 6 / 0 6px 6px 6px round;
-    --backgroundColor1: #000;
     --vidWidth: 770px;
     --vidAspect: 4 / 3;
     --videoX: 20px; --videoY: 20px;
@@ -26,41 +17,30 @@
     --winX: 125px; --winY: 652px;
     --finalX: 20px; --finalY: 652px;
     --bestX: 869px; --bestY: 558px;
-    --defaultfallbackColor: #005;
-    --irongolfallbackColor: #500;
-    --tourneyfallbackColor: #050;
-    --rushfallbackColor: #005;
-    --darkfallbackColor: #005;
-    --duckfallbackColor: #005;
+    
+    --backgroundColor1: #000;
+    --backgroundColor2: #005;
+    --backgroundImg: url('images/1p/base-background.png');
 }
 
-.border-1{border: var(--border1);}
-.borderImg{
+.border-1{
+    --border1: 6px solid #b1b1b1;
+    --borderImg: url('images/border.png') 6;
+    --borderImg2: url('images/border-yellow.png') 6;
     border: var(--border1);
     border-image: var(--borderImg);
+    border-image: paint(ffr-border) 6;
+    --border-outside-color: #747474;
+    --border-inside-color: #fcfcfc;
     border-radius: 8px;
 }
+
+.border-bottom{
+    border-top: none;
+}
+
 .background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
-
-.border-background-2 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
-
-.border-background-3 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImgbot);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
+.background-2{background-color: var(--backgroundColor2);}
 
 .abs{position: absolute;}
 
@@ -83,7 +63,42 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
+    background: var(--backgroundImg) #000;
+}
+
+.ffr-default{
+    background: url(images/1p/base-background.png) #000;
+    --backgroundColor2: #005;
+}
+
+.ffr-irongol{
+    background: url(images/1p/base-irongol.png) #000076;
+    --backgroundColor2: #500;
+}
+
+.ffr-tourney{
+    background: url(images/1p/base-tourney.png) #291901;
+    background: url(images/1p/base-tourney.webp) #291901;
+    --backgroundColor2: #050;
+}
+.ffr-tourney .border-1{
+    --border-outside-color: #726b33;
+    --border-inside-color: #f7e86e;
+}
+
+.ffr-rush{
+    background: url(images/1p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
+    --backgroundColor2: #005;
+}
+
+.ffr-dark{
+    background: url(images/1p/base-dark.png) #000;
+    --backgroundColor2: #005;
+}
+
+.ffr-duckling{
+    background: url(images/1p/base-duckling.png) #428fa6;
+    --backgroundColor2: #005;
 }
 
 .player-video{
@@ -93,41 +108,6 @@ html{
     border-radius: 8px;
 }
 
-.ffr-default{
-    background: url(images/1p/base-background.png) var(--defaultfallbackColor);
-}
-.layout.ffr-default .border-background-1, .layout.ffr-default .border-background-3 {background-color: var(--defaultfallbackColor);}
-
-.ffr-irongol{
-    background: url(images/1p/base-irongol.png) var(--irongolfallbackColor);
-}
-.layout.ffr-irongol .border-background-1, .layout.ffr-irongol .border-background-3 {background-color: var(--irongolfallbackColor);}
-
-.ffr-tourney{
-    background: url(images/1p/base-tourney.png) var(--tourneyfallbackColor);
-    background: url(images/1p/base-tourney.webp) var(--tourneyfallbackColor);
-}
-.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1 {border-image: var(--borderImg2);}
-.layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
-.layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
-.layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
-
-.ffr-rush{
-    background: url(images/1p/base-rush.png) var(--rushfallbackColor);
-}
-.layout.ffr-rush .border-background-1, .layout.ffr-rush .border-background-3 {background-color: var(--rushfallbackColor);}
-
-
-.ffr-dark{
-    background: url(images/1p/base-dark.png) var(--darkfallbackColor);
-}
-.layout.ffr-dark .border-background-1, .layout.ffr-dark .border-background-3 {background-color: var(--darkfallbackColor);}
-
-.ffr-duckling{
-    background: url(images/1p/base-duckling.png) var(--duckfallbackColor);
-}
-.layout.ffr-duckling .border-background-1, .layout.ffr-duckling .border-background-3 {background-color: var(--duckfallbackColor);}
-
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
@@ -136,7 +116,6 @@ html{
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 8px 8px 8px;
 }
 
 .player-name tr-text{
@@ -146,18 +125,18 @@ html{
 .player-grid{
     display: grid;
     grid-template-columns: repeat(12, auto);
-    padding: 5px 10px 10px 10px;
-    grid-gap: 4px; 
+    padding: 0 5px 5px 5px;
+    grid-gap: 4px;
 }
 
-.player-pronoun, .record-contain{
-    padding: 5px 10px 10px 10px;
+.player-pronoun{
+    padding: 5px 10px 5px 10px;
     font-size: 14px;
 	text-align: center;
 	width: 110px;
 }
 
-.player-pronoun:empty, .record-contain:empty{
+.player-pronoun:empty{
   display: none;
 }
 
@@ -232,7 +211,7 @@ html{
 .player-final, .player-winner{
     font-size: 20px;
     text-align: center;
-	padding: 0 10px 5px 10px;
+	padding: 1px 6px 0 6px;
 }
 .player-final:empty{
     display:none;
@@ -251,13 +230,6 @@ tr-timer span {
     text-align: center;
 }
 
-.production-team-swap{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 8px;
-    padding: 8px;
-}
-
 .staff{
     overflow: hidden;
     font-size: 24px;
@@ -266,6 +238,10 @@ tr-timer span {
 	top: 200px; 
 	left: 800px; 
 	text-align: center;
+}
+
+.production-team-swap{
+    display: grid;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -327,13 +303,6 @@ tr-timer span {
     z-index: 3;
     }
 
-#production{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: end;
-}
-
 .display-none{ display: none; }
 
 .show{ display: block; }
@@ -357,9 +326,4 @@ tr-timer span {
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
-}
-
-.loadscreen .player-name{
-	text-align: center;
-	width: 100%;
 }
