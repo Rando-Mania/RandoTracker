@@ -5,69 +5,51 @@
 }
 
 :root{
-    --backgroundImg: url('images/1p/base-background.png');
-    --border1: 1px solid #ffffff;
-    --borderImg: url('images/border.png') 6 / 6px round;
-    --borderImg2: url('images/border-yellow.png') 6 / 6px round;
-    --borderImgtop: url('images/border.png') 6 / 6px 6px 0 6px round;
-    --borderImgtop2: url('images/border-yellow.png') 6 / 6px 6px 0 6px round;
-    --borderImgbot: url('images/border.png') 6 / 0 6px 6px 6px round;
-    --borderImgbot2: url('images/border-yellow.png') 6 / 0 6px 6px 6px round;
-    --backgroundColor1: #000;
     --vidWidth: 770px;
     --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 320px;
     --nameX: 800px; --nameY: 107px;
     --gridX: 800px; --gridY: 20px;
     --pronounX: 1140px; --pronounY: 107px;
-    --rankX: 133px; --rankY: 63px;
-    --speakerX: 245px; --speakerY: 60px;
-    --winX: 125px; --winY: 652px;
-    --finalX: 20px; --finalY: 652px;
-    --bestX: 869px; --bestY: 558px;
-    --defaultfallbackColor: #005;
-    --irongolfallbackColor: #500;
-    --tourneyfallbackColor: #050;
-    --leaguefallbackColor: #005;
-    --rushfallbackColor: #005;
-    --darkfallbackColor: #005;
-    --duckfallbackColor: #005;
+
+    --backgroundColor1: #000;
+    --backgroundColor2: #005;
+    --backgroundImg: url('images/1p/base-background.png');
+
+    --border: 6px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
-.border-1{border: var(--border1);}
-.borderImg{
-    border: var(--border1);
-    border-image: var(--borderImg);
+.border-1{
+    border: var(--border) solid #b1b1b1;
     border-radius: 8px;
 }
+
+@supports not (border-image: paint(ffr-border) 6) {
+    .border-1{border-image: url('images/border.png') 6;}
+}
+
+@supports (border-image: paint(ffr-border) 6) {
+    .border-1{
+        border-image: paint(ffr-border) 6;
+        --border-outside-color: #747474;
+        --border-inside-color: #fcfcfc;
+    }
+}
+
+.border-bottom{border-top: none;}
+.border-top{border-bottom: none;}
+
 .background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
-
-.border-background-2 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
-
-.border-background-3 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImgbot);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
-}
+.background-2{background-color: var(--backgroundColor2);}
 
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 /* layout specific styles */
 @font-face {
@@ -84,55 +66,66 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
+    background: var(--backgroundImg) #000;
+}
+
+.layout.clip-background{
+    -webkit-mask:
+        linear-gradient(to right, red var(--clipX1), transparent var(--clipX1) var(--clipX2), red 0), 
+        linear-gradient(red var(--clipY1), transparent var(--clipY1) var(--clipY2), red 0);
+    mask:
+        linear-gradient(to right, red var(--clipX1), transparent var(--clipX1) var(--clipX2), red 0), 
+        linear-gradient(red var(--clipY1), transparent var(--clipY1) var(--clipY2), red 0);
+}
+
+.ffr-default{
+    background: var(--backgroundImg) #000;
+}
+
+.ffr-irongol{
+    background: url(images/1p/base-irongol.png) #000076;
+    --backgroundColor2: #500;
+}
+
+.ffr-tourney{
+    background: url(images/1p/base-tourney.png) #291901;
+    background: url(images/1p/base-tourney.webp) #291901;
+    --backgroundColor2: #050;
+}
+
+@supports not (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{border-image-source: url('images/border-yellow.png');}
+}
+
+@supports (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{
+        border-image-source: paint(ffr-border);
+        --border-outside-color: #726b33;
+        --border-inside-color: #f7e86e;
+    }
+}
+
+.ffr-league{
+    background: url(images/1p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
+}
+
+.ffr-rush{
+    background: url(images/1p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
+}
+
+.ffr-dark{
+    background: url(images/1p/base-dark.png) #000;
+}
+
+.ffr-duckling{
+    background: url(images/1p/base-duckling.png) #428fa6;
 }
 
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
-    border-radius: 8px;
 }
-
-.ffr-default{
-    background: url(images/1p/base-background.png) var(--defaultfallbackColor);
-}
-.layout.ffr-default .border-background-1, .layout.ffr-default .border-background-3 {background-color: var(--defaultfallbackColor);}
-
-.ffr-irongol{
-    background: url(images/1p/base-irongol.png) var(--irongolfallbackColor);
-}
-.layout.ffr-irongol .border-background-1, .layout.ffr-irongol .border-background-3 {background-color: var(--irongolfallbackColor);}
-
-.ffr-tourney{
-    background: url(images/1p/base-tourney.png) var(--tourneyfallbackColor);
-    background: url(images/1p/base-tourney.webp) var(--tourneyfallbackColor);
-}
-.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1 {border-image: var(--borderImg2);}
-.layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
-.layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
-.layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
-
-.ffr-league{
-    background: url(images/1p/base-league.png) var(--leaguefallbackColor);
-}
-.layout.ffr-league .border-background-1, .layout.ffr-league .border-background-3 {background-color: var(--leaguefallbackColor);}
-
-.ffr-rush{
-    background: url(images/1p/base-rush.png) var(--rushfallbackColor);
-}
-.layout.ffr-rush .border-background-1, .layout.ffr-rush .border-background-3 {background-color: var(--rushfallbackColor);}
-
-
-.ffr-dark{
-    background: url(images/1p/base-dark.png) var(--darkfallbackColor);
-}
-.layout.ffr-dark .border-background-1, .layout.ffr-dark .border-background-3 {background-color: var(--darkfallbackColor);}
-
-.ffr-duckling{
-    background: url(images/1p/base-duckling.png) var(--duckfallbackColor);
-}
-.layout.ffr-duckling .border-background-1, .layout.ffr-duckling .border-background-3 {background-color: var(--duckfallbackColor);}
 
 .player-name{
     font-size: 26px;
@@ -142,7 +135,6 @@ html{
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 8px 8px 8px;
 }
 
 .player-name tr-text{
@@ -152,18 +144,18 @@ html{
 .player-grid{
     display: grid;
     grid-template-columns: repeat(12, auto);
-    padding: 5px 10px 10px 10px;
-    grid-gap: 4px; 
+    padding: 0 5px 5px 5px;
+    grid-gap: 4px;
 }
 
-.player-pronoun, .record-contain{
-    padding: 5px 10px 10px 10px;
+.player-pronoun{
+    padding: 5px 10px 5px 10px;
     font-size: 14px;
 	text-align: center;
 	width: 110px;
 }
 
-.player-pronoun:empty, .record-contain:empty{
+.player-pronoun:empty{
   display: none;
 }
 
@@ -234,20 +226,9 @@ html{
     background-position: 100% 0%;
 }
 
-
-.player-final, .player-winner{
-    font-size: 20px;
-    text-align: center;
-	padding: 0 10px 5px 10px;
-}
-.player-final:empty{
-    display:none;
-}
-
-tr-timer{
+tr-timer, .player-final{
 	width: 11em;
     height: 53px;
-    z-index: 1;
 	font-size: 24px;
 	top: 285px;
 	left: 890px;
@@ -255,14 +236,24 @@ tr-timer{
 tr-timer span {
     width: 26px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.production-team-swap{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 8px;
-    padding: 8px;
+.player-final{
+    text-align: center;
+    z-index: 2;
+    letter-spacing: 7px;
+    line-height: 1.75;
 }
+
+.player-final:empty{
+    display:none;
+}
+
+
+/* staff styles */
 
 .staff{
     overflow: hidden;
@@ -272,6 +263,10 @@ tr-timer span {
 	top: 200px; 
 	left: 800px; 
 	text-align: center;
+}
+
+.production-team-swap{
+    display: grid;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -333,39 +328,12 @@ tr-timer span {
     z-index: 3;
     }
 
-#production{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: end;
-}
-
 .display-none{ display: none; }
 
 .show{ display: block; }
 
 /* Menu */
 
-#menu_2 {
-    display: grid;
-    grid-template-areas:
-        "players layout team"
-        "timer view reset";
-}
-
-#menu_2 .fieldset .legend, .menu-game-specific .fieldset .legend{
-    z-index: 5;
-}
-
 #menu_layout div{
     display: block;
-}
-
-#menu_overlays_contain div{
-    margin-bottom: .75em;
-}
-
-.loadscreen .player-name{
-	text-align: center;
-	width: 100%;
 }
