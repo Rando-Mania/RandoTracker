@@ -47,7 +47,7 @@ html{
         url("fonts/Warrior Quest I and II.ttf") format("truetype");
 }
 
-#layout{
+.layout{
     font-family: "Warrior Quest I and II";
     width: 1280px;
     height: 720px;
@@ -215,7 +215,7 @@ figcaption{
 }
 
 tr-image, figure{position: relative;}
-tr-label, #layout figcaption{
+tr-label, .layout figcaption{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -289,12 +289,12 @@ from{background-position: 0 0;}
 to{background-position: -270px 0;}
 }
 
-#layout .player-grid, #layout .stats-and-spells{
+.layout .player-grid, .layout .stats-and-spells{
     display: none;
     /* width: 146px; */
 }
 
-#layout .stats-and-spells.show-flex{
+.layout .stats-and-spells.show-flex{
     display: flex;
 }
 
@@ -494,9 +494,9 @@ tr-timer span {
         vertical-align: middle;
     }
 
-    #layout [property="over_world_item"] img[src*="token"]{transform: scale(1.5);}
-    #layout [property="over_world_item"] img[src*="flute"]{transform: scale(1.3);}
-    #layout [property="over_world_item"] img[src*="erdrick"]{transform: scale(1.5);}
+    .layout [property="over_world_item"] img[src*="token"]{transform: scale(1.5);}
+    .layout [property="over_world_item"] img[src*="flute"]{transform: scale(1.3);}
+    .layout [property="over_world_item"] img[src*="erdrick"]{transform: scale(1.5);}
         
     .coordinates input{
         width: 8em;
@@ -769,9 +769,9 @@ tr-timer span {
 #restreamer_contain.display-none,
 #commentator_contain.display-none{ display: none; }
 
-.show, #layout .show{ display: block; }
+.show, .layout .show{ display: block; }
 .show-flex{ display: flex; }
-.show-grid, #layout .show-grid{ display: grid; }
+.show-grid, .layout .show-grid{ display: grid; }
 
 #menu_players td{
     text-align: center;
