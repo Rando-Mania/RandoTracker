@@ -11,42 +11,109 @@
         :root{
             --nameWidth: 200px;
         }
-        body{
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-gap: 16px;
-            width: -moz-max-content;
-            width: -webkit-max-content;
-            width: max-content;
-        }
         .tracker-layout{
+            font-family: 'Chicago', Arial, sans-serif;
             background-color: #000;
             color: #fff;
+            background-position: bottom;
             display: grid;
+            max-width: 972px;
             grid-template-columns: repeat(2, auto);
-            grid-gap: 24px;
+            gap: 24px;
             padding: 24px;
         }
-    </style>
+        
+        tr-player{
+            display: contents;
+        }
+
+        tr-template{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-auto-rows: auto auto auto 117px;
+            gap: 2px;
+            align-items: start;
+        }
+
+        .player-grid{
+            border-top: solid 6px;
+            width: 100%;
+        }
+        .player-grid, .winner-final-contain{
+            grid-column: 1 / -1;
+        }
+        .player-name{
+            border-top: none;
+        }
+        .winner-final-contain{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        .player-final, .player-winner{
+            border-top: 6px solid;
+        }
+        .player-best-of{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 972px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+            }
+        }
+        
+        @media (max-width: 486px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+                padding: 0;
+            }
+            .player-grid{
+                grid-template-columns: repeat(4, auto);
+                grid-template-rows: repeat(6, auto);
+                width: 100%;
+            }
+            tr-template{
+                grid-template-columns: repeat(1, auto);
+            }
+            .menu-contain{
+                grid-template-columns: repeat(3, auto);
+            }
+        }
+     </style>
 </head>
 <body>
     <div class="tracker-layout">
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
+        <template id="player_info_template">
+            <tr-template class="player-grid background-1 border-1" href="icons-2020.html"></tr-template>
+			<div class="player-name border-1 background-1">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+			</div>
+            <tr-text property="player-pronoun" class="player-pronoun background-1 border-1 border-bottom"></tr-text>
+			<tr-text property="player-number" class="record-contain background-1 border-1 border-bottom"></tr-text>        
+            <tr-template class="player-best-of" href="../shared/bestof.html"></tr-template>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+				<img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <div class="winner-final-contain">
+                <tr-text property="player-final" class="player-final background-1 border-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner background-1 border-1">
+                    <div>Winner</div>
+                </tr-toggle>
             </div>
-            <tr-player player="1">
-                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons-2020.html"></tr-template>
-            </tr-player>
-        </div>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
-            </div>
-            <tr-player player="2">
-                <tr-template class="player-grid border-background-1" id="player-grid-2" href="icons-2020.html"></tr-template>
-            </tr-player>
-        </div>
+		</template>
+       <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
     </div>
 
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
@@ -60,5 +127,10 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/two_game.js"></script>
+    <script>
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('images/border-worklet.js');
+        }
+    </script>
 </body>
 </html>

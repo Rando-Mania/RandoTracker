@@ -5,17 +5,9 @@
 }
 
 :root{
-    --backgroundImg: url('images/2p/base-background.png');
-    --border1: 1px solid #fff;
-    --borderImg: url('images/border.png') 6 / 6px;
-    --borderImg2: url('images/border-yellow.png') 6 / 6px;
-    --borderImgtop: url('images/border.png') 6 / 6px 6px 0 6px;
-    --borderImgtop2: url('images/border-yellow.png') 6 / 6px 6px 0 6px;
-    --borderImgbot: url('images/border.png') 6 / 0 6px 6px 6px;
-    --borderImgbot2: url('images/border-yellow.png') 6 / 0 6px 6px 6px;
-    --backgroundColor1: #000;
     --vidWidth: 615px;
     --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --videoX: 20px; --videoY: 102px;
     --nameWidth: 360px;
     --nameX: 20px; --nameY: 10px;
@@ -26,13 +18,17 @@
     --winX: 125px; --winY: 652px;
     --finalX: 20px; --finalY: 652px;
     --bestX: 285px; --bestY: 65px;
-    --defaultfallbackColor: #005;
-    --irongolfallbackColor: #500;
-    --tourneyfallbackColor: #050;
-    --leaguefallbackColor: #005;
-    --rushfallbackColor: #005;
-    --darkfallbackColor: #005;
-    --ducklingfallbackColor: #005;
+
+    --backgroundColor1: #000;
+    --backgroundColor2: #005;
+    --backgroundImg: url('images/2p/base-background.png');
+
+    --border: 6px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .layout.show-cams{
@@ -47,29 +43,28 @@
     --finalX: 225px; --finalY: 50px;
 }
 
-.border-1{border: var(--border1);}
-.borderImg{border: var(--border1); border-image: var(--borderImg);}
-.background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-    border: 1px solid #ffffff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
+.border-1{
+    border: var(--border) solid #b1b1b1;
     border-radius: 8px;
 }
 
-.border-background-2 {
-    border: 1px solid #fff;
-    border-image: var(--borderImgtop);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
+@supports not (border-image: paint(ffr-border) 6) {
+    .border-1{border-image: url('images/border.png') 6;}
 }
 
-.border-background-3 {
-    border: 1px solid #fff;
-    border-image: var(--borderImgbot);
-    background-color: var(--backgroundColor1);
-    border-radius: 8px;
+@supports (border-image: paint(ffr-border) 6) {
+    .border-1{
+        border-image: paint(ffr-border) 6;
+        --border-outside-color: #747474;
+        --border-inside-color: #fcfcfc;
+    }
 }
+
+.border-bottom{border-top: none;}
+.border-top{border-bottom: none;}
+
+.background-1{background-color: var(--backgroundColor2);}
+.background-2{background-color: var(--backgroundColor1);}
 
 .abs{position: absolute;}
 
@@ -113,46 +108,56 @@ html{
 }
 
 .ffr-default{
-    background: url(images/2p/base-background.png) var(--defaultfallbackColor);
+    background: url(images/2p/base-background.png) #000;
 }
-.layout.ffr-default .border-background-1, .layout.ffr-default .border-background-3 {background-color: var(--defaultfallbackColor);}
 
 .ffr-irongol{
-    background: url(images/2p/base-irongol.png) var(--irongolfallbackColor);
+    background: url(images/2p/base-irongol.png) #000076;
+    --backgroundColor2: #500;
 }
-.layout.ffr-irongol .border-background-1, .layout.ffr-irongol .border-background-3 {background-color: var(--irongolfallbackColor);}
 
 .ffr-tourney{
-    background: url(images/2p/base-tourney.png) var(--tourneyfallbackColor);
-    background: url(images/2p/base-tourney.webp) var(--tourneyfallbackColor);
+    background: url(images/2p/base-tourney.png) #291901;
+    background: url(images/2p/base-tourney.webp) #291901;
+    --backgroundColor2: #050;
 }
-.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1 {border-image: var(--borderImg2);}
-.layout.ffr-tourney .border-background-2 {border-image: var(--borderImgtop2);}
-.layout.ffr-tourney .border-background-3 {border-image: var(--borderImgbot2);}
-.layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-3 {background-color: var(--tourneyfallbackColor);}
+
+@supports not (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{border-image-source: url('images/border-yellow.png');}
+}
+
+@supports (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{
+        border-image-source: paint(ffr-border);
+        --border-outside-color: #726b33;
+        --border-inside-color: #f7e86e;
+    }
+}
 
 .ffr-league{
-    background: url(images/2p/base-league.png) var(--leaguefallbackColor);
+    background: url(images/2p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
 }
-.layout.ffr-league .border-background-1, .layout.ffr-league .border-background-3 {background-color: var(--leaguefallbackColor);}
 
 .ffr-rush{
-    background: url(images/2p/base-rush.png) var(--rushfallbackColor);
+    background: url(images/2p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
 }
-.layout.ffr-rush .border-background-1, .layout.ffr-rush .border-background-3 {background-color: var(--rushfallbackColor);}
+
 .layout.ffr-rush .player-grid {display: none;}
 .layout.ffr-rush tr-timer {left: 20px; top: 620px;}
-.layout.ffr-rush .player-final, .layout.ffr-rush .player-winner{margin-top: -86px}
+.layout.ffr-rush{
+    --winY: 565px;
+    --finalY: 565px;
+}
 
 .ffr-dark{
-    background: url(images/2p/base-dark.png) var(--darkfallbackColor);
+    background: url(images/2p/base-dark.png) #000;
 }
-.layout.ffr-dark .border-background-1, .layout.ffr-dark .border-background-3 {background-color: var(--darkfallbackColor);}
 
 .ffr-duckling{
-    background: url(images/2p/base-duckling.png) var(--ducklingfallbackColor);
+    background: url(images/2p/base-duckling.png) #428fa6;
 }
-.layout.ffr-duckling .border-background-1, .layout.ffr-duckling .border-background-3 {background-color: var(--ducklingfallbackColor);}
+
+/* cam layouts */
 
 .layout.show-cams.ffr-default{
     background-image: url(images/2p-cam/base-background.png);
@@ -169,7 +174,12 @@ html{
 }
 .layout.show-cams.ffr-rush{
     background-image: url(images/2p-cam/base-rush.png);
+    --pronounY: 526px;
+    --rankY: 526px;
+    --winY: 50px;
+    --finalY: 50px;
 }
+
 .layout.show-cams.ffr-duckling{
     background-image: url(images/2p-cam/base-duckling.png);
     background-image: url(images/2p-cam/base-duckling.webp);
@@ -193,22 +203,14 @@ html{
     width: var(--nameWidth);
 }
 
-.player-grid{
-    display: grid;
-    grid-template-columns: repeat(12, auto);
-    padding: 5px 10px 10px 10px;
-    grid-gap: 4px; 
-}
-
-.layout.show-cams .border-background-3{
-    border-image: var(--borderImg);
-    padding: 10px;
-}
 .player-pronoun, .record-contain{
-    padding: 5px 10px 10px 10px;
+    height: 35px;
     font-size: 14px;
 	text-align: center;
-	width: 110px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .layout.show-cams .player-pronoun, .layout.show-cams .record-contain{
@@ -218,6 +220,18 @@ html{
 
 .player-pronoun:empty, .record-contain:empty{
   display: none;
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    padding: 5px;
+    grid-gap: 4px;
+    border-top: none;
+}
+
+.layout.layout.show-cams .player-grid{
+    border-top: solid 6px;
 }
 
 .player-grid img{
@@ -296,11 +310,6 @@ html{
     transform: rotateY(180deg);
 }
 
-.player-winner{
-    display: flex;
-    align-items: center;
-}
-
 .player-best-of{
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -323,10 +332,21 @@ html{
 
 .player-final, .player-winner{
     font-size: 20px;
+    height: 31px;
+    width: 97px;
     text-align: center;
-    padding: 0 10px 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
+    border-top: none;
 }
+
+.layout.show-cams .player-final, .layout.show-cams .player-winner{
+    border-top: solid 6px;
+    height: 47px;
+}
+
 .player-final:empty{
     display:none;
 }
@@ -366,13 +386,14 @@ tr-timer span {
     height: 78px;
 	top: 20px; 
 	left: 413px; 
-	text-align: center;
+    text-align: center;
+    border-bottom: none;
 }
 
 .layout.show-cams .staff{
+    border-bottom: solid 6px;
     height: 85px;
     top: 630px;
-    border-image: var(--borderImg);
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -434,12 +455,6 @@ tr-timer span {
     z-index: 3;
     }
 
-#production{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: end;
-}
 
 .display-none{ display: none; }
 
@@ -447,26 +462,10 @@ tr-timer span {
 
 /* Menu */
 
-#menu_2 {
-    display: grid;
-    grid-template-areas:
-        "players layout team"
-        "timer view reset";
-}
-
-#menu_2 .fieldset .legend, .menu-game-specific .fieldset .legend{
-    z-index: 5;
-}
-
 #menu_layout div{
     display: block;
 }
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
-}
-
-.loadscreen .player-name{
-	text-align: center;
-	width: 100%;
 }

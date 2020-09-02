@@ -104,7 +104,7 @@
 }
 
 .transparent-background{background-color: transparent;}
-.black-background{
+.layout.black-background .player-video{
     background-color: #000;
     background-image: url(images/3musZone/The-End.png);
 }

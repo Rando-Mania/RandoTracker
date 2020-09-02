@@ -7,7 +7,6 @@
         url('../shared/fonts/orbitron-bold_0.ttf') format('truetype');
 }
 
-
 .menu-contain{
     display: flex;
     background-color: #000;
@@ -344,7 +343,7 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     height: 12px;
 }
 
-.screen-background{
+.layout.screen-background .player-video{
     background-image: url('../shared/images/video-screens.png');
     background-size: 200% 200%;
     /* image-rendering: -moz-crisp-edges; */
