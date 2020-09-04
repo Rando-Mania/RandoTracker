@@ -381,20 +381,16 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     height: 12px;
 }
 
-.screen-background{
-    background-image: url('../shared/images/video-screens.png');
-    background-size: 200% 200%;
-    /* image-rendering: -moz-crisp-edges; */
-    /* image-rendering: pixelated; */
+.layout.screen-background .player-video{
+    background: url('../shared/images/video-screens.png') no-repeat 0 0 / 200% 200%;
 }
-
-[player="2"] .screen-background{
+.layout.screen-background [player="2"] .player-video{
     background-position: 100% 0;
 }
-[player="3"] .screen-background{
+.layout.screen-background [player="3"] .player-video{
     background-position: 0 100% ;
 }
-[player="4"] .screen-background{
+.layout.screen-background [player="4"] .player-video{
     background-position: 100% 100%;
 }
 

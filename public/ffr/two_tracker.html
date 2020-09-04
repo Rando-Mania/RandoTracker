@@ -30,7 +30,6 @@
         tr-template{
             display: grid;
             grid-template-columns: repeat(3, auto);
-            grid-auto-rows: auto auto auto 117px;
             gap: 2px;
             align-items: start;
         }
@@ -60,6 +59,46 @@
             justify-content: center;
             gap: 8px;
         }
+
+        .player-grid{grid-area: icons;}
+        .record-contain{grid-area: record;}
+        .player-pronoun{grid-area: pronoun;}
+        .player-name{grid-area: name;}
+        .player-speaker{grid-area: speaker;}
+        .player-best-of{grid-area: best-of;}
+        .winner-final-contain{grid-area: win-final;}
+
+        [player="1"] tr-template{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "name      pronoun   record"
+                "best-of   speaker   ."
+                "win-final win-final win-final";
+        }
+
+        [player="2"] tr-template{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "record    pronoun   name"
+                ".         speaker   best-of"
+                "win-final win-final win-final";
+        }
+
+        /* [player="3"] tr-template{
+            grid-template-areas: 
+            "win-final win-final win-final"
+            "best-of   speaker   ."
+            "name      pronoun   record"
+            "icons     icons     icons";
+        }
+
+        [player="4"] tr-template{
+            grid-template-areas: 
+            "win-final win-final win-final"
+            ".         speaker   best-of"
+            "record    pronoun   name"
+            "icons     icons     icons";
+        }*/
 
         @media (max-width: 972px) {
             .tracker-layout{
