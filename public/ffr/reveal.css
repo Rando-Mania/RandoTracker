@@ -220,10 +220,7 @@
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0 / 500% 400%;
 }
 
 tr-timer, .player-final{

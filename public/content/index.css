@@ -98,11 +98,12 @@ article{
   animation: turn-on 2s linear;
   min-height: 720px;
   color: #fff;
-  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.png);
-  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 640px 360px;
-  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.avif);
-  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(../shared/images/rm-generic-half.avif) 0 0 / auto auto, paint(fallbackImage) 0 0 / 640px 360px;
-  background-color: rgba(0,0,0,.3);
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
+  background-image: 
+    image-set(
+      url(../shared/images/rm-generic-half.avif) 1x type("image/avif"),
+      url(../shared/images/rm-generic-half.png) 1x type("image/png")
+    );
   position: relative;
   overflow: hidden;
 }

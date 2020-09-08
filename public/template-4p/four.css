@@ -6,10 +6,12 @@
 
 :root{
     --backgroundImg: url('../shared/images/checkerboard.png');
-    --border1: solid 2px #fff;
-    --backgroundColor1: #000;
     --vidWidth: 439px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
+
+    --border: 2px;
+
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 140px;
     --nameX: 457px; --nameY: 20px;
@@ -18,19 +20,19 @@
     --winX: 476px; --winY: 55px;
     --finalX: 489px; --finalY: 8px;
     --vsX: 50%; --vsY: 30px;
+
+    --backgroundColor1: #000;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
-.border-1{border: var(--border1);}
+.border-1{border: var(--border) solid #fff;}
 .background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-    border: var(--border1);
-    background-color: var(--backgroundColor1);
-}
-.abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
+.abs{position: absolute;}
 
 /* layout specific styles */
 /* @font-face {
@@ -51,9 +53,22 @@ html{
     background-color: silver;
 }
 
+.layout.clip-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat
+}
+
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
 }
 
@@ -221,18 +236,6 @@ tr-timer span {
 .view-container, .view-container-border{
     background-color: transparent;
 }
-
-/* Bracket Screen */
-
-/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
-
-.bracket-contain iframe {
-    animation: rotateIn .75s linear;
-    perspective: 1200px;
-}
-
- */
-
 
 .display-none{ display: none; }
 

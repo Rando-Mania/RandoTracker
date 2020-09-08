@@ -47,18 +47,18 @@
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="borderImg player-video abs"></div>
-            <div class="player-name abs border-background-1">
+            <div class="border-1 player-video abs"></div>
+            <div class="player-name abs border-1 background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid abs border-background-1" href="icons-2020.html"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs border-background-1"></tr-text>
-			<tr-text property="player-number" class="record-contain abs border-background-1"></tr-text>
-            <tr-text property="player-final" class="player-final abs border-background-2"></tr-text>     
+            <tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
+            <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
+			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
+            <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
-            <tr-toggle property="toggle-winner" class="abs player-winner border-background-2">
+            <tr-toggle property="toggle-winner" class="abs player-winner border-1 background-2">
                 <div>Winner</div>
             </tr-toggle>
         </template>
@@ -72,14 +72,10 @@
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
-<!-- vs -->
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
-
 <!-- timer/staff -->
 
-        <tr-timer class="abs border-background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 120px; left: 920px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs border-background-2" style="bottom: 180px; left: 910px;" toggle-class="wtf">
+        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 120px; left: 920px;"></tr-timer>
+        <tr-hide-if-empty class="staff abs border-1 background-2" style="bottom: 180px; left: 910px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
@@ -88,13 +84,6 @@
 <div class="loadscreen-contain abs" style="top:0; left: 0;">
     <tr-template href="three-loading-template.html"></tr-template>
 </div>
-
-<!-- bracket -->
-<!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
-    <div class="bracket">
-        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
-</div> -->
 
 <!-- RM calendar -->
 <div class="calendar-contain abs" style="top: 0; left: 0;">
@@ -112,5 +101,10 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/three_game.js"></script>
+    <script>
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('images/border-worklet.js');
+        }
+    </script>
 </body>
 </html>

@@ -38,7 +38,7 @@
 }
 
 @supports not (border-image: paint(ffr-border) 6) {
-    .border-1{border-image: url('images/border.png') 6;}
+    .border-1{border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;}
 }
 
 @supports (border-image: paint(ffr-border) 6) {
@@ -57,10 +57,6 @@
 
 .abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
-
 /* layout specific styles */
 
 @font-face {
@@ -77,7 +73,20 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/4p/base-background.png);
+    background: url(images/4p/base-background.png) #000;
+}
+
+.layout.clip-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat
 }
 
 .ffr-default{
@@ -96,7 +105,7 @@ html{
 }
 
 @supports not (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{border-image-source: url('images/border-yellow.png');}
+    .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 }
 
 @supports (border-image: paint(ffr-border) 6) {
@@ -168,13 +177,6 @@ html{
     display: none;
 }
 
-.player-grid{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    padding: 5px;
-    grid-gap: 4px;
-}
-
 .player-pronoun, .record-contain{
     font-size: 12px;
     text-align: center;
@@ -187,6 +189,13 @@ html{
 
 .player-pronoun:empty, .record-contain:empty{
   display: none;
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding: 5px;
+    grid-gap: 4px;
 }
 
 .player-grid img{

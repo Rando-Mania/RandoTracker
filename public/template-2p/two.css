@@ -8,18 +8,13 @@
 	padding: 0;
 }
 
-html{
-    background-color: #c7c7c7;
-}
-
 /* variables */
 
 :root{
-    --backgroundImg: url('../shared/images/checkerboard.png');
-    --border1: solid 2px #fff;
-    --backgroundColor1: #000;
     --vidWidth: 604px;
     --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 375px;
     --nameX: 20px; --nameY: 490px;
@@ -28,11 +23,22 @@ html{
     --winX: 202px; --winY: 525px;
     --finalX: 230px; --finalY: 558px;
     --bestX: 869px; --bestY: 558px;
+
+    --backgroundImg: url('../shared/images/checkerboard.png');
+
+    --backgroundColor1: #000;
+
+    --border: 2px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 /* helper classes */
 
-.border-1{border: var(--border1);}
+.border-1{border: var(--border) solid #fff;}
 
 .background-1{background-color: var(--backgroundColor1);}
 
@@ -74,9 +80,21 @@ html{
     background-color: silver;
 }
 
+.layout.background-clip{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat
+}
+
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
 }
 
@@ -114,10 +132,7 @@ html{
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
+    background-image: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
 [player="2"] .player-speaker{
@@ -184,13 +199,6 @@ tr-timer span {
     padding: 7px;
     border: solid 2px #fff;
     z-index: 3;
-    }
-
-#production{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-content: end;
 }
 
 .display-none{ display: none; }

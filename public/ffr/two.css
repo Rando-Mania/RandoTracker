@@ -8,6 +8,7 @@
     --vidWidth: 615px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    
     --videoX: 20px; --videoY: 102px;
     --nameWidth: 360px;
     --nameX: 20px; --nameY: 10px;
@@ -49,7 +50,7 @@
 }
 
 @supports not (border-image: paint(ffr-border) 6) {
-    .border-1{border-image: url('images/border.png') 6;}
+    .border-1{border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;}
 }
 
 @supports (border-image: paint(ffr-border) 6) {
@@ -67,10 +68,6 @@
 .background-2{background-color: var(--backgroundColor1);}
 
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 /* layout specific styles */
 @font-face {
@@ -90,9 +87,21 @@ html{
     background: var(--backgroundImg) #000;
 }
 
+.layout.clip-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat
+}
+
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
     border-radius: 8px;
 }
@@ -123,7 +132,7 @@ html{
 }
 
 @supports not (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{border-image-source: url('images/border-yellow.png');}
+    .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 }
 
 @supports (border-image: paint(ffr-border) 6) {

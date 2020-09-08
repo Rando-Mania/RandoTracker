@@ -5,12 +5,8 @@
 }
 
 :root{
-    --backgroundImg: url('images/3p/base-background.png');
-    --border1: 1px solid #fff;
-    --borderImg: url('images/border.png') 6 / 6px round;
-    --borderImg2: url('images/border-yellow.png') 6 / 6px round;
-    --backgroundColor1: #000;
     --vidWidth: 435px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
     --videoX: 12px; --videoY: 12px;
     --nameWidth: 173px;
@@ -22,34 +18,43 @@
     --winX: 400px; --winY: 120px;
     --finalX: 400px; --finalY: 80px;
     --vsX: 50%; --vsY: 140px;
-    --defaultfallbackColor: #005;
-    --irongolfallbackColor: #500;
-    --tourneyfallbackColor: #050;
-    --leaguefallbackColor: #005;
-    --rushfallbackColor: #005;
-    --darkfallbackColor: #005;
+
+    --backgroundColor1: #000;
+    --backgroundColor2: #005;
+    --backgroundImg: url('images/3p/base-background.png');
+
+    --border: 6px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
-.border-1{border: var(--border1);}
-.borderImg{border: var(--border1); border-image: var(--borderImg);}
-.background-1{background-color: var(--backgroundColor1);}
-.border-background-1 {
-	border: 1px solid #fff;
-    border-image: var(--borderImg);
-    background-color: var(--backgroundColor1);
+.border-1{
+    border: var(--border) solid #b1b1b1;
     border-radius: 8px;
 }
-.border-background-2 {
-	border: 1px solid #fff;
-    border-image: var(--borderImg);
-    background-color: #000;
-    border-radius: 8px;
+
+@supports not (border-image: paint(ffr-border) 6) {
+    .border-1{border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;}
 }
+
+@supports (border-image: paint(ffr-border) 6) {
+    .border-1{
+        border-image: paint(ffr-border) 6;
+        --border-outside-color: #747474;
+        --border-inside-color: #fcfcfc;
+    }
+}
+
+.border-bottom{border-top: none;}
+.border-top{border-bottom: none;}
+
+.background-1{background-color: var(--backgroundColor2);}
+.background-2{background-color: var(--backgroundColor1);}
+
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 /* layout specific styles */
 @font-face {
@@ -66,49 +71,73 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/3p/base-background.png) var(--defaultfallbackColor);
+    background: url(images/3p/base-background.png) #000;
+}
+
+.layout.clip-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1),
+        /* cover "4p" */
+        linear-gradient(red,red) bottom var(--videoY) right var(--videoY) / var(--vidWidth) var(--vidHeight);
+    -webkit-mask-repeat: no-repeat
 }
 
 .ffr-default{
-    background: url(images/3p/base-background.png) var(--defaultfallbackColor);
+    background: url(images/3p/base-background.png) #000;
 }
-.layout.ffr-default .border-background-1 {background-color: var(--defaultfallbackColor);}
 
 .ffr-irongol{
-    background: url(images/3p/base-irongol.png) var(--irongolfallbackColor);
+    background: url(images/3p/base-irongol.png) #000076;
+    --backgroundColor2: #500;
 }
-.layout.ffr-irongol .border-background-1 {background-color: var(--irongolfallbackColor);}
 
 .ffr-tourney{
-    background: url(images/3p/base-tourney.png) var(--tourneyfallbackColor);
-    background: url(images/3p/base-tourney.webp) var(--tourneyfallbackColor);
+    background: url(images/3p/base-tourney.webp) #291901;
+    --backgroundColor2: #050;
 }
-.layout.ffr-tourney .border-background-1 {background-color: var(--tourneyfallbackColor);}
-.layout.ffr-tourney .borderImg, .layout.ffr-tourney .border-background-1, .layout.ffr-tourney .border-background-2 {border-image: var(--borderImg2);}
+
+@supports not (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
+}
+
+@supports (border-image: paint(ffr-border) 6) {
+    .ffr-tourney .border-1{
+        border-image-source: paint(ffr-border);
+        --border-outside-color: #726b33;
+        --border-inside-color: #f7e86e;
+    }
+}
 
 .ffr-league{
-    background: url(images/3p/base-league.png) var(--leaguefallbackColor);
+    background: url(images/3p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
 }
-.layout.ffr-league .border-background-1 {background-color: var(--leaguefallbackColor);}
 
 .ffr-rush{
-    background: url(images/3p/base-rush.png) var(--rushfallbackColor);
+    background: url(images/3p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
 }
-.layout.ffr-rush .border-background-1 {background-color: var(--rushfallbackColor);}
+
 .layout.ffr-rush .player-grid {display: none;}
-.layout.ffr-rush [player="1"] .player-pronoun, .layout.ffr-rush [player="1"] .player-speaker, .layout.ffr-rush [player="1"] .record-contain, .layout.ffr-rush [player="3"] .player-speaker, .layout.ffr-rush [player="3"] .player-pronoun, .layout.ffr-rush [player="3"] .record-contain{left: 449px;}
-.layout.ffr-rush [player="2"] .player-pronoun, .layout.ffr-rush [player="2"] .player-speaker, .layout.ffr-rush [player="2"] .record-contain .record-contain{right: 449px;}
+.layout.ffr-rush tr-timer {left: 20px; top: 620px;}
+.layout.ffr-rush{
+    --winY: 565px;
+    --finalY: 565px;
+}
 
 .ffr-dark{
-    background: url(images/3p/base-dark.png) var(--darkfallbackColor);
+    background: url(images/3p/base-dark.png) #000;
 }
-.layout.ffr-dark .border-background-1 {background-color: var(--darkfallbackColor);}
 
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
-    border-radius: 8px;
 }
 
 .player-name{
@@ -130,22 +159,25 @@ html{
     display: none;
 }
 
-.player-grid{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    padding: 10px;
-    grid-gap: 4px;
-}
-
 .player-pronoun, .record-contain{
-    padding: 8px;
     font-size: 12px;
-	text-align: center;
-	width: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 33px;
 }
 
 .player-pronoun:empty, .record-contain:empty{
   display: none;
+}
+
+.player-grid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding: 5px;
+    grid-gap: 4px;
 }
 
 .player-grid img{
@@ -209,10 +241,7 @@ html{
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
 [player="2"] .player-speaker, [player="4"] .player-speaker{
@@ -220,6 +249,8 @@ html{
 }
 
 .player-winner, .player-final{
+    width: 100px;
+    height: 37px;
     padding: 5px 10px;
     display: flex;
     justify-content: center;
@@ -230,11 +261,6 @@ html{
 
 .player-final:empty{
     display:none;
-}
-
-.vs{
-    font-size: 24px;
-	text-shadow: 4px 4px #000;
 }
 
 tr-timer{
@@ -253,7 +279,7 @@ tr-timer span {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 8px;
-    padding: 8px;
+    padding: 3px;
 }
 
 .staff{
@@ -323,35 +349,9 @@ tr-timer span {
     z-index: 3;
     }
 
-.view-container, .view-container-border{
-    background-color: transparent;
-}
-
-/* Bracket Screen */
-
-/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
-
-.bracket-contain iframe {
-    animation: rotateIn .75s linear;
-    perspective: 1200px;
-}
-
- */
-
-
 .display-none{ display: none; }
 
 .show{ display: block; }
-
-/* .show-flex{ display: flex; }
-.show-grid{ display: grid; } */
-
-#menu_2 {
-    display: grid;
-    grid-template-areas: 
-        "players layout team"
-        "timer view reset";
-}
 
 #menu_layout div{
     display: block;
