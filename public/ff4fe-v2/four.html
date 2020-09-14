@@ -32,10 +32,10 @@
         [player="3"] .player-number {left: var(--numberX); bottom: var(--numberY);}
         [player="4"] .player-number {right: var(--numberX); bottom: var(--numberY);}
 
-        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
-        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
-        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+        [player="1"] .player-grid-contain {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid-contain {right: var(--gridX); top: var(--gridY);}
+        [player="3"] .player-grid-contain {left: var(--gridX); bottom: var(--gridY);}
+        [player="4"] .player-grid-contain {right: var(--gridX); bottom: var(--gridY);}
 
         tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
         tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
@@ -67,7 +67,10 @@
             </div>
             <tr-text class="player-pronoun abs border-1 background-1" property="player-pronoun"></tr-text>
             <tr-text class="player-number abs border-2 background-1" property="player-number"></tr-text>
-            <tr-template class="player-grid abs border-1 background-1" href="icons.html"></tr-template>
+            <div class="player-grid-contain abs border-1 background-1">
+                <tr-template class="player-grid" href="icons.html"></tr-template>
+                <tr-template class="player-grid-2" href="icons-two.html"></tr-template>
+            </div>            
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
