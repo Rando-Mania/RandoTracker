@@ -5,7 +5,7 @@ if ('paintWorklet' in CSS) {
 function playerDummyText() {
     Tracker.updateLayoutMultiple([
         {property: '__p1__player-name', value: 'AnakinSkywalker'},
-        {property: '__p1__player-pronoun', value: 'he/him'},
+        {property: '__p1__player-pronoun', value: 'they/them'},
         {property: '__p1__player-number', value: 1},
         {property: '__p1__player-final', value: '1:23:45'},
         {property: '__p1__toggle-speaker', value: 1},

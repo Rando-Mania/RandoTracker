@@ -51,6 +51,7 @@
     position: relative;
     background: var(--backgroundImg);
     background-color: silver;
+    line-height: 1;
 }
 
 .layout.clip-background{

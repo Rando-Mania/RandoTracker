@@ -59,6 +59,7 @@
 }
 
 .layout{
+    line-height: 1;
     font-family: "FF4", sans-serif;
     width: 1280px;
     height: 720px;
@@ -68,13 +69,13 @@
     background-color: var(--backgroundColor1);
 }
 
-.layout.threemus-zone-hook{
+.threemus-zone-hook{
     background-image: url('images/4p/HTT3Z-4P-BG-HookRoute.png');
 }
-.layout.threemus-zone-magma{
+.threemus-zone-magma{
     background-image: url('images/4p/HTT3Z-4P-BG-MagmaRoute.png');
 }
-.layout.trans{background-color: transparent; background-image: none;}
+.trans{background-color: transparent; background-image: none;}
 
 .layout.clip-background{
     -webkit-mask:
@@ -119,7 +120,7 @@
 }
 
 .player-pronoun{
-    font-size: 13px;
+    font-size: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
