@@ -76,8 +76,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
-    background-color: silver;
+    background-image: var(--backgroundImg);
     line-height: 1;
 }
 
