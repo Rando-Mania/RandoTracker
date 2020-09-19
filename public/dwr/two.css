@@ -57,8 +57,15 @@
 }
 
 .map-background{
-    background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop.png') 50% 60% / 100% #002e97;}
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
+    background-color: #002781;
+    background-image: 
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
+        image-set(
+            "images/alefgard_crop_test.avif" type("image/avif"),
+            "images/alefgard_crop._test.png" type("image/png")
+        );
+}
 
 .player-panels-contain{
     height: min-content;
@@ -709,7 +716,7 @@ figcaption{
     border: 2px solid;
     border-image: paint(dw1Border) 4 / 4px;
 	-webkit-mask-image: url('images/monsters/dw-spiral.png');
-	mask-image: url('images/monsters/dw-spiral.png');
+    mask-image: url('images/monsters/dw-spiral.png');
 	-webkit-mask-size: calc(576px * 27) 182px;
 	mask-size: calc(576px * 27) 182px;
 	animation: mask .5s steps(26) forwards;
@@ -717,7 +724,7 @@ figcaption{
   }
   
   @keyframes mask {
-	to{ -webkit-mask-position: 100% 0;}
+	to{ -webkit-mask-position: 100% 0; mask-position: 100% 0;}
   }
   
   [property="monster_name"]{

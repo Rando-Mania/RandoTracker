@@ -27,9 +27,18 @@
     border: var(--border1);
     background-color: var(--backgroundColor1);
 }
+
 .map-background{
-    background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/background-ui-sprite.png') 50% 46% / 100% #002e97;}
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
+    background-color: #002781;
+    background-image: 
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
+        image-set(
+            "images/alefgard_crop_test.avif" type("image/avif"),
+            "images/alefgard_crop._test.png" type("image/png")
+        );
+}
+
 .abs{position: absolute;}
 
 html{
