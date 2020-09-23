@@ -394,11 +394,11 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
     background-position: 100% 100%;
 }
 
-.layout.black-background .player-video{background-image: none; background-color: #000;}
-.layout.transparent-background .player-video{background-image: none; background-color: transparent;}
-.layout.blue-background .player-video{background-image: none; background-color: #00f;}
-.layout.green-background .player-video{background-image: none; background-color: #0f0;}
-.layout.magenta-background .player-video{background-image: none; background-color: #f0f;}
+.layout.black-background .player-video{background-color: #000;}
+.layout.transparent-background .player-video{background-color: transparent;}
+.layout.blue-background .player-video{background-color: #00f;}
+.layout.green-background .player-video{background-color: #0f0;}
+.layout.magenta-background .player-video{background-color: #f0f;}
 
 #menu_layout #menu_best_of{display: flex;}
 
