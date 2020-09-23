@@ -46,19 +46,8 @@
 
 .border-1{
     border: var(--border) solid #b1b1b1;
+    border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;
     border-radius: 8px;
-}
-
-@supports not (border-image: paint(ffr-border) 6) {
-    .border-1{border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;}
-}
-
-@supports (border-image: paint(ffr-border) 6) {
-    .border-1{
-        border-image: paint(ffr-border) 6;
-        --border-outside-color: #747474;
-        --border-inside-color: #fcfcfc;
-    }
 }
 
 .border-bottom{border-top: none;}
@@ -103,7 +92,6 @@
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 2;
-    border-radius: 8px;
 }
 
 .player-cam{
@@ -127,21 +115,10 @@
 
 .ffr-tourney{
     background: url(images/2p/base-tourney.png) #291901;
-    background: url(images/2p/base-tourney.webp) #291901;
     --backgroundColor2: #050;
 }
 
-@supports not (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
-}
-
-@supports (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{
-        border-image-source: paint(ffr-border);
-        --border-outside-color: #726b33;
-        --border-inside-color: #f7e86e;
-    }
-}
+.ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
     background: url(images/2p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
