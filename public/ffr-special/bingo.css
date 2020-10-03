@@ -72,6 +72,7 @@
 
 .ffr-irongol{
     background: url(images/bingo/base-irongol.png) #295280;
+    --backgroundColor2: #500;
 }
 
 .ffr-dark{
