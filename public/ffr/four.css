@@ -89,7 +89,6 @@
 
 .ffr-tourney{
     background: url(images/4p/base-tourney.png) #291901;
-    background: url(images/4p/base-tourney.webp) #291901;
     --backgroundColor2: #050;
 }
 
@@ -104,10 +103,11 @@
 }
 
 .layout.ffr-rush .player-grid {display: none;}
-.layout.ffr-rush tr-timer {left: 20px; top: 620px;}
 .layout.ffr-rush{
     --winY: 565px;
     --finalY: 565px;
+    --rankX: 449px;
+    --rankY: 64px;
 }
 
 .ffr-dark{
@@ -258,6 +258,79 @@
 
 .player-final:empty{
     display:none;
+}
+
+.blursed-contain{
+    width: 180px;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 357px;
+    -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    animation: stepped-curtain .5s steps(4);
+    display:none;
+}
+
+#menu_layout_blursed.blursed-contain{
+    transform: translateX(0);
+}
+
+@keyframes stepped-curtain {
+    from {
+        -webkit-mask-size: 100% 0;
+        mask-size: 100% 0;
+    }
+}
+
+.blursed-sprites{
+    width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 5px;
+    margin-bottom: 2px;
+}
+
+.blursed-sprite-image img, .dialog img{
+    background-image: url('images/classes.png');
+    background-size: 200% 800%;
+    width: 30px;
+    height: 43px;
+    display: block;
+    /* image-rendering: pixelated; */
+}
+
+.fighter{background-position: 0 0;}
+.knight{background-position: 100% 0;}
+
+.thief{background-position: 0 17%;}
+.ninja{background-position: 100% 17%;}
+
+.black-belt{background-position: 0 34.5%;}
+.master{background-position: 100% 34.5%;}
+
+.red-mage{background-position: 0 50%;}
+.red-wizard{background-position: 100% 50%;}
+
+.white-mage{background-position: 0 66%;}
+.white-wizard{background-position: 100% 66%;}
+
+.black-mage{background-position: 0 83%;}
+.black-wizard{background-position: 100% 83%;}
+
+.question{background-position: 100% 100%;}
+
+.blursed-info, .blursed-sprites{
+    padding: 5px;
+}
+
+.blursed-info{
+    min-height: 10em;
+}
+
+.blursed-bonus{
+    margin-bottom: 1em;
 }
 
 .vs{
