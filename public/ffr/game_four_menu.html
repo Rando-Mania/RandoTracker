@@ -52,6 +52,9 @@
         </div>
         <div id="menu_blursed" class="fieldset">
             <h4 class="legend">Blursed</h4>
+            <tr-input-toggle-class id="show_blursed" target=".layout .blursed-contain" toggle-class="show" property="blursed-toggle">
+                <label id="blursed_label" for="show_blursed">Show</label>
+            </tr-input-toggle-class>
             <div id="menu_layout_blursed" class="blursed-contain">
                 <div class="blursed-sprites">
                     <tr-image property="tier-one-class" title="tier-one-class" class="blursed-sprite-image">
@@ -89,11 +92,11 @@
                 <div class="blursed-info">
                     <div class="blursed-bonus">
                         <h4>Bonus:</h4>
-                        <tr-text property="blursed-bonus"></tr-text>
+                        <tr-input-textarea property="blursed-bonus"></tr-input-textarea>
                     </div>
                     <div class="blursed-malus">
                         <h4>Malus:</h4>
-                        <tr-text property="blursed-malus"></tr-text>
+                        <tr-input-textarea property="blursed-malus"></tr-input-textarea>
                     </div>
                 </div>
             </div>
@@ -108,7 +111,7 @@
                     </tr>
                     <tr>
                         <td>Code:</td>
-                        <td>darkmoon</td>
+                        <td>darkmoon, capt_uhu</td>
                     </tr>
                 </table>
             </div>

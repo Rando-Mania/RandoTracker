@@ -268,7 +268,10 @@
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
-    display:none;
+}
+
+.layout .blursed-contain{
+    display: none;
 }
 
 #menu_layout_blursed.blursed-contain{
@@ -426,6 +429,9 @@ tr-timer span {
 
 .display-none{ display: none; }
 
+.layout .show{
+    display: block;
+}
 .show{ display: block; }
 
 #menu_layout div{
@@ -434,4 +440,12 @@ tr-timer span {
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
+}
+
+[property="blursed-toggle"]{
+    position: absolute;
+    right: 1em;
+    top: -8px;
+    padding: 0 .25em;
+    background-color: #000;
 }
