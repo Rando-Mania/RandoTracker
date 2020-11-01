@@ -24,9 +24,8 @@
 .background-1{background-color: var(--backgroundColor1);}
 
 .border-background-1 {
-    background-image: url(images/ff6-window-gradient-small.png);
-    background-size: 100%;
-    background-position: 0;
+    background-image:
+        linear-gradient(#292884, #292884);
     border: solid 3px;
     border-radius: 10px;
     mix-blend-mode: hard-light;
@@ -96,6 +95,26 @@ html{
 
 .player-name:empty{
     display: none;
+}
+
+.center-headers{
+    display: grid;
+    justify-items: center;
+    transform:translate(-50%, -50%); 
+    top: 50%;
+    left: 50%;
+    gap: 3em;
+}
+.center-headers > div{
+    display: grid;
+    justify-items: center;
+}
+
+.subhead-text, .subhead-link{
+    font-size: 27px;
+    letter-spacing: .25px;
+    word-spacing: 1px;
+    margin: .25em 0;
 }
 
 .player-grid{
@@ -197,7 +216,7 @@ tr-timer{
 tr-timer span {
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
+    background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
     color: transparent;
     width: 22px;
     text-align: center;

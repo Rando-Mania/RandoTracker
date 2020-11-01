@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <link rel="preload" href="images/ff6-airship-background.png" as="image" type="image/png">
-    <link rel="preload" href="images/ff6-window-gradient-small.png" as="image" type="image/png">
+    <link rel="preload" href="images/wc_logo.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -192,13 +192,18 @@
 
 <!-- timer/staff -->
 
-        <div class="abs" style="display: grid; justify-items: center;top: 176px; transform:translateX(-50%); left: 50%;">
-            <img src="images/ff6-title.png" width="339" alt="">
-            <img src="images/ff6-subtitle.png" width="256" alt="">
-            <tr-hide-if-empty class="staff text-shadow" toggle-class="wtf">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
-            <tr-timer class="text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+        <div class="abs center-headers">
+            <div>
+                <img src="images/wc_logo.png" width="374" alt="">
+                <div class="subhead-text text-shadow">Weekly Community Race</div>
+                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+            </div>
+            <div>
+                <tr-hide-if-empty class="staff text-shadow" toggle-class="wtf">
+                    <tr-template href="../shared/production-team.html"></tr-template>
+                </tr-hide-if-empty>
+                <tr-timer class="text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+            </div>
         </div>
     </div>
 
