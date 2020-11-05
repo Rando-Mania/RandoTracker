@@ -1,6 +1,15 @@
     <style>
         /* Loading Screen */
 
+
+        @font-face {
+    font-family: "FF6";
+    src: local('FF6'),
+         url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+	     url('fonts/final-fantasy-36-font.woff') format('woff'),         
+         url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+} 
+
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
@@ -48,11 +57,13 @@
 
 .loadscreen-main{
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
+    font-family: 'FF6', Arial, sans-serif;
 }
 
 .loadscreen .player-name{
@@ -103,23 +114,24 @@
     </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <h1><img src="images/ff6-title.png" width="373" alt=""></h1>
-            <h1><img src="images/ff6-subtitle.png" width="280" alt=""></h1>
-            <h2>
+            <div>
+                <h1><img src="images/wc_logo.png" width="482" alt=""></h1>
+                <div class="subhead-text text-shadow">Weekly Community Race</div>
+                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+                <div style="margin-top: 2em;">on RandoMania</div>
+            </div>
+            <div style="font-size: 26px;">            
                 <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-                vs.
+                <div>vs.</div>
                 <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
                 <span class="load-and-vs">
                     <span class="load-vs">vs.</span>
                     <span class="load-and">and</span>
                 </span>
                 <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
-                vs.
+                <div>vs.</div>
                 <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
-            </h2>
-            <h3>
-                on RandoMania
-            </h3>
+            </div>
         </div>
         <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
     </div>
