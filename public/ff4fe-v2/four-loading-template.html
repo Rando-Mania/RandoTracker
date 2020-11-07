@@ -6,6 +6,7 @@
     height: 720px;
     background-image: none;
     background-color: #191668;
+    background-color: #000;
     color: #fff;
     text-align: center;
     z-index: 50;
@@ -132,9 +133,93 @@
     width: 16px;
 }
 
+.loadscreen{
+    padding: 0;
+}
+.loadscreen-main{
+    width: 959px;
+    margin: 0 auto;
+    grid-gap: 0;
+}
+
+.hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
+    height: 448px;
+    width: 100%;
+}
+
+.footer{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-BottomMenu-Text.png);
+    background-color: #000;
+    height: 243px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0 3px 4px;
+    text-align: left;
+}
+.footer h2{
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.footer-flags{
+    padding: 29px;
+    width: 377px;
+    height: 237px;
+    background-color: #000084;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    border: var(--border) solid #fff;
+    border-image: url(images/ff4-border.png) 3 / 8px;
+}
+
+.footer-staff-players{
+    width: 572px;
+    background-color: #000084;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    border: var(--border) solid #fff;
+    border-image: url(images/ff4-border.png) 3 / 8px;
+}
+
 </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
+            <div class="hero">
+                <picture>
+                    <source srcset="images/4p/weekly/FF4FE-WeeklyRace-Logo.avif" type="image/avif">
+                    <img src="images/4p/weekly/FF4FE-WeeklyRace-Logo.png" width="717" height="111" alt="">
+                </picture>
+                <img src="images/4p/weekly/FF4Fe-WeeklyRace-Slideshow3.png" height="337" alt="">
+            </div>
+            <div class="footer">
+                <div class="footer-flags">
+                    <h2>Flags</h2>
+                    <tr-text class="flags" property="flags"></tr-text>
+                    <tr-text class="flags" property="flags-full"></tr-text>
+                </div>
+                <div class="footer-staff-players">
+                    <tr-hide-if-empty class="staff border-background-1" toggle-class="wtf">
+                        <tr-template href="../shared/production-team.html"></tr-template>
+                    </tr-hide-if-empty>
+                    <div class="players">
+                        <tr-player player="1">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="2">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="3">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="4">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                    </div>
+                </div>
+            </div>
             <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=VT323&display=swap" rel="stylesheet">
             <template id="player_info_load_template">
                 <div class="player-name-contain">
@@ -149,16 +234,5 @@
                     <tr-text property="player-seed"></tr-text>
                 </tr-hide-if-empty>
             </template>
-            
-            <tr-player player="1">
-                <tr-template source="#player_info_load_template"></tr-template>
-            </tr-player>
-            <tr-player player="2">
-                <tr-template source="#player_info_load_template"></tr-template>
-            </tr-player>
-    
-            <tr-hide-if-empty class="staff abs border-background-1" toggle-class="wtf">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
         </div>
     </div>

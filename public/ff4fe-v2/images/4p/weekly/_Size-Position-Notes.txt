@@ -1,0 +1,61 @@
+----- Full area borders -----
+
+Right Border - 
+
+X: 0, Y: 0 
+Width - 161, Height - 720
+
+Left Border - 160
+
+X: 959, Y: 0 
+Width - 160, Height - 720
+
+----- Central Area ----- 
+
+Logo Area - 
+
+X: 163, Y: 0 
+Width - 959, Height - 111
+
+Image Slide Show area - 
+
+X: 163, Y: 111
+Width - 959 Height - 337
+
+(The Space Background goes behind both the Logo and Slide Show Areas)
+
+Bottom Menu - 
+
+X: 163, Y: 448
+Width - 959 Height - 243
+
+There's a 29 pixel tall footer in black for spacing but the bottom menu can be expanded a bit to fill this area if you want to rebuild it via CSS. All positioning notes for the text that follows are based on the menu with this footer thouugh. 
+
+These notes about the text positioning are from my JSON file so hopefully this can be useful for you - 
+
+Commentary Team Names
+
+X: 724, Y: 519
+Width: 218 Height - 42
+
+Featured Runners
+
+Player 1
+
+X: 602, Y: 603
+Width - 155, Height - 34
+
+Player 2
+
+X: 912, Y: 603
+Width - 155, Height - 34
+
+Player 3
+
+X: 602, Y: 639
+Width - 155, Height - 34
+
+Player 4
+
+X: 912, Y: 603
+Width - 155, Height - 34

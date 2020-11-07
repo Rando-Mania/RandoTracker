@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="images/4p/Layout-4P-MOCKUP.png" as="image" type="image/png">
+    <link rel="preload" href="images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png" as="image" type="image/png">
     <link rel="preload" href="images/ff4-border.png" as="image" type="image/png">
+    <link rel="preload" href="images/4p/weekly/FF4FE-WeeklyRace-TheEnd.png" as="image" type="image/png">
     <link rel="preload" href="images/4p/FF4FE-SpriteSheet-4P.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
@@ -139,9 +140,14 @@
         <tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
         <tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
 
-        <tr-hide-if-empty class="staff abs border-1 background-1" style="top: 360px; transform: translateX(-50%); left: 50%;" toggle-class="wtf">
+        <tr-hide-if-empty class="staff abs border-1 background-1" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
+        <div class="flags-contain abs border-1 background-1">
+            <img class="flags-icon" src="../shared/images/icons/blank.svg"/>
+            <tr-text class="flags" property="flags"></tr-text>
+            <div class="flags-footer">!Flags for more info</div>
+        </div>
     </div>
 
 <!-- loadscreen -->

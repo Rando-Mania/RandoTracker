@@ -5,7 +5,7 @@
 }
 
 :root{
-    /* --backgroundImg: url('images/4p/Layout-4P-MOCKUP.png'); */
+    --backgroundImg: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
     --vidWidth: 463px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
@@ -24,7 +24,7 @@
     --vsX: 50%; --vsY: 30px;
     --timeX: 469px; --timeY: 44px;
 
-    --backgroundColor1: #191668;
+    --backgroundColor1: #0c0946;
     --backgroundColor2: #000;
 
     --clipX1: calc(var(--videoX) + var(--border));
@@ -69,11 +69,21 @@
     background-color: var(--backgroundColor1);
 }
 
+.weekly-monday{
+    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
+    background-color: #012f83;
+}
+.weekly-friday{
+    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.png');
+    background-color: #012f83;
+}
 .threemus-zone-hook{
     background-image: url('images/4p/HTT3Z-4P-BG-HookRoute.png');
+    --backgroundColor1: #191668;
 }
 .threemus-zone-magma{
     background-image: url('images/4p/HTT3Z-4P-BG-MagmaRoute.png');
+    --backgroundColor1: #191668;
 }
 .trans{background-color: transparent; background-image: none;}
 
@@ -95,7 +105,12 @@
     height: var(--vidHeight);
     z-index: 7;
 }
+
 .layout.black-background .player-video{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-TheEnd.png);
+}
+
+.layout.black-background.threemus-zone-hook .player-video, .layout.black-background.threemus-zone-magma .player-video{
     background-image: url(images/4p/The-End.png);
 }
 
@@ -363,11 +378,51 @@ tr-timer span {
     padding: 4px;
 }
 
+.flags-contain{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 8px;
+    align-content: space-between;
+    font-size: 14px;
+    top: 342px;
+    transform: translateX(-50%); 
+    left: 50%;
+    width: 334px;
+    height: 62px;
+    padding: 4px;
+}
+
+.flags-icon{
+    justify-self: center;
+    background-image: url('images/flag-sm.png');
+    width: auto;
+    height: 18px;
+    background-size: 100%;
+    grid-row-end: span 2;
+}
+
+.flags-footer{
+    
+}
+
+.layout.threemus-zone-hook .flags-contain,
+.layout.threemus-zone-magma .flags-contain{
+    display: none;
+}
+
 .staff{
     overflow: hidden;
     font-size: 15px;
     width: 334px;
     height: 43px;
+    top: 296px;
+    transform: translateX(-50%); 
+    left: 50%;
+}
+
+.layout.threemus-zone-hook .staff,
+.layout.threemus-zone-magma .staff{
+    top: 360px;
 }
 
 .staff-panel-1, .staff-panel-2{
