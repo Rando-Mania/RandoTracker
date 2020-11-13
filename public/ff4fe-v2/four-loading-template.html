@@ -59,11 +59,12 @@
 }
 
 .loadscreen .player-name{
-    width: 100%;
+    /* width: 100%; */
 }
 
 .loadscreen-main *{
     justify-content: center;
+    justify-items: center;
 }
 
 /* threemus */
@@ -162,30 +163,65 @@
     letter-spacing: 2.5px;
     text-align: center;
     font-weight: normal;
+    text-shadow: 2px 2px 2px #000;
 }
 
+.footer .flags{
+    margin: .5em 0;
+}
+
+.footer .flags, .footer .flags-full{
+    white-space: normal;
+    text-align: center;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .footer-flags{
     padding: 29px;
-    width: 377px;
+    width: 375px;
     height: 237px;
     background-color: #000084;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     border: var(--border) solid #fff;
-    border-image: url(images/ff4-border.png) 3 / 8px;
+    border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
 }
 
 .footer-staff-players{
-    width: 572px;
+    padding: 29px;
+    width: 570px;
     background-color: #000084;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     border: var(--border) solid #fff;
-    border-image: url(images/ff4-border.png) 3 / 8px;
+    border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
+}
+
+.players{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.loadscreen .staff{
+    transform: translateX(0);
+    justify-self: center;
 }
 
 </style>
     <div class="loadscreen">
+        <template id="player_info_load_template">
+            <div class="player-name-contain">
+                <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
+            </div>
+            <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                <div>W-L</div>
+                <tr-text property="player-record"></tr-text>
+            </tr-hide-if-empty>
+            <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                <div>Seed</div>
+                <tr-text property="player-seed"></tr-text>
+            </tr-hide-if-empty>
+        </template>
         <div class="loadscreen-main">
             <div class="hero">
                 <picture>
@@ -201,9 +237,11 @@
                     <tr-text class="flags" property="flags-full"></tr-text>
                 </div>
                 <div class="footer-staff-players">
+                    <h2>Tonight's Team</h2>
                     <tr-hide-if-empty class="staff border-background-1" toggle-class="wtf">
                         <tr-template href="../shared/production-team.html"></tr-template>
                     </tr-hide-if-empty>
+                    <h2>Featured Runners</h2>
                     <div class="players">
                         <tr-player player="1">
                             <tr-template source="#player_info_load_template"></tr-template>
@@ -221,18 +259,5 @@
                 </div>
             </div>
             <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=VT323&display=swap" rel="stylesheet">
-            <template id="player_info_load_template">
-                <div class="player-name-contain">
-                    <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
-                </div>
-                <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
-                    <div>W-L</div>
-                    <tr-text property="player-record"></tr-text>
-                </tr-hide-if-empty>
-                <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
-                    <div>Seed</div>
-                    <tr-text property="player-seed"></tr-text>
-                </tr-hide-if-empty>
-            </template>
         </div>
     </div>

@@ -1,31 +1,36 @@
 <div class="menu-game-specific">
-    <div id="player_extra" class="fieldset">
+    <div id="menu_player_extra" class="fieldset">
         <h4 class="legend">Players Extra</h4>
         <div id="menu_player_labels">
             <table>
                 <tr>
                     <th></th>
-                    <th>#</th>
+                    <th>Record</th>
+                    <th>Seed</th>
                     <th>Pronoun</th>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td><tr-input-text player="3" class="number-input" property="player-number"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td><tr-input-text player="4" class="number-input" property="player-number"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                 </tr>
             </table>
@@ -45,7 +50,7 @@
             </tr-select-toggle>
         </div>
     </div>
-        <div class="fieldset objectives-menu">
+        <div id="menu_objectives" class="fieldset objectives-menu">
             <h4 class="legend">Objectives</h4>
             <div>
                 <div>1</div>
@@ -69,6 +74,19 @@
             </div>
         </div>
         <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
+        <div id="menu_flags" class="fieldset">
+            <h4 class="legend">Flags</h4>
+            <div>
+                <label>Nickname:</label>
+                <tr-input-textarea class="flags-input" property="flags"></tr-input-textarea>
+            </div>
+            <div id="menu_layout_flags">
+                <label>Full Flagset:</label>
+                <tr-input-textarea rows="4" class="flags-input" property="flags-full"></tr-input-textarea>
+            </div>
+            <button class="dummy-text-button" title="Dummy Text" onclick="flagsDummyText()"></button>
+        </div>
+
         <div id="menu_credits" class="fieldset">
             <h4 class="legend">Credits</h4>
             <div id="menu_layout_credits">
@@ -82,17 +100,6 @@
                         <td>capt_uhu</td>
                     </tr>
                 </table>
-            </div>
-        </div>
-        <div id="menu_flags" class="fieldset">
-            <h4 class="legend">Flags</h4>
-            <div>
-                <label>Nickname:</label>
-                <tr-input-textarea class="flags-input" property="flags"></tr-input-textarea>
-            </div>
-            <div id="menu_layout_flags">
-                <label>Full Flagset:</label>
-                <tr-input-textarea class="flags-input" property="flags-full"></tr-input-textarea>
             </div>
         </div>
     </div>

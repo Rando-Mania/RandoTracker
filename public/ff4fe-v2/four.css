@@ -130,10 +130,6 @@
     width: var(--nameWidth);
 }
 
-.player-name:empty{
-    display: none;
-}
-
 .player-pronoun{
     font-size: 10px;
     display: flex;
@@ -255,6 +251,10 @@ tr-toggle-class, .in-active {
 [property="objective-three"] img{background-position: 100% 50%;}
 [property="objective-four"] img{background-position: 100% 75%;}
 [property="objective-five"] img{background-position: 100% 100%;}
+
+.record-contain, .seed-contain{
+    display: none;
+}
 
 .player-speaker{
     padding: 4px;
@@ -378,6 +378,10 @@ tr-timer span {
     padding: 4px;
 }
 
+.flags{
+    white-space: normal;
+}
+
 .flags-contain{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -458,6 +462,9 @@ tr-timer span {
 .restreamers-img{background-position: 0 0;}
 .trackers-img{background-position: 50% 0;}
 
+.production-team-swap{
+    padding: 16px 4px;
+}
 
 .production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
 .production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
@@ -509,3 +516,27 @@ tr-timer span {
 #menu_overlays_contain div{
     margin-bottom: .75em;
 }
+
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout; z-index: 2;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+.menu-contain{
+    grid-template-columns: repeat(6, auto);
+    grid-template-areas:
+        "players-extra players backgrounds team team"
+        "players-extra players layout      team team"
+        "objectives    timer   flags       view reset"
+        "objectives    credits flags       view reset"
+    }
+
+#menu_player_extra{grid-area: players-extra;}
+#menu_backgrounds {grid-area: backgrounds;}
+#menu_objectives {grid-area: objectives;}
+#menu_flags {grid-area: flags; z-index: 3;}
+#menu_credits {grid-area: credits; z-index: 2;}
+
+.record-input input, .seed-input input{width: 3em;}
