@@ -20,7 +20,6 @@
     text-align: center;
     z-index: 50;
     display: none;
-    font-family: 'Orbitron', sans-serif;
 }
 
 .four-loading{
@@ -64,15 +63,54 @@
     height: 100%;
     width: 100%;
     font-family: 'FF6', Arial, sans-serif;
+    font-size: 36px;
+}
+
+.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
+    font-size: 36px;
+}
+
+.loadscreen .player-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.8), rgba(0,0,0,0));
+}
+
+.loadscreen .player-pronoun{
+    background-color: transparent;
+    font-size: 32px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadscreen .player-pronoun::before{
+    content: '(';
+}
+.loadscreen .player-pronoun::after{
+    content: ')';
 }
 
 .loadscreen .player-name{
-    width: 100%;
+    width: auto;
+}
+
+.loadscreen .vs{
+    margin: 8px;
 }
 
 .loadscreen-main *{
     justify-content: center;
 }    
+
+.loadscreen-left{
+    padding: 32px 0;
+    background-image: radial-gradient(rgba(0,0,0,.8) 50%, rgba(0,0,0,0) 72%);
+}
 
 .load-and{
     margin: 1em auto;
@@ -87,6 +125,7 @@
     overflow: hidden;
     width: 1236px;
     height: 150px;
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
 }
 #all_promos_contain{
     display: flex;
@@ -114,23 +153,41 @@
     </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <div>
-                <h1><img src="images/wc_logo.png" width="482" alt=""></h1>
-                <div class="subhead-text text-shadow">Weekly Community Race</div>
+            <div class="loadscreen-left">
+                <picture class="ff6wc-logo-contain">
+                    <source srcset="images/wc_logo.avif" type="image/avif">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
+                </picture>
+                <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
                 <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
-                <div style="margin-top: 2em;">on RandoMania</div>
+                <div style="font-size: 28px;
+                margin-top: 1em;
+                font-variant: small-caps;
+                font-family: Arial, Helvetica, sans-serif;">on RandoMania</div>
             </div>
-            <div style="font-size: 26px;">            
-                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-                <div>vs.</div>
-                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+            <div>  
+                <div class="player-contain">
+                    <tr-text player="1" class="player-name" property="player-name"></tr-text>
+                    <tr-text player="1" class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+                <div class="vs">vs.</div>
+                <div class="player-contain">
+                    <tr-text player="2" class="player-name" property="player-name"></tr-text>
+                    <tr-text player="2" class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
                 <span class="load-and-vs">
                     <span class="load-vs">vs.</span>
                     <span class="load-and">and</span>
                 </span>
-                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
-                <div>vs.</div>
-                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
+                <div class="player-contain">
+                    <tr-text player="3" class="player-name" property="player-name"></tr-text>
+                    <tr-text player="3" class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+                <div class="vs">vs.</div>
+                <div class="player-contain">
+                    <tr-text player="4" class="player-name" property="player-name"></tr-text>
+                    <tr-text player="4" class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
             </div>
         </div>
         <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>

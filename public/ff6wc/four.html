@@ -7,7 +7,7 @@
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="stylesheet" type="text/css" href="four.css?v=1">
     <link rel="preload" href="images/ff6-airship-background.png" as="image" type="image/png">
     <link rel="preload" href="images/wc_logo.png" as="image" type="image/png">
     <link rel="preload" href="images/sprite-sheet.png" as="image" type="image/png">
@@ -227,10 +227,14 @@
 
         <div class="abs center-headers">
             <div>
-                <img src="images/wc_logo.png" width="374" alt="">
-                <tr-text class="subhead-text text-shadow" value="Weekly Community Race" property="subheading"></tr-text>
-                <!-- <div class="subhead-text text-shadow">Weekly Community Race</div> -->
-                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+                <picture class="ff6wc-logo-contain">
+                    <source srcset="images/wc_logo.avif" type="image/avif">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="374" alt="">
+                </picture>
+                <div class="subheadings">
+                    <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+                    <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+                </div>
             </div>
             <div>
                 <tr-hide-if-empty class="staff text-shadow" toggle-class="wtf">

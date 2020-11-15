@@ -122,11 +122,17 @@ html{
 .center-headers{
     display: grid;
     justify-items: center;
+    align-content: space-between;
     transform:translate(-50%, -50%); 
     top: 50%;
     left: 50%;
-    gap: 3em;
+    height: 396px;
 }
+
+.ff6wc-logo-contain{
+    margin-bottom: .75em;
+}
+
 .center-headers > div{
     display: grid;
     justify-items: center;
@@ -138,13 +144,15 @@ html{
     word-spacing: 1px;
     margin: .25em 0;
     color: rgba(255,255,255,.9);
+    text-align: center;
+    display: block;
 }
 
 .player-grid{
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: center;
-    padding: 4px;
+    padding: 0 4px;
     grid-gap: 4px;
     font-size: 24px;
     text-shadow: 2px 2px 2px #000, -2px -2px 2px #000;
@@ -256,6 +264,7 @@ html{
 }
 
 tr-timer{
+    margin-top: 12px;
 	width: 200px;
     height: 53px;
     z-index: 1;
@@ -266,6 +275,10 @@ tr-timer span {
     -webkit-background-clip: text;
     background-clip: text;
     background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-image: url(images/sky-background.png);
+    background-position: 33% 26%;
+    background-size: 868px 868px;
+    filter: contrast(1.35);
     color: transparent;
     width: 22px;
     text-align: center;
