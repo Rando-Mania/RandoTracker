@@ -85,6 +85,7 @@
 .layout.ccs-special-feature{background-image: url(images/ccs/CCS-BG-SpecialFeature.png);}
 .layout.ccs-sunday-splashdash{background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);}
 .layout.ccs-underground-racing{background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);}
+.layout.ccs-enterprise-legacy{background-image: url(images/ccs/CCS-BG-EnterpriseLegacy.png); background-color: #503a10;}
 
 .layout.threemus-zone-group{background-color: #001211;background-image: url(images/3musZone/3musZone-1-BG-GroupStage.png);}
 .layout.threemus-zone-magma{background-color: #0069c5;background-image: url(images/3musZone/3musZone-2-BG-MagmaRoute.png);}
@@ -104,9 +105,15 @@
 }
 
 .transparent-background{background-color: transparent;}
+
 .layout.black-background .player-video{
     background-color: #000;
     background-image: url(images/3musZone/The-End.png);
+}
+
+.layout.black-background[class*="ccs-"] .player-video{
+    background-color: #000;
+    background-image: url(images/The-End.png);
 }
 
 .player-info{
