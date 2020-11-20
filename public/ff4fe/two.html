@@ -1,84 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>Final Fantasy 4: FE Randomizer Tracker</title>
-	<link rel="stylesheet" type="text/css" href="../content/tracker.css">
-	<link rel="stylesheet" type="text/css" href="two.css">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="icon item" type="image/x-icon" href="favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FF4FE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="preload" href="images/ff4-border.png" as="image" type="image/png">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+    
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+ 
+        [player="1"] .player-grid-2 {left: var(--grid2X); top: var(--grid2Y);}
+        [player="2"] .player-grid-2 {right: var(--grid2X); top: var(--grid2Y);}
+    
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+    
+        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+
+        tr-timer:nth-of-type(1) {left: var(--timerX); top: var(--timerY);}
+        tr-timer:nth-of-type(2) {right: var(--timerX); top: var(--timerY);}
+    </style>
 </head>
 <body>
-    <img data-property="background" src="images/OVERLAY-FreeEnterprise-2Player.png" style="top: 0px; left: 0px; position: absolute;" />
+    <template id="player_info_template">
+        <div class="border-1 player-video abs"></div>
+        <div class="player-info abs border-background-1">
+            <div class="name-pronoun-contain">
+                <div class="player-name-contain">
+                    <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
+                </div>
+                <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+            </div>
+            <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                <div>W-L</div>
+                <tr-text property="player-record"></tr-text>
+            </tr-hide-if-empty>
+            <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                <div>Seed</div>
+                <tr-text property="player-seed"></tr-text>
+            </tr-hide-if-empty>
+        </div>
+        <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
+        <tr-template class="player-grid-2 abs border-background-1" href="icons-two.html"></tr-template>
+        <tr-text property="player-final" class="player-final abs border-background-1"></tr-text>
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <img src="../shared/images/icons/blank.svg" alt="">
+        </tr-toggle>
+        <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
+            <div>Winner</div>
+        </tr-toggle>
+        <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+    </template>
+	<div class="layout">
+        <!-- timer/staff -->
+        <tr-timer class="player-timer abs border-background-1" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+        <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
+        <tr-hide-if-empty class="staff abs border-background-1" style="top: 464px; left: 451px;" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
 
-	<div id="player_name_1" data-scale-to-fit="true" class="player-name nowrap" style="top: 469px; left: 13px;"></div>
-    <div id="player_name_2" data-scale-to-fit="true" class="player-name nowrap" style="top: 469px; left: 905px;"></div>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
 
-    <div id="player_speaker_1" class="player-speaker hidden" style="top: 475px; left: 390px;"><img src="images/FFIV-audio.png"/></div>
-    <div id="player_speaker_2" class="player-speaker hidden" style="top: 475px; left: 855px;"><img src="images/FFIV-audio.png"/></div>
+        <div class="abs objectives-contain">
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-one-text']" toggle-class="show-objective">
+                <div class="objective-label border-background-1">1</div>
+                <div class="objective-text-contain border-background-1">
+                    <tr-text scale-to-fit property="objective-one-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
 
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 530px; left: 165px;">
-        <div id="player_final_1" class="player-final hidden"></div>
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-two-text']" toggle-class="show-objective">
+                <div class="objective-label border-background-1">2</div>
+                <div class="objective-text-contain border-background-1">
+                  <tr-text scale-to-fit property="objective-two-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-three-text']" toggle-class="show-objective">
+                <div class="objective-label border-background-1">3</div>
+                <div class="objective-text-contain border-background-1">
+                    <tr-text scale-to-fit property="objective-three-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-four-text']" toggle-class="show-objective">
+                <div class="objective-label border-background-1">4</div>
+                <div class="objective-text-contain border-background-1">
+                    <tr-text scale-to-fit property="objective-four-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-five-text']" toggle-class="show-objective">
+                <div class="objective-label border-background-1">5</div>
+                <div class="objective-text-contain border-background-1">
+                    <tr-text scale-to-fit property="objective-five-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>    
+        </div>
     </div>
-    <div class="player-final-container hidden" data-final-hide="true" style="top: 530px; left: 924px;">
-        <div id="player_final_2" class="player-final hidden"></div>
+
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="two-loading-template.html"></tr-template>
     </div>
 
-    <img src="images/timer-lg.png" class="icon" style="top: 473px; left: 523px; position: absolute;" />
-    <img src="images/flag-lg.png" class="icon" style="top: 539px; left: 690px; position: absolute;" />
-    <img src="images/mic-lg.png" class="icon" style="top: 539px; left: 240px; position: absolute;" />
-
-    <div id="commentators" class="nowrap" data-scale-to-fit="true" style="top: 536px; left: 280px;"></div>
-    <div data-property="flags" class="nowrap flags" data-scale-to-fit="true" style="top: 549px; left: 730px;"></div>
-    <div id="timer" style="top: 484px; left: 408px;"></div>
-
-    <div id="player_1_grid" class="item-grid" data-child-player="1" style="top: 539px; left: 20px; position: absolute;">
-        <span class="item" data-toggle="true" data-property="hecrystal" data-off-image="images/FFIVFE-Icons-1THECrystal-Gray.png" data-on-image="images/FFIVFE-Icons-1THECrystal.png" data-image="images/FFIVFE-Icons-1THECrystal-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="pass" data-off-image="images/FFIVFE-Icons-2Pass-Gray.png" data-on-image="images/FFIVFE-Icons-2Pass.png" data-image="images/FFIVFE-Icons-2Pass-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="hook" data-off-image="images/FFIVFE-Icons-3Hook-Gray.png" data-on-image="images/FFIVFE-Icons-3Hook.png" data-image="images/FFIVFE-Icons-3Hook-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="darkcrystal" data-off-image="images/FFIVFE-Icons-4DarkCrystal-Gray.png" data-on-image="images/FFIVFE-Icons-4DarkCrystal.png" data-image="images/FFIVFE-Icons-4DarkCrystal-Gray.png"></span>
-
-        <span class="item" data-toggle="true" data-property="earthcrystal" data-off-image="images/FFIVFE-Icons-5EarthCrystal-Gray.png" data-on-image="images/FFIVFE-Icons-5EarthCrystal.png" data-image="images/FFIVFE-Icons-5EarthCrystal-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="twinharp" data-off-image="images/FFIVFE-Icons-6TwinHarp-Gray.png" data-on-image="images/FFIVFE-Icons-6TwinHarp.png" data-image="images/FFIVFE-Icons-6TwinHarp-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="package" data-off-image="images/FFIVFE-Icons-7Package-Gray.png" data-on-image="images/FFIVFE-Icons-7Package.png" data-image="images/FFIVFE-Icons-7Package-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="sandruby" data-off-image="images/FFIVFE-Icons-8SandRuby-Gray.png" data-on-image="images/FFIVFE-Icons-8SandRuby.png" data-image="images/FFIVFE-Icons-8SandRuby-Gray.png"></span>
-
-        <span class="item" data-toggle="true" data-property="baronkey" data-off-image="images/FFIVFE-Icons-9BaronKey-Gray.png" data-on-image="images/FFIVFE-Icons-9BaronKey.png" data-image="images/FFIVFE-Icons-9BaronKey-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="magmakey" data-off-image="images/FFIVFE-Icons-10MagmaKey-Gray.png" data-on-image="images/FFIVFE-Icons-10MagmaKey.png" data-image="images/FFIVFE-Icons-10MagmaKey-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="towerkey" data-off-image="images/FFIVFE-Icons-11TowerKey-Gray.png" data-on-image="images/FFIVFE-Icons-11TowerKey.png" data-image="images/FFIVFE-Icons-11TowerKey-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="lucakey" data-off-image="images/FFIVFE-Icons-12LucaKey-Gray.png" data-on-image="images/FFIVFE-Icons-12LucaKey.png" data-image="images/FFIVFE-Icons-12LucaKey-Gray.png"></span>
-
-        <span class="item" data-toggle="true" data-property="adamant" data-off-image="images/FFIVFE-Icons-13Adamant-Gray.png" data-on-image="images/FFIVFE-Icons-13Adamant.png" data-image="images/FFIVFE-Icons-13Adamant-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="legendsword" data-off-image="images/FFIVFE-Icons-14LegendSword-Gray.png" data-on-image="images/FFIVFE-Icons-14LegendSword.png" data-image="images/FFIVFE-Icons-14LegendSword-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="pan" data-off-image="images/FFIVFE-Icons-15Pan-Gray.png" data-on-image="images/FFIVFE-Icons-15Pan.png" data-image="images/FFIVFE-Icons-15Pan-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="spoon" data-off-image="images/FFIVFE-Icons-16Spoon-Gray.png" data-on-image="images/FFIVFE-Icons-16Spoon.png" data-image="images/FFIVFE-Icons-16Spoon-Gray.png"></span>
-
-        <span class="item"></span>
-        <span class="item" data-toggle="true" data-property="rattail" data-off-image="images/FFIVFE-Icons-17RatTail-Gray.png" data-on-image="images/FFIVFE-Icons-17RatTail.png" data-image="images/FFIVFE-Icons-17RatTail-Gray.png"></span>
-        <span class="item" data-toggle="true" data-property="pinktail" data-off-image="images/FFIVFE-Icons-18PinkTail-Gray.png" data-on-image="images/FFIVFE-Icons-18PinkTail.png" data-image="images/FFIVFE-Icons-18PinkTail-Gray.png"></span>
+<!-- bracket -->
+    <!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
+        <div class="bracket">
+            <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+    </div> -->
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar-template.html"></tr-template>
     </div>
 
-    <div class="item-grid" data-child-player="2" data-copy-from="#player_1_grid" style="top: 539px; left: 1130px;">
-    </div>
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script defer src="../script/tracker.js"></script>
-    <script defer type="text/javascript">
-    	(function(Tracker) {
-    		Tracker.loaded = function() {
-    			Tracker.init({
-                    playerCount: 2,
-                    freetext: [{
-                        label: "Flags",
-                        property: "flags"
-                    }]
-                });
-    		}
-    	})(window.Tracker = window.Tracker || {});
-    </script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/two_game.js"></script>
 </body>
 </html>
