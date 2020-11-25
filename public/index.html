@@ -189,7 +189,6 @@
   </div>
   </article>
 </div>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
    <script src="/__/firebase/5.2.0/firebase-app.js"></script>
   <script src="/__/firebase/5.2.0/firebase-auth.js"></script>
   <script src="/__/firebase/5.2.0/firebase-database.js"></script>
@@ -197,6 +196,7 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
   <script type="text/javascript" src="script/main.js"></script>
+  <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
   <script type="text/javascript">
     function goToRoom(path) {
       var inputRoomID = Math.random().toString(36).slice(2);
@@ -210,52 +210,87 @@
       CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
     }
 
+// TO DO: clean up this js mess
+
     function reset(){
-      $(".games div").removeClass("hide");
+      document.querySelectorAll('.games div').forEach(
+          function myFunction(el) {el.classList.remove("hide");}
+          )
     }
 
-    $("#all").on("click", reset);
+    document.getElementById('all').addEventListener('click', reset);
 
-    $("#nes").on("click", function() {
-       reset();
-       $(".games div:not([data-console='nes'])").addClass("hide");
-    });
+    document.getElementById('nes').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="nes"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
 
-    $("#snes").on("click", function() {
-       reset();
-       $(".games div:not([data-console='snes'])").addClass("hide");
-    });
+    document.getElementById('snes').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="snes"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
 
-    $("#gb").on("click", function() {
-      reset();
-      $(".games div:not([data-console='gb'])").addClass("hide");
-    });
-    
-    $("#gba").on("click", function() {
-      reset();
-      $(".games div:not([data-console='gba'])").addClass("hide");
-    });
-    
-    $("#ds").on("click", function() {
-      reset();
-      $(".games div:not([data-console='ds'])").addClass("hide");
-    });
+    document.getElementById('gb').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="gb"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
 
-    $("#rm").on("click", function() {
-      reset();
-      $(".games div:not([data-console='rm'])").addClass("hide");
-    });
+    document.getElementById('gba').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="gba"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
 
-    $("#gc").on("click", function() {
-      reset();
-      $(".games div:not([data-console='gc'])").addClass("hide");
-    });
+    document.getElementById('ds').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="ds"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )    
 
-    $("#n64").on("click", function() {
-      reset();
-      $(".games div:not([data-console='n64'])").addClass("hide");
-    });
+    document.getElementById('rm').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="rm"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
 
+    document.getElementById('gc').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="gc"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
+
+    document.getElementById('n64').addEventListener('click',
+      function(){
+        reset();
+        document.querySelectorAll('.games div:not([data-console="n64"])').forEach(
+          function myFunction(el) {el.classList.add("hide");}
+          )
+      }
+    )
     Main.init();
   </script>
 </body>
