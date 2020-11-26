@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('images/airship-no-video.png') 0 226px / 100% 100%, linear-gradient(to right, #394131 50%, #21384a 0) #21384a;
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
     --vidWidth: 604px;
@@ -22,14 +21,16 @@
 
 .border-1{border: var(--border1);}
 .background-1{background-color: var(--backgroundColor1);}
+
+
 .border-background-1 {
-    background-image: url(images/ff6-window-gradient-small.png);
-    background-size: 100%;
-    background-position: 0;
+    background-image:
+        linear-gradient(#292884, #292884);
     border: solid 3px;
-    border-radius: 10px;
     mix-blend-mode: hard-light;
+    border-radius: 10px;
 }
+
 .abs{position: absolute;}
 
 .text-shadow{
@@ -62,7 +63,14 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
+}
+
+.notwebp .layout{
+    background: url('images/airship-no-video.png') 0 226px / 100% 100%, linear-gradient(to right, #394131 50%, #21384a 0) #21384a;
+}
+
+.webp .layout{
+    background: url('images/airship-no-video.webp') 0 226px / 100% 100%, linear-gradient(to right, #394131 50%, #21384a 0) #21384a;
 }
 
 .player-video{
@@ -103,7 +111,6 @@ html{
     display: block;
 }
 
-
 .player-grid .icon-slot{
     width: 36px;
     height: 80px;
@@ -111,10 +118,9 @@ html{
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     isolation: isolate;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
     position: relative;
+    background-image: url(images/sprite-sheet.png);
+    background-repeat: no-repeat;
 }
 
 .counter{
@@ -128,9 +134,19 @@ html{
     color: gold;
 }
 
-.player-grid .icon-slot.magicite{background-image: url(images/magicite_gba.png); background-size: 80%;}
-.terra{background-image: url(images/terra.png);}
-.dragons{background-image: url(images/red-dragon.png);}
+.player-grid .icon-slot.magicite{
+    background-position: 92% -6px;
+    background-size: 500% auto;
+}
+
+.terra{
+    background-position: 0 12px;
+    background-size: 300% auto;
+}
+.dragons{
+    background-position: 50% 12px;
+    background-size: 300% auto;
+}
 
 .player-speaker{
     padding: 4px;
@@ -173,9 +189,9 @@ html{
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/choocbo-frames.png');
-    background-size: 200% 100%;
-    background-position: 0 0;
+    background-image: url(images/sprite-sheet.png);
+    background-size: 300% 300%;
+    background-position: 0 100%;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
@@ -185,9 +201,9 @@ html{
 }
 
 @keyframes kiwi {
-    from{background-position: 0 0;}
-    50%{background-position: 100% 0;}
-    to{background-position: 0 0;}
+    from{background-position: 0 100%;}
+    50%{background-position: 50% 100%;}
+    to{background-position: 0 100%;}
 }
 
 .best-of-3, .best-of-5, .best-of-7{
@@ -213,7 +229,9 @@ html{
     display:none;
 }
 
+
 tr-timer{
+    margin-top: 12px;
 	width: 200px;
     height: 53px;
     z-index: 1;
@@ -223,12 +241,13 @@ tr-timer{
 tr-timer span {
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: linear-gradient(#db1500, orange 54%, #fffef1 141%);
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
     color: transparent;
     width: 22px;
     text-align: center;
 }
-
 
 .production-team-swap{
     display: grid;

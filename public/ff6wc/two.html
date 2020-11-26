@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
-    <link rel="preload" href="images/airship-no-video.png" as="image" type="image/png">
-    <link rel="preload" href="images/ff6-window-gradient-small.png" as="image" type="image/png">
+    <link rel="preload" href="images/airship-no-video.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/sprite-sheet.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -52,7 +52,7 @@
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <div class="player-grid abs border-background-1">
+        <div class="abs player-grid border-background-1">
             <div class="icon-slot magicite">
                 <div class="counter">
                     <tr-text player="1" oninput property="magicite-count">?</tr-text>
@@ -84,7 +84,7 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <div class="player-grid abs border-background-1">
+        <div class="abs player-grid border-background-1">
             <div class="icon-slot magicite">
                 <div class="counter">
                     <tr-text player="2" oninput property="magicite-count">?</tr-text>
@@ -140,6 +140,7 @@
 	
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

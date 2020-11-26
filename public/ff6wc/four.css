@@ -64,9 +64,16 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);
     background-size: 100% 100%;
     background-color: #21384a;
+}
+
+.notwebp .layout{
+    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+}
+
+.webp .layout{
+    background-image: url('images/ff6-airship-background.webp'), linear-gradient(to right, #394131 50%, #21384a 0);
 }
 
 .player-video{

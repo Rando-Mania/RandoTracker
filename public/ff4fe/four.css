@@ -5,7 +5,7 @@
 }
 
 :root{
-    --backgroundImg: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
+    /* --backgroundImg: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png'); */
     --vidWidth: 463px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
@@ -69,14 +69,27 @@
     background-color: var(--backgroundColor1);
 }
 
-.weekly-monday{
+.notwebp.notavif .weekly-monday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
     background-color: #012f83;
 }
-.weekly-friday{
+
+.webp .weekly-monday{
+    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.webp');
+    background-color: #012f83;
+}
+
+.notwebp.notavif .weekly-friday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.png');
     background-color: #012f83;
 }
+
+.webp .weekly-friday{
+    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.webp');
+    background-color: #012f83;
+}
+
+
 .threemus-zone-hook{
     background-image: url('images/4p/HTT3Z-4P-BG-HookRoute.png');
     --backgroundColor1: #191668;
