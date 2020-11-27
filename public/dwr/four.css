@@ -28,15 +28,14 @@
     background-color: var(--backgroundColor1);
 }
 
-.map-background{
+.notavif .map-background{
     background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
     background-color: #002781;
-    background-image: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
-        image-set(
-            "images/alefgard_crop_test.avif" type("image/avif"),
-            "images/alefgard_crop._test.png" type("image/png")
-        );
+}
+
+.avif .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
+    background-color: #002781;
 }
 
 .abs{position: absolute;}
@@ -81,10 +80,10 @@ html{
     background-repeat: no-repeat;
     background-position: center;
 }
-.weekly-background{background-image: url('images/dwr-weekly.png');}
-.tourney-background{background-image: url('images/layout_2020.png');}
-.chaos-background{background-image: url('images/dwr-chaos.png');}
-.league-background{background-image: url('images/2020_league_backdrop_4by3.png');}
+.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
+.tourney-background{background-image: url('images/video-background/layout_2020.png');}
+.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
 
 .player-info{
     height: 50px;

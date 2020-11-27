@@ -109,10 +109,10 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.weekly-background{background-image: url('images/dwr-weekly.png');}
-.tourney-background{background-image: url('images/layout_2020.png');}
-.chaos-background{background-image: url('images/dwr-chaos.png');}
-.league-background{background-image: url('images/2020_league_backdrop_4by3.png');}
+.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
+.tourney-background{background-image: url('images/video-background/layout_2020.png');}
+.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
 
 .player-info{
     height: 57px;
