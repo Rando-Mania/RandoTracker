@@ -278,14 +278,14 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 [property="hurt+"].active:after{
 content: '';
 bottom: -5px;
-left: 16px;
+left: -30px;
 width: calc(270px / 9);
 height: 44px;
 position: absolute;
 background-image: url('images/fireball-frames.png');
 background-position: 0 0;
 animation: fireball 1s steps(9);
-transform: scale(2.8);
+transform: scale(5);
 image-rendering: -moz-crisp-edges;
 image-rendering: pixelated;
 transform-origin: 50% 100%;
@@ -555,7 +555,10 @@ tr-timer span {
       }
       
       @keyframes mask {
-        to{ -webkit-mask-position: 100% 0;}
+        to{ 
+            -webkit-mask-position: 100% 0;
+            -webkit-mask-image: none;
+        }
       }
       
       [property="monster_name"]{
@@ -609,12 +612,7 @@ tr-timer span {
     .monster-table-ai .heading { text-decoration: underline; margin-bottom: .5em;}
     
     img[src="images/monsters/true-dragonlord.png"]{
-        transform: scale(2.8) rotateY(180deg) translate(-1px, 18px);
-        animation: roar 1s;
-    }
-    
-    @keyframes roar{
-        from, 50% {transform: scale(2.8) rotateY(180deg) translate(100px, 18px);}
+        transform: scale(2.8) rotateY(180deg) translate(-1px, 11px);
     }
     
     img[src="images/monsters/demon-knight.png"]{

@@ -724,7 +724,10 @@ figcaption{
   }
   
   @keyframes mask {
-	to{ -webkit-mask-position: 100% 0; mask-position: 100% 0;}
+    to{ 
+        -webkit-mask-position: 100% 0;
+        -webkit-mask-image: none;
+    }
   }
   
   [property="monster_name"]{
@@ -921,12 +924,7 @@ figcaption{
 .monster-table-ai tr-text {width: 310px; white-space: nowrap;}
 
 img[src="images/monsters/true-dragonlord.png"]{
-    transform: scale(2) rotateY(180deg) translate(-1px, 18px);
-    animation: roar 1s;
-}
-
-@keyframes roar{
-    from, 50% {transform: scale(2) rotateY(180deg) translate(100px, 18px);}
+    transform: scale(2) rotateY(180deg) translate(-1px, 11px);
 }
 
 img[src="images/monsters/demon-knight.png"]{
