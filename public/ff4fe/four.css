@@ -69,22 +69,22 @@
     background-color: var(--backgroundColor1);
 }
 
-.notwebp.notavif .weekly-monday{
+.notwebp.notavif .layout.weekly-monday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
     background-color: #012f83;
 }
 
-.webp .weekly-monday{
+.webp .layout.weekly-monday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.webp');
     background-color: #012f83;
 }
 
-.notwebp.notavif .weekly-friday{
+.notwebp.notavif .layout.weekly-friday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.png');
     background-color: #012f83;
 }
 
-.webp .weekly-friday{
+.webp .layout.weekly-friday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.webp');
     background-color: #012f83;
 }

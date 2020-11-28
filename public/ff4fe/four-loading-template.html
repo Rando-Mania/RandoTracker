@@ -144,17 +144,32 @@
 }
 
 .hero{
-    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
     height: 448px;
     width: 100%;
 }
+.notwebp.hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
+}
+.webp .hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.webp);
+}
+
+.slideshow{
+    position: relative;
+    height: 337px;
+}
+
+.slide{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 .footer{
-    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-BottomMenu-Text.png);
     background-color: #000;
     height: 243px;
     display: flex;
-    justify-content: space-between;
+    gap: 11px;
     padding: 3px 0 3px 4px;
     text-align: left;
 }
@@ -231,7 +246,44 @@
                     <source srcset="images/4p/weekly/FF4FE-WeeklyRace-Logo.avif" type="image/avif">
                     <img src="images/4p/weekly/FF4FE-WeeklyRace-Logo.png" width="717" height="111" alt="">
                 </picture>
-                <img src="images/4p/weekly/FF4Fe-WeeklyRace-Slideshow3.png" height="337" alt="">
+                <div class="slideshow">
+                    <picture class="slide" style="opacity: 1;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow1.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow1.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow2.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow2.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow3.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow3.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow4.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow4.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow5.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow5.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow6.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow6.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow7.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow7.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow8.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow8.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow9.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow9.png" height="337" alt="">
+                    </picture>
+                </div>
             </div>
             <div class="footer">
                 <div class="footer-flags">

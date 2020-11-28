@@ -17,7 +17,8 @@
     
     <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
-	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
@@ -27,6 +28,25 @@
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
     <script>
+
+window.onload = function() {
+    var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = 0;
+                }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.opacity = 1;
+            setTimeout(showSlides, 30000);
+        }
+
+};
+
         function flagsDummyText() {
             Tracker.updateLayoutMultiple([
                 {property: 'flags', value: '2020 Htt3Z League Group Stage'},
