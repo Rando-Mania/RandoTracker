@@ -28,10 +28,7 @@
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
     <script>
-
-window.onload = function() {
-    var slideIndex = 0;
-        showSlides();
+        var slideIndex = 0;
 
         function showSlides() {
             var i;
@@ -42,11 +39,9 @@ window.onload = function() {
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.opacity = 1;
-            setTimeout(showSlides, 30000);
+            setTimeout(showSlides, 3000);
         }
-
-};
-
+        
         function flagsDummyText() {
             Tracker.updateLayoutMultiple([
                 {property: 'flags', value: '2020 Htt3Z League Group Stage'},
