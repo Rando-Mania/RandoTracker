@@ -19,10 +19,6 @@
     --finalX: 169px; --finalY: 591px;
     --bestX: 390px; --bestY: 554px;
     --timerX: 169px; --timerY: 591px;
-    --swissFallback: linear-gradient(#e9d8c4, #fcc07c);
-    --playinFallback: linear-gradient(#ccdde5, #7cd1fc);
-    --bracketFallback: linear-gradient(#9b95bd, #3428e9);
-    --finalsFallback: linear-gradient(#3b3a6c, #412352);
 }
 
 .border-1{
@@ -61,22 +57,26 @@
     background-color: var(--backgroundColor1);
 }
 
-.fabul-swiss{
+/* .fabul-swiss{
+    --swissFallback: linear-gradient(#e9d8c4, #fcc07c);
     background-image: var(--swissFallback);
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png), var(--swissFallback);
 }
 .fabul-playin{
+    --playinFallback: linear-gradient(#ccdde5, #7cd1fc);
     background-image: var(--playinFallback);
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-PlayIn.png), var(--playinFallback);
 }
 .fabul-bracket{
+    --bracketFallback: linear-gradient(#9b95bd, #3428e9);
     background-image: var(--bracketFallback);
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Bracket.png), var(--bracketFallback);
 }
 .fabul-finals{
+    --finalsFallback: linear-gradient(#3b3a6c, #412352);
     background-image: var(--finalsFallback);
     background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
-}
+} */
 
 .layout.trans{background-color: transparent; background-image: none;}
 
@@ -108,12 +108,12 @@
 
 .layout.black-background .player-video{
     background-color: #000;
-    background-image: url(images/3musZone/The-End.png);
+    background-image: url(images/The-End.png);
 }
 
-.layout.black-background[class*="ccs-"] .player-video{
+.layout.black-background[class*="threemus-"] .player-video{
     background-color: #000;
-    background-image: url(images/The-End.png);
+    background-image: url(images/3musZone/The-End.png);
 }
 
 .player-info{

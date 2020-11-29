@@ -65,10 +65,17 @@
     height: 171px;
     left: 301px;
     top: 0;
-    background-image: url('images/ccs/community-club-showcase-title.png');
     background-size: 680px 171px;
     z-index: 3;
 }
+
+.notwebp .loadscreen-contain[class*="ccs-"] .header, .notwebp .two-loading[class*="ccs-"] .header{
+    background-image: url('images/ccs/community-club-showcase-title.png');
+}
+.webp .loadscreen-contain[class*="ccs-"] .header, .webp .two-loading[class*="ccs-"] .header{
+    background-image: url('images/ccs/community-club-showcase-title.webp');
+}
+
 
 .loadscreen-contain[class*="ccs-"] .top-flames, .two-loading[class*="ccs-"] .top-flames{
     width: 1020px;
@@ -144,23 +151,47 @@
     --ccs-load-fallback: linear-gradient(to right, #d1d1b9 40px, transparent 40px 1240px, #d1d1b9 1240px 1280px), linear-gradient(#d1d1b9 58px, #898981 58px 218px, #680835 218px 538px, #898981 538px 698px, #604f3e 698px 720px);
     background-image: var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-lunar-racing, .two-loading.ccs-lunar-racing{
+
+.notwebp .loadscreen-contain.ccs-lunar-racing, .notwebp .two-loading.ccs-lunar-racing{
     background-image: url('images/ccs/splash-LRC.png'), var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-mysidian-jumping, .two-loading.ccs-mysidian-jumping{
+.webp .loadscreen-contain.ccs-lunar-racing, .webp .two-loading.ccs-lunar-racing{
+    background-image: url('images/ccs/splash-LRC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-mysidian-jumping, .notwebp  .two-loading.ccs-mysidian-jumping{
     background-image: url('images/ccs/splash-MJC.png'), var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-special-feature, .two-loading.ccs-special-feature{
+.webp .loadscreen-contain.ccs-mysidian-jumping, .webp .two-loading.ccs-mysidian-jumping{
+    background-image: url('images/ccs/splash-MJC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-special-feature, .notwebp .two-loading.ccs-special-feature{
     background-image: url('images/ccs/splash-Special.png'), var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-sunday-splashdash, .two-loading.ccs-sunday-splashdash{
+.webp .loadscreen-contain.ccs-special-feature, .webp .two-loading.ccs-special-feature{
+    background-image: url('images/ccs/splash-Special.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-sunday-splashdash, .notwebp .two-loading.ccs-sunday-splashdash{
     background-image: url('images/ccs/splash-Slapdash.png'), var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-underground-racing, .two-loading.ccs-underground-racing{
+.webp .loadscreen-contain.ccs-sunday-splashdash, .webp .two-loading.ccs-sunday-splashdash{
+    background-image: url('images/ccs/splash-Slapdash.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-underground-racing, .notwebp .two-loading.ccs-underground-racing{
     background-image: url('images/ccs/splash-URC.png'), var(--ccs-load-fallback);
 }
-.loadscreen-contain.ccs-enterprise-legacy, .two-loading.ccs-enterprise-legacy{
+.webp .loadscreen-contain.ccs-underground-racing, .webp .two-loading.ccs-underground-racing{
+    background-image: url('images/ccs/splash-URC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-enterprise-legacy, .notwebp .two-loading.ccs-enterprise-legacy{
     background-image: url('images/ccs/splash-legacy.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-enterprise-legacy, .webp .two-loading.ccs-enterprise-legacy{
+    background-image: url('images/ccs/splash-legacy.webp'), var(--ccs-load-fallback);
 }
 
 /* 3musZone */
