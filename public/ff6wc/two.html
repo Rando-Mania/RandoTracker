@@ -115,8 +115,12 @@
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="top: 490px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs background-1" style="top: 560px; left: 520px;" toggle-class="wtf">
+        <tr-timer class="abs text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="top: 490px; transform: translateX(-50% ); left: 50%;"></tr-timer>
+        <!-- <div class="subheadings">
+            <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+            <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+        </div> -->
+        <tr-hide-if-empty class="staff abs text-shadow" style="top: 560px; transform: translateX(-50% ); left: 50%;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
