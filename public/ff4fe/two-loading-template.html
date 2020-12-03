@@ -151,6 +151,10 @@
     --ccs-load-fallback: linear-gradient(to right, #d1d1b9 40px, transparent 40px 1240px, #d1d1b9 1240px 1280px), linear-gradient(#d1d1b9 58px, #898981 58px 218px, #680835 218px 538px, #898981 538px 698px, #604f3e 698px 720px);
     background-image: var(--ccs-load-fallback);
 }
+.loadscreen-contain[class*="ccs-"] .versus, .two-loading[class*="ccs-"] .versus{
+    display:none;
+}
+
 
 .notwebp .loadscreen-contain.ccs-lunar-racing, .notwebp .two-loading.ccs-lunar-racing{
     background-image: url('images/ccs/splash-LRC.png'), var(--ccs-load-fallback);
@@ -173,10 +177,10 @@
     background-image: url('images/ccs/splash-Special.webp'), var(--ccs-load-fallback);
 }
 
-.notwebp .loadscreen-contain.ccs-sunday-splashdash, .notwebp .two-loading.ccs-sunday-splashdash{
+.notwebp .loadscreen-contain.ccs-sunday-slapdash, .notwebp .two-loading.ccs-sunday-slapdash{
     background-image: url('images/ccs/splash-Slapdash.png'), var(--ccs-load-fallback);
 }
-.webp .loadscreen-contain.ccs-sunday-splashdash, .webp .two-loading.ccs-sunday-splashdash{
+.webp .loadscreen-contain.ccs-sunday-slapdash, .webp .two-loading.ccs-sunday-slapdash{
     background-image: url('images/ccs/splash-Slapdash.webp'), var(--ccs-load-fallback);
 }
 
@@ -194,6 +198,10 @@
     background-image: url('images/ccs/splash-legacy.webp'), var(--ccs-load-fallback);
 }
 
+.loadscreen-contain [player="2"] .player-name-contain, .two-loading [player="2"] .player-name-contain{
+    display: flex;
+    justify-content: flex-end;
+}
 /* 3musZone */
 
 .loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
@@ -387,7 +395,7 @@
             <div class="player-info abs background-1 border-1">
                 <div class="name-pronoun-contain">
                     <div class="player-name-contain">
-                        <tr-text style="width: 160px;" scale-to-fit class="player-name" property="player-name"></tr-text>
+                        <tr-text class="player-name" property="player-name"></tr-text>
                     </div>
                     <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
                 </div>
