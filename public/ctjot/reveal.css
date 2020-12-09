@@ -117,7 +117,7 @@
 
 .player-grid img, .dialog img{
     background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');
-    background-size: 224px 128px;
+    background-size: 224px 160px;
 }
 
 .crono{background-position: 0 0;}
@@ -143,7 +143,7 @@
 .ribbon{background-position: -160px -64px;}
 .spacer{background-position: -192px -64px;}
 .magic{background-position: 0px -96px;}
-.tools{background-position: -32x -96px;}
+.tools{background-position: -32px -96px;}
 .doll{background-position: -64px -96px;}
 
 .trigger{background-position: -96px -96px;}

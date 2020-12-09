@@ -137,7 +137,7 @@
 
 .player-grid img, .dialog img{
     background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');
-    background-size: 112px 64px;
+    background-size: 112px 80px;
 }
 
 .crono{background-position: 0 0;}
