@@ -57,11 +57,12 @@ html{
     height: 720px;
     color:#fff;
     position: relative;
-    background-image: url('images/4p-layout.png');
-    background-image: url('images/4p-layout.webp');
-    /* background-image: url('images/4p-layout.avif'); */
     font-size: 18px;
 }
+
+.notwebp.notavif .layout{background-image: url('images/4p-layout.png');}
+.webp.notavif .layout{background-image: url('images/4p-layout.webp');}
+.avif .layout{background-image: url('images/4p-layout.avif');}
 
 .player-video{
     width: var(--vidWidth);

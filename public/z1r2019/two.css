@@ -53,10 +53,13 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background-image: url('images/all-backgrounds-2.png');
     font-size: 19px;
     letter-spacing: 2px;
 }
+
+.notwebp.notavif .layout{background-image: url('images/all-backgrounds-2.png');}
+.webp.notavif .layout{background-image: url('images/all-backgrounds-2.webp');}
+.avif .layout{background-image: url('images/all-backgrounds-2.avif');}
 
 .player-video{
     width: var(--vidWidth);

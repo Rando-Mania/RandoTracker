@@ -56,15 +56,15 @@
     position: relative;
 }
 
-.map-background{
+.map-background{background-color: #002781;}
+.notavif.notwebp .map-background{
     background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
-    background-color: #002781;
-    background-image: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
-        image-set(
-            "images/alefgard_crop_test.avif" type("image/avif"),
-            "images/alefgard_crop._test.png" type("image/png")
-        );
+}
+.notavif.webp .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.webp');
+}
+.avif .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
 }
 
 .player-panels-contain{
