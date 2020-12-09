@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="three.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        .tracker-layout{
+            font-family: 'Chicago', Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            background-position: 224px 0;
+            background-size: cover;
+            display: grid;
+            max-width: 972px;
+            grid-template-columns: repeat(2, auto);
+            gap: 24px;
+            padding: 24px;
+        }
+        
+        tr-player{
+            display: contents;
+        }
+
+        .player-contain{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 2px;
+            align-items: start;
+            align-content: start;
+        }
+
+        [player="3"] .player-contain, [player="4"] .player-contain{
+            align-items: end;
+            align-content: end;
+        }
+
+        [player="1"] .player-name, [player="1"] .player-pronoun, [player="1"] .record-contain,
+        [player="2"] .player-name, [player="2"] .player-pronoun, [player="2"] .record-contain{
+            border-top: none;
+        }
+
+        [player="3"] .player-name, [player="3"] .player-pronoun, [player="3"] .record-contain,
+        [player="4"] .player-name, [player="4"] .player-pronoun, [player="4"] .record-contain{
+            border-top: solid 6px;
+            border-bottom: none;
+        }
+
+        .player-grid{
+            width: 100%;
+        }
+
+        .player-grid img{
+            width: 32px;
+            height: 32px;
+        }
+        .player-grid{
+            grid-template-columns: repeat(12, auto);
+            grid-template-rows: repeat(2, auto);
+            gap: 4px;
+        }
+
+        .player-grid, .winner-final-contain{
+            grid-column: 1 / -1;
+        }
+        .player-name{
+            border-top: none;
+        }
+        .winner-final-contain{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        .player-final, .player-winner{
+            border-top: 6px solid;
+        }
+
+        .player-speaker{
+            filter: drop-shadow(2px 0 0 black) drop-shadow(-2px 0 0 black) drop-shadow(0 2px 0 black) drop-shadow(0 -2px 0 black);
+        }
+
+        .player-grid{grid-area: icons;}
+        .name-pronoun-number{
+            grid-area: n-p-n;
+            display: flex;
+            gap: 1px;
+        }
+
+        [player="2"] .name-pronoun-number, [player="4"] .name-pronoun-number{
+            flex-direction: row-reverse;
+        }
+
+        [player="3"] .name-pronoun-number, [player="4"] .name-pronoun-number{
+            align-items: flex-end;
+        }
+
+        .player-speaker{grid-area: speaker;}
+        .winner-final-contain{grid-area: win-final;}
+
+        [player="1"] .player-contain{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "n-p-n     n-p-n     n-p-n"
+                "speaker   .         ."
+                "win-final win-final win-final";
+        }
+
+        [player="2"] .player-contain{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "n-p-n     n-p-n     n-p-n"
+                ".         .         speaker"
+                "win-final win-final win-final";
+        }
+
+        [player="3"] .player-contain{
+            grid-template-areas: 
+            "win-final win-final win-final"
+            "speaker   .         ."
+            "n-p-n     n-p-n     n-p-n"
+            "icons     icons     icons";
+        }
+
+        [player="4"] .player-contain{
+            grid-template-areas: 
+            "win-final win-final win-final"
+            ".         .         speaker"
+            "n-p-n     n-p-n     n-p-n"
+            "icons     icons     icons";
+        }
+
+        @media (max-width: 972px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+            }
+        }
+        
+        /* @media (max-width: 486px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+                padding: 0;
+            }
+            .player-grid{
+                grid-template-columns: repeat(4, auto);
+                grid-template-rows: repeat(6, auto);
+                width: 100%;
+            }
+            tr-template{
+                grid-template-columns: repeat(1, auto);
+            }
+            .menu-contain{
+                grid-template-columns: repeat(3, auto);
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <template id="player_tracker_template">
+            <tr-template class="player-grid border-1 background-1" href="icons-2020.html"></tr-template>
+            <div class="name-pronoun-number">
+                <div class="player-name border-1 background-1">
+                    <tr-text scale-to-fit property="player-name"></tr-text>
+                </div>
+                <tr-text property="player-pronoun" class="player-pronoun background-1 border-1"></tr-text>
+                <tr-text property="player-number" class="record-contain background-1 border-1"></tr-text>
+            </div>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+				<img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <div class="winner-final-contain">
+                <tr-text property="player-final" class="player-final background-1 border-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner background-1 border-1">
+                    <div>Winner</div>
+                </tr-toggle>
+            </div>
+		</template>
+        
+        <tr-player player="1">
+            <tr-template class="player-contain" source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template class="player-contain" source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template class="player-contain" source="#player_tracker_template"></tr-template>
+        </tr-player>
+    </div>
+
+    <tr-template href="../shared/three-menus-contain.html"></tr-template>
+
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/three_game.js"></script>
+    <script>
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('images/border-worklet.js');
+        }
+    </script>
+</body>
+</html>

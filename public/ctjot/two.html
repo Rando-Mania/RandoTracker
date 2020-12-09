@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>FFR 2 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="preload" href="images/2p/base-background.png" as="image" type="image/png">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+
+        [player="1"] .player-cam {left: var(--camX); top: var(--camY);}
+        [player="2"] .player-cam {right: var(--camX); top: var(--camY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+    
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+
+        [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
+        [player="2"] .player-pronoun {right: var(--pronounX); top: var(--pronounY);}
+
+        [player="1"] .record-contain {left: var(--rankX); top: var(--rankY);}
+        [player="2"] .record-contain {right: var(--rankX); top: var(--rankY);}
+    
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+    
+        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+    </style>
+</head>
+<body>
+	<div class="layout">
+ 		<template id="player_info_template">
+            <div class="player-video border-1 abs"></div>
+            <div class="player-cam player-video border-1 abs"></div>
+			<div class="player-name abs border-1 background-1">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+			</div>
+			<tr-template class="player-grid abs background-1 border-1" href="icons-2020.html"></tr-template>
+            <tr-text property="player-pronoun" class="player-pronoun abs background-1 border-1"></tr-text>
+			<tr-text property="player-number" class="record-contain abs background-1 border-1"></tr-text>
+			<tr-text property="player-final" class="player-final abs background-1 border-1"></tr-text>        
+			<tr-toggle property="toggle-speaker" class="abs player-speaker">
+				<img src="../shared/images/icons/blank.svg" alt="">
+			</tr-toggle>
+			<tr-toggle property="toggle-winner" class="abs player-winner background-1 border-1">
+				<div>Winner</div>
+			</tr-toggle>
+			<tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+		</template>
+       <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+<!-- timer/staff -->
+        <tr-timer class="abs background-2 border-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+        <tr-hide-if-empty class="staff abs background-2 border-1" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+    </div>
+
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="two-loading-template.html"></tr-template>
+    </div>
+
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar-template.html"></tr-template>
+    </div>
+	
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+
+	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/two_game.js"></script>
+    <script>
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('images/border-worklet.js');
+        }
+    </script>
+</body>
+</html>
