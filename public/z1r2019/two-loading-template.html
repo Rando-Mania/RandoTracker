@@ -114,9 +114,11 @@
 </style>
 <div class="loadscreen">
     <div class="loadscreen-main">
-        <h1>
-            <img loading="lazy" width="auto" height="auto" src="images/RandoLogo.png" alt="">
-        </h1>
+        <picture>
+            <source srcset="images/RandoLogo.avif" type="image/avif">
+            <source srcset="images/RandoLogo.webp" type="image/webp">
+            <img width="auto" height="auto" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
+        </picture>
         <h2>
             <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
             <div class="load-vs">vs</div>

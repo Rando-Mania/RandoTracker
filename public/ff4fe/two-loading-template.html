@@ -1,0 +1,433 @@
+<style>
+    /* Loading Screen */
+
+.loadscreen-contain, .two-loading{
+    width: 1280px;
+    height: 720px;
+    background-color: var(--backgroundColor1);
+    color: #fff;
+    z-index: 50;
+    display: none;
+    font-family: 'FF4', sans-serif;
+}
+.two-loading{
+    position: relative;
+}
+
+.loadscreen-contain.show, .two-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    display: block;
+    animation: zoomIn .5s;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+}
+
+.loadscreen-main{
+    height: 100%;
+    width: 100%;
+}
+
+.load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{
+    display: none;
+}
+.load-best-of.best-of-3, .load-best-of.best-of-3 > .best-of-3{display: block;}
+.load-best-of.best-of-5, .load-best-of.best-of-5 > .best-of-5{display: block;}
+.load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
+
+
+/* Community Club Showcase */
+
+.loadscreen-contain[class*="ccs-"] .header, .two-loading[class*="ccs-"] .header{
+    width: 680px;
+    height: 171px;
+    left: 301px;
+    top: 0;
+    background-size: 680px 171px;
+    z-index: 3;
+}
+
+.notwebp .loadscreen-contain[class*="ccs-"] .header, .notwebp .two-loading[class*="ccs-"] .header{
+    background-image: url('images/ccs/community-club-showcase-title.png');
+}
+.webp .loadscreen-contain[class*="ccs-"] .header, .webp .two-loading[class*="ccs-"] .header{
+    background-image: url('images/ccs/community-club-showcase-title.webp');
+}
+
+
+.loadscreen-contain[class*="ccs-"] .top-flames, .two-loading[class*="ccs-"] .top-flames{
+    width: 1020px;
+    height: 80px;
+    left: 50px;
+    top: 58px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 80px, 240px 80px, 240px 0, 960px 0, 960px 80px, 1020px 80px, 1020px 0);
+}
+
+.loadscreen-contain[class*="ccs-"] .top-flames:after, .two-loading[class*="ccs-"] .top-flames:after{
+    content: '';
+    width: 100%;
+    height: 300%;
+    background-image: url('images/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    animation: flicker-top .2s steps(3) alternate infinite;
+}
+
+@keyframes flicker-top {
+    from{transform: translateY(0);}
+    to{transform: translateY(-240px);}
+}
+
+.loadscreen-contain[class*="ccs-"] .bottom-flames, .two-loading[class*="ccs-"] .bottom-flames{
+    width: 50px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.loadscreen-contain[class*="ccs-"] .bottom-flames::after, .two-loading[class*="ccs-"] .bottom-flames::after{
+    content: '';
+    width: 50px;
+    height: 480px;
+    background-image: url('images/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    transform: translateY(-240px);
+    animation: flicker-bottom .2s steps(3) alternate infinite;
+}
+
+@keyframes flicker-bottom {
+    from{transform: translateY(-240px);}
+    to{transform: translateY(-480px);}
+}
+
+.loadscreen-contain[class*="ccs-"] [player="1"] .bottom-flames, .two-loading[class*="ccs-"] [player="1"] .bottom-flames{
+    left: var(--flameX); top: var(--flameY);
+}
+.loadscreen-contain[class*="ccs-"] [player="2"] .bottom-flames, .two-loading[class*="ccs-"] [player="2"] .bottom-flames{
+    right: var(--flameX); top: var(--flameY);
+}
+
+.loadscreen-contain[class*="ccs-"] [player="1"] .player-info, .two-loading[class*="ccs-"] [player="1"] .player-info {
+    left: var(--nameX); top: var(--nameY);}
+.loadscreen-contain[class*="ccs-"] [player="2"] .player-info, .two-loading[class*="ccs-"] [player="2"] .player-info {
+    right: var(--nameX); top: var(--nameY);}
+
+.loadscreen-contain[class*="ccs-"] .staff, .two-loading[class*="ccs-"] .staff{
+    top: 359px; 
+    left: 457px;
+}
+
+.loadscreen-contain[class*="ccs-"], .two-loading[class*="ccs-"]{
+    --nameWidth: 298px;
+    --nameX: 264px; --nameY: 464px;
+    --flameX: 215px; --flameY: 618px;
+}
+
+.loadscreen-contain[class*="ccs-"], .two-loading[class*="ccs-"]{
+    --ccs-load-fallback: linear-gradient(to right, #d1d1b9 40px, transparent 40px 1240px, #d1d1b9 1240px 1280px), linear-gradient(#d1d1b9 58px, #898981 58px 218px, #680835 218px 538px, #898981 538px 698px, #604f3e 698px 720px);
+    background-image: var(--ccs-load-fallback);
+}
+.loadscreen-contain[class*="ccs-"] .versus, .two-loading[class*="ccs-"] .versus{
+    display:none;
+}
+
+
+.notwebp .loadscreen-contain.ccs-lunar-racing, .notwebp .two-loading.ccs-lunar-racing{
+    background-image: url('images/ccs/splash-LRC.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-lunar-racing, .webp .two-loading.ccs-lunar-racing{
+    background-image: url('images/ccs/splash-LRC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-mysidian-jumping, .notwebp  .two-loading.ccs-mysidian-jumping{
+    background-image: url('images/ccs/splash-MJC.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-mysidian-jumping, .webp .two-loading.ccs-mysidian-jumping{
+    background-image: url('images/ccs/splash-MJC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-special-feature, .notwebp .two-loading.ccs-special-feature{
+    background-image: url('images/ccs/splash-Special.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-special-feature, .webp .two-loading.ccs-special-feature{
+    background-image: url('images/ccs/splash-Special.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-sunday-slapdash, .notwebp .two-loading.ccs-sunday-slapdash{
+    background-image: url('images/ccs/splash-Slapdash.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-sunday-slapdash, .webp .two-loading.ccs-sunday-slapdash{
+    background-image: url('images/ccs/splash-Slapdash.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-underground-racing, .notwebp .two-loading.ccs-underground-racing{
+    background-image: url('images/ccs/splash-URC.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-underground-racing, .webp .two-loading.ccs-underground-racing{
+    background-image: url('images/ccs/splash-URC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .loadscreen-contain.ccs-enterprise-legacy, .notwebp .two-loading.ccs-enterprise-legacy{
+    background-image: url('images/ccs/splash-legacy.png'), var(--ccs-load-fallback);
+}
+.webp .loadscreen-contain.ccs-enterprise-legacy, .webp .two-loading.ccs-enterprise-legacy{
+    background-image: url('images/ccs/splash-legacy.webp'), var(--ccs-load-fallback);
+}
+
+.loadscreen-contain [player="2"] .player-name-contain, .two-loading [player="2"] .player-name-contain{
+    display: flex;
+    justify-content: flex-end;
+}
+/* 3musZone */
+
+.loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
+    font-family: 'Permanent Marker', cursive;
+    width: 1280px;
+    height: 720px;
+    background-color: #346766;
+    --threemus-fallback:
+        linear-gradient(#e5edcc, #e5edcc) no-repeat 515px 387px / 246px 151px,
+        linear-gradient(#1a4442, #1a4442) no-repeat 341px 352px / 598px 261px,
+        repeating-linear-gradient(transparent 1px 3px, rgba(255,255,255,.1) 4px 6px) no-repeat 0 0 / 100% 100%,
+        linear-gradient(#8673a8 5%, #346766, #608193) no-repeat 0 0 / 100% 100%;
+    background: var(--threemus-fallback);
+}
+
+.loadscreen-contain[class*="threemus-"] .loadscreen-main, .two-loading[class*="threemus-"] .loadscreen-main{
+    --nameWidth: 160px;
+    text-align: center;
+    position: absolute;
+    left: 515px;
+    top: 387px;
+    width: 246px;
+    height: 151px;
+    display: grid;
+    grid-template-columns: 246px;
+    color: rgba(0,0,0,.8);
+    font-size: 32px;
+    line-height: .9;
+    padding: 6px 0;
+}
+
+.loadscreen-contain[class*="threemus-"], .two-loading[class*="threemus-"]{
+    overflow: hidden;
+}
+
+.loadscreen-contain[class*="threemus-"] .abs, .two-loading[class*="threemus-"] .abs{
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.loadscreen-contain[class*="threemus-"] .border-background-1, .two-loading[class*="threemus-"] .border-background-1,
+.loadscreen-contain[class*="threemus-"] .background-1, .two-loading[class*="threemus-"] .background-1,
+.loadscreen-contain[class*="threemus-"] .border-1, .two-loading[class*="threemus-"] .border-1{
+    background-color: transparent;
+    border: none;
+}
+.loadscreen-contain[class*="threemus-"] .player-pronoun, .two-loading[class*="threemus-"] .player-pronoun{
+    display: none;
+}
+
+.loadscreen-contain[class*="threemus-"]::before, .two-loading[class*="threemus-"]::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    left: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(transparent 0 3px, rgba(0,0,0,.1) 3px 6px);
+    animation: lines 20s infinite linear;
+    z-index: 1;
+}
+
+@keyframes lines {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(50%);}    
+}
+
+.loadscreen-contain[class*="threemus-"]::after, .two-loading[class*="threemus-"]::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(transparent 50%, rgba(0,0,0,.1) 51%);
+    animation: single-line 4s infinite linear;
+}
+
+@keyframes single-line {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(-1440px);}    
+}
+
+.loadscreen-contain[class*="threemus-"] .player-info, .two-loading[class*="threemus-"] .player-info{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    font-size: 32px;
+    line-height: .9;
+    color: rgba(0,0,0,.8);
+}
+
+.loadscreen-contain[class*="threemus-"] .name-pronoun-contain, .two-loading[class*="threemus-"] .name-pronoun-contain,
+.loadscreen-contain[class*="threemus-"] .seed-contain, .two-loading[class*="threemus-"] .seed-contain,
+.loadscreen-contain[class*="threemus-"] .record-contain, .two-loading[class*="threemus-"] .record-contain{
+    padding: 0;
+    position: relative;
+}
+
+
+.loadscreen-contain[class*="threemus-"] .seed-contain, .two-loading[class*="threemus-"] .seed-contain,
+.loadscreen-contain[class*="threemus-"] .record-contain, .two-loading[class*="threemus-"] .record-contain{
+    font-size: 16px;
+    height: auto;
+    margin-left: 16px;
+}
+
+.loadscreen-contain[class*="threemus-"] .seed-contain div, .two-loading[class*="threemus-"] .seed-contain div{
+    font-size: 16px;
+}
+
+.loadscreen-contain[class*="threemus-"] .seed-contain::before, .two-loading[class*="threemus-"] .seed-contain::before,
+.loadscreen-contain[class*="threemus-"] .record-contain::before, .two-loading[class*="threemus-"] .record-contain::before {
+    content: '[';
+    position: absolute;
+    left: -.33em;
+    top: 0;
+    font-size: 32px;
+}
+
+.loadscreen-contain[class*="threemus-"] .seed-contain::after, .two-loading[class*="threemus-"] .seed-contain::after,
+.loadscreen-contain[class*="threemus-"] .record-contain::after, .two-loading[class*="threemus-"] .record-contain::after {
+    content: ']';
+    position: absolute;
+    right: -.33em;
+    top: 0;
+    font-size: 32px;
+}
+
+.loadscreen-contain[class*="threemus-"] .staff, .two-loading[class*="threemus-"] .staff{
+    left: -498px;
+    top: 261px;
+    position: absolute;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    transform: translateY(-50%);
+    height: auto;
+    color: #fff;
+    text-align: left;
+    /* text-shadow: 1px 0 green, -1px 0 red; */
+}
+
+.loadscreen-contain[class*="threemus-"] .staff .commentators-img, .two-loading[class*="threemus-"] .staff .commentators-img{
+    height: 14px;
+    width: auto;
+}
+ 
+.loadscreen-contain[class*="threemus-"] .staff-panel-1, .two-loading[class*="threemus-"] .staff-panel-1{
+    line-height: 1;
+}
+
+.loadscreen-contain[class*="threemus-"] .staff .trackers-img, .two-loading[class*="threemus-"] .staff .trackers-img,
+.loadscreen-contain[class*="threemus-"] .staff .restreamers-img, .two-loading[class*="threemus-"] .staff .restreamers-img{
+    height: auto;
+    width: 16px;
+}
+
+.loadscreen-contain[class*="threemus-"] .header, .two-loading[class*="threemus-"] .header,
+.loadscreen-contain[class*="threemus-"] .top-flames, .two-loading[class*="threemus-"] .top-flames,
+.loadscreen-contain[class*="threemus-"] .bottom-flames, .two-loading[class*="threemus-"] .bottom-flames{
+    display: none;
+}
+
+.loadscreen-contain.threemus-zone-group, .two-loading.threemus-zone-group{
+    background: url('images/3musZone/3musZone-1-Splash-GroupStage.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-magma, .two-loading.threemus-zone-magma{
+    background: url('images/3musZone/3musZone-2-Splash-MagmaRoute.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-hook, .two-loading.threemus-zone-hook{
+    background: url('images/3musZone/3musZone-3-Splash-HookRoute.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-lunar, .two-loading.threemus-zone-lunar{
+    background: url('images/3musZone/3musZone-4-Splash-LunarTable.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-playoffs, .two-loading.threemus-zone-playoffs{
+    background: url('images/3musZone/3musZone-5-Splash-Playoffs.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+.loadscreen-contain.threemus-zone-finals, .two-loading.threemus-zone-finals{
+    background: url('images/3musZone/3musZone-6-Splash-Finals.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+</style>
+<div class="loadscreen">
+    <div class="loadscreen-main">
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=VT323&display=swap" rel="stylesheet">
+        <template id="player_info_load_template">
+            <div class="player-info abs background-1 border-1">
+                <div class="name-pronoun-contain">
+                    <div class="player-name-contain">
+                        <tr-text class="player-name" property="player-name"></tr-text>
+                    </div>
+                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+                <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                    <div>W-L</div>
+                    <tr-text property="player-record"></tr-text>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                    <div>Seed</div>
+                    <tr-text property="player-seed"></tr-text>
+                </tr-hide-if-empty>
+            </div>
+            <div class="bottom-flames abs"></div>
+        </template>
+        
+        <div class="abs header"></div>
+        <div class="abs top-flames"></div>
+        <tr-player player="1">
+            <tr-template source="#player_info_load_template"></tr-template>
+        </tr-player>
+        <div class="versus">vs</div>
+        <tr-player player="2">
+            <tr-template source="#player_info_load_template"></tr-template>
+        </tr-player>
+
+        <tr-hide-if-empty class="staff abs border-background-1" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <div class="load-best-of">
+            <p class="best-of-3">Best of 3</p>
+            <p class="best-of-5">Best of 5</p>
+            <p class="best-of-7">Best of 7</p>
+        </div>
+    </div>
+</div>

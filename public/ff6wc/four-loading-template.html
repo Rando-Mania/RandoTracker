@@ -1,6 +1,15 @@
     <style>
         /* Loading Screen */
 
+
+        @font-face {
+    font-family: "FF6";
+    src: local('FF6'),
+         url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+	     url('fonts/final-fantasy-36-font.woff') format('woff'),         
+         url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+} 
+
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
@@ -11,7 +20,6 @@
     text-align: center;
     z-index: 50;
     display: none;
-    font-family: 'Orbitron', sans-serif;
 }
 
 .four-loading{
@@ -48,20 +56,103 @@
 
 .loadscreen-main{
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
+    font-family: 'FF6', Arial, sans-serif;
+    font-size: 36px;
+}
+
+.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
+    font-size: 36px;
+}
+
+.loadscreen .player-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    /* background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.7) 33% 66%, rgba(0,0,0,0)); */
 }
 
 .loadscreen .player-name{
-    width: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
+}
+
+.loadscreen .player-pronoun{
+    background-color: transparent;
+    font-size: 32px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
+}
+
+.loadscreen .player-pronoun::before{
+    content: '(';
+}
+.loadscreen .player-pronoun::after{
+    content: ')';
+}
+
+.loadscreen .player-name{
+    width: auto;
+}
+
+.loadscreen .vs{
+    margin: 8px;
+    font-style: italic;
+    color: rgba(255,255,255,.8);
 }
 
 .loadscreen-main *{
     justify-content: center;
 }    
+
+.loadscreen-left{
+    padding: 32px 0;
+    /* background-image: radial-gradient(rgba(0,0,0,.7) 50%, rgba(0,0,0,0) 72%); */
+}
+
+.ship-blur{
+    z-index: 0;
+    position: relative;
+}
+
+.ship-blur:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url(images/ship-outline.png) 0 0 / 100% 100%;
+    z-index: -1;
+    filter: blur(5px) opacity(0.6);
+}
+
+.player-contain.ship-blur:after{
+    width: 105%;
+    left: -10%;
+}
 
 .load-and{
     margin: 1em auto;
@@ -76,6 +167,7 @@
     overflow: hidden;
     width: 1236px;
     height: 150px;
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
 }
 #all_promos_contain{
     display: flex;
@@ -103,23 +195,44 @@
     </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <h1><img src="images/ff6-title.png" width="373" alt=""></h1>
-            <h1><img src="images/ff6-subtitle.png" width="280" alt=""></h1>
-            <h2>
-                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-                vs.
-                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
-                <span class="load-and-vs">
+            <div class="loadscreen-left ship-blur">
+                <picture class="ff6wc-logo-contain">
+                    <source srcset="images/wc_logo.avif" type="image/avif">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
+                </picture>
+                <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+                <div style="font-size: 28px;
+                margin-top: 1em;
+                font-variant: small-caps;
+                font-family: Arial, Helvetica, sans-serif;">on RandoMania</div>
+            </div>
+            <template id="player_loading_template">
+                <div class="player-contain ship-blur">
+                    <tr-text class="player-name" property="player-name"></tr-text>
+                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+            </template>
+            <div>          
+                <tr-player player="1">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+                <div class="vs">vs.</div>
+                <tr-player player="2">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+                <span class="load-and-vs vs">
                     <span class="load-vs">vs.</span>
                     <span class="load-and">and</span>
                 </span>
-                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
-                vs.
-                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
-            </h2>
-            <h3>
-                on RandoMania
-            </h3>
+                <tr-player player="3">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+                <div class="vs">vs.</div>
+                <tr-player player="4">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+            </div>
         </div>
         <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
     </div>

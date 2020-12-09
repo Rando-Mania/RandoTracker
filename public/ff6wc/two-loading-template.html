@@ -1,121 +1,230 @@
 <style>
     /* Loading Screen */
 
+
+    @font-face {
+font-family: "FF6";
+src: local('FF6'),
+     url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+     url('fonts/final-fantasy-36-font.woff') format('woff'),         
+     url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+} 
+
 .loadscreen-contain, .two-loading{
-    width: 1280px;
-    height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    animation: zoomIn .5s linear;
-    z-index: 50;
-    display: none;
-    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-variant: small-caps;
+width: 1280px;
+height: 720px;
+background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+background-size: 100% 100%;
+background-color: #21384a;
+color: #fff;
+text-align: center;
+z-index: 50;
+display: none;
 }
 
-.loadscreen-contain.show, .two-loading{
-    display: block;
+.two-loading{
+display: block;
 }
 
 .loadscreen-contain.show{
-    animation: zoomIn .5s;
-    display: block;
+animation: zoomIn .5s;
+display: block;
 }
 
 @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: scale3d(0.3, 0.3, 0.3);
-      transform-origin: 50% 0%;
-    }
-    50% {
-      opacity: 1;
-    }
-    to{
-        transform-origin: 50% 50%;
-    }
-  }
+from {
+  opacity: 0;
+  transform: scale3d(0.3, 0.3, 0.3);
+  transform-origin: 50% 0%;
+}
+50% {
+  opacity: 1;
+}
+to{
+    transform-origin: 50% 50%;
+}
+}
 
 .loadscreen{
-    height: 100%;
-    display: grid;
-    grid-auto-rows: 1fr auto;
-    grid-gap: 1em;
-    place-items: center;
-    padding: 1em;
+height: 100%;
+display: grid;
+grid-auto-rows: 1fr auto;
+grid-gap: 1em;
+place-items: center;
+padding: 1em;
 }
 
 .loadscreen-main{
-    display: grid;
-    grid-gap: 1em;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 1em;
+align-items: center;
+justify-content: center;
+height: 100%;
+width: 100%;
+font-family: 'FF6', Arial, sans-serif;
+font-size: 36px;
+}
+
+.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
+font-size: 36px;
+}
+
+.loadscreen .player-contain{
+display: flex;
+justify-content: center;
+align-items: center;
+width: -moz-fit-content;
+width: fit-content;
+margin: auto;
+/* background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.7) 33% 66%, rgba(0,0,0,0)); */
+}
+
+.loadscreen .player-name{
+-webkit-background-clip: text;
+background-clip: text;
+background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+background-position: 50% 50%;
+filter: contrast(1.2);
+color: transparent;
+text-shadow: none;
+}
+
+.loadscreen .player-pronoun{
+background-color: transparent;
+font-size: 32px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+-webkit-background-clip: text;
+background-clip: text;
+background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+background-position: 50% 50%;
+filter: contrast(1.2);
+color: transparent;
+text-shadow: none;
+}
+
+.loadscreen .player-pronoun::before{
+content: '(';
+}
+.loadscreen .player-pronoun::after{
+content: ')';
+}
+
+.loadscreen .player-name{
+width: auto;
+}
+
+.loadscreen .vs{
+margin: 8px;
+font-style: italic;
+color: rgba(255,255,255,.8);
 }
 
 .loadscreen-main *{
-    justify-content: center;
+justify-content: center;
 }    
 
-.load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{
-    display: none;
+.loadscreen-left{
+padding: 32px 0;
+/* background-image: radial-gradient(rgba(0,0,0,.7) 50%, rgba(0,0,0,0) 72%); */
 }
-.load-best-of.best-of-3, .load-best-of.best-of-3 > .best-of-3{display: block;}
-.load-best-of.best-of-5, .load-best-of.best-of-5 > .best-of-5{display: block;}
-.load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
+
+.ship-blur{
+z-index: 0;
+position: relative;
+}
+
+.ship-blur:after{
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background: url(images/ship-outline.png) 0 0 / 100% 100%;
+z-index: -1;
+filter: blur(5px) opacity(0.6);
+}
+
+.player-contain.ship-blur:after{
+width: 105%;
+left: -10%;
+}
+
+.load-and{
+margin: 1em auto;
+display: none;
+}
+
+.show-and .load-and{display: block;}
+.show-and .load-vs{display: none;}
 
 #promos{
-    grid-column: 1 / -1;
-    overflow: hidden;
-    width: 1236px;
-    height: 150px;
+grid-column: 1 / -1;
+overflow: hidden;
+width: 1236px;
+height: 150px;
+background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
 }
 #all_promos_contain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    animation: move-promos 60s infinite;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+width: 100%;
+height: 150px;
+animation: move-promos 60s infinite;
 }
 
 @keyframes move-promos{
-    from, 22%{transform: translateY(0);}
-    25%, 47%{transform: translateY(-155px);}
-    50%, 72%{transform: translateY(-315px);}
-    75%, to{transform: translateY(-470px);}
+from, 22%{transform: translateY(0);}
+25%, 47%{transform: translateY(-155px);}
+50%, 72%{transform: translateY(-315px);}
+75%, to{transform: translateY(-470px);}
 }
 #all_promos_contain figure{
-    margin: 0 32px 8px;
+margin: 0 32px 8px;
 }
 
 #all_promos_contain figcaption{
-    font-size: 12px;
+font-size: 12px;
 }
 </style>
 <div class="loadscreen">
-    <div class="loadscreen-main">
-        <h1>
-            Game Name
-        </h1>
-        <h2>
-            <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-            vs.
-            <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
-        </h2>
-        <div class="load-best-of">
-            <p class="best-of-3">Best of 3</p>
-            <p class="best-of-5">Best of 5</p>
-            <p class="best-of-7">Best of 7</p>
+    <div class="loadscreen">
+        <div class="loadscreen-main">
+            <div class="loadscreen-left ship-blur">
+                <picture class="ff6wc-logo-contain">
+                    <source srcset="images/wc_logo.avif" type="image/avif">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
+                </picture>
+                <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
+                <div style="font-size: 28px;
+                margin-top: 1em;
+                font-variant: small-caps;
+                font-family: Arial, Helvetica, sans-serif;">on RandoMania</div>
+            </div>
+            <template id="player_loading_template">
+                <div class="player-contain ship-blur">
+                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+                    <tr-text class="player-name" property="player-name"></tr-text>
+                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+            </template>
+            <div>          
+                <tr-player player="1">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+                <div class="vs">vs.</div>
+                <tr-player player="2">
+                    <tr-template source="#player_loading_template"></tr-template>
+                </tr-player>
+            </div>
         </div>
-        <h3>
-            on RandoMania
-        </h3>
+        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
     </div>
-    <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
 </div>
