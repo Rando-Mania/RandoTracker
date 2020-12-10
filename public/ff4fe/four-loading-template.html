@@ -1,0 +1,318 @@
+    <style>
+        /* Loading Screen */
+
+.loadscreen-contain, .four-loading{
+    width: 1280px;
+    height: 720px;
+    background-image: none;
+    background-color: #191668;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
+    font-family: 'FF4', sans-serif;
+}
+
+.four-loading{
+    position: relative;
+}
+
+.loadscreen-contain.show, .four-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    display: block;
+    animation: zoomIn .5s;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+
+.loadscreen-main{
+    display: grid;
+    grid-gap: 1em;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.loadscreen .player-name{
+    /* width: 100%; */
+}
+
+.loadscreen-main *{
+    justify-content: center;
+    justify-items: center;
+}
+
+/* threemus */
+
+.loadscreen-contain[class*="threemus-"], .four-loading[class*="threemus-"]{
+    overflow: hidden;
+    --threemus-fallback:
+        linear-gradient(#e5edcc, #e5edcc) no-repeat 515px 387px / 246px 151px,
+        linear-gradient(#1a4442, #1a4442) no-repeat 341px 352px / 598px 261px,
+        repeating-linear-gradient(transparent 1px 3px, rgba(255,255,255,.1) 4px 6px) no-repeat 0 0 / 100% 100%,
+        linear-gradient(#8673a8 5%, #346766, #608193) no-repeat 0 0 / 100% 100%;
+    background: url('images/4p/HTT3Z-4P-Splash.png') 0 0 / 100% 100%, var(--threemus-fallback);
+}
+
+.loadscreen-contain[class*="threemus-"]::before, .four-loading[class*="threemus-"]::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    left: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(transparent 0 3px, rgba(0,0,0,.1) 3px 6px);
+    animation: lines 20s infinite linear;
+    z-index: 1;
+}
+
+@keyframes lines {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(50%);}    
+}
+
+.loadscreen-contain[class*="threemus-"]::after, .four-loading[class*="threemus-"]::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(transparent 50%, rgba(0,0,0,.1) 51%);
+    animation: single-line 4s infinite linear;
+}
+
+@keyframes single-line {
+    from{ transform: translateY(0);}
+    to{ transform: translateY(-1440px);}
+}
+
+.loadscreen-contain[class*="threemus-"] .staff, .four-loading[class*="threemus-"] .staff{
+    bottom: -6px;
+    position: absolute;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    transform: translateY(-50%);
+    height: auto;
+    color: #fff;
+    text-align: left;
+    /* text-shadow: 1px 0 green, -1px 0 red; */
+}
+
+.loadscreen-contain[class*="threemus-"] .staff .commentators-img, .four-loading[class*="threemus-"] .staff .commentators-img{
+    width: auto;
+}
+
+.loadscreen-contain[class*="threemus-"] .staff .trackers-img, .four-loading[class*="threemus-"] .staff .trackers-img,
+.loadscreen-contain[class*="threemus-"] .staff .restreamers-img, .four-loading[class*="threemus-"] .staff .restreamers-img{
+    height: auto;
+    width: 16px;
+}
+
+.loadscreen{
+    padding: 0;
+}
+.loadscreen-main{
+    width: 959px;
+    margin: 0 auto;
+    grid-gap: 0;
+}
+
+.hero{
+    height: 448px;
+    width: 100%;
+}
+.notwebp.hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
+}
+.webp .hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.webp);
+}
+
+.slideshow{
+    position: relative;
+    height: 337px;
+}
+
+.slide{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer{
+    background-color: #000;
+    height: 243px;
+    display: flex;
+    gap: 11px;
+    padding: 3px 0 3px 4px;
+    text-align: left;
+}
+.footer h2{
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.footer .flags{
+    margin: .5em 0;
+}
+
+.footer .flags, .footer .flags-full{
+    white-space: normal;
+    text-align: center;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-flags{
+    padding: 29px;
+    width: 375px;
+    height: 237px;
+    background-color: #000084;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    border: var(--border) solid #fff;
+    border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
+}
+
+.footer-staff-players{
+    padding: 29px;
+    width: 570px;
+    background-color: #000084;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    border: var(--border) solid #fff;
+    border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
+}
+
+.players{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.loadscreen .production-team-swap{
+    padding: 16px 4px;
+}
+.loadscreen .staff{
+    transform: translateX(0);
+    justify-self: center;
+}
+
+</style>
+    <div class="loadscreen">
+        <template id="player_info_load_template">
+            <div class="player-name-contain">
+                <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
+            </div>
+            <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                <div>W-L</div>
+                <tr-text property="player-record"></tr-text>
+            </tr-hide-if-empty>
+            <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                <div>Seed</div>
+                <tr-text property="player-seed"></tr-text>
+            </tr-hide-if-empty>
+        </template>
+        <div class="loadscreen-main">
+            <div class="hero">
+                <picture>
+                    <source srcset="images/4p/weekly/FF4FE-WeeklyRace-Logo.avif" type="image/avif">
+                    <img src="images/4p/weekly/FF4FE-WeeklyRace-Logo.png" width="717" height="111" alt="">
+                </picture>
+                <div class="slideshow">
+                    <picture class="slide" style="opacity: 1;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow1.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow1.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow2.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow2.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow3.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow3.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow4.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow4.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow5.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow5.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow6.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow6.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow7.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow7.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow8.webp" type="image/webp">
+                        <img src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow8.png" height="337" alt="">
+                    </picture>
+                    <picture class="slide" style="opacity: 0;">
+                        <source srcset="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow9.webp" type="image/webp">
+                        <img onload="showSlides()" src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow9.png" height="337" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-flags">
+                    <h2>Flags</h2>
+                    <tr-text class="flags" property="flags"></tr-text>
+                    <tr-text class="flags" property="flags-full"></tr-text>
+                </div>
+                <div class="footer-staff-players">
+                    <h2>Tonight's Team</h2>
+                    <tr-hide-if-empty class="staff border-background-1" toggle-class="wtf">
+                        <tr-template href="../shared/production-team.html"></tr-template>
+                    </tr-hide-if-empty>
+                    <h2>Featured Runners</h2>
+                    <div class="players">
+                        <tr-player player="1">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="2">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="3">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                        <tr-player player="4">
+                            <tr-template source="#player_info_load_template"></tr-template>
+                        </tr-player>
+                    </div>
+                </div>
+            </div>
+            <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=VT323&display=swap" rel="stylesheet">
+        </div>
+    </div>

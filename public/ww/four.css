@@ -25,12 +25,16 @@ body {
 	background-color: #fff;
 	width: 1280px;
 	height: 720px;
-	background-image: url('images/TWW_Rando_Background.jpg');
 	background-size: 100% 100%;
+	/* background-image: url('images/TWW_Rando_Background.jpg'); */
 	--col1: 16px;
 	--col2: 221px;
 	--row1: 19px;
 }
+
+.notwebp.notavif .layout{ background-image: url('images/TWW_Rando_Background.jpg');}
+.webp.notavif .layout{ background-image: url('images/TWW_Rando_Background.webp');}
+.avif .layout{ background-image: url('images/TWW_Rando_Background.avif');}
 
 .player-name{
 	font-family: "WW", sans-serif;

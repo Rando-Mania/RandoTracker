@@ -56,15 +56,15 @@
     position: relative;
 }
 
-.map-background{
+.map-background{background-color: #002781;}
+.notavif.notwebp .map-background{
     background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
-    background-color: #002781;
-    background-image: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
-        image-set(
-            "images/alefgard_crop_test.avif" type("image/avif"),
-            "images/alefgard_crop._test.png" type("image/png")
-        );
+}
+.notavif.webp .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.webp');
+}
+.avif .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
 }
 
 .player-panels-contain{
@@ -109,10 +109,10 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.weekly-background{background-image: url('images/dwr-weekly.png');}
-.tourney-background{background-image: url('images/layout_2020.png');}
-.chaos-background{background-image: url('images/dwr-chaos.png');}
-.league-background{background-image: url('images/2020_league_backdrop_4by3.png');}
+.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
+.tourney-background{background-image: url('images/video-background/layout_2020.png');}
+.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
 
 .player-info{
     height: 57px;
@@ -724,7 +724,10 @@ figcaption{
   }
   
   @keyframes mask {
-	to{ -webkit-mask-position: 100% 0; mask-position: 100% 0;}
+    to{ 
+        -webkit-mask-position: 100% 0;
+        -webkit-mask-image: none;
+    }
   }
   
   [property="monster_name"]{
@@ -921,12 +924,7 @@ figcaption{
 .monster-table-ai tr-text {width: 310px; white-space: nowrap;}
 
 img[src="images/monsters/true-dragonlord.png"]{
-    transform: scale(2) rotateY(180deg) translate(-1px, 18px);
-    animation: roar 1s;
-}
-
-@keyframes roar{
-    from, 50% {transform: scale(2) rotateY(180deg) translate(100px, 18px);}
+    transform: scale(2) rotateY(180deg) translate(-1px, 11px);
 }
 
 img[src="images/monsters/demon-knight.png"]{

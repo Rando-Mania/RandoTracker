@@ -4,8 +4,6 @@
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
     background-color: #000;
     color: #fff;
     text-align: center;
@@ -13,6 +11,23 @@
     display: none;
     font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-variant: small-caps;
+}
+
+@supports not (background-image:paint(fallbackImage)) {
+    .notavif .loadscreen-contain, .notavif .four-loading{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png');
+    }
+    .avif .loadscreen-contain, .avif .four-loading{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
+    }
+}
+@supports (background-image:paint(fallbackImage)) {
+    .notavif .loadscreen-contain, .notavif .four-loading{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 50% 50%;
+    }
+    .avif .loadscreen-contain, .avif .four-loading{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 50% 50%;
+    }
 }
 
 .four-loading{

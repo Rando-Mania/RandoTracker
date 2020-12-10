@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>4 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <!-- <link rel="preload" href="" as="image" type="image/png"> -->
+</head>
+<body>
+    <div class="four-loading">
+        <tr-template href="four-loading-template.html"></tr-template>
+    </div>
+    
+    <tr-template href="../shared/four-menus-contain.html"></tr-template>
+
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/four_game.js"></script>
+    <script>
+        var slideIndex = 0;
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = 0;
+                }
+            
+            slideIndex = Math.floor(Math.random() * Math.floor(slides.length));
+            slides[slideIndex].style.opacity = 1;
+            
+            setTimeout(showSlides, 30000);
+        }
+        
+        function flagsDummyText() {
+            Tracker.updateLayoutMultiple([
+                {property: 'flags', value: '2020 Htt3Z League Group Stage'},
+                {property: 'flags-full', value: 'O1:quest_forge/random:3,quest/req:3/win:crystal Kmain/summon/moon Pkey Crelaxed/maybe/no:fusoya/j:abilities/bye Twildish/sparse:60 Sstandard Bstandard/alt:gauntlet Nkey Etoggle/cantrun Gwarp/life/sylph -kit:basic -noadamants -spoon -vanilla:agility'},
+            ]);
+        }
+    </script>
+</body>
+</html>

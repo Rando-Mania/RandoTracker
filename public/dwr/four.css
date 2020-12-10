@@ -28,15 +28,15 @@
     background-color: var(--backgroundColor1);
 }
 
-.map-background{
+.map-background{background-color: #002781;}
+.notavif.notwebp .map-background{
     background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
-    background-color: #002781;
-    background-image: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), 
-        image-set(
-            "images/alefgard_crop_test.avif" type("image/avif"),
-            "images/alefgard_crop._test.png" type("image/png")
-        );
+}
+.notavif.webp .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.webp');
+}
+.avif .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
 }
 
 .abs{position: absolute;}
@@ -81,10 +81,10 @@ html{
     background-repeat: no-repeat;
     background-position: center;
 }
-.weekly-background{background-image: url('images/dwr-weekly.png');}
-.tourney-background{background-image: url('images/layout_2020.png');}
-.chaos-background{background-image: url('images/dwr-chaos.png');}
-.league-background{background-image: url('images/2020_league_backdrop_4by3.png');}
+.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
+.tourney-background{background-image: url('images/video-background/layout_2020.png');}
+.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
 
 .player-info{
     height: 50px;
@@ -279,14 +279,14 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 [property="hurt+"].active:after{
 content: '';
 bottom: -5px;
-left: 16px;
+left: -30px;
 width: calc(270px / 9);
 height: 44px;
 position: absolute;
 background-image: url('images/fireball-frames.png');
 background-position: 0 0;
 animation: fireball 1s steps(9);
-transform: scale(2.8);
+transform: scale(5);
 image-rendering: -moz-crisp-edges;
 image-rendering: pixelated;
 transform-origin: 50% 100%;
@@ -556,7 +556,10 @@ tr-timer span {
       }
       
       @keyframes mask {
-        to{ -webkit-mask-position: 100% 0;}
+        to{ 
+            -webkit-mask-position: 100% 0;
+            -webkit-mask-image: none;
+        }
       }
       
       [property="monster_name"]{
@@ -610,12 +613,7 @@ tr-timer span {
     .monster-table-ai .heading { text-decoration: underline; margin-bottom: .5em;}
     
     img[src="images/monsters/true-dragonlord.png"]{
-        transform: scale(2.8) rotateY(180deg) translate(-1px, 18px);
-        animation: roar 1s;
-    }
-    
-    @keyframes roar{
-        from, 50% {transform: scale(2.8) rotateY(180deg) translate(100px, 18px);}
+        transform: scale(2.8) rotateY(180deg) translate(-1px, 11px);
     }
     
     img[src="images/monsters/demon-knight.png"]{

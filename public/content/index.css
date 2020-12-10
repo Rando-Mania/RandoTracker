@@ -98,14 +98,25 @@ article{
   animation: turn-on 2s linear;
   min-height: 720px;
   color: #fff;
-  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
-  background-image: 
-    image-set(
-      url(../shared/images/rm-generic-half.avif) 1x type("image/avif"),
-      url(../shared/images/rm-generic-half.png) 1x type("image/png")
-    );
   position: relative;
   overflow: hidden;
+}
+
+@supports not (background-image:paint(fallbackImage)) {
+    .notavif article{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png');
+    }
+    .avif article{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
+    }
+}
+@supports (background-image:paint(fallbackImage)) {
+    .notavif article{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;
+    }
+    .avif article{
+        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;
+    }
 }
 
 @keyframes turn-on{
