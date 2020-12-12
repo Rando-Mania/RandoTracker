@@ -60,15 +60,14 @@
 
 /* layout specific styles */
 @font-face {
-    font-family: "Chicago";
-    src: local('Chicago'),
-         url('../shared/fonts/chicago.woff2') format('woff2'),
-	     url('../shared/fonts/chicago.woff') format('woff'),         
-         url('../shared/fonts/chicago.ttf') format('truetype');
+    font-family: "ChronoType";
+    src: local('ChronoType'),
+	     url('../shared/fonts/ChronoType.woff') format('woff'),         
+         url('../shared/fonts/ChronoType.ttf') format('truetype');
 }
 
 .layout{
-    font-family: 'Chicago', Arial, sans-serif;
+    font-family: 'ChronoType', Arial, sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
@@ -131,7 +130,7 @@
 
 .player-pronoun, .record-contain{
     height: 35px;
-    font-size: 14px;
+    font-size: 16px;
 	text-align: center;
     width: 110px;
     display: flex;
