@@ -13,14 +13,19 @@ src: local('FF6'),
 .loadscreen-contain, .two-loading{
 width: 1280px;
 height: 720px;
-background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);
-background-size: 100% 100%;
 background-color: #21384a;
+background-image: linear-gradient(to right, #394131 50%, #21384a 0);
+background-size: 100% 100%;
 color: #fff;
 text-align: center;
 z-index: 50;
 display: none;
 }
+
+.notwebp .loadscreen-contain, .notwebp .two-loading{
+    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
+.webp .loadscreen-contain, .webp .two-loading{
+    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .two-loading{
 display: block;

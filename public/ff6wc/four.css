@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('images/ff6-airship-background.png') 0 0 / 100% 100%;
     --border1: solid 2px #fff;
     --backgroundColor1: rgba(0,0,0,.75);
     --vidWidth: 428px;
@@ -66,15 +65,13 @@ html{
     position: relative;
     background-size: 100% 100%;
     background-color: #21384a;
+    background-image: linear-gradient(to right, #394131 50%, #21384a 0);
 }
 
 .notwebp .layout{
-    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);
-}
-
+    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
 .webp .layout{
-    background-image: url('images/ff6-airship-background.webp'), linear-gradient(to right, #394131 50%, #21384a 0);
-}
+    background-image: url('images/ff6-airship-background.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .player-video{
     width: var(--vidWidth);
