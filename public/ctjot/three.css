@@ -15,8 +15,8 @@
     --pronounX: 548px; --pronounY: 64px;
     --rankX: 548px; --rankY: 100px;
     --speakerX: 445px; --speakerY: 160px;
-    --winX: 400px; --winY: 120px;
-    --finalX: 400px; --finalY: 80px;
+    --winX: 400px; --winY: 124px;
+    --finalX: 400px; --finalY: 84px;
     --vsX: 50%; --vsY: 140px;
 
     --backgroundColor1: #000;
@@ -47,20 +47,18 @@
 
 /* layout specific styles */
 @font-face {
-    font-family: "Chicago";
-    src: local('Chicago'),
-         url('../shared/fonts/chicago.woff2') format('woff2'),
-	     url('../shared/fonts/chicago.woff') format('woff'),         
-         url('../shared/fonts/chicago.ttf') format('truetype');
+    font-family: "ChronoType";
+    src: local('ChronoType'),
+	     url('../shared/fonts/ChronoType.woff') format('woff'),         
+         url('../shared/fonts/ChronoType.ttf') format('truetype');
 }
 
 .layout{
-    font-family: 'Chicago', Arial, sans-serif;
+    font-family: 'ChronoType', Arial, sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/3p/base-background.png) #000;
 }
 
 .layout.clip-background{
@@ -222,7 +220,7 @@ tr-timer span {
     overflow: hidden;
     font-size: 24px;
 	width: 280px;
-	height: 80px;
+	height: 75px;
 }
 
 .staff-panel-1, .staff-panel-2{
