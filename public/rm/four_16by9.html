@@ -113,9 +113,9 @@
         <div class="abs cards"> 
             <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
 
-
-            <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
-
+            <tr-hide-if-empty id="up_next_contain" target="#up_next, #game_name, #game_category, #system, #game_length" toggle-class="visually-hidden">
+                <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
+            </tr-hide-if-empty>
 
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>

@@ -16,7 +16,7 @@
     --speakerX: 409px; --speakerY: 493px;
     --winX: 202px; --winY: 525px;
     --finalX: 130px; --finalY: 538px;
-    --bestX: 869px; --bestY: 558px;
+    --bestX: 885px; --bestY: 558px;
 }
 
 .border-1{border: var(--border1);}
@@ -49,11 +49,11 @@ html{
 
 .layout {
     font-family: "Orbitron", sans-serif;
-    background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-    url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-y, 
-    url('images/rm-generic-take2-edges-roberts.png') 100% 33.3% / 50% 50% repeat-y;
-    background-color: rgba(0, 0, 0, 1);
+    background-image: url('../shared/images/rm-generic-half.png'), url('../shared/images/rm-generic-half.png');
+    background-repeat: repeat-y;
+    background-position: 0 0, 100% 33.3%;
+    background-size: 50% 50%;
+    background-color: #000;
     color: #fafafa;
     width: 1280px;
     height: 720px;
@@ -116,6 +116,7 @@ html{
 }
 
 .player-best-of{
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(5, auto);
     display: none;
@@ -123,7 +124,7 @@ html{
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
+    background-image: url('images/RM_marathon_logo.png');
     background-size: 100% 100%;
 }
 
@@ -228,7 +229,7 @@ tr-text#player_final{
 
 .player-winner{
     border: dashed 12px #fff;
-    border-image: url('../shared/images/winner-border.png') round 12 / 12px;
+    border-image: url('images/winner-border.png') round 12 / 12px;
     height: 36px;
 }
 
