@@ -1,0 +1,13 @@
+<svg width='40' height='40' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <path id='check' d='M0,2h6v4h-6' fill='none' stroke-width='4' stroke-dasharray='4' />
+    <pattern id='check-black' width='8' height='8' patternUnits='userSpaceOnUse' >
+      <use href='#check' stroke='#444'/> 
+    </pattern>
+    <pattern id='check-white' width='8' height='8' patternUnits='userSpaceOnUse' >
+      <use href='#check' stroke='#fff'/>
+    </pattern>
+  </defs>
+  <rect width='40' height='40' fill='url(#check-black)' />
+  <rect x='40' width='40' height='40' fill='url(#check-white)' />
+</svg>

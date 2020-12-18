@@ -227,7 +227,6 @@ html{
     width: auto;
     display: grid;
     place-content: center;
-    background-color: #000;
 }
 
 .player-final-contain .player-winner{
@@ -249,9 +248,16 @@ tr-text#player_final{
     display:none;
 }
 
+
+.winner-default{
+    grid-area: 1/ 1;
+    border: double 12px #444;
+    border-image: url('images/checker.svg') round 12 / 12px;
+}
+
 .player-winner{
-    border: dashed 12px #fff;
-    border-image: url('images/winner-border.png') round 12 / 12px;
+    border: double 12px #fff;
+    border-image: url('images/checker.svg#svgView(viewBox(40, 0, 40, 40))') round 12 / 12px;
     height: 36px;
 }
 
