@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('../shared/images/checkerboard.png');
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
     --vidWidth: 644px;
@@ -15,8 +14,8 @@
     --nameX: 16px; --nameY: 486px;
     --speakerX: 409px; --speakerY: 493px;
     --winX: 202px; --winY: 525px;
-    --finalX: 130px; --finalY: 538px;
-    --bestX: 885px; --bestY: 558px;
+    --finalX: 360px; --finalY: 507px;
+    --bestX: 884px; --bestX2: 18px; --bestY: 486px;
 }
 
 .border-1{border: var(--border1);}
@@ -122,8 +121,8 @@ html{
     display: none;
 }
 .player-best-of img{
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     background-image: url('images/RM_marathon_logo.png');
     background-size: 100% 100%;
 }
