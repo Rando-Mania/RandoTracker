@@ -8,11 +8,20 @@
     width: 34px;
     height: 34px;
     display: block;
-    background-image: url(images/icons/chrono-trigger-sprite.png);
     background-size: 236px 134px;
     background-repeat: no-repeat;
     mix-blend-mode: lighten;
     image-rendering: pixelated;
+}
+
+.not-webp .player-grid [property*="ct-jets-"] img, .not-webp .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.png);
+}
+.webp.not-avif .player-grid [property*="ct-jets-"] img, .webp.not-avif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.webp);
+}
+.avif .player-grid [property*="ct-jets-"] img, .avif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.avif);
 }
 
 [property="ct-jets-crono"] img{background-position: 0 0;}

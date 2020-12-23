@@ -10,11 +10,17 @@
     width: 34px;
     height: 34px;
     display: block;
-    background-image: url(images/icons/super-metroid-icons.png);
     background-size: 208px 168px;
     background-repeat: no-repeat;
     mix-blend-mode: lighten;
     image-rendering: pixelated;
+}
+
+.not-webp .player-grid [property*="super-metroid-"] img, .not-webp .dialog[id*="super-metroid-"] img{
+    background-image: url(images/icons/super-metroid-icons.png);
+}
+.webp .player-grid [property*="super-metroid-"] img, .webp .dialog[id*="super-metroid-"] img{
+    background-image: url(images/icons/super-metroid-icons.webp);
 }
 
 [property="super-metroid-boss1"] img{background-position: 0 0;}

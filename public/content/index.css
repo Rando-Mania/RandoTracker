@@ -103,20 +103,12 @@ article{
 }
 
 @supports not (background-image:paint(fallbackImage)) {
-    .notavif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png');
-    }
-    .avif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
-    }
+    .notavif article{background: url('../shared/images/rm-generic-half.png');}
+    .avif article{background: url('../shared/images/rm-generic-half.avif');}
 }
 @supports (background-image:paint(fallbackImage)) {
-    .notavif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;
-    }
-    .avif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;
-    }
+    .notavif article{background: url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;}
+    .avif article{background: url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;}
 }
 
 @keyframes turn-on{

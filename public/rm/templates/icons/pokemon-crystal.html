@@ -8,10 +8,14 @@
     width: 29px;
     height: 29px;
     display: block;
-    background-image: url(images/icons/crystal-sprites.png);
-    background-image: url(images/icons/crystal-sprites.webp);
     background-size: 1100% 1100%;
-    /* image-rendering: pixelated; */
+}
+
+.not-webp .player-grid .poke img{
+    background-image: url(images/icons/crystal-sprites.png);
+}
+.webp .player-grid .poke img{
+    background-image: url(images/icons/crystal-sprites.webp);
 }
 
 [property="poke-crystal-rod-old"] img{background-position: 0 0;}

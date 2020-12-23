@@ -5,7 +5,15 @@
         grid-template-rows: repeat(8, auto);
     }
     .lttp img, .dialog[id*="lttp-"] img{
+        mix-blend-mode: difference;
+    }
+
+    .not-webp .lttp img, .not-webp .dialog[id*="lttp-"] img{
         background-image: url(images/icons/lttp.png);
+        mix-blend-mode: difference;
+    }
+    .webp .lttp img, .webp .dialog[id*="lttp-"] img{
+        background-image: url(images/icons/lttp.webp);
         mix-blend-mode: difference;
     }
     .lttp img{

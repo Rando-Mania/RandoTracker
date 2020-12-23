@@ -1,4 +1,30 @@
-   /* menu */
+.marathon-background{
+  background-color: #000;
+  background-size: 50% 50%;
+}
+
+.notavif .marathon-background {
+  background-image:
+      url('../shared/images/rm-generic-half.png'), 
+      url('../shared/images/rm-generic-half.png');
+  }
+.avif .marathon-background {
+  background-image:
+      url('../shared/images/rm-generic-half.avif'), 
+      url('../shared/images/rm-generic-half.avif');
+  }
+  
+.background-repeat-x {
+  background-position: 0 0, 50% 100%;
+  background-repeat: repeat-x;
+}
+
+.background-repeat-y {
+  background-position: 0 0, 100% 66.6%;
+  background-repeat: repeat-y;
+}
+
+/* menu */
 
 #menu_game.fieldset{
     display: grid;
@@ -40,20 +66,20 @@
       padding: 5px;
     }
   
-  .menu-game-specific #menu_fill{grid-area: prefill;}
+  .menu-game-specific #menu_fill{grid-area: prefill; z-index: 3;}
   .menu-general #menu_timer{grid-area: timer;}
   .menu-general #menu_players{grid-area: players;}
   .menu-general #menu_layout{grid-area: layout;}
   .menu-game-specific #menu_game{grid-area: game;}
-  .menu-general #menu_production{grid-area: team;}
+  .menu-general #menu_production{grid-area: team; z-index: 2;}
   .menu-general #menu_view{grid-area: view;}
   .menu-general #menu_reset{grid-area: reset;}
   .menu-game-specific #menu_up_next{grid-area: upnext;}
   .menu-game-specific #menu_icons{grid-area: icons;}
   .menu-game-specific #menu_free_text{grid-area: freetext;}
-  .menu-game-specific #menu_players_extra{grid-area: pronouns;}
+  .menu-game-specific #menu_players_extra{grid-area: pronouns; z-index: 2;}
   .menu-game-specific #menu_other{grid-area: other;}
-  .menu-game-specific #menu_credits{grid-area: credits;}
+  .menu-game-specific #menu_credits{grid-area: credits; z-index: 3;}
   
   
     #menu_player_labels, #menu_players tr-player{

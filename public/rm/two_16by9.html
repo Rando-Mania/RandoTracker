@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
     <link rel="stylesheet" type="text/css" href="two_4by3.css">
-    <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
-    <link rel="preload" href="../shared/images/winner-border.png" as="image" type="image/png">
+    <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
+    <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
     <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
     <link rel="preconnect" href="https://www.googleapis.com">
     <link rel="preconnect" href="https://apis.google.com">
@@ -67,7 +67,7 @@
         
         <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
     </template>
-	<div class="layout">
+	<div class="layout marathon-background background-repeat-y">
         <div>
             <tr-player player="1">
                 <tr-template source="#player_info_template"></tr-template>
@@ -109,7 +109,7 @@
     </div>
 
 <!-- loadscreen -->
-    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+    <div class="loadscreen-contain marathon-background background-repeat-y abs" style="top: 0; left: 0;">
         <tr-template href="two-loading-template.html"></tr-template>
     </div>
 
@@ -121,6 +121,7 @@
 	
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

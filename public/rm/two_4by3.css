@@ -48,11 +48,6 @@ html{
 
 .layout {
     font-family: "Orbitron", sans-serif;
-    background-image: url('../shared/images/rm-generic-half.png'), url('../shared/images/rm-generic-half.png');
-    background-repeat: repeat-y;
-    background-position: 0 0, 100% 33.3%;
-    background-size: 50% 50%;
-    background-color: #000;
     color: #fafafa;
     width: 1280px;
     height: 720px;
@@ -228,14 +223,9 @@ html{
     place-content: center;
 }
 
-.player-final-contain .player-winner{
+.player-final-contain .player-winner, .player-final-contain .card-body{
     grid-area: 1/ 1;
     padding: 18px 12px;
-}
-
-.player-final-contain .card-body{
-    padding: 18px 12px;
-    grid-area: 1/ 1;
 }
 
 tr-text#player_final{
@@ -246,7 +236,6 @@ tr-text#player_final{
 .player-final:empty{
     display:none;
 }
-
 
 .winner-default{
     grid-area: 1/ 1;

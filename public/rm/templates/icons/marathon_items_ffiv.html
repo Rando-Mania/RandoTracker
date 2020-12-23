@@ -10,14 +10,19 @@
     }
 
     .player-grid-ffiv img{
-        background-image: url(images/icons/ff4fe-spritesheet.png);
         background-size: 500% 500%;
         width: 28px;
         height: 28px;
         display: block;
     }
+    .not-webp .player-grid-ffiv img{
+        background-image: url(images/icons/ff4fe-spritesheet.png);
+    }
+    .webp .player-grid-ffiv img{
+        background-image: url(images/icons/ff4fe-spritesheet.webp);
+    }
 
-[property="ff4fe-pass"] img{background-position: 25% 0;}
+    [property="ff4fe-pass"] img{background-position: 25% 0;}
 [property="ff4fe-hook"] img{background-position: 50% 0;}
 [property="ff4fe-dark-crystal"] img{background-position: 75% 0;}
 

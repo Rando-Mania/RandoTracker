@@ -32,14 +32,9 @@
   
   .layout {
     font-family: "Orbitron", sans-serif;
-    background: 
-      linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-      url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
-      url('images/rm-generic-take2-edges-roberts.png') 320px 360px / 50% 50% repeat-x;
     color: #fafafa;
     width: 1280px;
     height: 720px;
-    background-color: #000;
     letter-spacing: 2px;
     display: grid;
     grid-template-columns: 960px 320px;

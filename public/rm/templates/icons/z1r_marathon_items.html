@@ -1,7 +1,12 @@
 <style>
     #z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, [id*="z1r-"].dialog img{
-        background-image: url(images/icons/icon-sheet-z1r.png);
         background-size: 300% auto;
+    }
+    .not-webp #z1r-row-1 img, .not-webp #z1r-row-2 img, .not-webp #z1r-row-3 img, .not-webp [id*="z1r-"].dialog img{
+        background-image: url(images/icons/icon-sheet-z1r.png);
+    }
+    .webp #z1r-row-1 img, .webp #z1r-row-2 img, .webp #z1r-row-3 img, .webp [id*="z1r-"].dialog img{
+        background-image: url(images/icons/icon-sheet-z1r.webp);
     }
     #z1r-row-1{
         display: grid;
