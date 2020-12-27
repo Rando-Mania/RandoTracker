@@ -56,7 +56,10 @@
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
             <tr-toggle property="toggle-winner" class="abs player-winner">
-                <img src="images/Winner.png" alt="Winner">
+                <picture>
+                    <source srcset="images/Winner.avif" type="image/avif">
+                    <img src="images/Winner.png" alt="Winner">
+                  </picture>
             </tr-toggle>
         </template>
         <tr-player player="1">
@@ -105,6 +108,7 @@
 
 <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

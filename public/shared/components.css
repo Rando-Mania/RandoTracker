@@ -43,10 +43,10 @@ tr-image-toggle img.active, tr-toggle-class.active {
     opacity: 1;
 }
 
-tr-image img:not([src]){
+/* tr-image img:not([src]){
     opacity: .3;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAGFBMVEUAAADn3rWlpYRaUjF7e1oxKSHeSjmEISldt5M2AAAAAXRSTlMAQObYZgAAAGZJREFUKM99y0ENwEAIRNFawAIWsIAFLKyFtd9ZaMqBzM6B5L+Eh839DuYibgwqMRABO7H3uTage62VQkHQHFT+KQHVL90JBCgzGJyJhmNXQIbGhJKoF/SAEssXNfSApkwKWGcD2QuqpDS7XGEcJQAAAABJRU5ErkJggg==') no-repeat center / auto 100%;
-}
+} */
 
 tr-select {
     display: block;

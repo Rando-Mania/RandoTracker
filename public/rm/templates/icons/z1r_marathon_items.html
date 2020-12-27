@@ -1,149 +1,49 @@
-<style>
-    #z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, [id*="z1r-"].dialog img{
-        background-size: 300% auto;
-    }
-    .not-webp #z1r-row-1 img, .not-webp #z1r-row-2 img, .not-webp #z1r-row-3 img, .not-webp [id*="z1r-"].dialog img{
-        background-image: url(images/icons/icon-sheet-z1r.png);
-    }
-    .webp #z1r-row-1 img, .webp #z1r-row-2 img, .webp #z1r-row-3 img, .webp [id*="z1r-"].dialog img{
-        background-image: url(images/icons/icon-sheet-z1r.webp);
-    }
-    #z1r-row-1{
-        display: grid;
-        grid-template-columns: repeat(8, 32px);
-        justify-content: space-between;
-    }
-    #z1r-row-1 figure{
-        display: grid;
-    }
-
-    #z1r-row-1 img{
-        background-position: -36px -36px;
-        background-size: 99px 180px;
-    }
-    #z1r-row-1 figcaption, #z1r-row-1 tr-toggle-class{
-        grid-area: 1/1;
-    }
-    #z1r-row-1 figcaption{
-        top: 3px;
-        color: #000;
-        position: relative;
-        font: bold 26px "Time New Roman";
-        align-self: center;
-        pointer-events: none;
-    }
-
-    #z1r-row-2{
-        display: grid;
-        grid-template-columns: repeat(7, 34px);
-        justify-content: space-between;
-        align-items: center;
-    }
-    #z1r-row-3{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    [property="z1r-bow"] img{
-        background-position: 0 0;
-    }
-
-tr-image{
-    display: block;
-}
-
-    img.arrow-wood, img.arrow-no{
-        background-position: 50% 0;
-    }
-    
-    img.arrow-silver{ 
-        background-position: 100% 0;
-    }
-
-    [property="z1r-recorder"] img{
-        background-position: 0 25%;
-    }
-
-    [property="z1r-bracelet"] img{
-        background-position: 50% 75%;
-    }
-
-    #z1r-row-2 tr-image-toggle img, #z1r-row-3 tr-image-toggle img, #z1r-row-2 tr-image img, #z1r-row-3 tr-image img{
-        border: 1px solid #fff;
-        padding: 2px;
-    }
-    #z1r-row-2 tr-image img{
-        width: 32px;
-        height: 32px;        
-    }
-
-
-    [property="z1r-raft"] img{
-        background-position: 100% 100%;
-    }
-    [property="z1r-ladder"] img{
-        background-position: 100% 75%;
-    }
-    .old-man{
-        background-position: 0 50%;
-    }
-    .fire{
-        background-position: 0 75%;
-        animation: flicker .36s steps(1) infinite;
-    }
-    @keyframes flicker {
-        from{transform: rotateY(0);}
-        50%{transform: rotateY(180deg);}        
-    }
-
-</style>
-
 <div id="z1r-row-1">
     <figure>
         <tr-toggle-class property="z1r-tri-1" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>1</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-2" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>2</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-3" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>3</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-4" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>4</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-5" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>5</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-6" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>6</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-7" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>7</figcaption>
     </figure>
     <figure>
         <tr-toggle-class property="z1r-tri-8" toggle-class="active">
-            <img src="../shared/images/icons/blank.svg" />
+            <img width="32" height="32" src="../shared/images/icons/blank.svg" />
         </tr-toggle-class>
         <figcaption>8</figcaption>
     </figure>
@@ -167,9 +67,9 @@ tr-image{
 <div id="z1r-row-3">
     <tr-image-toggle style="grid-area: 2 / 1;" class="active" property="z1r-ladder" src="../shared/images/icons/blank.svg"></tr-image-toggle>
 
-    <img class="fire" src="../shared/images/icons/blank.svg" alt="">
-    <img class="old-man" src="../shared/images/icons/blank.svg" alt="">
-    <img class="fire" src="../shared/images/icons/blank.svg" alt="">
+    <img class="fire" width="32" height="32" src="../shared/images/icons/blank.svg" alt="">
+    <img class="old-man" width="32" height="32" src="../shared/images/icons/blank.svg" alt="">
+    <img class="fire" width="32" height="32" src="../shared/images/icons/blank.svg" alt="">
 
     <tr-image-toggle style="grid-area: 2 / -2;" class="active" property="z1r-raft" src="../shared/images/icons/blank.svg"></tr-image-toggle>
 </div>

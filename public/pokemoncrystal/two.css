@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url(images/Crystal_v3_2p_no_title.webp);
     --conicalFallback: repeating-conic-gradient(from 0deg at 25% -150%, rgba(255,255,255,.1) 0 10deg, rgba(255,255,255,0) 10deg 30deg, rgba(255,255,255,.2) 30deg 35deg),
     repeating-conic-gradient(from 0deg at 75% 150%, #0d1632 0 20deg, #436295 20deg 30deg, #0d1632 30deg 50deg);
     --border-1: solid 1px rgba(255,255,255,.75);
@@ -52,13 +51,17 @@ html{
     color: #fff;
     position: relative;
     background-color: #0d1632;
-    background-image: var(--backgroundImg);
+    background-image: var(--conicalFallback);
 }
+
+@supports not (background-image:conic-gradient(#fff,#000)){
+    .notwebp .layout{background-image: url('images/Crystal_v3_2p_no_title.jpg');}
+    .webp .layout{background-image: url('images/Crystal_v3_2p_no_title.webp');}
+}
+
 @supports (background-image:conic-gradient(#fff,#000)){
-    .layout{
-        background-image: var(--conicalFallback);
-        background-image: var(--backgroundImg), var(--conicalFallback);
-    }
+    .notwebp .layout{background-image: url('images/Crystal_v3_2p_no_title.jpg'), var(--conicalFallback);}
+    .webp .layout{background-image: url('images/Crystal_v3_2p_no_title.webp'), var(--conicalFallback);}    
 }
 
 .title{
@@ -97,7 +100,7 @@ html{
     font-size: 26px;
     width: 620px;
 	height: 50px;
-	border-radius: 25px;
+	border-radius: 9999px;
 	box-shadow: 0 3px #abe6ff;
 	background-color: rgba(0,0,0,.9);
 	color: #fff;
@@ -150,11 +153,12 @@ html{
     width: 29px;
     height: 29px;
     display: block;
-    background-image: url(images/crystal-sprites.png);
-    background-image: url(images/crystal-sprites.webp);
     background-size: 1100% 1100%;
     /* image-rendering: pixelated; */
 }
+
+.notwebp .player-grid img{background-image: url(images/crystal-sprites.png);}
+.webp .player-grid img{background-image: url(images/crystal-sprites.webp);}
 
 [property="rod-old"] img{background-position: 0 0;}
 [property="rod-good"] img{background-position: 10% 0;}
@@ -318,7 +322,7 @@ tr-toggle-class, .in-active {
     font-size: 24px;
     width: 6em;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 9999px;
     background-color: #000;
     color: #fff;
     padding: .25em;
@@ -331,7 +335,7 @@ tr-toggle-class, .in-active {
 tr-timer{
 	width: 410px;
 	height: 80px;
-	border-radius: 40px;
+	border-radius: 9999px;
 	box-shadow: 0 5px #000;
 	background-color: #abe6ff;
 	background-image: linear-gradient(#c4edff,#92deff);
@@ -363,7 +367,7 @@ tr-timer span {
     grid-area: 1/1;
     display: grid;
     align-items: center;
-    border-radius: 40px;
+    border-radius: 9999px;
     background-color: #000;
 }
 

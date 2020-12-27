@@ -111,3 +111,389 @@
     .fieldset{
       margin: -1px 0 0 -1px;
     }
+
+    /* lttp icons */
+
+    .player-grid .lttp{
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: repeat(8, auto);
+  }
+  .lttp img, .dialog[id*="lttp-"] img{
+      mix-blend-mode: difference;
+  }
+
+  .notwebp .lttp img, .notwebp .dialog[id*="lttp-"] img{
+      background-image: url(images/icons/lttp.png);
+      mix-blend-mode: difference;
+  }
+  .webp .lttp img, .webp .dialog[id*="lttp-"] img{
+      background-image: url(images/icons/lttp.webp);
+      mix-blend-mode: difference;
+  }
+  .lttp img{
+      width: 30px;
+      height: 30px;
+      
+  }
+
+.lamp{background-position: 0 0;}
+.cape{background-position: 10% 0;}
+.hookshot{background-position: 20% 0;}
+.pearl{background-position: 30% 0;}
+
+.bombos{background-position: 0 10%;}
+.ether{background-position: 10% 10%;}
+.quake{background-position: 20% 10%;}
+.net{background-position: 30% 10%;}
+
+.book{background-position: 0 20%;}
+.mirror{background-position: 10% 20%;}
+.flute{background-position: 20% 20%;}
+.flippers{background-position: 30% 20%;}
+
+.boots{background-position: 0 30%;}
+.hammer{background-position: 10% 30%;}
+
+
+.bow{background-position: 60% 0;}
+.bow-arrow{background-position: 70% 0;}
+.bow-silver{background-position: 80% 0;}
+.silver{background-position: 90% 0;}
+
+.rod-blue{background-position: 60% 10%;}
+.rod-red{background-position: 70% 10%;}
+.rod-both{background-position: 80% 10%;}
+
+.rang-blue{background-position: 90% 10%;}
+.rang-red{background-position: 90% 20%;}
+.rang-both{background-position: 90% 30%;}
+
+.cane-blue{background-position: 60% 20%;}
+.cane-red{background-position: 70% 20%;}
+.cane-both{background-position: 80% 20%;}
+
+.shroom{background-position: 100% 20%;}
+.shroom-powder{background-position: 100% 30%;}
+
+.shield-1{background-position: 60% 30%;}
+.shield-2{background-position: 70% 30%;}
+.shield-3{background-position: 80% 30%;}
+
+.bottle{background-position: 60% 40%;}
+.bottle-1{background-position: 70% 40%;}
+.bottle-2{background-position: 80% 40%;}
+.bottle-3{background-position: 90% 40%;}
+.bottle-4{background-position: 100% 40%;}
+
+.glove-1{background-position: 20% 30%;}
+.glove-2{background-position: 30% 30%;}
+
+.shirt-1{background-position: 80% 50%;}
+.shirt-2{background-position: 90% 50%;}
+.shirt-3{background-position: 100% 50%;}
+
+.sword{background-position: 60% 60%;}
+.sword-1{background-position: 70% 60%;}
+.sword-2{background-position: 80% 60%;}
+.sword-3{background-position: 90% 60%;}
+.sword-4{background-position: 100% 60%;}
+
+
+.boss-no{background-position: 70% 70%;}
+.armos{background-position: 80% 70%;}
+.lanmolas{background-position: 90% 70%;}
+.moldorm{background-position: 100% 70%;}
+.helmasaur{background-position: 70% 80%;}
+.arrghus{background-position: 80% 80%;}
+.mothula{background-position: 90% 80%;}
+.blind{background-position: 100% 80%;}
+.kholdstare{background-position: 70% 90%;}
+.vitreous{background-position: 80% 90%;}
+.trinexx{background-position: 90% 90%;}
+
+.pendent-green{background-position: 0 40%;}
+.pendent-red{background-position: 10% 40%;}
+.pendent-blue{background-position: 20% 40%;}
+.agahnim{background-position: 30% 40%;}
+
+.crystal-1{background-position: 0% 50%;}
+.crystal-2{background-position: 10% 50%;}
+.crystal-3{background-position: 20% 50%;}
+.crystal-4{background-position: 30% 50%;}
+
+.crystal-red-5{background-position: 0% 60%;}
+.crystal-red-6{background-position: 10% 60%;}
+.crystal-7{background-position: 20% 60%;}
+.ganon{background-position: 30% 60%;}
+
+.crystal-red{background-position: 0 70%;}
+.crystal-blue{background-position: 10% 70%;}
+
+/* super metroid icons */
+
+.player-grid .super-metroid{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2px 6px;
+  padding: 3px;
+}
+
+.player-grid [property*="super-metroid-"] img, .dialog[id*="super-metroid-"] img{
+  width: 34px;
+  height: 34px;
+  display: block;
+  background-size: 208px 168px;
+  background-repeat: no-repeat;
+  mix-blend-mode: lighten;
+  image-rendering: pixelated;
+}
+
+.notwebp .player-grid [property*="super-metroid-"] img, .notwebp .dialog[id*="super-metroid-"] img{
+  background-image: url(images/icons/super-metroid-icons.png);
+}
+.webp .player-grid [property*="super-metroid-"] img, .webp .dialog[id*="super-metroid-"] img{
+  background-image: url(images/icons/super-metroid-icons.webp);
+}
+
+[property="super-metroid-boss1"] img{background-position: 0 0;}
+[property="super-metroid-charge"] img{background-position: -44px 0;}
+[property="super-metroid-varia"] img{background-position: -88px 0;}
+[property="super-metroid-morph"] img{background-position: -132px 0;}
+[property="super-metroid-boots"] img{background-position: -176px 0;}
+
+[property="super-metroid-boss2"] img{background-position: 0 -34px;}
+[property="super-metroid-ice"] img{background-position: -44px -34px;}
+[property="super-metroid-gravity"] img{background-position: -88px -34px;}
+[property="super-metroid-bombs"] img{background-position: -132px -34px;}
+[property="super-metroid-spacejump"] img{background-position: -176px -34px;}
+
+[property="super-metroid-boss3"] img{background-position: 0 -68px;}
+[property="super-metroid-wave"] img{background-position: -44px -68px;}
+
+[property="super-metroid-springball"] img{background-position: -132px -68px;}
+[property="super-metroid-run"] img{background-position: -176px -68px;}
+
+[property="super-metroid-ridely"] img{background-position: 0 -102px;}
+[property="super-metroid-spazer"] img{background-position: -44px -102px;}
+[property="super-metroid-grapple"] img{background-position: -88px -102px;}
+[property="super-metroid-screwattack"] img{background-position: -132px -102px;}
+
+[property="super-metroid-plasma"] img{background-position: -44px -136px;}
+[property="super-metroid-xray"] img{background-position: -88px -136px;}
+
+/* pokemon crystal */
+
+.player-grid .poke{
+  display: flex;
+  justify-content: center;
+}
+
+.player-grid .poke img{
+  width: 29px;
+  height: 29px;
+  display: block;
+  background-size: 1100% 1100%;
+}
+
+.notwebp .player-grid .poke img{
+  background-image: url(images/icons/crystal-sprites.png);
+}
+.webp .player-grid .poke img{
+  background-image: url(images/icons/crystal-sprites.webp);
+}
+
+[property="poke-crystal-rod-old"] img{background-position: 0 0;}
+[property="poke-crystal-rod-good"] img{background-position: 10% 0;}
+[property="poke-crystal-rod-super"] img{background-position: 20% 0;}
+[property="poke-crystal-bicycle"] img{background-position: 30% 0;}
+[property="poke-crystal-ss-ticket"] img{background-position: 40% 0;}
+[property="poke-crystal-pass"] img{background-position: 50% 0;}
+
+[property="poke-crystal-squirt_bottle"] img{background-position: 0 10%;}
+[property="poke-crystal-secret_potion"] img{background-position: 10% 10%;}
+[property="poke-crystal-basement_key"] img{background-position: 20% 10%;}
+[property="poke-crystal-card_key"] img{background-position: 30% 10%;}
+[property="poke-crystal-machine_part"] img{background-position: 40% 10%;}
+[property="poke-crystal-lost_item"] img{background-position: 50% 10%;}
+
+[property="poke-crystal-mystery_egg"] img{background-position: 0 20%;}
+[property="poke-crystal-coin_case"] img{background-position: 10% 20%;}
+[property="poke-crystal-blue_card"] img{background-position: 20% 20%;}
+[property="poke-crystal-item_finder"] img{background-position: 30% 20%;}
+[property="poke-crystal-red_scale"] img{background-position: 40% 20%;}
+[property="poke-crystal-clear_bell"] img{background-position: 50% 20%;}
+[property="poke-crystal-silver_wing"] img{background-position: 60% 20%;}
+
+[property="poke-crystal-hm_cut"] img{background-position: 0 30%;}
+[property="poke-crystal-hm_fly"] img{background-position: 10% 30%;}
+[property="poke-crystal-hm_surf"] img{background-position: 20% 30%;}
+[property="poke-crystal-hm-strength"] img{background-position: 30% 30%;}
+[property="poke-crystal-hm-flash"] img{background-position: 40% 30%;}
+[property="poke-crystal-hm-whirlpool"] img{background-position: 50% 30%;}
+[property="poke-crystal-hm-waterfall"] img{background-position: 60% 30%;}
+
+[property="poke-crystal-badge-zephyr"] img{background-position: 0 60%;}
+[property="poke-crystal-badge-hive"] img{background-position: 10% 60%;}
+[property="poke-crystal-badge-plain"] img{background-position: 20% 60%;}
+[property="poke-crystal-badge-fog"] img{background-position: 30% 60%;}
+[property="poke-crystal-badge-storm"] img{background-position: 40% 60%;}
+[property="poke-crystal-badge-mineral"] img{background-position: 50% 60%;}
+[property="poke-crystal-badge-glacier"] img{background-position: 60% 60%;}
+[property="poke-crystal-badge-rising"] img{background-position: 70% 60%;}
+
+[property="poke-crystal-badge-boulder"] img{background-position: 0 70%;}
+[property="poke-crystal-badge-cascade"] img{background-position: 10% 70%;}
+[property="poke-crystal-badge-thunder"] img{background-position: 20% 70%;}
+[property="poke-crystal-badge-rainbow"] img{background-position: 30% 70%;}
+[property="poke-crystal-badge-soul"] img{background-position: 40% 70%;}
+[property="poke-crystal-badge-marsh"] img{background-position: 50% 70%;}
+[property="poke-crystal-badge-volcano"] img{background-position: 60% 70%;}
+[property="poke-crystal-badge-earth"] img{background-position: 70% 70%;}
+
+/* fff4fe */
+
+.player-grid-ffiv{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
+  align-content: space-between;
+  grid-column-gap: 8px;
+  padding: 0;
+  width: auto;
+}
+
+.player-grid-ffiv img{
+  background-size: 500% 500%;
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+.notwebp .player-grid-ffiv img{
+  background-image: url(images/icons/ff4fe-spritesheet.png);
+}
+.webp .player-grid-ffiv img{
+  background-image: url(images/icons/ff4fe-spritesheet.webp);
+}
+
+[property="ff4fe-pass"] img{background-position: 25% 0;}
+[property="ff4fe-hook"] img{background-position: 50% 0;}
+[property="ff4fe-dark-crystal"] img{background-position: 75% 0;}
+
+[property="ff4fe-earth-crystal"] img{background-position: 0 25%;}
+[property="ff4fe-twin-harp"] img{background-position: 25% 25%;}
+[property="ff4fe-package"] img{background-position: 50% 25%;}
+[property="ff4fe-sand-ruby"] img{background-position: 75% 25%;}
+
+[property="ff4fe-baron-key"] img{background-position: 0 50%;}
+[property="ff4fe-magma-key"] img{background-position: 25% 50%;}
+[property="ff4fe-tower-key"] img{background-position: 50% 50%;}
+[property="ff4fe-luca-key"] img{background-position: 75% 50%;}
+
+[property="ff4fe-adamant"] img{background-position: 0 75%;}
+[property="ff4fe-legend-sword"] img{background-position: 25% 75%;}
+[property="ff4fe-pan"] img{background-position: 50% 75%;}
+[property="ff4fe-spoon"] img{background-position: 75% 75%;}
+
+[property="ff4fe-rat-tail"] img{background-position: 25% 100%;}
+[property="ff4fe-rat-tail"]{grid-column: 2;}
+[property="ff4fe-pink-tail"] img{background-position: 50% 100%;}
+
+/* z1r */
+
+#z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, [id*="z1r-"].dialog img{
+  background-size: 300% auto;
+}
+.notwebp #z1r-row-1 img, .notwebp #z1r-row-2 img, .notwebp #z1r-row-3 img, .notwebp [id*="z1r-"].dialog img{
+  background-image: url(images/icons/icon-sheet-z1r.png);
+}
+.webp #z1r-row-1 img, .webp #z1r-row-2 img, .webp #z1r-row-3 img, .webp [id*="z1r-"].dialog img{
+  background-image: url(images/icons/icon-sheet-z1r.webp);
+}
+#z1r-row-1{
+  display: grid;
+  grid-template-columns: repeat(8, 32px);
+  justify-content: space-between;
+}
+#z1r-row-1 figure{
+  display: grid;
+}
+
+#z1r-row-1 img{
+  background-position: -36px -36px;
+  background-size: 99px 180px;
+}
+#z1r-row-1 figcaption, #z1r-row-1 tr-toggle-class{
+  grid-area: 1/1;
+}
+#z1r-row-1 figcaption{
+  top: 3px;
+  color: #000;
+  position: relative;
+  font: bold 26px "Time New Roman";
+  align-self: center;
+  pointer-events: none;
+}
+
+#z1r-row-2{
+  display: grid;
+  grid-template-columns: repeat(7, 34px);
+  justify-content: space-between;
+  align-items: center;
+}
+#z1r-row-3{
+  display: flex;
+  justify-content: space-between;
+}
+
+[property="z1r-bow"] img{
+  background-position: 0 0;
+}
+
+tr-image{
+display: block;
+}
+
+img.arrow-wood, img.arrow-no{
+  background-position: 50% 0;
+}
+
+img.arrow-silver{ 
+  background-position: 100% 0;
+}
+
+[property="z1r-recorder"] img{
+  background-position: 0 25%;
+}
+
+[property="z1r-bracelet"] img{
+  background-position: 50% 75%;
+}
+
+#z1r-row-2 tr-image-toggle img, #z1r-row-3 tr-image-toggle img, #z1r-row-2 tr-image img, #z1r-row-3 tr-image img{
+  border: 1px solid #fff;
+  padding: 2px;
+}
+#z1r-row-2 tr-image img{
+  width: 32px;
+  height: 32px;        
+}
+
+
+[property="z1r-raft"] img{
+  background-position: 100% 100%;
+}
+[property="z1r-ladder"] img{
+  background-position: 100% 75%;
+}
+.old-man{
+  background-position: 0 50%;
+}
+.fire{
+  background-position: 0 75%;
+  animation: flicker .36s steps(1) infinite;
+}
+@keyframes flicker {
+  from{transform: rotateY(0);}
+  50%{transform: rotateY(180deg);}        
+}
