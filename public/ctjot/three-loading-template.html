@@ -16,12 +16,15 @@
     background-color: #d0e0fb;
     --loadscreen-fallback: linear-gradient(#d0e0fb, #043270);
     background-image: var(--loadscreen-fallback);
-    background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);
     color: #fff;
     text-align: center;
     z-index: 50;
     display: none;
 }
+
+.notwebp.notavif .loadscreen-contain, .notwebp.notavif .three-loading{background-image: url('images/loading_screen.jpg'), var(--loadscreen-fallback);}
+.webp.notavif .loadscreen-contain, .webp.notavif .three-loading{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
+.avif .loadscreen-contain, .avif .three-loading{background-image: url('images/loading_screen.avif'), var(--loadscreen-fallback);}
 
 .three-loading{
     display: block;
