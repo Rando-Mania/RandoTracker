@@ -79,6 +79,15 @@ html{
     z-index: 2;
 }
 
+.layout.black-background .player-video{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+.notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
+.avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
+
 .player-info-contain{
     width: min-content;    
 }
