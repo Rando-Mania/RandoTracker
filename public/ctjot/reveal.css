@@ -15,8 +15,8 @@
     --pronounX: 1155px; --pronounY: 77px;
 
     --backgroundColor1: #000;
-    --backgroundColor2: #005;
-    --backgroundImg: url('images/1p/base-background.png');
+    --backgroundColor2: #000a62;
+    --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
     --border: 6px;
 
@@ -54,7 +54,8 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg) #000;
+    background-color: #202028;
+    background-image: var(--bgFallback);
 }
 
 .layout.clip-background{
@@ -66,9 +67,8 @@
         linear-gradient(red var(--clipY1), transparent var(--clipY1) var(--clipY2), red 0);
 }
 
-.ffr-default{
-    background: var(--backgroundImg) #000;
-}
+.notwebp .jot-default{background-image: url('images/1p/base-background.png'),  var(--bgFallback);}
+.webp .jot-default{background-image: url('images/1p/base-background.webp'),  var(--bgFallback);}
 
 .player-video{
     width: var(--vidWidth);
@@ -115,9 +115,10 @@
 }
 
 .player-grid img, .dialog img{
-    background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');
     background-size: 224px 160px;
 }
+.notwebp .player-grid img, .notwebp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');}
+.webp .player-grid img, .webp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.webp');}
 
 .crono{background-position: 0 0;}
 .marle{background-position: -32px 0px;}
