@@ -22,6 +22,7 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
+    --backgroundImg: url('images/4p/base-background.png');
 
     --border: 6px;
 
@@ -61,7 +62,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #000;
+    background: url(images/4p/base-background.png) #000;
 }
 
 .layout.clip-background{
@@ -78,40 +79,33 @@
 }
 
 .ffr-default{
-    background-color: #000;}
-        .notwebp.notavif .ffr-default{background-image: url(images/4p/base-background.png);}
-        .webp.notavif .ffr-default{background-image: url(images/4p/base-background.webp);}
-        .avif .ffr-default{background-image: url(images/4p/base-background.avif);}
+    background: url(images/4p/base-background.png) #000;
+}
 
 .ffr-irongol{
+    background: url(images/4p/base-irongol.png) #000076;
     --backgroundColor2: #500;
-    background-color: #000076;}
-        .notwebp .ffr-irongol{background-image: url(images/4p/base-irongol.png);}
-        .webp .ffr-irongol{background-image: url(images/4p/base-irongol.webp);}
+}
+
+.ffr-hardcore{
+    background: url(images/4p/base-hardcore.png) #000076;
+    --backgroundColor2: #305;
+}
 
 .ffr-tourney{
+    background: url(images/4p/base-tourney.png) #291901;
     --backgroundColor2: #050;
-    background-color: #291901;}
-        .notwebp .ffr-tourney{background-image: url(images/4p/base-tourney.png);}
-        .webp.notavif .ffr-tourney{background-image: url(images/4p/base-tourney.webp);}
-        .avif .ffr-tourney{background-image: url(images/4p/base-tourney.avif);}
+}
 
 .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
-    background-color: #b1cbda;
-    --league-fallback: linear-gradient(#b1cbda, #1f2a44);
-    background-image: var(--league-fallback);}
-        .notwebp .ffr-league{background-image: url(images/4p/base-league.png), var(--league-fallback);}
-        .webp.notavif .ffr-league{background-image: url(images/4p/base-league.webp), var(--league-fallback);}
-        .avif .ffr-league{background-image: url(images/4p/base-league.avif), var(--league-fallback);}
+    background: url(images/4p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
+}
 
 .ffr-rush{
-    background-color:#0094ff; 
-    --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
-    background-image: var(--rush-fallback);}
-        .notwebp .ffr-rush{background-image: url(images/4p/base-rush.png), var(--rush-fallback);}
-        .webp .ffr-rush{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
+    background: url(images/4p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
+}
 
 .layout.ffr-rush .player-grid {display: none;}
 .layout.ffr-rush{
@@ -121,31 +115,13 @@
     --rankY: 64px;
 }
 
-.ffr-dark{background-color: #000;}
-    .notwebp .ffr-dark{background-image: url(images/4p/base-dark.png);}
-    .webp .ffr-dark{background-image: url(images/4p/base-dark.webp);}
+.ffr-dark{
+    background: url(images/4p/base-dark.png) #000;
+}
 
-.ffr-duck1{
-    --duck1-fallback: linear-gradient(#00238c, #fff 400px, #11d1a4, #585858 550px);
-    background-image: var(--duck1-fallback);}
-        .notwebp .ffr-duck1{background-image: url(images/4p/base-duck1.png), var(--duck1-fallback);}
-        .webp .ffr-duck1{background-image: url(images/4p/base-duck1.webp), var(--duck1-fallback);}
-
-.ffr-duck2{
-    --duck2-fallback: linear-gradient(#a91d98, #fe773c, #000 50%, #00139b 50%, #6028e4);
-    background-image: var(--duck2-fallback);}
-        .notwebp .ffr-duck2{background-image: url(images/4p/base-duck2.png), var(--duck2-fallback);}
-        .webp .ffr-duck2{background-image: url(images/4p/base-duck2.webp), var(--duck2-fallback);}
-
-.ffr-duck3{
-    --duck3-fallback: linear-gradient(#fe9308, #d22c00, #7a0700, #a1a1a1);
-    background-image: var(--duck3-fallback);}
-        .notwebp .ffr-duck3{background-image: url(images/4p/base-duck3.png), var(--duck3-fallback);}
-        .webp .ffr-duck3{background-image: url(images/4p/base-duck3.webp), var(--duck3-fallback);}
-
-.ffr-duck4{background-color: #000;}
-    .notwebp .ffr-duck4{background-image: url(images/4p/base-duck4.png);}
-    .webp .ffr-duck4{background-image: url(images/4p/base-duck4.webp);}
+.ffr-duck{
+    background: url(images/4p/base-duck.png) #000;
+}
 
 .player-video{
     width: var(--vidWidth);

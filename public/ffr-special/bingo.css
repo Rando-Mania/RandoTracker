@@ -79,6 +79,10 @@
     background: url(images/bingo/base-dark.png) #000;
 }
 
+.ffr-winter{
+    background: url(images/bingo/base-winter.png) #000;
+}
+
 .player-video{
     width: var(--vidWidth);
     height: var(--vidHeight);
