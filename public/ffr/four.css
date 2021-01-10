@@ -87,6 +87,11 @@
     --backgroundColor2: #500;
 }
 
+.ffr-hardcore{
+    background: url(images/4p/base-hardcore.png) #000076;
+    --backgroundColor2: #305;
+}
+
 .ffr-tourney{
     background: url(images/4p/base-tourney.png) #291901;
     --backgroundColor2: #050;
