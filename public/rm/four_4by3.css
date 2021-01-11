@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('../shared/images/checkerboard.png');
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
     --vidWidth: 439px;
@@ -33,13 +32,6 @@ html{
 }
 
 /* layout specific styles */
-/* @font-face {
-    font-family: "PressStart2P";
-    src: local('PressStart2P'),
-         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
-	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
-         url('../shared/fonts/pressstart2p.ttf') format('truetype');
-}*/
 
 @font-face {
   font-family: "Orbitron";
@@ -59,11 +51,6 @@ html{
 
 .layout {
   font-family: "Orbitron", sans-serif;
-  background:
-  linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-  url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-y, 
-  url('images/rm-generic-take2-edges-roberts.png') 100% 33.3% / 50% 50% repeat-y;
-  background-color: rgba(0, 0, 0, 1);
   color: #fafafa;
   width: 1280px;
   height: 720px;
@@ -228,14 +215,9 @@ html{
     background-color: #000;
 }
 
-.player-final-contain .player-winner{
+.player-final-contain .player-winner, .player-final-contain .card-body{
     grid-area: 1/ 1;
-    padding: 12px 6px;
-}
-
-.player-final-contain .card-body{
-    padding: 14px 12px;
-    grid-area: 1/ 1;
+    padding: 18px 12px;
 }
 
 tr-text#player_final{
@@ -247,9 +229,15 @@ tr-text#player_final{
     display:none;
 }
 
+.winner-default{
+    grid-area: 1/ 1;
+    border: double 12px #444;
+    border-image: url('images/checker.svg') round 12 / 12px;
+}
+
 .player-winner{
-    border: dashed 12px #fff;
-    border-image: url('../shared/images/winner-border.png') round 12 / 12px;
+    border: double 12px #fff;
+    border-image: url('images/checker.svg#svgView(viewBox(40, 0, 40, 40))') round 12 / 12px;
     height: 36px;
 }
 
@@ -392,8 +380,6 @@ tr-timer span {
 
 .show{ display: block; }
 
-/* .show-flex{ display: flex; }
-.show-grid{ display: grid; } */
 
 /* Menu */
 .pause-animations #player_time, .pause-animations tr-timer[running="true"]:after{

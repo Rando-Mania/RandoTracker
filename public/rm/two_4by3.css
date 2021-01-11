@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('../shared/images/checkerboard.png');
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
     --vidWidth: 644px;
@@ -15,8 +14,8 @@
     --nameX: 16px; --nameY: 486px;
     --speakerX: 409px; --speakerY: 493px;
     --winX: 202px; --winY: 525px;
-    --finalX: 130px; --finalY: 538px;
-    --bestX: 869px; --bestY: 558px;
+    --finalX: 360px; --finalY: 507px;
+    --bestX: 884px; --bestX2: 18px; --bestY: 486px;
 }
 
 .border-1{border: var(--border1);}
@@ -49,11 +48,6 @@ html{
 
 .layout {
     font-family: "Orbitron", sans-serif;
-    background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-    url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-y, 
-    url('images/rm-generic-take2-edges-roberts.png') 100% 33.3% / 50% 50% repeat-y;
-    background-color: rgba(0, 0, 0, 1);
     color: #fafafa;
     width: 1280px;
     height: 720px;
@@ -116,14 +110,15 @@ html{
 }
 
 .player-best-of{
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(5, auto);
     display: none;
 }
 .player-best-of img{
-    width: 32px;
-    height: 32px;
-    background-image: url('../shared/images/RM_marathon_logo_trans_back.png');
+    width: 24px;
+    height: 24px;
+    background-image: url('images/RM_marathon_logo.png');
     background-size: 100% 100%;
 }
 
@@ -141,30 +136,52 @@ html{
     text-align: center;
     z-index: 4;
     transform: translate(0);
-    /* border-top: solid #fff 1px; */
 }
 
 .player-final-contain:not(.visually-hidden){
-    animation: drive 1.5s linear;
+    animation: drive-from-left 1.5s linear;
 }
 
-@keyframes drive{
+@keyframes drive-from-left{
     from{transform: translate(-300%);}
+    to{transform: translate(0px);}
+}
+
+[player="2"] .player-final-contain:not(.visually-hidden){
+    animation: drive-from-right 1.5s linear;
+}
+
+@keyframes drive-from-right{
+    from{transform: translate(300%);}
     to{transform: translate(0px);}
 }
 
 .player-final-contain:not(.visually-hidden) .slime-and-rope-contain{
     position: absolute;
-    left: 100%;
-    top: 0;
+    top: 6px;
     display: flex;
     align-items: center;
-    animation: leave 3s 2.1s forwards;
 }
 
-@keyframes leave {
+[player="1"] .player-final-contain:not(.visually-hidden) .slime-and-rope-contain{
+    left: 100%;
+    animation: leave-right 3s 2.1s forwards;
+}
+
+@keyframes leave-right {
     from{ transform: translateX(0);}
     to{ transform: translateX(1280px);}
+  }
+
+[player="2"] .player-final-contain:not(.visually-hidden) .slime-and-rope-contain{
+    right: 100%;
+    transform: rotateY(180deg) translateX(0);
+    animation: leave-left 3s 2.1s forwards;
+}
+
+@keyframes leave-left {
+    from{ transform: rotateY(180deg) translateX(0);}
+    to{ transform: rotateY(180deg) translateX(1280px);}
   }
 
 /* rope */
@@ -204,17 +221,11 @@ html{
     width: auto;
     display: grid;
     place-content: center;
-    background-color: #000;
 }
 
-.player-final-contain .player-winner{
+.player-final-contain .player-winner, .player-final-contain .card-body{
     grid-area: 1/ 1;
     padding: 18px 12px;
-}
-
-.player-final-contain .card-body{
-    padding: 18px 12px;
-    grid-area: 1/ 1;
 }
 
 tr-text#player_final{
@@ -226,9 +237,15 @@ tr-text#player_final{
     display:none;
 }
 
+.winner-default{
+    grid-area: 1/ 1;
+    border: double 12px #444;
+    border-image: url('images/checker.svg') round 12 / 12px;
+}
+
 .player-winner{
-    border: dashed 12px #fff;
-    border-image: url('../shared/images/winner-border.png') round 12 / 12px;
+    border: double 12px #fff;
+    border-image: url('images/checker.svg#svgView(viewBox(40, 0, 40, 40))') round 12 / 12px;
     height: 36px;
 }
 

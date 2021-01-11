@@ -78,6 +78,13 @@
 
       <div class="games">
 
+<!-- Castlevania -->
+
+<div data-console="gba">
+	<h3>Castlevania: AoS</h3>
+	<a onclick="goToRoom('castlevaniaAoS/two.html')">2 Player</a>
+</div>
+
 <!-- CT: Jets of Time -->
 
 <div class="test" data-console="snes">
@@ -251,7 +258,7 @@
 // TO DO: clean up this js mess
 
     function reset(){
-      document.querySelectorAll('.games div').forEach(
+      document.querySelectorAll('.games > div').forEach(
           function myFunction(el) {el.classList.remove("hide");}
           )
     }
@@ -261,7 +268,7 @@
     document.getElementById('nes').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="nes"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="nes"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -270,7 +277,7 @@
     document.getElementById('snes').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="snes"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="snes"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -279,7 +286,7 @@
     document.getElementById('gb').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="gb"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="gb"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -288,7 +295,7 @@
     document.getElementById('gba').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="gba"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="gba"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -297,7 +304,7 @@
     document.getElementById('ds').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="ds"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="ds"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -306,7 +313,7 @@
     document.getElementById('rm').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="rm"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="rm"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -315,7 +322,7 @@
     document.getElementById('gc').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="gc"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="gc"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }
@@ -324,7 +331,7 @@
     document.getElementById('n64').addEventListener('click',
       function(){
         reset();
-        document.querySelectorAll('.games div:not([data-console="n64"])').forEach(
+        document.querySelectorAll('.games > div:not([data-console="n64"])').forEach(
           function myFunction(el) {el.classList.add("hide");}
           )
       }

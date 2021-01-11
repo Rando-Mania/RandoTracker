@@ -103,20 +103,12 @@ article{
 }
 
 @supports not (background-image:paint(fallbackImage)) {
-    .notavif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png');
-    }
-    .avif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif');
-    }
+    .notavif article{background: url('../shared/images/rm-generic-half.png');}
+    .avif article{background: url('../shared/images/rm-generic-half.avif');}
 }
 @supports (background-image:paint(fallbackImage)) {
-    .notavif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;
-    }
-    .avif article{
-        background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;
-    }
+    .notavif article{background: url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;}
+    .avif article{background: url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;}
 }
 
 @keyframes turn-on{
@@ -187,14 +179,14 @@ input{
   text-shadow: 2px 2px 5px #000;
   flex: 142px 0 1;
   height: 157px;
-  border: 10.5px solid #111;
-  border-image: linear-gradient( to bottom right, #333, #111) 13;
-  border-image: url('atari-cart.jpg') 13 10.5 10.5 10.5 / 13px 10.5px 10.5px 10.5px;
+  border-style: solid; 
+  border-color: #30333c;
+  border-width: 13px 10.5px 10.5px;
+  border-image: url('atari-cart.jpg') 13 10.5 10.5 / 13px 10.5px 10.5px;
   border-radius: 4px;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto;
-
 }
 
 .games h3{

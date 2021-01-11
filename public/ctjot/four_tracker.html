@@ -12,11 +12,12 @@
             --nameWidth: 200px;
         }
         .tracker-layout{
-            font-family: 'Chicago', Arial, sans-serif;
-            background-color: #000;
+            font-family: 'ChronoType', Arial, sans-serif;
             color: #fff;
             background-position: 50% 90%;
             background-size: cover;
+            background-color: #202028;
+            background-image: var(--bgFallback);
             display: grid;
             max-width: 972px;
             grid-template-columns: repeat(2, auto);
@@ -233,6 +234,7 @@
 
     <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
@@ -242,10 +244,5 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
-    <script>
-        if ('paintWorklet' in CSS) {
-            CSS.paintWorklet.addModule('images/border-worklet.js');
-        }
-    </script>
 </body>
 </html>

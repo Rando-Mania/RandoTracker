@@ -5,7 +5,6 @@
 }
 
 :root{
-    --backgroundImg: url('images/Crystal_v3_blank_bg.webp');
     --conicalFallback: repeating-conic-gradient(from 0deg at 25% -150%, rgba(255,255,255,.1) 0 10deg, rgba(255,255,255,0) 10deg 30deg, rgba(255,255,255,.2) 30deg 35deg),
     repeating-conic-gradient(from 0deg at 75% 150%, #0d1632 0 20deg, #436295 20deg 30deg, #0d1632 30deg 50deg);
     --border1: border: #abe6ff 2px solid;
@@ -49,17 +48,16 @@ html{
     color:#fff;
     position: relative;
     background-color: #0d1632;
-    background-image: url('images/Crystal_v3_blank_bg.jpg');
-    background-image: var(--backgroundImg);
+    background-image: var(--conicalFallback);
+}
+
+@supports not (background-image:conic-gradient(#fff,#000)){
+    .layout{background-image: url('images/Crystal_v3_blank_bg.jpg');}
 }
 
 @supports (background-image:conic-gradient(#fff,#000)){
-    .layout{
-        background-image: var(--conicalFallback);
-        background-image: var(--backgroundImg), var(--conicalFallback);
-    }
+    .layout{background-image: url('images/Crystal_v3_blank_bg.jpg'), var(--conicalFallback);}
 }
-
 
 .title{
     line-height: 1;
@@ -89,7 +87,7 @@ html{
     height: 50px;
     padding: 0 8px;
     box-shadow: 0 3px #abe6ff;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 9999px 9999px 0;
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(2, auto);
@@ -108,7 +106,7 @@ html{
 }
 
 [player="2"] .player-info, [player="4"] .player-info{
-    border-radius: 25px 0 0 25px;
+    border-radius: 9999px 0 0 9999px;
 }
 
 .player-grid-2 img, .dialog img{
@@ -116,6 +114,7 @@ html{
     height: 30px;
     border-radius: 50%;
     box-shadow: inset 1px 1px 1px rgba(0,0,0,.25), inset -1px -1px 1px rgba(0,0,0,.25);
+    background-color: #FF9C12;
 }
 
 img.orange{background-image: linear-gradient(#FF9C12, #D0800F);}
@@ -207,7 +206,7 @@ img.black{background-color: #000;
     font-size: 24px;
     width: 6em;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 9999px;
     background-color: #000;
     color: #fff;
     padding: .25em;
@@ -226,7 +225,7 @@ img.black{background-color: #000;
 tr-timer{
     width: 350px;
     height: 53px;
-    border-radius: 25px;
+    border-radius: 9999px;
     box-shadow: 0 2px #000;
     background-color: #abe6ff;
     background-image: linear-gradient(#c4edff,#92deff);
@@ -252,7 +251,7 @@ tr-timer span {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 8px;
-    border-radius: 25px;
+    border-radius: 9999px;
     min-height: 40px;
     max-height: 80px;
     width: 350px;
@@ -348,9 +347,6 @@ tr-timer span {
 .display-none{ display: none; }
 
 .show{ display: block; }
-
-/* .show-flex{ display: flex; }
-.show-grid{ display: grid; } */
 
 #menu_layout div{
     display: block;

@@ -13,7 +13,7 @@
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
-    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);
+    background-image: linear-gradient(to right, #394131 50%, #21384a 0);
     background-size: 100% 100%;
     background-color: #21384a;
     color: #fff;
@@ -21,6 +21,11 @@
     z-index: 50;
     display: none;
 }
+
+.notwebp .loadscreen-contain, .notwebp .four-loading{
+    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
+.webp .loadscreen-contain, .webp .four-loading{
+    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .four-loading{
     display: block;

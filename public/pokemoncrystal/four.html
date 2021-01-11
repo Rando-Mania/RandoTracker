@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="images/Crystal_v3_blank_bg.webp" as="image" type="image/webp">
+    <link rel="preload" href="images/Crystal_v3_blank_bg.jpg" as="image" type="image/jpg">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -56,7 +56,10 @@
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
             <tr-toggle property="toggle-winner" class="abs player-winner">
-                <img src="images/Winner.png" alt="Winner">
+                <picture>
+                    <source srcset="images/Winner.avif" type="image/avif">
+                    <img src="images/Winner.png" alt="Winner">
+                  </picture>
             </tr-toggle>
         </template>
         <tr-player player="1">
@@ -105,6 +108,7 @@
 
 <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

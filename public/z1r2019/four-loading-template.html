@@ -20,23 +20,18 @@
 }
 
 .loadscreen-contain.show{
-    animation: zoomIn .5s;
+    -webkit-mask: linear-gradient(red, red) no-repeat center / 100%;
+    mask: linear-gradient(red, red) no-repeat center / 100%;
+    animation: stepped-curtain 1s steps(16);
     display: block;
 }
 
-@keyframes zoomIn {
+@keyframes stepped-curtain { 
     from {
-      opacity: 0;
-      transform: scale3d(0.3, 0.3, 0.3);
-      transform-origin: 50% 0%;
-    }
-    50% {
-      opacity: 1;
-    }
-    to{
-        transform-origin: 50% 50%;
-    }
-  }
+        -webkit-mask-size: 0;
+        mask-size: 0;
+    } 
+}
 
   .loadscreen{
     height: 100%;

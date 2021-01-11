@@ -1,0 +1,87 @@
+<style>
+
+#bail-project-logo{
+    background-color: #fff;
+    font-weight: bold;
+    width: 100%;
+    padding: 6px;
+}
+
+.donation-tracker{
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.donation-tracker .card-body{
+  padding: 12px 8px;
+}
+.donation-tracker .card-body > div ~ div{
+  margin-top: 12px;
+}
+
+.progress-contain{
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  /* background-image: repeating-linear-gradient(to right, transparent 0 25%, rgba(255,255,255,.2) 25% calc(25% + 2px));
+  background-position: bottom;
+  background-size: 100% 50%;
+  background-repeat: no-repeat; */
+  display: grid;
+}
+
+.progress-contain > div{
+  grid-area: 1 / 1;
+}
+
+.progress-bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s; 
+}
+.progress-bar .card-back{
+ height: 100%;
+}
+
+
+.donation-counter{
+  transform: scale(1);
+  text-align-last: left;
+  padding-left: .5em;
+  text-shadow: 1px 1px 0 #000, 0 0 2px #000;
+}
+
+</style>
+
+<div class="card donation-tracker">
+    <tr-template href="../rm/templates/cards/border.html"></tr-template>
+    <div class="card-body">
+        <div>
+            <img id="bail-project-logo" width="212" src="images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>
+        </div>
+        <div class="progress-contain">
+            <div id="progress-bar" class="progress-bar">
+              <div class="rainbow-fill card-back">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="donation-counter">
+              <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
+              <span>/</span>
+              <span class="dollar-sign">$</span><span id="amount-goal">1000</span>
+          </div>
+        </div>
+    </div>
+</div>

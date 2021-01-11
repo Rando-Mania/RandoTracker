@@ -367,11 +367,6 @@ tr-timer span {
     background: url('images/staff-back-all.svg') no-repeat 0 0 / 394px 300%;
 }
 
-.production-team-swap img{
-    background-size: 100% 100%;
-    z-index: 1;
-}
-
 .staff-panel-1, .staff-panel-2{
     grid-area: 1/1;
     display: grid;
@@ -399,11 +394,16 @@ tr-timer span {
     background: url('images/mic-4.png');
     width: 20px;
     height: 32px;
+    background-size: 100% 100%;
 }
+
 .restreamers-img{
     width: 21px;
-    height: 19px;
-    background-image: url('../shared/images/icons/display-solid.svg');}
+    background-position: 0 0;
+    background-image: url("../shared/images/icons/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 500% 400%;
+}
     
 .trackers-img{
     width: 10px;

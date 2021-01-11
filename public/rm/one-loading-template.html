@@ -1,9 +1,5 @@
 <style>
     .loadscreen{
-    background: 
-      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-      url('images/rm-generic-take2-edges-roberts.png') 0 0 / 50% 50% repeat-x,
-      url('images/rm-generic-take2-edges-roberts.png') 320px 360px / 50% 50% repeat-x;
     z-index: 10;
     position: absolute;
     top: 0;
@@ -18,12 +14,9 @@
     height: 720px;
   }
 
-    .loadscreen-contain, .one-loading{
+  .loadscreen-contain, .one-loading{
     width: 1280px;
     height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
-    background-color: #000;
     color: #fff;
     text-align: center;
     animation: zoomIn .5s linear;
@@ -149,19 +142,19 @@ footer{
   </style>
   <div class="loadscreen">
     <main>
-        <header>
-            <img src="images/dq3-dice.png" alt="RM" />
-            <h1>Super Week</h1>
-            <h2>June 26th - July 5th, 2020</h2>
-            <img src="images/dq3-dice.png" alt="RM" />
-        </header>
-        <h3>!superweek</h3>
-    <div class="collage">
-        <img src="images/gannon_dungeon.png" alt=""/>
-        <img src="images/axe-knight.png" alt=""/>
-        <img src="images/mario-desert.png" alt="">
-    </div>
-    </main>
+      <header>
+          <img src="images/RM_marathon_logo.png" alt="RM" width="54" height="54" />
+          <h1>Tournaments Of Hope</h1>
+          <h2>Jan/Feb 2021</h2>
+          <img src="images/RM_marathon_logo.png" alt="RM" width="54" height="54" />
+      </header>
+      <div class="collage">
+          <img height="171" src="images/gannon_dungeon.png" alt=""/>
+          <img height="150" src="images/axe-knight.png" alt=""/>
+          <img height="150" src="images/mario-desert.png" alt="">
+      </div>
+      <h3>!ToH</h3>
+  </main>
       <aside>
         <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
             <tr-template href="templates/cards/game-info.html"></tr-template>

@@ -11,7 +11,8 @@
     <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">  
     <link rel="stylesheet" type="text/css" href="three_4by3.css">
-    <link rel="preload" href="images/rm-generic-take2-edges-roberts.png" as="image" type="image/png">
+    <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
+    <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
     <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
@@ -61,7 +62,7 @@
             <img src="../shared/images/icons/blank.svg" alt="">
         </tr-toggle>
     </template>
-	<div class="layout">
+	<div class="layout marathon-background background-repeat-x">
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
             <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='1'] #player_final">
@@ -86,8 +87,9 @@
 <!-- timer/staff -->
         <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
         <div class="abs cards"> 
-            <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
-
+            <tr-hide-if-empty id="up_next_contain" target="#up_next, #game_name, #game_category, #system, #game_length" toggle-class="visually-hidden">
+                <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
+            </tr-hide-if-empty>
 
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
@@ -107,7 +109,7 @@
 
 
 <!-- loadscreen -->
-<div class="loadscreen-contain abs" style="top:0; left: 0;">
+<div class="loadscreen-contain marathon-background background-repeat-x abs" style="top:0; left: 0;">
     <tr-template href="three-loading-template.html"></tr-template>
 </div>
 
@@ -118,6 +120,7 @@
 
 <tr-template href="../shared/three-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>

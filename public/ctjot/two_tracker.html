@@ -12,7 +12,7 @@
             --nameWidth: 200px;
         }
         .tracker-layout{
-            font-family: 'Chicago', Arial, sans-serif;
+            font-family: 'ChronoType', Arial, sans-serif;
             background-color: #000;
             color: #fff;
             background-position: bottom;
@@ -158,6 +158,7 @@
 
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
@@ -167,10 +168,5 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/two_game.js"></script>
-    <script>
-        if ('paintWorklet' in CSS) {
-            CSS.paintWorklet.addModule('images/border-worklet.js');
-        }
-    </script>
 </body>
 </html>

@@ -346,9 +346,13 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
   }
 
 #menu_video_background input[type="radio"][id="transparent"]{ 
-    background: url('../shared/images/checkerboard.png');
-    background-color: transparent;
-    background: conic-gradient(#c0c0c0 90deg, #808080 90deg 180deg, #c0c0c0 180deg 270deg, #808080 270deg) top left / 8px 8px repeat;
+    background-image: url('../shared/images/checkerboard.png');
+    background-color: #808080;
+    background: 
+        linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0) 0 0 / 8px 8px,
+        linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0) 4px 4px / 8px 8px
+        #808080;
+    background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 90deg 180deg) 0 0 / 8px 8px;
     margin-right: .25em;
 }
 
