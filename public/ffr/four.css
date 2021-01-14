@@ -22,7 +22,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('images/4p/base-background.png');
 
     --border: 6px;
 
@@ -62,7 +61,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/4p/base-background.png) #000;
+    background-color: #000;
 }
 
 .layout.clip-background{
@@ -79,33 +78,40 @@
 }
 
 .ffr-default{
-    background: url(images/4p/base-background.png) #000;
-}
+    background-color: #000;}
+        .notwebp.notavif .ffr-default{background-image: url(images/4p/base-background.png);}
+        .webp.notavif .ffr-default{background-image: url(images/4p/base-background.webp);}
+        .avif .ffr-default{background-image: url(images/4p/base-background.avif);}
 
 .ffr-irongol{
-    background: url(images/4p/base-irongol.png) #000076;
     --backgroundColor2: #500;
-}
-
-.ffr-hardcore{
-    background: url(images/4p/base-hardcore.png) #000076;
-    --backgroundColor2: #305;
-}
+    background-color: #000076;}
+        .notwebp .ffr-irongol{background-image: url(images/4p/base-irongol.png);}
+        .webp .ffr-irongol{background-image: url(images/4p/base-irongol.webp);}
 
 .ffr-tourney{
-    background: url(images/4p/base-tourney.png) #291901;
     --backgroundColor2: #050;
-}
+    background-color: #291901;}
+        .notwebp .ffr-tourney{background-image: url(images/4p/base-tourney.png);}
+        .webp.notavif .ffr-tourney{background-image: url(images/4p/base-tourney.webp);}
+        .avif .ffr-tourney{background-image: url(images/4p/base-tourney.avif);}
 
 .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
-    background: url(images/4p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
-}
+    background-color: #b1cbda;
+    --league-fallback: linear-gradient(#b1cbda, #1f2a44);
+    background-image: var(--league-fallback);}
+        .notwebp .ffr-league{background-image: url(images/4p/base-league.png), var(--league-fallback);}
+        .webp.notavif .ffr-league{background-image: url(images/4p/base-league.webp), var(--league-fallback);}
+        .avif .ffr-league{background-image: url(images/4p/base-league.avif), var(--league-fallback);}
 
 .ffr-rush{
-    background: url(images/4p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
-}
+    background-color:#0094ff; 
+    --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
+    background-image: var(--rush-fallback);}
+        .notwebp .ffr-rush{background-image: url(images/4p/base-rush.png), var(--rush-fallback);}
+        .webp .ffr-rush{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
 
 .layout.ffr-rush .player-grid {display: none;}
 .layout.ffr-rush{
@@ -115,13 +121,15 @@
     --rankY: 64px;
 }
 
-.ffr-dark{
-    background: url(images/4p/base-dark.png) #000;
-}
+.ffr-dark{background-color: #000;}
+    .notwebp .ffr-dark{background-image: url(images/4p/base-dark.png);}
+    .webp .ffr-dark{background-image: url(images/4p/base-dark.webp);}
 
 .ffr-duck{
-    background: url(images/4p/base-duck.png) #000;
-}
+    --duck1-fallback: linear-gradient(#00238c, #fff 400px, #11d1a4, #585858 550px);
+    background-image: var(--duck-fallback);}
+        .notwebp .ffr-duck1{background-image: url(images/4p/base-duck.png), var(--duck-fallback);}
+        .webp .ffr-duck1{background-image: url(images/4p/base-duck.webp), var(--duck-fallback);}
 
 .player-video{
     width: var(--vidWidth);
