@@ -131,7 +131,9 @@
 }
 
 .ffr-dark{
-    background: url(images/3p/base-dark.png) #000;
+    background-color: #000;
+    --darkfallback: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4,11h1v1h-1zM8,9h1v1h-1zM13,15h1v1h-1zM15,8h1v1h-1z' fill='%2300f'/%3E%3C/svg%3E");
+    background-image: url(images/3p/base-dark.png), var(--darkfallback);
 }
 
 .player-video{
