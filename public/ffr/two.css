@@ -22,6 +22,7 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
+    --backgroundImg: url('images/2p/base-background.png');
 
     --border: 6px;
 
@@ -72,7 +73,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #000;
+    background: var(--backgroundImg) #000;
 }
 
 .layout.clip-background{
@@ -104,40 +105,47 @@
 }
 
 .ffr-default{
-    background-color: #000;}
-        .notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
-        .webp .ffr-default{background-image: url(images/2p/base-background.webp);}
+    background-color: #000;
+    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
+    background-image: var(--default-fallback);
+}
+.notwebp .ffr-default{background-image: url(images/2p/base-background.png), var(--default-fallback);}
+.webp .ffr-default{background-image: url(images/2p/base-background.webp), var(--default-fallback);}
 
 .ffr-irongol{
     --backgroundColor2: #500;
-    background-color: #295280;}
-        .notwebp .ffr-irongol{background-image: url(images/2p/base-irongol.png);}
-        .webp .ffr-irongol{background-image: url(images/2p/base-irongol.webp);}
+    background-color: #295280;
+}
+.notwebp .ffr-irongol{background-image: url(images/2p/base-irongol.png);}
+.webp .ffr-irongol{background-image: url(images/2p/base-irongol.webp);}
 
 .ffr-tourney{
     --backgroundColor2: #050;
-    background-color: #291901;}
-        .notwebp .ffr-tourney{background-image: url(images/2p/base-tourney.png);}
-        .webp.notavif .ffr-tourney{background-image: url(images/2p/base-tourney.webp);}
-        .avif .ffr-tourney{background-image: url(images/2p/base-tourney.avif);}
+    background-color: #291901;
+}
+.notwebp .ffr-tourney{background-image: url(images/2p/base-tourney.png);}
+.webp.notavif .ffr-tourney{background-image: url(images/2p/base-tourney.webp);}
+.avif .ffr-tourney{background-image: url(images/2p/base-tourney.avif);}
 
 .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
     background-color: #b1cbda;
     --league-fallback: linear-gradient(#b1cbda, #1f2a44);
-    background-image: var(--league-fallback);}
-        .notwebp .ffr-league{background-image: url(images/2p/base-league.png), var(--league-fallback);}
-        .webp.notavif .ffr-league{background-image: url(images/2p/base-league.webp), var(--league-fallback);}
-        .avif .ffr-league{background-image: url(images/2p/base-league.avif), var(--league-fallback);}
+    background-image: var(--league-fallback);
+}
+.notwebp .ffr-league{background-image: url(images/2p/base-league.png), var(--league-fallback);}
+.webp.notavif .ffr-league{background-image: url(images/2p/base-league.webp), var(--league-fallback);}
+.avif .ffr-league{background-image: url(images/2p/base-league.avif), var(--league-fallback);}
 
 .ffr-rush{
     background-color:#0094ff; 
     --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
-    background-image: var(--rush-fallback);}
-        .notwebp .ffr-rush{background-image: url(images/2p/base-rush.png), var(--rush-fallback);}
-        .webp .ffr-rush{background-image: url(images/2p/base-rush.webp), var(--rush-fallback);}
-        
+    background-image: var(--rush-fallback);
+}
+.notwebp .ffr-rush{background-image: url(images/2p/base-rush.png), var(--rush-fallback);}
+.webp .ffr-rush{background-image: url(images/2p/base-rush.webp), var(--rush-fallback);}
+
 .layout.ffr-rush .player-grid {display: none;}
 .layout.ffr-rush tr-timer {left: 20px; top: 620px;}
 .layout.ffr-rush{
@@ -146,15 +154,14 @@
 }
 
 .ffr-dark{background-color: #000;}
-    .notwebp .ffr-dark{background-image: url(images/2p/base-dark.png);}
-    .webp.notavif .ffr-dark{background-image: url(images/2p/base-dark.webp);}
-    .avif .ffr-dark{background-image: url(images/2p/base-dark.avif);}
+.notwebp .ffr-dark{background-image: url(images/2p/base-dark.png);}
+.webp.notavif .ffr-dark{background-image: url(images/2p/base-dark.webp);}
+.avif .ffr-dark{background-image: url(images/2p/base-dark.avif);}
 
 .ffr-duckling{background-color: #428fa6;}
-    .notwebp .ffr-duckling{background-image: url(images/2p/base-duckling.png);}
-    .webp.notavif .ffr-duckling{background-image: url(images/2p/base-duckling.webp);}
-    .avif .ffr-duckling{background-image: url(images/2p/base-duckling.avif);}
-
+.notwebp .ffr-duckling{background-image: url(images/2p/base-duckling.png);}
+.webp.notavif .ffr-duckling{background-image: url(images/2p/base-duckling.webp);}
+.avif .ffr-duckling{background-image: url(images/2p/base-duckling.avif);}
 
 /* cam layouts */
 
@@ -163,7 +170,6 @@
 }
 .layout.show-cams.ffr-irongol{
     background-image: url(images/2p-cam/base-irongol.png);
-    background-image: url(images/2p-cam/base-irongol.webp);
 }
 .layout.show-cams.ffr-tourney{
     background-image: url(images/2p-cam/base-tourney.png);
@@ -181,7 +187,6 @@
 
 .layout.show-cams.ffr-duckling{
     background-image: url(images/2p-cam/base-duckling.png);
-    background-image: url(images/2p-cam/base-duckling.webp);
 }
 .layout.show-cams.ffr-dark{
     background-image: url(images/2p-cam/base-dark.png);

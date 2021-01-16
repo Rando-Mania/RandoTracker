@@ -74,44 +74,68 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
         linear-gradient(red,red) bottom / 100% var(--clipY1);
-    -webkit-mask-repeat: no-repeat
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
 .ffr-default{
-    background-color: #000;}
-        .notwebp.notavif .ffr-default{background-image: url(images/4p/base-background.png);}
-        .webp.notavif .ffr-default{background-image: url(images/4p/base-background.webp);}
-        .avif .ffr-default{background-image: url(images/4p/base-background.avif);}
+    background-color: #000;
+    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
+    background-image: var(--default-fallback);
+}
+.notwebp.notavif .ffr-default{background-image: url(images/4p/base-background.png), var(--default-fallback);}
+.webp .ffr-default{background-image: url(images/4p/base-background.webp), var(--default-fallback);}
+/* .avif .ffr-default{background-image: url(images/4p/base-background.avif);} */
 
 .ffr-irongol{
     --backgroundColor2: #500;
-    background-color: #000076;}
-        .notwebp .ffr-irongol{background-image: url(images/4p/base-irongol.png);}
-        .webp .ffr-irongol{background-image: url(images/4p/base-irongol.webp);}
+    background-color: #000076;
+}
+.notwebp .ffr-irongol{background-image: url(images/4p/base-irongol.png);}
+.webp .ffr-irongol{background-image: url(images/4p/base-irongol.webp);}
+
+.ffr-hardcore{
+    --backgroundColor2: #500;
+    background-color: #000076;
+}
+.notwebp .ffr-hardcore{background-image: url(images/4p/base-hardcore.png);}
+.webp .ffr-hardcore{background-image: url(images/4p/base-hardcore.webp);}
 
 .ffr-tourney{
     --backgroundColor2: #050;
-    background-color: #291901;}
-        .notwebp .ffr-tourney{background-image: url(images/4p/base-tourney.png);}
-        .webp.notavif .ffr-tourney{background-image: url(images/4p/base-tourney.webp);}
-        .avif .ffr-tourney{background-image: url(images/4p/base-tourney.avif);}
+    background-color: #291901;
+}
+.notwebp .ffr-tourney{background-image: url(images/4p/base-tourney.png);}
+.webp.notavif .ffr-tourney{background-image: url(images/4p/base-tourney.webp);}
+.avif .ffr-tourney{background-image: url(images/4p/base-tourney.avif);}
 
 .ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
     background-color: #b1cbda;
     --league-fallback: linear-gradient(#b1cbda, #1f2a44);
-    background-image: var(--league-fallback);}
-        .notwebp .ffr-league{background-image: url(images/4p/base-league.png), var(--league-fallback);}
-        .webp.notavif .ffr-league{background-image: url(images/4p/base-league.webp), var(--league-fallback);}
-        .avif .ffr-league{background-image: url(images/4p/base-league.avif), var(--league-fallback);}
+    background-image: var(--league-fallback);
+}
+.notwebp .ffr-league{background-image: url(images/4p/base-league.png), var(--league-fallback);}
+.webp.notavif .ffr-league{background-image: url(images/4p/base-league.webp), var(--league-fallback);}
+.avif .ffr-league{background-image: url(images/4p/base-league.avif), var(--league-fallback);}
 
 .ffr-rush{
     background-color:#0094ff; 
     --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
-    background-image: var(--rush-fallback);}
-        .notwebp .ffr-rush{background-image: url(images/4p/base-rush.png), var(--rush-fallback);}
-        .webp .ffr-rush{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
+    background-image: var(--rush-fallback);
+}
+.notwebp .ffr-rush{background-image: url(images/4p/base-rush.png), var(--rush-fallback);}
+.webp .ffr-rush{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
 
 .layout.ffr-rush .player-grid {display: none;}
 .layout.ffr-rush{
@@ -122,30 +146,13 @@
 }
 
 .ffr-dark{background-color: #000;}
-    .notwebp .ffr-dark{background-image: url(images/4p/base-dark.png);}
-    .webp .ffr-dark{background-image: url(images/4p/base-dark.webp);}
+.notwebp .ffr-dark{background-image: url(images/4p/base-dark.png);}
+.webp .ffr-dark{background-image: url(images/4p/base-dark.webp);}
 
-.ffr-duck1{
-    --duck1-fallback: linear-gradient(#00238c, #fff 400px, #11d1a4, #585858 550px);
-    background-image: var(--duck1-fallback);}
-        .notwebp .ffr-duck1{background-image: url(images/4p/base-duck1.png), var(--duck1-fallback);}
-        .webp .ffr-duck1{background-image: url(images/4p/base-duck1.webp), var(--duck1-fallback);}
-
-.ffr-duck2{
-    --duck2-fallback: linear-gradient(#a91d98, #fe773c, #000 50%, #00139b 50%, #6028e4);
-    background-image: var(--duck2-fallback);}
-        .notwebp .ffr-duck2{background-image: url(images/4p/base-duck2.png), var(--duck2-fallback);}
-        .webp .ffr-duck2{background-image: url(images/4p/base-duck2.webp), var(--duck2-fallback);}
-
-.ffr-duck3{
-    --duck3-fallback: linear-gradient(#fe9308, #d22c00, #7a0700, #a1a1a1);
-    background-image: var(--duck3-fallback);}
-        .notwebp .ffr-duck3{background-image: url(images/4p/base-duck3.png), var(--duck3-fallback);}
-        .webp .ffr-duck3{background-image: url(images/4p/base-duck3.webp), var(--duck3-fallback);}
-
-.ffr-duck4{background-color: #000;}
-    .notwebp .ffr-duck4{background-image: url(images/4p/base-duck4.png);}
-    .webp .ffr-duck4{background-image: url(images/4p/base-duck4.webp);}
+.ffr-duck{background-color: #509ede;}
+.notwebp.notavif .ffr-duck{background-image: url(images/4p/base-duck.png);}
+.webp.notavif .ffr-duck{background-image: url(images/4p/base-duck.webp);}
+.avif .ffr-duck{background-image: url(images/4p/base-duck.avif);}
 
 .player-video{
     width: var(--vidWidth);
