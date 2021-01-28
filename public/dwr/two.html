@@ -34,6 +34,15 @@
 
         [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+
+        .card-body{
+            flex-direction: column;
+            background-position: bottom center;
+        }
+        .donation-counter{
+            padding-top: 4px;
+            text-align: center !important;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +95,8 @@
             <span style="font: normal 14px arial;">tracker by</span> <br> <span style="font-size: 18px;">RandoMania</span>
         </div>
         <tr-template href="league-flags.html"></tr-template>
+        <tr-template class="abs" 
+        style="z-index:1; bottom: 0; left: 50%; transform: translateX(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
     </div>
 
     <!-- loadscreen -->
@@ -162,5 +173,27 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="script/dwr.js"></script>
+    <script>
+        async function fetchDonationData(){
+            const amountEl = document.getElementById("amount-donated");
+            const progressEl = document.getElementById("progress-bar");
+            let fakeDonation = 0;
+
+            let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
+            let data = await response.json();
+            let donationTotal = data.data['total-donated'];
+            let adjustedTotal = donationTotal + fakeDonation;
+            
+            amountEl.textContent = adjustedTotal / 100;
+            let progressValue = adjustedTotal / 100000;
+            progressEl.style.transform = `scaleX(${progressValue})`;
+        }
+
+        setTimeout(
+            function(){
+                fetchDonationData();
+                setInterval(fetchDonationData, 60000)
+            }, 8000);
+    </script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="icons.css">
     <!-- <link rel="stylesheet" type="text/css" href="awesomplete.css">
     <link rel="stylesheet" type="text/css" href="awesomplete.base.css"> -->
-
+    <link rel="preload" href="images/alefgard_crop_test.avif" as="image" type="image/avif">
     <link rel="preload" href="images/item/item-sprite.png" as="image" type="image/png">
     <link rel="preload" href="images/equip-sprite.png" as="image" type="image/png">
     <style>
@@ -93,6 +93,9 @@
         <tr-hide-if-empty class="staff abs" style="left: -2px; top: 50%; transform: translateY(-50%);" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
+        <tr-template class="abs" 
+        style="z-index: 10; width: 435px; top: 50%; right: 0; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
+
 
 <!-- coordinates -->
     <tr-hide-if-empty toggle-class="display-none" target="#coordinates" class="coordinates-contain abs" style="transform: translate(-50%,-50%); top: 50%; left: 83%;">
@@ -113,12 +116,6 @@
 <div class="loadscreen-contain map-background abs" style="top:0; left: 0;">
     <tr-template href="four-loading-template.html"></tr-template>
 </div>
-
-<!-- <div class="bracket-contain abs map-background" style="top: 0; left: 0;">
-    <div class="bracket" style="width: 100%; height: 100%;">
-        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
-</div> -->
 
 <!-- monsters -->
 <div class="monster-contain abs" style="left: 0; top:0;">
@@ -189,5 +186,27 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="script/dwr.js"></script>
+    <script>
+        async function fetchDonationData(){
+            const amountEl = document.getElementById("amount-donated");
+            const progressEl = document.getElementById("progress-bar");
+            let fakeDonation = 0;
+
+            let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
+            let data = await response.json();
+            let donationTotal = data.data['total-donated'];
+            let adjustedTotal = donationTotal + fakeDonation;
+            
+            amountEl.textContent = adjustedTotal / 100;
+            let progressValue = adjustedTotal / 100000;
+            progressEl.style.transform = `scaleX(${progressValue})`;
+        }
+
+        setTimeout(
+            function(){
+                fetchDonationData();
+                setInterval(fetchDonationData, 60000)
+            }, 8000);
+    </script>
 </body>
 </html>
