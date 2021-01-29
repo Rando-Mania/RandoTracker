@@ -102,6 +102,8 @@
                 <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
             </tr-hide-if-empty>
 
+            <tr-template id="donation-template" href="templates/cards/donation-tracker.html"></tr-template>
+
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
             </tr-hide-if-empty>
@@ -142,5 +144,27 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
+    <script>
+        async function fetchDonationData(){
+            const amountEl = document.getElementById("amount-donated");
+            const progressEl = document.getElementById("progress-bar");
+            let fakeDonation = 0;
+
+            let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
+            let data = await response.json();
+            let donationTotal = data.data['total-donated'];
+            let adjustedTotal = donationTotal + fakeDonation;
+            
+            amountEl.textContent = adjustedTotal / 100;
+            let progressValue = adjustedTotal / 100000;
+            progressEl.style.transform = `scaleX(${progressValue})`;
+        }
+
+        setTimeout(
+            function(){
+                fetchDonationData();
+                setInterval(fetchDonationData, 60000)
+            }, 8000);
+    </script>
 </body>
 </html>
