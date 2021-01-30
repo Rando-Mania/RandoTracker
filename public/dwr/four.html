@@ -93,8 +93,8 @@
         <tr-hide-if-empty class="staff abs" style="left: -2px; top: 50%; transform: translateY(-50%);" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
-        <tr-template class="abs" 
-        style="z-index: 10; width: 435px; top: 50%; right: 0; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
+        <!-- <tr-template class="abs" 
+        style="z-index: 10; width: 435px; top: 50%; right: 0; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template> -->
 
 
 <!-- coordinates -->
@@ -186,27 +186,6 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="script/dwr.js"></script>
-    <script>
-        async function fetchDonationData(){
-            const amountEl = document.getElementById("amount-donated");
-            const progressEl = document.getElementById("progress-bar");
-            let fakeDonation = 0;
-
-            let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
-            let data = await response.json();
-            let donationTotal = data.data['total-donated'];
-            let adjustedTotal = donationTotal + fakeDonation;
-            
-            amountEl.textContent = adjustedTotal / 100;
-            let progressValue = adjustedTotal / 100000;
-            progressEl.style.transform = `scaleX(${progressValue})`;
-        }
-
-        setTimeout(
-            function(){
-                fetchDonationData();
-                setInterval(fetchDonationData, 60000)
-            }, 8000);
-    </script>
+    <!-- <script type="text/javascript" src="../rm/scripts/donation.js"></script> -->
 </body>
 </html>

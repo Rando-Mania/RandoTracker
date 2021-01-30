@@ -45,6 +45,9 @@
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
         [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
 
+        #vs_1 {left: var(--vsX); top: var(--vsY);}
+        #vs_2 {left: var(--vsX); bottom: var(--vsY);}
+
         .cards {
             transform: translate(-50%, -50%);
             left: 50%; 
@@ -114,11 +117,10 @@
                 <tr-template href="../shared/production-team.html"></tr-template>
             </tr-hide-if-empty>
         </div>
+        <!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2">VS</tr-toggle>
     </div>
-
-<!-- vs -->
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
 
 <!-- loadscreen -->
@@ -144,27 +146,6 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
-    <script>
-        async function fetchDonationData(){
-            const amountEl = document.getElementById("amount-donated");
-            const progressEl = document.getElementById("progress-bar");
-            let fakeDonation = 0;
-
-            let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
-            let data = await response.json();
-            let donationTotal = data.data['total-donated'];
-            let adjustedTotal = donationTotal + fakeDonation;
-            
-            amountEl.textContent = adjustedTotal / 100;
-            let progressValue = adjustedTotal / 100000;
-            progressEl.style.transform = `scaleX(${progressValue})`;
-        }
-
-        setTimeout(
-            function(){
-                fetchDonationData();
-                setInterval(fetchDonationData, 60000)
-            }, 8000);
-    </script>
+    <script type="text/javascript" src="../rm/scripts/donation.js"></script>
 </body>
 </html>

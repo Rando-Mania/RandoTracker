@@ -16,7 +16,7 @@
     --speakerX: 603px; --speakerX2: 459px; --speakerY: 17px; --speakerY2: 40px;
     --winX: 476px; --winY: 55px;
     --finalX: 489px; --finalY: 64px;
-    --vsX: 50%; --vsY: 30px;
+    --vsX: 50%; --vsY: 61px;
 }
 
 .border-1{border: var(--border1);}
@@ -254,7 +254,10 @@ tr-text#player_final{
 }
 
 .vs{
-    font-size: 24px;
+    color: #fff;
+    font-size: 16px;
+    transform: translateX(-50%);
+    left: 50%;
 }
 
 .cards{
