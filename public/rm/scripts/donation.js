@@ -9,7 +9,7 @@ async function fetchDonationData(){
     let adjustedTotal = donationTotal + fakeDonation;
     
     amountEl.textContent = adjustedTotal / 100;
-    let progressValue = adjustedTotal / 100000;
+    let progressValue = adjustedTotal / 200_000;
     progressEl.style.transform = `scaleX(${progressValue})`;
 }
 
