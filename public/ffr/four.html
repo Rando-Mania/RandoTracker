@@ -140,6 +140,13 @@
         <tr-hide-if-empty class="staff abs border-1 background-2" style="top: 215px; left: 500px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
+        <style>
+            #bail-project-logo{
+                width: 160px;
+            }
+        </style>
+        <tr-template class="abs border-1" 
+        style="z-index: 10; width: 435px; top: 50%; right: 11px; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
     </div>
 
 <!-- loadscreen -->
@@ -169,5 +176,6 @@
             CSS.paintWorklet.addModule('images/border-worklet.js');
         }
     </script>
+    <script type="text/javascript" src="../rm/scripts/donation.js"></script>
 </body>
 </html>

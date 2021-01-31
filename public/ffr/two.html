@@ -40,6 +40,15 @@
     
         [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+
+        .card-body{
+            flex-direction: column;
+            background-position: bottom center;
+        }
+        .donation-counter{
+            padding-top: 4px;
+            text-align: center !important;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +77,9 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
+
+        <tr-template class="abs" 
+        style="z-index:1; bottom: 4px; right: 19px;" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
 
 <!-- timer/staff -->
         <tr-timer class="abs background-2 border-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
@@ -104,5 +116,6 @@
             CSS.paintWorklet.addModule('images/border-worklet.js');
         }
     </script>
+    <script type="text/javascript" src="../rm/scripts/donation.js"></script>
 </body>
 </html>
