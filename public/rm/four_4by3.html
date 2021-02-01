@@ -45,6 +45,9 @@
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
         [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
 
+        #vs_1 {left: var(--vsX); top: var(--vsY);}
+        #vs_2 {left: var(--vsX); bottom: var(--vsY);}
+
         .cards {
             transform: translate(-50%, -50%);
             left: 50%; 
@@ -102,6 +105,8 @@
                 <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
             </tr-hide-if-empty>
 
+            <tr-template id="donation-template" href="templates/cards/donation-tracker.html"></tr-template>
+
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
             </tr-hide-if-empty>
@@ -112,11 +117,10 @@
                 <tr-template href="../shared/production-team.html"></tr-template>
             </tr-hide-if-empty>
         </div>
+        <!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2">VS</tr-toggle>
     </div>
-
-<!-- vs -->
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
 
 
 <!-- loadscreen -->
@@ -142,5 +146,6 @@
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
+    <script type="text/javascript" src="../rm/scripts/donation.js"></script>
 </body>
 </html>

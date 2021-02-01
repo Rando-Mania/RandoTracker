@@ -1,0 +1,82 @@
+<style>
+
+#bail-project-logo{
+    background-color: #fff;
+    font-weight: bold;
+    padding: 6px;
+}
+
+.card-body{
+  background-color: #000;
+  display: flex;
+  background-position: center right;
+  overflow: hidden;
+}
+
+.donation-info-contain{
+  display: grid;
+  align-items: center;
+  width: 100%;
+  background-color: #000;
+  min-height: 1.5em;
+}
+
+.donation-info-contain > div{
+  grid-area: 1 / 1;
+}
+
+.donation-tracker{
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+/* .donation-tracker .card-body > div ~ div{
+  margin-top: 12px;
+} */
+
+.progress-contain{
+  background-color: #000;
+  overflow: hidden;
+  display: grid;
+}
+
+.progress-contain > div{
+  grid-area: 1 / 1;
+}
+
+.progress-bar{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform .5s;
+  background-color: green;
+}
+
+.donation-counter{
+  transform: scale(1);
+  text-align: left;
+  padding-left: .3em;
+  text-shadow: 1px 1px 0 #000, 0 0 2px #000;
+  min-height: 1.2em;
+}
+
+</style>
+
+<div class="card donation-tracker">
+    <div class="card-body map-background">
+        <img id="bail-project-logo" width="212" src="/rm/images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>        
+        <div class="donation-info-contain">
+          <div id="progress-bar" class="progress-bar"></div>
+          <div class="donation-counter">
+            <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
+            <span>/</span>
+            <span class="dollar-sign">$</span><span id="amount-goal">2000</span>
+          </div>
+        </div>
+    </div>
+</div>
