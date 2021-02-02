@@ -14,7 +14,7 @@ async function fetchDonationData(){
     //     mode: 'cors'
     //   };
 
-    let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations');
+    let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations', {cache: "no-store"});
     let data = await response.json();
     let donationTotal = data.data['total-donated'];
     let adjustedTotal = donationTotal + fakeDonation;
