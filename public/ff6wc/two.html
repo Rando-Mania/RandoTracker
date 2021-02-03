@@ -31,14 +31,6 @@
     
         [player="1"] .player-best-of {right: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {left: var(--bestX); top: var(--bestY);}
-
-        .donation-tracker .card-body{
-            flex-direction: column;
-        }
-        .donation-counter{
-            padding-top: 3px;
-            padding-left: 7px !important;
-        }
     </style>
 </head>
 <body>
@@ -131,6 +123,15 @@
         <tr-hide-if-empty class="staff abs text-shadow" style="top: 560px; transform: translateX(-50% ); left: 50%;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
+        <style>
+            .donation-tracker .card-body{
+                flex-direction: column;
+            }
+            .donation-counter{
+                padding-top: 3px;
+                padding-left: 7px !important;
+            }
+        </style>
         <tr-template class="abs" 
         style="z-index:1; bottom: 0; left: 50%; transform: translateX(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template>
 
