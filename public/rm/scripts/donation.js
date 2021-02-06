@@ -1,6 +1,6 @@
 async function fetchDonationData(){
+    const donationCounterEl = document.getElementById("donation-counter");
     const amountEl = document.getElementById("amount-donated");
-    const progressEl = document.getElementById("progress-bar");
     let fakeDonation = 0;
 
     // const myInit = {
@@ -20,8 +20,9 @@ async function fetchDonationData(){
     let adjustedTotal = donationTotal + fakeDonation;
     
     amountEl.textContent = adjustedTotal / 100;
-    let progressValue = adjustedTotal / 2500_00;
-    progressEl.style.transform = `scaleX(${progressValue})`;
+    let progressValue = adjustedTotal / 3000_00;
+
+    donationCounterEl.style.setProperty('--progress-scale', "scaleX(" + progressValue + ")");
 }
 
 setTimeout(

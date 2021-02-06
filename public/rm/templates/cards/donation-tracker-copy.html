@@ -13,18 +13,6 @@
   overflow: hidden;
 }
 
-.donation-info-contain{
-  display: grid;
-  align-items: center;
-  width: 100%;
-  background-color: #000;
-  min-height: 1.5em;
-}
-
-.donation-info-contain > div{
-  grid-area: 1 / 1;
-}
-
 .donation-tracker{
   font-weight: bold;
   text-align: center;
@@ -32,51 +20,41 @@
   font-weight: normal;
 }
 
-/* .donation-tracker .card-body > div ~ div{
-  margin-top: 12px;
-} */
-
-.progress-contain{
+.donation-counter{
+  /* width: 100%;
+  display: flex;
+  align-items: center; */
+  text-align: left;
+  padding-left: .5em;
+  position: relative;
+  z-index: 0;
   background-color: #000;
-  overflow: hidden;
-  display: grid;
+  --progress-scale: scaleX(0);
 }
 
-.progress-contain > div{
-  grid-area: 1 / 1;
-}
-
-.progress-bar{
+.donation-counter:after{
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  transform: scaleX(1);
+  transform: var(--progress-scale);
   transform-origin: left;
   transition: transform .5s;
-  background-color: green;
-}
-
-.donation-counter{
-  transform: scale(1);
-  text-align: left;
-  padding-left: .3em;
-  text-shadow: 1px 1px 0 #000, 0 0 2px #000;
-  min-height: 1.2em;
+  background-color: #007800;
+  z-index: -1;
 }
 
 </style>
 
 <div class="card donation-tracker">
-    <div class="card-body map-background">
-        <img id="bail-project-logo" width="212" src="/rm/images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>        
-        <div class="donation-info-contain">
-          <div id="progress-bar" class="progress-bar"></div>
-          <div class="donation-counter">
-            <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
-            <span>/</span>
-            <span class="dollar-sign">$</span><span id="amount-goal">2500</span>
-          </div>
-        </div>
-    </div>
+  <div class="card-body">
+      <img id="bail-project-logo" width="212" src="/rm/images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>        
+      <div id="donation-counter" class="donation-counter">
+        <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
+        <span>/</span>
+        <span class="dollar-sign">$</span><span id="amount-goal">3000</span>
+      </div>
+  </div>
 </div>
