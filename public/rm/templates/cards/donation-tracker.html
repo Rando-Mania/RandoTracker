@@ -7,6 +7,23 @@
     padding: 6px;
 }
 
+/* .donation-tracker .card-body{
+  padding: 8px;
+} */
+
+.donation-tracker .card-body{
+  background-color: #000;
+  display: grid;
+  gap: 4px;
+  place-content: center;
+  overflow: hidden;
+}
+
+.horizontal .card-body{ 
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
 .donation-tracker{
   font-weight: bold;
   text-align: center;
@@ -14,11 +31,9 @@
   font-weight: normal;
 }
 
-.donation-tracker .card-body{
-  padding: 8px;
-}
-
 .donation-counter{
+  display: flex;
+  align-items: center;
   text-align: left;
   padding-left: .5em;
   position: relative;
@@ -44,13 +59,13 @@
 </style>
 
 <div class="card donation-tracker">
-    <tr-template href="../rm/templates/cards/border.html"></tr-template>
-    <div class="card-body">
-        <img id="bail-project-logo" width="212" src="images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>
-        <div id="donation-counter" class="donation-counter">
+  <div class="card-body">
+      <img id="bail-project-logo" src="/rm/images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>        
+      <div id="donation-counter" class="donation-counter">
+        <div>
           <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
           <span>/</span>
           <span class="dollar-sign">$</span><span id="amount-goal">3000</span>
         </div>
-    </div>
-</div>
+      </div>
+  </div>
