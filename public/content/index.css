@@ -168,25 +168,24 @@ input{
 .games {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px 24px;
+
   transition: height .5s;
 }
 
 .games > div{
-  margin-right: 20px;
-  margin-bottom: 24px;
-  background-color: rgba(34,34,34,.7);
   color: #fff;
-  text-shadow: 2px 2px 5px #000;
   flex: 142px 0 1;
   height: 157px;
-  border-style: solid; 
-  border-color: #30333c;
-  border-width: 13px 10.5px 10.5px;
-  border-image: url('atari-cart.jpg') 13 10.5 10.5 / 13px 10.5px 10.5px;
-  border-radius: 4px;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 80%, 90% 100%, 10% 100%, 10% 80%, 0 80%);
+  background: 
+    repeating-linear-gradient(rgba(0,0,0,.15) 0 2%, transparent 2% 4%) no-repeat 15% 0 / 23% 95%,
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)) no-repeat 75% 0 / 50% 71% 
+    #282828;
 }
 
 .games h3{
