@@ -57,64 +57,32 @@
     background-color: var(--backgroundColor1);
 }
 
-/* .fabul-swiss{
-    --swissFallback: linear-gradient(#e9d8c4, #fcc07c);
-    background-image: var(--swissFallback);
-    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Swiss.png), var(--swissFallback);
-}
-.fabul-playin{
-    --playinFallback: linear-gradient(#ccdde5, #7cd1fc);
-    background-image: var(--playinFallback);
-    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-PlayIn.png), var(--playinFallback);
-}
-.fabul-bracket{
-    --bracketFallback: linear-gradient(#9b95bd, #3428e9);
-    background-image: var(--bracketFallback);
-    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Bracket.png), var(--bracketFallback);
-}
-.fabul-finals{
-    --finalsFallback: linear-gradient(#3b3a6c, #412352);
-    background-image: var(--finalsFallback);
-    background-image: url(images/Fabul-Gauntlet-Assets/Layout-Background-Finals.png), var(--finalsFallback);
-} */
-
 .layout.trans{background-color: transparent; background-image: none;}
 
 .layout.ccs-lunar-racing{background-color: #5a5a54;}
-.notwebp .layout.ccs-lunar-racing{background-image: url(images/ccs/CCS-BG-LunarRacingClub.png);}
-.webp .layout.ccs-lunar-racing{background-image: url(images/ccs/CCS-BG-LunarRacingClub.webp);}
+.notwebp .layout.ccs-lunar-racing{background-image: url(images/2p/ccs/CCS-BG-LunarRacingClub.png);}
+.webp .layout.ccs-lunar-racing{background-image: url(images/2p/ccs/CCS-BG-LunarRacingClub.webp);}
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-mysidian-jumping{background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
-.webp.notavif .layout.ccs-mysidian-jumping{background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.webp), linear-gradient(#73d417,#122c04);}
-.avif .layout.ccs-mysidian-jumping{background-image: url(images/ccs/CCS-BG-MysidianJumpingClub.avif), linear-gradient(#73d417,#122c04);}
+.notwebp .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
+.webp.notavif .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.webp), linear-gradient(#73d417,#122c04);}
+.avif .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.avif), linear-gradient(#73d417,#122c04);}
 
 .layout.ccs-special-feature{background-color: #4d0627;}
-.notwebp .layout.ccs-special-feature{background-image: url(images/ccs/CCS-BG-SpecialFeature.png);}
-.webp .layout.ccs-special-feature{background-image: url(images/ccs/CCS-BG-SpecialFeature.webp);}
+.notwebp .layout.ccs-special-feature{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
+.webp .layout.ccs-special-feature{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);}
 
 .layout.ccs-sunday-slapdash{background-color: #404140;}
-.notwebp .layout.ccs-sunday-slapdash{background-image: url(images/ccs/CCS-BG-SundaySlapdash.png);}
-.webp .layout.ccs-sunday-slapdash{background-image: url(images/ccs/CCS-BG-SundaySlapdash.webp);}
+.notwebp .layout.ccs-sunday-slapdash{background-image: url(images/2p/ccs/CCS-BG-SundaySlapdash.png);}
+.webp .layout.ccs-sunday-slapdash{background-image: url(images/2p/ccs/CCS-BG-SundaySlapdash.webp);}
 
 .layout.ccs-underground-racing{background-color: #645b45;}
-.notwebp .layout.ccs-underground-racing{background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.png);}
-.webp .layout.ccs-underground-racing{background-image: url(images/ccs/CCS-BG-UndergroundRacingClub.webp);}
+.notwebp .layout.ccs-underground-racing{background-image: url(images/2p/ccs/CCS-BG-UndergroundRacingClub.png);}
+.webp .layout.ccs-underground-racing{background-image: url(images/2p/ccs/CCS-BG-UndergroundRacingClub.webp);}
 
 .layout.ccs-enterprise-legacy{background-color: #503a10;}
-.notwebp .layout.ccs-enterprise-legacy{background-image: url(images/ccs/CCS-BG-EnterpriseLegacy.png);}
-.webp .layout.ccs-enterprise-legacy{background-image: url(images/ccs/CCS-BG-EnterpriseLegacy.webp);}
-
-.layout.threemus-zone-group{background-color: #001211;background-image: url(images/3musZone/3musZone-1-BG-GroupStage.png);}
-.layout.threemus-zone-magma{background-color: #0069c5;background-image: url(images/3musZone/3musZone-2-BG-MagmaRoute.png);}
-.layout.threemus-zone-hook{background-color: #000d29;background-image: url(images/3musZone/3musZone-3-BG-HookRoute.png);}
-.layout.threemus-zone-lunar{background-image: url(images/3musZone/3musZone-4-BG-LunarTable.png), linear-gradient(#004a15, #0090b0, #620062);}
-.layout.threemus-zone-playoffs{background-color: #230011;background-image: url(images/3musZone/3musZone-5-BG-Playoffs-Updated.png);}
-.layout.threemus-zone-finals{background-image: url(images/3musZone/3musZone-6-BG-TheFinals.png), linear-gradient(#71007a, #01fcfa, #00a600, #4c5500);}
-
-[class*="threemus-zone"]{
-    --backgroundColor1: #191668;
-}
+.notwebp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.png);}
+.webp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.webp);}
 
 .player-video{
     width: var(--vidWidth);
@@ -127,11 +95,6 @@
 .layout.black-background .player-video{
     background-color: #000;
     background-image: url(images/The-End.png);
-}
-
-.layout.black-background[class*="threemus-"] .player-video{
-    background-color: #000;
-    background-image: url(images/3musZone/The-End.png);
 }
 
 .player-info{
@@ -224,7 +187,7 @@ tr-toggle-class, .in-active {
 }
 
 .player-grid img, .player-grid-2 img{
-    background-image: url(images/ff4fe-spritesheet.png);
+    background-image: url(images/2p/ff4fe-spritesheet.png);
     width: 32px;
     height: 32px;
     display: block;
@@ -355,17 +318,6 @@ tr-toggle-class, .in-active {
     background-position: 0 100%;
 }
 
-[class*="threemus-"] .player-best-of img{
-    width: 40px;
-    height: 40px;
-    background-image: url('images/3musZone/BestOf-Default.png');
-    background-size: 100% 100%;
-}
-[class*="threemus-"] .player-best-of .active img{
-    background-image: url('images/3musZone/BestOf-Win.png');
-    background-size: 100% 100%;
-}
-
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
 }
@@ -394,11 +346,6 @@ tr-timer, .player-final{
     color: #ffdd00;
     --text-shadow-color: #940000;
     text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
-}
-
-[class*="threemus-zone"] .player-final{
-    color: #fcf037;
-    --text-shadow-color: #c50ec5;
 }
 
 tr-timer span {
@@ -508,7 +455,6 @@ tr-timer span {
 
 .menu-contain .menu-game-specific{
     padding: 1em 0 1em 1em;
-    /* margin-right: -1em; */
     z-index: 1;
     background-color: #000;
     color: #fff;
