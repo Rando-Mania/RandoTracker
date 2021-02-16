@@ -146,7 +146,7 @@
   text-align: center;
   height: 100%;
   display: grid;
-  grid-template-columns: 70%;
+  grid-template-columns: 50%;
   grid-template-rows: repeat(4, auto);
   align-content: space-between;
   background-color: #000;

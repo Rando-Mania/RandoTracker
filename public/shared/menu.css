@@ -127,7 +127,9 @@
 
 #timer-input-buttons{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 8px;
 }
 
 button.dummy-text-button.disable, #menu_video_background input[type="radio"][id="screen"].disable{
@@ -226,6 +228,12 @@ input[type="number"]{
     justify-content: space-between;
 }
 
+tr-button-timer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 tr-input-timer input{
     width: 5em;
     text-align: right;
@@ -233,7 +241,6 @@ tr-input-timer input{
 }
 
 tr-button-timer button{
-    margin-left: .5em;
     width: 4em;
     font-size: 18px;
 }

@@ -48,8 +48,8 @@
             <label>Video Background Image:</label>
             <tr-select-toggle property="video-bgImage">
                 <tr-option value="none" target=".player-video" toggle-class="none">none</tr-option>
-                <tr-option value="weekly" target=".player-video" toggle-class="weekly-background">Weekly</tr-option>
-                <tr-option selected value="tourney" target=".player-video" toggle-class="tourney-background">Tourney</tr-option>
+                <tr-option selected value="weekly" target=".player-video" toggle-class="weekly-background">Weekly</tr-option>
+                <tr-option value="tourney" target=".player-video" toggle-class="tourney-background">Tourney</tr-option>
                 <tr-option value="chaos" target=".player-video" toggle-class="chaos-background">Chaos</tr-option>
                 <tr-option value="league" target=".player-video" toggle-class="league-background">League</tr-option>
             </tr-select-toggle>
@@ -169,6 +169,64 @@
                     <td>capt_uhu, datyedyeguy, <br/>brianwilliams42</td>
                 </tr>
             </table>
+        </div>
+    </div>
+
+<style>
+    #menu_bot{
+        width: 400px; grid-row: span 2;
+    }
+    #menu_bot a{
+        color: #f8b800;
+        background-color: #000;
+        position: absolute;
+        top: -10px;
+        padding: 0 .25em;
+    }
+    #menu_bot a.more-info {
+        right: 15px;
+    }
+    #menu_bot a.randroid {
+        right: 120px;
+        color: #f8b800;
+    }
+
+    #menu_bot [title]:hover {
+        color: #000;
+        background-color: #f8b800;
+    }
+    #menu_layout_bot{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+</style>
+
+    <div id="menu_bot" class="fieldset">
+        <h4 class="legend">Bot Commands</h4>
+        <a class="randroid" target="_blank" href="https://www.twitch.tv/popout/the_randroid/chat?popout=">the_randroid</a> 
+        <a class="more-info" target="_blank" href="https://docs.google.com/document/d/1OZdV1TVj34J7QmbgNU-SsC6TRAtHdjkrMvv2MZOkZBA/edit">more info</a>
+        <div id="menu_layout_bot">
+            <div>
+                <h4><span title="Example: !stream 1 z1r t Player A vs Player B">Game/Title</span></h4>
+                <p>!stream <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> dwr <span title="t = tournament, w = weekly, s = showcase, l = league">[match type]</span> [additional information]</p>
+            </div>
+            <div>
+                <h4><span title="Example: !rset 1 kermit piggy fozzie Rowlf">Runners</span></h4>
+                <p>!rset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [runner1] [runner2] [runner3] [runner4]</p>
+            </div>
+            <div>
+                <h4><span title="Example: !cset 1 Jar-Jar Morbo">Commentary</span></h4>
+                <p>!cset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [commentator1] [commentator2] [commentator3]</p>
+            </div>
+            <div>
+                <h4><span title="Example: !sset 1 R2D2 BB-8">Restreaming/Tracking</span></h4>
+                <p>!sset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [restreamer] [tracker1] [tracker2]</p>
+            </div>
+            <div>
+                <h4><span title="Example: !h 1 randomania2">Host</span></h4>
+                <p>!h <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> live [streamer name]</p>
+            </div>
         </div>
     </div>
 

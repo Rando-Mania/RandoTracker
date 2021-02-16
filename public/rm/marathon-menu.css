@@ -351,7 +351,7 @@
 [property="poke-crystal-badge-volcano"] img{background-position: 60% 70%;}
 [property="poke-crystal-badge-earth"] img{background-position: 70% 70%;}
 
-/* fff4fe */
+/* ff4fe */
 
 .player-grid-ffiv{
   display: grid;
@@ -398,6 +398,39 @@
 [property="ff4fe-rat-tail"] img{background-position: 25% 100%;}
 [property="ff4fe-rat-tail"]{grid-column: 2;}
 [property="ff4fe-pink-tail"] img{background-position: 50% 100%;}
+
+/* ffv */
+
+.player-grid-ffv{
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  align-content: space-between;
+  grid-column-gap: 8px;
+  padding: 0;
+  width: auto;
+}
+
+.player-grid-ffv img{
+  background-size: 600% 100%;
+  width: 28px;
+  height: 28px;
+  display: block;
+  background-image: url(images/icons/ff5_spritesheet.png);
+}
+/* .notwebp .player-grid-ffiv img{
+  background-image: url(images/icons/ff4fe-spritesheet.png);
+} */
+/* .webp .player-grid-ffiv img{
+  background-image: url(images/icons/ff4fe-spritesheet.webp);
+} */
+
+[property="ff5-tablet-1"] img{background-position: 0 0;}
+[property="ff5-tablet-2"] img{background-position: 20% 0;}
+[property="ff5-tablet-3"] img{background-position: 40% 0;}
+[property="ff5-tablet-4"] img{background-position: 60% 0;}
+
+[property="ff5-ring"] img{background-position: 80% 0;}
+[property="ff5-tower"] img{background-position: 100% 0;}
 
 /* z1r */
 

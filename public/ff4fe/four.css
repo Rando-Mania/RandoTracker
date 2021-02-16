@@ -89,15 +89,6 @@
     background-color: #012f83;
 }
 
-
-.threemus-zone-hook{
-    background-image: url('images/4p/HTT3Z-4P-BG-HookRoute.png');
-    --backgroundColor1: #191668;
-}
-.threemus-zone-magma{
-    background-image: url('images/4p/HTT3Z-4P-BG-MagmaRoute.png');
-    --backgroundColor1: #191668;
-}
 .trans{background-color: transparent; background-image: none;}
 
 .layout.clip-background{
@@ -121,10 +112,6 @@
 
 .layout.black-background .player-video{
     background-image: url(images/4p/weekly/FF4FE-WeeklyRace-TheEnd.png);
-}
-
-.layout.black-background.threemus-zone-hook .player-video, .layout.black-background.threemus-zone-magma .player-video{
-    background-image: url(images/4p/The-End.png);
 }
 
 .player-name{
@@ -418,15 +405,6 @@ tr-timer span {
     grid-row-end: span 2;
 }
 
-.flags-footer{
-    
-}
-
-.layout.threemus-zone-hook .flags-contain,
-.layout.threemus-zone-magma .flags-contain{
-    display: none;
-}
-
 .staff{
     overflow: hidden;
     font-size: 15px;
@@ -435,11 +413,6 @@ tr-timer span {
     top: 296px;
     transform: translateX(-50%); 
     left: 50%;
-}
-
-.layout.threemus-zone-hook .staff,
-.layout.threemus-zone-magma .staff{
-    top: 360px;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -514,9 +487,6 @@ tr-timer span {
 .display-none{ display: none; }
 
 .show{ display: block; }
-
-/* .show-flex{ display: flex; }
-.show-grid{ display: grid; } */
 
 #menu_layout div{
     display: block;

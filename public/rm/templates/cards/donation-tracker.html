@@ -7,6 +7,19 @@
     padding: 6px;
 }
 
+.donation-tracker .card-body{
+  background-color: #000;
+  display: grid;
+  gap: 4px;
+  place-content: center;
+  overflow: hidden;
+}
+
+.horizontal .card-body{ 
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
 .donation-tracker{
   font-weight: bold;
   text-align: center;
@@ -14,71 +27,42 @@
   font-weight: normal;
 }
 
-.donation-tracker .card-body{
-  padding: 8px;
-}
-
-.progress-contain{
-  background-color: #000;
+.donation-counter{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: .5em;
   position: relative;
-  overflow: hidden;
-  /* background-image: repeating-linear-gradient(to right, transparent 0 25%, rgba(255,255,255,.2) 25% calc(25% + 2px));
-  background-position: bottom;
-  background-size: 100% 50%;
-  background-repeat: no-repeat; */
-  display: grid;
+  z-index: 0;
+  background-color: #000;
+  --progress-scale: scaleX(0);
 }
 
-.progress-contain > div{
-  grid-area: 1 / 1;
-}
-
-.progress-bar{
+.donation-counter:after{
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  transform: scaleX(0);
+  transform: var(--progress-scale);
   transform-origin: left;
-  transition: transform .5s; 
-}
-.progress-bar .card-back{
- height: 100%;
-}
-
-
-.donation-counter{
-  transform: scale(1);
-  text-align-last: left;
-  padding-left: .5em;
-  text-shadow: 1px 1px 0 #000, 0 0 2px #000;
+  transition: transform .5s;
+  background-color: var(--highlight-color);
+  z-index: -1;
 }
 
 </style>
 
 <div class="card donation-tracker">
-    <tr-template href="../rm/templates/cards/border.html"></tr-template>
-    <div class="card-body">
+  <div class="card-body">
+      <img id="bail-project-logo" src="/rm/images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>        
+      <div id="donation-counter" class="donation-counter">
         <div>
-            <img id="bail-project-logo" width="212" src="images/tbp_logo_small.png" alt="THE BAIL PROJECT"/>
+          <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
+          <span>/</span>
+          <span class="dollar-sign">$</span><span id="amount-goal">3000</span>
         </div>
-        <div class="progress-contain">
-            <div id="progress-bar" class="progress-bar">
-              <div class="rainbow-fill card-back">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-            <div class="donation-counter">
-              <span class="counter-amount"><span class="dollar-sign">$</span><span id="amount-donated"></span></span>
-              <span>/</span>
-              <span class="dollar-sign">$</span><span id="amount-goal">2000</span>
-          </div>
-        </div>
-    </div>
+      </div>
+  </div>
 </div>

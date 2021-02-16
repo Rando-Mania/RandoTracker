@@ -4,6 +4,11 @@
     width: 288px;
   }
 
+  .card{
+    --highlight-color: #007800;
+    border-top: 1px solid var(--highlight-color);
+  }
+
   .player-name .card{
     width: auto;
   }
@@ -14,30 +19,28 @@
 
   .card-head{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #000;
     z-index: 0;
     height: 1em;
     position: relative;
   }
 
-  .card-head-left{
+  .card-head-left, .card-head-right{
     display: grid;
     grid-template: 1fr / 1fr;
     position: absolute;
-    left: 0;
-  }
-  .card-head-left > * {
-    grid-area: 1 / 1;
+    width: 118px;
   }
 
+  .card-head-left{
+    left: 0;
+  }
   .card-head-right{
-    display: grid;
-    grid-template: 1fr / 1fr;
-    position: absolute;
     right: 0;
   }
-  .card-head-right > * {
+
+  .card-head-left > *, .card-head-right > * {
     grid-area: 1 / 1;
   }
 
@@ -46,11 +49,7 @@
     padding: 0 .25em;
     position: relative;
   }
-  
-  .card-head-left, .card-head-right{
-    width: 118px;
-  }
-  
+    
   .card-head-right .card-head-label{
     justify-self: end;
   }
@@ -97,20 +96,12 @@
     position: relative;
     z-index: 0;
     width: 100%;
+    border-top: none;
   }
 
   .staff{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 18px;
-  }
-  
-  .timer .card-back{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
   }
   
   .timer .card{
@@ -121,7 +112,7 @@
   }
   
   .timer .card-body{
-    background-color: transparent;
+    background-color: var(--highlight-color);
     padding: 1px 0;
   }
   
@@ -134,14 +125,14 @@
   
   tr-timer:after{
       content: '';
-      background-image: url('/rm/images/zelda_hex_alpha_text.png'), linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75));
+      background-image: url('/rm/images/zelda_hex_alpha_text.png'), linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6));
       position: absolute;
       width: 100%;
       height: 1356px;
       top: 0;
       left: 0;
       z-index: -1;
-      animation: scroll 40s linear infinite;
+      animation: scroll 4s steps(26) infinite;
       animation-play-state: paused;
   }
   
@@ -174,11 +165,10 @@
     .card-border, .card-back{
       position: relative;
     }
-    .card-border{
-      height: 1px;
-    }
+
     .card-back{
       height: 18px;
+      background-color: var(--highlight-color);
     }
 
     .card-head-left .card-back{
@@ -198,8 +188,10 @@
       width: 100%;
       height: 100%;
     }
-    
-    .card-border > div, .card-back > div{
+
+    .rainbow-fill div{background-color: #007800;}
+
+    /* .card-border > div, .card-back > div{
       animation: fade 240s linear alternate infinite;
     }
 
@@ -233,4 +225,4 @@
     @keyframes fade-5 {
       from, 80% {opacity: 1;}
       to {opacity: 0;}
-    }
+    } */
