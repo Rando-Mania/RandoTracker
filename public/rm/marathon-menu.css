@@ -1,6 +1,7 @@
 .marathon-background{
   background-color: #000;
   background-size: 50% 50%;
+  background-blend-mode: luminosity;
 }
 
 .notavif .marathon-background {
