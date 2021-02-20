@@ -19,6 +19,7 @@
     --winX: 400px; --winY: 120px;
     --finalX: 400px; --finalY: 80px;
     --vsX: 50%; --vsY: 140px;
+	--bingoX: 455px; --bingoY: 205px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -115,9 +116,21 @@
     grid-gap: 4px;
 }
 
+.bingo-option{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    padding: 0px;
+    grid-gap: 0px;
+}
+
 .player-grid img, .dialog img{
     background-image: url('../ffr/images/retro_tracker/ffr-items-sprite-2020.png');
     background-size: 500% 1100%;
+}
+
+.bingo-option img, .bingo-option .dialog img{
+    background-image: url('images/bingo/bingo-icons.png');
+    background-size: 100% 1200%;
 }
 
 .earth-off{background-position: 0 40%;}
@@ -162,6 +175,29 @@
 .chime{background-position: 100% 10%;}
 .cube{background-position: 75% 20%;}
 
+.bingo-red{background-position: 0 0;}
+.bingo-orange{background-position: 0 9.1%;}
+.bingo-blue{background-position: 0 18.2%;}
+.bingo-green{background-position: 0 27.3%;}
+.bingo-purple{background-position: 0 36.4%;}
+.bingo-white{background-position: 0 45.5%;}
+.bingo-navy{background-position: 0 54.6%;}
+.bingo-teal{background-position: 0 63.7%;}
+.bingo-brown{background-position: 0 72.8%;}
+.bingo-pink{background-position: 0 81.9%;}
+.bingo-yellow{background-position: 0 91%;}
+.bingo-black{background-position: 0 100%;}
+
+/*
+
+
+
+
+[player="1"] .bingo-option{ background-color: red;}
+[player="2"] .bingo-option{ background-color: green;}
+
+*/
+
 .player-pronoun, .record-contain{
     width: 90px;
     height: 33px;
@@ -179,6 +215,12 @@
 .player-grid img{
     width: 16px;
     height: 16px;
+    display: block;
+}
+
+.bingo-option img{
+    width: 50px;
+    height: 50px;
     display: block;
 }
 
