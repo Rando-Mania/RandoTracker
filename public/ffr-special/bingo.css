@@ -128,7 +128,7 @@
     background-size: 500% 1100%;
 }
 
-.bingo-option img, .bingo-option .dialog img{
+.bingo-option img, .dialog[id$="bingo-color"] img{
     background-image: url('images/bingo/bingo-icons.png');
     background-size: 100% 1200%;
 }

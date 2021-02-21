@@ -15,7 +15,7 @@
             font-family: 'Chicago', Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            background-position: bottom;
+            background-position: 35% 74%;
             display: grid;
             max-width: 972px;
             grid-template-columns: repeat(2, auto);
@@ -42,12 +42,19 @@
             border-top: solid 6px;
             width: 100%;
         }
-
         .player-grid img{
             width: 32px;
             height: 32px;
             display: block;
         }
+        .bingo-option img{
+            width: 32px;
+            height: 32px;
+            display: block;
+        }
+		.bingo-option{
+			margin-top: 150px;
+		}
         .player-grid, .winner-final-contain{
             grid-column: 1 / -1;
         }
@@ -61,7 +68,7 @@
             align-items: center;
             gap: 24px;
         }
-        .player-final, .player-winner{
+        .player-final, .player-winner, .bingo-option{
             border-top: 6px solid;
         }
         .player-best-of{
@@ -76,13 +83,14 @@
         .player-name{grid-area: name;}
         .player-speaker{grid-area: speaker;}
         .player-best-of{grid-area: best-of;}
+        .bingo-option{grid-area: bingo;}
         .winner-final-contain{grid-area: win-final;}
 
         [player="1"] tr-template{
             grid-template-areas: 
                 "icons     icons     icons"
                 "name      pronoun   record"
-                "best-of   speaker   ."
+                "best-of   speaker   bingo"
                 "win-final win-final win-final";
         }
 
@@ -90,7 +98,7 @@
             grid-template-areas: 
                 "icons     icons     icons"
                 "record    pronoun   name"
-                ".         speaker   best-of"
+                "bingo    speaker   best-of"
                 "win-final win-final win-final";
         }
 
@@ -140,6 +148,7 @@
                     <div>Winner</div>
                 </tr-toggle>
             </div>
+            <tr-template property="bingo-option" class="bingo-option abs border-1 background-1" href="icons-bingo.html"></tr-template>
 		</template>
        <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
