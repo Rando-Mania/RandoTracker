@@ -1,0 +1,16 @@
+<svg width='16' height='16' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+  <g stroke-width='2' fill='none' stroke='#747474'>
+    <path d='M3,3h10v10h-10z'/>
+    <g stroke-dasharray='8, 2' stroke-dashoffset='-1'>
+      <path d='M3,3h10v10h-10z' stroke-width='6'/>
+      <path d='M3,3h10v10h-10z' stroke='#fcfcfc'/>
+    </g>
+  </g>
+  <g stroke-width='2' fill='none' stroke='#726b33'>
+    <path d='M19,3h10v10h-10z'/>
+    <g stroke-dasharray='8, 2' stroke-dashoffset='-1'>
+      <path d='M19,3h10v10h-10z' stroke-width='6'/>
+      <path d='M19,3h10v10h-10z' stroke='#f7e86e'/>
+    </g>
+  </g>
+</svg>
