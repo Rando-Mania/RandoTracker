@@ -5,16 +5,17 @@
     font-family: 'Chicago', Arial, sans-serif;
     width: 1280px;
     height: 720px;
-    background-color: #8dc8ff;
-  --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
-    background-image: var(--loadscreen-fallback);
-    background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);
+    background-color: #fff;
     color: #fff;
     text-align: center;
     animation: zoomIn .5s linear;
     z-index: 50;
     display: none;
 }
+
+.notwebp.notavif .loadscreen-contain{background-image: url(images/loading_screen.jpg);}
+.webp.notavif .loadscreen-contain{background-image: url(images/loading_screen.webp);}
+.avif .loadscreen-contain{background-image: url(images/loading_screen.avif);}
 
 .loadscreen-contain.show, .two-loading{
     display: block;

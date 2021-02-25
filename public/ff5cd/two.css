@@ -61,7 +61,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg) #000;
+    background-color: #001880;;
 }
 
 .layout.clip-background{
@@ -83,12 +83,10 @@
 }
 
 .ffr-default{
-    background-color: #000;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
-    background-image: var(--default-fallback);
+    background-color: #001880;
 }
-.notwebp .ffr-default{background-image: url(images/2p/base-background.png), var(--default-fallback);}
-.webp .ffr-default{background-image: url(images/2p/base-background.webp), var(--default-fallback);}
+.notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
+.webp .ffr-default{background-image: url(images/2p/base-background.webp);}
 
 .player-name{
     font-size: 26px;
