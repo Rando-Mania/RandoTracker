@@ -63,26 +63,38 @@
     width: 1280px;
     height: 720px;
     color: #fff;
+    background-color: #000;
     position: relative;
-    background: url(images/bingo/base-background.png) #000;
 }
-
 .ffr-default{
-    background: url(images/bingo/base-background.png) #000;
+    background-color: #000;
+    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
+    background-image: var(--default-fallback);
 }
+.notwebp .ffr-default{background-image: url(images/bingo/base-background.png), var(--default-fallback);}
+.webp .ffr-default{background-image: url(images/bingo/base-background.webp), var(--default-fallback);}
 
 .ffr-irongol{
-    background: url(images/bingo/base-irongol.png) #295280;
+    background-color: #295280;
     --backgroundColor2: #500;
+    background-image: url(images/bingo/base-irongol.png);
 }
 
 .ffr-dark{
-    background: url(images/bingo/base-dark.png) #000;
+    background-color: #000;
+    --default-fallback: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4,11h1v1h-1zM8,9h1v1h-1zM13,15h1v1h-1zM15,8h1v1h-1z' fill='%2300f'/%3E%3C/svg%3E");
+    background-image: var(--default-fallback);
 }
+.notwebp .ffr-dark{background-image: url(images/bingo/base-dark.png), var(--default-fallback);}
+.webp .ffr-dark{background-image: url(images/bingo/base-dark.webp), var(--default-fallback);}
 
 .ffr-winter{
-    background: url(images/bingo/base-winter.png) #000;
+    background-color: #4ea0cf;
+    --default-fallback: linear-gradient(#052d44, #4ea0cf);
+    background-image: var(--default-fallback);
 }
+.notavif .ffr-winter{background-image: url(images/bingo/base-winter.jpg), var(--default-fallback);}
+.avif .ffr-winter{background-image: url(images/bingo/base-winter.avif), var(--default-fallback);}
 
 .player-video{
     width: var(--vidWidth);
@@ -189,9 +201,6 @@
 .bingo-black{background-position: 0 100%;}
 
 /*
-
-
-
 
 [player="1"] .bingo-option{ background-color: red;}
 [player="2"] .bingo-option{ background-color: green;}

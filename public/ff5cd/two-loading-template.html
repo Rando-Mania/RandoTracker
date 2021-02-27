@@ -5,17 +5,12 @@
     font-family: 'Chicago', Arial, sans-serif;
     width: 1280px;
     height: 720px;
-    background-color: #fff;
     color: #fff;
     text-align: center;
     animation: zoomIn .5s linear;
     z-index: 50;
     display: none;
 }
-
-.notwebp.notavif .loadscreen-contain{background-image: url(images/loading_screen.jpg);}
-.webp.notavif .loadscreen-contain{background-image: url(images/loading_screen.webp);}
-.avif .loadscreen-contain{background-image: url(images/loading_screen.avif);}
 
 .loadscreen-contain.show, .two-loading{
     display: block;
@@ -41,6 +36,7 @@
   }
 
 .loadscreen{
+    background-color: #fff;
     height: 100%;
     display: grid;
     grid-auto-rows: 1fr auto;
@@ -48,6 +44,10 @@
     place-items: center;
     padding: 1em;
 }
+
+.notwebp.notavif .loadscreen{background-image: url(images/loading_screen.jpg);}
+.webp.notavif .loadscreen{background-image: url(images/loading_screen.webp);}
+.avif .loadscreen{background-image: url(images/loading_screen.avif);}
 
 .loadscreen-main{
     position: absolute;
