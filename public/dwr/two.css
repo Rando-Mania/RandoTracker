@@ -880,9 +880,6 @@ figcaption{
     font-weight: bold;
 }
 
-.menu-button-row label:first-of-type{ border-radius: 3px 0 0 3px;}
-.menu-button-row label:last-of-type{ border-radius: 0 3px 3px 0;}
-
 .monster-table{
     display: grid;
     grid-template-columns: 160px 138px 210px;
