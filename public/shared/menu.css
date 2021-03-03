@@ -355,10 +355,10 @@ button.active{
 
 #transparent{ 
     background: 
-        linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0) 0 0 / 8px 8px,
-        linear-gradient(45deg, #c0c0c0 25%, transparent 25%, transparent 75%, #c0c0c0 75%, #c0c0c0) 4px 4px / 8px 8px
+        linear-gradient(45deg, #c0c0c0 25%, transparent 0 75%, #c0c0c0 0 100%) 0 0 / 8px 8px,
+        linear-gradient(45deg, #c0c0c0 25%, transparent 0 75%, #c0c0c0 0 100%) 4px 4px / 8px 8px
         #808080;
-    background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 90deg 180deg) 0 0 / 8px 8px;
+    background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
 }
 .layout.transparent-background .player-video{background-color: transparent;}
 

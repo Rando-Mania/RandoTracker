@@ -70,6 +70,27 @@ tr-label, figcaption{
     color: #fff;
 }
 
+figcaption{
+    opacity: .3;
+}
+.dialog figcaption{
+    opacity: 1;
+}
+.in-active ~ figcaption{
+    opacity: .3;
+}
+.active ~ figcaption {
+    opacity: 1;
+}
+.in-active{
+    opacity: .3;
+}
+
+.in-active[selected="selected"] ~ tr-label{
+    opacity: .3;
+    filter: grayscale(1);
+}
+
 tr-timer{
     font-size: 24px;
     display: flex;
