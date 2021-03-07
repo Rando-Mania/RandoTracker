@@ -190,6 +190,9 @@ button.dummy-text-button:hover,
     width: 60px;
 }
 
+.record-input input, .seed-input input{
+    width: 3em;
+}
 .number-input input, .rank-input input{
     width: 2rem;
 }

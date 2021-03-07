@@ -84,6 +84,20 @@
 .notwebp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.png);}
 .webp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.webp);}
 
+/* lali-ho */
+
+.layout.laliho-swiss{background-color: #c79534;}
+.notwebp .layout.laliho-swiss{background-image: url(images/2p/laliho/laliho-bg-swiss-live.jpg);}
+.webp .layout.laliho-swiss{background-image: url(images/2p/laliho/laliho-bg-swiss-live.webp);}
+
+.layout.laliho-bracket{background-color: #89715b;}
+.notwebp .layout.laliho-bracket{background-image: url(images/2p/laliho/laliho-bg-bracket-live.jpg);}
+.webp .layout.laliho-bracket{background-image: url(images/2p/laliho/laliho-bg-bracket-live.webp);}
+
+.layout.laliho-finals{background-color: #6d4b20;}
+.notwebp .layout.laliho-finals{background-image: url(images/2p/laliho/laliho-bg-finals-live.jpg);}
+.webp .layout.laliho-finals{background-image: url(images/2p/laliho/laliho-bg-finals-live.webp);}
+
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
@@ -92,10 +106,9 @@
 
 .transparent-background{background-color: transparent;}
 
-.layout.black-background .player-video{
-    background-color: #000;
-    background-image: url(images/The-End.png);
-}
+.layout.black-background .player-video{background-color: #000;}
+.notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}
+.webp .layout.black-background .player-video{background-image: url(images/The-End.webp);}
 
 .player-info{
     color: #fff;
@@ -192,6 +205,9 @@ tr-toggle-class, .in-active {
     height: 32px;
     display: block;
 }
+.layout[class*="laliho"] .player-grid img, .layout[class*="laliho"] .player-grid-2 img{
+    background-image: url(images/2p/laliho/laliho-spritesheet.png);
+}
 
 [property="pass"] img{background-position: 25% 0;}
 [property="hook"] img{background-position: 50% 0;}
@@ -215,7 +231,6 @@ tr-toggle-class, .in-active {
 [property="rat-tail"] img{background-position: 25% 100%;}
 [property="rat-tail"]{grid-column: 2;}
 [property="pink-tail"] img{background-position: 50% 100%;}
-
 
 [property="objective-one"] img{background-position: 100% 0;}
 [property="objective-two"] img{background-position: 100% 25%;}
@@ -310,9 +325,12 @@ tr-toggle-class, .in-active {
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/ff4fe-spritesheet.png');
+    background-image: url('images/2p/ff4fe-spritesheet.png');
     background-size: 500% 500%;
     background-position: 75% 100%;
+}
+.layout[class*="laliho"] .player-best-of img{
+    background-image: url('images/2p/laliho/laliho-spritesheet.png');
 }
 .player-best-of .active img{
     background-position: 0 100%;
@@ -324,7 +342,6 @@ tr-toggle-class, .in-active {
 .best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
-
 
 .player-final:empty{
     display:none;
@@ -453,39 +470,11 @@ tr-timer span {
     grid-template-columns: repeat(5, auto);
 }
 
-.menu-contain .menu-game-specific{
-    padding: 1em 0 1em 1em;
-    z-index: 1;
-    background-color: #000;
-    color: #fff;
-}
-
 .menu-game-specific .fieldset.objectives-menu > div{
     display: flex;
 }
 
 .objectives-list-menu{display:none;}
-
-.record-input input, .seed-input input{width: 3em;}
-
-.pronoun-input input{width: 5em;} 
-
-.menu-contain table{
-    border-collapse: collapse;
-    padding: 1em;
-    table-layout: fixed;
-}
-
-.menu-contain th, .menu-contain td{
-    padding: .5em;
-}
-
-#menu_2 {
-    display: grid;
-    grid-template-areas:
-        "players layout team"
-        "timer view reset";
-}
 
 #menu_layout div{
     display: block;
