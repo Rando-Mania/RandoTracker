@@ -206,31 +206,37 @@
     font-family: 'Open Sans', sans-serif;
     color: #000;
     background-color: #d0b58a;
+    --fallback-image: linear-gradient(90deg, var(--fallback-color) 0 18%, #d0b58a 0 83%, var(--fallback-color) 83%);
+    --fallback-color: #c1624e;
+    background-image: var(--fallback-image);
     font-weight: 700;
 }
 
+.laliho-swiss .loadscreen{--fallback-color: #c1624e;}
 .notwebp .laliho-swiss .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.jpg');
+    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.jpg'), var(--fallback-image);
 }
 .webp .laliho-swiss .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.webp');
+    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.webp'), var(--fallback-image);
 }
 /* .webp .laliho-swiss .loadscreen{
     background-image: url('images/2p/laliho/unknown.png');
 } */
 
+.laliho-bracket .loadscreen{--fallback-color: #94644d;}
 .notwebp .laliho-bracket .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.jpg');
+    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.jpg'), var(--fallback-image);
 }
 .webp .laliho-bracket .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.webp');
+    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.webp'), var(--fallback-image);
 }
 
+.laliho-finals .loadscreen{--fallback-color: #2d2924;}
 .notwebp .laliho-finals .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-finals-splash.jpg');
+    background-image: url('images/2p/laliho/laliho-bg-finals-splash.jpg'), var(--fallback-image);
 }
 .webp .laliho-finals .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-finals-splash.webp');
+    background-image: url('images/2p/laliho/laliho-bg-finals-splash.webp'), var(--fallback-image);
 }
 
 [class*="laliho"] .loadscreen .border-1{border: none;}
@@ -244,16 +250,15 @@
 [class*="laliho"] .loadscreen .player-info{
     font-size: 24px;
     color: #020003;
+    mix-blend-mode: overlay;
     text-align: center;
     letter-spacing: 2px;
 }
 
-[class*="laliho"] .loadscreen .commentators-contain,
-[class*="laliho"] .loadscreen .restreamers-contain,
-[class*="laliho"] .loadscreen .trackers-contain{
-    grid-template-columns: auto;
+[class*="laliho"] .loadscreen [player="2"] .player-name-contain{
+    display: block;
 }
-
+[class*="laliho"] .loadscreen .player-name-contain,
 [class*="laliho"] .loadscreen .commentators,
 [class*="laliho"] .loadscreen .restreamers,
 [class*="laliho"] .loadscreen .trackers{
@@ -287,7 +292,11 @@
     margin: 0 auto;
 }
 [class*="laliho"] .loadscreen .staff img {
-    display: none;
+    background-position-y: 33.3%;
+    opacity: .9;
+}
+[class*="laliho"] .loadscreen .commentators-contain img {
+    height: .75em;
 }
 
 [class*="laliho"] .loadscreen .round{
@@ -296,6 +305,7 @@
     bottom: -2px;
     font-size: 38px;
     letter-spacing: 3px;
+    mix-blend-mode: overlay;
 }
 .loadscreen .round:empty{
     display: none;
