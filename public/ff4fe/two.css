@@ -145,10 +145,16 @@
     display: none;
 }
 
+.record-seed-contain{
+    display: grid;
+}
 .record-contain, .seed-contain{
-    flex: 59px 0 0;
+    grid-area: 1/1;
     height: 55px;
-    padding: 10px 1px;
+    width: 60px;
+    display: grid;
+    align-content: center;
+    gap: 4px;
     z-index: 1;
     text-align: center;
 }
@@ -466,10 +472,6 @@ tr-timer span {
 
 /* Menu */
 
-.menu-contain {
-    grid-template-columns: repeat(5, auto);
-}
-
 .menu-game-specific .fieldset.objectives-menu > div{
     display: flex;
 }
@@ -483,3 +485,27 @@ tr-timer span {
 #menu_overlays_contain div{
     margin-bottom: .75em;
 }
+
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+#menu_credits{grid-area: credits;}
+#menu_players_extra{grid-area: players2;}
+#menu_round{grid-area: tourney;}
+#menu_objectives{
+    grid-area: objectives;
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+}
+#menu_backgrounds{grid-area: backgrounds;}
+
+.menu-contain{
+    grid-template-areas:
+        "objectives players2    players layout  layout  team"
+        "objectives backgrounds timer   view    reset   credits"
+        "objectives tourney     timer   view    reset   credits";
+    }
