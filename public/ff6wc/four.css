@@ -7,9 +7,9 @@
 :root{
     --border1: solid 2px #fff;
     --backgroundColor1: rgba(0,0,0,.75);
-    --vidWidth: 428px;
+    --vidWidth: 440px;
     --vidAspect: 4 / 3;
-    --videoX: 10px; --videoY: 10px;
+    --videoX: 4px; --videoY: 4px;
     --nameWidth: 160px;
     --infoX: 441px; --infoY: 4px;
     --speakerX: 569px; --speakerY: 63px;
@@ -65,18 +65,21 @@ html{
     position: relative;
     background-size: 100% 100%;
     background-color: #21384a;
-    background-image: linear-gradient(to right, #394131 50%, #21384a 0);
+    --fallback: linear-gradient(to right, #394131 50%, #21384a 0);
+    background-image: var(--fallback);
 }
 
 .notwebp .layout{
-    background-image: url('images/ff6-airship-background.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
+    background-image: url('images/png'), var(--fallback);}
 .webp .layout{
-    background-image: url('images/ff6-airship-background.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
+    background-image: url('images/airship-no-video.webp'), var(--fallback);}
 
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
+    border: solid 3px #fff;
+    border-radius: 3px;
 }
 
 .layout.black-background .player-video{
@@ -371,18 +374,6 @@ tr-timer span {
     background-color: transparent;
 }
 
-/* Bracket Screen */
-
-/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
-
-.bracket-contain iframe {
-    animation: rotateIn .75s linear;
-    perspective: 1200px;
-}
-
- */
-
-
 .display-none{ display: none; }
 
 .show{ display: block; }
@@ -390,19 +381,31 @@ tr-timer span {
 /* .show-flex{ display: flex; }
 .show-grid{ display: grid; } */
 
-.menu-contain{
-    grid-template-columns: repeat(6, auto);
-}
-
-#menu_playlist{grid-area: 1 / 1;}
-
 #menu_layout div{
     display: block;
 }
 
-#menu_subheading{
-    grid-area: 2 / 1;
-}
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+#menu_credits{grid-area: credits;}
+#menu_players_extra{grid-area: players2;}
+#menu_subheading{grid-area: subhead;}
+#menu_backgrounds{grid-area: backgrounds;}
+#menu_playlist{grid-area: playlist;}
+#menu_goals{grid-area: goals;}
+
+.menu-contain{
+    grid-template-areas:
+        "playlist players2    players layout  layout  team"
+        "playlist players2    players subhead subhead team"
+        "playlist goals       timer   view    reset   credits";
+    }
+
 #menu_overlays_contain div{
     margin-bottom: .75em;
 }
