@@ -1,3 +1,9 @@
+<style>
+    tr-input-text.twitch-input input{
+        width: 140px;
+    }
+</style>
+
 <div class="menu-game-specific">
     <div id="menu_players_extra" class="fieldset">
         <h4 class="legend">Players Extra</h4>
@@ -7,6 +13,7 @@
                     <th></th>
                     <th>Rank</th>
                     <th>Record</th>
+                    <th>Twitch</th>
                     <th>Pronoun</th>
                     <th>Deaths</th>
                 </tr>
@@ -14,6 +21,7 @@
                     <td><label player="1" for="player-1">1</label></td>
                     <td><tr-input-text player="1" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="twitch-input" property="player-twitch"></tr-input-text></td>
                     <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                     <td><tr-input-number oninput player="1" min="0" property="player-cod"></tr-input-number></td>
                 </tr>
@@ -21,6 +29,7 @@
                     <td><label player="2" for="player-2">2</label></td>
                     <td><tr-input-text player="2" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="twitch-input" property="player-twitch"></tr-input-text></td>
                     <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                     <td><tr-input-number oninput player="2" min="0" property="player-cod"></tr-input-number></td>
                 </tr>
@@ -28,6 +37,7 @@
                     <td><label player="3" for="player-3">3</label></td>
                     <td><tr-input-text player="3" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="twitch-input" property="player-twitch"></tr-input-text></td>
                     <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                     <td><tr-input-number oninput player="3" min="0" property="player-cod"></tr-input-number></td>
                 </tr>
@@ -35,6 +45,7 @@
                     <td><label player="4" for="player-4">4</label></td>
                     <td><tr-input-text player="4" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="twitch-input" property="player-twitch"></tr-input-text></td>
                     <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
                     <td><tr-input-number oninput player="4" min="0" property="player-cod"></tr-input-number></td>
                 </tr>
@@ -79,13 +90,16 @@
                 </span>
             </div>
         </div>
-        <div class="menu-label-input">
-            <label>Coordinates:</label>
+        <div>
+            <h4>Coordinates:</h4>
             <tr-template href="over-world-items.html"></tr-template>
             <tr-input-text oninput class="coordinates" property="coordinates"></tr-input-text>
         </div>
-        <div class="menu-label-input">
-            <label>League Flags</label>
+    </div>
+    <div id="menu_league" class="fieldset">
+        <h4 class="legend">League</h4>
+        <div class="menu-flags-wrapper">
+            <h4>Flags: </h4>
             <tr-select-toggle>
                 <tr-option selected value="none">None</tr-option>
                 <tr-option value="week-1">Week 1</tr-option>
@@ -104,12 +118,12 @@
                 <label id="permanent_repel_label" for="permanent_repel">Permanent Repel:</label>
             </tr-input-toggle-class>
         </div>
-        <div class="menu-monster-wrapper">
-            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats">
-                <label id="monster_label" for="show_monster_stats">Display Monster Stats:</label>
-            </tr-input-toggle-class>
+    </div>
+    <div id="menu_monsters" class="fieldset">
+        <h4 class="legend">Monster Stats</h4>
+        <div class="menu-monster-wrapper menu-label-input">
+            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats"></tr-input-toggle-class>
             <div>
-                <label for="monster_select">Select Monster:</label>
               <tr-select property="monster">
                   <tr-option selected value="0">Slime</tr-option>
                   <tr-option value="1">Red Slime</tr-option>
@@ -166,42 +180,11 @@
                 </tr>
                 <tr>
                     <td>Code:</td>
-                    <td>capt_uhu, datyedyeguy, <br/>brianwilliams42</td>
+                    <td>capt_uhu, <br/>datyedyeguy, <br/>brianwilliams42</td>
                 </tr>
             </table>
         </div>
     </div>
-
-<style>
-    #menu_bot{
-        width: 400px; grid-row: span 2;
-    }
-    #menu_bot a{
-        color: #f8b800;
-        background-color: #000;
-        position: absolute;
-        top: -10px;
-        padding: 0 .25em;
-    }
-    #menu_bot a.more-info {
-        right: 15px;
-    }
-    #menu_bot a.randroid {
-        right: 120px;
-        color: #f8b800;
-    }
-
-    #menu_bot [title]:hover {
-        color: #000;
-        background-color: #f8b800;
-    }
-    #menu_layout_bot{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-</style>
-
     <div id="menu_bot" class="fieldset">
         <h4 class="legend">Bot Commands</h4>
         <a class="randroid" target="_blank" href="https://www.twitch.tv/popout/the_randroid/chat?popout=">the_randroid</a> 
@@ -213,7 +196,7 @@
             </div>
             <div>
                 <h4><span title="Example: !rset 1 kermit piggy fozzie Rowlf">Runners</span></h4>
-                <p>!rset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [runner1] [runner2] [runner3] [runner4]</p>
+                <p>!rset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> <tr-text player="1" property="player-twitch" class="player-twitch"></tr-text> <tr-text player="2" property="player-twitch" class="player-twitch"></tr-text> <tr-text player="3" property="player-twitch" class="player-twitch"></tr-text> <tr-text player="4" property="player-twitch" class="player-twitch"></tr-text></p>
             </div>
             <div>
                 <h4><span title="Example: !cset 1 Jar-Jar Morbo">Commentary</span></h4>
@@ -221,7 +204,7 @@
             </div>
             <div>
                 <h4><span title="Example: !sset 1 R2D2 BB-8">Restreaming/Tracking</span></h4>
-                <p>!sset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [restreamer] [tracker1] [tracker2]</p>
+                <p>!sset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> <tr-text property="restreamers" class="restreamers"></tr-text> [tracker1] [tracker2]</p>
             </div>
             <div>
                 <h4><span title="Example: !h 1 randomania2">Host</span></h4>
@@ -230,7 +213,7 @@
         </div>
     </div>
 
-    <div id="menu_view" class="fieldset" style="background-color: #000; grid-area: 3 / 4 / span 2; z-index: 3;">
+    <div id="menu_view_game" class="fieldset">
         <h4 class="legend">View</h4>
         <tr-button-view view="" title="Layout"></tr-button-view>
         <tr-button-view view="tracker" title="Tracker"></tr-button-view>

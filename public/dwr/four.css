@@ -336,6 +336,7 @@ to{background-position: -270px 0;}
     animation: dw-panel-appear .1s;
     transform-origin: 50% 0;
     opacity: .3;
+    z-index: 3;
 }
 
 .player-final{
@@ -762,10 +763,10 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
-        "players  players-2 settings-game team  team"
-        "players  players-2 layout        team  team"
-        "playlist timer     dwr           view  reset"
-        "playlist credits   dwr           view  reset";
+        "players  players-2 players-2     timer        commands commands"
+        "players  players-2 players-2     team          commands commands"
+        "league   monsters  settings-game  team         commands commands"
+        "playlist dwr       layout         credits reset view"
     }
 
 #menu_players_extra{grid-area: players-2;}
@@ -773,7 +774,48 @@ tr-timer span {
 #menu_playlist {grid-area: playlist;}
 #menu_credits {grid-area: credits;}
 #menu_settings_extra {grid-area: settings-game;}
+#menu_league {grid-area: league;
+    flex-direction: row;
+    justify-content: space-between;}
+#menu_view_game {
+    grid-area: 4/6; background-color: #000; z-index: 3; justify-content: space-around;}
+#menu_view_game button {
+        width: 8em;
+    }
 
+#menu_monsters {grid-area: monsters;}
+
+#menu_bot{
+    width: 400px; grid-area: commands;
+}
+#menu_bot a{
+    color: #f8b800;
+    background-color: #000;
+    position: absolute;
+    top: -10px;
+    padding: 0 .25em;
+}
+#menu_bot a.more-info {
+    right: 15px;
+}
+#menu_bot a.randroid {
+    right: 120px;
+    color: #f8b800;
+}
+
+#menu_bot [title]:hover {
+    color: #000;
+    background-color: #f8b800;
+}
+#menu_layout_bot{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-flags-wrapper{
+    display: flex;
+}
 .highlight{
     background-color: #f8b800;
     color: #000;
