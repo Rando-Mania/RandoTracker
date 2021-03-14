@@ -29,18 +29,7 @@
 .border-1{
     border: var(--border) solid #b1b1b1;
     border-radius: 8px;
-}
-
-@supports not (border-image: paint(ffr-border) 6) {
-    .border-1{border-image: url('images/border.png') 6;}
-}
-
-@supports (border-image: paint(ffr-border) 6) {
-    .border-1{
-        border-image: paint(ffr-border) 6;
-        --border-outside-color: #747474;
-        --border-inside-color: #fcfcfc;
-    }
+    border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;
 }
 
 .border-bottom{border-top: none;}

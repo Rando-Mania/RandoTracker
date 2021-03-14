@@ -7,7 +7,7 @@
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-    <link rel="stylesheet" type="text/css" href="two.css?v=1">
+    <link rel="stylesheet" type="text/css" href="two.css">
     <link rel="preload" href="images/ff4-border.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
@@ -48,14 +48,16 @@
                 </div>
                 <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
             </div>
-            <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
-                <div>W-L</div>
-                <tr-text property="player-record"></tr-text>
-            </tr-hide-if-empty>
-            <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
-                <div>Seed</div>
-                <tr-text property="player-seed"></tr-text>
-            </tr-hide-if-empty>
+            <div class="record-seed-contain">
+                <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                    <div>W-L</div>
+                    <tr-text property="player-record"></tr-text>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                    <div>Seed</div>
+                    <tr-text property="player-seed"></tr-text>
+                </tr-hide-if-empty>
+            </div>
         </div>
         <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
         <tr-template class="player-grid-2 abs border-background-1" href="icons-two.html"></tr-template>

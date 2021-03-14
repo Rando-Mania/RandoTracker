@@ -112,7 +112,12 @@
 .weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .tourney-background{background-image: url('images/video-background/layout_2020.png');}
 .chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
-.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
+
+.league-background{background-image: url('images/video-background/DWR2021.png');}
+[player="2"] .league-background{
+    background-image: url('images/video-background/winter_league.png');
+    background-size: contain;
+}
 
 .player-info{
     height: 57px;
@@ -879,9 +884,6 @@ figcaption{
     color: #000;
     font-weight: bold;
 }
-
-.menu-button-row label:first-of-type{ border-radius: 3px 0 0 3px;}
-.menu-button-row label:last-of-type{ border-radius: 0 3px 3px 0;}
 
 .monster-table{
     display: grid;

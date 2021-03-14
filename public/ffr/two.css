@@ -22,7 +22,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('images/2p/base-background.png');
 
     --border: 6px;
 
@@ -73,7 +72,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg) #000;
+    background-color: #000;
 }
 
 .layout.clip-background{
@@ -106,11 +105,9 @@
 
 .ffr-default{
     background-color: #000;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
-    background-image: var(--default-fallback);
 }
-.notwebp .ffr-default{background-image: url(images/2p/base-background.png), var(--default-fallback);}
-.webp .ffr-default{background-image: url(images/2p/base-background.webp), var(--default-fallback);}
+.notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
+.webp .ffr-default{background-image: url(images/2p/base-background.webp);}
 
 .ffr-irongol{
     --backgroundColor2: #500;
@@ -165,19 +162,19 @@
 
 /* cam layouts */
 
-.layout.show-cams.ffr-default{
+.show-cams.ffr-default{
     background-image: url(images/2p-cam/base-background.png);
 }
-.layout.show-cams.ffr-irongol{
+.show-cams.ffr-irongol{
     background-image: url(images/2p-cam/base-irongol.png);
 }
-.layout.show-cams.ffr-tourney{
+.show-cams.ffr-tourney{
     background-image: url(images/2p-cam/base-tourney.png);
 }
-.layout.show-cams.ffr-league{
+.show-cams.ffr-league{
     background-image: url(images/2p-cam/base-league.png);
 }
-.layout.show-cams.ffr-rush{
+.show-cams.ffr-rush{
     background-image: url(images/2p-cam/base-rush.png);
     --pronounY: 526px;
     --rankY: 526px;
@@ -185,10 +182,10 @@
     --finalY: 50px;
 }
 
-.layout.show-cams.ffr-duckling{
-    background-image: url(images/2p-cam/base-duckling.png);
-}
-.layout.show-cams.ffr-dark{
+.notwebp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.png);}
+.webp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.webp);}
+
+.show-cams.ffr-dark{
     background-image: url(images/2p-cam/base-dark.png);
 }
 
