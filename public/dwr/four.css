@@ -336,6 +336,7 @@ to{background-position: -270px 0;}
     animation: dw-panel-appear .1s;
     transform-origin: 50% 0;
     opacity: .3;
+    z-index: 3;
 }
 
 .player-final{
@@ -762,10 +763,10 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
-        "players  players-2 players-2 timer        commands commands"
-        "players  players-2 players-2 team          commands commands"
-        "playlist league     monsters  settings-game credits reset"
-        "playlist  .        dwr       layout        credits  view";
+        "players  players-2 players-2     timer        commands commands"
+        "players  players-2 players-2     team          commands commands"
+        "league   monsters  settings-game  team         commands commands"
+        "playlist dwr       layout         credits reset view"
     }
 
 #menu_players_extra{grid-area: players-2;}
@@ -773,8 +774,15 @@ tr-timer span {
 #menu_playlist {grid-area: playlist;}
 #menu_credits {grid-area: credits;}
 #menu_settings_extra {grid-area: settings-game;}
-#menu_league {grid-area: league;}
-#menu_view_game {grid-area: 4/6; background-color: #000; z-index: 3;}
+#menu_league {grid-area: league;
+    flex-direction: row;
+    justify-content: space-between;}
+#menu_view_game {
+    grid-area: 4/6; background-color: #000; z-index: 3; justify-content: space-around;}
+#menu_view_game button {
+        width: 8em;
+    }
+
 #menu_monsters {grid-area: monsters;}
 
 #menu_bot{
@@ -805,6 +813,9 @@ tr-timer span {
     gap: 8px;
 }
 
+.menu-flags-wrapper{
+    display: flex;
+}
 .highlight{
     background-color: #f8b800;
     color: #000;
