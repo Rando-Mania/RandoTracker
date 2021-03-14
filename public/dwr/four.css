@@ -101,6 +101,7 @@ html{
     padding: 9px;
     display: grid;
     grid-template-columns: min-content auto;
+    z-index: 3;
 }
 
 .player-rank{
@@ -179,6 +180,12 @@ html{
     padding: 2px 4px;
     font-size: 8px;
     box-shadow: 2px 0 2px -3px #fff, -2px 0 2px -3px #fff;
+    width: min-content;
+    z-index: -1;
+}
+
+[player="2"] .player-grid, [player="4"] .player-grid{
+    justify-self: end;
 }
 
 img[src*="weapon"],
@@ -284,16 +291,21 @@ to{background-position: -270px 0;}
 }
 
 .layout .player-grid, .layout .stats-and-spells{
-    display: none;
-    /* width: 146px; */
+    grid-area: 1/1;
 }
 
-.layout .stats-and-spells.show-flex{
+.layout .stats-and-spells{
     display: flex;
+    z-index: -1;
+}
+
+.layout .z-show{
+    z-index: 2;
 }
 
 .player-panels-contain{
     height: 191px;
+    display: grid;
 }
 
 .player-panels-contain > *{
@@ -337,7 +349,7 @@ to{background-position: -270px 0;}
     font-size: 12px;
     color: #f88019;
     border-color: #f88019;
-    z-index: 2;
+    z-index: 3;
 }
 
 .player-final:empty{
@@ -363,7 +375,7 @@ to{background-position: -270px 0;}
     line-height: 1;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
-    z-index: 2;
+    z-index: 3;
 }
 
 .player-winner:after{
@@ -604,17 +616,16 @@ tr-timer span {
         padding: 1em;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         border: none;
-        background-color: #000000BF;
-        border: #fff 2px solid;
+        background-color: rgba(0,0,0,.75);
+        /* border: #fff 2px solid;
         border-image: 4 / 4px url('images/dw-border.png');
         border-image: paint(dw1Border) 4 / 4px;
-        image-rendering: pixelated;
-        bottom: 0px;
+        image-rendering: pixelated; */
+        bottom: 23%;
         left: 50%;
-        max-width: 184px;
-        margin-bottom: 50px;
-        transform: translateX(-50%);
-        z-index: 0; /* To show below stats/spells */
+        max-width: 175px;
+        transform: translate(-50%, 50%);
+        z-index: -1; /* To show below stats/spells */
     }
     
     .league h4{
@@ -695,7 +706,7 @@ tr-timer span {
 
     .items-button.show-grid, 
     .stats-spells-button.show-flex,
-    .menu-button-row label.show{
+    .menu-button-row label.z-show{
         background-color: #f8b800;
         color: #000;
         font-weight: bold;
@@ -785,4 +796,8 @@ tr-timer span {
 
 #stop_auto_play_panels{
     background-image: none;
+}
+
+.visible{
+    visibility: visible;
 }

@@ -42,34 +42,32 @@
             grid-gap: 2em;
         }
 
-        .player-wrapper{
+        .tracker .player-wrapper{
             display: grid;
             grid-template-columns: repeat(2, auto);
             grid-gap: 24px;
         }
-        .player-wrapper{
-            display: grid;
-        }
-        .player-name { grid-column: span 3;}
-        .player-wrapper [source="#player-template"]{
+ 
+        .tracker .player-name { grid-column: span 3;}
+        .tracker .player-wrapper [source="#player-template"]{
             display: grid;
             grid-template-columns: repeat(3, auto);
             grid-row-gap: 1px;
         }
-        .spells{
+        .tracker .spells{
             height: auto;
         }
         .layout select{
             min-width: auto;
         }
-        .stats{
+        .tracker .stats{
             width: auto;
         }
 
-        .full-width {
+        .tracker .full-width {
             grid-column: 1 / -1;
         }
-        .tracker-runner-info{
+        .tracker .tracker-runner-info{
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -81,6 +79,9 @@
             display: grid;
             grid-template-columns: 1fr;
             justify-items: center;
+        }
+        .tracker .player-grid{
+            z-index: 2;
         }
     </style>
 </head>
