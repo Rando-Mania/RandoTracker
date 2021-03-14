@@ -7,55 +7,29 @@
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="" as="image" type="image/png">
-    <style>
-        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
-        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
-        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
-        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
-    
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
-        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
-        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
-
-        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
-        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
-        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
-        
-        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
-        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
-        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
-        [player="4"] .player-final {right: var(--finalX); bottom: var(--finalY);}
-    
-        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
-        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
-        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
-        [player="4"] .player-speaker {right: var(--speakerX); bottom: var(--speakerY);}
-    
-        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
-        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
-        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
-        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
-    </style>
+    <link rel="preload" href="../shared/images/checkerboard.png" as="image" type="image/png">
 </head>
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>
-            <div class="player-name abs border-1 background-1">
-                <tr-text scale-to-fit property="player-name"></tr-text>
+            <div class="border-1 player-video"></div>
+            <div class="player-info-contain">
+                <div class="player-name border-1 background-1">
+                    <tr-text scale-to-fit property="player-name"></tr-text>
+                </div>
+                <tr-template class="player-grid border-1 background-1" href="icons.html"></tr-template>        
+                <tr-toggle property="toggle-speaker" class="player-speaker">
+                    <img src="../shared/images/icons/blank.svg" alt="">
+                </tr-toggle>
+                <div class="winner-final-contain abs">
+                    <tr-toggle property="toggle-winner" class="player-winner border-1 background-1">
+                        <div>Winner</div>
+                    </tr-toggle>
+                    <tr-text property="player-final" class="player-final border-1 background-1"></tr-text>
+                </div>
             </div>
-            <tr-template class="player-grid abs border-1 background-1" href="icons.html"></tr-template>
-            <tr-text property="player-final" class="player-final abs"></tr-text>        
-            <tr-toggle property="toggle-speaker" class="abs player-speaker">
-                <img src="../shared/images/icons/blank.svg" alt="">
-            </tr-toggle>
-            <tr-toggle property="toggle-winner" class="abs player-winner border-1 background-1">
-                <div>Winner</div>
-            </tr-toggle>
         </template>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
@@ -71,28 +45,22 @@
         </tr-player>
 
 <!-- vs -->
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
-        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="vs" id="vs_1">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="vs" id="vs_2">VS</tr-toggle>
 
 <!-- timer/staff -->
-
-        <tr-timer class="abs background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 388px; left: 520px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs background-1" style="top: 400px; left: 520px;" toggle-class="wtf">
-            <tr-template href="../shared/production-team.html"></tr-template>
-        </tr-hide-if-empty>
+        <div class="timer-staff">
+            <tr-timer class="background-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+            <tr-hide-if-empty class="staff background-1" toggle-class="wtf">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
+        </div>
     </div>
 
 <!-- loadscreen -->
 <div class="loadscreen-contain abs" style="top:0; left: 0;">
     <tr-template href="four-loading-template.html"></tr-template>
 </div>
-
-<!-- bracket -->
-<!-- <div class="bracket-contain abs" style="top: 0; left: 0;">
-    <div class="bracket">
-        <iframe src="https://dq.challonge.com/dwr2018/module?theme=2" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-    </div>
-</div> -->
 
 <!-- RM calendar -->
 <div class="calendar-contain abs" style="top: 0; left: 0;">
@@ -110,7 +78,6 @@
 	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
 </body>
 </html>
