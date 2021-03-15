@@ -1,8 +1,14 @@
+/*  =============
+    global styles
+    ============= */
+
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+/* variables */
 
 :root{
     --vidWidth: 439px;
@@ -21,12 +27,31 @@
     --clipY2: calc(var(--gap-size) + var(--vidHeight) - var(--border));
 }
 
+/* helper classes */
+
+.dg{display: grid;}
+.df{display: flex;}
+.fd-c{flex-direction: column;}
+
+.ta-c{text-align: center;}
+
+.jc-c{justify-content: center;}
+.ai-c{align-items: center;}
+
+.jc-se{
+    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
 .border-1{border: var(--border) solid #fff;}
 .background-1{background-color: var(--backgroundColor1);}
 
 .abs{position: absolute;}
 
-/* layout specific styles */
+/*  ==========
+    Typography
+    ========== */
+
 /* @font-face {
     font-family: "PressStart2P";
     src: local('PressStart2P'),
@@ -34,6 +59,16 @@
 	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
          url('../shared/fonts/pressstart2p.ttf') format('truetype');
 }*/
+
+.fs-s{ font-size: 1rem; }
+.fs-m{ font-size: 1.2rem; }
+.fs-l{ font-size: 1.6rem; }
+
+.fw-b{ font-weight: bold;}
+
+/*  ==========
+    Components
+    ========== */
 
 .layout{
     font-family: Arial, sans-serif;
@@ -43,7 +78,7 @@
     background-color: #c0c0c0;
     background-image: url('../shared/images/checkerboard.png');
     line-height: 1;
-    display: grid !important;
+    display: grid;
     row-gap: var(--gap-size);
     padding: var(--gap-size);
     grid-template-columns: auto 1fr 1fr auto;
@@ -77,7 +112,6 @@
 
 .player-info-contain{
     position: relative;
-    display: grid;
     grid-template-columns: auto 1fr;
     justify-self: start;
     grid-template-areas:"pn pn" "pg ps";
@@ -123,13 +157,9 @@
 }
 
 .player-name{
-    font-size: 26px;
     height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
 	color: #fff;
-    display: flex;
-    align-items: center;
-    text-align: center;
     padding: 0 8px;
     grid-area: pn;
 }
@@ -143,7 +173,6 @@
 }
 
 .player-grid{
-    display: grid;
     grid-template-columns: repeat(3, min-content);
     padding: 4px;
     grid-gap: 4px;
@@ -178,10 +207,7 @@
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
 [player="1"] .winner-final-contain, [player="2"] .winner-final-contain{top: 75px;}
@@ -194,23 +220,16 @@
 
 .player-winner{
     height: 34px;
-    font: bold 28px 'Times New Roman', Times, serif;
+    font-family:'Times New Roman', Times, serif;
     color: #f8b800;
     padding: 0 .5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .player-final{
     height: 34px;
-    font-size: 20px;
     background-color: #000;
     color: #fff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0 .5em;
 }
 
 .player-final:empty{
@@ -219,38 +238,27 @@
 
 .vs{
     padding: 12px;
-    font-size: 24px;
-    text-align: center;
     grid-column: 2 / span 2;
 }
 
 #vs_1{grid-row: 1;}
 #vs_2{
     grid-row: 4;
-    display: flex;
     align-items: flex-end;
-    justify-content: center;
 }
 
 .timer-staff{
     grid-area: ts;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 tr-timer{
 	width: 11em;
     height: 53px;
     z-index: 1;
-	font-size: 24px;
 }
 
 tr-timer span {
     width: 26px;
-    text-align: center;
 }
 
 /* dialog styles */
@@ -270,14 +278,6 @@ tr-timer span {
     background-color: transparent;
 }
 
-.display-none{ display: none; }
-
-.show{ display: block; }
-
-#menu_layout div{
-    display: block;
-}
-
-#menu_overlays_contain div{
-    margin-bottom: .75em;
-}
+/*  ==========
+    Menu
+    ========== */

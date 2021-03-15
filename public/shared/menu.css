@@ -383,6 +383,14 @@ button.active{
     background-position: 100% 100%;
 }
 
+#menu_layout div{
+    display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
+
 /* Best of  */
 
 #menu_layout #menu_best_of{display: flex;}
