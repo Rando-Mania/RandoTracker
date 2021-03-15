@@ -763,10 +763,11 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
-        "players  players-2 players-2     timer        commands commands"
-        "players  players-2 players-2     team          commands commands"
-        "league   monsters  settings-game  team         commands commands"
-        "playlist dwr       layout         credits reset view"
+        "players   players-2 players-2     timer   commands commands"
+        "players   players-2 players-2     team    commands commands"
+        "playlist  monsters  settings-game team    commands commands"
+        "playlist  dwr       layout        credits view     reset"
+        "playlist  league    league        credits view     reset"
     }
 
 #menu_players_extra{grid-area: players-2;}
@@ -778,7 +779,7 @@ tr-timer span {
     flex-direction: row;
     justify-content: space-between;}
 #menu_view_game {
-    grid-area: 4/6; background-color: #000; z-index: 3; justify-content: space-around;}
+    grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
 #menu_view_game button {
         width: 8em;
     }
