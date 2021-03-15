@@ -8,9 +8,10 @@
     padding: 0;
 }
 
-/* variables */
+/* root */
 
 :root{
+    font: normal 16px Arial, sans-serif;
     --vidWidth: 439px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
@@ -71,7 +72,6 @@
     ========== */
 
 .layout{
-    font-family: Arial, sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
