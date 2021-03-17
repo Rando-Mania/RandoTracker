@@ -758,6 +758,14 @@ figcaption{
     transform: translateX(-50%);
 }
 
+.layout [property="week-6"], .layout [property="week-7"]{
+    filter: hue-rotate(180deg);
+}
+
+.layout [property="week-8-1"], .layout [property="week-8-2"]{
+    filter: grayscale(1);
+}
+
 .league h4{
     text-align: center;
     margin: 0;
