@@ -44,7 +44,7 @@
     justify-content: space-evenly;
 }
 
-.border-1{border: var(--border) solid #fff;}
+.border-1{border: var(--border) solid currentColor;}
 .background-1{background-color: var(--backgroundColor1);}
 
 .abs{position: absolute;}
@@ -159,7 +159,6 @@
 .player-name{
     height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
-	color: #fff;
     padding: 0 8px;
     grid-area: pn;
 }
@@ -210,25 +209,26 @@
     background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
-[player="1"] .winner-final-contain, [player="2"] .winner-final-contain{top: 75px;}
-[player="3"] .winner-final-contain, [player="4"] .winner-final-contain{bottom: 75px;}
-[player="2"] .winner-final-contain, [player="4"] .winner-final-contain{right: 0;}
+.final-winner-conatin{
+    color: #f8b800;
+}
 
-.winner-final-contain > *~*{
+[player="1"] .final-winner-conatin, [player="2"] .final-winner-conatin{top: 75px;}
+[player="3"] .final-winner-conatin, [player="4"] .final-winner-conatin{bottom: 75px;}
+[player="2"] .final-winner-conatin, [player="4"] .final-winner-conatin{right: 0;}
+
+.final-winner-conatin > *~*{
     margin-top: calc(var(--border) * -1);
 }
 
 .player-winner{
     height: 34px;
     font-family:'Times New Roman', Times, serif;
-    color: #f8b800;
     padding: 0 .5em;
 }
 
 .player-final{
     height: 34px;
-    background-color: #000;
-    color: #fff;
     padding: 0 .5em;
 }
 
@@ -270,7 +270,7 @@ tr-timer span {
     grid-template-columns: repeat(3,auto);
     grid-gap: 7px;
     padding: 7px;
-    border: solid var(--border) #fff;
+    border: solid var(--border) currentColor;
     z-index: 3;
 }
 
