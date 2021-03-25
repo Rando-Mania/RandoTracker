@@ -800,7 +800,7 @@ tr-timer span {
 #menu_settings_extra {grid-area: settings-game;}
 #menu_league {grid-area: league;
     flex-direction: row;
-    justify-content: space-between;}
+    justify-content: space-around;}
 #menu_view_game {
     grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
 #menu_view_game button {
@@ -812,6 +812,11 @@ tr-timer span {
 #menu_bot{
     width: 400px; grid-area: commands;
 }
+
+#menu_bot .trackers, #menu_bot .commentators{
+    white-space: nowrap;
+}
+
 #menu_bot a{
     color: #f8b800;
     background-color: #000;

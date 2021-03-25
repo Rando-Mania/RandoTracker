@@ -12,7 +12,7 @@
 
 :root{
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     --vidWidth: 604px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
@@ -227,9 +227,11 @@
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
 }
-.best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
-.best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
-.best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
+.best-of-3 tr-toggle-class:nth-child(n+3),
+.best-of-5 tr-toggle-class:nth-child(n+4),
+.best-of-7 tr-toggle-class:nth-child(n+5){
+    display: none;
+}
 
 tr-timer{
     grid-area: t;

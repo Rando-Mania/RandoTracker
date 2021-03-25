@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="images/ff4fe-spritesheet.png" as="image" type="image/png">
     <style type="text/css">
         body{
             display: grid;
@@ -29,17 +30,19 @@
 <body>
     <div class="tracker-layout">
         <template id="player_tracker_template">
-            <div class="player-name border-background-1">
+            <div class="player-name df ta-c ai-c fs-l border-1 background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid border-background-1" href="icons.html"></tr-template>
-            <tr-text property="player-final" class="player-final"></tr-text>        
+            <tr-template class="player-grid dg border-1 background-1" href="icons.html"></tr-template>
             <tr-toggle property="toggle-speaker" class="player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
             </tr-toggle>
-            <tr-toggle property="toggle-winner" class="player-winner">
-                <div>Winner</div>
-            </tr-toggle>
+            <div class="final-winner-contain fs-m">
+                <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n border-1 background-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-l fw-b border-1 background-1">
+                    <div>Winner</div>
+                </tr-toggle>
+            </div>
         </template>
         
         <tr-player player="1">

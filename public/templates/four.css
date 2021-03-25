@@ -11,7 +11,8 @@
 /* root */
 
 :root{
-    font: normal 16px Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
     --vidWidth: 439px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
@@ -122,25 +123,44 @@
 [player="3"] .player-info-contain{grid-area: i3; grid-template-areas:"pg ps""pn pn";}
 [player="4"] .player-info-contain{grid-area: i4; grid-template-areas:"ps pg""pn pn";}
 
-[player="2"] .player-info-contain, [player="4"] .player-info-contain{
-    grid-template-columns: 1fr auto;
+@supports not selector(:is(ul, ol)) {
+    [player="1"] .player-info-contain, [player="3"] .player-info-contain{
+        margin-left: calc(var(--border) * -1);
+    }
+    
+    [player="2"] .player-info-contain, [player="4"] .player-info-contain{
+        grid-template-columns: 1fr auto;
+        margin-right: calc(var(--border) * -1);
+        justify-self: end;
+    }
+
+    [player="1"] .player-info-contain > *~*, [player="2"] .player-info-contain > *~*{
+        margin-top: calc(var(--border) * -1);
+    }
+
+    [player="3"] .player-info-contain > *~*, [player="4"] .player-info-contain > *~*{
+        margin-bottom: calc(var(--border) * -1);
+    }
 }
 
-[player="1"] .player-info-contain, [player="3"] .player-info-contain{
-    margin-left: calc(var(--border) * -1);
-}
+@supports selector(:is(ul, ol)) {
+    :is([player="1"], [player="3"]) .player-info-contain{
+        margin-left: calc(var(--border) * -1);
+    }
 
-[player="2"] .player-info-contain, [player="4"] .player-info-contain{
-    margin-right: calc(var(--border) * -1);
-    justify-self: end;
-}
+    :is([player="2"], [player="4"]) .player-info-contain{
+        grid-template-columns: 1fr auto;
+        margin-right: calc(var(--border) * -1);
+        justify-self: end;
+    }
 
-[player="1"] .player-info-contain > *~*, [player="2"] .player-info-contain > *~*{
-    margin-top: calc(var(--border) * -1);
-}
+    :is([player="1"], [player="2"]) .player-info-contain > *~*{
+        margin-top: calc(var(--border) * -1);
+    }
 
-[player="3"] .player-info-contain > *~*, [player="4"] .player-info-contain > *~*{
-    margin-bottom: calc(var(--border) * -1);
+    :is([player="3"], [player="4"]) .player-info-contain > *~*{
+        margin-bottom: calc(var(--border) * -1);
+    }
 }
 
 .layout.clip-background{
@@ -209,15 +229,23 @@
     background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
-.final-winner-conatin{
+.final-winner-contain{
     color: #f8b800;
 }
 
-[player="1"] .final-winner-conatin, [player="2"] .final-winner-conatin{top: 75px;}
-[player="3"] .final-winner-conatin, [player="4"] .final-winner-conatin{bottom: 75px;}
-[player="2"] .final-winner-conatin, [player="4"] .final-winner-conatin{right: 0;}
+@supports not selector(:is(ul, ol)) {
+    [player="1"] .final-winner-contain, [player="2"] .final-winner-contain{top: 75px;}
+    [player="3"] .final-winner-contain, [player="4"] .final-winner-contain{bottom: 75px;}
+    [player="2"] .final-winner-contain, [player="4"] .final-winner-contain{right: 0;}
+}
 
-.final-winner-conatin > *~*{
+@supports selector(:is(ul, ol)) {
+    :is([player="1"], [player="2"]) .final-winner-contain{top: 75px;}
+    :is([player="3"], [player="4"]) .final-winner-contain{bottom: 75px;}
+    :is([player="2"], [player="4"]) .final-winner-contain{right: 0;}
+}
+
+.final-winner-contain > *~*{
     margin-top: calc(var(--border) * -1);
 }
 
