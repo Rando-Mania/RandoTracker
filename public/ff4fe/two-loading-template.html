@@ -63,6 +63,10 @@
     justify-content: flex-end;
 }
 
+.loadscreen .final-winner-contain{bottom: 270px;}
+.loadscreen [player="1"] .final-winner-contain{left: 140px;}
+.loadscreen [player="2"] .final-winner-contain{right: 140px;}
+
 .loadscreen .versus{
     display:none;
 }
@@ -204,12 +208,12 @@
     --nameWidth: auto;
     --nameX: 264px; --nameY: 532px;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     color: #000;
     background-color: #d0b58a;
     --fallback-image: linear-gradient(90deg, var(--fallback-color) 0 18%, #d0b58a 0 83%, var(--fallback-color) 83%);
     --fallback-color: #c1624e;
     background-image: var(--fallback-image);
-    font-weight: 700;
 }
 
 .laliho-swiss .loadscreen{--fallback-color: #c1624e;}
@@ -249,7 +253,7 @@
 [class*="laliho"] .loadscreen .staff,
 [class*="laliho"] .loadscreen .player-info{
     font-size: 24px;
-    color: #020003;
+    color: #000;
     text-align: center;
     letter-spacing: 2px;
 }
@@ -257,11 +261,19 @@
 [class*="laliho"] .loadscreen [player="2"] .player-name-contain{
     display: block;
 }
-[class*="laliho"] .loadscreen .player-name-contain,
-[class*="laliho"] .loadscreen .commentators,
-[class*="laliho"] .loadscreen .restreamers,
-[class*="laliho"] .loadscreen .trackers{
-    text-align: center;
+
+@supports not selector(:is(ul, ol)) {
+    [class*="laliho"] .loadscreen .player-name-contain,
+    [class*="laliho"] .loadscreen .commentators,
+    [class*="laliho"] .loadscreen .restreamers,
+    [class*="laliho"] .loadscreen .trackers{
+        text-align: center;
+    }
+}
+@supports selector(:is(ul, ol)) {
+    [class*="laliho"] .loadscreen :is(.player-name-contain, .commentators, .restreamers, .trackers){
+        text-align: center;
+    }
 }
 
 [class*="laliho"] .loadscreen .player-info{
@@ -279,12 +291,22 @@
     font-size: 24px;
 }
 
-[class*="laliho"] .commentators, 
-[class*="laliho"] .restreamers,
-[class*="laliho"] .trackers{
-    width:auto;
-    margin: 0 auto;
+@supports selector(:is(ul, ol)) {
+    [class*="laliho"] :is(.commentators, .restreamers, .trackers){
+        width: auto;
+        margin: 0 auto;
+    }
 }
+
+@supports not selector(:is(ul, ol)) {
+    [class*="laliho"] .commentators, 
+    [class*="laliho"] .restreamers,
+    [class*="laliho"] .trackers{
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
 [class*="laliho"] .loadscreen .staff img {
     background-position-y: 33.3%;
     opacity: .9;
@@ -302,6 +324,30 @@
 }
 .loadscreen .round:empty{
     display: none;
+}
+
+[class*="laliho"] .loadscreen .final-winner-contain{
+    border: 2px #000 solid;
+    text-align: center;
+    mix-blend-mode: overlay;
+    bottom: 180px;
+}
+
+[class*="laliho"] .loadscreen [player="1"] .final-winner-contain{
+    left: 260px;
+    transform: rotate(-10deg);
+}
+[class*="laliho"] .loadscreen [player="2"] .final-winner-contain{
+    right: 260px;
+    transform: rotate(10deg);
+}
+
+[class*="laliho"] .loadscreen .final-winner-contain > *{
+    width: 143px;
+    text-shadow: none;
+    color: #000;
+    height: auto;
+    justify-content: center;
 }
 
 </style>
@@ -322,7 +368,13 @@
                 <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
                     <div>Seed</div>
                     <tr-text property="player-seed"></tr-text>
-                </tr-hide-if-empty>
+                </tr-hide-if-empty>  
+            </div>
+            <div class="final-winner-contain abs">
+                <tr-toggle property="toggle-winner" class="player-winner border-background-1">
+                    <div>Winner</div>
+                </tr-toggle>
+                <tr-text property="player-final" class="player-final border-background-1"></tr-text>
             </div>
             <div class="bottom-flames abs"></div>
         </template>
