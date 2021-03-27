@@ -228,6 +228,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
 
 .lvltri figcaption{
     pointer-events: none;
+    opacity: 1;
 }
 
 .lvltri img{
