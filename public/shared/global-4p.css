@@ -1,0 +1,78 @@
+[player="1"] .player-video{grid-area: v1;}
+[player="2"] .player-video{grid-area: v2;}
+[player="3"] .player-video{grid-area: v3;}
+[player="4"] .player-video{grid-area: v4;}
+
+[player="1"] .player-info-contain{grid-area: i1; grid-template-areas:"pn pn""pg ps";}
+[player="2"] .player-info-contain{grid-area: i2; grid-template-areas:"pn pn""ps pg";}
+[player="3"] .player-info-contain{grid-area: i3; grid-template-areas:"pg ps""pn pn";}
+[player="4"] .player-info-contain{grid-area: i4; grid-template-areas:"ps pg""pn pn";}
+
+@supports not selector(:is(ul, ol)) {
+    [player="1"] .player-info-contain, [player="3"] .player-info-contain{
+        margin-left: calc(var(--borderWidth) * -1);
+    }
+    
+    [player="2"] .player-info-contain, [player="4"] .player-info-contain{
+        grid-template-columns: 1fr auto;
+        margin-right: calc(var(--borderWidth) * -1);
+        justify-self: end;
+    }
+
+    [player="1"] .player-info-contain > *~*, [player="2"] .player-info-contain > *~*{
+        margin-top: calc(var(--borderWidth) * -1);
+    }
+
+    [player="3"] .player-info-contain > *~*, [player="4"] .player-info-contain > *~*{
+        margin-bottom: calc(var(--borderWidth) * -1);
+    }
+}
+
+@supports selector(:is(ul, ol)) {
+    :is([player="1"], [player="3"]) .player-info-contain{
+        margin-left: calc(var(--borderWidth) * -1);
+    }
+
+    :is([player="2"], [player="4"]) .player-info-contain{
+        grid-template-columns: 1fr auto;
+        margin-right: calc(var(--borderWidth) * -1);
+        justify-self: end;
+    }
+
+    :is([player="1"], [player="2"]) .player-info-contain > *~*{
+        margin-top: calc(var(--borderWidth) * -1);
+    }
+
+    :is([player="3"], [player="4"]) .player-info-contain > *~*{
+        margin-bottom: calc(var(--borderWidth) * -1);
+    }
+}
+
+.layout.clip-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat
+}
+
+[player="2"] .player-speaker, [player="4"] .player-speaker{
+    transform: rotateY(180deg);
+    justify-self: start;
+}
+
+.vs{
+    padding: 12px;
+    grid-column: 2 / span 2;
+}
+
+#vs_1{grid-row: 1;}
+#vs_2{
+    grid-row: 4;
+    align-items: flex-end;
+}
