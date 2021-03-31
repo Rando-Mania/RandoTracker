@@ -12,7 +12,6 @@
 
     --videoX: 12px; --videoY: 12px;
     --nameWidth: 173px;
-    --teamWidth: 270px;
     --nameX: 449px; --nameY: 12px;
     --teamX: 12px; --teamY: 332px;
     --gridX: 449px; --gridY: 64px;
@@ -115,11 +114,11 @@ html{
 
 .team-name{
     font-size: 26px;
-    width: calc(var(--teamWidth) + 8px * 2);
+    width: 400px;
     color: #fff;
     align-items: center;
     text-align: center;
-    padding: 10px 8px 9px 8px;
+    padding: 9px 12px;
 	position: absolute;
 	z-index: 5;
 	display: block;
@@ -303,7 +302,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 230px;
+    width: 220px;
 }
 
 .staff img {
