@@ -9,16 +9,16 @@
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     
-    --videoX: 15px; --videoY: 25px;
+    --videoX: 15px; --videoY: 10px;
     --nameWidth: 380px;
-    --nameX: 15px; --nameY: 490px;
-    --gridX: 177px; --gridY: 568px;
-    --pronounX: 15px; --pronounY: 568px;
+    --nameX: 15px; --nameY: 475px;
+    --gridX: 15px; --gridY: 529px;
+    --pronounX: 250px; --pronounY: 529px;
     --rankX: 133px; --rankY: 63px;
-    --speakerX: 245px; --speakerY: 624px;
-    --winX: 127px; --winY: 624px;
-    --finalX: 15px; --finalY: 624px;
-    --bestX: 15px; --bestY: 670px;
+    --speakerX: 250px; --speakerY: 600px;
+    --winX: 175px; --winY: 593px;
+    --finalX: 175px; --finalY: 550px;
+    --bestX: 250px; --bestY: 567px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -91,7 +91,7 @@
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
-    height: 75px;
+    height: 50px;
 	color: #fff;
     display: flex;
     align-items: center;
@@ -104,7 +104,7 @@
 }
 
 .player-pronoun, .record-contain{
-    height: 54px;
+    height: 40px;
     font-size: 20px;
 	text-align: center;
     width: 160px;
@@ -132,15 +132,35 @@
 
 .player-grid img, .dialog img{
     background-image: url('images/retro_tracker/items-sprite-2020.png');
-    background-size: 700% 100%;
+    background-size: 600% 400%;
 }
 
 .tablet-1{background-position: 0 0;}
-.tablet-2{background-position: 16.5% 0%;}
-.tablet-3{background-position: 33% 0%;}
-.tablet-4{background-position: 49.5% 0%;}
-.bracelet{background-position: 66% 0%;}
-.tower{background-position: 83% 0%;}
+.tablet-2{background-position: 20% 0%;}
+.tablet-3{background-position: 40% 0%;}
+.tablet-4{background-position: 60% 0%;}
+.bracelet{background-position: 80% 0%;}
+.tower{background-position: 100% 0%;}
+
+.note-pyramid{background-position: 0 33%;}
+.note-library{background-position: 20% 33%;}
+.note-cave{background-position: 40% 33%;}
+.note-trench{background-position: 60% 33%;}
+.mirage{background-position: 80% 33%;}
+.go{background-position: 100% 33%;}
+
+.key-waltz{background-position: 0 66%;}
+.key-steamship{background-position: 20% 67%;}
+.key-sub{background-position: 40% 67%;}
+.key-bridge{background-position: 60% 67%;}
+.admantine{background-position: 80% 67%;}
+.spacer{background-position: 100% 67%;}
+
+.dragon{background-position: 0 100%;}
+.moogle{background-position: 20% 100%;}
+.ifrit{background-position: 40% 100%;}
+.bait{background-position: 60% 100%;}
+.branch{background-position: 80% 100%;}
 
 .player-speaker{
     padding: 4px;
@@ -166,8 +186,8 @@
     width: 32px;
     height: 32px;
     background-image: url('images/retro_tracker/items-sprite-2020.png');
-    background-size: 700% 100%;
-    background-position: 100% 0%;
+    background-size: 600% 400%;
+    background-position: 100% 100%;
 }
 
 .best-of-3, .best-of-5, .best-of-7{
