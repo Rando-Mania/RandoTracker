@@ -8,27 +8,23 @@
 	padding: 0;
 }
 
-/* variables */
+/* root */
 
 :root{
+    font-family: Arial, sans-serif;
+    font-size: 1em;
     --vidWidth: 604px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
-    --videoX: 20px; --videoY: 20px;
     --nameWidth: 375px;
-    --nameX: 20px; --nameY: 490px;
-    --gridX: 20px; --gridY: 558px;
-    --speakerX: 409px; --speakerY: 493px;
-    --winX: 202px; --winY: 525px;
-    --finalX: 230px; --finalY: 558px;
-    --bestX: 869px; --bestY: 558px;
 
     --backgroundImg: url('../shared/images/checkerboard.png');
 
     --backgroundColor1: #000;
 
     --border: 2px;
+    --gap-size: 20px;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -38,17 +34,27 @@
 
 /* helper classes */
 
-.border-1{border: var(--border) solid #fff;}
+.dg{display: grid;}
+.df{display: flex;}
+.fd-c{flex-direction: column;}
 
+.ta-c{text-align: center;}
+
+.jc-c{justify-content: center;}
+.ai-c{align-items: center;}
+.as-s{align-self: start;}
+
+.js-c{justify-self: center;}
+.jc-se{
+    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.border-1{border: var(--border) solid currentColor;}
 .background-1{background-color: var(--backgroundColor1);}
 
 .abs{position: absolute;}
 
-.display-grid{display: grid;}
-
-.ai-c{align-items: center;}
-
-.jc-c{justify-content: center;}
 
 /*  ==========
     Typography
@@ -62,16 +68,17 @@
          url('../shared/fonts/pressstart2p.ttf') format('truetype');
 }*/
 
-.fs-small{ font-size: 20px; }
-.fs-medium{ font-size: 24px; }
-.fs-large{ font-size: 26px; }
+.fs-s{ font-size: 1rem; }
+.fs-m{ font-size: 1.2rem; }
+.fs-l{ font-size: 1.6rem; }
+
+.fw-b{ font-weight: bold;}
 
 /*  ==========
     Components
     ========== */
 
 .layout{
-    font-family: Arial, sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
@@ -79,7 +86,21 @@
     background-image: var(--backgroundImg);
     background-color: #c0c0c0;
     line-height: 1;
+    row-gap: var(--gap-size);
+    padding: var(--gap-size);
+    display: grid !important;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "v1 v1 v2 v2"
+        "i1 t  t  i2"
+        "g1 s  s  g2";
 }
+
+.layout > tr-player,
+.layout > tr-player > tr-template{
+    display: contents;
+} 
 
 .layout.background-clip{
     -webkit-mask:
@@ -93,19 +114,30 @@
     -webkit-mask-repeat: no-repeat
 }
 
+[player="1"] *{justify-self: flex-start;}
+[player="2"] *{justify-self: flex-end;}
+
 .player-video{
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 2;
 }
+[player="1"] .player-video{grid-area: v1;}
+[player="2"] .player-video{grid-area: v2;}
+
+.player-info-contain{
+    position: relative;
+}
+
+[player="1"] .player-info-contain{grid-area: i1;}
+[player="2"] .player-info-contain{
+    grid-area: i2;
+    flex-direction: row-reverse;
+}
 
 .player-name{
     width: calc(var(--nameWidth) + 8px * 2);
     height: 50px;
-	color: #fff;
-    display: flex;
-    align-items: center;
-    text-align: center;
     padding: 0 8px;
 }
 
@@ -114,11 +146,12 @@
 }
 
 .player-grid{
-    display: grid;
     grid-template-columns: repeat(3, auto);
     padding: 4px;
     grid-gap: 4px;
 }
+[player="1"] .player-grid{grid-area: g1;}
+[player="2"] .player-grid{grid-area: g2;}
 
 .player-grid img, .dialog img{
     width: 32px;
@@ -137,25 +170,45 @@
     padding: 4px;
 }
 
+[player="1"] .player-speaker{left: 100%;}
+[player="2"] .player-speaker{right: 100%;}
+
 .player-speaker img{
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
 }
 
 [player="2"] .player-speaker{
     transform: rotateY(180deg);
 }
 
+.final-winner-contain{
+   top: 40px;
+   color: #f8b800;
+}
+
+[player="1"] .final-winner-contain{right: 40px;}
+[player="2"] .final-winner-contain{left: 40px;}
+
+.final-winner-contain > *~*{
+    margin-top: calc(var(--border) * -1);
+}
+
 .player-winner{
-    height: 34px;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    color: #fff;
+    height: 34px;
     padding: 0 .5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.player-final{
+    height: 34px;
+    width: 5.5em;
+}
+.player-final:empty{
+    display:none;
 }
 
 .player-best-of{
@@ -166,29 +219,23 @@
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/image-missing.png');
-    background-size: 100% 100%;
+    background-image: url('images/ff4fe-spritesheet.png');
+    background-size: 500% 500%;
+    background-position: 0 100%;
 }
 
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
 }
-.best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
-.best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
-.best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
-
-.player-final{
-    width: 5.5em;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-}
-.player-final:empty{
-    display:none;
+.best-of-3 tr-toggle-class:nth-child(n+3),
+.best-of-5 tr-toggle-class:nth-child(n+4),
+.best-of-7 tr-toggle-class:nth-child(n+5){
+    display: none;
 }
 
 tr-timer{
-	width: 11em;
+    grid-area: t;
+    width: 11em;
     height: 52px;
     z-index: 1;
 }
@@ -196,6 +243,8 @@ tr-timer span {
     width: 26px;
     text-align: center;
 }
+
+.staff{grid-area: s;}
 
 /* dialog styles */
     
@@ -206,7 +255,7 @@ tr-timer span {
     grid-template-columns: repeat(3,auto);
     grid-gap: 7px;
     padding: 7px;
-    border: solid 2px #fff;
+    border: solid 2px currentColor;
     z-index: 3;
 }
 
@@ -217,18 +266,3 @@ tr-timer span {
 /*  ==========
     Menu
     ========== */
-
-#menu_2 {
-    display: grid;
-    grid-template-areas:
-        "players layout team"
-        "timer view reset";
-}
-
-#menu_layout div{
-    display: block;
-}
-
-#menu_overlays_contain div{
-    margin-bottom: .75em;
-}

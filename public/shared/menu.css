@@ -5,11 +5,11 @@
 }
 
 input[type="text"], textarea{
+    font-family: Arial, Helvetica, sans-serif;
     padding: 1px;
     background-image: linear-gradient(-145deg, #111 7px, transparent 8px);
     background-repeat: no-repeat;
     background-position: 16px 0;
-    transition: background-position linear .16s;
 }
   
 input[type="text"]:placeholder-shown,
@@ -204,9 +204,18 @@ button.dummy-text-button:hover,
     justify-content: space-between;
 }
 
-#menu_production input[type="text"], #menu_production textarea{
-    width: 157px;
+@supports not selector(:is(ul, ol)) {
+    #menu_production input[type="text"], #menu_production textarea{
+        width: 157px;
+    }
 }
+
+@supports selector(:is(ul, ol)) {
+    #menu_production :is(input[type="text"], textarea) {
+        width: 157px;
+    }
+}
+
 #menu_production textarea{
     height: 3.2rem;
 }
@@ -423,10 +432,4 @@ button.active{
     border: none;
     margin-right: auto;
     width: auto;
-}
-
-/* Credits  */
-
-#menu_layout_credits td:nth-of-type(1){
-    font-weight: bold;
 }

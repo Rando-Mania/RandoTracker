@@ -56,8 +56,17 @@ html{
         url("fonts/Warrior Quest I and II.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Press Start 2P";
+    src: 
+        local('Press Start 2P'),
+        url("../shared/fonts/pressstart2p.woff2") format("woff2"),
+        url("../shared/fonts/pressstart2p.woff") format("woff"),
+        url("../shared/fonts/PressStart2P.ttf") format("truetype");
+}
+
 .layout{
-    font-family: "Warrior Quest I and II";
+    font-family: "Warrior Quest I and II", "Press Start 2P";
     width: 1280px;
     height: 720px;
     color:#fff;
@@ -236,6 +245,7 @@ tr-label, .layout figcaption{
 
 .build:after{
 	content: '+';
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .spells{
@@ -347,10 +357,11 @@ to{background-position: -270px 0;}
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
     color: #f88019;
-    border-color: #f88019;
+    border: solid 1px #f88019;
     z-index: 3;
+    border-width: 1px;
 }
 
 .player-final:empty{
@@ -363,13 +374,12 @@ to{background-position: -270px 0;}
 }
 
 .player-winner{
-    color: #fc9838;
-    background-color: rgba(0,0,0,.5);
+    color: #f88019;
     width: max-content;
     border: double 8px;
     border-image: url('images/winner-border-small.png') repeat 8 / 8px;
     border-image: paint(dq9Stamp) 8 / 8px;
-    --border-color: #fc9838;
+    --border-color: #f88019;
     padding: 7px 8px 3px;
     font-size: 1.25em;
     font-style: italic;
@@ -415,6 +425,15 @@ tr-timer{
 tr-timer span {
     width: 26px;
     text-align: center;
+}
+
+.colon{
+    bottom: -6px;
+    position: relative;
+}
+
+.dot, .ms{
+    display:none;
 }
 
 .production-team-swap{
@@ -781,7 +800,7 @@ tr-timer span {
 #menu_settings_extra {grid-area: settings-game;}
 #menu_league {grid-area: league;
     flex-direction: row;
-    justify-content: space-between;}
+    justify-content: space-around;}
 #menu_view_game {
     grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
 #menu_view_game button {
@@ -793,6 +812,11 @@ tr-timer span {
 #menu_bot{
     width: 400px; grid-area: commands;
 }
+
+#menu_bot .trackers, #menu_bot .commentators{
+    white-space: nowrap;
+}
+
 #menu_bot a{
     color: #f8b800;
     background-color: #000;

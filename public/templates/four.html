@@ -5,9 +5,11 @@
 	<title>4 Player Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/global.css">
+    <link rel="stylesheet" type="text/css" href="../shared/global-4p.css">
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
-    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <link rel="preload" href="../shared/images/checkerboard.png" as="image" type="image/png">
     <link rel="preload" href="images/ff4fe-spritesheet.png" as="image" type="image/png">
@@ -24,11 +26,11 @@
                 <tr-toggle property="toggle-speaker" class="player-speaker">
                     <img src="../shared/images/icons/blank.svg" alt="">
                 </tr-toggle>
-                <div class="winner-final-contain fs-m abs">
+                <div class="final-winner-contain fs-m abs">
+                    <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n border-1 background-1"></tr-text>
                     <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-l fw-b border-1 background-1">
                         <div>Winner</div>
                     </tr-toggle>
-                    <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n border-1 background-1"></tr-text>
                 </div>
             </div>
         </template>
@@ -71,12 +73,10 @@
 <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
     <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
-	<script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
-	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/four_game.js"></script>
