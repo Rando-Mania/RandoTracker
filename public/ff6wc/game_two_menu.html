@@ -60,6 +60,18 @@
                 </table>
             </div>
         </div>
+        <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+			<h4 class="legend">Backgrounds</h4>
+			<div>
+				<label>Layout:</label>
+				<tr-select-toggle property="layout-back-select">
+					<tr-option selected target=".layout, .tracker-layout" toggle-class="default" value="1">Default</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="coliseum-16bit" value="2">Coliseum 16-bit</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="coliseum-mobile" value="3">Coliseum Mobile</tr-option>
+					<tr-option target=".layout, .tracker-layout" toggle-class="coliseum-mockup" value="4">Coliseum Mockup</tr-option>
+				</tr-select-toggle>
+			</div>
+        </div>
         <div id="menu_subheading" class="fieldset">
             <h4 class="legend">Subheading</h4>
             <div class="subheading-contain">

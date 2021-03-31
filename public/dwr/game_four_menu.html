@@ -200,11 +200,11 @@
             </div>
             <div>
                 <h4><span title="Example: !cset 1 Jar-Jar Morbo">Commentary</span></h4>
-                <p>!cset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> [commentator1] [commentator2] [commentator3]</p>
+                <p>!cset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> <tr-text property="commentators" class="commentators"></tr-text></p>
             </div>
             <div>
                 <h4><span title="Example: !sset 1 R2D2 BB-8">Restreaming/Tracking</span></h4>
-                <p>!sset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> <tr-text property="restreamers" class="restreamers"></tr-text> [tracker1] [tracker2]</p>
+                <p>!sset <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> <tr-text property="restreamers" class="restreamers"></tr-text> <tr-text property="trackers" class="trackers"></tr-text></p>
             </div>
             <div>
                 <h4><span title="Example: !h 1 randomania2">Host</span></h4>
@@ -231,3 +231,15 @@
         </iframe>
     </div>
 </div>
+
+
+<!-- <script>
+    Tracker.getLayoutData(function(data) {
+        let playerName1 = data["__p1__player-name"]
+        
+        Tracker.updateLayoutMultiple([
+            {property: '__p1__player-pronoun', value: playerName1.match( /\(([^)]+)\)/)[1] },
+            {property: '__p1__player-twitch', value: playerName1.match( /\{([^)]+)\}/)[1] }
+        ]);
+    });
+</script> -->

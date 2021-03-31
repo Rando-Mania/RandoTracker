@@ -26,7 +26,7 @@
 .border-background-1 {
     background-image:
         linear-gradient(#292884, #292884);
-    border: solid 3px;
+    border: solid 2px;
     mix-blend-mode: hard-light;
     border-radius: 10px;
 }
@@ -67,11 +67,40 @@ html{
     background-image: linear-gradient(to right, #394131 50%, #21384a 0);
     background-size: 100% 100%;
 }
-
-.notwebp .layout{
+.notwebp .layout.default{
     background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
-.webp .layout{
+.webp .layout.default{
     background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
+
+.layout.coliseum-16bit{background-image: url('images/2p/bg_1c.png');
+image-rendering: pixelated;
+/* background-position-y: -137px; */
+}
+.layout.coliseum-mobile{background-image: url('images/2p/86cb99d27d7cdaef5572a21c5167e625.png');}
+.layout.coliseum-mockup{background-image: url('images/2p/bad_mockup.png');}
+
+[class*="coliseum-"]{
+    --vidWidth: 629px;
+    --videoX: -3px; --videoY: 109px;
+    --nameX: 144px;
+    --nameY: 590px;
+    --gridX: -3px;
+    --gridY: 603px;
+}
+[class*="coliseum-"] .logo{
+    top: 0;
+}
+
+[class*="coliseum-"] tr-timer{
+    top: 581px;
+}
+[class*="coliseum-"] .staff{
+    top:0; left: 88px;
+}
+
+[class*="coliseum-"] .subheadings{
+    top:0; right: 88px;
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -267,6 +296,7 @@ html{
 }
 
 tr-timer{
+    top: 490px; transform: translateX(-50% ); left: 50%;
     margin-top: 12px;
 	width: 200px;
     height: 53px;
@@ -301,6 +331,7 @@ tr-timer span {
 }
 
 .staff{
+    bottom: 40px; left: 200px;
     overflow: hidden;
     font-size: 24px;
 }
@@ -411,5 +442,6 @@ tr-timer span {
     grid-template-areas:
         "playlist players2    players layout  layout  team"
         "playlist  goals       timer   view    reset   credits"
-        "subhead   goals       timer   view    reset   credits";
+        "subhead   goals       timer   view    reset   credits"
+        "subhead   goals      backgrounds view    reset   credits";
     }

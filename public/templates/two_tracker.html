@@ -31,22 +31,28 @@
 </head>
 <body>
     <div class="tracker-layout">
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
+        <template id="player_tracker_template">
+            <div class="player-name df ta-c ai-c fs-l border-1 background-1">
+                <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
-            <tr-player player="1">
-                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
-            </tr-player>
-        </div>
-        <div class="player-wrapper">
-            <div class="player-name">
-                <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
+            <tr-template class="player-grid dg border-1 background-1" href="icons.html"></tr-template>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <div class="final-winner-contain fs-m">
+                <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n border-1 background-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-l fw-b border-1 background-1">
+                    <div>Winner</div>
+                </tr-toggle>
             </div>
-            <tr-player player="2">
-                <tr-template class="player-grid border-background-1" id="player-grid-2" href="icons.html"></tr-template>
-            </tr-player>
-        </div>
+        </template>
+        
+        <tr-player player="1">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
     </div>
     
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
