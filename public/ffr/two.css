@@ -124,8 +124,6 @@
 .webp.notavif .ffr-tourney{background-image: url(images/2p/base-tourney.webp);}
 .avif .ffr-tourney{background-image: url(images/2p/base-tourney.avif);}
 
-.ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
-
 .ffr-league{
     background-color: #b1cbda;
     --league-fallback: linear-gradient(#b1cbda, #1f2a44);
