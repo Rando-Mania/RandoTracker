@@ -34,6 +34,8 @@
     justify-content: space-evenly;
 }
 
+.js-c{justify-self: center;}
+
 .border-1{border: var(--borderWidth) solid currentColor;}
 .background-1{background-color: var(--backgroundColor1);}
 
