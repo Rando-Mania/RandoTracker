@@ -83,28 +83,24 @@ function onPlayerStateChange(event) {
 
     // });
 
-    FF6.setupListeners = function() {
+    FF6.init = function() {
+        Tracker.onUpdateLayout = function(data) {
+            let ds = document.querySelectorAll('.icon-slot.dragons');
 
-        let ds = document.querySelectorAll('.icon-slot.dragons');
-
-        Tracker.RoomReference.child("layout").on("value", function (data) {
-            var value = data.val();
-
-            if (typeof(value[dragon-goal] === "undefined" || value[dragon-goal] === 0)) {
+            if (data["dragon-goal"] == 0) {
                 ds.forEach( function(item) {
                     item.classList.add('display-none')
-                })
-            } else {
-                console.log('not 0')
+                }) 
+            }
+            else {
                 ds.forEach( function(item) {
                     item.classList.remove('display-none')
                 })
             }
-        });
-    };
-
-    FF6.init = function(playerCount) {
-        Tracker.init(playerCount, FF6.setupListeners);
-    };
+            return data;
+        }
+    }
 
 })(window.FF6 = window.FF6 || {});
+
+FF6.init();
