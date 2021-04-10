@@ -58,29 +58,53 @@ function onPlayerStateChange(event) {
 
 
 
-    document.addEventListener('DOMContentLoaded', function() {
+    // document.addEventListener('DOMContentLoaded', function() {
 
-        setTimeout(function(){
+        // setTimeout(function(){
 
             // let dg = document.querySelector('[property="dragon-goal"] input');
-            let ds = document.querySelectorAll('.icon-slot.dragons');
+            // let ds = document.querySelectorAll('.icon-slot.dragons');
 
-            Tracker.getLayoutData(function(data) {
+            // Tracker.getLayoutData(function(data) {
                 
-                if (data["dragon-goal"] == 0) {
-                    ds.forEach( function(item) {
-                        item.classList.add('display-none')
-                    }) 
-                }
-                else {
-                    ds.forEach( function(item) {
-                        item.classList.remove('display-none')
-                    })
-                }
-            });
+            //     if (data["dragon-goal"] == 0) {
+            //         ds.forEach( function(item) {
+            //             item.classList.add('display-none')
+            //         }) 
+            //     }
+            //     else {
+            //         ds.forEach( function(item) {
+            //             item.classList.remove('display-none')
+            //         })
+            //     }
+            // });
 
-        }, 3000);
+        // }, 3000);
 
-    });
+    // });
+
+    FF6.setupListeners = function() {
+
+        let ds = document.querySelectorAll('.icon-slot.dragons');
+
+        Tracker.RoomReference.child("layout").on("value", function (data) {
+            var value = data.val();
+
+            if (typeof(value[dragon-goal] === "undefined" || value[dragon-goal] === 0)) {
+                ds.forEach( function(item) {
+                    item.classList.add('display-none')
+                })
+            } else {
+                console.log('not 0')
+                ds.forEach( function(item) {
+                    item.classList.remove('display-none')
+                })
+            }
+        });
+    };
+
+    FF6.init = function(playerCount) {
+        Tracker.init(playerCount, FF6.setupListeners);
+    };
 
 })(window.FF6 = window.FF6 || {});
