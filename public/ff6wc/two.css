@@ -268,32 +268,41 @@ tr-image-toggle img.active, tr-toggle-class.active {
 [property="character-gogo"] img{background-position: 50% 50%;}
 [property="character-umaro"] img{background-position: 75% 50%;}
 
-.player-grid .icon-slot{
+.icon-slot{
+    display: grid;
+    isolation: isolate;
+    width: 38px;
+    line-height: .7;
+}
+.icon-slot *{
+    grid-area: 1/1;
+}
+
+.player-grid .icon{
     width: 32px;
     height: 48px;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
-    isolation: isolate;
-    position: relative;
     background-image: url(images/characters.png);
     background-repeat: no-repeat;
     background-size: 500% 500%;
+    place-self: center;
 }
+
+.terra .icon{background-position: 0 0;}
+.magicite .icon{
+    background-position: 25% 75%;
+    transform: scale(1.5);
+    z-index: -1;}
+.dragons .icon{background-position: 0 75%;}
 
 .counter{
-    position: absolute;
+    place-self: start;
 }
-
 .out-of{
-    position: absolute;
-    bottom: 0;
-    right: 0;
     color: gold;
+    place-self: end;
 }
-
-.terra{background-position: 0 0;}
-.player-grid .icon-slot.magicite{background-position: 25% 75%;}
-.dragons{background-position: 0 75%;}
 
 .logo{
     display: block;

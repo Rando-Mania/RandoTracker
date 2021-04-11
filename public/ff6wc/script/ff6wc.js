@@ -86,18 +86,40 @@
                     data["__p1__character-umaro"]
                 ]
 
+                var characterArrayP2 = [
+                    data["__p2__character-terra"],
+                    data["__p2__character-locke"],
+                    data["__p2__character-cyan"],
+                    data["__p2__character-shadow"],
+                    data["__p2__character-edgar"],
+                    data["__p2__character-sabin"],
+                    data["__p2__character-celes"],
+                    data["__p2__character-strago"],
+                    data["__p2__character-relm"],
+                    data["__p2__character-setzer"],
+                    data["__p2__character-mog"],
+                    data["__p2__character-gau"],
+                    data["__p2__character-gogo"],
+                    data["__p2__character-umaro"]
+                ]
+
                 function checkForTrue(char) {
                     return char == true;
                   }
 
                 var characterArrayP1Filtered = characterArrayP1.filter(checkForTrue);
+                var characterArrayP2Filtered = characterArrayP2.filter(checkForTrue);
                 
-                Tracker.updateLayout(
-                    '__p1__player-count', 
-                    characterArrayP1Filtered.length
-                );
+                // Tracker.updateLayout(
+                //     '__p1__player-count', characterArrayP1Filtered.length
+                // );
+                
+                Tracker.updateLayoutMultiple([
+                    {property: '__p1__player-count', value: characterArrayP1Filtered.length},
+                    {property: '__p2__player-count', value: characterArrayP2Filtered.length}                    
+                ]);
 
-                console.log(characterArrayP1Filtered.length)
+                console.log(characterArrayP1Filtered.length + ", " + characterArrayP2Filtered.length)
             
                 return data;
             }
