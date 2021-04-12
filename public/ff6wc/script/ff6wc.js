@@ -45,7 +45,6 @@
 
             let data = e.detail;
  
-            // update dragon goal
             var updateDragonGoal = function (){
                 let ds = document.querySelectorAll('.icon-slot.dragons');
 
@@ -61,13 +60,9 @@
                         item.classList.remove('display-none')
                     })
                 }
-                return data;
             }
 
-            updateDragonGoal();
-
-            // update player 1 character count
-            var characterCountOne = function (){
+            var characterCounts = function (){
 
                 var characterArrayP1 = [
                     data["__p1__character-terra"],
@@ -109,22 +104,31 @@
 
                 var characterArrayP1Filtered = characterArrayP1.filter(checkForTrue);
                 var characterArrayP2Filtered = characterArrayP2.filter(checkForTrue);
-                
-                // Tracker.updateLayout(
-                //     '__p1__player-count', characterArrayP1Filtered.length
-                // );
-                
-                Tracker.updateLayoutMultiple([
-                    {property: '__p1__player-count', value: characterArrayP1Filtered.length},
-                    {property: '__p2__player-count', value: characterArrayP2Filtered.length}                    
-                ]);
 
-                console.log(characterArrayP1Filtered.length + ", " + characterArrayP2Filtered.length)
-            
-                return data;
+                var p1PlayerCountCurrent = data["__p1__player-count"];
+                var p2PlayerCountCurrent = data["__p2__player-count"];
+                var p1PlayerCount = characterArrayP1Filtered.length;
+                var p2PlayerCount = characterArrayP2Filtered.length;
+
+                if (p1PlayerCount != p1PlayerCountCurrent)
+                {
+                    Tracker.updateLayout(
+                        '__p1__player-count', characterArrayP1Filtered.length
+                    );
+                }
+                if (p2PlayerCount != p2PlayerCountCurrent)
+                {
+                    Tracker.updateLayout(
+                        '__p2__player-count', characterArrayP2Filtered.length
+                    );
+                }
+                
+                console.log(data)
             }
             
-            characterCountOne();
+            updateDragonGoal();
+            characterCounts();
+            return data;
         })
     }
 
