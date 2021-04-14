@@ -109,21 +109,19 @@
                 var p2PlayerCountCurrent = data["__p2__player-count"];
                 var p1PlayerCount = characterArrayP1Filtered.length;
                 var p2PlayerCount = characterArrayP2Filtered.length;
-
-                if (p1PlayerCount != p1PlayerCountCurrent)
+                
+                if (p1PlayerCount != p1PlayerCountCurrent && p1PlayerCount > 0)
                 {
                     Tracker.updateLayout(
                         '__p1__player-count', characterArrayP1Filtered.length
                     );
                 }
-                if (p2PlayerCount != p2PlayerCountCurrent)
+                if (p2PlayerCount != p2PlayerCountCurrent && p2PlayerCount > 0)
                 {
                     Tracker.updateLayout(
                         '__p2__player-count', characterArrayP2Filtered.length
                     );
                 }
-                
-                console.log(data)
             }
             
             updateDragonGoal();
