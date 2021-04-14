@@ -1,36 +1,3 @@
-// youtube iframe
-
-var tag = document.createElement('script');
-tag.id = 'iframe-demo';
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('existing-iframe-example', {
-        events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange,
-        }
-    });
-}
-
-function onPlayerReady(event) {
-    player.setLoop(true);
-    setTimeout( function() {
-        event.target.setShuffle(true);
-        player.playVideoAt(0);
-        player.stopVideo();
-    }, 3000);
-}
-
-function onPlayerStateChange(event) {
-    if (event.data == 0) { // video ended
-        player.setShuffle({'shufflePlaylist' : 1});
-    }
-}
-
 if ('paintWorklet' in CSS) {
     CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
 }

@@ -77,11 +77,12 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-image: linear-gradient(to right, #394131 50%, #21384a 0);
+    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    background-image: var(--background-fallback);
     background-color: #c0c0c0;
     line-height: 1;
     row-gap: var(--gap-size);
-    padding: var(--gap-size);
+    padding: var(--gap-size) var(--gap-size) 0;
     background-size: 100% 100%;
     display: grid !important;
     grid-template-columns: auto 1fr 1fr auto;
@@ -93,11 +94,11 @@
 }
 
 .notwebp .layout.default{
-    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);
-    image-rendering: pixelated;}
-.webp .layout.default{
-    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131, #21384a);
-    image-rendering: pixelated;}
+    background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+.webp.notavif .layout.default{
+    background-image: url('images/justbackground.webp'), var(--background-fallback);}
+.avif .layout.default{
+    background-image: url('images/justbackground.avif'), var(--background-fallback);}
 
 .layout > tr-player,
 .layout > tr-player > tr-template{
@@ -131,6 +132,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
+    image-rendering: initial;
 }
 .notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
 .avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
@@ -173,10 +175,40 @@
 .player-grid{
     grid-area: pg;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     padding: 4px;
     grid-gap: 4px;
     font-size: 24px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.player-grid-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.layout .player-grid-back.br{
+    border-radius: 0 0 10px 10px;
+}
+
+.player-grid-characters{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    padding: 2px;
+    grid-gap: 2px;
+    border-right: 2px solid rgba(255,255,255,.75);
+    border-image: linear-gradient(transparent, rgba(255,255,255,1), transparent) 2;
+}
+
+.player-grid-counters{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    padding: 2px;
+    grid-gap: 2px;
+    grid-auto-flow: column;
 }
 
 .player-grid.br{
@@ -198,41 +230,83 @@
     display: block;
 }
 
-.player-grid .icon-slot{
-    width: 36px;
-    height: 80px;
+tr-toggle-class, .in-active {
+    opacity: 1;
+    filter: brightness(0.25);
+    transition: filter .25s;
+}
+
+tr-image-toggle img.active, tr-toggle-class.active {
+    opacity: 1;
+    filter: brightness(1);
+}
+
+[property^="character"] img{
+    width: 32px;
+    height: 48px;
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     isolation: isolate;
     position: relative;
-    background-image: url(images/sprite-sheet.png);
     background-repeat: no-repeat;
+    background-size: 500% 500%;
 }
+
+.notwebp [property^="character"] img{background-image: url(images/characters.png);}
+.webp [property^="character"] img{background-image: url(images/characters.webp);}
+
+[property="character-terra"] img{background-position: 0 0;}
+[property="character-locke"] img{background-position: 25% 0;}
+[property="character-cyan"] img{background-position: 50% 0;}
+[property="character-shadow"] img{background-position: 75% 0;}
+[property="character-edgar"] img{background-position: 100% 0;}
+[property="character-sabin"] img{background-position: 0 25%;}
+[property="character-celes"] img{background-position: 25% 25%;}
+[property="character-strago"] img{background-position: 50% 25%;}
+[property="character-relm"] img{background-position: 75% 25%;}
+[property="character-setzer"] img{background-position: 100% 25%;}
+[property="character-mog"] img{background-position: 0 50%;}
+[property="character-gau"] img{background-position: 25% 50%;}
+[property="character-gogo"] img{background-position: 50% 50%;}
+[property="character-umaro"] img{background-position: 75% 50%;}
+
+.icon-slot{
+    display: grid;
+    isolation: isolate;
+    width: 38px;
+    line-height: .7;
+}
+.icon-slot *{
+    grid-area: 1/1;
+}
+
+.player-grid .icon{
+    width: 32px;
+    height: 48px;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-size: 500% 500%;
+    place-self: center;
+}
+
+.notwebp .player-grid .icon {background-image: url(images/characters.png);}
+.webp .player-grid .icon{background-image: url(images/characters.webp);}
+
+.terra .icon{background-position: 0 0;}
+.magicite .icon{
+    background-position: 25% 75%;
+    transform: scale(1.5);
+    z-index: -1;}
+.dragons .icon{background-position: 0 75%;}
 
 .counter{
-    position: absolute;
+    place-self: start;
 }
-
 .out-of{
-    position: absolute;
-    bottom: 0;
-    right: 0;
     color: gold;
-}
-
-.player-grid .icon-slot.magicite{
-    background-position: 92% -6px;
-    background-size: 500% auto;
-}
-
-.terra{
-    background-position: 0 12px;
-    background-size: 300% auto;
-}
-.dragons{
-    background-position: 50% 12px;
-    background-size: 300% auto;
+    place-self: end;
 }
 
 .logo{
@@ -243,12 +317,16 @@
 .logo img{
     width: 389px;
     image-rendering: initial;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
 }
 
 .player-speaker{
     grid-area: ps;
     padding: 4px;
     place-self: center;
+    background-color: #000;
+    border-radius: 6px;
+    mix-blend-mode: multiply;
 }
 
 [player="1"] .player-speaker{left: 100%;}
@@ -270,6 +348,7 @@
    color: #f8b800;
    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
    width: auto;
+   z-index: 10;
 }
 
 [player="1"] .final-winner-contain{right: 40px;}
@@ -288,6 +367,7 @@
 }
 
 .player-best-of{
+    top: -23px;
     display: grid;
     grid-template-columns: repeat(5, auto);
     display: none;
@@ -295,10 +375,11 @@
 
 .player-best-of img{
     width: 32px;
-    height: 32px;
-    background-image: url(images/sprite-sheet.png);
-    background-size: 300% 300%;
-    background-position: 0 100%;
+    height: 48px;
+    background-image: url(images/characters.png);
+    background-repeat: no-repeat;
+    background-size: 500% 500%;
+    background-position: 50% 75%;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
@@ -308,9 +389,9 @@
 }
 
 @keyframes kiwi {
-    from{background-position: 0 100%;}
-    50%{background-position: 50% 100%;}
-    to{background-position: 0 100%;}
+    from{background-position: 50% 75%;;}
+    50%{background-position: 75% 75%;}
+    to{background-position: 50% 75%;}
 }
 
 .best-of-3, .best-of-5, .best-of-7{
@@ -342,6 +423,10 @@ tr-timer span {
 
 .staff-panel-1, .staff-panel-2 {
     background-color: transparent;
+}
+
+.production-team-swap {
+    padding: 0;
 }
 
 .footer{
@@ -413,12 +498,44 @@ tr-timer span {
 }
 
 .coliseum.layout .player-grid:nth-of-type(1){
-    left: 20px;
+    left: 194px;
     top: 583px;
+    transform: translateX(-50%);
 }
 .coliseum.layout .player-grid:nth-of-type(2){
-    right: 20px;
+    right: 194px;
     top: 583px;
+    transform: translateX(50%);
+}
+
+.coliseum.layout .player-speaker{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 4px;
+    padding: 2px 4px;
+    mix-blend-mode: overlay;
+}
+
+.coliseum.layout .player-speaker img{
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 33.3% / 500% 400%;
+}
+
+.coliseum.layout .player-grid-back{
+    display: none;   
+}
+
+.coliseum .player-grid-characters{
+    border-right: 2px solid rgba(0,0,0,.75);
+    border-image: linear-gradient(transparent, rgba(0,0,0,1), transparent) 2;
+}
+.coliseum [property^="character"] img{
+    width: 24px;
+    height: 40px;
+    image-rendering: initial;
+}
+.coliseum .player-grid .icon{
+    width: 24px;
+    height: 40px;
+    image-rendering: initial;
 }
 
 .coliseum.layout .player-grid.border-1{border: none;}

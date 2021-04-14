@@ -160,32 +160,49 @@
 
 /* cam layouts */
 
-.show-cams.ffr-default{
-    background-image: url(images/2p-cam/base-background.png);
-}
-.show-cams.ffr-irongol{
-    background-image: url(images/2p-cam/base-irongol.png);
-}
-.show-cams.ffr-tourney{
-    background-image: url(images/2p-cam/base-tourney.png);
-}
-.show-cams.ffr-league{
-    background-image: url(images/2p-cam/base-league.png);
-}
+.notwebp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.png);}
+.webp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.webp);}
+
+.notwebp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.png);}
+.webp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.webp);}
+
+.notwebp .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.png);}
+.webp.notavif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.webp);}
+.avif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.avif);}
+
+.notwebp .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.png);}
+.webp.notavif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.webp);}
+.avif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.avif);}
+
+/* .show-cams.ffr-league{ 
+    background-image: image-set( 
+        "images/2p-cam/base-league.avif" type("image/avif"),
+        "images/2p-cam/base-league.webp" type("image/webp"),
+        "images/2p-cam/base-league.png" type("image/png")
+    );
+} */
+
 .show-cams.ffr-rush{
-    background-image: url(images/2p-cam/base-rush.png);
     --pronounY: 526px;
     --rankY: 526px;
     --winY: 50px;
     --finalY: 50px;
 }
+.notwebp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.png);}
+.webp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.webp);}
+/* .show-cams.ffr-rush{ 
+    background-image: image-set( 
+        "images/2p-cam/base-rush.webp" type("image/webp"),
+        "images/2p-cam/base-rush.png" type("image/png")
+    );
+} */
 
 .notwebp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.png);}
 .webp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.webp);}
 
-.show-cams.ffr-dark{
-    background-image: url(images/2p-cam/base-dark.png);
-}
+.notwebp .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.png);}
+.webp.notavif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.webp);}
+.avif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.avif);}
 
 .player-name{
     font-size: 26px;
