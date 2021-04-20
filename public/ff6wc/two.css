@@ -29,11 +29,12 @@
     border-radius: 10px;
 }
 .background-1{
-    background-image: linear-gradient(#292884, #292884);
+    background-color: #292884;
     mix-blend-mode: hard-light;
 }
 .background-2{
-    background-color: #000;
+    background-color: #222;
+    mix-blend-mode: hard-light;
 }
 
 
@@ -93,12 +94,24 @@
         "i1 t  t  i2";
 }
 
-.notwebp .layout.default{
-    background-image: url('images/justbackground.jpg'), var(--background-fallback);}
-.webp.notavif .layout.default{
-    background-image: url('images/justbackground.webp'), var(--background-fallback);}
-.avif .layout.default{
-    background-image: url('images/justbackground.avif'), var(--background-fallback);}
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .layout.default{
+        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+    .webp.notavif .layout.default{
+        background-image: url('images/justbackground.webp'), var(--background-fallback);}
+    .avif .layout.default{
+        background-image: url('images/justbackground.avif'), var(--background-fallback);}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .layout.default{
+        background-image: image-set(
+            "images/justbackground.avif" type("image/avif"),
+            "images/justbackground.webp" type("image/webp"),
+            "images/justbackground.jpg" type("image/jpg")
+        ), var(--background-fallback);
+    }
+}
 
 .layout > tr-player,
 .layout > tr-player > tr-template{
@@ -134,8 +147,20 @@
     background-size: 80%;
     image-rendering: initial;
 }
-.notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
-.avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
+
+@supports not (background: image-set("" type("")) ){
+    .notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
+    .avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
+}
+
+@supports (background: image-set("" type("")) ){
+    .layout.black-background .player-video{
+        background-image: image-set(
+            "images/wc_logo.avif" type("image/avif"),
+            "images/wc_logo.png" type("image/png")
+        );
+    }
+}
 
 .player-info-contain{
     position: relative;
@@ -253,8 +278,19 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-size: 500% 500%;
 }
 
-.notwebp [property^="character"] img{background-image: url(images/characters.png);}
-.webp [property^="character"] img{background-image: url(images/characters.webp);}
+@supports not (background: image-set("foo.avif" type("image/avif")) ){
+    .notwebp [property^="character"] img{background-image: url(images/characters.png);}
+    .webp [property^="character"] img{background-image: url(images/characters.webp);}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    [property^="character"] img{
+        background-image: image-set(
+            "images/characters.webp" type("image/webp"),
+            "images/characters.png" type("image/png")
+        );
+    }
+}
 
 [property="character-terra"] img{background-position: 0 0;}
 [property="character-locke"] img{background-position: 25% 0;}
@@ -344,24 +380,35 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 .final-winner-contain{
-   top: 40px;
+   top: 53px;
    color: #f8b800;
    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
    width: auto;
    z-index: 10;
+   background-image: linear-gradient(#000,#000), url(images/sky-small.webp);
 }
 
-[player="1"] .final-winner-contain{right: 40px;}
-[player="2"] .final-winner-contain{left: 40px;}
-
-.final-winner-contain > *~*{
-    margin-top: calc(var(--border) * -1);
-}
+[player="1"] .final-winner-contain{right: -3px;}
+[player="2"] .final-winner-contain{left: -3px;}
 
 .player-winner, .player-final{
-    padding: .25em .25em .1em;
+    width: 6rem;
+    height: 1em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    padding: .8em 0;
+}
+.player-winner{
+    margin-top: -.2em;
 }
 
+.player-winner div{
+    width: 100%;
+}
 .player-final:empty{
     display:none;
 }
@@ -369,7 +416,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
 .player-best-of{
     top: -23px;
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(4, auto);
     display: none;
 }
 
@@ -550,6 +597,10 @@ tr-timer span {
     place-items: center;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.coliseum.layout .player-best-of{
+    top: 95px;
 }
 
 /* dialog styles */

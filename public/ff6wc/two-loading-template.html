@@ -1,31 +1,39 @@
 <style>
-    /* Loading Screen */
-
-
     @font-face {
-font-family: "FF6";
-src: local('FF6'),
-     url('fonts/final-fantasy-36-font.woff2') format('woff2'),
-     url('fonts/final-fantasy-36-font.woff') format('woff'),         
-     url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
-} 
+        font-family: "FF6";
+        src: local('FF6'),
+        url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+        url('fonts/final-fantasy-36-font.woff') format('woff'),         
+        url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+    } 
 
 .loadscreen-contain, .two-loading{
-width: 1280px;
-height: 720px;
-background-color: #21384a;
-background-image: linear-gradient(to right, #394131 50%, #21384a 0);
-background-size: 100% 100%;
-color: #fff;
-text-align: center;
-z-index: 50;
-display: none;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
 }
 
-.notwebp .loadscreen-contain, .notwebp .two-loading{
-    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
-.webp .loadscreen-contain, .webp .two-loading{
-    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .loadscreen{
+        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+    .webp.notavif .loadscreen{
+        background-image: url('images/justbackground.webp'), var(--background-fallback);}
+    .avif .loadscreen{
+        background-image: url('images/justbackground.avif'), var(--background-fallback);}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .loadscreen{
+        background-image: image-set(
+            "images/justbackground.avif" type("image/avif"),
+            "images/justbackground.webp" type("image/webp"),
+            "images/justbackground.jpg" type("image/jpg")
+        ), var(--background-fallback);
+    }
+}
 
 .two-loading{
 display: block;
@@ -51,12 +59,15 @@ to{
 }
 
 .loadscreen{
-height: 100%;
-display: grid;
-grid-auto-rows: 1fr auto;
-grid-gap: 1em;
-place-items: center;
-padding: 1em;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+    background-color: #21384a;
+    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    background-size: 100% 100%;
 }
 
 .loadscreen-main{
@@ -82,17 +93,16 @@ align-items: center;
 width: -moz-fit-content;
 width: fit-content;
 margin: auto;
-/* background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.7) 33% 66%, rgba(0,0,0,0)); */
 }
 
 .loadscreen .player-name{
--webkit-background-clip: text;
-background-clip: text;
-background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
-background-position: 50% 50%;
-filter: contrast(1.2);
-color: transparent;
-text-shadow: none;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
 }
 
 .loadscreen .player-pronoun{
@@ -104,18 +114,11 @@ justify-content: center;
 align-items: center;
 -webkit-background-clip: text;
 background-clip: text;
-background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
 background-position: 50% 50%;
 filter: contrast(1.2);
 color: transparent;
 text-shadow: none;
-}
-
-.loadscreen .player-pronoun::before{
-content: '(';
-}
-.loadscreen .player-pronoun::after{
-content: ')';
 }
 
 .loadscreen .player-name{
@@ -134,23 +137,33 @@ justify-content: center;
 }    
 
 .loadscreen-left{
+    top: 43px;
+    align-self: start;
     display: grid;
     gap: 32px;
     padding: 32px 0;
-    /* background-image: radial-gradient(rgba(0,0,0,.7) 50%, rgba(0,0,0,0) 72%); */
 }
 
-
+.loadscreen-right{
+    bottom: 43px;
+    align-self: end;
+    display: grid;
+    gap: 32px;
+    padding: 32px 0;
+}
 
 .loadscreen .ship-blur{
-z-index: 0;
-position: relative;
+    z-index: 0;
+    position: relative;
 }
 
-
 .player-contain.ship-blur:after{
-width: 105%;
-left: -10%;
+    width: 105%;
+    left: -10%;
+}
+
+.loadscreen-right.ship-blur:after{
+    transform: rotateY(180deg);
 }
 
 .subheadings-contain{
@@ -169,7 +182,7 @@ left: -10%;
 }
 
 .loadscreen [player="2"] .final-winner-contain {
-    top: 40px;
+    top:  61px;
     left: initial;
 }
 .loadscreen .player-winner, .loadscreen .player-final{
@@ -228,10 +241,9 @@ font-size: 12px;
                 </div>
             </div>
             <template id="player_loading_template">
-                <div class="player-contain ship-blur">
+                <div class="player-contain rel">
                     <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                     <tr-text class="player-name" property="player-name"></tr-text>
-                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
                     <div class="final-winner-contain abs border-1 background-2 br">
                         <tr-toggle property="toggle-winner" class="player-winner">
                             <div>WINNER</div>
@@ -240,7 +252,7 @@ font-size: 12px;
                     </div>
                 </div>
             </template>
-            <div>          
+            <div class="loadscreen-right ship-blur">          
                 <tr-player player="1">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>

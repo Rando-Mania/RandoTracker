@@ -247,9 +247,9 @@
   </div>
   </article>
 </div>
-   <script src="/__/firebase/5.2.0/firebase-app.js"></script>
-  <script src="/__/firebase/5.2.0/firebase-auth.js"></script>
-  <script src="/__/firebase/5.2.0/firebase-database.js"></script>
+   <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-database.js"></script>
   <script src="/__/firebase/init.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
@@ -262,10 +262,6 @@
       var win = window.open(location.protocol + '//' + location.host + location.pathname + path + "?room=" + inputRoomID + "&passcode=" + code, "_blank");
 
       win.focus();
-    }
-    
-    if ('paintWorklet' in CSS) {
-      CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
     }
 
 // TO DO: clean up this js mess

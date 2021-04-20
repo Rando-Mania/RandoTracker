@@ -36,10 +36,6 @@
 
 .js-c{justify-self: center;}
 
-.border-1{border: var(--borderWidth) solid currentColor;}
-.background-1{background-color: var(--backgroundColor1);}
-
-
 .abs{position: absolute;}
 .rel{position: relative;}
 
