@@ -354,6 +354,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     width: 389px;
     image-rendering: initial;
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    background-image: radial-gradient(rgba(255,255,255,.4), transparent 69%);
 }
 
 .player-speaker{
@@ -383,7 +384,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
    top: 53px;
    color: #f8b800;
    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
-   width: auto;
+   width: min-content;
    z-index: 10;
    background-image: linear-gradient(#000,#000), url(images/sky-small.webp);
 }
@@ -401,9 +402,6 @@ tr-image-toggle img.active, tr-toggle-class.active {
     filter: contrast(1.2);
     color: transparent;
     padding: .8em 0;
-}
-.player-winner{
-    margin-top: -.2em;
 }
 
 .player-winner div{
@@ -481,23 +479,6 @@ tr-timer span {
     grid-column: 1 / -1;
     grid-row: 3;
     place-items: flex-end center;
-}
-
-.ship-blur{
-    z-index: 0;
-    position: relative;
-}
-
-.ship-blur:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url(images/ship-outline.png) 0 0 / 100% 100%;
-    z-index: -1;
-    filter: blur(5px) opacity(0.6);
 }
 
 /* coliseum */

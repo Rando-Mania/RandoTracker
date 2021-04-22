@@ -2,10 +2,18 @@
     @font-face {
         font-family: "FF6";
         src: local('FF6'),
-        url('fonts/final-fantasy-36-font.woff2') format('woff2'),
-        url('fonts/final-fantasy-36-font.woff') format('woff'),         
-        url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
-    } 
+            url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+            url('fonts/final-fantasy-36-font.woff') format('woff'),         
+            url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+    }
+    
+    @font-face {
+        font-family: "Ferrum";
+        src: local('Ferrum'),
+             url('fonts/ferrum.woff2') format('woff2'),
+             url('fonts/ferrum.woff') format('woff'),         
+             url('fonts/ferrum.otf') format('opentype');
+    }
 
 .loadscreen-contain, .two-loading{
     width: 1280px;
@@ -71,19 +79,11 @@ to{
 }
 
 .loadscreen-main{
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 1em;
-align-items: center;
-justify-content: center;
-height: 100%;
-width: 100%;
-font-family: 'FF6', Arial, sans-serif;
-font-size: 36px;
-}
-
-.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
-font-size: 36px;
+    height: 100%;
+    width: 100%;
+    font-family: 'FF6', Arial, sans-serif;
+    font-size: 36px;
+    position: relative;
 }
 
 .loadscreen .player-contain{
@@ -95,75 +95,32 @@ width: fit-content;
 margin: auto;
 }
 
-.loadscreen .player-name{
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
-    background-position: 50% 50%;
-    filter: contrast(1.2);
-    color: transparent;
-    text-shadow: none;
-}
-
-.loadscreen .player-pronoun{
-background-color: transparent;
-font-size: 32px;
-height: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
--webkit-background-clip: text;
-background-clip: text;
-background-image: linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
-background-position: 50% 50%;
-filter: contrast(1.2);
-color: transparent;
-text-shadow: none;
-}
-
-.loadscreen .player-name{
-    width: auto;
-    font-size: 48px;
-}
-
 .loadscreen .vs{
-margin: 8px;
-font-style: italic;
-color: rgba(255,255,255,.8);
+    margin: 8px;
+    color: #fff;
+    font-size: 36px;
 }
 
 .loadscreen-main *{
-justify-content: center;
+    justify-content: center;
 }    
 
 .loadscreen-left{
-    top: 43px;
-    align-self: start;
+    position: absolute;
+    left: 1em;
+    top: 33px;
     display: grid;
-    gap: 32px;
-    padding: 32px 0;
+    gap: 16px;
+    padding: 0;
 }
 
-.loadscreen-right{
-    bottom: 43px;
-    align-self: end;
-    display: grid;
-    gap: 32px;
-    padding: 32px 0;
+.ff6wc-logo{
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    background-image: radial-gradient(rgba(255,255,255,.5), transparent 69%);
 }
 
-.loadscreen .ship-blur{
-    z-index: 0;
-    position: relative;
-}
-
-.player-contain.ship-blur:after{
-    width: 105%;
-    left: -10%;
-}
-
-.loadscreen-right.ship-blur:after{
-    transform: rotateY(180deg);
+.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
+    font-size: 36px;
 }
 
 .subheadings-contain{
@@ -171,20 +128,70 @@ justify-content: center;
     gap: 16px;
 }
 
-.loadscreen .final-winner-contain{
-    padding: .25em .25em .1em;
-    color: #fff;
+.loadscreen-right{
+    filter: drop-shadow(0px 0px 4px #000) drop-shadow(1px 1px 0 #000) drop-shadow(-1px -1px 0 #000);
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+    display: grid;
+    gap: 16px;
+}
+
+.loadscreen .player-name{
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    background-size: 300% 400%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
+    font-family: 'Ferrum', 'Times New Roman', Times, serif;
+    width: auto;
+    font-size: 64px;
+    height: auto;
+}
+
+.loadscreen .player-pronoun{
+    background-color: transparent;
+    font-size: 32px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
 }
 
 .loadscreen [player="1"] .final-winner-contain {
-    top: -80px;
+    top: initial;
+    bottom: 100%;
+    right: initial;
+}
+.loadscreen [player="1"] .player-best-of {
+    top: initial;
+    bottom: -39px;
     right: initial;
 }
 
 .loadscreen [player="2"] .final-winner-contain {
-    top:  61px;
+    top: 100%;
     left: initial;
 }
+.loadscreen [player="2"] .player-best-of {
+    bottom: initial;
+    top: -42%;
+    right: initial;
+}
+
 .loadscreen .player-winner, .loadscreen .player-final{
 padding: 0;
 }
@@ -197,40 +204,10 @@ display: none;
 .show-and .load-and{display: block;}
 .show-and .load-vs{display: none;}
 
-#promos{
-grid-column: 1 / -1;
-overflow: hidden;
-width: 1236px;
-height: 150px;
-background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
-}
-#all_promos_contain{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-height: 150px;
-animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-from, 22%{transform: translateY(0);}
-25%, 47%{transform: translateY(-155px);}
-50%, 72%{transform: translateY(-315px);}
-75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-margin: 0 32px 8px;
-}
-
-#all_promos_contain figcaption{
-font-size: 12px;
-}
 </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <div class="loadscreen-left ship-blur">
+            <div class="loadscreen-left">
                 <picture class="ff6wc-logo-contain">
                     <source srcset="images/wc_logo.avif" type="image/avif">
                     <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
@@ -242,21 +219,21 @@ font-size: 12px;
             </div>
             <template id="player_loading_template">
                 <div class="player-contain rel">
-                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                     <tr-text class="player-name" property="player-name"></tr-text>
-                    <div class="final-winner-contain abs border-1 background-2 br">
-                        <tr-toggle property="toggle-winner" class="player-winner">
+                    <div class="final-winner-contain fs-m abs border-1 br background-2">
+                        <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n"></tr-text>
+                        <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-n fw-b">
                             <div>WINNER</div>
                         </tr-toggle>
-                        <tr-text property="player-final" class="player-final"></tr-text>
                     </div>
+                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                 </div>
             </template>
-            <div class="loadscreen-right ship-blur">          
+            <div class="loadscreen-right">      
                 <tr-player player="1">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>
-                <div class="vs">vs.</div>
+                <div class="vs">VS</div>
                 <tr-player player="2">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>
