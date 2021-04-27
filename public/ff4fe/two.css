@@ -110,6 +110,10 @@
 .notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}
 .webp .layout.black-background .player-video{background-image: url(images/The-End.webp);}
 
+.layout.magenta-background .player-video{background-color: #f0f;}
+.notwebp .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
+.webp .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
+
 .player-info{
     color: #fff;
     font-size: 18px;

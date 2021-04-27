@@ -143,6 +143,14 @@ button.dummy-text-button:hover,
     color: #fff;
 }
 
+.menu-toggle-legend{
+    background-color: #000;
+    position: absolute;
+    top: -7px;
+    right: 19px;
+    padding: 0 .25em;
+}
+
 /* Players */
 
 #menu_player_labels, #menu_players tr-player{

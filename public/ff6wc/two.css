@@ -207,6 +207,10 @@
     text-shadow: 1px 1px 1px black;
 }
 
+.hide-icons .player-grid{
+    display: none;
+}
+
 .player-grid-back{
     position: absolute;
     top: 0;
@@ -266,7 +270,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     filter: brightness(1);
 }
 
-[property^="character"] img{
+[property^="character"] img, [property="starting-character"] img, .dialog img{
     width: 32px;
     height: 48px;
     display: block;
@@ -279,12 +283,12 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 @supports not (background: image-set("foo.avif" type("image/avif")) ){
-    .notwebp [property^="character"] img{background-image: url(images/characters.png);}
-    .webp [property^="character"] img{background-image: url(images/characters.webp);}
+    .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
+    .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
-    [property^="character"] img{
+    [property^="character"] img, [property="starting-character"] img, .dialog img{
         background-image: image-set(
             "images/characters.webp" type("image/webp"),
             "images/characters.png" type("image/png")
@@ -292,20 +296,25 @@ tr-image-toggle img.active, tr-toggle-class.active {
     }
 }
 
-[property="character-terra"] img{background-position: 0 0;}
-[property="character-locke"] img{background-position: 25% 0;}
-[property="character-cyan"] img{background-position: 50% 0;}
-[property="character-shadow"] img{background-position: 75% 0;}
-[property="character-edgar"] img{background-position: 100% 0;}
-[property="character-sabin"] img{background-position: 0 25%;}
-[property="character-celes"] img{background-position: 25% 25%;}
-[property="character-strago"] img{background-position: 50% 25%;}
-[property="character-relm"] img{background-position: 75% 25%;}
-[property="character-setzer"] img{background-position: 100% 25%;}
-[property="character-mog"] img{background-position: 0 50%;}
-[property="character-gau"] img{background-position: 25% 50%;}
-[property="character-gogo"] img{background-position: 50% 50%;}
-[property="character-umaro"] img{background-position: 75% 50%;}
+.terra, [property="character-terra"] img{background-position: 0 0;}
+.locke, [property="character-locke"] img{background-position: 25% 0;}
+.cyan, [property="character-cyan"] img{background-position: 50% 0;}
+.shadow, [property="character-shadow"] img{background-position: 75% 0;}
+.edgar, [property="character-edgar"] img{background-position: 100% 0;}
+.sabin, [property="character-sabin"] img{background-position: 0 25%;}
+.celes, [property="character-celes"] img{background-position: 25% 25%;}
+.strago, [property="character-strago"] img{background-position: 50% 25%;}
+.relm, [property="character-relm"] img{background-position: 75% 25%;}
+.setzer, [property="character-setzer"] img{background-position: 100% 25%;}
+.mog, [property="character-mog"] img{background-position: 0 50%;}
+.gau, [property="character-gau"] img{background-position: 25% 50%;}
+.gogo, [property="character-gogo"] img{background-position: 50% 50%;}
+.umaro, [property="character-umaro"] img{background-position: 75% 50%;}
+
+
+[property="starting-character"] img{
+    z-index: -1;
+}
 
 .icon-slot{
     display: grid;
@@ -332,11 +341,61 @@ tr-image-toggle img.active, tr-toggle-class.active {
 
 .terra .icon{background-position: 0 0;}
 .magicite .icon{
+    pointer-events: none;
     background-position: 25% 75%;
     transform: scale(1.5);
     z-index: -1;}
 .dragons .icon{background-position: 0 75%;}
 
+[property="starting-character"] img:hover{
+    cursor: pointer;
+}
+
+.dialog#starting-character{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    transform: translate(-122px, -112px);
+    border: none;
+    animation: scale-in .1s;
+    position: relative;
+    background-color: transparent;
+    -webkit-mask-image:
+        linear-gradient(red 0 62px, transparent 0 114px, red 0 114px),
+        linear-gradient(90deg, red 0 82px, transparent 0 122px, red 0 112px)
+    }
+
+.dialog#starting-character:before{
+    content:'';
+    background-color: #f8b800;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 10px;
+    border: solid 2px;
+    position: absolute;
+}
+
+.dialog#starting-character:after{
+    content: '';
+    border: inherit;
+    border-radius: 3px;
+    border: solid 2px #000;
+    width: 40px;
+    height: 52px;
+    position: absolute;
+    left: 80px;
+    top: 60px;
+  }
+
+  @keyframes scale-in {
+    from{transform: translate(-122px, -112px) scale(0);}
+    to{transform: translate(-122px, -112px) scale(1);}
+}
+
+.dialog#starting-character figure:nth-of-type(8){
+    grid-column: 4;
+}
+.counter, .out-of{
+    pointer-events: none;
+}
 .counter{
     place-self: start;
 }
@@ -389,6 +448,11 @@ tr-image-toggle img.active, tr-toggle-class.active {
    background-image: linear-gradient(#000,#000), url(images/sky-small.webp);
 }
 
+.final-winner-contain > *{
+    display: block;
+    margin: 8px 0;
+}
+
 [player="1"] .final-winner-contain{right: -3px;}
 [player="2"] .final-winner-contain{left: -3px;}
 
@@ -401,11 +465,11 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-position: 50% 50%;
     filter: contrast(1.2);
     color: transparent;
-    padding: .8em 0;
 }
 
 .player-winner div{
     width: 100%;
+    height: 1em;
 }
 .player-final:empty{
     display:none;
@@ -434,7 +498,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 @keyframes kiwi {
-    from{background-position: 50% 75%;;}
+    from{background-position: 50% 75%;}
     50%{background-position: 75% 75%;}
     to{background-position: 50% 75%;}
 }
@@ -604,14 +668,6 @@ tr-timer span {
 /*  ==========
     Menu
     ========== */
-
-    .dragon-toggle-contain{
-        background-color: #000;
-        position: absolute;
-        top: -7px;
-        right: 19px;
-        padding: 0 .25em;
-    }
     
     .menu-general #menu_players{grid-area: players;}
     .menu-general #menu_layout{grid-area: layout;}

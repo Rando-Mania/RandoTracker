@@ -23,8 +23,8 @@
             </tr-toggle>
             <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
             <div class="final-winner-contain fs-m abs border-1 br background-2">
-                <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n"></tr-text>
-                <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-n fw-b">
+                <tr-text property="player-final" class="player-final ta-c fs-n"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner ta-c fs-n fw-b">
                     <div>WINNER</div>
                 </tr-toggle>
             </div>
@@ -41,7 +41,7 @@
             </tr-player>
             <div class="player-grid-counters">
                 <div class="icon-slot terra">
-                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <tr-template href="starting-character.html"></tr-template>
                     <div class="counter">
                         <tr-text player="1" oninput property="player-count">?</tr-text>
                     </div>
@@ -79,7 +79,7 @@
             </tr-player>
             <div class="player-grid-counters">
                 <div class="icon-slot terra">
-                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <tr-template href="starting-character.html"></tr-template>
                     <div class="counter">
                         <tr-text player="2" oninput property="player-count">?</tr-text>
                     </div>
