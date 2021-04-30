@@ -5,7 +5,6 @@
    <title>Rando Tracker</title>
    <link rel="stylesheet" type="text/css" href="content/index.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css?family=Orbitron|Open+Sans" rel="stylesheet">
 </head>
 <body>
   <div id="contain">
@@ -46,7 +45,7 @@
     </div>
     <div id="auth" style="display: none;">
       <h1>CHOOSE A LAYOUT</h1>
-      <div id="filter">
+      <!-- <div id="filter">
       <input type="radio" id="all" name="system" value="all" checked>
       <label for="all">All</label>
 
@@ -58,22 +57,10 @@
 
       <input type="radio" id="gb" name="system" value="gb">
       <label for="gb">GB</label>
-
-      <input type="radio" id="gba" name="system" value="gba">
-      <label for="gba">GBA</label>
-
-      <input type="radio" id="n64" name="system" value="n64">
-      <label for="n64">N64</label>
-
-      <input type="radio" id="ds" name="system" value="ds">
-      <label for="ds">DS</label>
-
-      <input type="radio" id="gc" name="system" value="gc">
-      <label for="gc">GC</label>
       
       <input type="radio" id="rm" name="system" value="rm">
       <label for="rm">RM</label>
-      </div>
+      </div> -->
 
       <div class="games">
 
@@ -227,87 +214,52 @@
       win.focus();
     }
 
-// TO DO: clean up this js mess
 
-    function reset(){
-      document.querySelectorAll('.games > div').forEach(
-          function myFunction(el) {el.classList.remove("hide");}
-          )
-    }
 
-    document.getElementById('all').addEventListener('click', reset);
+    // function reset(){
+    //   document.querySelectorAll('.games > div').forEach(
+    //       function myFunction(el) {el.classList.remove("hide");}
+    //       )
+    // }
 
-    document.getElementById('nes').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="nes"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
+    // document.getElementById('all').addEventListener('click', reset);
 
-    document.getElementById('snes').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="snes"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
+    // document.getElementById('nes').addEventListener('click',
+    //   function(){
+    //     reset();
+    //     document.querySelectorAll('.games > div:not([data-console="nes"])').forEach(
+    //       function myFunction(el) {el.classList.add("hide");}
+    //       )
+    //   }
+    // )
 
-    document.getElementById('gb').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gb"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
+    // document.getElementById('snes').addEventListener('click',
+    //   function(){
+    //     reset();
+    //     document.querySelectorAll('.games > div:not([data-console="snes"])').forEach(
+    //       function myFunction(el) {el.classList.add("hide");}
+    //       )
+    //   }
+    // )
+    
+    // document.getElementById('gb').addEventListener('click',
+    //   function(){
+    //     reset();
+    //     document.querySelectorAll('.games > div:not([data-console="gb"])').forEach(
+    //       function myFunction(el) {el.classList.add("hide");}
+    //       )
+    //   }
+    // )
 
-    document.getElementById('gba').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gba"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
+    // document.getElementById('rm').addEventListener('click',
+    //   function(){
+    //     reset();
+    //     document.querySelectorAll('.games > div:not([data-console="rm"])').forEach(
+    //       function myFunction(el) {el.classList.add("hide");}
+    //       )
+    //   }
+    // )
 
-    document.getElementById('ds').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="ds"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )    
-
-    document.getElementById('rm').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="rm"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('gc').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gc"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('n64').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="n64"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
     Main.init();
   </script>
 </body>

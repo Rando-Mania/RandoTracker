@@ -10,11 +10,11 @@ html{
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
   background-color: #000;
-  min-height: 720px
+  min-height: 720px;
 }
 
 #contain{
@@ -28,6 +28,7 @@ header{
 
 h1{
   letter-spacing: 2px;
+  font-variant: small-caps;
 }
 
 aside{
@@ -63,11 +64,11 @@ aside ul li{
 
 aside h1, aside h2, aside h3{
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
 }
+
 aside h4{
-  font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 aside a{
@@ -164,9 +165,6 @@ article{
   overflow: auto;
 }
 
-article h1{
-  font-family: 'Orbitron', sans-serif;
-}
 
 label{
   color: silver; 
@@ -244,11 +242,10 @@ input{
 }
 
 .games h3{
-  font-weight: bold;
-  font-size: 1em;
+  font-variant: small-caps;
+  font-size: 1.1em;
   text-align: center;
   margin: .5em 0;
-  font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
 }
 
