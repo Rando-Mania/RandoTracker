@@ -27,7 +27,6 @@ header{
 }
 
 h1{
-  letter-spacing: 2px;
   font-variant: small-caps;
 }
 
@@ -67,8 +66,8 @@ aside h1, aside h2, aside h3{
 }
 
 aside h4{
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 1.2em;
 }
 
 aside a{
@@ -246,7 +245,6 @@ input{
   font-size: 1.1em;
   text-align: center;
   margin: .5em 0;
-  letter-spacing: 2px;
 }
 
 .link-grid{

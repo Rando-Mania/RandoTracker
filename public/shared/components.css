@@ -129,7 +129,11 @@ input[type=number]:out-of-range{
     background-color: #f00;
 }
 
-
-.visually-hidden{
-    display: none;
+.visually-hidden { 
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }

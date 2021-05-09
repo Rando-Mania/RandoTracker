@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+@font-face {
+  font-family: "Orbitron";
+  src: local('Orbitron'),
+    url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
+    url('../shared/fonts/orbitron-bold_0.woff') format('woff'),
+    url("../shared/fonts/Orbitron-Bold_0.ttf") format("truetype");
+}
+        
+@font-face {
+  font-family: "Roboto";
+  src: local('Roboto'),
+  url('../shared/fonts/roboto-medium.woff2') format('woff2'),
+  url('../shared/fonts/roboto-medium.woff') format('woff'),
+  url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+  html{
+    --vHeight: 720px;
+    --nameWidth: 300px;
+  }
+
+  body {
+    height: 0;
+    background-color: #ddd;
+    display: flex;
+  }
+  
+  .layout {
+    font-family: "Orbitron", sans-serif;
+    color: #fafafa;
+    width: 1280px;
+    height: 720px;
+    letter-spacing: 2px;
+    display: grid;
+    grid-template-columns: 960px 320px;
+    grid-template-rows: 720px;
+}
+
+.layout.show{
+  display: grid;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 720px;
+}
+
+.player-video, .layout.four-three .player-video{
+  --vHeight: 720px;
+  width: calc(var(--vHeight) * 4/3);
+  height: var(--vHeight);
+}
+.layout.sixteen-nine .player-video{
+  --vHeight: 540px;
+  width: calc(var(--vHeight) * 16/9);
+}
+.layout.ten-nine .player-video{
+  --vHeight: 652px;
+  width: calc(var(--vHeight) * 10/9);
+}
+.layout.three-two .player-video{
+  --vHeight: 642px;
+  width: calc(var(--vHeight) * 3/2);
+}
+
+aside{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+
+.card, .staff{
+  margin-bottom: 16px;
+}
+
+tr-toggle[property="dwr"]{
+  display: flex;
+}
+
+.game-name, .player-name{
+  font-size: 20px;
+}
+
+tr-toggle[property="dwr"] .player-grid {
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(3, 32px);
+    grid-auto-flow: column;
+    grid-gap: 6px 16px;
+    margin-right: 16px;
+    justify-items: space-between;
+  }
+
+  .player-grid img{
+    width: 32px;
+    height: 32px;
+  }
+
+  #player_time .timer-scroll{
+    animation-play-state: running;
+  }
+
+  @keyframes scroll {
+    to{background-position-y: -680px, 0;}
+  }
+
+  /* timer */
+
+  #timer span:not(.dot):not(.colon) {
+    width: 19.92px !important;
+    display: inline-block;
+    text-align: right;
+  }
+  
+  #timer .ms {
+    width: 19.92px !important;
+    text-align: right;
+  }
+  
+textarea{
+  width: 15em;
+}
+
+  .hidden, .display-none {
+    display: none;
+  }
+
+  .one-row{height: calc(32px * 1 + 16px * 1);}
+  .two-rows{height: calc(32px * 2 + 16px * 2);}
+  .three-rows{height: calc(32px * 3 + 16px * 3);}
+  .four-rows{height: calc(32px * 4 + 16px * 4);}
+  .five-rows{height: calc(32px * 5 + 16px * 5);}
+
+
+  /* menu */
+
+  .menu-contain {
+    display: grid;
+    grid-template-areas:
+      "prefill prefill  prefill  prefill"
+      "game    game     icons    icons" 
+      "game    game     upnext   upnext"
+      "players pronouns freetext freetext"
+      "timer   timer    layout   layout" 
+      "team    team     view     reset"
+      "other   other    credits credits";
+  }
+
+  .dialog{
+    border: none;
+    background: #222 linear-gradient(to right, #f8b800, #f8b800) -150px bottom / 100% 1px no-repeat;
+    animation: border-slide .2s linear forwards;
+    border-bottom: 1px solid #222;
+  }
+
+  @keyframes border-slide{
+    to{ background-position: 0 bottom; }
+  }
+
+  .pause-animations #player_time, .pause-animations tr-timer[running="true"]:after{
+    animation-play-state: paused;
+  }
+  
+  .show{
+    display: block;
+  }

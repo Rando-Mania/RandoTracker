@@ -1,12 +1,12 @@
 <div class="menu-game-specific">
-    <div id="menu_fill" class="fieldset">
+    <!-- <div id="menu_fill" class="fieldset">
         <h4 class="legend">Marathon Auto-fill Menu</h4>
         <div>
             <label for="schedule_preloads">Pre-fill from <a href="https://horaro.org/randomania2020/superweek">horaro.org</a>:</label>
             <select id="schedule_preloads">
             </select>
         </div>
-    </div>
+    </div> -->
     <div id="menu_players_extra" class="fieldset">
         <h4 class="legend">Players Extra</h4>
         <div id="menu_player_labels">
@@ -68,6 +68,19 @@
         </div>
     </div>
 
+    <div id="menu_video_aspect" class="fieldset video-aspect">
+        <h4 class="legend">Video Aspect</h4>
+        <div>
+            <label>Aspect Ratio:</label>
+            <tr-select-toggle property="video-aspect-select">
+                <tr-option selected target=".layout, .tracker-layout" toggle-class="four-three" value="43">4:3 (NES, SNES, GC)</tr-option>
+                <tr-option target=".layout, .tracker-layout" toggle-class="ten-nine" value="109">10:9 (GB, GBC)</tr-option>
+                <tr-option target=".layout, .tracker-layout" toggle-class="three-two" value="32">3:2 (GBA)</tr-option>
+                <tr-option target=".layout, .tracker-layout" toggle-class="sixteen-nine" value="169">16:9 (wide screen)</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+
     <div id="menu_up_next" class="fieldset">
         <h4 class="legend">Up Next</h4>
         <div>
@@ -75,7 +88,6 @@
             <tr-input-text class="up-next-input" property="up-next"></tr-input-text>
         </div>
     </div>
-
 
     <div id="menu_free_text" class="fieldset">
         <h4 class="legend">Free Text</h4>
@@ -93,7 +105,7 @@
             <label for="toggle-animation">Pause Animation</label>
         </div>
         <div>
-            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target=".four-three" toggle-class="visually-hidden"></tr-input-toggle-class>
+            <tr-input-toggle-class checked id="toggle-4by3" property="toggle-4by3" target=".four-three-panel" toggle-class="visually-hidden"></tr-input-toggle-class>
             <label for="toggle-4by3">Hide 4:3 Panel</label>
         </div>
     </div>

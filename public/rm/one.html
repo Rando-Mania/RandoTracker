@@ -3,24 +3,17 @@
 
 <head profile="http://www.w3.org/2005/10/profile">
   <meta charset="utf-8">
-  <title>RandoMania 1p 3:2 Tracker</title>
+  <title>RandoMania 1p Layout</title>
   <link rel="stylesheet" type="text/css" href="../shared/components.css">
   <link rel="stylesheet" type="text/css" href="../shared/menu.css">
   <link rel="stylesheet" type="text/css" href="marathon-menu.css">
   <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
   <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
-  <link rel="stylesheet" type="text/css" href="one_4by3.css">
+  <link rel="stylesheet" type="text/css" href="one.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
   <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
   <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
-  <style>
-      .player-video{
-        --vHeight: 642px;
-        width: calc(var(--vHeight) * 3/2);
-        height: var(--vHeight);
-        }
-  </style>
 </head>
 
 <body>
@@ -41,7 +34,7 @@
 
             <tr-template href="templates/cards/tracking-icons.html"></tr-template>
 
-            <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
+            <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>            
 
             <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
                 <tr-template href="../shared/production-team.html"></tr-template>
@@ -55,7 +48,7 @@
                 <tr-template href="templates/cards/up-next.html"></tr-template>
             </tr-hide-if-empty>
 
-            <tr-template id="rm-logo-template" class="visually-hidden" href="templates/cards/rm-logo.html"></tr-template>
+            <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
 
             <tr-template id="four-three-template" href="templates/cards/4by3-panel.html"></tr-template>
         </aside>
@@ -74,13 +67,11 @@
     <tr-template href="../shared/one-menus-contain.html"></tr-template>
 
     <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script src="scripts/rm.js"></script>
-    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
-	<script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <!-- <script src="scripts/rm.js"></script> -->
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
     <script type="text/javascript" src="../shared/script/one_game.js"></script>

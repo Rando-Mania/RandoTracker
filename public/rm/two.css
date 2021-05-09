@@ -67,6 +67,58 @@ html{
     z-index: 2;
 }
 
+.player-video, .layout.four-three .player-video{
+    --vidWidth: 644px;
+    --vidAspect: 4 / 3;
+    --videoX: -3px; --videoY: -3px;
+    --nameWidth: 381px;
+    --nameX: 16px; --nameY: 486px;
+    --speakerX: 409px; --speakerY: 493px;
+    --winX: 202px; --winY: 525px;
+    --finalX: 360px; --finalY: 507px;
+    --bestX: 884px; --bestX2: 18px; --bestY: 486px;
+    z-index: 2;
+}
+
+.layout.sixteen-nine{
+    --nameY: 46px;
+    --finalX: 125px; --finalY: 29px;
+    --speakerY: 83px;
+    --bestY: 58px;
+}
+.layout.sixteen-nine .player-video{
+    --videoY: 152px;
+    --vidWidth: 644px;
+    --vidAspect: 16 / 9;
+}
+.layout.sixteen-nine .card.timer{
+    top: 50px;
+}
+
+  .layout.ten-nine .player-video{
+    --vHeight: 480px;
+    height: var(--vHeight);
+    width: calc(var(--vHeight) * 10/9);
+    --videoX: 57px;
+  }
+
+
+  .layout.three-two{
+    --nameY: 20px;
+    --finalX: 125px; --finalY: 29px;
+    --speakerY: 41px;
+    --bestY: 58px;
+}
+.layout.three-two .player-video{
+    --videoY: 107px;
+    --vidWidth: 644px;
+    --vidAspect: 3 / 2;
+
+}
+.layout.three-two .card.timer{
+    top: 28px;
+}
+
 .player-info .card{
     width: 381px;
 }
