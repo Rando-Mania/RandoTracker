@@ -70,7 +70,7 @@ html{
     z-index: 2;
 }
 .ten-nine{
---nameX: 383px;
+    --nameX: 383px;
 }
 .ten-nine .player-video{
     --vidAspect: 10 / 9;
@@ -87,7 +87,6 @@ html{
     align-items: center;
 }
 .sixteen-nine .player-video{--vidAspect: 16 / 9;}
-
 
 .card-body tr-text {
     width: 175px;
