@@ -69,6 +69,25 @@ html{
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
 }
+.ten-nine{
+--nameX: 383px;
+}
+.ten-nine .player-video{
+    --vidAspect: 10 / 9;
+    --vidHeight: 325px;
+    width: calc(var(--vidHeight) * var(--vidAspect));
+    height: var(--vidHeight);}
+.three-two .player-video{--vidAspect: 3 / 2;}
+
+.sixteen-nine .cards{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.sixteen-nine .player-video{--vidAspect: 16 / 9;}
+
 
 .card-body tr-text {
     width: 175px;
@@ -395,10 +414,10 @@ tr-timer span {
   "game     game    icons    timer   layout layout"
   "game     game    upnext   timer   layout layout"
   "pronouns players freetext team    view   reset"
-  "prefill  prefill other    credits       .      .";
+  "aspect   aspect other    credits       .      .";
 }
 
-.menu-game-specific #menu_fill{grid-area: prefill;}
+.menu-game-specific #menu_video_aspect{grid-area: aspect;}
 .menu-general #menu_timer{grid-area: timer;}
 .menu-general #menu_players{grid-area: players;}
 .menu-general #menu_layout{grid-area: layout;}

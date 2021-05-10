@@ -45,22 +45,6 @@
     </div>
     <div id="auth" style="display: none;">
       <h1>CHOOSE A LAYOUT</h1>
-      <!-- <div id="filter">
-      <input type="radio" id="all" name="system" value="all" checked>
-      <label for="all">All</label>
-
-      <input type="radio" id="nes" name="system" value="nes">
-      <label for="nes">NES</label>
-
-      <input type="radio" id="snes" name="system" value="snes">
-      <label for="snes">SNES</label>
-
-      <input type="radio" id="gb" name="system" value="gb">
-      <label for="gb">GB</label>
-      
-      <input type="radio" id="rm" name="system" value="rm">
-      <label for="rm">RM</label>
-      </div> -->
 
       <div class="games">
 
@@ -169,7 +153,7 @@
 		<a onclick="goToRoom('rm/one.html')">1p</a>
 		<a onclick="goToRoom('rm/two.html')">2p</a>
 		<!-- <a onclick="goToRoom('rm/three_4by3.html')">3p</a> -->
-		<!-- <a onclick="goToRoom('rm/four_4by3.html')">4p</a> -->
+		<a onclick="goToRoom('rm/four.html')">4p</a>
 	</div>
 </div>
 
@@ -177,26 +161,20 @@
 	<h3>NES, SNES, GC (4:3)</h3>
 	<div class="link-grid">
 		<a onclick="goToRoom('rm/three_4by3.html')">3p</a>
-		<a onclick="goToRoom('rm/four_4by3.html')">4p</a>
 	</div>
 </div>
 
-<div data-console="rm">
-	<h3>Widescreen (16:9)</h3>
-	<a onclick="goToRoom('rm/four_16by9.html')">4 Player</a>
-</div>
 
 <div data-console="rm">
 	<h3>GB, GBC <br>(10:9)</h3>
 	<a onclick="goToRoom('rm/three_10by9.html')">3 Player</a>
-	<a onclick="goToRoom('rm/four_10by9.html')">4 Player</a>
 </div>	
 
     </div>
   </div>
   </article>
 </div>
-   <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-app.js"></script>
   <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
   <script src="/__/firebase/8.3.0/firebase-database.js"></script>
   <script src="/__/firebase/init.js"></script>
@@ -212,52 +190,6 @@
 
       win.focus();
     }
-
-
-
-    // function reset(){
-    //   document.querySelectorAll('.games > div').forEach(
-    //       function myFunction(el) {el.classList.remove("hide");}
-    //       )
-    // }
-
-    // document.getElementById('all').addEventListener('click', reset);
-
-    // document.getElementById('nes').addEventListener('click',
-    //   function(){
-    //     reset();
-    //     document.querySelectorAll('.games > div:not([data-console="nes"])').forEach(
-    //       function myFunction(el) {el.classList.add("hide");}
-    //       )
-    //   }
-    // )
-
-    // document.getElementById('snes').addEventListener('click',
-    //   function(){
-    //     reset();
-    //     document.querySelectorAll('.games > div:not([data-console="snes"])').forEach(
-    //       function myFunction(el) {el.classList.add("hide");}
-    //       )
-    //   }
-    // )
-    
-    // document.getElementById('gb').addEventListener('click',
-    //   function(){
-    //     reset();
-    //     document.querySelectorAll('.games > div:not([data-console="gb"])').forEach(
-    //       function myFunction(el) {el.classList.add("hide");}
-    //       )
-    //   }
-    // )
-
-    // document.getElementById('rm').addEventListener('click',
-    //   function(){
-    //     reset();
-    //     document.querySelectorAll('.games > div:not([data-console="rm"])').forEach(
-    //       function myFunction(el) {el.classList.add("hide");}
-    //       )
-    //   }
-    // )
 
     Main.init();
   </script>
