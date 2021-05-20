@@ -416,6 +416,15 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-image: radial-gradient(rgba(255,255,255,.4), transparent 69%);
 }
 
+.glitch{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 2px;
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+}
+
 .player-speaker{
     grid-area: ps;
     padding: 4px;
@@ -555,7 +564,10 @@ tr-timer span {
         "v1 v1 v2 v2"
         "i1 t  t  i2";
     --gap-size: 0;
-    background-image: url('images/2p/coliseum-mobile.jpg'), linear-gradient(#b1995b, #b1995b);
+    background-image: 
+        linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), 
+        url('images/2p/coliseum-mobile.jpg'), 
+        linear-gradient(#b1995b, #b1995b);
 }
 
 .coliseum.layout:after{
@@ -568,6 +580,10 @@ tr-timer span {
     top: 647px;
     color: rgba(0,0,0,.5);
     mix-blend-mode: overlay;
+}
+
+.coliseum.layout .logo img{
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,.5)) drop-shadow(-1px -1px 1px rgba(0,0,0,.5));
 }
 
 .coliseum.layout .player-video{
