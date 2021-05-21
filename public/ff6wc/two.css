@@ -416,6 +416,24 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-image: radial-gradient(rgba(255,255,255,.4), transparent 69%);
 }
 
+.site-link, .discord-link{
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}     
+
+.visible{
+    position: relative !important;
+    left: 0px;
+    height: initial; width: initial;
+    overflow: hidden;
+    -webkit-clip-path: none;
+    clip-path: none;    
+}
+
 .glitch{
     vertical-align: bottom;
     position: relative;

@@ -13,30 +13,30 @@
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
-                    <td><tr-input-text player="1" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text oninput player="1" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="1" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="1" class="final-input" property="player-final"></tr-input-text></td>                
+                    <td><tr-input-text oninput player="1" class="final-input" property="player-final"></tr-input-text></td>                
                     <td><tr-input-toggle player="1" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-text player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text oninput player="2" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="2" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="2" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="2" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="2" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="3" for="player-3">3</label></td>
-                    <td><tr-input-text player="3" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text oninput player="3" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="3" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="3" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="3" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="3" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
                 <tr>
                     <td><label player="4" for="player-4">4</label></td>
-                    <td><tr-input-text player="4" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
+                    <td><tr-input-text oninput player="4" list="name_options" class="name-input" property="player-name"></tr-input-text></td>
                     <td><tr-input-toggle player="4" class="speaker-input" property="toggle-speaker"></tr-input-toggle></td>
-                    <td><tr-input-text player="4" class="final-input" property="player-final"></tr-input-text></td>
+                    <td><tr-input-text oninput player="4" class="final-input" property="player-final"></tr-input-text></td>
                     <td><tr-input-toggle player="4" class="winner-input" property="toggle-winner"></tr-input-toggle></td>
                 </tr>
             </table>
@@ -88,15 +88,15 @@
         <h4 class="legend">Production Team</h4>
         <div>
             <label>Commentator(s):</label>
-            <tr-input-textarea class="comm-input" property="commentators"></tr-input-textarea>
+            <tr-input-textarea oninput class="comm-input" property="commentators"></tr-input-textarea>
         </div>
         <div>
             <label>Restreamer:</label>
-            <tr-input-text class="restreamer-input" property="restreamers"></tr-input-text>
+            <tr-input-text oninput class="restreamer-input" property="restreamers"></tr-input-text>
         </div>
         <div>
             <label>Tracker(s):</label>
-            <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
+            <tr-input-textarea oninput class="tracker-input" property="trackers"></tr-input-textarea>
         </div>
         <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
     </div>

@@ -68,8 +68,8 @@
     grid-template-columns: auto 1fr 1fr auto;
     grid-template-areas:
         "v1 i1 i2 v2"
-        "v1 ts ts v2"
-        "v3 ts ts v4"
+        "v1  .  . v2"
+        "v3  .  . v4"
         "v3 i3 i4 v4";
 }
 
@@ -213,8 +213,67 @@
     padding: 12px;
 }
 
+
+.timer-staff{
+    gap: 1em;
+    grid-column: 2 / 4;
+    grid-row: 1 / -1;
+    grid-template-rows: 1fr auto auto 1fr;
+    justify-items: center;
+}
+
+.staff{
+    align-self: end;
+}
+
+.logo{
+    display: block;
+    width: fit-content;
+}
+
+.logo img{
+    width: 289px;
+    image-rendering: initial;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    background-image: radial-gradient(rgba(0,0,0,.25), transparent 69%);
+}
+
+.staff-panel-1, .staff-panel-2{
+    background-color: transparent;
+}
+
+.commentators, .restreamers, .trackers {
+    max-width: 195px;
+}
+
+.glitch{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 2px;
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+}
+
+.site-link, .discord-link{
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}     
+
+.visible{
+    position: relative !important;
+    left: 0px;
+    height: initial; width: initial;
+    overflow: hidden;
+    -webkit-clip-path: none;
+    clip-path: none;    
+}
+
 tr-timer{
-    grid-area: t;
     margin-top: 12px;
     width: 200px;
     height: 53px;

@@ -77,8 +77,16 @@
         <div id="menu_subheading" class="fieldset">
             <h4 class="legend">Subheading</h4>
             <div class="subheading-contain">
-                <tr-input-textarea id="subheading-input" class="subheading-input" property="subheading"></tr-input-textarea>
+                <tr-input-textarea oninput id="subheading-input" class="subheading-input" property="subheading"></tr-input-textarea>
                 <button class="dummy-text-button" title="Dummy Text" onclick="subheadingDummyText()"></button>
+            </div>
+            <div>
+                <tr-input-toggle-class checked id="hide-discord" property="hide-discord" target=".discord-link" toggle-class="visible"></tr-input-toggle-class>
+                <label for="hide-discord">Discord header</label>
+            </div>
+            <div>
+                <tr-input-toggle-class checked id="hide-site" property="hide-site" target=".site-link" toggle-class="visible"></tr-input-toggle-class>
+                <label for="hide-site">ff6wc.com header</label>
             </div>
         </div>
         <div id="menu_credits" class="fieldset">
