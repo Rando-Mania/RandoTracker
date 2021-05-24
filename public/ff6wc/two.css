@@ -416,7 +416,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-image: radial-gradient(rgba(255,255,255,.4), transparent 69%);
 }
 
-.site-link, .discord-link{
+.site-link, .twitch-link{
     position: absolute !important;
     left: -2560px;
     height: 1px; width: 1px;

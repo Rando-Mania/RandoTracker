@@ -6,7 +6,7 @@
     --vidAspect: 26 / 21;
     --gap-size: 0;
     --nameWidth: 140px;
-    --borderWidth: 2px;
+    --borderWidth: 1px;
     --backgroundColor1: #000;
 }
 
@@ -100,12 +100,28 @@
     grid-template-columns: auto 1fr;
     justify-self: start;
 }
+[player="1"] .player-info-contain{
+    grid-template-areas:
+        "pn pn"
+        "pp pp"
+        "pg ps";
+}
+[player="1"] .player-name, [player="3"] .player-name{
+    border-radius: 0 10px 10px 0;
+}
+[player="2"] .player-name, [player="4"] .player-name{
+    border-radius: 10px 0 0 10px;
+}
 
 .player-name{
     grid-area: pn;
     height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
     padding: 0 8px;
+}
+
+.player-pronoun{
+    grid-area: pp;
 }
 
 .player-grid{
@@ -129,8 +145,20 @@
     z-index: 1;
 }
 
-.layout .player-grid-back.br{
-    border-radius: 0 0 10px 10px;
+.layout [player="1"] .player-grid-back{
+    border-radius: 0 0 10px 0;
+}
+
+.layout [player="2"] .player-grid-back{
+    border-radius: 0 0 0 10px;
+}
+
+.layout [player="3"] .player-grid-back{
+    border-radius: 0 10px 0 0;
+}
+
+.layout [player="4"] .player-grid-back{
+    border-radius: 10px 0 0 0;
 }
 
 .player-grid img, .dialog img{
@@ -186,6 +214,7 @@
 
 .final-winner-contain{
     color: #f8b800;
+    z-index: 2;
 }
 
 @supports not selector(:is(ul, ol)) {
@@ -207,12 +236,12 @@
 .player-winner, .player-final{
     height: 34px;
     padding: 0 .5em;
+    background-color: #000;
 }
 
 .vs{
     padding: 12px;
 }
-
 
 .timer-staff{
     gap: 1em;
@@ -255,7 +284,7 @@
     fill: currentColor;
 }
 
-.site-link, .discord-link{
+.site-link, .twitch-link{
     position: absolute !important;
     left: -2560px;
     height: 1px; width: 1px;
@@ -304,3 +333,29 @@ tr-timer span {
     border: solid var(--borderWidth) currentColor;
     z-index: 3;
 }
+
+/*  ==========
+    Menu
+    ========== */
+    
+    .menu-general #menu_players{grid-area: players;}
+    .menu-general #menu_layout{grid-area: layout;}
+    .menu-general #menu_production{grid-area: team;}
+    .menu-general #menu_timer{grid-area: timer;}
+    .menu-general #menu_view{grid-area: view;}
+    .menu-general #menu_reset{grid-area: reset;}
+    
+    #menu_credits{grid-area: credits;}
+    #menu_players_extra{grid-area: players2;}
+    #menu_subheading{grid-area: subhead;}
+    #menu_backgrounds{grid-area: backgrounds;}
+    #menu_playlist{grid-area: playlist;}
+    #menu_goals{grid-area: goals;}
+    
+    .menu-contain{
+        grid-template-areas:
+            "playlist players2    players layout  layout  team"
+            "playlist  goals       timer   view    reset   credits"
+            "subhead   goals       timer   view    reset   credits"
+            "subhead   goals      backgrounds view    reset   credits";
+        }
