@@ -26,19 +26,16 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .notwebp .loadscreen{
-        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
-    .webp.notavif .loadscreen{
-        background-image: url('images/justbackground.webp'), var(--background-fallback);}
-    .avif .loadscreen{
-        background-image: url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: url('images/titlescreen-clouds.png')}
+    .webp .loadscreen{
+        background-image: url('images/titlescreen-clouds.webp')}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .loadscreen{
         background-image: image-set(
-            "images/justbackground.avif" type("image/avif"),
-            "images/justbackground.webp" type("image/webp"),
-            "images/justbackground.jpg" type("image/jpg")
+            "images/titlescreen-clouds.webp" type("image/webp"),
+            "images/titlescreen-clouds.png" type("image/png")
         ), var(--background-fallback);
     }
 }
@@ -53,29 +50,21 @@ display: block;
 }
 
 @keyframes zoomIn {
-from {
-  opacity: 0;
-  transform: scale3d(0.3, 0.3, 0.3);
-  transform-origin: 50% 0%;
-}
-50% {
-  opacity: 1;
-}
-to{
-    transform-origin: 50% 50%;
-}
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+        transform-origin: 50% 0%;
+    }
+    50% {opacity: 1;}
+    to{transform-origin: 50% 50%;}
 }
 
 .loadscreen{
     height: 100%;
-    display: grid;
-    grid-auto-rows: 1fr auto;
-    grid-gap: 1em;
-    place-items: center;
-    padding: 1em;
     background-color: #21384a;
-    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
-    background-size: 100% 100%;
+    background-size: 100%;
+    background-position: 0 -100px;
+    image-rendering: pixelated;
 }
 
 .loadscreen-main{
@@ -84,39 +73,25 @@ to{
     font-family: 'FF6', Arial, sans-serif;
     font-size: 36px;
     position: relative;
-}
-
-.loadscreen .player-contain{
-display: flex;
-justify-content: center;
-align-items: center;
-width: -moz-fit-content;
-width: fit-content;
-margin: auto;
+    display: grid;
+    place-content: center stretch;
+    gap: 3em;
 }
 
 .loadscreen .vs{
     margin: 8px;
     color: #fff;
-    font-size: 36px;
+    font-size: 32px;
+    transform: scale(4);
+    mix-blend-mode: overlay;
+    font-family: 'Ferrum', 'Times New Roman', Times, serif;
 }
 
-.loadscreen-main *{
-    justify-content: center;
-}    
-
-.loadscreen-left{
-    position: absolute;
-    left: 1em;
-    top: 33px;
-    display: grid;
-    gap: 16px;
-    padding: 0;
-}
-
-.ff6wc-logo{
+.loadscreen .ff6wc-logo{
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
     background-image: radial-gradient(rgba(255,255,255,.5), transparent 69%);
+    image-rendering: auto;
+    width: 61%;
 }
 
 .loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
@@ -128,16 +103,12 @@ margin: auto;
     gap: 16px;
 }
 
-.loadscreen-right{
-    filter: drop-shadow(0px 0px 4px #000) drop-shadow(1px 1px 0 #000) drop-shadow(-1px -1px 0 #000);
+.loadscreen .player-info{
     display: grid;
-    gap: 8px;
-    padding: 0;
-    position: absolute;
-    right: 2em;
-    bottom: 2em;
-    display: grid;
-    gap: 16px;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .loadscreen .player-name{
@@ -207,14 +178,25 @@ display: none;
 </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <div class="loadscreen-left">
+            <div class="load-title">
                 <picture class="ff6wc-logo-contain">
                     <source srcset="images/wc_logo.avif" type="image/avif">
-                    <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="560" alt="">
                 </picture>
-                <div class="subheadings-contain">
+                <div class="subheadings fs-l ta-c">
                     <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
-                    <div class="subhead-link text-shadow">Play at: ff6wc.com</div>    
+                    <div class="subhead-link text-shadow">
+                        <p class="twitch-link">
+                            <svg version="1.1" class="glitch" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 240 280">
+                                <g id="glitch">
+                                    <path d="M50,0L0,50v180h60v50l50-50h40l90-90V0H50z M220,130l-40,40h-40l-35,35v-35H60V20h160V130z"/>
+                                    <rect x="170" y="55" width="20" height="60"/>
+                                    <rect x="115" y="55" width="20" height="60"/>
+                                </g>
+                            </svg>
+                        ff6worldscollide</p>
+                        <p class="site-link">Play at: ff6wc.com</p>
+                    </div>
                 </div>
             </div>
             <template id="player_loading_template">
@@ -229,7 +211,7 @@ display: none;
                     <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                 </div>
             </template>
-            <div class="loadscreen-right">      
+            <div class="player-info">      
                 <tr-player player="1">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>
