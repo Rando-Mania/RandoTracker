@@ -43,48 +43,6 @@
   color: #fff;
   text-shadow: 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
   }
-  
-  #d, #w{
-    font-size: 36px;
-    text-transform: uppercase;
-    color: rgb(253, 52, 1);
-    line-height: .75;
-  }
-  
-  #w span{
-    display: inline-block;
-    transform: scaleY(1.55);
-    transform-origin: 50% 0;
-  }
-  
-  #r{
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  article{
-    padding: 16px;
-}
-
-
-  h3 {
-    text-shadow: 0 0 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
-    margin-bottom: .5em;
-    line-height: 1.4;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-  
-  .map{
-    background-image: url("images/alefgard-pan.png");
-    background-position: 1008px 516px;
-    background-color: #000;
-  }
-  
-  ul{
-    height: 100%;
-  }
 
 .loadscreen main{
   text-align: center;
@@ -92,27 +50,14 @@
   display: grid;
   grid-template-columns: 58%;
   align-content: space-around;
-  background-color: #0078f8;
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
-  background-image: 
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(images/monsters/true-dragonlord.png), 
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url(images/loadscreen-alefgard.png);
-  background-position: 0 0, right -112% top, 0 0, 0 0;
-  background-size: auto, auto 190%, auto, contain;
-  background-repeat: repeat, no-repeat, repeat, repeat;
-  animation: dl2-slide .5s;
-}
-
-@keyframes dl2-slide{
-  from{ background-position: 0 0, right -270% top, 0 0, 0 0;}
-  to{ background-position: 0 0, right -112% top, 0 0, 0 0;}
-}
-
-.loadscreen main h3{
-  color: #fff;
-  font-size: 24px;
-  margin-top: 16px;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
+    url(images/monsters/true-dragonlord.png) no-repeat right -112% top / auto 190%, 
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
+    url(images/loadscreen-alefgard.png) repeat 0 0 / contain
+   #0078f8;
 }
 
 #changeText{
