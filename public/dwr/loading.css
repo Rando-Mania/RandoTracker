@@ -54,7 +54,7 @@
   image-rendering: pixelated;
   background:
     linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
-    url(images/monsters/true-dragonlord.png) no-repeat right -112% top / auto 190%, 
+    url(images/monsters/true-dragonlord.png) no-repeat right -200% top / auto 190%, 
     linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
     url(images/loadscreen-alefgard.png) repeat 0 0 / contain
    #0078f8;
@@ -62,20 +62,27 @@
 
 #changeText{
   font-size: 17px;
+  letter-spacing: 1px;
 }
 
 .loadscreen main h1{
-  color: rgb(253, 52, 1);
+  color: #fd3401;
   font-family: 'Ferrum', serif;
   font-size: 72px;
   font-weight: bold;
   text-transform: uppercase;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(#fe3401, #fe9934 60%);
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(1px 1px #000) drop-shadow(-1px -1px #000) drop-shadow(1px -1px #000) drop-shadow(-1px 1px #000);
 }
 
 .loadscreen main h1 span{
-  transform: scaleY(1.5) translateY(-1px);
-  transform-origin: 50% 0%;
+  font-size: 1.3em;
   display: inline-block;
+  vertical-align: top;
 }
 
 .loadscreen header h2{
@@ -84,26 +91,17 @@
   text-transform: uppercase;
   transform: scaleX(1.2);
   font-weight: normal;
+  position: relative;
+  top: -28px;
 }
 
-#loading_runners{
+.loading-runners{
   display: grid;
   gap: 1em;
 }
 
-.loadscreen main div{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.loadscreen-player-names {
-  flex-direction: column;
-  padding: 0 5em;
-}
-
-.loadscreen-player-names .player-name{
-  width: auto;
+.loadscreen .player-name{
+  letter-spacing: 2px;
 }
 
 .load-vs{
