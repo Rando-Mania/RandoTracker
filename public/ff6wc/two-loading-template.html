@@ -65,8 +65,43 @@ display: block;
     background-size: 100%;
     background-position: 0 -100px;
     image-rendering: pixelated;
+    position: relative;
+    z-index: 0;
 }
 
+.loadscreen:after{
+  content: '';
+  background-image: url('images/lightning.png');
+  background-size: contain;
+  width: 360px;
+  height: 270px;
+  position: absolute; 
+  top: 82px;
+  left: 170px;
+  z-index: -1;
+  transform: rotateX(180deg);
+  animation: lightning 10s alternate infinite;
+  opacity: 0;
+}
+
+.loadscreen:before{
+  content: '';
+  background-image: url('images/lightning.png');
+  background-size: contain;
+  width: 360px;
+  height: 270px;
+  position: absolute; 
+  top: 295px;
+  right: 230px;
+  z-index: -1;
+  transform: rotateX(180deg);
+  animation: lightning 10s 4s alternate infinite;
+  opacity: 0;
+}
+
+@keyframes lightning {
+    50%{opacity: 1;}
+}
 .loadscreen-main{
     height: 100%;
     width: 100%;
@@ -81,15 +116,15 @@ display: block;
 .loadscreen .vs{
     margin: 8px;
     color: #fff;
+    opacity: .25;
     font-size: 32px;
     transform: scale(4);
-    mix-blend-mode: overlay;
     font-family: 'Ferrum', 'Times New Roman', Times, serif;
 }
 
 .loadscreen .ff6wc-logo{
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
-    background-image: radial-gradient(rgba(255,255,255,.5), transparent 69%);
+    /* background-image: radial-gradient(rgba(255,255,255,.5), transparent 69%); */
     image-rendering: auto;
     width: 61%;
 }
