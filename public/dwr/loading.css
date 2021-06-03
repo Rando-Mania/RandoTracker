@@ -71,9 +71,9 @@
   font-size: 72px;
   font-weight: bold;
   text-transform: uppercase;
+  background-image: linear-gradient(#fe3401, #fe9934 60%);
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: linear-gradient(#fe3401, #fe9934 60%);
   color: transparent;
   text-shadow: none;
   filter: drop-shadow(1px 1px #000) drop-shadow(-1px -1px #000) drop-shadow(1px -1px #000) drop-shadow(-1px 1px #000);
