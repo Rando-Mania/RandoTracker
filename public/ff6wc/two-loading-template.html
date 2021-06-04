@@ -24,22 +24,6 @@
     display: none;
 }
 
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .notwebp .loadscreen{
-        background-image: url('images/titlescreen-clouds.png')}
-    .webp .loadscreen{
-        background-image: url('images/titlescreen-clouds.webp')}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .loadscreen{
-        background-image: image-set(
-            "images/titlescreen-clouds.webp" type("image/webp"),
-            "images/titlescreen-clouds.png" type("image/png")
-        );
-    }
-}
-
 .two-loading{
 display: block;
 }
@@ -61,47 +45,70 @@ display: block;
 
 .loadscreen{
     height: 100%;
-    background-color: #21384a;
+    background-color: #181820;
     background-size: 100%;
     background-position: 0 -100px;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
     position: relative;
     z-index: 0;
+    overflow: hidden;
 }
 
-.loadscreen:after{
-  content: '';
-  background-image: url('images/lightning.png');
-  background-size: contain;
-  width: 360px;
-  height: 270px;
-  position: absolute; 
-  top: 82px;
-  left: 170px;
-  z-index: -1;
-  transform: rotateX(180deg);
-  animation: lightning 10s alternate infinite;
-  opacity: 0;
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .loadscreen{
+        background-image: url('images/clouds.png')}
+    .webp .loadscreen{
+        background-image: url('images/clouds.webp')}
 }
 
-.loadscreen:before{
-  content: '';
-  background-image: url('images/lightning.png');
-  background-size: contain;
-  width: 360px;
-  height: 270px;
-  position: absolute; 
-  top: 295px;
-  right: 230px;
-  z-index: -1;
-  transform: rotateX(180deg);
-  animation: lightning 10s 4s alternate infinite;
-  opacity: 0;
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .loadscreen{
+        background-image: image-set(
+            "images/titlescreen-clouds.webp" type("image/webp"),
+            "images/titlescreen-clouds.png" type("image/png")
+        );
+    }
+}
+
+
+.lightning-top-left{
+    position: absolute;
+    top: 82px;
+    left: 170px;
+    opacity: 0;
+    animation: lightning 20s -10s alternate infinite;
+}
+
+.lightning-top-right{
+    position: absolute;
+    top: 82px;
+    right: 100px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 20s alternate infinite;
+}
+
+.lightning-bottom-left{
+    position: absolute;
+    bottom: -149px;
+    left: -170px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 30s alternate infinite;
+}
+
+.lightning-bottom-right{
+    position: absolute;
+    bottom: -149px;
+    right: -170px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 30s -15s alternate infinite;
 }
 
 @keyframes lightning {
-    50%{opacity: 1;}
+    25%{opacity: 1;}
 }
 .loadscreen-main{
     height: 100%;
@@ -117,7 +124,7 @@ display: block;
 .loadscreen .vs{
     margin: 8px;
     color: #fff;
-    opacity: .25;
+    mix-blend-mode: overlay;
     font-size: 32px;
     transform: scale(4);
     font-family: 'Ferrum', 'Times New Roman', Times, serif;
@@ -160,6 +167,7 @@ display: block;
     width: auto;
     font-size: 64px;
     height: auto;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
 }
 
 .loadscreen .player-pronoun{
@@ -215,12 +223,37 @@ display: none;
 
 </style>
     <div class="loadscreen">
+        <img class="lightning-top-left" src="images/lightning.png" width="360" alt="">
+        <img class="lightning-top-right" src="images/lightning.png" width="360" alt="">
+        <img class="lightning-bottom-left" src="images/lightning-two.png" width="480" alt="">
+        <img class="lightning-bottom-right" src="images/lightning-two.png" width="480" alt="">
         <div class="loadscreen-main">
             <div class="load-title">
                 <picture class="ff6wc-logo-contain">
                     <source srcset="images/wc_logo.avif" type="image/avif">
                     <img class="ff6wc-logo" src="images/wc_logo.png" width="560" alt="">
                 </picture>
+                <!-- <svg width="780" height="205">
+                    <style>
+                        svg{
+                            background-color: #181820;
+                            font-family: 'Ferrum', 'Times New Roman', Times, serif;
+                        }
+                        svg .svg-head{
+                            dominant-baseline: hanging;
+                            font-size: 144px;
+                            fill: #fade2f;
+                        }
+                        svg .svg-subhead{
+                            font-size: 42px;
+                            fill: #c31b01;
+                            text-anchor: end;
+                        }
+                    </style>
+                    <text class="svg-head" y="12">Worlds Collide</text>
+                    
+                    <text class="svg-subhead" x="100%" y="99%">Final Fantasy VI Randomizer</text>
+                </svg> -->
                 <div class="subheadings fs-l ta-c">
                     <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
                     <div class="subhead-link text-shadow">
@@ -240,9 +273,9 @@ display: none;
             <template id="player_loading_template">
                 <div class="player-contain rel">
                     <tr-text class="player-name" property="player-name"></tr-text>
-                    <div class="final-winner-contain fs-m abs br background-2">
-                        <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n"></tr-text>
-                        <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-n fw-b">
+                    <div class="final-winner-contain fs-m abs">
+                        <tr-text property="player-final" class="player-final background-2 br df jc-c ai-c ta-c fs-n"></tr-text>
+                        <tr-toggle property="toggle-winner" class="player-winner background-2 br df jc-c ai-c ta-c fs-n fw-b">
                             <div>WINNER</div>
                         </tr-toggle>
                     </div>
