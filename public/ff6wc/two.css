@@ -4,7 +4,7 @@
     font-family: Arial, sans-serif;
     font-size: 1em;
     --vidWidth: 604px;
-    --vidAspect: 4 / 3;
+    --vidAspect: 26 / 21;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --nameWidth: 375px;
@@ -13,11 +13,13 @@
 
     --border: 2px;
     --gap-size: 20px;
+    --videoX: calc(var(--gap-size) + var(--border));
+    --videoY: calc(var(--gap-size) + var(--border));
 
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
+    --clipX1: calc(var(--videoX));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border) * 2);
+    --clipY1: calc(var(--videoY));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border) * 2);
 }
 
 /* helper classes */
@@ -82,7 +84,7 @@
     background-image: var(--background-fallback);
     background-color: #c0c0c0;
     line-height: 1;
-    row-gap: var(--gap-size);
+    row-gap: 10px;
     padding: var(--gap-size) var(--gap-size) 0;
     background-size: 100% 100%;
     display: grid !important;
@@ -118,7 +120,7 @@
     display: contents;
 } 
 
-.layout.background-clip{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -127,7 +129,16 @@
         /* horizontal lines */
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 [player="1"] *{justify-self: flex-start;}
@@ -233,11 +244,9 @@
 }
 
 .player-grid-counters{
-    display: grid;
-    grid-template-rows: repeat(2, auto);
+    display: flex;
     padding: 2px;
-    grid-gap: 2px;
-    grid-auto-flow: column;
+    gap: 2px;
 }
 
 .player-grid.br{
@@ -246,11 +255,11 @@
 
 .player-grid:nth-of-type(1){
     left: 20px;
-    top: 541px;
+    top: 566px;
 }
 .player-grid:nth-of-type(2){
     right: 20px;
-    top: 541px;
+    top: 566px;
 }
 
 .player-grid img{
@@ -270,7 +279,16 @@ tr-image-toggle img.active, tr-toggle-class.active {
     filter: brightness(1);
 }
 
-[property^="character"] img, [property="starting-character"] img, .dialog img{
+
+
+.player-grid img, .dialog img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: 500% 1000%;
+}
+
+[property="starting-character"] img, .dialog img{
     width: 32px;
     height: 48px;
     display: block;
@@ -316,10 +334,27 @@ tr-image-toggle img.active, tr-toggle-class.active {
     z-index: -1;
 }
 
+[property="starting-character"] .terra, [property="character-terra"] img{background-position: 0 0;}
+[property="starting-character"] .locke, [property="character-locke"] img{background-position: 25% 0;}
+[property="starting-character"] .cyan, [property="character-cyan"] img{background-position: 50% 0;}
+[property="starting-character"] .shadow, [property="character-shadow"] img{background-position: 75% 0;}
+[property="starting-character"] .edgar, [property="character-edgar"] img{background-position: 100% 0;}
+[property="starting-character"] .sabin, [property="character-sabin"] img{background-position: 0 22.5%;}
+[property="starting-character"] .celes, [property="character-celes"] img{background-position: 25% 22.5%;}
+[property="starting-character"] .strago, [property="character-strago"] img{background-position: 50% 25%;}
+[property="starting-character"] .relm, [property="character-relm"] img{background-position: 75% 25%;}
+[property="starting-character"] .setzer, [property="character-setzer"] img{background-position: 100% 22.5%;}
+[property="starting-character"] .mog, [property="character-mog"] img{background-position: 0 47.5%;}
+[property="starting-character"] .gau, [property="character-gau"] img{background-position: 25% 45%;}
+[property="starting-character"] .gogo, [property="character-gogo"] img{background-position: 50% 44.5%;}
+[property="starting-character"] .umaro, [property="character-umaro"] img{background-position: 75% 44.5%;}
+
+
 .icon-slot{
     display: grid;
     isolation: isolate;
-    width: 38px;
+    width: 32px;
+    height: 64px;
     line-height: .7;
 }
 .icon-slot *{
@@ -338,6 +373,11 @@ tr-image-toggle img.active, tr-toggle-class.active {
 
 .notwebp .player-grid .icon {background-image: url(images/characters.png);}
 .webp .player-grid .icon{background-image: url(images/characters.webp);}
+
+
+.player-grid-counters .icon-slot {
+    align-self: center;
+}
 
 .terra .icon{background-position: 0 0;}
 .magicite .icon{
