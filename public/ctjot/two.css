@@ -190,24 +190,25 @@
 .badge{background-position: 0px -32px;}
 .hilt{background-position: -32px -32px;}
 .blade{background-position: -64px -32px;}
-.masamune{background-position: -96px -32px;}
-.key{background-position: -128px -32px;}
+.melchior{background-position: -96px -32px;}
+.masamune{background-position: -128px -32px;}
 
-.rock{background-position: -160px -32px;}
-.go{background-position: -192px -32px;}
-.pop{background-position: -0px -64px;}
+.key{background-position: -160px -32px;}
+.rock{background-position: -192px -32px;}
+.pop{background-position: 0px -64px;}
 .pendant{background-position: -32px -64px;}
 .shell{background-position: -64px -64px;}
 .moonstone{background-position: -96px -64px;}
 .jerky{background-position: -128px -64px;}
 .ribbon{background-position: -160px -64px;}
-.spacer{background-position: -192px -64px;}
+.go{background-position: -192px -64px;}
 .magic{background-position: 0px -96px;}
 .tools{background-position: -32px -96px;}
 .doll{background-position: -64px -96px;}
 
 .trigger{background-position: -96px -96px;}
 .knife{background-position: -128px -96px;}
+.spacer{background-position: 0px -128px;}
 
 .layout.show-cams .player-grid img, .dialog img{
     background-size: 112px 80px;
