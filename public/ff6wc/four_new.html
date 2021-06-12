@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/global.css">
-    <link rel="stylesheet" type="text/css" href="../shared/global-4p.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../shared/global-4p.css"> -->
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
@@ -17,13 +17,15 @@
 	<div class="layout">
         <template id="player_info_template">
             <div class="player-video"></div>
-            <div class="player-info-contain dg">
-                <div class="player-name df ta-c ai-c fs-l border-1 background-1">
-                    <tr-text scale-to-fit property="player-name"></tr-text>
+            <div class="player-contain">
+                <div class="player-info-contain dg">
+                    <div class="player-name df ta-c ai-c fs-l border-1 background-1">
+                        <tr-text scale-to-fit property="player-name"></tr-text>
+                    </div>
+                    <tr-hide-if-empty class="player-pronoun fs-m border-1 background-2">
+                        <tr-text property="player-pronoun"></tr-text>
+                    </tr-hide-if-empty>
                 </div>
-                <tr-hide-if-empty class="player-pronoun border-1 background-2">
-                    <tr-text property="player-pronoun"></tr-text>
-                </tr-hide-if-empty>
                 <div class="player-grid">
                     <div class="player-grid-back border-1 background-1"></div>
                     <tr-template class="player-grid-characters dg" href="icons.html"></tr-template>

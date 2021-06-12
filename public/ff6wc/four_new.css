@@ -87,7 +87,7 @@
         background-image: image-set(
             "images/justbackground.avif" type("image/avif"),
             "images/justbackground.webp" type("image/webp"),
-            "images/justbackground.jpg" type("image/jpg")
+            "images/justbackground.jpg" type("image/jpeg")
         ), var(--background-fallback);
     }
 }
@@ -97,14 +97,48 @@
 
 .player-info-contain{
     position: relative;
-    grid-template-columns: auto 1fr;
     justify-self: start;
+    grid-area: pi;
 }
-[player="1"] .player-info-contain{
+
+[player="3"] .player-info-contain, [player="4"] .player-info-contain{
+    display: grid;   
+}
+
+[player="3"] .player-pronoun, [player="4"] .player-pronoun{
+   order: -1;   
+}
+
+[player="1"] .player-contain{
+    grid-area: i1;
     grid-template-areas:
-        "pn pn"
-        "pp pp"
+        "pi pi"
+        "pg pc"
         "pg ps";
+}
+
+[player="2"] .player-contain{
+    grid-area: i2;
+    grid-template-areas:
+        "pi pi"
+        "pc pg"
+        "ps pg";
+}
+
+[player="3"] .player-contain{
+    grid-area: i3;
+    grid-template-areas:
+        "pg ps"
+        "pg pc"
+        "pi pi";
+}
+
+[player="4"] .player-contain{
+    grid-area: i4;
+    grid-template-areas:
+        "ps pg"
+        "pc pg"
+        "pi pi";
 }
 [player="1"] .player-name, [player="3"] .player-name{
     border-radius: 0 10px 10px 0;
@@ -114,14 +148,15 @@
 }
 
 .player-name{
-    grid-area: pn;
     height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
     padding: 0 8px;
 }
 
 .player-pronoun{
-    grid-area: pp;
+    text-align: center;
+    height: 30px;
+    width: 100%;
 }
 
 .player-grid{

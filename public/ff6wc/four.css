@@ -5,17 +5,17 @@
 }
 
 :root{
-    --border1: solid 2px #fff;
+    --border1: solid 1px #fff;
     --backgroundColor1: rgba(0,0,0,.75);
-    --vidWidth: 440px;
-    --vidAspect: 4 / 3;
-    --videoX: 4px; --videoY: 4px;
+    --vidWidth: 446px;
+    --vidAspect: 26 / 21;
+    --videoX: 0; --videoY: 0;
     --nameWidth: 160px;
-    --infoX: 441px; --infoY: 4px;
+    --infoX: 445px; --infoY: -1px;
     --speakerX: 569px; --speakerY: 63px;
-    --winX: 441px; --winY: 97px;
-    --finalX: 441px; --finalY: 51px;
-    --vsX: 50%; --vsY: 11px;
+    --winX: 445px; --winY: 97px;
+    --finalX: 445px; --finalY: 51px;
+    --vsX: 50%; --vsY: 0;
 }
 
 .border-1{border: var(--border1);}
@@ -24,7 +24,7 @@
 .border-background-1 {
     background-image:
         linear-gradient(#292884, #292884);
-    border: solid 3px;
+    border: solid 1px;
     mix-blend-mode: hard-light;
 }
 
@@ -65,22 +65,38 @@ html{
     position: relative;
     background-size: 100% 100%;
     background-color: #21384a;
-    --fallback: linear-gradient(to right, #394131 50%, #21384a 0);
-    background-image: var(--fallback);
+    --background-overlay: linear-gradient(rgba(255,255,255,0) 30%, rgba(255,255,255,.25), rgba(255,255,255,.0) 70%);
+    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    background-image: var(--background-fallback);
 }
 
-.notwebp .layout{
-    background-image: url('images/png'), var(--fallback);}
-.webp .layout{
-    background-image: url('images/airship-no-video.webp'), var(--fallback);}
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .layout{
+        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
+    .webp.notavif .layout{
+        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
+    .avif .layout{
+        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
+}
 
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .layout{
+        background-image: var(--background-overlay),
+        image-set(
+            "images/justbackground.avif" type("image/avif"),
+            "images/justbackground.webp" type("image/webp"),
+            "images/justbackground.jpg" type("image/jpeg")
+        ), var(--background-fallback);
+    }
+}
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
-    border: solid 3px #fff;
-    border-radius: 3px;
 }
+
+[player="1"] .player-video, [player="2"] .player-video{border-bottom: 1px solid;}
+[player="3"] .player-video, [player="4"] .player-video{border-top: 1px solid;}
 
 .layout.black-background .player-video{
     background-position: center;
@@ -88,8 +104,19 @@ html{
     background-size: 80%;
 }
 
-.notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
-.avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notavif .layout.black-background .player-video{background-image: url('images/wc_logo.png');}
+    .avif .layout.black-background .player-video{background-image: url('images/wc_logo.avif');}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .layout.black-background .player-video{
+        background-image: image-set(
+            "images/wc_logo.avif" type("image/avif"),
+            "images/wc_logo.png" type("image/png")
+        );
+    }
+}
 
 .player-info-contain{
     width: min-content;    
@@ -108,7 +135,7 @@ html{
 
 .player-name{
     font-size: 32px;
-    height: 50px;
+    height: 1.25em;
     width: calc(var(--nameWidth) + 8px * 2);
 	color: #fff;
     display: flex;
@@ -130,10 +157,13 @@ html{
 .player-pronoun{
     font-size: 24px;
     text-align: center;
-    margin-top: -3px;
     background: #222;
     padding: 0 .5em;
 }
+
+[player="1"] .player-pronoun, [player="2"] .player-pronoun{margin-top: -1px;}
+[player="3"] .player-pronoun, [player="4"] .player-pronoun{margin-bottom: 2px;}
+
 
 .center-headers{
     display: grid;
@@ -142,11 +172,12 @@ html{
     transform:translate(-50%, -50%); 
     top: 50%;
     left: 50%;
-    height: 396px;
+    pointer-events: none;
 }
 
 .ff6wc-logo-contain{
     margin-bottom: .75em;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
 }
 
 .center-headers > div{
@@ -164,35 +195,161 @@ html{
     display: block;
 }
 
+.glitch{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 2px;
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+}
+
+.site-link, .twitch-link{
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}     
+
+.visible{
+    position: relative !important;
+    left: 0px;
+    height: initial; width: initial;
+    overflow: hidden;
+    -webkit-clip-path: none;
+    clip-path: none;    
+}
+
+.player-grid-contain{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: start;
+}
+
+.p2-grid-contain .player-grid-characters, .p4-grid-contain .player-grid-characters {
+    order: 1;
+}
+
+tr-player{
+    display: contents;
+}
+.p3-grid-contain, .p4-grid-contain{
+    align-items: end;
+}
+
+.player-grid-characters{
+    display: grid;
+    grid-template-rows: repeat(7, min-content);
+    grid-auto-flow: column;
+    padding: 2px;
+    grid-gap: 2px;
+}
+
 .player-grid{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
     justify-content: center;
     padding: 0 4px;
-    grid-gap: 4px;
     font-size: 24px;
     text-shadow: 2px 2px 2px #000, -2px -2px 2px #000;
-    margin-top: -3px;
+}
+
+.p1-grid-contain, .p2-grid-contain{margin-top: -1px;}
+.p3-grid-contain, .p4-grid-contain{margin-bottom: 2px;}
+
+.player-info-contain:nth-of-type(1) .player-grid, .player-info-contain:nth-of-type(3) .player-grid{margin-left: -1px;}
+.player-info-contain:nth-of-type(2) .player-grid, .player-info-contain:nth-of-type(4) .player-grid{margin-right: -1px;}
+
+.player-info-contain:nth-of-type(1) .player-grid, .player-info-contain:nth-of-type(1) .player-grid-characters{
     border-radius: 0 0 10px 0;
 }
 
-.player-info-contain:nth-of-type(2) .player-grid{
+.player-info-contain:nth-of-type(2) .player-grid, .player-info-contain:nth-of-type(2) .player-grid-characters{
     border-radius: 0 0 0 10px;
 }
 
-.player-info-contain:nth-of-type(3) .player-grid{
+.player-info-contain:nth-of-type(3) .player-grid, .player-info-contain:nth-of-type(3) .player-grid-characters{
     border-radius: 0 10px 0 0;
-    margin: 0;
 }
 
-.player-info-contain:nth-of-type(4) .player-grid{
+.player-info-contain:nth-of-type(4) .player-grid, .player-info-contain:nth-of-type(4) .player-grid-characters{
     border-radius: 10px 0 0 0;
-    margin: 0;
 }
+
+.player-grid img, .dialog img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: 500% 1000%;
+}
+
+[property="starting-character"] img, .dialog img{
+    width: 32px;
+    height: 48px;
+    display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    isolation: isolate;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 500% 500%;
+}
+
+@supports not (background: image-set("foo.avif" type("image/avif")) ){
+    .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
+    .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    [property^="character"] img, [property="starting-character"] img, .dialog img{
+        background-image: image-set(
+            "images/characters.webp" type("image/webp"),
+            "images/characters.png" type("image/png")
+        );
+    }
+}
+
+.terra, [property="character-terra"] img{background-position: 0 0;}
+.locke, [property="character-locke"] img{background-position: 25% 0;}
+.cyan, [property="character-cyan"] img{background-position: 50% 0;}
+.shadow, [property="character-shadow"] img{background-position: 75% 0;}
+.edgar, [property="character-edgar"] img{background-position: 100% 0;}
+.sabin, [property="character-sabin"] img{background-position: 0 25%;}
+.celes, [property="character-celes"] img{background-position: 25% 25%;}
+.strago, [property="character-strago"] img{background-position: 50% 25%;}
+.relm, [property="character-relm"] img{background-position: 75% 25%;}
+.setzer, [property="character-setzer"] img{background-position: 100% 25%;}
+.mog, [property="character-mog"] img{background-position: 0 50%;}
+.gau, [property="character-gau"] img{background-position: 25% 50%;}
+.gogo, [property="character-gogo"] img{background-position: 50% 50%;}
+.umaro, [property="character-umaro"] img{background-position: 75% 50%;}
+
+
+[property="starting-character"] img{
+    z-index: -1;
+}
+
+[property="starting-character"] .terra, [property="character-terra"] img{background-position: 0 0;}
+[property="starting-character"] .locke, [property="character-locke"] img{background-position: 25% 0;}
+[property="starting-character"] .cyan, [property="character-cyan"] img{background-position: 50% 0;}
+[property="starting-character"] .shadow, [property="character-shadow"] img{background-position: 75% 0;}
+[property="starting-character"] .edgar, [property="character-edgar"] img{background-position: 100% 0;}
+[property="starting-character"] .sabin, [property="character-sabin"] img{background-position: 0 22.5%;}
+[property="starting-character"] .celes, [property="character-celes"] img{background-position: 25% 22.5%;}
+[property="starting-character"] .strago, [property="character-strago"] img{background-position: 50% 25%;}
+[property="starting-character"] .relm, [property="character-relm"] img{background-position: 75% 25%;}
+[property="starting-character"] .setzer, [property="character-setzer"] img{background-position: 100% 22.5%;}
+[property="starting-character"] .mog, [property="character-mog"] img{background-position: 0 47.5%;}
+[property="starting-character"] .gau, [property="character-gau"] img{background-position: 25% 45%;}
+[property="starting-character"] .gogo, [property="character-gogo"] img{background-position: 50% 44.5%;}
+[property="starting-character"] .umaro, [property="character-umaro"] img{background-position: 75% 44.5%;}
+
 
 .player-grid .icon-slot{
-    width: 36px;
-    height: 80px;
+    width: 32px;
+    height: 64px;
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
@@ -214,16 +371,16 @@ html{
 }
 
 .player-grid .icon-slot.magicite{
-    background-position: 92% -6px;
+    background-position: 92% -9px;
     background-size: 500% auto;
 }
 
 .terra{
-    background-position: 0 12px;
+    background-position: 0 6px;
     background-size: 300% auto;
 }
 .dragons{
-    background-position: 50% 12px;
+    background-position: 50% 9px;
     background-size: 300% auto;
 }
 
