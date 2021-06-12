@@ -5,19 +5,18 @@
    <title>Rando Tracker</title>
    <link rel="stylesheet" type="text/css" href="content/index.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css?family=Orbitron|Open+Sans" rel="stylesheet">
 </head>
 <body>
   <div id="contain">
   <aside>
     <div id="header">
       <h1>RandoTracker</h1>
-      <h3>by <a target="_blank" href="http://randomania.net">RandoMania</a></h3>
+      <h3>by <a target="_blank" href="https://randomania.net">RandoMania</a></h3>
     </div>
     <div id="credits">
       <h4>Credits</h4>
       <ul>
-        <li>Written by <a target="_blank" href="https://twitter.com/datyedyeguy">Datyedyeguy</a></li>
+        <li>Written by <a target="_blank" href="https://twitter.com/datyedyeguy">Datyedyeguy</a> and <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a></li>
         <li>Layouts by <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a> and many others.</li>
         <li>Based on <a target="_blank" href="https://twitter.com/gameboyf9">gameboyf9</a>'s <a target="_blank" href="https://github.com/gameboy9/randoTracker">randoTracker</a></li>
       </ul>
@@ -46,43 +45,8 @@
     </div>
     <div id="auth" style="display: none;">
       <h1>CHOOSE A LAYOUT</h1>
-      <div id="filter">
-      <input type="radio" id="all" name="system" value="all" checked>
-      <label for="all">All</label>
-
-      <input type="radio" id="nes" name="system" value="nes">
-      <label for="nes">NES</label>
-
-      <input type="radio" id="snes" name="system" value="snes">
-      <label for="snes">SNES</label>
-
-      <input type="radio" id="gb" name="system" value="gb">
-      <label for="gb">GB</label>
-
-      <input type="radio" id="gba" name="system" value="gba">
-      <label for="gba">GBA</label>
-
-      <input type="radio" id="n64" name="system" value="n64">
-      <label for="n64">N64</label>
-
-      <input type="radio" id="ds" name="system" value="ds">
-      <label for="ds">DS</label>
-
-      <input type="radio" id="gc" name="system" value="gc">
-      <label for="gc">GC</label>
-      
-      <input type="radio" id="rm" name="system" value="rm">
-      <label for="rm">RM</label>
-      </div>
 
       <div class="games">
-
-<!-- Castlevania -->
-
-<!-- <div data-console="gba">
-	<h3>Castlevania: AoS</h3>
-	<a onclick="goToRoom('castlevaniaAoS/two.html')">2 Player</a>
-</div> -->
 
 <!-- CT: Jets of Time -->
 
@@ -106,16 +70,14 @@
 
 <div data-console="nes">
 	<h3>Final Fantasy</h3>
-	<a onclick="goToRoom('ffr/reveal.html')">1 Player</a>
-	<a onclick="goToRoom('ffr/two.html')">2 Player</a>
-	<a onclick="goToRoom('ffr/three.html')">3 Player</a>
-	<a onclick="goToRoom('ffr/four.html')">4 Player</a>
-</div>
-
-<div data-console="nes">
-	<h3>Final Fantasy Specials</h3>
-	<a onclick="goToRoom('ffr-special/bingo.html')">Bingo</a>
-	<a onclick="goToRoom('ffr-special/coop.html')">Co-Op</a>
+	<div class="link-grid">
+		<a onclick="goToRoom('ffr/reveal.html')">1P</a>
+		<a onclick="goToRoom('ffr/two.html')">2P</a>
+		<a onclick="goToRoom('ffr/three.html')">3P</a>
+		<a onclick="goToRoom('ffr/four.html')">4P</a>
+		<a onclick="goToRoom('ffr-special/bingo.html')">Bingo</a>
+		<a onclick="goToRoom('ffr-special/coop.html')">Co-Op</a>	
+	</div>
 </div>
 
 <!-- FF4: Free Enterprise -->
@@ -124,6 +86,13 @@
 	<h3>FF4: Free Enterprise</h3>
 	<a onclick="goToRoom('ff4fe/two.html')">2 Player</a>
 	<a onclick="goToRoom('ff4fe/four.html')">4 Player</a>
+</div>
+
+<!-- FF5: Career Day -->
+
+<div data-console="snes">
+	<h3>FF5: Career Day</h3>
+	<a onclick="goToRoom('ff5cd/two.html')">2 Player</a>
 </div>
 
 <!-- FF6: Worlds Collide -->
@@ -142,23 +111,12 @@
 	<a onclick="goToRoom('pokemoncrystal/four.html')">4 Player</a>
 </div>
 
-<div data-console="ds">
-	<h3>Pokemon Mystery Dungeon</h3>
-	<a onclick="goToRoom('pmd/two.html')">2 Player</a>
-</div>
-
 <!-- Super Mario -->
 
 <div data-console="nes">
 	<h3>Super Mario Bros 3</h3>
 	<a onclick="goToRoom('smb3r/two.html')">2 Player</a>
 	<a onclick="goToRoom('smb3r/four.html')">4 Player</a>
-</div>
-
-<div data-console="gb">
-	<h3>Super Mario Land 2</h3>
-	<a onclick="goToRoom('sml2r/two.html')">2 Player</a>
-	<a onclick="goToRoom('sml2r/four.html')">4 Player</a>
 </div>
 
 <!-- Zelda -->
@@ -169,21 +127,11 @@
 	<a onclick="goToRoom('z1r2019/four.html')">4 Player</a>
 </div>
 
-<div data-console="snes">
+<!-- <div data-console="snes">
 	<h3>Link to the Past</h3> 
-	<a onclick="goToRoom('z3r/two.html')">2 Player</a>
-</div>
-
-<div class="test" data-console="snes">
-	<h3>Link to the Past</h3> 
-	<a onclick="goToRoom('z3r-v2/four.html')">4 Player</a>
-</div>
-
-<div data-console="gc">
-	<h3>Wind Waker</h3>
-	<a onclick="goToRoom('ww/two.html')">2 Player</a>
-	<a onclick="goToRoom('ww/four.html')">4 Player</a>
-</div>
+	<a onclick="goToRoom('z3r/two.html')">2 Player (1.0 layout)</a>
+  <a onclick="goToRoom('z3r/four.html')">4 Player (2.0 layout)</a>
+</div> -->
 
 <!-- Development Tools -->
 
@@ -194,48 +142,28 @@
 </div>
 
 <div data-console="rm">
-	<h3>Template</h3>
-	<a onclick="goToRoom('template-2p/two.html')">2 Player</a>
-	<a onclick="goToRoom('template-4p/four.html')">4 Player</a>
+	<h3>Templates</h3>
+	<a onclick="goToRoom('templates/two.html')">2 Player</a>
+	<a onclick="goToRoom('templates/four.html')">4 Player</a>
 </div>
 
 <div data-console="rm">
-	<h3>NES, SNES, GC (4:3)</h3>
+	<h3>RandoMania</h3>
 	<div class="link-grid">
-		<a onclick="goToRoom('rm/one_4by3.html')">1p</a>
-		<a onclick="goToRoom('rm/two_4by3.html')">2p</a>
-		<a onclick="goToRoom('rm/three_4by3.html')">3p</a>
-		<a onclick="goToRoom('rm/four_4by3.html')">4p</a>
+		<a onclick="goToRoom('rm/one.html')">1p</a>
+		<a onclick="goToRoom('rm/two.html')">2p</a>
+		<a onclick="goToRoom('rm/three.html')">3p</a>
+		<a onclick="goToRoom('rm/four.html')">4p</a>
 	</div>
 </div>
-
-<div data-console="rm">
-	<h3>Widescreen (16:9)</h3>
-	<a onclick="goToRoom('rm/one_16by9.html')">1 Player</a>
-	<a onclick="goToRoom('rm/two_16by9.html')">2 Player</a>
-	<a onclick="goToRoom('rm/four_16by9.html')">4 Player</a>
-</div>
-
-<div data-console="rm">
-	<h3>GB, GBC <br>(10:9)</h3>
-	<a onclick="goToRoom('rm/one_10by9.html')">1 Player</a>
-	<a onclick="goToRoom('rm/three_10by9.html')">3 Player</a>
-	<a onclick="goToRoom('rm/four_10by9.html')">4 Player</a>
-</div>
-
-<div data-console="rm">
-	<h3>GBA <br>(3:2)</h3>
-	<a onclick="goToRoom('rm/one_3by2.html')">1 Player</a>
-	<a onclick="goToRoom('rm/two_3by2.html')">2 Player</a>
-</div>	
 
     </div>
   </div>
   </article>
 </div>
-   <script src="/__/firebase/5.2.0/firebase-app.js"></script>
-  <script src="/__/firebase/5.2.0/firebase-auth.js"></script>
-  <script src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+  <script src="/__/firebase/8.3.0/firebase-database.js"></script>
   <script src="/__/firebase/init.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
@@ -249,92 +177,7 @@
 
       win.focus();
     }
-    
-    if ('paintWorklet' in CSS) {
-      CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
-    }
 
-// TO DO: clean up this js mess
-
-    function reset(){
-      document.querySelectorAll('.games > div').forEach(
-          function myFunction(el) {el.classList.remove("hide");}
-          )
-    }
-
-    document.getElementById('all').addEventListener('click', reset);
-
-    document.getElementById('nes').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="nes"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('snes').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="snes"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('gb').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gb"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('gba').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gba"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('ds').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="ds"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )    
-
-    document.getElementById('rm').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="rm"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('gc').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="gc"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
-
-    document.getElementById('n64').addEventListener('click',
-      function(){
-        reset();
-        document.querySelectorAll('.games > div:not([data-console="n64"])').forEach(
-          function myFunction(el) {el.classList.add("hide");}
-          )
-      }
-    )
     Main.init();
   </script>
 </body>

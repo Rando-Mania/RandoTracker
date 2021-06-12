@@ -12,10 +12,6 @@
     font-family: 'Chicago', Arial, sans-serif;
     width: 1280px;
     height: 720px;
-    background-color: #8dc8ff;
-    --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
-    background-image: var(--loadscreen-fallback);
-    background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);
     color: #fff;
     text-align: center;
     z-index: 50;
@@ -46,6 +42,9 @@
   }
 
 .loadscreen{
+    background-color: #8dc8ff;
+    --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
+    background-image: var(--loadscreen-fallback);
     height: 100%;
     display: grid;
     grid-auto-rows: 1fr auto;
@@ -53,6 +52,9 @@
     place-items: center;
     padding: 1em;
 }
+
+.notwebp .loadscreen{background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);}
+.webp .loadscreen{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
 
 .loadscreen-main{
     position: absolute;

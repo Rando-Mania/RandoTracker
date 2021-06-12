@@ -3,7 +3,9 @@
 <head profile="http://www.w3.org/2005/10/profile">
     <meta charset="utf-8">
     <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/global.css">
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,54 +13,179 @@
         :root{
             --nameWidth: 200px;
         }
-        body{
+        .tracker-layout{
+            font-family: 'FF6', Arial, sans-serif;
+            background-color: #000;
+            --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+            background-image: var(--background-fallback);
+            color: #fff;
             display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-gap: 16px;
+            grid-template-columns: repeat(3, auto);
+            padding: 16px;
+            justify-content: flex-start;
             width: -moz-max-content;
             width: -webkit-max-content;
             width: max-content;
+            background-position: center center;
+            background-size: 100%;
         }
-        .tracker-layout{
-            background-color: #000;
-            color: #fff;
+
+        .notwebp .tracker-layout.default{
+            background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+        .webp.notavif .tracker-layout.default{
+            background-image: url('images/justbackground.webp'), var(--background-fallback);}
+        .avif .tracker-layout.default{
+            background-image: url('images/justbackground.avif'), var(--background-fallback);}
+        
+        .tracker-layout .player-wrapper{
+            padding: 8px;
+        }
+        .tracker-layout .player-wrapper > *~*{
+            margin-top: 8px;
+        }
+        .tracker-layout .player-name{
+            height: auto;
+        }
+        .tracker-layout .goals{
+            padding: 16px;
+            margin: 0 -2px;
             display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-gap: 24px;
-            padding: 24px;
+            align-content: space-between;
+        }
+        .tracker-layout .player-wrapper [type="number"] {
+            width: 1.15rem;
+        }
+        .tracker-layout .player-wrapper [type="number"]:hover {
+            transform: scale(1.5);
+            transform-origin: left;
+        }
+        .spinner{
+            place-self: start end;
         }
     </style>
 </head>
 <body>
     <div class="tracker-layout">
-        <div class="player-wrapper">
-            <div class="player-name">
+        <div class="player-wrapper rel">
+            <div class="player-grid-back border-1 background-1"></div>
+            <div class="player-name df ai-c">
                 <tr-text scale-to-fit style="width: 170px;" player="1" property="player-name" id="player_name_1"></tr-text>
             </div>
-            <tr-player player="1">
-                <tr-template class="player-grid border-background-1" id="player-grid-1" href="icons.html"></tr-template>
-            </tr-player>
+            <div class="player-grid">
+                <!-- <div class="player-grid-back border-1 br background-1"></div> -->
+                <tr-player player="1">
+                    <tr-template class="player-grid-characters" href="icons.html"></tr-template>
+                </tr-player>
+                <div class="player-grid-counters">
+                    <div class="icon-slot terra">
+                        <tr-template href="starting-character.html"></tr-template>
+                        <div class="counter">
+                            <tr-text player="1" oninput property="player-count">?</tr-text>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="player-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot magicite">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="1" oninput="" property="magicite-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="1" min="0" max="26" value="0" property="magicite-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="magicite-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot dragons display-none">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="1" oninput="" property="dragon-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="1" min="0" max="8" value="0" property="dragon-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="dragon-goal">?</tr-text>
+                        </div>
+                    </div> 
+                </div>
+            </div>
         </div>
-        <div class="player-wrapper">
-            <div class="player-name">
+        <div class="goals border-1 background-2">
+            <p class="fs-l">Goals:</p>
+            <div class="members-goal-contain">
+                <label>Members</label>
+                <tr-input-number oninput min="0" max="14" value="1" property="player-goal"></tr-input-number>
+            </div>
+            <div class="magicite-goal-contain">
+                <label>Magicite</label>
+                <tr-input-number oninput min="0" max="26" value="0" property="magicite-goal"></tr-input-number>
+            </div>
+            <div class="dragons-goal-contain">
+                <label>Dragons</label>
+                <tr-input-number oninput min="0" max="8" value="8" property="dragon-goal"></tr-input-number>
+            </div>
+        </div>
+        <div class="player-wrapper rel">
+            <div class="player-grid-back border-1 background-1"></div>
+            <div class="player-name df ai-c">
                 <tr-text scale-to-fit style="width: 170px;" player="2" property="player-name" id="player_name_2"></tr-text>
             </div>
-            <tr-player player="2">
-                <tr-template class="player-grid border-background-1" id="player-grid-2" href="icons.html"></tr-template>
-            </tr-player>
+            <div class="player-grid">
+                <!-- <div class="player-grid-back border-1 br background-1"></div> -->
+                <tr-player player="2">
+                    <tr-template class="player-grid-characters" href="icons.html"></tr-template>
+                </tr-player>
+                <div class="player-grid-counters">
+                    <div class="icon-slot terra">
+                        <tr-template href="starting-character.html"></tr-template>
+                        <div class="counter">
+                            <tr-text player="2" oninput property="player-count">?</tr-text>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="player-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot magicite">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="2" oninput="" property="magicite-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="2" min="0" max="26" value="0" property="magicite-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="magicite-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot dragons display-none">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="2" oninput="" property="dragon-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="2" min="0" max="8" value="0" property="dragon-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="dragon-goal">?</tr-text>
+                        </div>
+                    </div> 
+                </div>
+            </div>
         </div>
     </div>
     
     <tr-template href="../shared/two-menus-contain.html"></tr-template>
 
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
-    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
     <script type="text/javascript" src="../components/components.js"></script>
     <script type="text/javascript" src="../components/tracker.js"></script>
-    <script type="text/javascript" src="script/two_game.js"></script>
+    <script type="text/javascript" src="script/ff6wc.js"></script>
 </body>
 </html>

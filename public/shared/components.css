@@ -70,6 +70,27 @@ tr-label, figcaption{
     color: #fff;
 }
 
+figcaption{
+    opacity: .3;
+}
+.dialog figcaption{
+    opacity: 1;
+}
+.in-active ~ figcaption{
+    opacity: .3;
+}
+.active ~ figcaption {
+    opacity: 1;
+}
+.in-active{
+    opacity: .3;
+}
+
+.in-active[selected="selected"] ~ tr-label{
+    opacity: .3;
+    filter: grayscale(1);
+}
+
 tr-timer{
     font-size: 24px;
     display: flex;
@@ -103,4 +124,16 @@ tr-timer span{
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
    opacity: 1;
+}
+input[type=number]:out-of-range{
+    background-color: #f00;
+}
+
+.visually-hidden { 
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }

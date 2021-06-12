@@ -111,7 +111,7 @@ html{
 }
 
 .background-world-3{
-    background-image: url(images/overworld-world-3-v2.png), var(--curtain);
+    background-image: url(images/overworld-world-3.png), var(--curtain);
     background-position: center -40px;
 }
 
@@ -121,9 +121,13 @@ html{
 }
 
 .background-world-5{
-    background-image: url(images/overworld-world-5.png), var(--curtain);
-    background-image: url(images/overworld-world-5.webp), var(--curtain);
     background-position: center;
+}
+.notwebp .background-world-5{
+    background-image: url(images/overworld-world-5.png), var(--curtain);
+}
+.webp .background-world-5{
+    background-image: url(images/overworld-world-5.webp), var(--curtain);
 }
 
 .background-world-6{
@@ -132,9 +136,13 @@ html{
 }
 
 .background-world-7{
-    background-image: url(images/overworld-world-7.webp), var(--curtain);
-    background-image: url(images/overworld-world-7.png), var(--curtain);
     background-position: -160px 8px;
+}
+.notwebp .background-world-7{
+    background-image: url(images/overworld-world-7.png), var(--curtain);
+}
+.webp .background-world-7{
+    background-image: url(images/overworld-world-7.webp), var(--curtain);
 }
 
 .background-world-8{

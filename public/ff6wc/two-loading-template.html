@@ -1,31 +1,28 @@
 <style>
-    /* Loading Screen */
-
-
     @font-face {
-font-family: "FF6";
-src: local('FF6'),
-     url('fonts/final-fantasy-36-font.woff2') format('woff2'),
-     url('fonts/final-fantasy-36-font.woff') format('woff'),         
-     url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
-} 
+        font-family: "FF6";
+        src: local('FF6'),
+            url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+            url('fonts/final-fantasy-36-font.woff') format('woff'),         
+            url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+    }
+    
+    @font-face {
+        font-family: "Ferrum";
+        src: local('Ferrum'),
+             url('fonts/ferrum.woff2') format('woff2'),
+             url('fonts/ferrum.woff') format('woff'),         
+             url('fonts/ferrum.otf') format('opentype');
+    }
 
 .loadscreen-contain, .two-loading{
-width: 1280px;
-height: 720px;
-background-color: #21384a;
-background-image: linear-gradient(to right, #394131 50%, #21384a 0);
-background-size: 100% 100%;
-color: #fff;
-text-align: center;
-z-index: 50;
-display: none;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
 }
-
-.notwebp .loadscreen-contain, .notwebp .two-loading{
-    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
-.webp .loadscreen-contain, .webp .two-loading{
-    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .two-loading{
 display: block;
@@ -37,126 +34,183 @@ display: block;
 }
 
 @keyframes zoomIn {
-from {
-  opacity: 0;
-  transform: scale3d(0.3, 0.3, 0.3);
-  transform-origin: 50% 0%;
-}
-50% {
-  opacity: 1;
-}
-to{
-    transform-origin: 50% 50%;
-}
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+        transform-origin: 50% 0%;
+    }
+    50% {opacity: 1;}
+    to{transform-origin: 50% 50%;}
 }
 
 .loadscreen{
-height: 100%;
-display: grid;
-grid-auto-rows: 1fr auto;
-grid-gap: 1em;
-place-items: center;
-padding: 1em;
+    height: 100%;
+    background-color: #181820;
+    background-size: 100%;
+    background-position: 0 -100px;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
 }
 
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .loadscreen{
+        background-image: url('images/clouds.png')}
+    .webp .loadscreen{
+        background-image: url('images/clouds.webp')}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .loadscreen{
+        background-image: image-set(
+            "images/clouds.webp" type("image/webp"),
+            "images/clouds.png" type("image/png")
+        );
+    }
+}
+
+
+.lightning-top-left{
+    position: absolute;
+    top: 82px;
+    left: 170px;
+    opacity: 0;
+    animation: lightning 20s -10s alternate infinite;
+}
+
+.lightning-top-right{
+    position: absolute;
+    top: 82px;
+    right: 100px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 20s alternate infinite;
+}
+
+.lightning-bottom-left{
+    position: absolute;
+    bottom: -149px;
+    left: -170px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 30s alternate infinite;
+}
+
+.lightning-bottom-right{
+    position: absolute;
+    bottom: -149px;
+    right: -170px;
+    transform: rotateY(180deg);
+    opacity: 0;
+    animation: lightning 30s -15s alternate infinite;
+}
+
+@keyframes lightning {
+    25%{opacity: 1;}
+}
 .loadscreen-main{
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 1em;
-align-items: center;
-justify-content: center;
-height: 100%;
-width: 100%;
-font-family: 'FF6', Arial, sans-serif;
-font-size: 36px;
-}
-
-.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
-font-size: 36px;
-}
-
-.loadscreen .player-contain{
-display: flex;
-justify-content: center;
-align-items: center;
-width: -moz-fit-content;
-width: fit-content;
-margin: auto;
-/* background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.7) 33% 66%, rgba(0,0,0,0)); */
-}
-
-.loadscreen .player-name{
--webkit-background-clip: text;
-background-clip: text;
-background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
-background-position: 50% 50%;
-filter: contrast(1.2);
-color: transparent;
-text-shadow: none;
-}
-
-.loadscreen .player-pronoun{
-background-color: transparent;
-font-size: 32px;
-height: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
--webkit-background-clip: text;
-background-clip: text;
-background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
-background-position: 50% 50%;
-filter: contrast(1.2);
-color: transparent;
-text-shadow: none;
-}
-
-.loadscreen .player-pronoun::before{
-content: '(';
-}
-.loadscreen .player-pronoun::after{
-content: ')';
-}
-
-.loadscreen .player-name{
-width: auto;
+    height: 100%;
+    width: 100%;
+    font-family: 'FF6', Arial, sans-serif;
+    font-size: 36px;
+    position: relative;
+    display: grid;
+    place-content: center stretch;
+    gap: 3em;
 }
 
 .loadscreen .vs{
-margin: 8px;
-font-style: italic;
-color: rgba(255,255,255,.8);
+    margin: 8px;
+    color: #fff;
+    mix-blend-mode: overlay;
+    font-size: 32px;
+    transform: scale(4);
+    font-family: 'Ferrum', 'Times New Roman', Times, serif;
 }
 
-.loadscreen-main *{
-justify-content: center;
-}    
-
-.loadscreen-left{
-padding: 32px 0;
-/* background-image: radial-gradient(rgba(0,0,0,.7) 50%, rgba(0,0,0,0) 72%); */
+.loadscreen .ff6wc-logo{
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    /* background-image: radial-gradient(rgba(255,255,255,.5), transparent 69%); */
+    image-rendering: auto;
+    width: 61%;
 }
 
-.ship-blur{
-z-index: 0;
-position: relative;
+.loadscreen-main .subhead-link, .loadscreen-main .subhead-text{
+    font-size: 36px;
 }
 
-.ship-blur:after{
-content: '';
-position: absolute;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
-background: url(images/ship-outline.png) 0 0 / 100% 100%;
-z-index: -1;
-filter: blur(5px) opacity(0.6);
+.subheadings-contain{
+    display: grid;
+    gap: 16px;
 }
 
-.player-contain.ship-blur:after{
-width: 105%;
-left: -10%;
+.loadscreen .player-info{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.loadscreen .player-name{
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    background-size: 300% 400%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
+    font-family: 'Ferrum', 'Times New Roman', Times, serif;
+    width: auto;
+    font-size: 64px;
+    height: auto;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+}
+
+.loadscreen .player-pronoun{
+    background-color: transparent;
+    font-size: 32px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    text-shadow: none;
+}
+
+.loadscreen [player="1"] .final-winner-contain {
+    top: initial;
+    bottom: 100%;
+    right: initial;
+    left: 53px;
+}
+.loadscreen [player="1"] .player-best-of {
+    top: initial;
+    bottom: -39px;
+    right: initial;
+}
+
+.loadscreen [player="2"] .final-winner-contain {
+    top: -53px;
+    left: initial;
+    right: 53px;
+}
+.loadscreen [player="2"] .player-best-of {
+    top: initial;
+    bottom: 100%;
+    right: initial;
+}
+
+.loadscreen .player-winner, .loadscreen .player-final{
+padding: 0;
 }
 
 .load-and{
@@ -167,69 +221,76 @@ display: none;
 .show-and .load-and{display: block;}
 .show-and .load-vs{display: none;}
 
-#promos{
-grid-column: 1 / -1;
-overflow: hidden;
-width: 1236px;
-height: 150px;
-background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
-}
-#all_promos_contain{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-height: 150px;
-animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-from, 22%{transform: translateY(0);}
-25%, 47%{transform: translateY(-155px);}
-50%, 72%{transform: translateY(-315px);}
-75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-margin: 0 32px 8px;
-}
-
-#all_promos_contain figcaption{
-font-size: 12px;
-}
 </style>
-<div class="loadscreen">
     <div class="loadscreen">
+        <img class="lightning-top-left" src="images/lightning.png" width="360" alt="">
+        <img class="lightning-top-right" src="images/lightning.png" width="360" alt="">
+        <img class="lightning-bottom-left" src="images/lightning-two.png" width="480" alt="">
+        <img class="lightning-bottom-right" src="images/lightning-two.png" width="480" alt="">
         <div class="loadscreen-main">
-            <div class="loadscreen-left ship-blur">
+            <div class="load-title">
                 <picture class="ff6wc-logo-contain">
                     <source srcset="images/wc_logo.avif" type="image/avif">
-                    <img class="ff6wc-logo" src="images/wc_logo.png" width="482" alt="">
+                    <img class="ff6wc-logo" src="images/wc_logo.png" width="560" alt="">
                 </picture>
-                <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
-                <div class="subhead-link text-shadow">Play at: ff6wc.com</div>
-                <div style="font-size: 28px;
-                margin-top: 1em;
-                font-variant: small-caps;
-                font-family: Arial, Helvetica, sans-serif;">on RandoMania</div>
+                <!-- <svg width="780" height="205">
+                    <style>
+                        svg{
+                            background-color: #181820;
+                            font-family: 'Ferrum', 'Times New Roman', Times, serif;
+                        }
+                        svg .svg-head{
+                            dominant-baseline: hanging;
+                            font-size: 144px;
+                            fill: #fade2f;
+                        }
+                        svg .svg-subhead{
+                            font-size: 42px;
+                            fill: #c31b01;
+                            text-anchor: end;
+                        }
+                    </style>
+                    <text class="svg-head" y="12">Worlds Collide</text>
+                    
+                    <text class="svg-subhead" x="100%" y="99%">Final Fantasy VI Randomizer</text>
+                </svg> -->
+                <div class="subheadings fs-l ta-c">
+                    <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+                    <div class="subhead-link text-shadow">
+                        <p class="twitch-link">
+                            <svg version="1.1" class="glitch" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 240 280">
+                                <g id="glitch">
+                                    <path d="M50,0L0,50v180h60v50l50-50h40l90-90V0H50z M220,130l-40,40h-40l-35,35v-35H60V20h160V130z"/>
+                                    <rect x="170" y="55" width="20" height="60"/>
+                                    <rect x="115" y="55" width="20" height="60"/>
+                                </g>
+                            </svg>
+                        ff6worldscollide</p>
+                        <p class="site-link">Play at: ff6wc.com</p>
+                    </div>
+                </div>
             </div>
             <template id="player_loading_template">
-                <div class="player-contain ship-blur">
-                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
+                <div class="player-contain rel">
                     <tr-text class="player-name" property="player-name"></tr-text>
-                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                    <div class="final-winner-contain fs-m abs">
+                        <tr-text property="player-final" class="player-final background-2 br df jc-c ai-c ta-c fs-n"></tr-text>
+                        <tr-toggle property="toggle-winner" class="player-winner background-2 br df jc-c ai-c ta-c fs-n fw-b">
+                            <div>WINNER</div>
+                        </tr-toggle>
+                    </div>
+                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                 </div>
             </template>
-            <div>          
+            <div class="player-info">      
                 <tr-player player="1">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>
-                <div class="vs">vs.</div>
+                <div class="vs">VS</div>
                 <tr-player player="2">
                     <tr-template source="#player_loading_template"></tr-template>
                 </tr-player>
             </div>
         </div>
-        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
+        <!-- <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template> -->
     </div>
-</div>

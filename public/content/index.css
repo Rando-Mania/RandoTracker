@@ -10,11 +10,11 @@ html{
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
   background-color: #000;
-  min-height: 720px
+  min-height: 720px;
 }
 
 #contain{
@@ -27,7 +27,7 @@ header{
 }
 
 h1{
-  letter-spacing: 2px;
+  font-variant: small-caps;
 }
 
 aside{
@@ -63,11 +63,12 @@ aside ul li{
 
 aside h1, aside h2, aside h3{
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
 }
+
 aside h4{
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  margin: .5em;
 }
 
 aside a{
@@ -100,15 +101,30 @@ article{
   color: #fff;
   position: relative;
   overflow: hidden;
+  --calendar-fallback: linear-gradient(#000 0 33.3%, #111 0 66.6%, #010 0 100%), 
+  linear-gradient(90deg, #000 0 16.6%, #210308 0 33.3%, #232607 0 50%, #000 0 66.6%, #2e271f 0 83.3%, #212e10 0 100%);
+  background-image: var(--calendar-fallback);
+  background-size: 640px 360px;
+  background-blend-mode: screen;
 }
 
-@supports not (background-image:paint(fallbackImage)) {
-    .notavif article{background: url('../shared/images/rm-generic-half.png');}
-    .avif article{background: url('../shared/images/rm-generic-half.avif');}
+@supports not (background: image-set(url("") type("")) ){
+  .notavif article{
+    background-image: url('../shared/images/rm-generic-half.png'), var(--calendar-fallback);
+    background-blend-mode: normal, screen;}
+  .avif article{
+    background-image: url('../shared/images/rm-generic-half.avif'), var(--calendar-fallback);
+    background-blend-mode: normal, screen;}
 }
-@supports (background-image:paint(fallbackImage)) {
-    .notavif article{background: url('../shared/images/rm-generic-half.png'), paint(fallbackImage) 0 0 / 640px 360px;}
-    .avif article{background: url('../shared/images/rm-generic-half.avif'), paint(fallbackImage) 0 0 / 640px 360px;}
+
+@supports (background: image-set(url("") type("")) ){
+  article{
+    background-image: image-set(
+      url('../shared/images/rm-generic-half.avif') type("image/avif"),
+      url('../shared/images/rm-generic-half.png') type("image/png")
+    ), var(--calendar-fallback);
+    background-blend-mode: normal, screen;
+  }
 }
 
 @keyframes turn-on{
@@ -149,9 +165,6 @@ article{
   overflow: auto;
 }
 
-article h1{
-  font-family: 'Orbitron', sans-serif;
-}
 
 label{
   color: silver; 
@@ -224,17 +237,15 @@ input{
   display: grid;
   grid-template-columns: auto;
   position: relative;
-  --back-sec: rgba(0,0,0,.15);
+  --back-sec: rgba(0,0,0,.25);
   background-color: #282828;
 }
 
 .games h3{
-  font-weight: bold;
-  font-size: 1em;
+  font-variant: small-caps;
+  font-size: 1.1em;
   text-align: center;
   margin: .5em 0;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
 }
 
 .link-grid{

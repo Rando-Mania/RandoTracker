@@ -1,10 +1,20 @@
 /* load screen */
 
 @font-face {
-  font-family: "Press Start 2P";
-  src: url("../shared/fonts/PressStart2P.ttf") format("truetype");
+  font-family: "Warrior Quest I and II";
+  src: 
+      local('Warrior Quest I and II'),
+      url("fonts/warrior_quest_i_and_ii.woff2") format("woff2"),
+      url("fonts/warrior_quest_i_and_ii.woff") format("woff"),
+      url("fonts/Warrior Quest I and II.ttf") format("truetype");
 }
-
+@font-face {
+  font-family: "Ferrum";
+  src: local('Ferrum'),
+       url('../ff6wc/fonts/ferrum.woff2') format('woff2'),
+       url('../ff6wc/fonts/ferrum.woff') format('woff'),         
+       url('../ff6wc/fonts/ferrum.otf') format('opentype');
+}
 
 .loadscreen-contain{
   width: 1280px;
@@ -14,7 +24,6 @@
   animation: zoomIn .5s linear;
   z-index: 50;
   display: none;
-  font-family: 'Orbitron', sans-serif;
 }
 
 .four-loading, .two-loading{
@@ -28,272 +37,76 @@
 
 .loadscreen-main{
   display: grid;
-  grid-template-columns: calc(36px * 8) 1fr;
-  grid-template-rows: 1fr auto;
-  gap: 1em;
-  padding: 1em;
   width: 1280px;
   height: 720px;
-  font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+  font-family: 'Warrior Quest I and II', Arial, Helvetica, sans-serif;
   color: #fff;
   text-shadow: 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
-  }
-  
-  #d, #w{
-    font-family: serif;
-    font-size: 36px;
-    text-transform: uppercase;
-    color: rgb(253, 52, 1);
-    line-height: .75;
-  }
-  
-  #w span{
-    display: inline-block;
-    transform: scaleY(1.55);
-    transform-origin: 50% 0;
-  }
-  
-  #r{
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-  
-  .loadscreen aside{
-    color: #fff;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 1fr;
-    grid-row-end: span 2;
-  }
-  
-  .loadscreen aside header{
-    text-align: center;
-    padding: 1em;
-    background-color: #000;
-  }
-
-  .loadscreen aside header h4{
-    margin-top: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  article{
-    padding: 16px;
-}
-
-  .hero{
-    image-rendering: pixelated;
-    background: url("images/dw1-hero-swordshield.png"), url("images/brick.png");
-    background-repeat: no-repeat, repeat;
-    background-position: right 16px bottom 16px, 0 0;
-    background-size: 64px , auto;
-    background-color: #000;
-  }
-  
-  .hero .subhead{
-    background-repeat: no-repeat;
-    background-position: right;
-  }
-
-  h3 {
-    text-shadow: 0 0 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
-    margin-bottom: .5em;
-    line-height: 1.4;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-  
-  .map{
-    background-image: url("images/alefgard-pan.png");
-    background-position: 1008px 516px;
-    background-color: #000;
-  }
-  
-  .enemies{
-    background-image: url("images/slime-breath.png"), url("images/dw1-swamp.png");
-    background-size: auto 64px, 48px 48px;
-    background-repeat: no-repeat, repeat;
-    background-position: right 16px bottom 16px, 0 0;
-    image-rendering: pixelated;
-  }
-
-  .other{
-    background-image: url("images/dw1-kol-fountain.png");
-    background-size: 32px 32px;
-    image-rendering: pixelated;
-  }
-  
-  ul{
-    height: 100%;
-  }
-
-  .loadscreen li{
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none;
-    background-color: #000;
-    margin-bottom: .25em;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 0 .25em;
-    text-align: left;
   }
 
 .loadscreen main{
   text-align: center;
   height: 100%;
   display: grid;
-  grid-template-columns: 50%;
-  grid-template-rows: repeat(4, auto);
-  align-content: space-between;
-  background-color: #000;
-  padding: 32px 0;
-  border: 4px solid;
-  border-image: 4 / 8px url('images/dw-border.png');
-  border-image: paint(dw1Border) 4 / 8px;
+  grid-template-columns: 58%;
+  align-content: space-around;
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
-  background-image: url("images/monsters/true-dragonlord.png"), linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("images/alefgard-pan.png");
-  background-position: right -112% top, 0 0, -2250px -3451px;
-  background-size: auto 190%, auto, calc(1984px * 2) calc(1978px * 2);
-  background-repeat: no-repeat, repeat, repeat;
-  animation: dl2-slide .5s;
-}
-
-@keyframes dl2-slide{
-  from{ background-position: right -270% top, 0 0, -2250px -3451px;}
-  to{ background-position: right -112% top, 0 0, -2250px -3451px;}
-}
-
-.loadscreen main h3{
-  color: #fff;
-  font-size: 24px;
-  font-family: 'Orbitron', cursive;
-  margin-top: 16px;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
+    url(images/monsters/true-dragonlord.png) no-repeat right -200% top / auto 190%, 
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
+    url(images/loadscreen-alefgard.png) repeat 0 0 / contain
+   #0078f8;
 }
 
 #changeText{
   font-size: 17px;
-  font-family: 'Orbitron', cursive;
+  letter-spacing: 1px;
 }
 
 .loadscreen main h1{
-  color: rgb(253, 52, 1);
-  font-family: 'Times Bold', serif;
-  font-size: 42px;
+  color: #fd3401;
+  font-family: 'Ferrum', serif;
+  font-size: 72px;
   font-weight: bold;
   text-transform: uppercase;
-  transform: scaleY(1.2) translateY(-4px);
-  transform-origin: 50% 0%;
-  letter-spacing: -2px;
+  background-image: linear-gradient(#fe3401, #fe9934 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(1px 1px #000) drop-shadow(-1px -1px #000) drop-shadow(1px -1px #000) drop-shadow(-1px 1px #000);
 }
 
 .loadscreen main h1 span{
-  transform: scaleY(1.5) translateY(-4px);
-  transform-origin: 50% 0%;
-  display: inline-block;
+  font-size: 1.3em;
+  vertical-align: top;
 }
 
 .loadscreen header h2{
-  font-size: 22px;
+  font-size: 32px;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 2px;
   transform: scaleX(1.2);
   font-weight: normal;
+  position: relative;
+  top: -28px;
 }
 
-#loading_runners{
+.loading-runners{
   display: grid;
   gap: 1em;
 }
 
-.loadscreen main div{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.loadscreen .player-name{
+  letter-spacing: 2px;
 }
-
-.loadscreen-player-names {
-  flex-direction: column;
-  padding: 0 5em;
-}
-
-.loadscreen-player-names .player-name{
-  width: auto;
-}
-
-footer{
-  background-color: rgba(0,0,0,.75);
-  padding: 4px;
-  height: 149px;
-  overflow: hidden;
-}
-
-#promos_1{
-  grid-column: 1 / -1;
-  overflow: hidden;
-  width: 1236px;
-  height: 150px;
-}
-#all_promos_contain{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 150px;
-  animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-  from, 22%{transform: translateY(0);}
-  25%, 47%{transform: translateY(-155px);}
-  50%, 72%{transform: translateY(-315px);}
-  75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-  margin: 0 32px 8px;
-  opacity: 1;
-}
-
-#all_promos_contain figcaption{
-  font-size: 12px;
-  opacity: 1;
-}
-
-.flip-card {
-  height: 100%;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-@keyframes card-flip {
-  from, 50%{opacity: 1;}
-  50.1%, to{opacity: 0;}
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  color: #fff;
-}
-
-.flip-card-back {
-  animation: card-flip 60s infinite;
-} 
 
 .load-vs{
   display: block;
+  font-family:'Ferrum', 'Times New Roman', Times, serif;
+  font-size: 3em;
 }
 .load-and{
   display: none;

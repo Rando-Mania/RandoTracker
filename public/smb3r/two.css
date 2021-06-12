@@ -107,7 +107,7 @@ html{
 
 .background-world-3{
     background-image: url(images/overworld-world-3.png), var(--curtain);
-    background-position: 64px -40px;
+    background-position: 64px -184px;
 }
 
 .background-world-4{
@@ -116,8 +116,13 @@ html{
 }
 
 .background-world-5{
-    background-image: url(images/overworld-world-5.webp), var(--curtain);
     background-position: left 196px bottom -253px;
+}
+.notwebp .background-world-5{
+    background-image: url(images/overworld-world-5.png), var(--curtain);
+}
+.webp .background-world-5{
+    background-image: url(images/overworld-world-5.webp), var(--curtain);
 }
 
 .background-world-6{
@@ -126,8 +131,13 @@ html{
 }
 
 .background-world-7{
-    background-image: url(images/overworld-world-7.png), var(--curtain);
     background-position: -160px bottom;
+}
+.notwebp .background-world-7{
+    background-image: url(images/overworld-world-7.png), var(--curtain);
+}
+.webp .background-world-7{
+    background-image: url(images/overworld-world-7.webp), var(--curtain);
 }
 
 .background-world-8{
@@ -327,12 +337,16 @@ tr-timer span {
 }
 
 .paper-insert{
-    background-color: #ffff80;
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
-    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);  
+    background-color: #ffff80;  
     box-shadow: inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), 0 5px 8px -5px rgba(0,0,0,.75), 0-5px 8px -5px rgba(0,0,0,.75);
 }
 
+.notwebp .paper-insert{
+    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
+}
+.webp .paper-insert{
+    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
+}
 .timer-staff-grid{
     height: 216px;
     display: flex;

@@ -31,21 +31,12 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
+
+
 .border-1{
     border: var(--border) solid #b1b1b1;
     border-radius: 8px;
-}
-
-@supports not (border-image: paint(ffr-border) 6) {
-    .border-1{border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;}
-}
-
-@supports (border-image: paint(ffr-border) 6) {
-    .border-1{
-        border-image: paint(ffr-border) 6;
-        --border-outside-color: #747474;
-        --border-inside-color: #fcfcfc;
-    }
+    border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;
 }
 
 .border-bottom{border-top: none;}
@@ -131,7 +122,9 @@
 }
 
 .ffr-dark{
-    background: url(images/3p/base-dark.png) #000;
+    background-color: #000;
+    --darkfallback: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4,11h1v1h-1zM8,9h1v1h-1zM13,15h1v1h-1zM15,8h1v1h-1z' fill='%2300f'/%3E%3C/svg%3E");
+    background-image: url(images/3p/base-dark.png), var(--darkfallback);
 }
 
 .player-video{
@@ -305,7 +298,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 230px;
+    width: 220px;
 }
 
 .staff img {

@@ -13,19 +13,11 @@
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
-    background-image: linear-gradient(to right, #394131 50%, #21384a 0);
-    background-size: 100% 100%;
-    background-color: #21384a;
     color: #fff;
     text-align: center;
     z-index: 50;
     display: none;
 }
-
-.notwebp .loadscreen-contain, .notwebp .four-loading{
-    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
-.webp .loadscreen-contain, .webp .four-loading{
-    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .four-loading{
     display: block;
@@ -57,7 +49,16 @@
     grid-gap: 1em;
     place-items: center;
     padding: 1em;
+    background-color: #21384a;
+    background-size: 100% 100%;
+    --fallback: linear-gradient(to right, #394131 50%, #21384a 0);
+    background-image: var(--fallback);
+    background-blend-mode: luminosity;
 }
+.notwebp .loadscreen{
+    background-image: url('images/airship-no-video.png'), linear-gradient(to right, #394131 50%, #21384a 0);}
+.webp .loadscreen{
+    background-image: url('images/airship-no-video.webp'), linear-gradient(to right, #394131 50%, #21384a 0);}
 
 .loadscreen-main{
     display: grid;

@@ -1,0 +1,396 @@
+/* root */
+
+:root{
+    font-family: Arial, sans-serif;
+    --vidWidth: 446px;
+    --vidAspect: 26 / 21;
+    --gap-size: 0;
+    --nameWidth: 140px;
+    --borderWidth: 1px;
+    --backgroundColor1: #000;
+}
+
+/* helper classes */
+
+.border-1{border: var(--borderWidth) solid currentColor;}
+
+.br{
+    border-radius: 10px;
+}
+.background-1{
+    background-color: #292884;
+    mix-blend-mode: hard-light;
+}
+.background-2{
+    background-color: #222;
+    mix-blend-mode: hard-light;
+}
+
+/*  ==========
+    Typography
+    ========== */
+
+    @font-face {
+        font-family: "FF6";
+        src: local('FF6'),
+             url('fonts/final-fantasy-36-font.woff2') format('woff2'),
+             url('fonts/final-fantasy-36-font.woff') format('woff'),         
+             url('fonts/Final-Fantasy-36-Font.ttf') format('truetype');
+    }
+    
+    @font-face {
+        font-family: "Ferrum";
+        src: local('Ferrum'),
+             url('fonts/ferrum.woff2') format('woff2'),
+             url('fonts/ferrum.woff') format('woff'),         
+             url('fonts/ferrum.otf') format('opentype');
+    }
+
+.fs-s{ font-size: 1rem; }
+.fs-m{ font-size: 1.2rem; }
+.fs-l{ font-size: 1.6rem; }
+
+.fw-b{ font-weight: bold;}
+
+.text-shadow{
+    filter: drop-shadow(2px 2px 2px #000) drop-shadow(-2px -2px 2px #000);
+}
+
+/*  ==========
+    Components
+    ========== */
+
+.layout{
+    font-family: 'FF6', Arial, sans-serif;
+    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    background-image: var(--background-fallback);
+    background-size: 100% 100%;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-areas:
+        "v1 i1 i2 v2"
+        "v1  .  . v2"
+        "v3  .  . v4"
+        "v3 i3 i4 v4";
+}
+
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .notwebp .layout{
+        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+    .webp.notavif .layout{
+        background-image: url('images/justbackground.webp'), var(--background-fallback);}
+    .avif .layout{
+        background-image: url('images/justbackground.avif'), var(--background-fallback);}
+}
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .layout{
+        background-image: image-set(
+            "images/justbackground.avif" type("image/avif"),
+            "images/justbackground.webp" type("image/webp"),
+            "images/justbackground.jpg" type("image/jpeg")
+        ), var(--background-fallback);
+    }
+}
+
+[player="1"] .player-video, [player="2"] .player-video{border-bottom: 1px solid;}
+[player="3"] .player-video, [player="4"] .player-video{border-top: 1px solid;}
+
+.player-info-contain{
+    position: relative;
+    justify-self: start;
+    grid-area: pi;
+}
+
+[player="3"] .player-info-contain, [player="4"] .player-info-contain{
+    display: grid;   
+}
+
+[player="3"] .player-pronoun, [player="4"] .player-pronoun{
+   order: -1;   
+}
+
+[player="1"] .player-contain{
+    grid-area: i1;
+    grid-template-areas:
+        "pi pi"
+        "pg pc"
+        "pg ps";
+}
+
+[player="2"] .player-contain{
+    grid-area: i2;
+    grid-template-areas:
+        "pi pi"
+        "pc pg"
+        "ps pg";
+}
+
+[player="3"] .player-contain{
+    grid-area: i3;
+    grid-template-areas:
+        "pg ps"
+        "pg pc"
+        "pi pi";
+}
+
+[player="4"] .player-contain{
+    grid-area: i4;
+    grid-template-areas:
+        "ps pg"
+        "pc pg"
+        "pi pi";
+}
+[player="1"] .player-name, [player="3"] .player-name{
+    border-radius: 0 10px 10px 0;
+}
+[player="2"] .player-name, [player="4"] .player-name{
+    border-radius: 10px 0 0 10px;
+}
+
+.player-name{
+    height: 50px;
+    width: calc(var(--nameWidth) + 8px * 2);
+    padding: 0 8px;
+}
+
+.player-pronoun{
+    text-align: center;
+    height: 30px;
+    width: 100%;
+}
+
+.player-grid{
+    grid-area: pg;
+    display: grid;
+}
+
+.player-grid-characters{
+    grid-template-rows: repeat(7, min-content);
+    grid-auto-flow: column;
+    padding: 4px;
+    grid-gap: 4px;
+    grid-area: 1/1;
+    z-index: 2;
+}
+
+.player-grid-back{
+    height: 100%;
+    width: 100%;
+    grid-area: 1/1;
+    z-index: 1;
+}
+
+.layout [player="1"] .player-grid-back{
+    border-radius: 0 0 10px 0;
+}
+
+.layout [player="2"] .player-grid-back{
+    border-radius: 0 0 0 10px;
+}
+
+.layout [player="3"] .player-grid-back{
+    border-radius: 0 10px 0 0;
+}
+
+.layout [player="4"] .player-grid-back{
+    border-radius: 10px 0 0 0;
+}
+
+.player-grid img, .dialog img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: 500% 1000%;
+}
+
+@supports not (background: image-set("foo.png" type("image/png")) ){
+    .webp .player-grid img, .webp .dialog img{
+        background-image: url(images/characters.webp);}
+    .notwebp .player-grid img, .notwebp .dialog img{
+        background-image: url(images/characters.png);}
+ }
+
+@supports (background: image-set("foo.png" type("image/png")) ){
+    .player-grid img, .dialog img{
+        background-image: image-set(
+            "images/images/characters.webp" type("image/webp"),
+            "images/images/characters.png" type("image/png")
+        );
+    }
+}
+
+.terra, [property="character-terra"] img{background-position: 0 0;}
+.locke, [property="character-locke"] img{background-position: 25% 0;}
+.cyan, [property="character-cyan"] img{background-position: 50% 0;}
+.shadow, [property="character-shadow"] img{background-position: 75% 0;}
+.edgar, [property="character-edgar"] img{background-position: 100% 0;}
+.sabin, [property="character-sabin"] img{background-position: 0 22.5%;}
+.celes, [property="character-celes"] img{background-position: 25% 22.5%;}
+.strago, [property="character-strago"] img{background-position: 50% 25%;}
+.relm, [property="character-relm"] img{background-position: 75% 25%;}
+.setzer, [property="character-setzer"] img{background-position: 100% 22.5%;}
+.mog, [property="character-mog"] img{background-position: 0 47.5%;}
+.gau, [property="character-gau"] img{background-position: 25% 45%;}
+.gogo, [property="character-gogo"] img{background-position: 50% 44.5%;}
+.umaro, [property="character-umaro"] img{background-position: 75% 44.5%;}
+
+.player-speaker{
+    padding: 4px;
+    justify-self: end;
+    grid-area: ps;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
+}
+
+.final-winner-contain{
+    color: #f8b800;
+    z-index: 2;
+}
+
+@supports not selector(:is(ul, ol)) {
+    [player="1"] .final-winner-contain, [player="2"] .final-winner-contain{top: 75px;}
+    [player="3"] .final-winner-contain, [player="4"] .final-winner-contain{bottom: 75px;}
+    [player="2"] .final-winner-contain, [player="4"] .final-winner-contain{right: 0;}
+}
+
+@supports selector(:is(ul, ol)) {
+    :is([player="1"], [player="2"]) .final-winner-contain{top: 75px;}
+    :is([player="3"], [player="4"]) .final-winner-contain{bottom: 75px;}
+    :is([player="2"], [player="4"]) .final-winner-contain{right: 0;}
+}
+
+.player-winner{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.player-winner, .player-final{
+    height: 34px;
+    padding: 0 .5em;
+    background-color: #000;
+}
+
+.vs{
+    padding: 12px;
+}
+
+.timer-staff{
+    gap: 1em;
+    grid-column: 2 / 4;
+    grid-row: 1 / -1;
+    grid-template-rows: 1fr auto auto 1fr;
+    justify-items: center;
+}
+
+.staff{
+    align-self: end;
+}
+
+.logo{
+    display: block;
+    width: fit-content;
+}
+
+.logo img{
+    width: 289px;
+    image-rendering: initial;
+    filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    background-image: radial-gradient(rgba(0,0,0,.25), transparent 69%);
+}
+
+.staff-panel-1, .staff-panel-2{
+    background-color: transparent;
+}
+
+.commentators, .restreamers, .trackers {
+    max-width: 195px;
+}
+
+.glitch{
+    vertical-align: bottom;
+    position: relative;
+    bottom: 2px;
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+}
+
+.site-link, .twitch-link{
+    position: absolute !important;
+    left: -2560px;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}     
+
+.visible{
+    position: relative !important;
+    left: 0px;
+    height: initial; width: initial;
+    overflow: hidden;
+    -webkit-clip-path: none;
+    clip-path: none;    
+}
+
+tr-timer{
+    margin-top: 12px;
+    width: 200px;
+    height: 53px;
+    z-index: 1;
+    font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
+}
+
+tr-timer span {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(images/sky-small.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
+    background-position: 50% 50%;
+    filter: contrast(1.2);
+    color: transparent;
+    width: 22px;
+    text-align: center;
+}
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid var(--borderWidth) currentColor;
+    z-index: 3;
+}
+
+/*  ==========
+    Menu
+    ========== */
+    
+    .menu-general #menu_players{grid-area: players;}
+    .menu-general #menu_layout{grid-area: layout;}
+    .menu-general #menu_production{grid-area: team;}
+    .menu-general #menu_timer{grid-area: timer;}
+    .menu-general #menu_view{grid-area: view;}
+    .menu-general #menu_reset{grid-area: reset;}
+    
+    #menu_credits{grid-area: credits;}
+    #menu_players_extra{grid-area: players2;}
+    #menu_subheading{grid-area: subhead;}
+    #menu_backgrounds{grid-area: backgrounds;}
+    #menu_playlist{grid-area: playlist;}
+    #menu_goals{grid-area: goals;}
+    
+    .menu-contain{
+        grid-template-areas:
+            "playlist players2    players layout  layout  team"
+            "playlist  goals       timer   view    reset   credits"
+            "subhead   goals       timer   view    reset   credits"
+            "subhead   goals      backgrounds view    reset   credits";
+        }

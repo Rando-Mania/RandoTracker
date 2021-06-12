@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        .tracker-layout{
+            font-family: 'Chicago', Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            background-size: cover;
+            background-position: left 0 bottom -78px;
+            display: flex;
+            max-width: 1000px;
+            justify-content: space-between;
+            gap: 4px;
+            padding: 4px;
+        }
+
+        [player="1"] tr-template > div,
+        [player="2"] tr-template > div{
+            display: flex;
+        }
+        [player="2"] tr-template > div{
+            flex-direction: row-reverse;
+        }
+
+        tr-player{
+            display: contents;
+        }
+
+        .player-name, .player-name tr-text{
+            Width: 100%;
+        }
+        .tracker-layout .player-grid{
+            grid-template-columns: repeat(6, auto);
+            grid-template-rows: auto;
+        }
+
+        .player-speaker{
+            grid-area: 1 / 2;
+            justify-self: end;
+            align-self: center;
+        }
+
+        .player-grid, .winner-final-contain{
+            grid-column: 1 / -1;
+        }
+
+        .player-best-of{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }     
+
+     </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <template id="player_info_template">
+			<div class="player-name border-1 background-1">
+				<tr-text property="player-name"></tr-text>
+			</div>
+            <div>
+                <tr-template class="player-grid background-1 border-1" href="icons-2020.html"></tr-template>
+                <tr-text property="player-pronoun" class="player-pronoun background-1 border-1"></tr-text>
+            </div>
+            <div class="winner-final-contain">
+                <tr-text property="player-final" class="player-final background-1 border-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner background-1 border-1">
+                    <div>Winner</div>
+                </tr-toggle>
+                <tr-toggle property="toggle-speaker" class="player-speaker">
+                    <img src="../shared/images/icons/blank.svg" alt="">
+                </tr-toggle>
+            </div>
+            <div>
+                <tr-text property="player-number" class="record-contain background-1 border-1"></tr-text>        
+                <tr-template class="player-best-of" href="../shared/bestof.html"></tr-template>
+            </div>
+		</template>
+       <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+    </div>
+
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../script/custom-elements-es5-adapter.js"></script>
+    <script type="text/javascript" src="../script/webcomponents-bundle.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="../shared/script/two_game.js"></script>
+</body>
+</html>

@@ -22,7 +22,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('images/2p/base-background.png');
 
     --border: 6px;
 
@@ -73,7 +72,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg) #000;
+    background-color: #000;
 }
 
 .layout.clip-background{
@@ -106,11 +105,9 @@
 
 .ffr-default{
     background-color: #000;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
-    background-image: var(--default-fallback);
 }
-.notwebp .ffr-default{background-image: url(images/2p/base-background.png), var(--default-fallback);}
-.webp .ffr-default{background-image: url(images/2p/base-background.webp), var(--default-fallback);}
+.notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
+.webp .ffr-default{background-image: url(images/2p/base-background.webp);}
 
 .ffr-irongol{
     --backgroundColor2: #500;
@@ -126,8 +123,6 @@
 .notwebp .ffr-tourney{background-image: url(images/2p/base-tourney.png);}
 .webp.notavif .ffr-tourney{background-image: url(images/2p/base-tourney.webp);}
 .avif .ffr-tourney{background-image: url(images/2p/base-tourney.avif);}
-
-.ffr-tourney .border-1{border-image-source: url('images/border.svg#svgView(viewBox(16, 0, 16, 16))');}
 
 .ffr-league{
     background-color: #b1cbda;
@@ -165,32 +160,49 @@
 
 /* cam layouts */
 
-.layout.show-cams.ffr-default{
-    background-image: url(images/2p-cam/base-background.png);
-}
-.layout.show-cams.ffr-irongol{
-    background-image: url(images/2p-cam/base-irongol.png);
-}
-.layout.show-cams.ffr-tourney{
-    background-image: url(images/2p-cam/base-tourney.png);
-}
-.layout.show-cams.ffr-league{
-    background-image: url(images/2p-cam/base-league.png);
-}
-.layout.show-cams.ffr-rush{
-    background-image: url(images/2p-cam/base-rush.png);
+.notwebp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.png);}
+.webp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.webp);}
+
+.notwebp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.png);}
+.webp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.webp);}
+
+.notwebp .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.png);}
+.webp.notavif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.webp);}
+.avif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.avif);}
+
+.notwebp .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.png);}
+.webp.notavif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.webp);}
+.avif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.avif);}
+
+/* .show-cams.ffr-league{ 
+    background-image: image-set( 
+        "images/2p-cam/base-league.avif" type("image/avif"),
+        "images/2p-cam/base-league.webp" type("image/webp"),
+        "images/2p-cam/base-league.png" type("image/png")
+    );
+} */
+
+.show-cams.ffr-rush{
     --pronounY: 526px;
     --rankY: 526px;
     --winY: 50px;
     --finalY: 50px;
 }
+.notwebp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.png);}
+.webp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.webp);}
+/* .show-cams.ffr-rush{ 
+    background-image: image-set( 
+        "images/2p-cam/base-rush.webp" type("image/webp"),
+        "images/2p-cam/base-rush.png" type("image/png")
+    );
+} */
 
-.layout.show-cams.ffr-duckling{
-    background-image: url(images/2p-cam/base-duckling.png);
-}
-.layout.show-cams.ffr-dark{
-    background-image: url(images/2p-cam/base-dark.png);
-}
+.notwebp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.png);}
+.webp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.webp);}
+
+.notwebp .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.png);}
+.webp.notavif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.webp);}
+.avif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.avif);}
 
 .player-name{
     font-size: 26px;
@@ -413,7 +425,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 400px;
+    width: 380px;
 }
 
 .staff img {

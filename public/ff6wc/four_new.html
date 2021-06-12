@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>4 Player Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/global.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../shared/global-4p.css"> -->
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four_new.css">
+    <link rel="preload" href="images/characters.webp" as="image" type="image/webp">
+</head>
+<body>
+	<div class="layout">
+        <template id="player_info_template">
+            <div class="player-video"></div>
+            <div class="player-contain">
+                <div class="player-info-contain dg">
+                    <div class="player-name df ta-c ai-c fs-l border-1 background-1">
+                        <tr-text scale-to-fit property="player-name"></tr-text>
+                    </div>
+                    <tr-hide-if-empty class="player-pronoun fs-m border-1 background-2">
+                        <tr-text property="player-pronoun"></tr-text>
+                    </tr-hide-if-empty>
+                </div>
+                <div class="player-grid">
+                    <div class="player-grid-back border-1 background-1"></div>
+                    <tr-template class="player-grid-characters dg" href="icons.html"></tr-template>
+                </div>        
+                <tr-toggle property="toggle-speaker" class="player-speaker">
+                    <img src="../shared/images/icons/blank.svg" alt="">
+                </tr-toggle>
+                <div class="final-winner-contain fs-l abs">
+                    <tr-text property="player-final" class="player-final df jc-c ai-c ta-c br border-1"></tr-text>
+                    <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fw-b br border-1">
+                        <div>Winner</div>
+                    </tr-toggle>
+                </div>
+            </div>
+        </template>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="vs df jc-c ta-c fs-l" id="vs_1">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="vs df jc-c ta-c fs-l" id="vs_2">VS</tr-toggle>
+
+<!-- timer/staff -->
+        <div class="timer-staff dg jc-c fs-m">
+            <tr-hide-if-empty class="staff text-shadow fs-l" toggle-class="wtf">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
+            <picture class="logo">
+                <source srcset="images/wc_logo.avif" type="image/avif">
+                <img src="images/wc_logo.png" alt="logo">
+            </picture>
+            <tr-timer class="text-shadow" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+            <div class="subheadings fs-l ta-c">
+                <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
+                <div class="subhead-link text-shadow">
+                    <p class="twitch-link"> 
+                        <svg version="1.1" class="glitch" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 240 280">
+                            <g id="glitch">
+                                <path d="M50,0L0,50v180h60v50l50-50h40l90-90V0H50z M220,130l-40,40h-40l-35,35v-35H60V20h160V130z"/>
+                                <rect x="170" y="55" width="20" height="60"/>
+                                <rect x="115" y="55" width="20" height="60"/>
+                            </g>
+                        </svg>
+                    ff6worldscollide</p>
+                    <p class="site-link">Play at: ff6wc.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="four-loading-template.html"></tr-template>
+</div>
+
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar-template.html"></tr-template>
+</div>
+
+<tr-template href="../shared/four-menus-contain.html"></tr-template>
+
+    <script type="text/javascript" src="../shared/script/imgsupport.js"></script>
+	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="../components/components.js"></script>
+    <script type="text/javascript" src="../components/tracker.js"></script>
+    <script type="text/javascript" src="script/four_game.js"></script>
+    <script type="text/javascript" src="script/ff6wc.js"></script>
+</body>
+</html>

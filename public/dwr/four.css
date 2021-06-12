@@ -56,8 +56,17 @@ html{
         url("fonts/Warrior Quest I and II.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Press Start 2P";
+    src: 
+        local('Press Start 2P'),
+        url("../shared/fonts/pressstart2p.woff2") format("woff2"),
+        url("../shared/fonts/pressstart2p.woff") format("woff"),
+        url("../shared/fonts/PressStart2P.ttf") format("truetype");
+}
+
 .layout{
-    font-family: "Warrior Quest I and II";
+    font-family: "Warrior Quest I and II", "Press Start 2P";
     width: 1280px;
     height: 720px;
     color:#fff;
@@ -84,7 +93,13 @@ html{
 .weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .tourney-background{background-image: url('images/video-background/layout_2020.png');}
 .chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
-.league-background{background-image: url('images/video-background/2020_league_backdrop_4by3.png');}
+
+.league-background{background-image: url('images/video-background/DWR2021.png');}
+[player="2"] .league-background,
+[player="3"] .league-background{
+    background-image: url('images/video-background/winter_league.png');
+    background-size: contain;
+}
 
 .player-info{
     height: 50px;
@@ -95,6 +110,7 @@ html{
     padding: 9px;
     display: grid;
     grid-template-columns: min-content auto;
+    z-index: 3;
 }
 
 .player-rank{
@@ -173,6 +189,12 @@ html{
     padding: 2px 4px;
     font-size: 8px;
     box-shadow: 2px 0 2px -3px #fff, -2px 0 2px -3px #fff;
+    width: min-content;
+    z-index: -1;
+}
+
+[player="2"] .player-grid, [player="4"] .player-grid{
+    justify-self: end;
 }
 
 img[src*="weapon"],
@@ -202,27 +224,6 @@ img[src*="necklace"],
     z-index: 1;
 }
 
-figcaption{
-    opacity: .3;
-}
-.dialog figcaption{
-    opacity: 1;
-}
-.in-active ~ figcaption{
-    opacity: .3;
-}
-.active ~ figcaption {
-    opacity: 1;
-}
-.in-active{
-    opacity: .3;
-}
-
-.in-active[selected="selected"] ~ tr-label{
-    opacity: .3;
-    filter: grayscale(1);
-}
-
 tr-image, figure{position: relative;}
 tr-label, .layout figcaption{
     position: absolute;
@@ -244,6 +245,7 @@ tr-label, .layout figcaption{
 
 .build:after{
 	content: '+';
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .spells{
@@ -299,16 +301,21 @@ to{background-position: -270px 0;}
 }
 
 .layout .player-grid, .layout .stats-and-spells{
-    display: none;
-    /* width: 146px; */
+    grid-area: 1/1;
 }
 
-.layout .stats-and-spells.show-flex{
+.layout .stats-and-spells{
     display: flex;
+    z-index: -1;
+}
+
+.layout .z-show{
+    z-index: 2;
 }
 
 .player-panels-contain{
     height: 191px;
+    display: grid;
 }
 
 .player-panels-contain > *{
@@ -339,6 +346,7 @@ to{background-position: -270px 0;}
     animation: dw-panel-appear .1s;
     transform-origin: 50% 0;
     opacity: .3;
+    z-index: 3;
 }
 
 .player-final{
@@ -349,10 +357,11 @@ to{background-position: -270px 0;}
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
     color: #f88019;
-    border-color: #f88019;
-    z-index: 2;
+    border: solid 1px #f88019;
+    z-index: 3;
+    border-width: 1px;
 }
 
 .player-final:empty{
@@ -365,20 +374,19 @@ to{background-position: -270px 0;}
 }
 
 .player-winner{
-    color: #fc9838;
-    background-color: rgba(0,0,0,.5);
+    color: #f88019;
     width: max-content;
     border: double 8px;
     border-image: url('images/winner-border-small.png') repeat 8 / 8px;
     border-image: paint(dq9Stamp) 8 / 8px;
-    --border-color: #fc9838;
+    --border-color: #f88019;
     padding: 7px 8px 3px;
     font-size: 1.25em;
     font-style: italic;
     line-height: 1;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
-    z-index: 2;
+    z-index: 3;
 }
 
 .player-winner:after{
@@ -419,9 +427,13 @@ tr-timer span {
     text-align: center;
 }
 
-#menu_timer, #menu_playlist{
-    display: grid;
-    justify-items: center;
+.colon{
+    bottom: -6px;
+    position: relative;
+}
+
+.dot, .ms{
+    display:none;
 }
 
 .production-team-swap{
@@ -624,19 +636,22 @@ tr-timer span {
         padding: 1em;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         border: none;
-        background-color: #000000BF;
-        border: #fff 2px solid;
-        border-image: 4 / 4px url('images/dw-border.png');
-        border-image: paint(dw1Border) 4 / 4px;
-        image-rendering: pixelated;
-        bottom: 0px;
+        background-color: rgba(0,0,0,.75);
+        bottom: 23%;
         left: 50%;
-        max-width: 184px;
-        margin-bottom: 50px;
-        transform: translateX(-50%);
-        z-index: 0; /* To show below stats/spells */
+        max-width: 175px;
+        transform: translate(-50%, 50%);
+        z-index: -1; /* To show below stats/spells */
     }
     
+    .layout [property="week-6"], .layout [property="week-7"]{
+        filter: hue-rotate(180deg);
+    }
+    
+    .layout [property="week-8-1"], .layout [property="week-8-2"]{
+        filter: grayscale(1);
+    }
+
     .league h4{
         text-align: center;
         margin: 0;
@@ -684,16 +699,6 @@ tr-timer span {
         margin-bottom: .75em;
     }
     
-    .overlay-buttons{
-        display: flex;
-    }
-    
-    .menu-button-row input[type="radio"], .menu-button-row input[type="radio"], .menu-button-row input[type="radio"]:hover:checked{
-        -webkit-appearance: none;
-        appearance: none;
-        box-shadow: none;
-    }
-    
     .menu-button-row .layout-buttons{
         display: flex;
         text-align: center;
@@ -704,18 +709,6 @@ tr-timer span {
     
     .menu-button-row h4{
         margin-bottom: 8px;
-    }
-
-    .menu-button-row label{
-        border: solid 1px rgba(255,255,255,.75);    
-        text-align: center;
-        flex: 1;
-        padding: .3em 0;
-        margin-right: -1px;
-        font-size: .9em;
-        position: relative;
-        overflow: hidden;
-        z-index: 0;
     }
 
     .menu-button-row label.panel-playing:after{
@@ -735,15 +728,14 @@ tr-timer span {
         to{transform: translateX(0);}
     }
 
-    .items-button.show-grid, .stats-spells-button.show-flex, .menu-button-row label.show{
+    .items-button.show-grid, 
+    .stats-spells-button.show-flex,
+    .menu-button-row label.z-show{
         background-color: #f8b800;
         color: #000;
         font-weight: bold;
         justify-content: center;
     }
-    
-    .menu-button-row label:first-of-type{ border-radius: 3px 0 0 3px;}
-    .menu-button-row label:last-of-type{ border-radius: 0 3px 3px 0;}
     
     .menu-label-input{
         display: flex;
@@ -794,10 +786,11 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
-        "players  players-2 settings-game team  team"
-        "players  players-2 layout        team  team"
-        "playlist timer     dwr           view  reset"
-        "playlist credits   dwr           view  reset";
+        "players   players-2 players-2     timer   commands commands"
+        "players   players-2 players-2     team    commands commands"
+        "playlist  monsters  settings-game team    commands commands"
+        "playlist  dwr       layout        credits view     reset"
+        "playlist  league    league        credits view     reset"
     }
 
 #menu_players_extra{grid-area: players-2;}
@@ -805,7 +798,53 @@ tr-timer span {
 #menu_playlist {grid-area: playlist;}
 #menu_credits {grid-area: credits;}
 #menu_settings_extra {grid-area: settings-game;}
+#menu_league {grid-area: league;
+    flex-direction: row;
+    justify-content: space-around;}
+#menu_view_game {
+    grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
+#menu_view_game button {
+        width: 8em;
+    }
 
+#menu_monsters {grid-area: monsters;}
+
+#menu_bot{
+    width: 400px; grid-area: commands;
+}
+
+#menu_bot .trackers, #menu_bot .commentators{
+    white-space: nowrap;
+}
+
+#menu_bot a{
+    color: #f8b800;
+    background-color: #000;
+    position: absolute;
+    top: -10px;
+    padding: 0 .25em;
+}
+#menu_bot a.more-info {
+    right: 15px;
+}
+#menu_bot a.randroid {
+    right: 120px;
+    color: #f8b800;
+}
+
+#menu_bot [title]:hover {
+    color: #000;
+    background-color: #f8b800;
+}
+#menu_layout_bot{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-flags-wrapper{
+    display: flex;
+}
 .highlight{
     background-color: #f8b800;
     color: #000;
@@ -828,4 +867,8 @@ tr-timer span {
 
 #stop_auto_play_panels{
     background-image: none;
+}
+
+.visible{
+    visibility: visible;
 }
