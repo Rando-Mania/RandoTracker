@@ -153,10 +153,10 @@
 .badge{background-position: 0px -16px;}
 .hilt{background-position: -16px -16px;}
 .blade{background-position: -32px -16px;}
-.melchior{background-position: -48px -16px;}
-.masamune{background-position: -64px -16px;}
-.key{background-position: -80px -16px;}
-.rock{background-position: -96px -16px;}
+.masamune{background-position: -48px -16px;}
+.key{background-position: -64px -16px;}
+.rock{background-position: -80px -16px;}
+.go{background-position: -96px -16px;}
 
 .pop{background-position: 0px -32px;}
 .pendant{background-position: -16px -32px;}
@@ -164,15 +164,13 @@
 .moonstone{background-position: -48px -32px;}
 .jerky{background-position: -64px -32px;}
 .ribbon{background-position: -80px -32px;}
-.go{background-position: -96px -32px;}
+.spacer{background-position: -96px -32px;}
 
 .magic{background-position: 0px -48px;}
 .tools{background-position: -16px -48px;}
 .doll{background-position: -32px -48px;}
 .trigger{background-position: -48px -48px;}
 .knife{background-position: -64px -48px;}
-
-.spacer{background-position: 0px -64px;}
 
 .player-speaker{
     padding: 4px;
