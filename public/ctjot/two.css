@@ -190,24 +190,25 @@
 .badge{background-position: 0px -32px;}
 .hilt{background-position: -32px -32px;}
 .blade{background-position: -64px -32px;}
-.masamune{background-position: -96px -32px;}
-.key{background-position: -128px -32px;}
+.melchior{background-position: -96px -32px;}
+.masamune{background-position: -128px -32px;}
 
-.rock{background-position: -160px -32px;}
-.go{background-position: -192px -32px;}
-.pop{background-position: -0px -64px;}
+.key{background-position: -160px -32px;}
+.rock{background-position: -192px -32px;}
+.pop{background-position: 0px -64px;}
 .pendant{background-position: -32px -64px;}
 .shell{background-position: -64px -64px;}
 .moonstone{background-position: -96px -64px;}
 .jerky{background-position: -128px -64px;}
 .ribbon{background-position: -160px -64px;}
-.spacer{background-position: -192px -64px;}
+.go{background-position: -192px -64px;}
 .magic{background-position: 0px -96px;}
 .tools{background-position: -32px -96px;}
 .doll{background-position: -64px -96px;}
 
 .trigger{background-position: -96px -96px;}
 .knife{background-position: -128px -96px;}
+.spacer{background-position: 0px -128px;}
 
 .layout.show-cams .player-grid img, .dialog img{
     background-size: 112px 80px;
@@ -215,7 +216,7 @@
 
 .layout.show-cams .crono{background-position: 0 0;}
 .layout.show-cams .marle{background-position: -16px 0px;}
-.layout.show-cams .lucca{background-position: -32px 0px;}
+.lucca{background-position: -32px 0px;}
 .layout.show-cams .robo{background-position: -48px 0px;}
 .layout.show-cams .frog{background-position: -64px 0px;}
 .layout.show-cams .ayla{background-position: -80px 0px;}
@@ -224,10 +225,10 @@
 .layout.show-cams .badge{background-position: 0px -16px;}
 .layout.show-cams .hilt{background-position: -16px -16px;}
 .layout.show-cams .blade{background-position: -32px -16px;}
-.layout.show-cams .masamune{background-position: -48px -16px;}
-.layout.show-cams .key{background-position: -64px -16px;}
-.layout.show-cams .rock{background-position: -80px -16px;}
-.layout.show-cams .go{background-position: -96px -16px;}
+.layout.show-cams .melchior{background-position: -48px -16px;}
+.layout.show-cams .masamune{background-position: -64px -16px;}
+.layout.show-cams .key{background-position: -80px -16px;}
+.layout.show-cams .rock{background-position: -96px -16px;}
 
 .layout.show-cams .pop{background-position: 0px -32px;}
 .layout.show-cams .pendant{background-position: -16px -32px;}
@@ -235,13 +236,15 @@
 .layout.show-cams .moonstone{background-position: -48px -32px;}
 .layout.show-cams .jerky{background-position: -64px -32px;}
 .layout.show-cams .ribbon{background-position: -80px -32px;}
-.layout.show-cams .spacer{background-position: -96px -32px;}
+.layout.show-cams .go{background-position: -96px -32px;}
 
 .layout.show-cams .magic{background-position: 0px -48px;}
 .layout.show-cams .tools{background-position: -16px -48px;}
 .layout.show-cams .doll{background-position: -32px -48px;}
 .layout.show-cams .trigger{background-position: -48px -48px;}
 .layout.show-cams .knife{background-position: -64px -48px;}
+
+.layout.show-cams .spacer{background-position: 0px -64px;}
 
 .player-speaker{
     padding: 4px;
