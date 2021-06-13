@@ -77,7 +77,7 @@
     background-image: var(--bgFallback);
 }
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -157,6 +157,7 @@
     grid-template-columns: repeat(7, auto);
     padding: 5px;
     grid-gap: 4px;
+    justify-items: center;
 }
 
 .layout.layout.show-cams .player-grid{
@@ -175,76 +176,40 @@
 }
 
 .player-grid img, .dialog img{
-    background-size: 224px 160px;
+    background-size: 700% 500%;
 }
 .notwebp .player-grid img, .notwebp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');}
 .webp .player-grid img, .webp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.webp');}
 
 .crono{background-position: 0 0;}
-.marle{background-position: -32px 0px;}
-.lucca{background-position: -64px 0px;}
-.robo{background-position: -96px 0px;}
-.frog{background-position: -128px 0px;}
-.ayla{background-position: -160px 0px;}
-.magus{background-position: -192px 0px;}
-.badge{background-position: 0px -32px;}
-.hilt{background-position: -32px -32px;}
-.blade{background-position: -64px -32px;}
-.melchior{background-position: -96px -32px;}
-.masamune{background-position: -128px -32px;}
+.marle{background-position: 16.6% 0;}
+.lucca{background-position: 33.3% 0;}
+.robo{background-position: 50% 0;}
+.frog{background-position: 66.6% 0;}
+.ayla{background-position: 83.3% 0;}
+.magus{background-position: 100% 0;}
+.badge{background-position: 0 25%;}
+.hilt{background-position: 16.6% 25%;}
+.blade{background-position: 33.3% 25%;}
+.melchior{background-position: 50% 25%;}
+.masamune{background-position: 66.6% 25%;}
 
-.key{background-position: -160px -32px;}
-.rock{background-position: -192px -32px;}
-.pop{background-position: 0px -64px;}
-.pendant{background-position: -32px -64px;}
-.shell{background-position: -64px -64px;}
-.moonstone{background-position: -96px -64px;}
-.jerky{background-position: -128px -64px;}
-.ribbon{background-position: -160px -64px;}
-.go{background-position: -192px -64px;}
-.magic{background-position: 0px -96px;}
-.tools{background-position: -32px -96px;}
-.doll{background-position: -64px -96px;}
+.key{background-position: 83.3% 25%;}
+.rock{background-position: 100% 25%;}
+.pop{background-position: 0 50%;}
+.pendant{background-position: 16.6% 50%;}
+.shell{background-position: 33.3% 50%;}
+.moonstone{background-position: 50% 50%;}
+.jerky{background-position: 66.6% 50%;}
+.ribbon{background-position: 83.3% 50%;}
+.go{background-position: 100% 50%;}
+.magic{background-position: 0 75%;}
+.tools{background-position: 16.6% 75%;}
+.doll{background-position: 33.3% 75%;}
 
-.trigger{background-position: -96px -96px;}
-.knife{background-position: -128px -96px;}
-.spacer{background-position: 0px -128px;}
-
-.layout.show-cams .player-grid img, .dialog img{
-    background-size: 112px 80px;
-}
-
-.layout.show-cams .crono{background-position: 0 0;}
-.layout.show-cams .marle{background-position: -16px 0px;}
-.lucca{background-position: -32px 0px;}
-.layout.show-cams .robo{background-position: -48px 0px;}
-.layout.show-cams .frog{background-position: -64px 0px;}
-.layout.show-cams .ayla{background-position: -80px 0px;}
-.layout.show-cams .magus{background-position: -96px 0px;}
-
-.layout.show-cams .badge{background-position: 0px -16px;}
-.layout.show-cams .hilt{background-position: -16px -16px;}
-.layout.show-cams .blade{background-position: -32px -16px;}
-.layout.show-cams .melchior{background-position: -48px -16px;}
-.layout.show-cams .masamune{background-position: -64px -16px;}
-.layout.show-cams .key{background-position: -80px -16px;}
-.layout.show-cams .rock{background-position: -96px -16px;}
-
-.layout.show-cams .pop{background-position: 0px -32px;}
-.layout.show-cams .pendant{background-position: -16px -32px;}
-.layout.show-cams .shell{background-position: -32px -32px;}
-.layout.show-cams .moonstone{background-position: -48px -32px;}
-.layout.show-cams .jerky{background-position: -64px -32px;}
-.layout.show-cams .ribbon{background-position: -80px -32px;}
-.layout.show-cams .go{background-position: -96px -32px;}
-
-.layout.show-cams .magic{background-position: 0px -48px;}
-.layout.show-cams .tools{background-position: -16px -48px;}
-.layout.show-cams .doll{background-position: -32px -48px;}
-.layout.show-cams .trigger{background-position: -48px -48px;}
-.layout.show-cams .knife{background-position: -64px -48px;}
-
-.layout.show-cams .spacer{background-position: 0px -64px;}
+.trigger{background-position: 50% 75%;}
+.knife{background-position: 66.6% 75%;}
+.spacer{background-position: 0 100%;}
 
 .player-speaker{
     padding: 4px;
@@ -269,16 +234,13 @@
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');
-    background-size: 224px 160px;
-    background-position: 0px -128px;
+    background-image: url('images/retro_tracker/ctr-items-sprite-2020.webp');
+    background-size: 700% 500%;
+    background-position: 16.6% 75%;
 }
 .layout.show-cams .player-best-of img{
     width: 16px;
     height: 16px;
-    background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');
-    background-size: 112px 80px;
-    background-position: 0px -64px;
 }
 
 .best-of-3, .best-of-5, .best-of-7{

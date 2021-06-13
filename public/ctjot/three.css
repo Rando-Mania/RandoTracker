@@ -135,42 +135,40 @@
 }
 
 .player-grid img, .dialog img{
-    background-size: 112px 80px;
+    background-size: 700% 500%;
 }
 .notwebp .player-grid img, .notwebp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.png');}
 .webp .player-grid img, .webp .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.webp');}
 
 .crono{background-position: 0 0;}
-.marle{background-position: -16px 0px;}
-.lucca{background-position: -32px 0px;}
-.robo{background-position: -48px 0px;}
-.frog{background-position: -64px 0px;}
-.ayla{background-position: -80px 0px;}
-.magus{background-position: -96px 0px;}
+.marle{background-position: 16.6% 0;}
+.lucca{background-position: 33.3% 0;}
+.robo{background-position: 50% 0;}
+.frog{background-position: 66.6% 0;}
+.ayla{background-position: 83.3% 0;}
+.magus{background-position: 100% 0;}
+.badge{background-position: 0 25%;}
+.hilt{background-position: 16.6% 25%;}
+.blade{background-position: 33.3% 25%;}
+.melchior{background-position: 50% 25%;}
+.masamune{background-position: 66.6% 25%;}
 
-.badge{background-position: 0px -16px;}
-.hilt{background-position: -16px -16px;}
-.blade{background-position: -32px -16px;}
-.melchior{background-position: -48px -16px;}
-.masamune{background-position: -64px -16px;}
-.key{background-position: -80px -16px;}
-.rock{background-position: -96px -16px;}
+.key{background-position: 83.3% 25%;}
+.rock{background-position: 100% 25%;}
+.pop{background-position: 0 50%;}
+.pendant{background-position: 16.6% 50%;}
+.shell{background-position: 33.3% 50%;}
+.moonstone{background-position: 50% 50%;}
+.jerky{background-position: 66.6% 50%;}
+.ribbon{background-position: 83.3% 50%;}
+.go{background-position: 100% 50%;}
+.magic{background-position: 0 75%;}
+.tools{background-position: 16.6% 75%;}
+.doll{background-position: 33.3% 75%;}
 
-.pop{background-position: 0px -32px;}
-.pendant{background-position: -16px -32px;}
-.shell{background-position: -32px -32px;}
-.moonstone{background-position: -48px -32px;}
-.jerky{background-position: -64px -32px;}
-.ribbon{background-position: -80px -32px;}
-.go{background-position: -96px -32px;}
-
-.magic{background-position: 0px -48px;}
-.tools{background-position: -16px -48px;}
-.doll{background-position: -32px -48px;}
-.trigger{background-position: -48px -48px;}
-.knife{background-position: -64px -48px;}
-
-.spacer{background-position: 0px -64px;}
+.trigger{background-position: 50% 75%;}
+.knife{background-position: 66.6% 75%;}
+.spacer{background-position: 0 100%;}
 
 .player-speaker{
     padding: 4px;
