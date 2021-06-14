@@ -64,7 +64,7 @@
     background-image: var(--bgFallback);
 }
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
