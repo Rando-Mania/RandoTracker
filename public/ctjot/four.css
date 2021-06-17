@@ -63,11 +63,15 @@
     height: 720px;
     color: #fff;
     position: relative;
+}
+
+.background-layer{
+    width: 1280px;
+    height: 720px;
     background-color: #202028;
     background-image: var(--bgFallback);
 }
-
-.layout.transparent-background{
+.layout.transparent-background .background-layer{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -77,11 +81,21 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
         linear-gradient(red,red) bottom / 100% var(--clipY1);
-    -webkit-mask-repeat: no-repeat
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
-.notwebp .jot-default{background-image: url('images/4p/base-background.png'),  var(--bgFallback);}
-.webp .jot-default{background-image: url('images/4p/base-background.webp'),  var(--bgFallback);}
+.notwebp .jot-default .background-layer{background-image: url('images/4p/base-background.png'),  var(--bgFallback);}
+.webp .jot-default .background-layer{background-image: url('images/4p/base-background.webp'),  var(--bgFallback);}
 
 .player-video{
     width: var(--vidWidth);
