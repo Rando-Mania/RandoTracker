@@ -55,7 +55,6 @@
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>
             <div class="player-name abs border-1 background-1">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
@@ -70,6 +69,23 @@
                 <div>Winner</div>
             </tr-toggle>
         </template>
+        <template id="background_layer_template">
+            <div class="border-1 player-video abs"></div>
+        </template>
+        <div class="background-layer">
+            <tr-player player="1">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="3">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="4">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+        </div>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
