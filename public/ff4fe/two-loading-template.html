@@ -160,13 +160,6 @@
     background-image: var(--ccs-load-fallback);
 }
 
-.notwebp .ccs-lunar-racing .loadscreen{
-    background-image: url('images/2p/ccs/splash-LRC.png'), var(--ccs-load-fallback);
-}
-.webp .ccs-lunar-racing .loadscreen{
-    background-image: url('images/2p/ccs/splash-LRC.webp'), var(--ccs-load-fallback);
-}
-
 .notwebp .ccs-mysidian-jumping .loadscreen{
     background-image: url('images/2p/ccs/splash-MJC.png'), var(--ccs-load-fallback);
 }
@@ -188,166 +181,11 @@
     background-image: url('images/2p/ccs/splash-Slapdash.webp'), var(--ccs-load-fallback);
 }
 
-.notwebp .ccs-underground-racing .loadscreen{
-    background-image: url('images/2p/ccs/splash-URC.png'), var(--ccs-load-fallback);
-}
-.webp .ccs-underground-racing .loadscreen{
-    background-image: url('images/2p/ccs/splash-URC.webp'), var(--ccs-load-fallback);
-}
-
 .notwebp .ccs-enterprise-legacy .loadscreen{
     background-image: url('images/2p/ccs/splash-legacy.png'), var(--ccs-load-fallback);
 }
 .webp .ccs-enterprise-legacy .loadscreen{
     background-image: url('images/2p/ccs/splash-legacy.webp'), var(--ccs-load-fallback);
-}
-
-/* lali-ho */
-
-[class*="laliho"] .loadscreen{
-    --nameWidth: auto;
-    --nameX: 264px; --nameY: 532px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    color: #000;
-    background-color: #d0b58a;
-    --fallback-image: linear-gradient(90deg, var(--fallback-color) 0 18%, #d0b58a 0 83%, var(--fallback-color) 83%);
-    --fallback-color: #c1624e;
-    background-image: var(--fallback-image);
-}
-
-.laliho-swiss .loadscreen{--fallback-color: #c1624e;}
-.notwebp .laliho-swiss .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.jpg'), var(--fallback-image);
-}
-.webp .laliho-swiss .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-swiss-splash.webp'), var(--fallback-image);
-}
-/* .webp .laliho-swiss .loadscreen{
-    background-image: url('images/2p/laliho/unknown.png');
-} */
-
-.laliho-bracket .loadscreen{--fallback-color: #94644d;}
-.notwebp .laliho-bracket .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.jpg'), var(--fallback-image);
-}
-.webp .laliho-bracket .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-bracket-splash.webp'), var(--fallback-image);
-}
-
-.laliho-finals .loadscreen{--fallback-color: #2d2924;}
-.notwebp .laliho-finals .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-finals-splash.jpg'), var(--fallback-image);
-}
-.webp .laliho-finals .loadscreen{
-    background-image: url('images/2p/laliho/laliho-bg-finals-splash.webp'), var(--fallback-image);
-}
-
-[class*="laliho"] .loadscreen .border-1{border: none;}
-[class*="laliho"] .loadscreen .background-1{background-color: transparent;}
-[class*="laliho"] .loadscreen .border-background-1{
-    background-color: transparent;
-    border: none;
-}
-
-[class*="laliho"] .loadscreen .staff,
-[class*="laliho"] .loadscreen .player-info{
-    font-size: 24px;
-    color: #000;
-    text-align: center;
-    letter-spacing: 2px;
-}
-
-[class*="laliho"] .loadscreen [player="2"] .player-name-contain{
-    display: block;
-}
-
-@supports not selector(:is(ul, ol)) {
-    [class*="laliho"] .loadscreen .player-name-contain,
-    [class*="laliho"] .loadscreen .commentators,
-    [class*="laliho"] .loadscreen .restreamers,
-    [class*="laliho"] .loadscreen .trackers{
-        text-align: center;
-    }
-}
-@supports selector(:is(ul, ol)) {
-    [class*="laliho"] .loadscreen :is(.player-name-contain, .commentators, .restreamers, .trackers){
-        text-align: center;
-    }
-}
-
-[class*="laliho"] .loadscreen .player-info{
-    line-height: 1;
-}
-
-[class*="laliho"] .loadscreen .name-pronoun-contain{
-    margin: auto;
-}
-
-[class*="laliho"] .loadscreen .staff{
-    top: 362px;
-    height: auto;
-    width: auto;
-    font-size: 24px;
-}
-
-@supports selector(:is(ul, ol)) {
-    [class*="laliho"] :is(.commentators, .restreamers, .trackers){
-        width: auto;
-        margin: 0 auto;
-    }
-}
-
-@supports not selector(:is(ul, ol)) {
-    [class*="laliho"] .commentators, 
-    [class*="laliho"] .restreamers,
-    [class*="laliho"] .trackers{
-        width: auto;
-        margin: 0 auto;
-    }
-}
-
-[class*="laliho"] .loadscreen .staff img {
-    background-position-y: 33.3%;
-    opacity: .9;
-}
-[class*="laliho"] .loadscreen .commentators-contain img {
-    height: .75em;
-}
-
-[class*="laliho"] .loadscreen .round{
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: -2px;
-    font-size: 38px;
-    letter-spacing: 3px;
-}
-.loadscreen .round:empty{
-    display: none;
-}
-
-[class*="laliho"] .loadscreen .final-winner-contain{
-    border: 2px #000 solid;
-    text-align: center;
-    mix-blend-mode: overlay;
-    bottom: 180px;
-}
-
-[class*="laliho"] .loadscreen [player="1"] .final-winner-contain{
-    left: 260px;
-    transform: rotate(-10deg);
-}
-[class*="laliho"] .loadscreen [player="2"] .final-winner-contain{
-    right: 260px;
-    transform: rotate(10deg);
-}
-
-[class*="laliho"] .loadscreen .final-winner-contain > *{
-    width: 143px;
-    text-shadow: none;
-    color: #000;
-    height: auto;
-    justify-content: center;
 }
 
 </style>
