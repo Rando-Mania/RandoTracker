@@ -53,7 +53,7 @@
 @font-face {
     font-family: "FF4";
     src:
-        url("fonts/final_fantasy_iv-webfont.woff") format("woff2"),
+        url("fonts/final_fantasy_iv-webfont.woff2") format("woff2"),
         url("fonts/final_fantasy_iv-webfont.woff") format("woff"),
         url("fonts/Final Fantasy IV.ttf") format("truetype");
 }
@@ -91,7 +91,7 @@
 
 .trans{background-color: transparent; background-image: none;}
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -101,7 +101,17 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
         linear-gradient(red,red) bottom / 100% var(--clipY1);
-    -webkit-mask-repeat: no-repeat
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
 .player-video{
