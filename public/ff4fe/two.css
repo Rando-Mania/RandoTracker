@@ -5,10 +5,13 @@
 }
 
 :root{
-    --border1: solid 1px #fff;
-    --backgroundColor1: #0c0946;
     --vidWidth: 584px;
     --vidAspect: 4 / 3.031;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
+    --border1: solid 1px #fff;
+    --backgroundColor1: #0c0946;
+
     --videoX: 12px; --videoY: 10px;
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
@@ -19,6 +22,13 @@
     --finalX: 169px; --finalY: 591px;
     --bestX: 390px; --bestY: 554px;
     --timerX: 169px; --timerY: 591px;
+    
+    --border: 2px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{
@@ -58,6 +68,27 @@
 }
 
 .layout.trans{background-color: transparent; background-image: none;}
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    mask-repeat: no-repeat
+}
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
