@@ -228,11 +228,13 @@ tr-toggle-class, .in-active {
 }
 
 .player-grid img, .player-grid-2 img{
-    background-image: url(images/2p/ff4fe-spritesheet.png);
     width: 32px;
     height: 32px;
     display: block;
 }
+
+.notwebp .player-grid img, .notwebp .player-grid-2 img{background-image: url(images/2p/ff4fe-spritesheet.png);}
+.webp .player-grid img, .webp .player-grid-2 img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
 
 [property="pass"] img{background-position: 25% 0;}
 [property="hook"] img{background-position: 50% 0;}

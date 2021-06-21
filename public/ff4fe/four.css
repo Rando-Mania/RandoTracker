@@ -120,9 +120,9 @@
     z-index: 7;
 }
 
-.layout.black-background .player-video{
-    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-TheEnd.png);
-}
+.layout.black-background .player-video{background-color: #000;}
+.notwebp .layout.black-background .player-video{background-image: url(images/4p/weekly/FF4FE-WeeklyRace-TheEnd.png);}
+.webp .layout.black-background .player-video{background-image: url(images/4p/weekly/FF4FE-WeeklyRace-TheEnd.webp);}
 
 .player-name{
     font-size: 18px;
