@@ -118,6 +118,8 @@
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 7;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 
 .layout.black-background .player-video{background-color: #000;}

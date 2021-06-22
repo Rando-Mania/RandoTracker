@@ -75,6 +75,8 @@ html{
     margin: 0;
     border: #abe6ff 2px solid;
     box-shadow: 0 0 7px #abe6ff;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 
 .bingo-board{

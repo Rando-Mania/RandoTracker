@@ -102,6 +102,8 @@
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 2;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 
 .player-name{

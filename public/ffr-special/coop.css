@@ -99,6 +99,8 @@ html{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 
 .player-name{

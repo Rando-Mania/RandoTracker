@@ -93,6 +93,8 @@ html{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 
 [player="1"] .player-video, [player="2"] .player-video{border-bottom: 1px solid;}

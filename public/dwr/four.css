@@ -89,6 +89,8 @@ html{
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #000; 
+    transition: background-color .5s;
 }
 .weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .tourney-background{background-image: url('images/video-background/layout_2020.png');}

@@ -380,7 +380,8 @@ button.active{
         #808080;
     background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
 }
-.layout.transparent-background .player-video{background-color: transparent;}
+
+.layout.transparent-background .player-video{background-color: #fff;}
 
 #black, .layout.black-background .player-video{background-color: #000;}
 #blue, .layout.blue-background .player-video{background-color: #00f;}
