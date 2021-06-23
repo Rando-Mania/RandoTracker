@@ -53,6 +53,11 @@ main{
   height: 720px;
 }
 
+.player-video{
+  background-color: #000; 
+  transition: background-color .5s;
+}
+
 .player-video, .layout.four-three .player-video{
   --vHeight: 720px;
   width: calc(var(--vHeight) * 4/3);
