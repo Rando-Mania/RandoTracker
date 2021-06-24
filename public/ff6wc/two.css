@@ -588,6 +588,10 @@ tr-timer{
     font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
 }
 
+tr-timer .dot, tr-timer .ms{
+    display: none;
+}
+
 tr-timer span {
     -webkit-background-clip: text;
     background-clip: text;

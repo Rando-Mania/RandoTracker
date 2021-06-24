@@ -12,7 +12,7 @@
     --videoX: 0; --videoY: 0;
     --nameWidth: 160px;
     --infoX: 445px; --infoY: -1px;
-    --speakerX: 569px; --speakerY: 63px;
+    --speakerX: 569px; --speakerY: 17px;
     --winX: 445px; --winY: 97px;
     --finalX: 445px; --finalY: 51px;
     --vsX: 50%; --vsY: 0;
@@ -121,7 +121,7 @@ html{
 }
 
 .player-info-contain{
-    width: min-content;    
+    width: min-content;  
 }
 
 .player-info-contain:nth-of-type(even){
@@ -147,6 +147,8 @@ html{
     text-shadow: 2px 2px #000, -2px -2px #000;
     border-radius: 0 10px 10px 0;
 }
+[player="1"] .player-name, [player="2"] .player-name{ margin-bottom: -1px;}
+[player="3"] .player-name, [player="4"] .player-name{ margin-top: -1px;}
 
 .player-info-contain:nth-of-type(even) .player-name{
     border-radius: 10px 0 0 10px;
@@ -163,8 +165,8 @@ html{
     padding: 0 .5em;
 }
 
-[player="1"] .player-pronoun, [player="2"] .player-pronoun{margin-top: -1px;}
-[player="3"] .player-pronoun, [player="4"] .player-pronoun{margin-bottom: 2px;}
+.player-pronoun:nth-of-type(1), .player-pronoun:nth-of-type(2){margin-top: -1px;}
+.player-pronoun:nth-of-type(3), .player-pronoun:nth-of-type(4){margin-bottom: -1px;}
 
 
 .center-headers{
@@ -174,23 +176,33 @@ html{
     transform:translate(-50%, -50%); 
     top: 50%;
     left: 50%;
-    pointer-events: none;
+}
+
+.center-headers > div{
+    height: 630px;
 }
 
 .ff6wc-logo-contain{
     margin-bottom: .75em;
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    transform: translateX(-50%);
+    left: 50%;
+    top: 213px;
 }
 
 .center-headers > div{
     display: grid;
     justify-items: center;
+    align-content: space-between;
+}
+.subheadings{
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 41px;
 }
 
 .subhead-text, .subhead-link{
-    font-size: 27px;
-    letter-spacing: .25px;
-    word-spacing: 1px;
+    font-size: 22px;
     margin: .25em 0;
     color: rgba(255,255,255,.9);
     text-align: center;
@@ -259,7 +271,7 @@ tr-player{
 }
 
 .p1-grid-contain, .p2-grid-contain{margin-top: -1px;}
-.p3-grid-contain, .p4-grid-contain{margin-bottom: 2px;}
+.p3-grid-contain, .p4-grid-contain{margin-bottom: -1px;}
 
 .player-info-contain:nth-of-type(1) .player-grid, .player-info-contain:nth-of-type(3) .player-grid{margin-left: -1px;}
 .player-info-contain:nth-of-type(2) .player-grid, .player-info-contain:nth-of-type(4) .player-grid{margin-right: -1px;}
@@ -442,8 +454,11 @@ tr-timer{
     margin-top: 12px;
 	width: 200px;
     height: 53px;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 213px;
     z-index: 1;
-    font: bold 50px 'Ferrum', 'Times New Roman', Times, serif;
+    font: bold 42px 'Ferrum', 'Times New Roman', Times, serif;
 }
 
 tr-timer span {
@@ -457,6 +472,10 @@ tr-timer span {
     text-align: center;
 }
 
+tr-timer .dot, tr-timer .ms{
+    display: none;
+}
+
 .production-team-swap{
     display: grid;
     grid-template-columns: 1fr;
@@ -466,7 +485,10 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 27px;
+    font-size: 22px;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 38px;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -485,7 +507,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 230px;
+    width: 140px;
 }
 
 .staff img {
