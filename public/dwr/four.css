@@ -5,11 +5,14 @@
 }
 
 :root{
+    --vidWidth: 438px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    --vidAspect: 4 / 3;
+
     --border1: 2px solid rgba(255,255,255,.8);
     --backgroundColor1: rgba(0,0,0,.75);
     --backgroundColor2: rgba(0,0,0,1);
-    --vidWidth: 438px;
-    --vidAspect: 4 / 3;
+
     --videoX: -2px; --videoY: -2px;
     --nameWidth: 257px;
     --nameX: 436px; --nameY1: -2px; --nameY2: 276px;
@@ -18,6 +21,13 @@
     --finalX: 579px; --finalY: 40px; --finalY2: 252px;
     --vsX: 50%; --vsY: 150px;
     --winX: 459px; --winY1: 38px; --winY2: 242px;
+
+    --border: 2px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{border: var(--border1);}
@@ -42,7 +52,6 @@
 .abs{position: absolute;}
 
 html{
-    background-color: #c7c7c7;
     line-height: 1.1;
 }
 

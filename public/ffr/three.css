@@ -8,6 +8,7 @@
     --vidWidth: 435px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
+    
     --videoX: 12px; --videoY: 12px;
     --nameWidth: 173px;
     --nameX: 449px; --nameY: 12px;
@@ -65,7 +66,7 @@
     background: url(images/3p/base-background.png) #000;
 }
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),

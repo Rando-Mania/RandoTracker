@@ -5,17 +5,27 @@
 }
 
 :root{
+    --vidWidth: 446px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    --vidAspect: 26 / 21;
+
     --border1: solid 1px #fff;
     --backgroundColor1: rgba(0,0,0,.75);
-    --vidWidth: 446px;
-    --vidAspect: 26 / 21;
-    --videoX: 0; --videoY: 0;
+
+    --videoX: 0px; --videoY: 0px;
     --nameWidth: 160px;
     --infoX: 445px; --infoY: -1px;
     --speakerX: 569px; --speakerY: 17px;
     --winX: 445px; --winY: 97px;
     --finalX: 445px; --finalY: 51px;
     --vsX: 50%; --vsY: 0;
+
+    --border: 1px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{border: var(--border1);}
@@ -33,10 +43,6 @@
 }
 
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 /* layout specific styles */
 
@@ -68,6 +74,29 @@ html{
     --background-overlay: linear-gradient(rgba(255,255,255,0) 30%, rgba(255,255,255,.25), rgba(255,255,255,.0) 70%);
     --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
     background-image: var(--background-fallback);
+}
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
