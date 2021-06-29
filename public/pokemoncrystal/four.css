@@ -9,8 +9,11 @@
     repeating-conic-gradient(from 0deg at 75% 150%, #0d1632 0 20deg, #436295 20deg 30deg, #0d1632 30deg 50deg);
     --border1: border: #abe6ff 2px solid;
     --backgroundColor1: #000;
+
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidWidth: 377px;
     --vidAspect: 10 / 9;
+    
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 152px;
     --nameX: 398px; --nameY: 30px;
@@ -19,6 +22,13 @@
     --winX: 437px; --winY: 63px;
     --finalX: 429px; --finalY: 2px;
     --vsX: 50%; --vsY: 40px;
+
+    --border: 1px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{border: var(--border1); box-shadow: 0 0 7px #abe6ff;}
@@ -28,10 +38,6 @@
     background-color: var(--backgroundColor1);
 }
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 @font-face {
     font-family: "Abel Regular";
@@ -57,6 +63,29 @@ html{
 
 @supports (background-image:conic-gradient(#fff,#000)){
     .layout{background-image: url('images/Crystal_v3_blank_bg.jpg'), var(--conicalFallback);}
+}
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
 .title{

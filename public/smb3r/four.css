@@ -6,7 +6,9 @@
 
 :root{
     --vidWidth: 420px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
+
     --videoX: 22px; --videoY: 18px;
     --nameWidth: 180px;
     /* --backX: 0; --backY: 0; */
@@ -17,16 +19,19 @@
     --winX: 78px; --winX2: 297px; --winY: 358px; --winY2: 356px;
     --vsX: 50%; --vsY: 20px;
     --curtain: url(images/curtain.png);
+
+    --border: 0px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .abs{position: absolute;}
 
 .background-white{
     background-color: #fcfcfc;
-}
-
-html{
-    background-color: #c7c7c7;
 }
 
 /* layout specific styles */
@@ -46,6 +51,29 @@ html{
     position: relative;
     background-color: #ffcc66;
     text-shadow: 0 -1px #fff;
+}
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
 }
 
 .logo{

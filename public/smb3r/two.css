@@ -5,11 +5,13 @@
 }
 
 :root{
+    --vidWidth: 604px;
+    --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
     --backgroundImg: url('../shared/images/checkerboard.png');
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
-    --vidWidth: 604px;
-    --vidAspect: 4 / 3;
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 375px;
     --nameX: 20px; --nameY: 490px;
@@ -19,6 +21,13 @@
     --finalX: 230px; --finalY: 558px;
     --bestX: 869px; --bestY: 558px;
     --curtain: url(images/curtain.png);
+
+    --border: 0px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{border: var(--border1);}
@@ -28,10 +37,6 @@
     background-color: var(--backgroundColor1);
 }
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 @font-face {
     font-family: "SMB3";
@@ -51,6 +56,18 @@ html{
     font-family: 'SMB3', Arial, sans-serif;
     background-color: #ffcc66;
     text-shadow: 0 -1px rgba(255,255,255,.75);
+}
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat
 }
 
 .logo{

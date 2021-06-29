@@ -5,11 +5,13 @@
 }
 
 :root{
+    --vidWidth: 363px;
+    --vidAspect: 292 / 240;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
     --border1: solid 3px #fff;
     --backgroundColor1: rgba(0,0,0,.5);
     --backgroundColor1: rgba(0,0,0,1);
-    --vidWidth: 363px;
-    --vidAspect: 292 / 240;
     --videoX: 59.5px; --videoY1: 61px; --videoY2: 50px;
     --nameWidth: 243px;
     --nameX: 166px; --nameY1: 19px; --nameY2: 8px;
@@ -22,6 +24,13 @@
     --finalX: 59px; --finalY1: 32px; --finalY2: 21px;
     --vsX: 50%; --vsY: 30px;
     --player-color: #f0f;
+
+    --border: 0px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY1) + var(--border));
+    --clipY2: calc(var(--videoY2) + var(--vidHeight) - var(--border));
 }
 
 tr-timer:nth-of-type(1), [player="1"] {--player-color: #40ff00;}
@@ -63,6 +72,30 @@ html{
 .notwebp.notavif .layout{background-image: url('images/4p-layout.png');}
 .webp.notavif .layout{background-image: url('images/4p-layout.webp');}
 .avif .layout{background-image: url('images/4p-layout.avif');}
+
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
+}
 
 .player-video{
     width: var(--vidWidth);

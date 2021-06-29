@@ -6,8 +6,11 @@
 
 :root{
     --backgroundColor1: rgba(0,0,0,1);
+
     --vidWidth: 561px;
     --vidAspect: 292 / 240;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
     --videoX: 11.5px; --videoY: 178px;
     --nameWidth: 382px;
     --nameX: 177px; --nameY: 113px;
@@ -19,6 +22,13 @@
     --finalX: 12px; --finalY: 133px;
     --timeX: 12px; --timeY: 133px;
     --timeH: 43px; --timeW: 165px;
+
+    --border: 3px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 tr-timer:nth-of-type(1), [player="1"] {--player-color: #40ff00;}
@@ -60,6 +70,19 @@ html{
 .notwebp.notavif .layout{background-image: url('images/all-backgrounds-2.png');}
 .webp.notavif .layout{background-image: url('images/all-backgrounds-2.webp');}
 .avif .layout{background-image: url('images/all-backgrounds-2.avif');}
+
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat
+}
 
 .player-video{
     width: var(--vidWidth);
