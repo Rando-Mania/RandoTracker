@@ -5,10 +5,12 @@
 }
 
 :root{
-    --border1: solid 2px #fff;
-    --backgroundColor1: #000;
     --vidWidth: 644px;
     --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
+    --border1: solid var(--border) #fff;
+    --backgroundColor1: #000;
     --videoX: -3px; --videoY: -3px;
     --nameWidth: 381px;
     --nameX: 16px; --nameY: 486px;
@@ -16,6 +18,13 @@
     --winX: 202px; --winY: 525px;
     --finalX: 360px; --finalY: 507px;
     --bestX: 884px; --bestX2: 18px; --bestY: 486px;
+
+    --border: 2px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{border: var(--border1);}
@@ -25,10 +34,6 @@
     background-color: var(--backgroundColor1);
 }
 .abs{position: absolute;}
-
-html{
-    background-color: #c7c7c7;
-}
 
 @font-face {
     font-family: "Orbitron";
@@ -60,6 +65,18 @@ html{
     grid-template-rows: 563px auto;
     overflow: hidden;
   }
+
+  .layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat
+}
 
 .player-video{
     width: var(--vidWidth);
