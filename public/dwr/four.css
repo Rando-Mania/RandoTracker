@@ -868,7 +868,7 @@ tr-timer span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: #0000;
     background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.3));
     border: rgba(255,255,255,.75) 1px solid;
     width: 29px;

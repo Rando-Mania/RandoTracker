@@ -74,7 +74,7 @@
   background-image: linear-gradient(#fe3401, #fe9934 60%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: #0000;
   text-shadow: none;
   filter: drop-shadow(1px 1px #000) drop-shadow(-1px -1px #000) drop-shadow(1px -1px #000) drop-shadow(-1px 1px #000);
 }

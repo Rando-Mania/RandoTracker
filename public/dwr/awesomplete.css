@@ -92,7 +92,7 @@
 	}
 	
 		.awesomplete mark {
-			background: transparent;
+			background: #0000;
 			color: #f8b800;
 			font-weight: bold;
 		}

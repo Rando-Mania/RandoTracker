@@ -176,7 +176,7 @@ button.dummy-text-button:hover{
 
 input[type="text"], textarea{
     padding: 1px;
-    background-image: linear-gradient(-145deg, #111 7px, transparent 8px);
+    background-image: linear-gradient(-145deg, #111 7px, #0000 8px);
     background-repeat: no-repeat;
     background-position: 16px 0;
     transition: background-position linear .16s;
@@ -310,7 +310,7 @@ textarea, select, input, button { outline: none; vertical-align: middle;}
 
 #menu_video_background input[type="radio"][id="transparent"]{ 
     background: url('../shared/images/checkerboard.png');
-    background-color: transparent;
+    background-color: #0000;
     background: conic-gradient(#c0c0c0 90deg, #808080 90deg 180deg, #c0c0c0 180deg 270deg, #808080 270deg) top left / 8px 8px repeat;
     margin-right: .25em;
 }

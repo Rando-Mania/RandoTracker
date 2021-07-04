@@ -189,22 +189,22 @@ input{
 [data-console="nes"]{
   clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 80%, 90% 100%, 10% 100%, 10% 80%, 0 80%);
   background: 
-    repeating-linear-gradient(var(--back-sec) 0 2%, transparent 2% 4%) no-repeat 15% 0 / 23% 95%,
+    repeating-linear-gradient(var(--back-sec) 0 2%, #0000 2% 4%) no-repeat 15% 0 / 23% 95%,
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 75% 0 / 50% 71%;
 }
 
 [data-console="snes"]{
   clip-path: polygon(0 0, 95% 0, 95% 15%, 100% 15%, 100% 85%, 95% 85%, 95% 100%, 0 100%);
   background: 
-  repeating-linear-gradient(to right, transparent 0 10%, var(--back-sec) 10% 12%) no-repeat 0 0 / 100% 15%,
-  repeating-linear-gradient(to right, transparent 0 10%, var(--back-sec) 10% 12%) no-repeat 0 100% / 100% 15%,
-  linear-gradient(to right, var(--back-sec) 0 45%, transparent 45% 55%, var(--back-sec) 55% 100%) no-repeat 50% 50% / 100% 65%;
+  repeating-linear-gradient(to right, #0000 0 10%, var(--back-sec) 10% 12%) no-repeat 0 0 / 100% 15%,
+  repeating-linear-gradient(to right, #0000 0 10%, var(--back-sec) 10% 12%) no-repeat 0 100% / 100% 15%,
+  linear-gradient(to right, var(--back-sec) 0 45%, #0000 45% 55%, var(--back-sec) 55% 100%) no-repeat 50% 50% / 100% 65%;
 }
 
 [data-console="gb"]{
   clip-path: polygon(0 0, 90% 0, 90% 5%, 100% 5%, 100% 100%, 0 100%);
   background:
-  repeating-linear-gradient(var(--back-sec) 0 10%, transparent 10% 20%) no-repeat 0 10% / 100% 15%,
+  repeating-linear-gradient(var(--back-sec) 0 10%, #0000 10% 20%) no-repeat 0 10% / 100% 15%,
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 75% / 75% 60%;
 }
 
@@ -216,17 +216,17 @@ input{
 
 [data-console="n64"]{
   background: 
-    radial-gradient(circle at left center, var(--back-sec) 40%, transparent 40%);
+    radial-gradient(circle at left center, var(--back-sec) 40%, #0000 40%);
 }
 
 [data-console="gc"]{
   background: 
-    radial-gradient(circle at center, transparent 0 10%, var(--back-sec) 10% 40%, transparent 40%);
+    radial-gradient(circle at center, #0000 0 10%, var(--back-sec) 10% 40%, #0000 40%);
 }
 
 [data-console="ds"]{
   background:
-    linear-gradient(45deg, transparent 8%, var(--back-sec) 0) no-repeat 50% 30% / 80% 80%;
+    linear-gradient(45deg, #0000 8%, var(--back-sec) 0) no-repeat 50% 30% / 80% 80%;
 }
 
 .games > div{

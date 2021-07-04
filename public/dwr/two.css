@@ -492,12 +492,12 @@ td:nth-of-type(2){
 }
 
 [player="1"] .spells{
-    background-image: linear-gradient(to top right, rgba(0,0,0,.75) 63%, transparent);
+    background-image: linear-gradient(to top right, rgba(0,0,0,.75) 63%, #0000);
 }
 
 [player="2"] .spells{
     text-align: right;
-    background-image: linear-gradient(to top left, rgba(0,0,0,.75) 63%, transparent);
+    background-image: linear-gradient(to top left, rgba(0,0,0,.75) 63%, #0000);
 }
 
 [property="repel"].spell-highlight{

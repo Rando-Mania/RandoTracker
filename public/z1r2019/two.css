@@ -156,7 +156,7 @@ html{
 }
 
 .player-grid tr-image, .player-grid tr-toggle-class{
-    border: 3px solid transparent;
+    border: 3px solid #0000;
     margin-bottom: 1px;
 }
 
@@ -316,8 +316,8 @@ tr-image-toggle img.active, tr-toggle-class.active {
     display: none;
     background-color: #000;
     background-image: 
-        repeating-linear-gradient(var(--player-color) 0 4px , transparent 4px 60px),
-        repeating-linear-gradient(to right, var(--player-color) 0 4px , transparent 4px 61px)
+        repeating-linear-gradient(var(--player-color) 0 4px , #0000 4px 60px),
+        repeating-linear-gradient(to right, var(--player-color) 0 4px , #0000 4px 61px)
 }
 
 .player-best-of img{

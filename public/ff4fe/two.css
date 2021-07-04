@@ -67,7 +67,7 @@
     background-color: var(--backgroundColor1);
 }
 
-.layout.trans{background-color: transparent; background-image: none;}
+.layout.trans{background-color: #0000; background-image: none;}
 
 .layout.transparent-background{
     -webkit-mask:
@@ -124,7 +124,7 @@
     transition: background-color .5s;
 }
 
-.transparent-background{background-color: transparent;}
+.transparent-background{background-color: #0000;}
 
 .layout.black-background .player-video{background-color: #000;}
 .notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}

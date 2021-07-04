@@ -73,8 +73,8 @@
 .logo{
     padding: 8px;
     background-color: #ffff80;
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
-    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
+    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
+    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
     width: 301px;
     height: 121px;
 }
@@ -107,7 +107,7 @@
     transform: translateX(-50%);
     width: 16px;
     height: 100%;
-    background-image: repeating-linear-gradient( 45deg, transparent 0 33px, #cfcfcf 33px, #efefef 36px), repeating-linear-gradient( -45deg, transparent 0 33px, #cfcfcf 33px, #efefef 36px);
+    background-image: repeating-linear-gradient( 45deg, #0000 0 33px, #cfcfcf 33px, #efefef 36px), repeating-linear-gradient( -45deg, #0000 0 33px, #cfcfcf 33px, #efefef 36px);
     background-position: 0 13px;
     filter: drop-shadow(1px 1px 2px rgba(0,0,0,.5));
 }
@@ -214,10 +214,10 @@
     line-height: 0.7;
     padding-left: 5px;
     background:
-        repeating-linear-gradient(to right, #000 0 2px, transparent 2px 22px) 2px 2px / 100% 2px repeat-x,
-        repeating-linear-gradient(to right, #000 0 2px, transparent 2px 22px) 2px 25px / 100% 2px repeat-x #ffae4c;
+        repeating-linear-gradient(to right, #000 0 2px, #0000 2px 22px) 2px 2px / 100% 2px repeat-x,
+        repeating-linear-gradient(to right, #000 0 2px, #0000 2px 22px) 2px 25px / 100% 2px repeat-x #ffae4c;
     background: 
-        conic-gradient(at 2px 2px, transparent 0.25turn, transparent 0.25turn 0.5turn, transparent 0.5turn 0.75turn, #000 0.75turn) 2px 2px / 22px 23px repeat #ffae4c;
+        conic-gradient(at 2px 2px, #0000 0.25turn, #0000 0.25turn 0.5turn, #0000 0.5turn 0.75turn, #000 0.75turn) 2px 2px / 22px 23px repeat #ffae4c;
 }
 
 tr-image{
@@ -298,7 +298,7 @@ tr-label, figcaption{
     background-image: linear-gradient(#ffff80, #ffcc66);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
+    color: #0000;
     text-shadow: none;
 }
 .player-best-of{
@@ -361,10 +361,10 @@ tr-timer span {
 }
 
 .notwebp .paper-insert{
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
+    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
 }
 .webp .paper-insert{
-    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, transparent 3px, #ffcc66);
+    background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
 }
 .timer-staff-grid{
     height: 216px;

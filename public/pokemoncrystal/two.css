@@ -5,7 +5,7 @@
 }
 
 :root{
-    --conicalFallback: repeating-conic-gradient(at 0 -31%, rgba(255,255,255,.07) 0 7deg, transparent 0 11deg, rgba(255,255,255,.033) 0 31deg, transparent 0 37deg),
+    --conicalFallback: repeating-conic-gradient(at 0 -31%, rgba(255,255,255,.07) 0 7deg, #0000 0 11deg, rgba(255,255,255,.033) 0 31deg, #0000 0 37deg),
     repeating-conic-gradient(at 33% 150%, #0d1632 0 17deg, #436295 0 27deg, #0d1632 0 31deg, #436295 0 37deg);
     --border-1: solid 1px rgba(255,255,255,.75);
     --background-color-1: #000;
@@ -420,7 +420,7 @@ tr-timer span {
 
 .commentators-img{background-position: 75% 33%;}
 .staff img.restreamers-img{
-    background: transparent url('images/monitor-masked.png') 0 0 / 100% 100%;
+    background: #0000 url('images/monitor-masked.png') 0 0 / 100% 100%;
     box-shadow: none;
     border-radius: 0;
     height: 1.2em;

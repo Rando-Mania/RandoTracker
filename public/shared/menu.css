@@ -7,7 +7,7 @@
 input[type="text"], textarea{
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px;
-    background-image: linear-gradient(-145deg, #111 7px, transparent 8px);
+    background-image: linear-gradient(-145deg, #111 7px, #0000 8px);
     background-repeat: no-repeat;
     background-position: 16px 0;
 }
@@ -375,8 +375,8 @@ button.active{
 
 #transparent{ 
     background: 
-        linear-gradient(45deg, #c0c0c0 25%, transparent 0 75%, #c0c0c0 0 100%) 0 0 / 8px 8px,
-        linear-gradient(45deg, #c0c0c0 25%, transparent 0 75%, #c0c0c0 0 100%) 4px 4px / 8px 8px
+        linear-gradient(45deg, #c0c0c0 25%, #0000 0 75%, #c0c0c0 0 100%) 0 0 / 8px 8px,
+        linear-gradient(45deg, #c0c0c0 25%, #0000 0 75%, #c0c0c0 0 100%) 4px 4px / 8px 8px
         #808080;
     background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
 }
@@ -388,8 +388,13 @@ button.active{
 #green, .layout.green-background .player-video{background-color: #0f0;}
 #magenta, .layout.magenta-background .player-video{background-color: #f0f;}
 
+#tech-diff, .layout.tech-diff-background .player-video{
+    background-color: #000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 7 7'%3E%3Cg stroke-width='7'%3E%3Cpath d='M0,3.5h7' stroke='%2300f'/%3E%3Cpath d='M0,3.5h6' stroke='%23f00'/%3E%3Cpath d='M0,3.5h5' stroke='%23f0f'/%3E%3Cpath d='M0,3.5h4' stroke='%230f0'/%3E%3Cpath d='M0,3.5h3' stroke='%230ff'/%3E%3Cpath d='M0,3.5h2' stroke='%23ff0'/%3E%3Cpath d='M0,3.5h1' stroke='%23fff'/%3E%3C/g%3E%3Cpath d='M0,6.5h7' stroke='%23000'/%3E%3Cpath d='M0,6.5h1' stroke='%2300f'/%3E%3Cpath d='M2,6.5h1' stroke='%23f0f'/%3E%3Cpath d='M4,6.5h1' stroke='%230ff'/%3E%3Cpath d='M6,6.5h1' stroke='%23fff'/%3E%3C/svg%3E");
+}
+
 .layout.screen-background .player-video{
-    background: url('../shared/images/video-screens.png') no-repeat 0 0 / 200% 200%;
+    background: url('../shared/images/video-screens.png') no-repeat 0 0 / 200% 200% #000;
 }
 .layout.screen-background [player="2"] .player-video{
     background-position: 100% 0;

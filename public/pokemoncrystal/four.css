@@ -325,7 +325,7 @@ tr-timer span {
 
 .commentators-img{background-position: 75% 33%;}
 .staff img.restreamers-img{
-    background: transparent url('images/monitor-masked.png') 0 0 / 100% 100%;
+    background: #0000 url('images/monitor-masked.png') 0 0 / 100% 100%;
     box-shadow: none;
     border-radius: 0;
     height: 1.2em;
@@ -360,7 +360,7 @@ tr-timer span {
     }
 
 .view-container, .view-container-border{
-    background-color: transparent;
+    background-color: #0000;
 }
 
 /* Bracket Screen */
