@@ -44,22 +44,20 @@
     height: 100%;
     display: grid;
     grid-auto-rows: 1fr auto;
-    grid-gap: 1em;
+    gap: 1em;
     place-items: center;
-    padding: 1em;
+    padding: 0;
 }
 
 .loadscreen-main{
     display: grid;
-    grid-gap: 1em;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-.loadscreen .player-name{
-    /* width: 100%; */
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
+    align-content: space-between;
+    gap: 0 .5em;
+    height: 720px;
+    width: 959px;
+    margin: 0 auto;
 }
 
 .loadscreen-main *{
@@ -67,18 +65,10 @@
     justify-items: center;
 }
 
-.loadscreen{
-    padding: 0;
-}
-.loadscreen-main{
-    width: 959px;
-    margin: 0 auto;
-    grid-gap: 0;
-}
-
 .hero{
     height: 448px;
     width: 100%;
+    grid-column-end: span 2;
 }
 .notwebp.hero{
     background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
@@ -98,35 +88,12 @@
     top: 0;
 }
 
-.footer{
-    background-color: #000;
-    height: 243px;
-    display: flex;
-    gap: 11px;
-    padding: 3px 0 3px 4px;
-    text-align: left;
-}
-.footer h2{
-    font-size: 26px;
-    letter-spacing: 2.5px;
-    text-align: center;
-    font-weight: normal;
-    text-shadow: 2px 2px 2px #000;
-}
-
-.footer .flags{
-    margin: .5em 0;
-}
-
-.footer .flags, .footer .flags-full{
-    white-space: normal;
-    text-align: center;
-    display: block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .footer-flags, .footer-staff-players{
-    padding: 1.4em 1em;
+    min-height: 243px;
+    gap: 11px;
+    text-align: left;
+    margin-bottom: .25em;
+    padding: 1.4em 1em 1em;;
     background-color: #000084;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
@@ -134,12 +101,33 @@
     border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
 }
 
+.footer-flags h2, .footer-staff-players h2{
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.flags{
+    margin: .5em 0;
+}
+
+.flags, .flags-full{
+    white-space: normal;
+    text-align: center;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .footer-flags{
-    width: 375px;
-    height: 237px;
+    min-width: 375px;
 }
 .footer-staff-players{
-    width: 570px;
+    max-width: 570px;
+    min-width: 512px;
+    display: grid;
+    align-content: space-between;
 }
 
 .players{
@@ -215,17 +203,19 @@
                     </picture>
                 </div>
             </div>
-            <div class="footer">
-                <div class="footer-flags">
-                    <h2>Flags</h2>
-                    <tr-text class="flags" property="flags"></tr-text>
-                    <tr-text class="flags" property="flags-full"></tr-text>
-                </div>
-                <div class="footer-staff-players">
+            <div class="footer-flags">
+                <h2>Flags</h2>
+                <tr-text class="flags" property="flags"></tr-text>
+                <tr-text class="flags" property="flags-full"></tr-text>
+            </div>
+            <div class="footer-staff-players">
+                <div>
                     <h2>Tonight's Team</h2>
                     <tr-hide-if-empty class="staff border-background-1" toggle-class="wtf">
                         <tr-template href="../shared/production-team.html"></tr-template>
                     </tr-hide-if-empty>
+                </div>
+                <div>
                     <h2>Featured Runners</h2>
                     <div class="players">
                         <tr-player player="1">
