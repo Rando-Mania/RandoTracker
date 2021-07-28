@@ -273,15 +273,12 @@
 tr-toggle-class, .in-active {
     opacity: 1;
     filter: brightness(0.25);
-    transition: filter .25s;
 }
 
 tr-image-toggle img.active, tr-toggle-class.active {
     opacity: 1;
-    filter: brightness(1);
+    filter: brightness(1) drop-shadow(1px 0 rgba(255, 215, 0, .75)) drop-shadow(-1px -1px rgba(255, 215, 0, .75));;
 }
-
-
 
 .player-grid img, .dialog img{
     width: 32px;
