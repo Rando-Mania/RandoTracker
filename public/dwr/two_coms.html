@@ -51,45 +51,47 @@
 .hidden {display: none;}
 .hide{display: none;}
 
-#scripts{
+.scripts{
   grid-area: 1 / 2 / 3;
 }
 
-#scripts article{
+.scripts details{
   margin-bottom: 1em;
 }
 
-#scripts article div{
+.scripts [open] summary{
   background-color: #333;
+}
+.scripts summary{
+  padding: .5em 1em;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.scripts summary:hover{
+  background-color: #444;
+}
+
+.scripts details div{
+  background-color: #111;
   padding: .5em 1em;
   text-indent: 1em;
 }
 
-#scripts h4{
-  padding-left: 2px;
-  margin-bottom: 1em;
-  cursor: pointer;
-  font-weight: normal;
-}
-
-#scripts h4:hover{
-  background-color: #333;
+.scripts p ~ p {
+  margin-top: .5em;
 }
   
 td:nth-of-type(2) {
   text-align: left;
 }
 
-#scripts tr-text {
+.scripts tr-text {
   color: red;
   font-weight: bold;
 }
-#scripts tr-text:before{
-  content: '[';
-}
-#scripts tr-text:after{
-  content: ']';
-}
+.scripts tr-text:before{content: '[';}
+.scripts tr-text:after{content: ']';}
 
     .stat-color-explain h4{
       margin: .5em 0 1em 0;
@@ -210,63 +212,75 @@ td:nth-of-type(2) {
         </tr>
       </table>
 
-      <div id="scripts">
-          <h3 style="text-align: center; font-weight: normal;">Scripts</h3>
-          <article>
-            <h4>Intro</h4>
-            <div class="hide">
+      <div class="scripts">
+          <h3 style="text-align: center;">Scripts</h3>
+          <details>
+            <summary>
+              Intro
+            </summary>
+            <div>
               <p>The object of Dragon Warrior is for our racers to find and defeat the Evil Dragonlord. They will need to collect certain key items to trade in for the Rainbow Drop, which will allow the runners to enter Charlock Castle, home of the Dragonlord. They
                 also will fight enemies one at a time to gain experience and levels to get stronger, as well as gold to purchase weapons, armor, and items to help in their quest.</p>
               <p>What is randomized in DWR? The map, treasure chest & search spot contents, town & cave locations, weapon/armor shop contents, order of spells learned (guaranteed to learn all 10 spells by level 16), enemy locations, enemy spells & abilities. Also,
                 the Dragonlord, which in the vanilla version of Dragon Warrior has 130 hit points, has a range of 150-165 hit points!</p>
             </div>
-          </article>
-          <article>
-            <h4>Enemy Zones</h4>
-            <div class="hide">
+          </details>
+          <details>
+            <summary>
+              Enemy zones
+            </summary>
+            <div>
               <p>Zone 0 has enemies ranging from Slime through Scorpion, Zones 1 & 2 has enemies up to Wolf.</p>
             </div>
-          </article>
-          <article>
-            <h4>Defense Breaking</h4>
-            <div class="hide">
+          </details>
+          <details>
+            <summary>
+              Defense Breaking
+            </summary>
+            <div>
               <p>When your defense points are the same as or higher than an enemy’s strength, a different attack range is calculated resulting in less damage, in some cases even zero hit points!</p>
             </div>
-          </article>
-          <article>
-            <h4>Gold Grind</h4>
-            <div class="hide">
-              <p>Chests respawn every time you go to the overworld map. However, due to the programming limits at the time the game was made, the game only tracks up to eight chests as ‘opened’.</p> 
-              <p>Every chest opened beyond the eighth chest can be taken over and over again. </p>
+          </details>
+          <details>
+            <summary>
+              Gold Grind
+            </summary>
+            <div>
+              <p>Chests respawn every time you go to the overworld map. However, due to the programming limits at the time the game was made, the game only tracks up to eight chests as "opened."</p>
+              <p>Every chest opened beyond the eighth chest can be taken over and over again.</p>
               <p>Typically this is done by taking at least two chests from a cave, then death warping back to Tantegel Castle, as three chests are marked as taken when you enter the throne room so you don’t take the opening chests more than once.</p>
               <p>Then they’ll go to the castle treasure in the hopes that, by the ninth chest, they can continuously take at least 500 gold over and over again!</p>
               <p>If they are able to do that, the runners will take advantage of this opportunity to get very powerful equipment,
                 such as the Flame Sword (+28 attack), Full Plate or Magic Armor (+24 defense), and Silver Shield (+20 defense).</p>
-            </div>
-          </article>
-          <article>
-            <h4>Closing</h4>
-            <div class="hide">
-              <p>Tune into the Randomania networks ______________.</p>
+              </div>
+          </details>
+          <details>
+            <summary>
+              Closing
+            </summary>
+            <div>
               <p>For our restreamer <tr-text class="restreamers" property="restreamers"></tr-text>, our tracker(s) <tr-text class="trackers" property="trackers"></tr-text>, and my broadcast partner <tr-text class="commentators" property="commentators"></tr-text>, I’m <span>[your name]</span> saying _________________________________________.</p>
             </div>
-          </article>
-          <article>
-            <h4>Chaos Mode</h4>
-            <div class="hide">
+          </details>
+          <details>
+            <summary>
+              Chaos Mode
+            </summary>
+            <div>
               <p>For Chaos Mode, also randomized are the weapon & armor prices, enemy statistics (Strength, Agility, HP, Exp, & Gold), & the amount of experience needed to go from one level to the next. Plus, the Dragonlord, which in the vanilla version of the game
                 has 130 hit points, and in standard DWR has a range of 150-165 HP, in Chaos can have anywhere between 100-230 HP, and can cast either the spell of Sleep or Heal.</p>
-              </div>
-          </article>
-          <article>
-              <h4>Wet Noodle</h4>
-              <div class="hide">
+            </div>
+          </details>
+          <details>
+            <summary>
+              Wet Noodle
+            </summary>
+            <div>
               <p>One monster in the beginning three zones of the game (the zone around Tantegel Castle & the zones directly north, south, east, & west) is guaranted to have 5HP or less. It will also not attack very hard, so the less HP our players lose when a monster
                 attacks, the more likely it is that it’s the low HP monster. The challenge is determining which of the 15 potential monsters it could be…</p>
             </div>
-          </article>
+          </details>
       </div>
-
  
     <div class="stat-color-explain">
       <h3>Stat Coloring Explanations</h3>
@@ -342,16 +356,5 @@ td:nth-of-type(2) {
   <script src="../components/components.js"></script>
   <script src="../components/tracker.js"></script>
   <script src="script/dwr.js"></script>
-  <script>
-  var h4Els = document.querySelectorAll('#scripts h4');
-var divEls = document.querySelectorAll('#scripts article div');
-
-h4Els.forEach(
-  function(el){
-    el.addEventListener('click', function(){
-      el.nextElementSibling.classList.toggle('hide');
-      });
-  });
-</script>
 </body>
 </html>
