@@ -9,14 +9,14 @@
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
 
-    --border1: 2px solid rgba(255,255,255,.8);
+    --border1: var(--border) solid rgba(255,255,255,.8);
     --backgroundColor1: rgba(0,0,0,.75);
     --backgroundColor2: rgba(0,0,0,1);
 
     --videoX: -2px; --videoY: -2px;
     --nameWidth: 257px;
     --nameX: 436px; --nameY1: -2px; --nameY2: 276px;
-    --gridX: 438px; --gridY: 50px; --gridY2: 85px;
+    --gridX: 438px; --gridY: 50px; --gridY2: 74px;
     --speakerX1: 722px; --speakerX2: 439px; --speakerY1: 4px; --speakerY2: 284px;
     --finalX: 579px; --finalY: 40px; --finalY2: 252px;
     --vsX: 50%; --vsY: 150px;
@@ -40,13 +40,13 @@
 
 .map-background{background-color: #002781;}
 .notavif.notwebp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.png');
 }
 .notavif.webp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.webp');
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.webp');
 }
 .avif .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.avif');
 }
 
 .abs{position: absolute;}
@@ -101,6 +101,27 @@ html{
     background-color: #000; 
     transition: background-color .5s;
 }
+
+.layout.transparent-background{
+    --red: linear-gradient(red,red);
+    -webkit-mask:
+        var(--red) left / var(--clipX1),
+        var(--red) center / calc(100% - var(--clipX2) * 2),
+        var(--red) right / var(--clipX1),
+        var(--red) top / 100% var(--clipY1),
+        var(--red) center / 100% calc(100% - var(--clipY2) * 2),
+        var(--red) bottom / 100% var(--clipY1);
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        var(--red) left / var(--clipX1),
+        var(--red) center / calc(100% - var(--clipX2) * 2),
+        var(--red) right / var(--clipX1),
+        var(--red) top / 100% var(--clipY1),
+        var(--red) center / 100% calc(100% - var(--clipY2) * 2),
+        var(--red) bottom / 100% var(--clipY1);
+    mask-repeat: no-repeat;
+}
+
 .weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .tourney-background{background-image: url('images/video-background/layout_2021.png');}
 .chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
@@ -243,6 +264,13 @@ tr-label, .layout figcaption{
     background-color: #000;
 }
 
+.stats-and-spells{
+    display: flex;
+    font-family: "Warrior Quest I and II", "Press Start 2P";
+    color: #fff;
+    height: 202px;
+}
+
 .stat-bottom {
     animation: stat-warning 2s steps(2) infinite;
 }
@@ -290,37 +318,36 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 }
 
 [property="hurt+"].active:after{
-content: '';
-bottom: -5px;
-left: -30px;
-width: calc(270px / 9);
-height: 44px;
-position: absolute;
-background-image: url('images/fireball-frames.png');
-background-position: 0 0;
-animation: fireball 1s steps(9);
-transform: scale(5);
-image-rendering: -moz-crisp-edges;
-image-rendering: pixelated;
-transform-origin: 50% 100%;
-pointer-events: none;
+    content: '';
+    bottom: -5px;
+    left: -30px;
+    width: calc(270px / 9);
+    height: 44px;
+    position: absolute;
+    background-image: url('images/fireball-frames.png');
+    background-position: 0 0;
+    animation: fireball 1s steps(9);
+    transform: scale(5);
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    transform-origin: 50% 100%;
+    pointer-events: none;
 }
 
 @keyframes fireball {
-from{background-position: 0 0;}
-to{background-position: -270px 0;}
+    from{background-position: 0 0;}
+    to{background-position: -270px 0;}
 }
 
-.layout .player-grid, .layout .stats-and-spells{
-    grid-area: 1/1;
-}
-
-.layout .stats-and-spells{
-    display: flex;
+.player-grids-contain, .player-stats-contain{
+    top: 0; 
+    left: 0;
+    width: 1280px;
+    height: 720px;
     z-index: -1;
 }
 
-.layout .z-show{
+.z-show{
     z-index: 2;
 }
 

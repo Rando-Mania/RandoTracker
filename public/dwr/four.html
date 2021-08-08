@@ -26,10 +26,10 @@
         [player="3"] .player-info {left: var(--nameX); bottom: var(--nameY2);}
         [player="4"] .player-info {right: var(--nameX); bottom: var(--nameY1);}
 
-        [player="1"] .player-panels-contain {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-panels-contain {right: var(--gridX); top: var(--gridY2);}
-        [player="3"] .player-panels-contain {left: var(--gridX); bottom: var(--gridY2);}
-        [player="4"] .player-panels-contain {right: var(--gridX); bottom: var(--gridY);}
+        [player="1"] .player-grid, [player="1"] .stats-and-spells {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid, [player="2"] .stats-and-spells {right: var(--gridX); top: var(--gridY2);}
+        [player="3"] .player-grid, [player="3"] .stats-and-spells {left: var(--gridX); bottom: var(--gridY2);}
+        [player="4"] .player-grid, [player="4"] .stats-and-spells {right: var(--gridX); bottom: var(--gridY);}
         
         [player="1"] .player-final {right: var(--finalX); top: var(--finalY);}
         [player="2"] .player-final {left: var(--finalX); top: var(--finalY2);}
@@ -63,13 +63,6 @@
                 </div>
             </div>
             <tr-toggle property="toggle-speaker" class="abs player-speaker">&#9835;</tr-toggle>
-            <div class="player-panels-contain abs">
-                <tr-template class="player-grid background-1" href="items_plot_stats.html"></tr-template>
-                <div class="stats-and-spells">
-                    <tr-template class="stats background-1" href="hero_stats.html"></tr-template>
-                    <tr-template class="spells background-1" href="spells_4p.html"></tr-template>
-                </div>
-            </div>
             <tr-text property="player-final" class="player-final background-2 abs"></tr-text>
             <tr-toggle property="toggle-winner" class="player-winner background-2 abs">WIN!</tr-toggle>
         </template>
@@ -112,6 +105,46 @@
         <tr-template href="league-flags.html"></tr-template>
     </div>
 
+    <div class="player-grids-contain abs">
+        <template id="player_panel_grid">
+            <tr-template class="player-grid background-1 abs" href="items_plot_stats.html"></tr-template>
+        </template>
+
+        <tr-player player="1">
+            <tr-template source="#player_panel_grid"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_panel_grid"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_panel_grid"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_panel_grid"></tr-template>
+        </tr-player>
+    </div>
+
+    <div class="player-stats-contain abs">
+        <template id="player_stats_template">
+            <div class="stats-and-spells abs">
+                <tr-template class="stats background-1" href="hero_stats.html"></tr-template>
+                <tr-template class="spells background-1" href="spells_4p.html"></tr-template>
+            </div>
+        </template>
+
+        <tr-player player="1">
+            <tr-template source="#player_stats_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_stats_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_stats_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_stats_template"></tr-template>
+        </tr-player>
+    </div>
     <!-- loadscreen -->
 <div class="loadscreen-contain map-background abs" style="top:0; left: 0;">
     <tr-template href="four-loading-template.html"></tr-template>

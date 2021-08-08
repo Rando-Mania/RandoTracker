@@ -1,10 +1,14 @@
 :root{
-    --border-1: 2px solid rgba(255,255,255,.8);;
+
+    --vidWidth: 641px;
+    --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
+    --border-1: var(--border) solid rgba(255,255,255,.8);;
     --background-color-1: rgba(0,0,0,.75);
     --background-color-2: rgba(0,0,0,1);
     line-height: 1;
-    --vidWidth: 641px;
-    --vidAspect: 4 / 3;
+
     --videoX: 0px; --videoY: 0px;
     --nameWidth: 367px;
     --nameX: -2px; --nameY: 480px;
@@ -13,6 +17,13 @@
     --finalX: 5px; --finalY: -23px;
     --winX: 43px; --winY: 128px;
     --bestX: 460px; --bestY: 494px;
+
+    --border: 2px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .background-color-1{
@@ -103,7 +114,7 @@
 
 .player-video{
     width: var(--vidWidth);
-    height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    height: var(--vidHeight);
     z-index: 2;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -111,6 +122,28 @@
     background-color: #000;
     transition: background-color .5s;
 }
+
+.layout.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) right / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
+    mask-repeat: no-repeat;
+}
+
 .weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .tourney-background{background-image: url('images/video-background/layout_2021.png');}
 .chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
