@@ -69,6 +69,14 @@
     background-color: var(--backgroundColor1);
 }
 
+.layout.zz4-qualifier{background-image: linear-gradient(#589877,#709d88);}
+.notwebp.notavif .layout.zz4-qualifier{
+    background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
+}
+.webp .layout.zz4-qualifier{
+    background-image: url('images/4p/zz4/Qual-Live-BG.webp'), linear-gradient(#589877,#709d88);
+}
+
 .notwebp.notavif .layout.weekly-monday{
     background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
     background-color: #012f83;
