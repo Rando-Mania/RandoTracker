@@ -205,43 +205,6 @@
 .show-and .load-and.separator{display: inline;}
 .show-and .load-vs.separator{display: none;}
 
-#promos{
-    grid-column: 1 / -1;
-    overflow: hidden;
-    width: 1236px;
-    height: 150px;
-}
-#all_promos_contain{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-    from, 22%{transform: translateY(0);}
-    25%, 47%{transform: translateY(-155px);}
-    50%, 72%{transform: translateY(-315px);}
-    75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-    margin: 0 32px 8px;
-}
-
-#all_promos_contain figcaption{
-    font-size: 12px;
-    background-color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-text-stroke: 0;
-    width: auto;
-    height: auto;
-    padding: .25em .5em;
-    line-height: 1;
-}
-
 .load-best-of{
     position: absolute;
     transform: rotate(-3deg);
@@ -320,9 +283,5 @@
                 </div>
                 <img class="boss-bass" src="images/boss-bass.png" alt="">
             </div>
-            <h3>
-                on RandoMania
-            </h3>
         </div>
-        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
     </div>
