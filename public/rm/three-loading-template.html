@@ -102,41 +102,6 @@ main{
   position: relative;
 }
 
-
-footer{
-  height: 150px;
-  overflow: hidden;
-}
-#promos{
-  grid-column: 1 / -1;
-  overflow: hidden;
-  width: 1236px;
-  height: 150px;
-}
-#all_promos_contain{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 150px;
-  animation: move-promos 60s infinite;
-}
-
-@keyframes move-promos{
-  from, 22%{transform: translateY(0);}
-  25%, 47%{transform: translateY(-155px);}
-  50%, 72%{transform: translateY(-315px);}
-  75%, to{transform: translateY(-470px);}
-}
-#all_promos_contain figure{
-  margin: 0 32px 8px;
-}
-
-#all_promos_contain figcaption{
-  font-size: 12px;
-}
-
 .loadscreen .card-border, .loadscreen tr-hide-if-empty.card-head{
   width: 288px;
 }
@@ -189,7 +154,4 @@ footer{
             <tr-template href="templates/cards/up-next.html"></tr-template>
         </tr-hide-if-empty>
       </aside>
-      <footer>
-        <tr-template id="promos" href="../shared/images/promos/all_promos.html"></tr-template>
-      </footer>
   </div>
