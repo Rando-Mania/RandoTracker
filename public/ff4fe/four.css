@@ -69,11 +69,11 @@
     background-color: var(--backgroundColor1);
 }
 
-.layout.zz4-qualifier{background-image: linear-gradient(#589877,#709d88);}
-.notwebp.notavif .layout.zz4-qualifier{
+.layout.zemus-qualifier{background-image: linear-gradient(#589877,#709d88);}
+.notwebp.notavif .layout.zemus-qualifier{
     background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
 }
-.webp .layout.zz4-qualifier{
+.webp .layout.zemus-qualifier{
     background-image: url('images/4p/zz4/Qual-Live-BG.webp'), linear-gradient(#589877,#709d88);
 }
 
