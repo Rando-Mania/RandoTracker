@@ -81,7 +81,7 @@
     color: #dfd2b4;
     font-family: verdana;
     font-weight: lighter;
-    /*text-align: left;*/
+    text-align: left;
 }
 
 .loadscreen-zemus{background-image: linear-gradient(#589877,#709d88);}
@@ -139,14 +139,20 @@
     /*justify-items: center;*/
 }
 
-.sidebar-staff-players .commentators, .restreamers, .trackers {
+.sidebar-staff-players .commentators, .restreamers, .trackers{
     max-width: 365px;
     width: auto;
 }
 
-.sidebar-staff-players .player-name {
+.sidebar-staff-players .player-name{
     max-width: 213px;
     width: auto;
+}
+
+.sidebar-staff-players img{
+    /* pre-filter comms/stream/tracker icons to black, then convert to #dfd2b4
+       see: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(280%) hue-rotate(4deg) brightness(104%) contrast(85%)
 }
 
 .hero{
