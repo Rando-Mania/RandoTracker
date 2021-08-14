@@ -84,11 +84,6 @@
     /*text-align: left;*/
 }
 
-.loadscreen-zemus h1{
-    font-size: 58px;
-    text-align: center;
-}
-
 .loadscreen-zemus{background-image: linear-gradient(#589877,#709d88);}
 .notwebp.notavif .loadscreen-zemus{
     background-image: url('images/4p/zz4/Qual-Intro-BG.png'), linear-gradient(#589877,#709d88);
@@ -107,6 +102,8 @@
 
 .round-name{
     grid-row: 2;
+    font-size: 58px;
+    text-align: center;
 }
 
 .sidebar-staff-players .players{
@@ -253,7 +250,7 @@
         <div class="loadscreen-zemus">
             <div class="sidebar-staff-players">
                 <div class="round-name">
-                    <h1>Qualifier #1</h1>
+                    <tr-text class="round-input" property="round-text"></tr-text>
                 </div>
                 <div class="players">
                     <tr-player player="1">

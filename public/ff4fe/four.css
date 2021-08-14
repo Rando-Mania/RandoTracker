@@ -529,13 +529,14 @@ tr-timer span {
         "players-extra players backgrounds team team"
         "players-extra players layout      team team"
         "objectives    timer   flags       view reset"
-        "objectives    credits flags       view reset"
+        "objectives    credits round       view reset"
     }
 
 #menu_player_extra{grid-area: players-extra;}
 #menu_backgrounds {grid-area: backgrounds;}
 #menu_objectives {grid-area: objectives;}
 #menu_flags {grid-area: flags; z-index: 3;}
+#menu_round {grid-area: round; z-index: 3;}
 #menu_credits {grid-area: credits; z-index: 2;}
 
 .record-input input, .seed-input input{width: 3em;}
