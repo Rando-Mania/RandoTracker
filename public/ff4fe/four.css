@@ -24,8 +24,22 @@
     --vsX: 50%; --vsY: 30px;
     --timeX: 469px; --timeY: 44px;
 
+    --zemusVideoX: 6px; --zemusVideoY: 6px;
+    --zemusNameWidth: 151px;
+    --zemusNameX: 466px; --zemusNameY: 6px;
+    --zemusPronounX: 568px; --zemusPronounY: 41px;
+    --zemusNumberX: 574px; --zemusNumberY: 167px;
+    --zemusGridX: 466px; --zemusGridY: 76px;
+    --zemusSpeakerX: 581px; --zemusSpeakerY: 78px;
+    --zemusWinX: 485px; --zemusWinY: 113px;
+    --zemusFinalX: 466px; --zemusFinalY: 41px;
+    --zemusTimeX: 466px; --zemusTimeY: 41px;    
+
     --backgroundColor1: #0c0946;
     --backgroundColor2: #000;
+    --zemusBackgroundColor: #242847;
+    --zemusBorderColor: #f7e4ab;
+    --zemusTextColor: #dfd2b4;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -38,6 +52,11 @@
     image-rendering: -moz-crisp-edges;
     border: var(--border) solid #fff;
     border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+}
+
+.layout.zemus-qualifier .border-1{
+    border: var(--border) solid var(--zemusBorderColor);
+    border-radius: 1px;
 }
 
 .border-2{
@@ -69,6 +88,7 @@
     background-color: var(--backgroundColor1);
 }
 
+.layout.zemus-qualifier .background-1{background-color: var(--zemusBackgroundColor);}
 .layout.zemus-qualifier{background-image: linear-gradient(#589877,#709d88);}
 .notwebp.notavif .layout.zemus-qualifier{
     background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
@@ -146,8 +166,17 @@
     z-index: 6;
 }
 
+.layout.zemus-qualifier .player-name{
+    height: 40px;
+    width: calc(var(--zemusNameWidth) + 4px * 2);
+}
+
 .player-name tr-text{
     width: var(--nameWidth);
+}
+
+.layout.zemus-qualifier .player-name tr-text{
+    width: var(--zemusNameWidth);
 }
 
 .player-pronoun{
@@ -160,6 +189,11 @@
     height: 38px;
     white-space: normal;
     z-index: 1;
+}
+
+.layout.zemus-qualifier .player-pronoun {
+    width: 57px;
+    height: 40px;
 }
 
 .player-pronoun:empty, .player-number:empty{
@@ -183,6 +217,11 @@
     display: flex;
 }
 
+.layout.zemus-qualifier .player-grid-contain{
+    width: 107px;
+    height: 118px;
+}
+
 [player="2"] .player-grid-contain,
 [player="4"] .player-grid-contain{
     flex-direction: row-reverse;
@@ -196,6 +235,10 @@
     grid-auto-flow: row dense;
     justify-content: space-between;
     align-content: space-between;
+}
+
+.layout.zemus-qualifier .player-grid{
+    grid-template-columns: repeat(4, 19px);
 }
 
 .player-grid-2{
@@ -290,6 +333,13 @@ tr-toggle-class, .in-active {
     background-position: 100% 0%;
 }
 
+.layout.zemus-qualifier .player-speaker img{
+    /* White shows poorly on the qualifier background.
+       So, pre-filter the speaker icon to black, then convert to --zemusBackgroundColor
+       see: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: brightness(0) invert(13%) sepia(40%) saturate(936%) hue-rotate(196deg) brightness(90%) contrast(90%);
+}
+
 [player="2"] .player-speaker, [player="4"] .player-speaker{
     transform: rotateY(180deg);
 }
@@ -327,8 +377,16 @@ tr-toggle-class, .in-active {
     flex-direction: column;
 }
 
+.layout.zemus-qualifier .objectives-contain{
+    top: 409px;
+}
+
 .objectives-contain > *{
     margin-bottom: -2px;
+}
+
+.layout.zemus-qualifier .objectives-contain > *{
+    margin-bottom: -4px;
 }
 
 .objective-contain{
@@ -353,10 +411,22 @@ tr-toggle-class, .in-active {
     padding-top: 2.5px;
 }
 
+.layout.zemus-qualifier .objective-label{
+    font-size: 18px;
+    width: 25px;
+    height: 26px;
+}
+
 .objective-text-contain{
     height: 24px;
-    width: 313px;
+    width: 314px;
     margin-left: -1px;
+}
+
+.layout.zemus-qualifier .objective-text-contain{
+    width: 314px;
+    height: 26px;
+    margin-left: -3px;
 }
 
 .objectives-contain tr-text{
@@ -367,6 +437,10 @@ tr-toggle-class, .in-active {
     height: 24px;
 }
 
+.layout.zemus-qualifier .objectives-contain tr-text{
+    
+}
+
 .vs{
     font-size: 21px;
     z-index: 8;
@@ -375,6 +449,12 @@ tr-toggle-class, .in-active {
 tr-timer, .player-final{
 	width: 105px;
     height: 38px;
+    font-size: 14px;    
+}
+
+.layout.zemus-qualifier tr-timer, .player-final{
+    width: 107px;
+    height: 40px;
     font-size: 14px;    
 }
 
@@ -416,6 +496,12 @@ tr-timer span {
     padding: 4px;
 }
 
+.layout.zemus-qualifier .flags-contain{
+    width: 336px;
+    height: 62px;
+    top: 344px;
+}
+
 .flags-icon{
     justify-self: center;
     background-image: url('images/flag-sm.png');
@@ -433,6 +519,12 @@ tr-timer span {
     top: 296px;
     transform: translateX(-50%); 
     left: 50%;
+}
+
+.layout.zemus-qualifier .staff{
+    width: 336px;
+    height: 45px;
+    top: 296px;
 }
 
 .staff-panel-1, .staff-panel-2{
