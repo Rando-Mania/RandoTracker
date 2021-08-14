@@ -12,7 +12,52 @@
     <link rel="preload" href="images/4p/weekly/FF4FE-WeeklyRace-TheEnd.webp" as="image" type="image/webp">
     <link rel="preload" href="images/4p/FF4FE-SpriteSheet-4P.png" as="image" type="image/png">
     <style>
-        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="1"] .player-video {left: var(--zemusVideoX); top: var(--zemusVideoY);}
+        [player="2"] .player-video {right: var(--zemusVideoX); top: var(--zemusVideoY);}
+        [player="3"] .player-video {left: var(--zemusVideoX); bottom: var(--zemusVideoY);}
+        [player="4"] .player-video {right: var(--zemusVideoX); bottom: var(--zemusVideoY);}
+    
+        [player="1"] .player-name {left: var(--zemusNameX); top: var(--zemusNameY);}
+        [player="2"] .player-name {right: var(--zemusNameX); top: var(--zemusNameY);}
+        [player="3"] .player-name {left: var(--zemusNameX); bottom: var(--zemusNameY);}
+        [player="4"] .player-name {right: var(--zemusNameX); bottom: var(--zemusNameY);}
+
+        [player="1"] .player-pronoun {left: var(--zemusPronounX); top: var(--zemusPronounY);}
+        [player="2"] .player-pronoun {right: var(--zemusPronounX); top: var(--zemusPronounY);}
+        [player="3"] .player-pronoun {left: var(--zemusPronounX); bottom: var(--zemusPronounY);}
+        [player="4"] .player-pronoun {right: var(--zemusPronounX); bottom: var(--zemusPronounY);}
+
+        [player="1"] .player-number {left: var(--zemusNumberX); top: var(--zemusNumberY);}
+        [player="2"] .player-number {right: var(--zemusNumberX); top: var(--zemusNumberY);}
+        [player="3"] .player-number {left: var(--zemusNumberX); bottom: var(--zemusNumberY);}
+        [player="4"] .player-number {right: var(--zemusNumberX); bottom: var(--zemusNumberY);}
+
+        [player="1"] .player-grid-contain {left: var(--zemusGridX); top: var(--zemusGridY);}
+        [player="2"] .player-grid-contain {right: var(--zemusGridX); top: var(--zemusGridY);}
+        [player="3"] .player-grid-contain {left: var(--zemusGridX); bottom: var(--zemusGridY);}
+        [player="4"] .player-grid-contain {right: var(--zemusGridX); bottom: var(--zemusGridY);}
+
+        tr-timer:nth-of-type(1) {left: var(--zemusTimeX); top: var(--zemusTimeY);}
+        tr-timer:nth-of-type(2) {right: var(--zemusTimeX); top: var(--zemusTimeY);}
+        tr-timer:nth-of-type(3) {left: var(--zemusTimeX); bottom: var(--zemusTimeY);}
+        tr-timer:nth-of-type(4) {right: var(--zemusTimeX); bottom: var(--zemusTimeY);}
+        
+        [player="1"] .player-final {left: var(--zemusFinalX); top: var(--zemusFinalY);}
+        [player="2"] .player-final {right: var(--zemusFinalX); top: var(--zemusFinalY);}
+        [player="3"] .player-final {left: var(--zemusFinalX); bottom: var(--zemusFinalY);}
+        [player="4"] .player-final {right: var(--zemusFinalX); bottom: var(--zemusFinalY);}
+    
+        [player="1"] .player-speaker {left: var(--zemusSpeakerX); top: var(--zemusSpeakerY);}
+        [player="2"] .player-speaker {right: var(--zemusSpeakerX); top: var(--zemusSpeakerY);}
+        [player="3"] .player-speaker {left: var(--zemusSpeakerX); bottom: var(--zemusSpeakerY);}
+        [player="4"] .player-speaker {right: var(--zemusSpeakerX); bottom: var(--zemusSpeakerY);}
+    
+        [player="1"] .player-winner {left: var(--zemusWinX); top: var(--zemusWinY);}
+        [player="2"] .player-winner {right: var(--zemusWinX); top: var(--zemusWinY);}
+        [player="3"] .player-winner {left: var(--zemusWinX); bottom: var(--zemusWinY);}
+        [player="4"] .player-winner {right: var(--zemusWinX); bottom: var(--zemusWinY);}        
+
+/*      [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
         [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
         [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
@@ -41,7 +86,7 @@
         tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
         tr-timer:nth-of-type(3) {left: var(--timeX); bottom: var(--timeY);}
         tr-timer:nth-of-type(4) {right: var(--timeX); bottom: var(--timeY);}
-        
+
         [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
         [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
         [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
@@ -55,7 +100,7 @@
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
         [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
-        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
+        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}*/
     </style>
 </head>
 <body>
