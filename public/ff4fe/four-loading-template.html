@@ -49,8 +49,9 @@
     padding: 0;
 }
 
+/*NOTE: The weekly layout is completely disabled until we fix a buggy interaction with display: none and scaleToFit text.*/
 .loadscreen-main{
-    display: grid;
+    display: none;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
     align-content: space-between;
@@ -66,7 +67,7 @@
 }
 
 .loadscreen-zemus{
-    display: none;
+    display: grid;
     grid-template-columns: 760px 497px auto;
     grid-template-rows: 1fr;
     align-content: space-between;
@@ -77,16 +78,15 @@
 }
 
 .loadscreen-zemus *{
+    color: #dfd2b4;
+    font-family: verdana;
+    font-weight: lighter;
     justify-content: center;
     justify-items: center;
 }
 
-.zemus-qualifier .loadscreen-zemus {
-    display: grid;
-}
-
-.zemus-qualifier .loadscreen-main {
-    display: none;
+.loadscreen-zemus h1{
+    font-size: 58px;
 }
 
 .loadscreen-zemus{background-image: linear-gradient(#589877,#709d88);}
@@ -106,19 +106,32 @@
 }
 
 .round-name{
-    position: relative;
-    top: 190px;
+    position: absolute;
+    top: 201px;
+    width: 497px;
 }
 
 .sidebar-staff-players .players{
-    position: relative;
-    top: 348px;
+    position: absolute;
+    top: 386px;
+    left: 780px;
+    width: 457px;
+}
+
+.sidebar-staff-players .players *{
+    font-size: 42px;
+    height: 100%;
 }
 
 .sidebar-staff-players .broadcasters{
-    position: relative;
-    top: 460px;
+    position: absolute;
+    top: 570px;
+    width: 497px;
     text-align: left;
+}
+
+.sidebar-staff-players .broadcasters *{
+    font-size: 26px;
 }
 
 /*.loadscreen .footer-flags{
@@ -226,7 +239,7 @@
         </template>
         <template id="zemus_player_info_load_template">
             <div class="player-name-contain">
-                <tr-text class="player-name" property="player-name"></tr-text>
+                <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
             </div>
         </template>
         <div class="loadscreen-zemus">
@@ -253,17 +266,17 @@
                         <div class="staff-panel-2">
                             <tr-hide-if-empty class="commentators-contain" target=".commentators" toggle-class="display-none">
                                 <img width="20" height="20" class="commentators-img" src="../shared/images/icons/blank.svg" alt="">
-                                <tr-text class="commentators" property="commentators"></tr-text>
+                                <tr-text scale-to-fit class="commentators" property="commentators"></tr-text>
                             </tr-hide-if-empty>
                         </div>
                         <div class="staff-panel-2">
                             <tr-hide-if-empty class="restreamers-contain" target=".restreamers" toggle-class="display-none">
                                 <img width="20" height="20" class="restreamers-img" src="../shared/images/icons/blank.svg" alt="">
-                                <tr-text class="restreamers" property="restreamers"></tr-text>
+                                <tr-text scale-to-fit class="restreamers" property="restreamers"></tr-text>
                             </tr-hide-if-empty>
                             <tr-hide-if-empty class="trackers-contain" target=".tracker" toggle-class="display-none">
                                 <img width="20" height="20" class="trackers-img" src="../shared/images/icons/blank.svg" alt="">
-                                <tr-text class="trackers" property="trackers"></tr-text>
+                                <tr-text scale-to-fit class="trackers" property="trackers"></tr-text>
                             </tr-hide-if-empty>
                         </div>
                     </tr-hide-if-empty>
