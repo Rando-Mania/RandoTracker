@@ -177,7 +177,7 @@
     border-radius: 0 10px 10px 0;
 }
 [player="1"] .player-name, [player="2"] .player-name{ margin-bottom: -1px;}
-[player="3"] .player-name, [player="4"] .player-name{ margin-top: -1px;}
+[player="3"] .player-name, [player="4"] .player-name{ margin-top: -1px; border-bottom: none;}
 
 .player-info-contain:nth-of-type(even) .player-name{
     border-radius: 10px 0 0 10px;
@@ -216,7 +216,7 @@
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
     transform: translateX(-50%);
     left: 50%;
-    top: 213px;
+    top: 233px;
 }
 
 .center-headers > div{
@@ -228,14 +228,16 @@
     transform: translateX(-50%);
     left: 50%;
     bottom: 41px;
+    width: 149px;
 }
 
 .subhead-text, .subhead-link{
-    font-size: 22px;
+    font-size: 20px;
     margin: .25em 0;
     color: rgba(255,255,255,.9);
     text-align: center;
     display: block;
+    white-space: normal;
 }
 
 .glitch{
@@ -489,7 +491,7 @@ tr-timer{
     height: 53px;
     transform: translateX(-50%);
     left: 50%;
-    bottom: 213px;
+    bottom: 229px;
     z-index: 1;
     font: bold 42px 'Ferrum', 'Times New Roman', Times, serif;
 }
@@ -540,7 +542,7 @@ tr-timer .dot, tr-timer .ms{
 }
 
 .commentators, .restreamers, .trackers{
-    width: 140px;
+    width: 125px;
 }
 
 .staff img {
