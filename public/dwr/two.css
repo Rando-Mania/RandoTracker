@@ -656,6 +656,14 @@ tr-timer{
         width: 0.7em;
     }
  
+    .colon{
+        position: relative;
+    }
+    
+    .dot, .ms{
+        display:none;
+    }
+
     #menu_timer, #menu_playlist{
         display: grid;
         justify-items: center;
