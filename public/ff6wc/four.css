@@ -398,7 +398,7 @@ tr-player{
 
 .player-grid .icon-slot{
     width: 32px;
-    height: 64px;
+    height: 54px;
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
@@ -406,6 +406,7 @@ tr-player{
     position: relative;
     background-image: url(images/sprite-sheet.png);
     background-repeat: no-repeat;
+    line-height: .7;
 }
 
 .counter{
@@ -420,7 +421,7 @@ tr-player{
 }
 
 .player-grid .icon-slot.magicite{
-    background-position: 92% -9px;
+    background-position: 92% -13px;
     background-size: 500% auto;
 }
 
@@ -429,7 +430,7 @@ tr-player{
     background-size: 300% auto;
 }
 .dragons{
-    background-position: 50% 9px;
+    background-position: 50% 3px;
     background-size: 300% auto;
 }
 
