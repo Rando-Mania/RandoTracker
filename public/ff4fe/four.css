@@ -24,20 +24,8 @@
     --vsX: 50%; --vsY: 30px;
     --timeX: 469px; --timeY: 44px;
 
-    --zemusVideoX: 6px; --zemusVideoY: 6px;
-    --zemusNameWidth: 151px;
-    --zemusNameX: 466px; --zemusNameY: 6px;
-    --zemusPronounX: 568px; --zemusPronounY: 41px;
-    --zemusNumberX: 574px; --zemusNumberY: 167px;
-    --zemusGridX: 466px; --zemusGridY: 76px;
-    --zemusSpeakerX: 581px; --zemusSpeakerY: 78px;
-    --zemusWinX: 485px; --zemusWinY: 113px;
-    --zemusFinalX: 466px; --zemusFinalY: 41px;
-    --zemusTimeX: 466px; --zemusTimeY: 41px;    
-
     --backgroundColor1: #0c0946;
     --backgroundColor2: #000;
-    --zemusBackgroundColor: #242847;
     --zemusBorderColor: #f7e4ab;
     --zemusTextColor: #dfd2b4;
 
@@ -47,6 +35,21 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
+.layout.zemus-qualifier {
+    --videoX: 6px; --videoY: 6px;
+    --nameWidth: 151px;
+    --nameX: 466px; --nameY: 6px;
+    --pronounX: 568px; --pronounY: 41px;
+    --numberX: 570px; --numberY: 158px;
+    --gridX: 466px; --gridY: 76px;
+    --speakerX: 581px; --speakerY: 78px;
+    --winX: 485px; --winY: 113px;
+    --finalX: 466px; --finalY: 41px;
+    --timeX: 466px; --timeY: 43px;
+
+    --backgroundColor1: #242847;
+}
+
 .border-1{
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
@@ -54,13 +57,14 @@
     border-image: url(images/ff4-border.png) 3 / 3px / 1px;
 }
 
-.layout.zemus-qualifier .border-1{
-    border: var(--border) solid var(--zemusBorderColor);
-    border-radius: 1px;
-}
-
 .border-2{
     box-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff;
+}
+
+.layout.zemus-qualifier .border-1, .border-2{
+    border: var(--border) solid var(--zemusBorderColor);
+    border-radius: 1px;
+    box-shadow: none;
 }
 
 .background-1{background-color: var(--backgroundColor1);}
@@ -88,7 +92,6 @@
     background-color: var(--backgroundColor1);
 }
 
-.layout.zemus-qualifier .background-1{background-color: var(--zemusBackgroundColor);}
 .layout.zemus-qualifier{background-image: linear-gradient(#589877,#709d88);}
 .notwebp.notavif .layout.zemus-qualifier{
     background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
@@ -168,7 +171,7 @@
 
 .layout.zemus-qualifier .player-name{
     height: 40px;
-    width: calc(var(--zemusNameWidth) + 4px * 2);
+    width: calc(var(--nameWidth) + 4px * 2);
 }
 
 .player-name tr-text{
@@ -176,7 +179,7 @@
 }
 
 .layout.zemus-qualifier .player-name tr-text{
-    width: var(--zemusNameWidth);
+    width: var(--nameWidth);
 }
 
 .player-pronoun{
@@ -208,6 +211,11 @@
     justify-content: center;
     align-items: center;
     z-index: 0;
+}
+
+.layout.zemus-qualifier .player-number{
+    width: 36px;
+    height: 36px;
 }
 
 .player-grid-contain{
@@ -454,7 +462,7 @@ tr-timer, .player-final{
 
 .layout.zemus-qualifier tr-timer, .player-final{
     width: 107px;
-    height: 40px;
+    height: 38px;
     font-size: 14px;    
 }
 
@@ -465,6 +473,11 @@ tr-timer{
 tr-timer span {
     width: 14px;
     text-align: center;
+}
+
+.layout.zemus-qualifier tr-timer span {
+    position: relative;
+    top: 1px;
 }
 
 .ms, .dot {
