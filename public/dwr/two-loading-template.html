@@ -1,89 +1,23 @@
-    <!-- loadscreen -->
-    <div class="loadscreen">
-        <div class="loadscreen-main">
-        <!-- <aside class="flip-card">
-            <header>
-                <h1>
-                    <div id="d">Dragon</div>
-                    <div id="w"><span>W</span>arrio<span>r</span></div>
-                    <div id="r">Randomizer</div>
-                </h1>
-                <h4>
-                    <span>!DWR</span>
-                </h4>
-            </header>
-            <div class="flip-card-inner">
-                <article class="hero flip-card-front">
-                    <div class="subhead">
-                        <h3>RANDOMIZED HERO!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>spell learning lvl/order</li>
-                            <li>different Hero sprites</li>
-                            <li>LEVELING Speed
-                                <ul>
-                                    <li>normal, +25% or +50%</li> 
-                                </ul>
-                            </li>
-                            <li>STAT GROWTH</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="map flip-card-back">
-                    <div class="subhead">
-                        <h3 class="angled">RANDOMIZED OVERWORLD!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Town/Cave Locations</li>
-                            <li>Weapon shop Prices</li>
-                            <li>Weapon shop items</li>
-                            <li>OVERWORLD MAP</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-            <div class="flip-card-inner">
-                <article class="enemies flip-card-front">
-                    <div class="subhead">
-                        <h3 class="angled">RANDOMIZED ENEMIES!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Random Mini-Bosses</li>
-                            <li>Enemy Attacks</li>
-                            <li>Enemy Zones</li>
-                            <li>Enemy Stats</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="other flip-card-back">
-                    <div class="subhead">
-                        <h3 class="angled">Other Stuff!</h3>
-                    </div>
-                    <div class="element bordered">
-                        <ul>
-                            <li>Enable Death Necklace</li>
-                            <li>Short Charlock</li>
-                            <li>Big Swamp Mode</li>
-                            <li>Menu Wrapping</li>
-                            <li>No Keys Mode</li>
-                            <li>Fast Text</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </aside> -->
+<!-- loadscreen -->
+<div class="loadscreen">
+    <div class="loadscreen-main">
         <main>
             <header>
                 <h1><span>D</span>ragon Warrio<span>r</span></h1>
                 <h2>Randomizer</h2>
             </header>
             <div class="loading-runners">
-                <h2><tr-text player="1" class="player-name" property="player-name">Dummy</tr-text></h2>
-                <h2 class="load-vs">vs</h2>
-                <h2><tr-text player="2" class="player-name" property="player-name">Text</tr-text></h2>
+                <div class="player-info-contain">
+                    <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+                    <tr-text player="1" property="player-final" class="player-final"></tr-text>
+                    <tr-toggle player="1" property="toggle-winner" class="player-winner">WINNER!</tr-toggle>
+                </div>
+                <div class="load-vs">VS</div>
+                <div class="player-info-contain">
+                    <tr-text player="2" class="player-name" property="player-name">Dummy</tr-text>
+                    <tr-text player="2" property="player-final" class="player-final"></tr-text>
+                    <tr-toggle player="2" property="toggle-winner" class="player-winner">WINNER!</tr-toggle>
+                </div>
             </div>
             <div>
                 <h2 id="changeText">Randomizing Dragon Warrior&hellip;</h2>

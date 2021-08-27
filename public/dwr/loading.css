@@ -48,7 +48,7 @@
   text-align: center;
   height: 100%;
   display: grid;
-  grid-template-columns: 58%;
+  grid-template-columns: 60%;
   align-content: space-around;
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;

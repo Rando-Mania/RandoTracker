@@ -990,7 +990,58 @@ img[src="images/monsters/demon-knight.png"]{
 .rank-input input {width: 3em;} 
 .record-input input {width: 4em;}
 
-.loadscreen-player-names{
-    font-size: 24px;
-    line-height: 2;
+.loadscreen{
+    overflow: hidden;
+}
+.loadscreen main{
+    padding-left: 4em;
+}
+.loading-runners .player-info-contain{
+    position: relative;
+}
+
+.loading-runners .player-name{
+    font-size: 2.4rem;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.loading-runners .player-final{
+    right: 0;
+    font-size: 1.25em;
+    position: absolute;
+    height: 46px;
+    width: 172px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 0;
+}
+.loading-runners .player-final:empty{
+    display: none;
+}
+.loading-runners .player-final:after{
+    content: none;
+}
+
+.loading-runners [player="1"].player-final, 
+.loading-runners [player="1"].player-winner{
+    top: -3em;
+}
+
+.loading-runners [player="2"].player-final, 
+.loading-runners [player="2"].player-winner{
+    bottom: -3em;
+}
+
+.loading-runners .player-winner{
+    left: 0;
+    position: absolute;
+    background-color: #000;
+}
+
+.loading-runners .load-vs{
+    opacity: .75;
+    font-weight: bold;
 }
