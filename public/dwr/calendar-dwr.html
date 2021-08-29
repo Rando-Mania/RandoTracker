@@ -1,0 +1,54 @@
+<style>
+
+.calendar-contain{
+    width: 1280px;
+    height: 720px;
+    z-index: 50;
+    display: none;
+    padding: 40px;
+    background-color: #000;
+    --calendar-fallback: linear-gradient(#000 0 33.3%, #111 0 66.6%, #010 0 100%), 
+    linear-gradient(90deg, #000 0 16.6%, #210308 0 33.3%, #232607 0 50%, #000 0 66.6%, #2e271f 0 83.3%, #212e10 0 100%);
+    background-image: var(--calendar-fallback);
+    background-size: 50% 50%;
+    background-blend-mode: screen;
+}
+
+.notavif .calendar-contain{
+  background-image: url(../shared/images/rm-generic-half.png), var(--calendar-fallback);
+  background-blend-mode: normal, screen;
+}
+.avif .calendar-contain{
+  background-image: url(../shared/images/rm-generic-half.avif), var(--calendar-fallback);
+  background-blend-mode: normal, screen;}
+
+
+.calendar{
+    height: 100%;
+    justify-items: center;
+    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-variant: small-caps;
+}
+
+.calendar-contain.show{
+    display: block;
+}
+
+.calendar-header{
+    text-align: center;
+    color: #fff;
+}
+
+.calendar-contain iframe {
+    animation: rotateIn .5s linear;
+    perspective: 1200px;
+}
+
+@keyframes rotateIn {
+    from{transform: rotateY(90deg);}
+    to{transform: rotateY(0deg);}
+} 
+</style>
+<div class="calendar">
+    <iframe src="https://script.google.com/macros/s/AKfycbwnVFJIlIjOEVIfcZLYiVeYr3DUSVwnzrL0kWU6-6Zgvw2hBXOG/exec?tourney=DW1R2021" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+</div>
