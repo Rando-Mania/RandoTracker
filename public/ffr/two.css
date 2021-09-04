@@ -5,20 +5,22 @@
 }
 
 :root{
-    --vidWidth: 615px;
-    --vidAspect: 4 / 3;
+    --border1: 1px solid #fff;
+    --vidWidth: 560px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
-    
-    --videoX: 20px; --videoY: 102px;
-    --nameWidth: 360px;
-    --nameX: 20px; --nameY: 10px;
-    --gridX: 20px; --gridY: 565px;
-    --pronounX: 20px; --pronounY: 63px;
-    --rankX: 133px; --rankY: 63px;
-    --speakerX: 245px; --speakerY: 60px;
-    --winX: 125px; --winY: 652px;
-    --finalX: 20px; --finalY: 652px;
-    --bestX: 285px; --bestY: 65px;
+    --vidAspect: 4 / 3;
+    --videoX: 3px; --videoY: 83px;
+	--nameblockX: 161px; --nameblockY: 31px;
+    --nameWidth: 150px;
+    --nameX: 165px; --nameY: 39px;
+    --gridX: 3px; --gridY: 505px;
+    --pronounX: 327px; --pronounY: 34px;
+    --rankX: 327px; --rankY: 52px;
+    --speakerX: 420px; --speakerY: 38px;
+    --winX: 100px; --winY: 610px;
+    --finalX: 3px; --finalY: 31px;
+    --bestX: 3px; --bestY: 640px;
+	--timeX: 3px; --timeY: 31px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -32,15 +34,7 @@
 }
 
 .layout.show-cams{
-    --videoY: 62px;
-    --camX: 20px; --camY: 526px;
-    --pronounX: 285px; --pronounY: 586px;
-    --rankX: 414px; --rankY: 586px;
-    --gridX: 285px; --gridY: 526px;
-    --speakerX: 405px; --speakerY: 15px;
-    --bestX: 290px; --bestY: 631px;
-    --winY: 50px;
-    --finalX: 225px; --finalY: 50px;
+    --camX: 322px; --camY: 505px;
 }
 
 .border-1{
@@ -75,7 +69,7 @@
     background-color: #000;
 }
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -85,22 +79,6 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
     -webkit-mask-repeat: no-repeat
-}
-
-.player-video{
-    width: var(--vidWidth);
-    height: var(--vidHeight);
-    z-index: 2;
-}
-
-.player-cam{
-    display: none;
-}
- 
-.layout.show-cams .player-cam{
-    display: block;
-    width: 262px;
-    height: 185px;
 }
 
 .ffr-default{
@@ -142,11 +120,6 @@
 .webp .ffr-rush{background-image: url(images/2p/base-rush.webp), var(--rush-fallback);}
 
 .layout.ffr-rush .player-grid {display: none;}
-.layout.ffr-rush tr-timer {left: 20px; top: 620px;}
-.layout.ffr-rush{
-    --winY: 565px;
-    --finalY: 565px;
-}
 
 .ffr-dark{background-color: #000;}
 .notwebp .ffr-dark{background-image: url(images/2p/base-dark.png);}
@@ -158,56 +131,35 @@
 .webp.notavif .ffr-duckling{background-image: url(images/2p/base-duckling.webp);}
 .avif .ffr-duckling{background-image: url(images/2p/base-duckling.avif);}
 
-/* cam layouts */
-
-.notwebp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.png);}
-.webp .show-cams.ffr-default{background-image: url(images/2p-cam/base-background.webp);}
-
-.notwebp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.png);}
-.webp .show-cams.ffr-irongol{background-image: url(images/2p-cam/base-irongol.webp);}
-
-.notwebp .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.png);}
-.webp.notavif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.webp);}
-.avif .show-cams.ffr-tourney{background-image: url(images/2p-cam/base-tourney.avif);}
-
-.notwebp .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.png);}
-.webp.notavif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.webp);}
-.avif .show-cams.ffr-league{background-image: url(images/2p-cam/base-league.avif);}
-
-/* .show-cams.ffr-league{ 
-    background-image: image-set( 
-        "images/2p-cam/base-league.avif" type("image/avif"),
-        "images/2p-cam/base-league.webp" type("image/webp"),
-        "images/2p-cam/base-league.png" type("image/png")
-    );
-} */
-
-.show-cams.ffr-rush{
-    --pronounY: 526px;
-    --rankY: 526px;
-    --winY: 50px;
-    --finalY: 50px;
+.player-video{
+    width: var(--vidWidth);
+    height: var(--vidHeight);
+    z-index: 2;
+    border-radius: 8px;
+    background-color: #000; 
+    transition: background-color .5s;
 }
-.notwebp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.png);}
-.webp .show-cams.ffr-rush{background-image: url(images/2p-cam/base-rush.webp);}
-/* .show-cams.ffr-rush{ 
-    background-image: image-set( 
-        "images/2p-cam/base-rush.webp" type("image/webp"),
-        "images/2p-cam/base-rush.png" type("image/png")
-    );
-} */
 
-.notwebp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.png);}
-.webp .show-cams.ffr-duckling{background-image: url(images/2p-cam/base-duckling.webp);}
+.player-name-block{
+    height: 50px;
+	width: 255px;
+	border-bottom: none;
+}
 
-.notwebp .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.png);}
-.webp.notavif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.webp);}
-.avif .show-cams.ffr-dark{background-image: url(images/2p-cam/base-dark.avif);}
+.player-cam{
+    display: none;
+}
+ 
+.layout.show-cams .player-cam{
+    display: block;
+    width: 160px;
+    height: 130px;
+	border-top: none;
+}
 
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
-    height: 50px;
 	color: #fff;
     display: flex;
     align-items: center;
@@ -220,18 +172,14 @@
 }
 
 .player-pronoun, .record-contain{
-    height: 35px;
-    font-size: 14px;
-	text-align: center;
-    width: 110px;
+    font-size: 12px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.layout.show-cams .player-pronoun, .layout.show-cams .record-contain{
-    padding: 10px;
-    width: 127px;
+    width: 90px;
+    height: 33px;
+	z-index: 4;
 }
 
 .player-pronoun:empty, .record-contain:empty{
@@ -240,14 +188,10 @@
 
 .player-grid{
     display: grid;
-    grid-template-columns: repeat(12, auto);
-    padding: 5px;
+    grid-template-columns: repeat(8, auto);
+    padding: 10px;
     grid-gap: 4px;
     border-top: none;
-}
-
-.layout.layout.show-cams .player-grid{
-    border-top: solid 6px;
 }
 
 .player-grid img{
@@ -256,13 +200,8 @@
     display: block;
 }
 
-.layout.show-cams .player-grid img{
-    width: 16px;
-    height: 16px;
-}
-
 .player-grid img, .dialog img{
-    background-image: url('images/retro_tracker/ffr-items-sprite-2020.png');
+    background-image: url('images/retro_tracker/ffr-items-sprite-2021.png');
     background-size: 500% 1100%;
 }
 
@@ -284,13 +223,16 @@
 .canoe-off{background-position: 75% 60%;}
 .canoe-on{background-position: 75% 70%;}
 
-.floater{background-position: 0 30%;}
+.floater-no{background-position: 100% 60%;}
+.floater-yes{background-position: 100% 70%;}
+.floater-ship{background-position: 100% 80%;}
+
 .ship{background-position: 25% 30%;}
 .crown{background-position: 0 0;}
 .key{background-position: 25% 0;}
 .lute{background-position: 50% 0;}
 
-.crystal{background-position: 75% 80%;}
+.crystal{background-position: 0% 30%;}
 .herb{background-position: 100% 0;}
 .tnt{background-position: 0 10%;}
 .ruby{background-position: 25% 10%;}
@@ -325,9 +267,11 @@
 
 .player-best-of{
     display: grid;
+    grid-gap: 4px;
     grid-template-columns: repeat(5, auto);
     display: none;
 }
+
 .player-best-of img{
     width: 32px;
     height: 32px;
@@ -343,46 +287,129 @@
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
 .best-of-7 tr-toggle-class:nth-child(n+5){display: none;}
 
-.player-final, .player-winner{
+.player-final{
     font-size: 20px;
-    height: 31px;
-    width: 97px;
+	width: 155px;
+    height: 50px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    border-top: none;
+	border-bottom: none;
 }
 
-.layout.show-cams .player-final, .layout.show-cams .player-winner{
-    border-top: solid 6px;
-    height: 47px;
+.player-winner{
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
 
 .player-final:empty{
     display:none;
 }
 
-tr-timer{
-	width: 11em;
-    height: 53px;
-    z-index: 1;
-	font-size: 24px;
-	top: 565px;
-	left: 505px;
+.blursed-contain{
+    width: 180px;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 50px;
+    -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    animation: stepped-curtain .5s steps(4);
+	z-index: 10;
 }
 
-.layout.show-cams tr-timer{
-    width: 11em;
+.layout .blursed-contain{
+    display: none;
+}
+
+#menu_layout_blursed.blursed-contain{
+    transform: translateX(0);
+}
+
+@keyframes stepped-curtain {
+    from {
+        -webkit-mask-size: 100% 0;
+        mask-size: 100% 0;
+    }
+}
+
+.blursed-sprites{
+    width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.blursed-sprite-image img, .dialog[id$="-class"] img{
+    background-image: url('images/classes.png');
+    background-size: 200% 800%;
+    width: 30px;
+    height: 43px;
+    display: block;
+    /* image-rendering: pixelated; */
+}
+
+.fighter{background-position: 0 0;}
+.knight{background-position: 100% 0;}
+
+.thief{background-position: 0 17%;}
+.ninja{background-position: 100% 17%;}
+
+.black-belt{background-position: 0 34.5%;}
+.master{background-position: 100% 34.5%;}
+
+.red-mage{background-position: 0 50%;}
+.red-wizard{background-position: 100% 50%;}
+
+.white-mage{background-position: 0 66%;}
+.white-wizard{background-position: 100% 66%;}
+
+.black-mage{background-position: 0 83%;}
+.black-wizard{background-position: 100% 83%;}
+
+.question{background-position: 100% 100%;}
+
+.blursed-info, .blursed-sprites{
+    padding: 5px;
+}
+
+.blursed-info{
+    min-height: 10em;
+}
+
+.blursed-bonus{
+    margin-bottom: 1em;
+}
+
+.player-timer{
+	border-bottom: none;
+}
+
+tr-timer{
+	width: 155px;
     height: 50px;
-    top: 10px;
-	left: 505px;
+    z-index: 1;
+	font-size: 16px;
+	padding: 0 5px;
 }
 
 tr-timer span {
     width: 26px;
     text-align: center;
+}
+
+.ms,.dot{
+    display: none;
 }
 
 .production-team-swap{
@@ -394,19 +421,13 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 24px;
-    width: 450px;
+    font-size: 20px;
+    width: 320px;
     height: 78px;
-	top: 20px; 
-	left: 413px; 
+	top: 3px; 
+	left: 480px; 
     text-align: center;
     border-bottom: none;
-}
-
-.layout.show-cams .staff{
-    border-bottom: solid 6px;
-    height: 85px;
-    top: 630px;
 }
 
 .staff-panel-1, .staff-panel-2{
@@ -425,10 +446,10 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 380px;
+    width:250px;
 }
 
-.staff img {
+.staff img{
     background-image: url("../shared/images/icons/sprite.svg");
     background-repeat: no-repeat;
     background-size: 500% 400%;
@@ -436,7 +457,7 @@ tr-timer span {
     z-index: 2;
     width: auto;
     height: 1em;
-  }
+}
 
 .commentators-img{background-position: 75% 0;}
 .restreamers-img{background-position: 0 0;}
@@ -466,14 +487,12 @@ tr-timer span {
     padding: 7px;
     border: solid 2px #fff;
     z-index: 3;
-    }
+}
 
-
-.display-none{ display: none; }
-
+.layout .show{
+    display: block;
+}
 .show{ display: block; }
-
-/* Menu */
 
 #menu_layout div{
     display: block;
@@ -481,4 +500,12 @@ tr-timer span {
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
+}
+
+[property="blursed-toggle"]{
+    position: absolute;
+    right: 1em;
+    top: -8px;
+    padding: 0 .25em;
+    background-color: #000;
 }

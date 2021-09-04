@@ -6,19 +6,21 @@
 
 :root{
     --border1: 1px solid #fff;
-    --vidWidth: 435px;
+    --vidWidth: 410px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
-    --videoX: 12px; --videoY: 12px;
-    --nameWidth: 173px;
-    --nameX: 449px; --nameY: 12px;
-    --gridX: 449px; --gridY: 64px;
-    --pronounX: 548px; --pronounY: 64px;
-    --rankX: 548px; --rankY: 100px;
-    --speakerX: 550px; --speakerY: 175px;
-    --winX: 400px; --winY: 120px;
-    --finalX: 400px; --finalY: 80px;
+    --videoX: 168px; --videoY: 3px;
+	--nameblockX: 3px; --nameblockY: 3px;
+    --nameWidth: 141px;
+    --nameX: 6px; --nameY: 10px;
+    --gridX: 3px; --gridY:71px;
+    --pronounX: 3px; --pronounY: 35px;
+    --rankX: 95px; --rankY: 35px;
+    --speakerX: 580px; --speakerY: 3px;
+    --winX: 100px; --winY: 120px;
+    --finalX: 3px; --finalY: 308px;
     --vsX: 50%; --vsY: 140px;
+	--timeX: 3px; --timeY: 308px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -64,7 +66,7 @@
     background-color: #000;
 }
 
-.layout.clip-background{
+.layout.transparent-background{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -104,7 +106,7 @@
 .webp .ffr-irongol{background-image: url(images/4p/base-irongol.webp);}
 
 .ffr-hardcore{
-    --backgroundColor2: #500;
+    --backgroundColor2: #2c0055;
     background-color: #000076;
 }
 .notwebp .ffr-hardcore{background-image: url(images/4p/base-hardcore.png);}
@@ -119,7 +121,7 @@
 .avif .ffr-tourney{background-image: url(images/4p/base-tourney.avif);}
 
 .ffr-league{
-    background-color: #b1cbda;
+    --backgroundColor2: #500;
     --league-fallback: linear-gradient(#b1cbda, #1f2a44);
     background-image: var(--league-fallback);
 }
@@ -136,12 +138,6 @@
 .webp .ffr-rush{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
 
 .layout.ffr-rush .player-grid {display: none;}
-.layout.ffr-rush{
-    --winY: 565px;
-    --finalY: 565px;
-    --rankX: 449px;
-    --rankY: 64px;
-}
 
 .ffr-dark{
     background-color: #000;
@@ -161,11 +157,17 @@
     height: var(--vidHeight);
     z-index: 2;
     border-radius: 8px;
+    background-color: #000; 
+    transition: background-color .5s;
+}
+
+.player-name-block{
+    height: 65px;
+	width: 162px;
 }
 
 .player-name{
     font-size: 26px;
-    height: 50px;
     width: calc(var(--nameWidth) + 8px * 2);
     color: #fff;
     display: flex;
@@ -190,6 +192,7 @@
     align-items: center;
     width: 90px;
     height: 33px;
+	z-index: 4;
 }
 
 .player-pronoun:empty, .record-contain:empty{
@@ -204,13 +207,13 @@
 }
 
 .player-grid img{
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     display: block;
 }
 
 .player-grid img, .dialog img{
-    background-image: url('images/retro_tracker/ffr-items-sprite-2020.png');
+    background-image: url('images/retro_tracker/ffr-items-sprite-2021.png');
     background-size: 500% 1100%;
 }
 
@@ -232,13 +235,16 @@
 .canoe-off{background-position: 75% 60%;}
 .canoe-on{background-position: 75% 70%;}
 
-.floater{background-position: 0 30%;}
+.floater-no{background-position: 100% 60%;}
+.floater-yes{background-position: 100% 70%;}
+.floater-ship{background-position: 100% 80%;}
+
 .ship{background-position: 25% 30%;}
 .crown{background-position: 0 0;}
 .key{background-position: 25% 0;}
 .lute{background-position: 50% 0;}
 
-.crystal{background-position: 75% 80%;}
+.crystal{background-position: 0% 30%;}
 .herb{background-position: 100% 0;}
 .tnt{background-position: 0 10%;}
 .ruby{background-position: 25% 10%;}
@@ -272,8 +278,8 @@
 }
 
 .player-winner, .player-final{
-    width: 100px;
-    height: 37px;
+    width: 162px;
+    height: 40px;
     padding: 5px 10px;
     display: flex;
     justify-content: center;
@@ -290,10 +296,11 @@
     width: 180px;
     transform: translateX(-50%);
     left: 50%;
-    top: 357px;
+    bottom: 50px;
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
+	z-index: 10;
 }
 
 .layout .blursed-contain{
@@ -317,7 +324,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    gap: 5px;
+    gap: 8px;
     margin-bottom: 2px;
 }
 
@@ -369,14 +376,18 @@
 
 tr-timer{
 	width: 11em;
-    height: 53px;
+    height: 40px;
     z-index: 1;
-	font-size: 24px;
+	font-size: 14.7px;
 }
 
 tr-timer span {
     width: 26px;
     text-align: center;
+}
+
+.ms,.dot{
+    display: none;
 }
 
 .production-team-swap{
@@ -389,7 +400,7 @@ tr-timer span {
 .staff{
     overflow: hidden;
     font-size: 24px;
-	width: 280px;
+	width: 330px;
 	height: 80px;
 }
 
@@ -426,7 +437,6 @@ tr-timer span {
 .restreamers-img{background-position: 0 0;}
 .trackers-img{background-position: 50% 0;}
 
-
 .production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
 .production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
 
@@ -451,7 +461,7 @@ tr-timer span {
     padding: 7px;
     border: solid 2px #fff;
     z-index: 3;
-    }
+}
 
 .display-none{ display: none; }
 
