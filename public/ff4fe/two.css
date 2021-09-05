@@ -24,6 +24,7 @@
     --timerX: 169px; --timerY: 591px;
     
     --border: 2px;
+    --borderImage: url(images/ff4-border.png);
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -31,9 +32,20 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
+.layout.zz4-brackets{
+    --borderImage: url(images/ff4-zz4-border.png);
+    --backgroundColor1: #242847;
+}
+
 .border-1{
     border: var(--border1);
-    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+    border-image: var(--borderImage) 3 / 3px / 1px;
+    image-rendering: pixelated;
+}
+
+.layout.zz4-brackets .player-video.border-1{
+    border: var(--border1);
+    border-image: url(images/ff4-zz4-border-inner-corners.png) 4 / 4px / 1px;
     image-rendering: pixelated;
 }
 
@@ -43,7 +55,7 @@
 
 .border-background-1 {
     border: var(--border1);
-    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+    border-image: var(--borderImage) 3 / 3px / 1px;
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
@@ -88,6 +100,14 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
     mask-repeat: no-repeat
+}
+
+.layout.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
+.notwebp.notavif .layout.zz4-brackets{
+    background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
+}
+.webp .layout.zz4-brackets{
+    background-image: url('images/4p/zz4/Qual-Live-BG.webp'), linear-gradient(#589877,#709d88);
 }
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
