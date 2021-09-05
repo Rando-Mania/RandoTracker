@@ -8,12 +8,17 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="images/retro_tracker/ffr-items-sprite-2020.png" as="image" type="image/png">
+    <link rel="preload" href="images/retro_tracker/ffr-items-sprite-2021.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
         [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
         [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name-block {left: var(--nameblockX); top: var(--nameblockY);}
+        [player="2"] .player-name-block {right: var(--nameblockX); top: var(--nameblockY);}
+        [player="3"] .player-name-block {left: var(--nameblockX); bottom: var(--nameblockY);}
+        [player="4"] .player-name-block {right: var(--nameblockX); bottom: var(--nameblockY);}
     
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
@@ -49,25 +54,31 @@
         [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
         [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
+
+        tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(3) {left: var(--timeX); bottom: var(--timeY);}
+        tr-timer:nth-of-type(4) {right: var(--timeX); bottom: var(--timeY);}
     </style>
 </head>
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>
-            <div class="player-name abs border-1 background-1">
-                <tr-text scale-to-fit property="player-name"></tr-text>
-            </div>
-            <tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
-			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
-            <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
-            <tr-toggle property="toggle-speaker" class="abs player-speaker">
-                <img src="../shared/images/icons/blank.svg" alt="">
-            </tr-toggle>
-            <tr-toggle property="toggle-winner" class="abs player-winner border-1 background-2">
-                <div>Winner</div>
-            </tr-toggle>
+			<div class="border-1 player-video abs"></div>
+			<div class="player-name-block abs border-1 background-1"></div>
+			<div class="player-name abs">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+			</div>
+			<tr-text property="player-pronoun" class="player-pronoun abs"></tr-text>
+			<tr-text property="player-number" class="record-contain abs"></tr-text>
+			<tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
+			<tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
+			<tr-toggle property="toggle-speaker" class="abs player-speaker">
+				<img src="../shared/images/icons/blank.svg" alt="">
+			</tr-toggle>
+			<tr-toggle property="toggle-winner" class="abs player-winner border-1 background-2">
+				<div>Winner</div>
+			</tr-toggle>
         </template>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
@@ -136,17 +147,13 @@
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 370px; left: 508px;"></tr-timer>
-        <tr-hide-if-empty class="staff abs border-1 background-2" style="top: 215px; left: 500px;" toggle-class="wtf">
+		<tr-timer class="player-timer abs border-1 background-2" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-hide-if-empty class="staff abs border-1 background-2" style="top: 320px; left: 500px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
-        <!-- <style>
-            #bail-project-logo{
-                width: 160px;
-            }
-        </style>
-        <tr-template class="abs border-1" 
-        style="z-index: 10; width: 435px; top: 50%; right: 11px; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template> -->
     </div>
 
 <!-- loadscreen -->
@@ -169,6 +176,5 @@
     <script src="../components/components.js"></script>
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/four_game.js"></script>
-    <!-- <script src="../rm/scripts/donation.js"></script> -->
 </body>
 </html>

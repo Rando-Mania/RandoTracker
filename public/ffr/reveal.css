@@ -5,14 +5,16 @@
 }
 
 :root{
-    --vidWidth: 770px;
+    --vidWidth: 820px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
-    --videoX: 20px; --videoY: 20px;
-    --nameWidth: 320px;
-    --nameX: 800px; --nameY: 107px;
-    --gridX: 800px; --gridY: 20px;
-    --pronounX: 1140px; --pronounY: 107px;
+    --videoX: 3px; --videoY: 3px;
+    --nameWidth: 300px;
+    --nameblockX: 825px; --nameblockY: 3px;
+    --nameX: 840px; --nameY: 12px;
+    --gridX: 825px; --gridY: 60px;
+    --pronounX: 1160px; --pronounY: 12px;
+    --camX: 1133px; --camY: 60px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -73,7 +75,8 @@
 
 .ffr-irongol{
     background: url(images/1p/base-irongol.png) #000076;
-    --backgroundColor2: #500;
+    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
+   --backgroundColor2: #500;
 }
 
 .ffr-tourney{
@@ -95,7 +98,8 @@
 }
 
 .ffr-league{
-    background: url(images/1p/base-league.png), linear-gradient(#b1cbda, #1f2a44);
+    background: url(images/1p/base-league.png) #000076;
+    --backgroundColor2: #500;
 }
 
 .ffr-rush{
@@ -118,14 +122,19 @@
     transition: background-color .5s;
 }
 
+.player-name-block{
+    height: 55px;
+	width: 450px;
+}
+
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
     height: 50px;
 	color: #fff;
     display: flex;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
 }
 
 .player-name tr-text{
@@ -134,15 +143,20 @@
 
 .player-grid{
     display: grid;
-    grid-template-columns: repeat(12, auto);
+    grid-template-columns: repeat(8, auto);
     padding: 0 5px 5px 5px;
     grid-gap: 4px;
+}
+
+.player-cam{
+	width: 142px;
+	height: 121px;
 }
 
 .player-pronoun{
     padding: 5px 10px 5px 10px;
     font-size: 14px;
-	text-align: center;
+	text-align: right;
 	width: 110px;
 }
 
@@ -157,7 +171,7 @@
 }
 
 .player-grid img, .dialog img{
-    background-image: url('images/retro_tracker/ffr-items-sprite-2020.png');
+    background-image: url('images/retro_tracker/ffr-items-sprite-2021.png');
     background-size: 500% 1100%;
 }
 
@@ -179,13 +193,16 @@
 .canoe-off{background-position: 75% 60%;}
 .canoe-on{background-position: 75% 70%;}
 
-.floater{background-position: 0 30%;}
+.floater-no{background-position: 100% 60%;}
+.floater-yes{background-position: 100% 70%;}
+.floater-ship{background-position: 100% 80%;}
+
 .ship{background-position: 25% 30%;}
 .crown{background-position: 0 0;}
 .key{background-position: 25% 0;}
 .lute{background-position: 50% 0;}
 
-.crystal{background-position: 75% 80%;}
+.crystal{background-position: 0% 30%;}
 .herb{background-position: 100% 0;}
 .tnt{background-position: 0 10%;}
 .ruby{background-position: 25% 10%;}
@@ -219,7 +236,7 @@ tr-timer, .player-final{
     height: 53px;
 	font-size: 24px;
 	top: 285px;
-	left: 890px;
+	left: 920px;
 }
 tr-timer span {
     width: 26px;
@@ -240,6 +257,82 @@ tr-timer span {
     display:none;
 }
 
+.blursed-contain{
+    width: 180px;
+    transform: translateX(-50%);
+    left: 82%;
+    bottom: 50px;
+    -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    mask: linear-gradient(red, red) no-repeat center / 100% 100%;
+    animation: stepped-curtain .5s steps(4);
+	z-index: 10;
+}
+
+.layout .blursed-contain{
+    display: none;
+}
+
+#menu_layout_blursed.blursed-contain{
+    transform: translateX(0);
+}
+
+@keyframes stepped-curtain {
+    from {
+        -webkit-mask-size: 100% 0;
+        mask-size: 100% 0;
+    }
+}
+
+.blursed-sprites{
+    width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.blursed-sprite-image img, .dialog[id$="-class"] img{
+    background-image: url('images/classes.png');
+    background-size: 200% 800%;
+    width: 30px;
+    height: 43px;
+    display: block;
+    /* image-rendering: pixelated; */
+}
+
+.fighter{background-position: 0 0;}
+.knight{background-position: 100% 0;}
+
+.thief{background-position: 0 17%;}
+.ninja{background-position: 100% 17%;}
+
+.black-belt{background-position: 0 34.5%;}
+.master{background-position: 100% 34.5%;}
+
+.red-mage{background-position: 0 50%;}
+.red-wizard{background-position: 100% 50%;}
+
+.white-mage{background-position: 0 66%;}
+.white-wizard{background-position: 100% 66%;}
+
+.black-mage{background-position: 0 83%;}
+.black-wizard{background-position: 100% 83%;}
+
+.question{background-position: 100% 100%;}
+
+.blursed-info, .blursed-sprites{
+    padding: 5px;
+}
+
+.blursed-info{
+    min-height: 10em;
+}
+
+.blursed-bonus{
+    margin-bottom: 1em;
+}
 
 /* staff styles */
 
@@ -249,7 +342,7 @@ tr-timer span {
     width: 450px;
 	height: 78px;
 	top: 200px; 
-	left: 800px; 
+	left: 825px; 
 	text-align: center;
 }
 
@@ -318,10 +411,23 @@ tr-timer span {
 
 .display-none{ display: none; }
 
+.layout .show{
+    display: block;
+}
 .show{ display: block; }
-
-/* Menu */
 
 #menu_layout div{
     display: block;
+}
+
+#menu_overlays_contain div{
+    margin-bottom: .75em;
+}
+
+[property="blursed-toggle"]{
+    position: absolute;
+    right: 1em;
+    top: -8px;
+    padding: 0 .25em;
+    background-color: #000;
 }
