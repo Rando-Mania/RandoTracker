@@ -85,18 +85,6 @@
     --backgroundColor2: #050;
 }
 
-@supports not (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{border-image-source: url('images/border-yellow.png');}
-}
-
-@supports (border-image: paint(ffr-border) 6) {
-    .ffr-tourney .border-1{
-        border-image-source: paint(ffr-border);
-        --border-outside-color: #726b33;
-        --border-inside-color: #f7e86e;
-    }
-}
-
 .ffr-league{
     background: url(images/1p/base-league.png) #000076;
     --backgroundColor2: #500;
@@ -265,11 +253,11 @@ tr-timer span {
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
-	z-index: 10;
 }
 
 .layout .blursed-contain{
     display: none;
+	z-index: 5;
 }
 
 #menu_layout_blursed.blursed-contain{

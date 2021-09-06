@@ -112,6 +112,13 @@
 .notwebp .ffr-irongol{background-image: url(images/2p/base-irongol.png);}
 .webp .ffr-irongol{background-image: url(images/2p/base-irongol.webp);}
 
+.ffr-hardcore{
+    --backgroundColor2: #2c0055;
+    background-color: #000076;
+}
+.notwebp .ffr-hardcore{background-image: url(images/2p/base-hardcore.png);}
+.webp .ffr-hardcore{background-image: url(images/2p/base-hardcore.webp);}
+
 .ffr-tourney{
     --backgroundColor2: #050;
     background-color: #291901;
@@ -124,6 +131,7 @@
     background-color: #b1cbda;
     --league-fallback: linear-gradient(#b1cbda, #1f2a44);
     background-image: var(--league-fallback);
+    --backgroundColor2: #500;
 }
 .notwebp .ffr-league{background-image: url(images/2p/base-league.png), var(--league-fallback);}
 .webp.notavif .ffr-league{background-image: url(images/2p/base-league.webp), var(--league-fallback);}
@@ -340,11 +348,11 @@
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
-	z-index: 10;
 }
 
 .layout .blursed-contain{
     display: none;
+	z-index: 5;
 }
 
 #menu_layout_blursed.blursed-contain{
