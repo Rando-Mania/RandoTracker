@@ -17,6 +17,9 @@
         [player="1"] .player-cam {left: var(--camX); top: var(--camY);}
         [player="2"] .player-cam {right: var(--camX); top: var(--camY);}
     
+        [player="1"] .player-name-block {left: var(--nameblockX); top: var(--nameblockY);}
+        [player="2"] .player-name-block {right: var(--nameblockX); top: var(--nameblockY);}
+    
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
     
@@ -41,6 +44,9 @@
         [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
 
+        tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
+
         .card-body{
             flex-direction: column;
             background-position: bottom center;
@@ -56,17 +62,18 @@
  		<template id="player_info_template">
             <div class="player-video border-1 abs"></div>
             <div class="player-cam player-video border-1 abs"></div>
-			<div class="player-name abs border-1 background-1">
+			<div class="player-name-block abs border-1 background-1"></div>
+			<div class="player-name abs">
 				<tr-text scale-to-fit property="player-name"></tr-text>
 			</div>
+			<tr-text property="player-pronoun" class="player-pronoun abs"></tr-text>
+			<tr-text property="player-number" class="record-contain abs"></tr-text>
 			<tr-template class="player-grid abs background-1 border-1" href="icons-2020.html"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs background-1 border-1 border-bottom"></tr-text>
-			<tr-text property="player-number" class="record-contain abs background-1 border-1 border-bottom"></tr-text>
-			<tr-text property="player-final" class="player-final abs background-1 border-1"></tr-text>        
+			<tr-text property="player-final" class="player-final abs background-2 border-1"></tr-text>        
 			<tr-toggle property="toggle-speaker" class="abs player-speaker">
 				<img src="../shared/images/icons/blank.svg" alt="">
 			</tr-toggle>
-			<tr-toggle property="toggle-winner" class="abs player-winner background-1 border-1">
+			<tr-toggle property="toggle-winner" class="abs player-winner background-2 border-1">
 				<div>Winner</div>
 			</tr-toggle>
 			<tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
@@ -81,8 +88,57 @@
         <!-- <tr-template class="abs" 
         style="z-index:1; bottom: 4px; right: 19px;" id="donation-template" href="../rm/templates/cards/donation-tracker-copy.html"></tr-template> -->
 
-<!-- timer/staff -->
-        <tr-timer class="abs background-2 border-1" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+<!-- class info -->        
+
+        <div class="blursed-contain abs">
+            <div class="blursed-sprites border-top border-1 background-1">
+                <tr-image property="tier-one-class" title="tier-one-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+                <img src="images/arrow.png" width="38" height="18" alt="">
+                <tr-image property="tier-two-class" title="tier-two-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option selected class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+            </div>
+            <div class="blursed-info border-1 background-1">
+                <div class="blursed-bonus">
+                    <h4>Bonus:</h4>
+                    <tr-text property="blursed-bonus"></tr-text>
+                </div>
+                <div class="blursed-malus">
+                    <h4>Malus:</h4>
+                    <tr-text property="blursed-malus"></tr-text>
+                </div>
+            </div>
+        </div>
+		
+		<!-- timer/staff -->
+		<tr-timer class="player-timer abs border-1 background-2" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
         <tr-hide-if-empty class="staff abs background-2 border-1" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>

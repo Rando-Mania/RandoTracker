@@ -1,0 +1,105 @@
+    <div class="menu-game-specific">
+        <div id="menu_pronouns" class="fieldset">
+            <h4 class="legend">Players Misc.</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Pronoun</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+            <h4 class="legend">Backgrounds</h4>
+            <div>
+    
+                <label>Layout:</label>
+                <tr-select-toggle property="layout-back-select">
+                    <tr-option selected target=".layout, .tracker-layout" toggle-class="ffr-default" value="1">Default</tr-option>
+                    <tr-option target=".layout, .tracker-layout" toggle-class="ffr-irongol" value="2">IRONGOL</tr-option>
+                    <tr-option target=".layout, .tracker-layout" toggle-class="ffr-winter" value="3">Winter DAB</tr-option>
+                    <tr-option target=".layout, .tracker-layout" toggle-class="ffr-dark" value="4">FFR AD</tr-option>
+                </tr-select-toggle>
+    
+            </div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>darkmoon</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>darkmoon / cpt uhu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+	<div id="menu_blursed" class="fieldset">
+		<h4 class="legend">Blursed</h4>
+		<tr-input-toggle-class id="show_blursed" target=".layout .blursed-contain" toggle-class="show" property="blursed-toggle">
+			<label id="blursed_label" for="show_blursed">Show</label>
+		</tr-input-toggle-class>
+		<div id="menu_layout_blursed" class="blursed-contain">
+			<div class="blursed-sprites">
+				<tr-image property="tier-one-class" title="tier-one-class" class="blursed-sprite-image">
+					<tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+				</tr-image>
+				<img src="/ffr/images/arrow.png" width="38" height="18" alt="arrow">
+				<tr-image property="tier-two-class" title="tier-two-class" class="blursed-sprite-image">
+					<tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option selected class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+					<tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+				</tr-image>
+			</div>
+			<div class="blursed-info">
+				<div class="blursed-bonus">
+					<h4>Bonus:</h4>
+					<tr-input-textarea property="blursed-bonus"></tr-input-textarea>
+				</div>
+				<div class="blursed-malus">
+					<h4>Malus:</h4>
+					<tr-input-textarea property="blursed-malus"></tr-input-textarea>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -8,19 +8,19 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="bingo.css">
-    <link rel="preload" href="images/bingo/base-background.png" as="image" type="image/png">
+    <link rel="preload" href="images/retro_tracker/ffr-items-sprite-2021.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name-block {left: var(--nameblockX); top: var(--nameblockY);}
+        [player="2"] .player-name-block {left: var(--nameblockX); bottom: var(--nameblockY);}
     
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-name {left: var(--nameX); bottom: var(--nameY);}
 
         [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
         [player="2"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
-
-        [player="1"] .bingo-option {left: var(--bingoX); top: var(--bingoY);}
-        [player="2"] .bingo-option {left: var(--bingoX); bottom: var(--bingoY);}
 
         [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
         [player="2"] .player-pronoun {left: var(--pronounX); bottom: var(--pronounY);}
@@ -36,19 +36,25 @@
     
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
         [player="2"] .player-winner {left: var(--winX); bottom: var(--winY);}
+
+        [player="1"] .bingo-option {left: var(--bingoX); top: var(--bingoY);}
+        [player="2"] .bingo-option {left: var(--bingoX); bottom: var(--bingoY);}
+
+        tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(2) {left: var(--timeX); bottom: var(--timeY);}
     </style>
 </head>
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="player-video abs border-1"></div>
-            <div class="player-name abs border-1 background-1">
+			<div class="border-1 player-video abs"></div>
+			<div class="player-name-block abs border-1 background-1"></div>
+            <div class="player-name abs">
                 <tr-text scale-to-fit property="player-name"></tr-text>
             </div>
+			<tr-text property="player-pronoun" class="player-pronoun abs"></tr-text>
+			<tr-text property="player-number" class="record-contain abs"></tr-text>
             <tr-template class="player-grid abs border-1 background-1" href="../ffr/icons-2020.html"></tr-template>
-            <tr-template class="bingo-option abs border-1 background-1" href="icons-bingo.html"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
-			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
@@ -56,6 +62,7 @@
             <tr-toggle property="toggle-winner" class="abs player-winner border-1 background-2">
                 <div>Winner</div>
             </tr-toggle>
+            <tr-template class="bingo-option abs border-1 background-1" href="icons-bingo.html"></tr-template>
         </template>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
@@ -65,10 +72,59 @@
         </tr-player>
         <div class="player-video play-field abs border-1"></div>
 
+<!-- class info -->        
+
+        <div class="blursed-contain abs">
+            <div class="blursed-sprites border-top border-1 background-1">
+                <tr-image property="tier-one-class" title="tier-one-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+                <img src="../ffr/images/arrow.png" width="38" height="18" alt="">
+                <tr-image property="tier-two-class" title="tier-two-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option selected class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+            </div>
+            <div class="blursed-info border-1 background-1">
+                <div class="blursed-bonus">
+                    <h4>Bonus:</h4>
+                    <tr-text property="blursed-bonus"></tr-text>
+                </div>
+                <div class="blursed-malus">
+                    <h4>Malus:</h4>
+                    <tr-text property="blursed-malus"></tr-text>
+                </div>
+            </div>
+        </div>
+
 <!-- timer/staff -->
 
-        <tr-timer id="staff-timer" class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
-        <tr-hide-if-empty id="staff-names" class="staff abs border-1 background-2" toggle-class="wtf">
+ 		<tr-timer class="player-timer abs border-1 background-2" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-hide-if-empty class="staff abs border-1 background-2" style="bottom: 20px; right: 90px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
    </div>
@@ -83,7 +139,7 @@
     <tr-template href="../shared/calendar-template.html"></tr-template>
 </div>
 
-<tr-template href="../shared/two-menus-contain.html"></tr-template>
+<tr-template href="bingo-menus-contain.html"></tr-template>
 
     <script src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>

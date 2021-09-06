@@ -2,18 +2,23 @@
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
 	<meta charset="utf-8">
-	<title>FFR 4-Player Basic</title>
+	<title>FFR Co-Op Special</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="coop.css">
-    <link rel="preload" href="images/coop/base-background.png" as="image" type="image/png">
+    <link rel="preload" href="images/retro_tracker/ffr-items-sprite-2021.png" as="image" type="image/png">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
         [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
         [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name-block {left: var(--nameblockX); top: var(--nameblockY);}
+        [player="2"] .player-name-block {right: var(--nameblockX); top: var(--nameblockY);}
+        [player="3"] .player-name-block {left: var(--nameblockX); bottom: var(--nameblockY);}
+        [player="4"] .player-name-block {right: var(--nameblockX); bottom: var(--nameblockY);}
     
         [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
@@ -24,11 +29,6 @@
         [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
         [player="3"] .player-grid {display: none;}
         [player="4"] .player-grid {display: none;}
-
-        [player="1"] .team-flag {display: none;}
-        [player="2"] .team-flag {display: none;}
-        [player="3"] .team-flag {left: var(--gridX); bottom: var(--gridY);}
-        [player="4"] .team-flag {right: var(--gridX); bottom: var(--gridY);}
 
         [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
         [player="2"] .player-pronoun {right: var(--pronounX); top: var(--pronounY);}
@@ -64,19 +64,30 @@
         [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
         [player="3"] .player-best-of {display: none;}
         [player="4"] .player-best-of {display: none;}
+
+        [player="1"] .team-flag {display: none;}
+        [player="2"] .team-flag {display: none;}
+        [player="3"] .team-flag {left: var(--gridX); bottom: var(--gridY);}
+        [player="4"] .team-flag {right: var(--gridX); bottom: var(--gridY);}
+
+        tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
+        tr-timer:nth-of-type(3) {left: var(--timeX); bottom: var(--timeY);}
+        tr-timer:nth-of-type(4) {right: var(--timeX); bottom: var(--timeY);}
 	</style>
 </head>
 <body>
 	<div class="layout">
         <template id="player_info_template">
             <div class="border-1 player-video abs"></div>
-            <div class="player-name abs border-1 background-1">
-                <tr-text scale-to-fit property="player-name"></tr-text>
-            </div>
+			<div class="player-name-block abs border-1 background-1"></div>
+			<div class="player-name abs">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+			</div>
+            <tr-text property="player-pronoun" class="player-pronoun abs"></tr-text>
+			<tr-text property="player-number" class="record-contain abs"></tr-text>
             <tr-template class="player-grid abs border-1 background-1" href="../ffr/icons-2020.html"></tr-template>
             <tr-template class="player-video team-flag abs border-1"></tr-template>
-            <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
-			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <img src="../shared/images/icons/blank.svg" alt="">
@@ -102,10 +113,61 @@
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
+<!-- class info -->        
+
+        <div class="blursed-contain abs">
+            <div class="blursed-sprites border-top border-1 background-1">
+                <tr-image property="tier-one-class" title="tier-one-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+                <img src="../ffr/images/arrow.png" width="38" height="18" alt="arrow">
+                <tr-image property="tier-two-class" title="tier-two-class" class="blursed-sprite-image">
+                    <tr-image-option class-to-set="fighter" class="fighter" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="thief" class="thief" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-belt" class="black-belt" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-mage" class="red-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-mage" class="white-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-mage" class="black-mage" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option selected class-to-set="knight" class="knight" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="ninja" class="ninja" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="master" class="master" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="red-wizard" class="red-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="white-wizard" class="white-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="black-wizard" class="black-wizard" path="../shared/images/icons/blank.svg"></tr-image-option>
+                    <tr-image-option class-to-set="question" class="question" path="../shared/images/icons/blank.svg"></tr-image-option>
+                </tr-image>
+            </div>
+            <div class="blursed-info border-1 background-1">
+                <div class="blursed-bonus">
+                    <h4>Bonus:</h4>
+                    <tr-text property="blursed-bonus"></tr-text>
+                </div>
+                <div class="blursed-malus">
+                    <h4>Malus:</h4>
+                    <tr-text property="blursed-malus"></tr-text>
+                </div>
+            </div>
+        </div>
+
 <!-- timer/staff -->
 
-        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 370px; transform: translateX(-50%); left: 50%;"></tr-timer>
-        <tr-hide-if-empty class="staff abs border-1 background-2" style="top: 215px; transform: translateX(-50%); left: 50%;" toggle-class="wtf">
+		<tr-timer class="player-timer abs border-1 background-2" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-timer class="player-timer abs border-1 background-2" include-padding="true" property="timer-test"></tr-timer>
+		<tr-hide-if-empty class="staff abs border-1 background-2" style="top: 320px; left: 500px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
@@ -120,7 +182,7 @@
     <tr-template href="../shared/calendar-template.html"></tr-template>
 </div>
 
-<tr-template href="../shared/four-menus-contain.html"></tr-template>
+<tr-template href="coop-menus-contain.html"></tr-template>
 
     <script src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
