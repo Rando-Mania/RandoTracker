@@ -24,6 +24,9 @@
     --timerX: 169px; --timerY: 591px;
     
     --border: 2px;
+    --borderImage: url(images/ff4-border.png) 3 / 3px / 1px;
+
+    --zemusTextColor: #dfd2b4;    
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -31,9 +34,20 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
+.layout.zz4-brackets{
+    --borderImage: url(images/ff4-zz4-border.png) fill 3 / 3px / 1px;
+    --backgroundColor1: #242847;
+}
+
 .border-1{
     border: var(--border1);
-    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+    border-image: var(--borderImage) 3 / 3px / 1px;
+    image-rendering: pixelated;
+}
+
+.layout.zz4-brackets .player-video.border-1{
+    border: var(--border1);
+    border-image: url(images/ff4-zz4-border-inner-corners.png) 4 / 4px / 1px;
     image-rendering: pixelated;
 }
 
@@ -43,9 +57,13 @@
 
 .border-background-1 {
     border: var(--border1);
-    border-image: url(images/ff4-border.png) 3 / 3px / 1px;
+    border-image: var(--borderImage);
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
+}
+
+.layout.zz4-brackets .border-background-1 {
+    border-image-repeat: repeat;
 }
 
 .abs{position: absolute;}
@@ -88,6 +106,14 @@
         linear-gradient(red,red) top / 100% var(--clipY1),
         linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
     mask-repeat: no-repeat
+}
+
+.layout.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
+.notwebp .layout.zz4-brackets{
+    background-image: url('images/2p/zz4/Bracket-Live-BG.png'), linear-gradient(#589877,#709d88);
+}
+.webp .layout.zz4-brackets{
+    background-image: url('images/2p/zz4/Bracket-Live-BG.webp'), linear-gradient(#589877,#709d88);
 }
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
@@ -435,6 +461,10 @@ tr-timer span {
     align-items: center;
 }
 
+.sidebar-staff-players .commentators-contain, .restreamers-contain, .trackers-contain{
+    grid-gap: 10px;
+}
+
 .commentators, .restreamers, .trackers{
     width: 307px;
 }
@@ -452,6 +482,10 @@ tr-timer span {
 .commentators-img{background-position: 75% 0; transform: translateY(-2px) scale(3.1);}
 .restreamers-img{background-position: 0 0; transform: scale(1.4);}
 .trackers-img{background-position: 50% 0; transform: scale(1.4);}
+
+.sidebar-staff-players .commentators-img{background-position: 75% 0; transform: none;}
+.sidebar-staff-players .restreamers-img{background-position: 0 0; transform: none;}
+.sidebar-staff-players .trackers-img{background-position: 50% 0; transform: none;}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
@@ -513,7 +547,7 @@ tr-timer span {
 .menu-general #menu_view{grid-area: view;}
 .menu-general #menu_reset{grid-area: reset;}
 
-#menu_credits{grid-area: credits;}
+#menu_credits{grid-area: credits; z-index: 1;}
 #menu_players_extra{grid-area: players2;}
 #menu_round{grid-area: tourney;}
 #menu_objectives{

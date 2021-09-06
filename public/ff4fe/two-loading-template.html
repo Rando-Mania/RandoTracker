@@ -48,9 +48,113 @@
     --flameX: 215px; --flameY: 618px;
 }
 
-.loadscreen-main{
+/*.loadscreen-main{
     height: 100%;
     width: 100%;
+}*/
+
+/*NOTE: The weekly layout is completely disabled until we fix a buggy interaction with display: none and scaleToFit text.*/
+.loadscreen-main{
+    display: none;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
+    align-content: space-between;
+    gap: 0 .5em;
+    height: 720px;
+    width: 959px;
+    margin: 0 auto;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+    justify-items: center;
+}
+
+.loadscreen-zemus{
+    display: grid;
+    grid-template-columns: 760px 497px auto;
+    grid-template-rows: 1fr;
+    align-content: space-between;
+    gap: 0;
+    height: 720px;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.loadscreen-zemus *{
+    color: var(--zemusTextColor);
+    font-family: verdana;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.sidebar-staff-players{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 210px 65px 120px 87px 88px 143px;
+    gap: 0;
+    grid-column: 2;
+}
+
+.round-name{
+    grid-row: 2;
+    font-size: 58px;
+    text-align: center;
+}
+
+.sidebar-staff-players .players{
+    display: grid;
+    grid-row: 4;
+    align-content: center;
+    justify-items: center;
+}
+
+.sidebar-staff-players .players *{
+    font-size: 36px;
+    height: 100%;
+}
+
+.sidebar-staff-players .player-name{
+    display: block;
+    text-align: left;
+    max-width: 410px;
+    width: auto;
+}
+
+.sidebar-staff-players .broadcasters{
+    grid-row: 6;
+    display: grid;
+    grid-template-columns: 45px auto;
+}
+
+.sidebar-staff-players .broadcasters > *{
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar-staff-players .broadcasters *{
+    font-size: 25px;
+    /*justify-items: center;*/
+}
+
+.sidebar-staff-players .broadcasters tr-text{
+    max-width: 365px;
+    width: auto;
+}
+
+.sidebar-staff-players img{
+    /* pre-filter comms/stream/tracker icons to black, then convert to #dfd2b4
+       see: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(280%) hue-rotate(4deg) brightness(104%) contrast(85%)
+}
+
+.sidebar-staff-players .staff{
+    padding: 0;
+}
+
+.sidebar-staff-players .player-name-contain{
+    width: auto;
 }
 
 .loadscreen [player="1"] .player-info{
@@ -82,6 +186,11 @@
     top: 359px;
     transform: translateX(-50%); 
     left: 50%;
+}
+
+.sidebar-staff-players .staff{
+    transform: translateX(0);
+    justify-self: center;
 }
 
 /* Community Club Showcase */
@@ -160,6 +269,14 @@
     background-image: var(--ccs-load-fallback);
 }
 
+.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
+.notwebp .zz4-brackets{
+    background-image: url('images/2p/zz4/Bracket-Intro-BG.png'), linear-gradient(#589877,#709d88);
+}
+.webp .zz4-brackets{
+    background-image: url('images/2p/zz4/Bracket-Intro-BG.webp'), linear-gradient(#589877,#709d88);
+}
+
 .notwebp .ccs-mysidian-jumping .loadscreen{
     background-image: url('images/2p/ccs/splash-MJC.png'), var(--ccs-load-fallback);
 }
@@ -204,6 +321,46 @@
 
 </style>
 <div class="loadscreen">
+    <template id="zemus_player_info_load_template">
+        <div class="player-name-contain">
+            <tr-text scale-to-fit scale-to-fit-max-width class="player-name" property="player-name"></tr-text>
+        </div>
+    </template>    
+    <div class="loadscreen-zemus">
+        <div class="sidebar-staff-players">
+            <div class="round-name">
+                <tr-text class="round-input" property="tourney-round"></tr-text>
+            </div>
+            <div class="players">
+                <tr-player player="1">
+                    <tr-template source="#zemus_player_info_load_template"></tr-template>
+                </tr-player>
+                <tr-player player="2">
+                    <tr-template source="#zemus_player_info_load_template"></tr-template>
+                </tr-player>
+            </div>
+            <div class="broadcasters">
+                <tr-hide-if-empty class="staff" toggle-class="wtf">
+                    <div class="staff-panel-2">
+                        <tr-hide-if-empty class="commentators-contain" target=".commentators" toggle-class="display-none">
+                            <img width="20" height="20" class="commentators-img" src="../shared/images/icons/blank.svg" alt="">
+                            <tr-text scale-to-fit scale-to-fit-max-width class="commentators" property="commentators"></tr-text>
+                        </tr-hide-if-empty>
+                    </div>
+                    <div class="staff-panel-2">
+                        <tr-hide-if-empty class="restreamers-contain" target=".restreamers" toggle-class="display-none">
+                            <img width="20" height="20" class="restreamers-img" src="../shared/images/icons/blank.svg" alt="">
+                            <tr-text scale-to-fit scale-to-fit-max-width class="restreamers" property="restreamers"></tr-text>
+                        </tr-hide-if-empty>
+                        <tr-hide-if-empty class="trackers-contain" target=".tracker" toggle-class="display-none">
+                            <img width="20" height="20" class="trackers-img" src="../shared/images/icons/blank.svg" alt="">
+                            <tr-text scale-to-fit scale-to-fit-max-width class="trackers" property="trackers"></tr-text>
+                        </tr-hide-if-empty>
+                    </div>
+                </tr-hide-if-empty>
+            </div>
+        </div>
+    </div>
     <div class="loadscreen-main">
         <template id="player_info_load_template">
             <div class="player-info abs background-1 border-1">
