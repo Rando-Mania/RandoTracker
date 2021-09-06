@@ -276,11 +276,11 @@
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
-	z-index: 10;
 }
 
 .layout .blursed-contain{
     display: none;
+	z-index: 5;
 }
 
 #menu_layout_blursed.blursed-contain{
@@ -443,6 +443,9 @@ tr-timer span {
 
 .display-none{ display: none; }
 
+.layout .show{
+    display: block;
+}
 .show{ display: block; }
 
 #menu_2 {

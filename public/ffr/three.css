@@ -23,7 +23,7 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('images/3p/base-background.png');
+    --backgroundImg: url('images/4p/base-background.png');
 
     --border: 6px;
 
@@ -64,7 +64,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/3p/base-background.png) #000;
+    background: url(images/4p/base-background.png) #000;
 }
 
 .layout.transparent-background{
@@ -288,11 +288,11 @@
     -webkit-mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     mask: linear-gradient(red, red) no-repeat center / 100% 100%;
     animation: stepped-curtain .5s steps(4);
-	z-index: 5;
 }
 
 .layout .blursed-contain{
     display: none;
+	z-index: 5;
 }
 
 #menu_layout_blursed.blursed-contain{
