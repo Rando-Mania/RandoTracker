@@ -109,7 +109,7 @@
 }
 
 .layout.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
-.notwebp.notavif .layout.zz4-brackets{
+.notwebp .layout.zz4-brackets{
     background-image: url('images/2p/zz4/Bracket-Live-BG.png'), linear-gradient(#589877,#709d88);
 }
 .webp .layout.zz4-brackets{
