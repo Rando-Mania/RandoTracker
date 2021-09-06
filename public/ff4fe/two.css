@@ -24,7 +24,7 @@
     --timerX: 169px; --timerY: 591px;
     
     --border: 2px;
-    --borderImage: url(images/ff4-border.png);
+    --borderImage: url(images/ff4-border.png) 3 / 3px / 1px;
 
     --zemusTextColor: #dfd2b4;    
 
@@ -35,7 +35,7 @@
 }
 
 .layout.zz4-brackets{
-    --borderImage: url(images/ff4-zz4-border.png);
+    --borderImage: url(images/ff4-zz4-border.png) fill 3 / 3px / 1px;
     --backgroundColor1: #242847;
 }
 
@@ -57,9 +57,13 @@
 
 .border-background-1 {
     border: var(--border1);
-    border-image: var(--borderImage) 3 / 3px / 1px;
+    border-image: var(--borderImage);
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
+}
+
+.layout.zz4-brackets .border-background-1 {
+    border-image-repeat: repeat;
 }
 
 .abs{position: absolute;}
