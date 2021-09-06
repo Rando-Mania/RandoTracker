@@ -26,6 +26,8 @@
     --border: 2px;
     --borderImage: url(images/ff4-border.png);
 
+    --zemusTextColor: #dfd2b4;    
+
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
     --clipY1: calc(var(--videoY) + var(--border));
@@ -104,10 +106,10 @@
 
 .layout.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
 .notwebp.notavif .layout.zz4-brackets{
-    background-image: url('images/4p/zz4/Qual-Live-BG.png'), linear-gradient(#589877,#709d88);
+    background-image: url('images/2p/zz4/Bracket-Live-BG.png'), linear-gradient(#589877,#709d88);
 }
 .webp .layout.zz4-brackets{
-    background-image: url('images/4p/zz4/Qual-Live-BG.webp'), linear-gradient(#589877,#709d88);
+    background-image: url('images/2p/zz4/Bracket-Live-BG.webp'), linear-gradient(#589877,#709d88);
 }
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
@@ -455,6 +457,10 @@ tr-timer span {
     align-items: center;
 }
 
+.sidebar-staff-players .commentators-contain, .restreamers-contain, .trackers-contain{
+    grid-gap: 10px;
+}
+
 .commentators, .restreamers, .trackers{
     width: 307px;
 }
@@ -472,6 +478,10 @@ tr-timer span {
 .commentators-img{background-position: 75% 0; transform: translateY(-2px) scale(3.1);}
 .restreamers-img{background-position: 0 0; transform: scale(1.4);}
 .trackers-img{background-position: 50% 0; transform: scale(1.4);}
+
+.sidebar-staff-players .commentators-img{background-position: 75% 0; transform: none;}
+.sidebar-staff-players .restreamers-img{background-position: 0 0; transform: none;}
+.sidebar-staff-players .trackers-img{background-position: 50% 0; transform: none;}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
@@ -533,7 +543,7 @@ tr-timer span {
 .menu-general #menu_view{grid-area: view;}
 .menu-general #menu_reset{grid-area: reset;}
 
-#menu_credits{grid-area: credits;}
+#menu_credits{grid-area: credits; z-index: 1;}
 #menu_players_extra{grid-area: players2;}
 #menu_round{grid-area: tourney;}
 #menu_objectives{
