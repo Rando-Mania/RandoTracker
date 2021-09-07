@@ -384,6 +384,12 @@ tr-toggle-class, .in-active {
     background-size: 500% 500%;
     background-position: 75% 100%;
 }
+.webp .zz4-brackets .player-best-of img{
+    background-image: url('images/2p/zz4/ff4fe-spritesheet-zz4.webp');
+}
+.notwebp .zz4-brackets .player-best-of img{
+    background-image: url('images/2p/zz4/ff4fe-spritesheet-zz4.png');
+}
 .player-best-of .active img{
     background-position: 0 100%;
 }
@@ -557,9 +563,17 @@ tr-timer span {
 }
 #menu_backgrounds{grid-area: backgrounds;}
 
-.menu-contain{
+/*.menu-contain{
     grid-template-areas:
         "objectives players2    players layout  layout  team"
         "objectives backgrounds timer   view    reset   credits"
         "objectives tourney     timer   view    reset   credits";
-    }
+    }*/
+
+.menu-contain{
+    grid-template-areas:
+        "objectives players2    players layout  layout  team"
+        "objectives backgrounds timer   view    reset   credits"
+        "objectives tourney     timer   view    reset   credits"
+        "objectives match       timer   view    reset   credits";
+    }    

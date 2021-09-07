@@ -91,20 +91,28 @@
 .sidebar-staff-players{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 210px 65px 120px 87px 88px 143px;
+    grid-template-rows: 161px 159px 40px 153px 54px 144px;
     gap: 0;
     grid-column: 2;
 }
 
-.round-name{
+.sidebar-staff-players .round-name{
+    display: grid;
+    align-content: center;
+    justify-items: center;
     grid-row: 2;
-    font-size: 58px;
+    font-size: 54px;
     text-align: center;
+}
+
+.sidebar-staff-players .match-input{
+    font-size: 48px;
 }
 
 .sidebar-staff-players .players{
     display: grid;
     grid-row: 4;
+    gap: 6px;
     align-content: center;
     justify-items: center;
 }
@@ -330,6 +338,7 @@
         <div class="sidebar-staff-players">
             <div class="round-name">
                 <tr-text class="round-input" property="tourney-round"></tr-text>
+                <tr-text class="match-input" property="tourney-match"></tr-text>
             </div>
             <div class="players">
                 <tr-player player="1">
