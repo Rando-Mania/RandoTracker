@@ -115,6 +115,9 @@
     }
 }
 
+.banon.layout{background-image: url('images/2p/Banons_Battle_Plan_2_Flattened_3.png');}
+.banon.layout .logo {display: none;}
+
 .layout > tr-player,
 .layout > tr-player > tr-template{
     display: contents;
