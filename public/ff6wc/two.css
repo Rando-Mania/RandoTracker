@@ -78,11 +78,9 @@
     font-family: 'FF6', Arial, sans-serif;
     width: 1280px;
     height: 720px;
+    background-color: var(--backgroundColor1);
     color: #fff;
     position: relative;
-    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
-    background-image: var(--background-fallback);
-    background-color: #c0c0c0;
     line-height: 1;
     row-gap: 10px;
     padding: var(--gap-size) var(--gap-size) 0;
@@ -98,24 +96,34 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .notwebp .layout.default{
-        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
+        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.jpg'), var(--background-fallback);}
     .webp.notavif .layout.default{
-        background-image: url('images/justbackground.webp'), var(--background-fallback);}
+        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.webp'), var(--background-fallback);}
     .avif .layout.default{
-        background-image: url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .layout.default{
-        background-image: image-set(
-            "images/justbackground.avif" type("image/avif"),
-            "images/justbackground.webp" type("image/webp"),
-            "images/justbackground.jpg" type("image/jpg")
-        ), var(--background-fallback);
+        background-image: 
+            linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+            image-set(
+                "images/justbackground.avif" type("image/avif"),
+                "images/justbackground.webp" type("image/webp"),
+                "images/justbackground.jpg" type("image/jpg")), 
+            var(--background-fallback);
     }
 }
 
-.banon.layout{background-image: url('images/2p/Banons_Battle_Plan_2_Flattened_3.png');}
+.layout.default{
+    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+}
+
+.banon.layout{
+    background-color: #100018;
+    background-image: url('images/2p/Banons_Battle_Plan_2_Flattened_3.png');
+}
+
 .banon.layout .logo {display: none;}
 
 .layout > tr-player,
@@ -243,7 +251,7 @@
     display: grid;
     grid-template-columns: repeat(7, auto);
     padding: 2px;
-    grid-gap: 2px;
+    grid-gap: 2px 4px;
     border-right: 2px solid rgba(255,255,255,.75);
     border-image: linear-gradient(transparent, rgba(255,255,255,1), #0000) 2;
 }
@@ -316,41 +324,42 @@ tr-image-toggle img.active, tr-toggle-class.active {
     }
 }
 
-.terra, [property="character-terra"] img{background-position: 0 0;}
-.locke, [property="character-locke"] img{background-position: 25% 0;}
-.cyan, [property="character-cyan"] img{background-position: 50% 0;}
-.shadow, [property="character-shadow"] img{background-position: 75% 0;}
-.edgar, [property="character-edgar"] img{background-position: 100% 0;}
-.sabin, [property="character-sabin"] img{background-position: 0 25%;}
-.celes, [property="character-celes"] img{background-position: 25% 25%;}
-.strago, [property="character-strago"] img{background-position: 50% 25%;}
-.relm, [property="character-relm"] img{background-position: 75% 25%;}
-.setzer, [property="character-setzer"] img{background-position: 100% 25%;}
-.mog, [property="character-mog"] img{background-position: 0 50%;}
-.gau, [property="character-gau"] img{background-position: 25% 50%;}
-.gogo, [property="character-gogo"] img{background-position: 50% 50%;}
-.umaro, [property="character-umaro"] img{background-position: 75% 50%;}
-
 
 [property="starting-character"] img{
     z-index: -1;
 }
 
-[property="starting-character"] .terra, [property="character-terra"] img{background-position: 0 0;}
-[property="starting-character"] .locke, [property="character-locke"] img{background-position: 25% 0;}
-[property="starting-character"] .cyan, [property="character-cyan"] img{background-position: 50% 0;}
-[property="starting-character"] .shadow, [property="character-shadow"] img{background-position: 75% 0;}
-[property="starting-character"] .edgar, [property="character-edgar"] img{background-position: 100% 0;}
-[property="starting-character"] .sabin, [property="character-sabin"] img{background-position: 0 22.5%;}
-[property="starting-character"] .celes, [property="character-celes"] img{background-position: 25% 22.5%;}
-[property="starting-character"] .strago, [property="character-strago"] img{background-position: 50% 25%;}
-[property="starting-character"] .relm, [property="character-relm"] img{background-position: 75% 25%;}
-[property="starting-character"] .setzer, [property="character-setzer"] img{background-position: 100% 22.5%;}
-[property="starting-character"] .mog, [property="character-mog"] img{background-position: 0 47.5%;}
-[property="starting-character"] .gau, [property="character-gau"] img{background-position: 25% 45%;}
-[property="starting-character"] .gogo, [property="character-gogo"] img{background-position: 50% 44.5%;}
-[property="starting-character"] .umaro, [property="character-umaro"] img{background-position: 75% 44.5%;}
+.terra{background-position: 0 0;}
+.locke{background-position: 25% 0;}
+.cyan{background-position: 50% 0;}
+.shadow{background-position: 75% 0;}
+.edgar{background-position: 100% 0;}
 
+.sabin{background-position: 0 25%;}
+.player-grid-characters .sabin{background-position-y: 22.5%;}
+
+.celes{background-position: 25% 25%;}
+.player-grid-characters .celes{background-position-y: 22.5%;}
+
+.strago{background-position: 50% 25%;}
+.player-grid-characters .strago{background-position-y: 22.5%;}
+
+.relm{background-position: 75% 25%;}
+
+.setzer{background-position: 100% 25%;}
+.player-grid-characters .setzer{background-position-y: 22.5%;}
+
+.mog{background-position: 0 50%;}
+.player-grid-characters .mog{background-position-y: 47.5%;}
+
+.gau{background-position: 25% 50%;}
+.player-grid-characters .gau{background-position-y: 45%;}
+
+.gogo{background-position: 50% 50%;}
+.player-grid-characters .gogo{background-position-y: 44.5%;}
+
+.umaro{background-position: 75% 50%;}
+.player-grid-characters .umaro{background-position-y: 44.5%;}
 
 .icon-slot{
     display: grid;
@@ -380,6 +389,16 @@ tr-image-toggle img.active, tr-toggle-class.active {
 .player-grid-counters .icon-slot {
     align-self: center;
 }
+.player-grid-counters tr-template{
+    display: contents;
+}
+[property="starting-character"]{
+    grid-template-rows: none;
+}
+
+[property="starting-character"] img{
+    align-self: center;
+}
 
 .terra .icon{background-position: 0 0;}
 .magicite .icon{
@@ -396,7 +415,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
 .dialog#starting-character{
     display: grid;
     grid-template-columns: repeat(5, auto);
-    transform: translate(-122px, -112px);
+    transform: translate(-117px, -118px);
     border: none;
     animation: scale-in .1s;
     position: relative;
@@ -428,8 +447,8 @@ tr-image-toggle img.active, tr-toggle-class.active {
   }
 
   @keyframes scale-in {
-    from{transform: translate(-122px, -112px) scale(0);}
-    to{transform: translate(-122px, -112px) scale(1);}
+    from{transform: translate(-117px, -118px) scale(0);}
+    to{transform: translate(-117px, -118px) scale(1);}
 }
 
 .dialog#starting-character figure:nth-of-type(8){
@@ -671,12 +690,12 @@ tr-timer span {
 
 .coliseum.layout .player-grid:nth-of-type(1){
     left: 194px;
-    top: 583px;
+    top: 616px;
     transform: translateX(-50%);
 }
 .coliseum.layout .player-grid:nth-of-type(2){
     right: 194px;
-    top: 583px;
+    top: 616px;
     transform: translateX(50%);
 }
 
@@ -699,11 +718,7 @@ tr-timer span {
     border-right: 2px solid rgba(0,0,0,.75);
     border-image: linear-gradient(transparent, rgba(0,0,0,1), #0000) 2;
 }
-.coliseum [property^="character"] img{
-    width: 24px;
-    height: 40px;
-    image-rendering: initial;
-}
+
 .coliseum .player-grid .icon{
     width: 24px;
     height: 40px;

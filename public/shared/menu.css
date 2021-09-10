@@ -90,6 +90,7 @@ button.dummy-text-button:hover,
     width: min-content;
     height: min-content;
     --highlight-color: #f8b800;
+    accent-color: var(--highlight-color);
 }
 
 .menu-contain > tr-template, 
