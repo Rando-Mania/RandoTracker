@@ -83,6 +83,7 @@
     position: relative;
     line-height: 1;
     row-gap: 10px;
+    --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
     padding: var(--gap-size) var(--gap-size) 0;
     background-size: 100% 100%;
     display: grid !important;
@@ -96,17 +97,17 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .notwebp .layout.default{
-        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.jpg'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
     .webp.notavif .layout.default{
-        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.webp'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
     .avif .layout.default{
-        background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .layout.default{
         background-image: 
-            linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+            var(--background-overlay),
             image-set(
                 "images/justbackground.avif" type("image/avif"),
                 "images/justbackground.webp" type("image/webp"),
@@ -384,7 +385,6 @@ tr-image-toggle img.active, tr-toggle-class.active {
 
 .notwebp .player-grid .icon {background-image: url(images/characters.png);}
 .webp .player-grid .icon{background-image: url(images/characters.webp);}
-
 
 .player-grid-counters .icon-slot {
     align-self: center;
