@@ -71,9 +71,10 @@
     position: relative;
     background-size: 100% 100%;
     background-color: #21384a;
-    --background-overlay: linear-gradient(rgba(255,255,255,0) 30%, rgba(255,255,255,.25), rgba(255,255,255,.0) 70%);
+    --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
     --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
     background-image: var(--background-fallback);
+    overflow: hidden;
 }
 
 .layout.transparent-background{
@@ -273,6 +274,15 @@
     align-items: start;
 }
 
+.player-grid-characters, .player-grid-counters{
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.player-grid-counters{
+    padding: 0 2px;
+}
+
 .p2-grid-contain .player-grid-characters, .p4-grid-contain .player-grid-characters {
     order: 1;
 }
@@ -303,11 +313,69 @@ tr-player{
 }
 
 .player-grid-back{
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 100%;
+}
+
+.player-grid-counters .icon-slot {
+    align-self: center;
+}
+.player-grid-counters tr-template{
+    display: contents;
+}
+[property="starting-character"]{
+    grid-template-rows: none;
+}
+
+[property="starting-character"] img{
+    align-self: center;
+}
+
+[property="starting-character"] img:hover{
+    cursor: pointer;
+}
+
+.dialog#starting-character{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    transform: translate(-117px, -118px);
+    border: none;
+    animation: scale-in .1s;
+    position: relative;
+    background-color: #0000;
+    -webkit-mask-image:
+        linear-gradient(red 0 62px, #0000 0 114px, red 0 114px),
+        linear-gradient(90deg, red 0 82px, #0000 0 122px, red 0 112px)
+    }
+
+.dialog#starting-character:before{
+    content:'';
+    background-color: #f8b800;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 10px;
+    border: solid 2px;
+    position: absolute;
+}
+
+.dialog#starting-character:after{
+    content: '';
+    border: inherit;
+    border-radius: 3px;
+    border: solid 2px #000;
+    width: 40px;
+    height: 52px;
+    position: absolute;
+    left: 80px;
+    top: 60px;
+  }
+
+  @keyframes scale-in {
+    from{transform: translate(-117px, -118px) scale(0);}
+    to{transform: translate(-117px, -118px) scale(1);}
+}
+
+.dialog#starting-character figure:nth-of-type(8){
+    grid-column: 4;
 }
 
 .active{
@@ -348,7 +416,7 @@ tr-player{
     background-size: 500% 1000%;
 }
 
-[property="starting-character"] img, .dialog img{
+[property="starting-character"] img, .dialog img, .icon-slot img{
     width: 32px;
     height: 48px;
     display: block;
@@ -361,12 +429,12 @@ tr-player{
 }
 
 @supports not (background: image-set("foo.avif" type("image/avif")) ){
-    .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
-    .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
+    .notwebp .icon-slot .icon, .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
+    .webp .icon-slot .icon, .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
-    [property^="character"] img, [property="starting-character"] img, .dialog img{
+    .icon-slot .icon, [property^="character"] img, [property="starting-character"] img, .dialog img{
         background-image: image-set(
             "images/characters.webp" type("image/webp"),
             "images/characters.png" type("image/png")
@@ -374,78 +442,71 @@ tr-player{
     }
 }
 
-.terra, [property="character-terra"] img{background-position: 0 0;}
-.locke, [property="character-locke"] img{background-position: 25% 0;}
-.cyan, [property="character-cyan"] img{background-position: 50% 0;}
-.shadow, [property="character-shadow"] img{background-position: 75% 0;}
-.edgar, [property="character-edgar"] img{background-position: 100% 0;}
-.sabin, [property="character-sabin"] img{background-position: 0 25%;}
-.celes, [property="character-celes"] img{background-position: 25% 25%;}
-.strago, [property="character-strago"] img{background-position: 50% 25%;}
-.relm, [property="character-relm"] img{background-position: 75% 25%;}
-.setzer, [property="character-setzer"] img{background-position: 100% 25%;}
-.mog, [property="character-mog"] img{background-position: 0 50%;}
-.gau, [property="character-gau"] img{background-position: 25% 50%;}
-.gogo, [property="character-gogo"] img{background-position: 50% 50%;}
-.umaro, [property="character-umaro"] img{background-position: 75% 50%;}
 
+.terra{background-position: 0 0;}
+.locke{background-position: 25% 0;}
+.cyan{background-position: 50% 0;}
+.shadow{background-position: 75% 0;}
+.edgar{background-position: 100% 0;}
 
-[property="starting-character"] img{
-    z-index: -1;
-}
+.sabin{background-position: 0 25%;}
+.player-grid-characters .sabin{background-position-y: 22.5%;}
 
-[property="starting-character"] .terra, [property="character-terra"] img{background-position: 0 0;}
-[property="starting-character"] .locke, [property="character-locke"] img{background-position: 25% 0;}
-[property="starting-character"] .cyan, [property="character-cyan"] img{background-position: 50% 0;}
-[property="starting-character"] .shadow, [property="character-shadow"] img{background-position: 75% 0;}
-[property="starting-character"] .edgar, [property="character-edgar"] img{background-position: 100% 0;}
-[property="starting-character"] .sabin, [property="character-sabin"] img{background-position: 0 23.5%;}
-[property="starting-character"] .celes, [property="character-celes"] img{background-position: 25% 23.5%;}
-[property="starting-character"] .strago, [property="character-strago"] img{background-position: 50% 25%;}
-[property="starting-character"] .relm, [property="character-relm"] img{background-position: 75% 25%;}
-[property="starting-character"] .setzer, [property="character-setzer"] img{background-position: 100% 23.5%;}
-[property="starting-character"] .mog, [property="character-mog"] img{background-position: 0 47.5%;}
-[property="starting-character"] .gau, [property="character-gau"] img{background-position: 25% 47%;}
-[property="starting-character"] .gogo, [property="character-gogo"] img{background-position: 50% 46.5%;}
-[property="starting-character"] .umaro, [property="character-umaro"] img{background-position: 75% 46.5%;}
+.celes{background-position: 25% 25%;}
+.player-grid-characters .celes{background-position-y: 23.5%;}
 
+.strago{background-position: 50% 25%;}
+.player-grid-characters .strago{background-position-y: 23.5%;}
 
-.player-grid .icon-slot{
+.relm{background-position: 75% 25%;}
+
+.setzer{background-position: 100% 25%;}
+.player-grid-characters .setzer{background-position-y: 23.5%;}
+
+.mog{background-position: 0 50%;}
+.player-grid-characters .mog{background-position-y: 47.5%;}
+
+.gau{background-position: 25% 50%;}
+.player-grid-characters .gau{background-position-y: 46.5%;}
+
+.gogo{background-position: 50% 50%;}
+.player-grid-characters .gogo{background-position-y: 46.5%;}
+
+.umaro{background-position: 75% 50%;}
+.player-grid-characters .umaro{background-position-y: 45.5%;}
+
+.magicite .icon{
+    pointer-events: none;
+    background-position: 25% 75%;
+    transform: scale(1.5);
+    z-index: -1;}
+
+    .dragons .icon{background-position: 0 73%;}
+
+.icon-slot{
+    display: grid;
+    isolation: isolate;
     width: 32px;
     height: 54px;
-    display: block;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-    isolation: isolate;
-    position: relative;
-    background-image: url(images/sprite-sheet.png);
-    background-repeat: no-repeat;
     line-height: .7;
 }
+.icon-slot *{
+    grid-area: 1/1;
+}
 
+.counter, .out-of{
+    pointer-events: none;
+    font-size: 24px;
+    z-index: 5;
+}
 .counter{
-    position: absolute;
+    place-self: start;
+    text-shadow: 2px 2px black;
 }
-
 .out-of{
-    position: absolute;
-    bottom: 0;
-    right: 0;
     color: rgb(255, 215, 0);
-}
-
-.player-grid .icon-slot.magicite{
-    background-position: 92% -13px;
-    background-size: 500% auto;
-}
-
-.terra{
-    background-position: 0 6px;
-    background-size: 300% auto;
-}
-.dragons{
-    background-position: 50% 3px;
-    background-size: 300% auto;
+    place-self: end;
+    text-shadow: -2px -2px black;
 }
 
 .player-speaker{
