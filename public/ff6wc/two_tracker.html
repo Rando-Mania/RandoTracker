@@ -42,7 +42,7 @@
         }
         .tracker-layout .player-wrapper > *~*{
             margin-top: 8px;
-        }
+        }    
         .tracker-layout .player-name{
             height: auto;
         }
@@ -50,14 +50,23 @@
             padding: 16px;
             margin: 0 -2px;
             display: grid;
-            align-content: space-between;
+            grid-row: span 2;
+            gap: .5em;
+            height: max-content;
+            align-self: center;
+        }
+        .tracker-layout .goals div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .75em;
         }
         .tracker-layout .player-wrapper [type="number"] {
             width: 1.15rem;
         }
         .tracker-layout .player-wrapper [type="number"]:hover {
-            transform: scale(1.5);
-            transform-origin: left;
+            transform: scale(1.25);
+            transform-origin: 75% 0;
         }
         .spinner{
             place-self: start end;
