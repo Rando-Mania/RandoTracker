@@ -460,7 +460,7 @@ tr-timer span {
     grid-gap: 7px;
     padding: 7px;
     border: solid 2px #fff;
-    z-index: 3;
+    z-index: 10;
 }
 
 .display-none{ display: none; }
