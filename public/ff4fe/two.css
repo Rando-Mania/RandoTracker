@@ -384,15 +384,42 @@ tr-toggle-class, .in-active {
     background-size: 500% 500%;
     background-position: 75% 100%;
 }
-.webp .zz4-brackets .player-best-of img{
-    background-image: url('images/2p/zz4/ff4fe-spritesheet-zz4.webp');
-}
-.notwebp .zz4-brackets .player-best-of img{
-    background-image: url('images/2p/zz4/ff4fe-spritesheet-zz4.png');
-}
 .player-best-of .active img{
     background-position: 0 100%;
 }
+
+.zz4-brackets .player-best-of img{
+    background-image: url('images/2p/zz4/ff4fe-sparkle-crystal.png');
+    background-size: 600% 100%;
+    background-position: 0 100%;
+}
+.zz4-brackets .player-best-of .active img{
+    animation-name: crystal, crystal2;
+    animation-duration: 1.2s, 1.2s;
+    animation-delay: 0s, 1s;
+    animation-iteration-count: 1, 1;
+    animation-timing-function: steps(6), steps(5);
+}
+    @keyframes crystal {
+        from{ background-position: 0; }
+        to{ background-position: 192px; }
+    }
+    @keyframes crystal2 {
+        from{ background-position: 32px; }
+        to{ background-position: 192px; }
+    }
+
+/*.sprite-staff-with-rain {
+    background-position: 0 -32px;
+}
+    [selected="selected"].sprite-staff-with-rain ~ img{
+        animation: rain .25s steps(4) 8;
+    }
+
+    @keyframes rain {
+        from{ background-position: 0 -32px;}
+        to{ background-position: -128px -32px;}
+    }*/
 
 .best-of-3, .best-of-5, .best-of-7{
     display: grid;
