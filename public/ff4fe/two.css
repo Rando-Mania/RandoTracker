@@ -557,6 +557,78 @@ tr-timer span {
 
 .show{ display: block; }
 
+.webp .hero-name {
+    background-image: url(images/2p/zz4/OurHero.webp);
+}
+.notwebp .hero-name {
+    background-image: url(images/2p/zz4/OurHero.png);
+}
+
+.hero-name {
+    display: none;
+    width: 73px;
+    height: 70px;
+    left: 604px;
+    top: 299px;
+    background-image: url(images/2p/zz4/OurHero.png);
+}
+
+.hero-indicator {
+    display: none;
+    left: 617px;
+    top: 378px;
+    width: 48px;
+    height: 72px;
+    background-image: url('images/2p/HeroSheet.png');
+    background-position: 0% -100%;
+}
+
+.hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
+.hero-palom, .hero-porom, .hero-edge, .hero-fusoya {
+    display: initial;    
+}
+
+.hero-indicator.hero-cecil {
+    background-position: 0% 0%;
+}
+.hero-indicator.hero-rosa {
+    background-position: -100% 0%;
+}
+.hero-indicator.hero-kain {
+    background-position: -200% 0%;
+}
+.hero-indicator.hero-rydia {
+    background-position: -300% 0%;
+}
+.hero-indicator.hero-tellah {
+    background-position: 0% -100%;
+}
+.hero-indicator.hero-edward {
+    background-position: -100% -100%;
+}
+.hero-indicator.hero-yang {
+    background-position: -200% -100%;
+}
+.hero-indicator.hero-cid {
+    background-position: -300% -100%;
+}
+.hero-indicator.hero-palom {
+    background-position: 0% -200%;
+}
+.hero-indicator.hero-porom {
+    background-position: -100% -200%;
+}
+.hero-indicator.hero-edge {
+    background-position: -200% -200%;
+}
+.hero-indicator.hero-fusoya {
+    background-position: -300% -200%;
+}
+
+.zz4-brackets .hero-indicator {
+    background-image: url('images/2p/zz4/HeroSheet-zz4.png');
+}
+
 /* Menu */
 
 .menu-game-specific .fieldset.objectives-menu > div{
@@ -589,6 +661,7 @@ tr-timer span {
     /* justify-content: space-evenly; */
 }
 #menu_backgrounds{grid-area: backgrounds;}
+#menu_hero{grid-area: hero; z-index: 1}
 
 /*.menu-contain{
     grid-template-areas:
@@ -602,5 +675,5 @@ tr-timer span {
         "objectives players2    players layout  layout  team"
         "objectives backgrounds timer   view    reset   credits"
         "objectives tourney     timer   view    reset   credits"
-        "objectives match       timer   view    reset   credits";
+        "objectives match       hero   view    reset   credits";
     }    
