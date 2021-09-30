@@ -117,7 +117,7 @@
     justify-items: center;
 }
 
-.sidebar-staff-players .players *{
+.sidebar-staff-players .player-name{
     font-size: 36px;
     height: 100%;
 }
@@ -127,6 +127,22 @@
     text-align: left;
     max-width: 410px;
     width: auto;
+}
+
+.loadscreen-zemus .sidebar-staff-players .player-winner{
+    width: auto;
+    right: 80%;
+    left: initial;
+    top: 0;
+}
+
+.loadscreen-zemus .sidebar-staff-players [player="1"] .player-winner{
+    transform-origin: bottom left;
+    transform: rotate(-15deg);
+}
+.loadscreen-zemus .sidebar-staff-players [player="2"] .player-winner{
+    transform-origin: top left;
+    transform: rotate(15deg);
 }
 
 .sidebar-staff-players .broadcasters{
@@ -151,7 +167,7 @@
     width: auto;
 }
 
-.sidebar-staff-players img{
+.sidebar-staff-players .staff img{
     /* pre-filter comms/stream/tracker icons to black, then convert to #dfd2b4
        see: https://codepen.io/sosuke/pen/Pjoqqp */
     filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(280%) hue-rotate(4deg) brightness(104%) contrast(85%)
@@ -277,12 +293,12 @@
     background-image: var(--ccs-load-fallback);
 }
 
-.zz4-brackets{background-image: linear-gradient(#589877,#709d88);}
-.notwebp .zz4-brackets{
-    background-image: url('images/2p/zz4/Bracket-Intro-BG.png'), linear-gradient(#589877,#709d88);
+.zz4-brackets .loadscreen{background-color: #21254f;}
+.notwebp .zz4-brackets .loadscreen{
+    background-image: url('images/2p/zz4/Bracket-Intro-BG.png');
 }
-.webp .zz4-brackets{
-    background-image: url('images/2p/zz4/Bracket-Intro-BG.webp'), linear-gradient(#589877,#709d88);
+.webp .zz4-brackets .loadscreen{
+    background-image: url('images/2p/zz4/Bracket-Intro-BG.webp');
 }
 
 .notwebp .ccs-mysidian-jumping .loadscreen{
@@ -330,8 +346,11 @@
 </style>
 <div class="loadscreen">
     <template id="zemus_player_info_load_template">
-        <div class="player-name-contain">
+        <div style="position: relative;" class="player-name-contain">
             <tr-text scale-to-fit scale-to-fit-max-width class="player-name" property="player-name"></tr-text>
+            <tr-toggle property="toggle-winner" class="abs player-winner">
+                <img class="winner-image" src="images/2p/zz4/winner.svg" alt="Winner">
+            </tr-toggle>
         </div>
     </template>    
     <div class="loadscreen-zemus">

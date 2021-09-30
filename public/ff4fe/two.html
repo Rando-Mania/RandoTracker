@@ -14,8 +14,6 @@
     <link rel="preload" href="images/2p/ff4fe-spritesheet.webp" as="image" type="image/webp">
     <link rel="preload" href="images/2p/zz4/ff4fe-spritesheet-zz4.webp" as="image" type="image/webp">
     <link rel="preload" href="images/2p/zz4/ff4fe-sparkle-crystal.png" as="image" type="image/png">
-    <link rel="preload" href="images/2p/HeroSheet.png" as="image" type="image/png">
-    <link rel="preload" href="images/2p/zz4/OurHero.png" as="image" type="image/png">
     <link rel="preload" href="images/2p/zz4/OurHero.webp" as="image" type="image/webp">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
@@ -74,7 +72,8 @@
             <img src="../shared/images/icons/blank.svg" alt="">
         </tr-toggle>
         <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
-            <div>Winner</div>
+            <div class="winner-text">Winner</div>
+            <img class="winner-image" src="images/2p/zz4/winner.svg" width="126" alt="Winner">
         </tr-toggle>
         <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
     </template>
