@@ -399,6 +399,7 @@ tr-toggle-class, .in-active {
     animation-delay: 0s, 1s;
     animation-iteration-count: 1, 1;
     animation-timing-function: steps(6), steps(5);
+    background-position: 32px;
 }
     @keyframes crystal {
         from{ background-position: 0; }
