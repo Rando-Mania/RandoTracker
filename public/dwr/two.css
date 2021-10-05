@@ -69,13 +69,16 @@
 
 .map-background{background-color: #002781;}
 .notavif.notwebp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.png');
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.png');
 }
 .notavif.webp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.webp');
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.webp');
 }
-.avif .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('images/alefgard_crop_test.avif');
+.avif.notjxl .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.avif');
+}
+.jxl .map-background{
+    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.jxl');
 }
 
 .player-panels-contain{
@@ -317,6 +320,7 @@
 } */
 
 .player-final{
+    color: #fc9838;
     position: relative;
     bottom: 1.5em;
     font-size: 16px;
@@ -571,61 +575,20 @@ td:nth-of-type(2){
         .production-team-swap{
             display: grid;
             grid-template-columns: 1fr;
-            grid-gap: 8px;
-            padding: 8px;
+            grid-gap: 4px;
+            padding: 4px;
         }
         
         .staff{
             overflow: hidden;
             font-size: 18px;
-        }
-        
-        .staff-panel-1, .staff-panel-2{
-            grid-area: 1/1;
-            display: grid;
-            align-items: center;
-        }
-        
-        .staff-panel-1{grid-template-columns: auto 1fr;}
-        .staff-panel-2{grid-template-columns: 1fr;}
-        
-        .commentators-contain, .restreamers-contain, .trackers-contain{
-            display: grid;
-            grid-template-columns: auto 1fr;
-            align-items: center;
+            width: 246px;
+            height: auto;
         }
         
         .commentators, .restreamers, .trackers{
             width: 200px;
         }
-        
-        .staff img {
-            background-image: url("../shared/images/icons/sprite.svg");
-            background-repeat: no-repeat;
-            background-size: 500% 400%;
-            margin: 0 6px;
-            z-index: 2;
-            width: auto;
-            height: 1em;
-          }
-        
-        .commentators-img{background-position: 75% 0;}
-        .restreamers-img{background-position: 0 0;}
-        .trackers-img{background-position: 50% 0;}
-        
-        
-        .production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
-        .production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
-        
-        @keyframes panel-1-blinker {
-            0%, 75% {opacity: 1;}
-            75.1%, 100% {opacity: 0;}
-            }
-            
-        @keyframes panel-2-blinker {
-            0%, 75% {opacity: 0;}
-            75.1%, 100% {opacity: 1;}
-            }
     
 .coordinates-contain{
     padding: .75rem;
