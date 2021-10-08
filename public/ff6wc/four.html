@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
     <link rel="preload" href="images/justbackground.avif" as="image" type="image/avif">
@@ -43,7 +44,9 @@
             <div class="player-video abs"></div>
             <tr-text property="player-final" class="player-final abs"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker text-shadow">
-                <img src="../shared/images/icons/blank.svg" alt="">
+                <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
+                    <path fill="currentColor" d="M5 7h-4v6h4l5 5v-16l-5 5zM16.36 16.36l-1.41-1.41c1.272-1.265 2.059-3.015 2.059-4.95s-0.787-3.685-2.059-4.95l-0-0 1.41-1.41c1.634 1.625 2.645 3.874 2.645 6.36s-1.011 4.735-2.644 6.36l-0 0zM13.54 13.54l-1.42-1.42c0.542-0.543 0.877-1.292 0.877-2.12s-0.335-1.577-0.877-2.12l0 0 1.42-1.42c0.912 0.903 1.477 2.156 1.477 3.54s-0.565 2.637-1.477 3.54l-0 0z"></path>
+                </svg>
             </tr-toggle>
             <tr-toggle property="toggle-winner" class="abs player-winner">
                 <div>WINNER</div>
@@ -270,7 +273,7 @@
                 <p class="twitch-link"> 
                     <svg version="1.1" class="glitch" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewbox="0 0 240 280">
                         <g id="glitch">
-                            <path d="M50,0L0,50v180h60v50l50-50h40l90-90V0H50z M220,130l-40,40h-40l-35,35v-35H60V20h160V130z"/>
+                            <path fill="currentColor" d="M50,0L0,50v180h60v50l50-50h40l90-90V0H50z M220,130l-40,40h-40l-35,35v-35H60V20h160V130z"/>
                             <rect x="170" y="55" width="20" height="60"/>
                             <rect x="115" y="55" width="20" height="60"/>
                         </g>

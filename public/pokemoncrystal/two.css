@@ -272,14 +272,11 @@ tr-toggle-class, .in-active {
     pointer-events: none;
 }
 
-.player-speaker img{
+.player-speaker svg{
     width: 24px;
     height: 24px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 33%;
+    color:#000;
 }
 
 .player-winner{
@@ -376,70 +373,33 @@ tr-timer span {
 }
 
 .staff{
-    overflow: hidden;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0 4px;
+    width: 358px;
 }
 
 .staff-panel-1, .staff-panel-2{
     min-height: 40px;
-    width: 350px;
-    grid-area: 1/1;
-    display: grid;
     align-items: center;
     border-radius: 9999px;
     background-color: #000;
-}
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
-
-.commentators-contain, .restreamers-contain, .trackers-contain{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    padding: 0 8px;
+    padding: 0 12px;
 }
 
 .commentators, .restreamers, .trackers{
-    width: 298px;
+    width: 286px;
 }
 
-.staff img {
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    margin: 0 10px 0 6px;
+.staff svg {
     z-index: 2;
     width: auto;
     height: .8em;
+    margin: 0 .5em;
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #fff;
+    color: #000;
   }
-
-.commentators-img{background-position: 75% 33%;}
-.staff img.restreamers-img{
-    background: #0000 url('images/monitor-masked.png') 0 0 / 100% 100%;
-    box-shadow: none;
-    border-radius: 0;
-    height: 1.2em;
-    margin: 0 10px 0 2px;
-}
-.trackers-img{background-position: 50% 33%;}
-
-.production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
-.production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
-
-@keyframes panel-1-blinker {
-    0%, 75% {opacity: 1;}
-    75.1%, 100% {opacity: 0;}
-    }
-    
-@keyframes panel-2-blinker {
-    0%, 75% {opacity: 0;}
-    75.1%, 100% {opacity: 1;}
-    }
 
 /* dialog styles */
     

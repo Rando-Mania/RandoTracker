@@ -60,6 +60,12 @@
    #0078f8;
 }
 
+.loadscreen.league-background main{
+  background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
+  grid-template-columns: minmax(52%, max-content);
+  justify-content: start;
+}
+
 #changeText{
   font-size: 17px;
   letter-spacing: 1px;

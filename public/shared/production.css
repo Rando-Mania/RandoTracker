@@ -1,47 +1,41 @@
 .production-team-swap{
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 8px;
-    padding: 8px;
+    gap: 8px;
+    height: 100%;
+    padding: 0;
 }
 
 .staff{
     overflow: hidden;
+    width: 274px;
+    height: 55px;
+}
+
+.staff svg{    
+    width: auto;
+    height: 1em;
+    margin: 0 .75em;
 }
 
 .staff-panel-1, .staff-panel-2{
     grid-area: 1/1;
-    background-color: #000;
     display: grid;
-    align-items: center;
+    gap: 3px;
+    align-content: center;
 }
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
 
 .commentators-contain, .restreamers-contain, .trackers-contain{
     display: grid;
+    gap: 0;
     grid-template-columns: auto 1fr;
-    align-items: center;
+    place-items: center;
 }
 
 .commentators, .restreamers, .trackers{
     width: 230px;
+    justify-self: start;
 }
-
-.staff img {
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    margin: 0 6px;
-    z-index: 2;
-    width: auto;
-    height: 1em;
-  }
-
-.commentators-img{background-position: 75% 0;}
-.restreamers-img{background-position: 0 0;}
-.trackers-img{background-position: 50% 0;}
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}

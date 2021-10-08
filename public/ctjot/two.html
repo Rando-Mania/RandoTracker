@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
     <link rel="preload" href="images/border.png" as="image" type="image/png">
@@ -55,7 +56,9 @@
 			<tr-text property="player-number" class="record-contain abs background-1 border-1"></tr-text>
 			<tr-text property="player-final" class="player-final abs background-1 border-1"></tr-text>        
 			<tr-toggle property="toggle-speaker" class="abs player-speaker">
-				<img src="../shared/images/icons/blank.svg" alt="">
+                <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
+                    <path fill="currentColor" d="M5 7h-4v6h4l5 5v-16l-5 5zM16.36 16.36l-1.41-1.41c1.272-1.265 2.059-3.015 2.059-4.95s-0.787-3.685-2.059-4.95l-0-0 1.41-1.41c1.634 1.625 2.645 3.874 2.645 6.36s-1.011 4.735-2.644 6.36l-0 0zM13.54 13.54l-1.42-1.42c0.542-0.543 0.877-1.292 0.877-2.12s-0.335-1.577-0.877-2.12l0 0 1.42-1.42c0.912 0.903 1.477 2.156 1.477 3.54s-0.565 2.637-1.477 3.54l-0 0z"></path>
+                </svg>
 			</tr-toggle>
 			<tr-toggle property="toggle-winner" class="abs player-winner background-1 border-1">
 				<div>Winner</div>

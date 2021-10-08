@@ -622,12 +622,12 @@ tr-timer span {
     text-align: center;
 }
 
-.staff-panel-1, .staff-panel-2 {
-    background-color: #0000;
-}
-
 .production-team-swap {
     padding: 0;
+}
+
+.staff{
+    height: auto;
 }
 
 .footer{
