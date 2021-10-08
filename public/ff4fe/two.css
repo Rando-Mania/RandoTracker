@@ -454,19 +454,23 @@ tr-timer span {
     width: 26px;
 }
 
+.staff{
+    width: 366px;
+    height: 55px;
+}
+
 .staff-panel-1{line-height: 1.5;}
 
 .sidebar-staff-players .commentators-contain{
     gap: 4px;
 }
 
-.commentators, .restreamers, .trackers{
+.commentators, .restreamers, .trackers {
     width: 307px;
 }
 
-.sidebar-staff-players .commentators-img{
-    width: 40px;
-    height: 40px;
+.commentators-img{
+    transform: scale(2.1);
 }
 
 /* dialog styles */

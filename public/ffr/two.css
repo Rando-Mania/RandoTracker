@@ -448,12 +448,8 @@ tr-timer span {
     border-bottom: none;
 }
 
-.production-team-swap{
-    padding: 3px;
-}
-
-.commentators-contain, .restreamers-contain, .trackers-contain{
-    gap: 0px;
+.staff svg{
+    margin: 0 .5em;
 }
 
 .commentators-img, .restreamers-img, .trackers-img {
@@ -464,7 +460,6 @@ tr-timer span {
 .commentators, .restreamers, .trackers{
     width: 250px;
 }
-
 
 /* dialog styles */
     

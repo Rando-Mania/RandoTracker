@@ -12,6 +12,12 @@
     height: 55px;
 }
 
+.staff svg{    
+    width: auto;
+    height: 1em;
+    margin: 0 .75em;
+}
+
 .staff-panel-1, .staff-panel-2{
     grid-area: 1/1;
     display: grid;
@@ -21,13 +27,14 @@
 
 .commentators-contain, .restreamers-contain, .trackers-contain{
     display: grid;
-    gap: 4px;
-    grid-template-columns: 40px 1fr;
+    gap: 0;
+    grid-template-columns: auto 1fr;
     place-items: center;
 }
 
 .commentators, .restreamers, .trackers{
     width: 230px;
+    justify-self: start;
 }
 
 .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}

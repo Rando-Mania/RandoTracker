@@ -325,21 +325,12 @@ tr-timer span {
 /* staff styles */
 
 .staff{
-    overflow: hidden;
     font-size: 24px;
     width: 450px;
 	height: 78px;
 	top: 200px; 
 	left: 825px; 
 	text-align: center;
-}
-
-.production-team-swap{
-    padding: 3px;
-}
-
-.commentators-contain, .restreamers-contain, .trackers-contain{
-    gap: 0px;
 }
 
 .commentators-img, .restreamers-img, .trackers-img {

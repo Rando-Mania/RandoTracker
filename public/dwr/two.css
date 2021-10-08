@@ -573,30 +573,34 @@ td:nth-of-type(2){
         }
 
         .production-team-swap{
-            display: grid;
-            grid-template-columns: 1fr;
             grid-gap: 4px;
-            padding: 4px;
         }
         
         .staff{
-            overflow: hidden;
             font-size: 18px;
             width: 246px;
             height: auto;
+            padding: 4px 0;
         }
         
+        .staff svg{
+            margin: 0 .25em;
+        }
+
         .commentators, .restreamers, .trackers{
             width: 200px;
         }
     
 .coordinates-contain{
+    overflow: hidden;
+    max-width: 246px;
     padding: .75rem;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: .75rem;
+    grid-template-columns: auto 1fr;
+    gap: .75rem;
     align-items: center;
     font-size: 19px;
+    text-align: center;
 }
 
 .coordinates-contain img{

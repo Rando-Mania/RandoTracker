@@ -237,6 +237,10 @@ tr-timer span {
 	height: 75px;
 }
 
+.staff svg{
+    margin: 0 .25em;
+}
+
 .commentators, .restreamers, .trackers{
     width: 230px;
 }
