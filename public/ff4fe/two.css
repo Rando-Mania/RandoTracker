@@ -26,7 +26,7 @@
     --border: 2px;
     --borderImage: url(images/ff4-border.png) 3 / 3px / 1px;
 
-    --zemusTextColor: #dfd2b4;    
+    --zemusTextColor: #dfd2b4;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -108,8 +108,15 @@
     mask-repeat: no-repeat
 }
 
-.layout.zz4-brackets{background-color: #f0dfa3;}
+.layout.zz4-brackets{
+    color: var(--zemusTextColor);
+    background-color: #6a9480;
+}
 .layout.zz4-brackets{background-image: url('images/2p/zz4/QuarterFinals-Live-BG.jpg');}
+
+.layout.zz4-brackets .player-speaker{
+    color: var(--backgroundColor1);
+}
 
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
