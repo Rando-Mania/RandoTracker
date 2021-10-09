@@ -516,54 +516,18 @@ tr-timer span {
 }
 
 .hero-indicator {
+    background-image: url('images/2p/HeroSheet.png');
+    background-size: 400% 300%;
     display: none;
     left: 617px;
     top: 378px;
     width: 48px;
     height: 72px;
-    background-position: 0% -100%;
 }
 
 .hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
 .hero-palom, .hero-porom, .hero-edge, .hero-fusoya {
-    display: initial;    
-}
-
-.hero-indicator.hero-cecil {
-    background-position: 0% 0%;
-}
-.hero-indicator.hero-rosa {
-    background-position: -100% 0%;
-}
-.hero-indicator.hero-kain {
-    background-position: -200% 0%;
-}
-.hero-indicator.hero-rydia {
-    background-position: -300% 0%;
-}
-.hero-indicator.hero-tellah {
-    background-position: 0% -100%;
-}
-.hero-indicator.hero-edward {
-    background-position: -100% -100%;
-}
-.hero-indicator.hero-yang {
-    background-position: -200% -100%;
-}
-.hero-indicator.hero-cid {
-    background-position: -300% -100%;
-}
-.hero-indicator.hero-palom {
-    background-position: 0% -200%;
-}
-.hero-indicator.hero-porom {
-    background-position: -100% -200%;
-}
-.hero-indicator.hero-edge {
-    background-position: -200% -200%;
-}
-.hero-indicator.hero-fusoya {
-    background-position: -300% -200%;
+    display: initial;
 }
 
 .notwebp .zz4-brackets .hero-indicator {
@@ -572,6 +536,19 @@ tr-timer span {
 .webp .zz4-brackets .hero-indicator {
     background-image: url('images/2p/zz4/HeroSheet-zz4.webp');
 }
+
+.hero-indicator.hero-cecil {background-position: 0 0;}
+.hero-indicator.hero-rosa {background-position: 33.3% 0;}
+.hero-indicator.hero-kain {background-position: 66.6% 0;}
+.hero-indicator.hero-rydia {background-position: 100% 0;}
+.hero-indicator.hero-tellah {background-position: 0 50%;}
+.hero-indicator.hero-edward {background-position: 33.3% 50%;}
+.hero-indicator.hero-yang {background-position: 66.6% 50%;}
+.hero-indicator.hero-cid {background-position: 100% 50%;}
+.hero-indicator.hero-palom {background-position: 0 100%;}
+.hero-indicator.hero-porom {background-position: 33.3% 100%;}
+.hero-indicator.hero-edge {background-position: 66.6% 100%;}
+.hero-indicator.hero-fusoya {background-position: 100% 100%;}
 
 /* Menu */
 
