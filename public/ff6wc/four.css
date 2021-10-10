@@ -15,7 +15,7 @@
     --videoX: 0px; --videoY: 0px;
     --nameWidth: 160px;
     --infoX: 445px; --infoY: -1px;
-    --speakerX: 569px; --speakerY: 17px;
+    --speakerX: 569px; --speakerY: 118px;
     --winX: 445px; --winY: 97px;
     --finalX: 445px; --finalY: 51px;
     --vsX: 50%; --vsY: 0;
@@ -243,7 +243,6 @@
 .glitch{
     vertical-align: bottom;
     position: relative;
-    bottom: 2px;
     height: 18px;
     width: 18px;
     fill: currentColor;
@@ -510,16 +509,7 @@ tr-player{
 
 .player-speaker{
     padding: 4px;
-}
-
-.player-speaker img{
-    width: 32px;
-    height: 32px;
-    display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
+    mix-blend-mode: overlay;
 }
 
 [player="2"] .player-speaker, [player="4"] .player-speaker{
@@ -591,7 +581,7 @@ tr-timer .dot, tr-timer .ms{
     font-size: 22px;
     transform: translateX(-50%);
     left: 50%;
-    top: 54px;
+    top: 44px;
     width: 153px;
     height: auto;
 }
@@ -603,6 +593,7 @@ tr-timer .dot, tr-timer .ms{
 
 .commentators, .restreamers, .trackers{
     width: 125px;
+    text-align: center;
 }
 
 /* dialog styles */
