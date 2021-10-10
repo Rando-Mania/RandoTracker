@@ -423,8 +423,12 @@
     grid-gap: 12px 10px;
 }
 
-.player-grid[href="items_plot.html"]{
+.player-grid.plot-items{
     grid-auto-flow: row;
+}
+
+.player-grid.stat-items{
+    grid-template-columns: repeat(2, auto);
 }
 
 .player-grid tr-toggle-class, img.in-active{

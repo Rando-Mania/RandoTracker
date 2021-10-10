@@ -50,14 +50,22 @@
             grid-template-columns: repeat(4, auto);
             grid-gap: 1px;
         }
+        .tracker-layout .player-name{
+            width: 280px;
+        }
 
         .tracker-layout .full-width{
             grid-column: 1 / -1;
         }
 
+        .player-name-best-of{
+            display: flex;
+            justify-content: space-around;
+        }
         .tracker-runner-info{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            padding: 8px 0;
         }
 
         .tracker-coordinates{
@@ -69,11 +77,16 @@
             grid-gap: 2em;
         }
         
-        .tracker-build-contain, .tracker-counter-contain, .tracker-name-contain {
+        .tracker-build-contain, .tracker-counter-contain, .tracker-character-name-contain {
             font-size: 12px;
             display: grid;
             grid-template-columns: 1fr;
             justify-items: center;
+        }
+
+        .tracker-name-contain{
+            font-size: 24px;
+            align-self: center;
         }
 
         .tracker-layout tr-template.spells{
@@ -96,6 +109,10 @@
             height: 100%;
             padding: 0 8px;
         }
+
+        .tracker-layout .player-grid{
+            padding: 4px;
+        }
     </style>
 </head>
 <body>
@@ -109,12 +126,18 @@
             </span>
         </div>
         <template id="player-template">
-            <div class="background-1 tracker-runner-info full-width">
+            <div class="player-name-best-of full-width">
                 <div class="tracker-name-contain">
-                    <h4>Player</h4>
-                    <tr-text property="player-name"></tr-text>
+                    <tr-text scale-to-fit class="player-name" property="player-name"></tr-text>
                 </div>
-                <div class="tracker-name-contain">
+                <tr-template class="player-best-of" href="bestof.html"></tr-template>
+            </div>
+            <div class="background-1 tracker-runner-info full-width">
+                <div class="tracker-counter-contain">
+                    <span>Counter</span>
+                    <tr-input-number min="0" property="player-cod" oninput></tr-input-number>
+                </div>
+                <div class="tracker-character-name-contain">
                     <h4>Char. name</h4>
                     <tr-input-text class="charname" property="character_name"></tr-input-text>
                 </div>
@@ -126,10 +149,6 @@
                         <tr-option value="2">HP/MP</tr-option>
                         <tr-option value="3">AG/MP</tr-option>
                     </tr-select>
-                </div>
-                <div class="tracker-counter-contain">
-                    <span>Counter:</span>
-                    <tr-input-number min="0" property="player-cod" oninput></tr-input-number>
                 </div>
             </div>
             <!-- TODO: Slime medalions if they're still wanted -->
@@ -160,7 +179,6 @@
                 </tr>
             </table>
             <tr-template class="spells background-1" href="spells.html"></tr-template>
-            <tr-template class="player-best-of abs" href="bestof.html"></tr-template>
         </template>
         <div class="player-wrapper">
             <tr-player player="1">
