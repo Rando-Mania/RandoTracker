@@ -34,7 +34,7 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
-.layout.zz4-brackets{
+[class*="zz4-"].layout{
     --borderImage: url(images/ff4-zz4-border.png) fill 3 / 3px / 1px;
     --backgroundColor1: #242847;
 }
@@ -45,7 +45,7 @@
     image-rendering: pixelated;
 }
 
-.layout.zz4-brackets .player-video.border-1{
+[class*="zz4-"].layout .player-video.border-1{
     border: var(--border1);
     border-image: url(images/ff4-zz4-border-inner-corners.png) 4 / 4px / 1px;
     image-rendering: pixelated;
@@ -62,7 +62,7 @@
     image-rendering: pixelated;
 }
 
-.layout.zz4-brackets .border-background-1 {
+[class*="zz4-"].layout .border-background-1 {
     border-image-repeat: repeat;
 }
 
@@ -108,13 +108,15 @@
     mask-repeat: no-repeat
 }
 
-.layout.zz4-brackets{
+[class*="zz4-"].layout{
     color: var(--zemusTextColor);
     background-color: #6a9480;
 }
-.layout.zz4-brackets{background-image: url('images/2p/zz4/QuarterFinals-Live-BG.jpg');}
 
-.layout.zz4-brackets .player-speaker{
+.layout.zz4-quarterfinals{background-image: url('images/2p/zz4/QuarterFinals-Live-BG.jpg');}
+.layout.zz4-semifinals{background-image: url('images/2p/zz4/SemiFinals-Live-BG.jpg');}
+
+[class*="zz4-"].layout .player-speaker{
     color: var(--backgroundColor1);
 }
 
@@ -375,8 +377,8 @@ tr-toggle-class, .in-active {
 
 .winner-image{ display:none;}
 
-.zz4-brackets .winner-image{ display:block;}
-.zz4-brackets .winner-text{ display:none;}
+[class*="zz4-"] .winner-image{ display:block;}
+[class*="zz4-"] .winner-text{ display:none;}
 
 .player-best-of{
     display: grid;
@@ -512,10 +514,10 @@ tr-timer span {
     display: initial;
 }
 
-.notwebp .zz4-brackets .hero-indicator {
+.notwebp [class*="zz4-"] .hero-indicator {
     background-image: url('images/2p/zz4/HeroSheet-zz4.png');
 }
-.webp .zz4-brackets .hero-indicator {
+.webp [class*="zz4-"] .hero-indicator {
     background-image: url('images/2p/zz4/HeroSheet-zz4.webp');
 }
 
