@@ -116,10 +116,6 @@
 .layout.zz4-quarterfinals{background-image: url('images/2p/zz4/QuarterFinals-Live-BG.jpg');}
 .layout.zz4-semifinals{background-image: url('images/2p/zz4/SemiFinals-Live-BG.jpg');}
 
-[class*="zz4-"].layout .player-speaker{
-    color: var(--backgroundColor1);
-}
-
 .layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
 .webp.notavif .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.webp), linear-gradient(#73d417,#122c04);}
@@ -162,7 +158,8 @@
 
 .layout.magenta-background .player-video{background-color: #f0f;}
 .notwebp .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
-.webp .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
+.webp.notavif .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
+.avif .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.avif);}
 
 .player-info{
     font-size: 18px;
@@ -345,18 +342,18 @@ tr-toggle-class, .in-active {
 
 .player-speaker{
     padding: 4px;
-    /* filter: invert(1); */
 }
 
-.player-speaker img{
+.player-speaker svg{
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
     filter: drop-shadow(0 0 1px #000);
+}
+
+[class*="zz4-"].layout .player-speaker svg{
+    color: var(--backgroundColor1);
+    filter: none;
 }
 
 [player="2"] .player-speaker{
@@ -396,8 +393,8 @@ tr-toggle-class, .in-active {
 }
 
 @keyframes crystal-sparkle {
-    from{ background-position-x: 32px; }
-    to{ background-position-x: 288px; }
+    from{ background-position-x: -32px; }
+    to{ background-position-x: -288px; }
 }
 
 .best-of-3, .best-of-5, .best-of-7{
