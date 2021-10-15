@@ -72,7 +72,7 @@
     background-size: 100% 100%;
     background-color: #21384a;
     --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
-    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
     background-image: var(--background-fallback);
     overflow: hidden;
 }

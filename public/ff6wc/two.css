@@ -117,8 +117,11 @@
 }
 
 .layout.default{
-    --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+    --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
 }
+
+/* linear-gradient(#36172f,#e6b24a 41%, #8f6752 41%),
+linear-gradient(#b6cbe7, #fffafe 41%, #3e615b 41%) */
 
 .banon.layout{
     background-color: #100018;

@@ -45,22 +45,22 @@
 
             let data = e.detail;
  
-            var updateDragonGoal = function (){
-                let ds = document.querySelectorAll('.icon-slot.dragons');
+            // var updateDragonGoal = function (){
+            //     let ds = document.querySelectorAll('.icon-slot.dragons');
 
-                var dragonGoal = data["dragon-goal"] || "0";
+            //     var dragonGoal = data["dragon-goal"] || "0";
 
-                if (dragonGoal == "0") {
-                    ds.forEach( function(item) {
-                        item.classList.add('display-none')
-                    }) 
-                }
-                else {
-                    ds.forEach( function(item) {
-                        item.classList.remove('display-none')
-                    })
-                }
-            }
+            //     if (dragonGoal == "0") {
+            //         ds.forEach( function(item) {
+            //             item.classList.add('display-none')
+            //         }) 
+            //     }
+            //     else {
+            //         ds.forEach( function(item) {
+            //             item.classList.remove('display-none')
+            //         })
+            //     }
+            // }
 
             var characterCounts = function (){
 
@@ -176,7 +176,7 @@
                 }
             }
             
-            updateDragonGoal();
+            // updateDragonGoal();
             characterCounts();
             return data;
         })
