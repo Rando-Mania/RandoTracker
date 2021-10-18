@@ -238,6 +238,9 @@ linear-gradient(#b6cbe7, #fffafe 41%, #3e615b 41%) */
 .hide-icons .player-grid{
     display: none;
 }
+.hide-dragons .dragons{
+    display: none;
+}
 
 .player-grid-back{
     position: absolute;

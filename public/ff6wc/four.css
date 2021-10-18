@@ -310,6 +310,10 @@ tr-player{
     position: relative;
 }
 
+.hide-dragons .dragons{
+    display: none;
+}
+
 .player-grid-back{
     height: 100%;
     width: 100%;
