@@ -393,14 +393,9 @@ tr-timer span {
     background: url('images/staff-back-all.svg') no-repeat 0 0 / 394px 300%;
 }
 
-.staff-panel-1, .staff-panel-2{
-    grid-area: 1/1;
-    display: grid;
-    align-items: center;
-}
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
+.staff svg {
+    margin: 0 0.25em;
+  }
 
 .commentators-contain{
     line-height: 1.5;
@@ -417,39 +412,23 @@ tr-timer span {
 }
 
 .commentators-img{
+    fill: transparent;
     background: url('images/mic-4.png');
     width: 20px;
     height: 32px;
     background-size: 100% 100%;
 }
 
-.restreamers-img{
-    width: 21px;
-    background-position: 0 0;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
+.commentators-img, .trackers-img{
+    color: transparent;
 }
-    
+
 .trackers-img{
     width: 10px;
     height: 20px;
     background: url('images/letter-white.png') no-repeat 0 0 / 100% 100%;
     justify-self: center;
 }
-
-.production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
-.production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
-
-@keyframes panel-1-blinker {
-    0%, 75% {opacity: 1;}
-    75.1%, 100% {opacity: 0;}
-    }
-    
-@keyframes panel-2-blinker {
-    0%, 75% {opacity: 0;}
-    75.1%, 100% {opacity: 1;}
-    }
 
 /* dialog styles */
     

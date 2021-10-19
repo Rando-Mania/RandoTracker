@@ -407,15 +407,9 @@ tr-timer .dot, tr-timer .ms {
     background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;
 }
 
-.staff-panel-1, .staff-panel-2{
-    grid-area: 1/1;
-    display: grid;
-    gap: 3px;
-    align-items: center;
-}
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
+.staff svg {
+    margin: 0 0.25em;
+  }
 
 .commentators-contain, .restreamers-contain, .trackers-contain{
     display: grid;
@@ -428,19 +422,15 @@ tr-timer .dot, tr-timer .ms {
     width: 340px;
 }
 
+.commentators-img, .trackers-img{
+    color: transparent;
+}
+
 .commentators-img{
     background: url('images/mic-4.png');
     width: 20px;
     height: 32px;
     background-size: 100% 100%;
-}
-
-.restreamers-img{
-    width: 21px;
-    background-position: 0 0;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
 }
     
 .trackers-img{
@@ -450,19 +440,6 @@ tr-timer .dot, tr-timer .ms {
     justify-self: center;
     background-size: 100% 100%;
 }
-
-.production-swap > .staff-panel-1 {animation: panel-1-blinker 60s infinite;}
-.production-swap > .staff-panel-2 {animation: panel-2-blinker 60s infinite;}
-
-@keyframes panel-1-blinker {
-    0%, 75% {opacity: 1;}
-    75.1%, 100% {opacity: 0;}
-    }
-    
-@keyframes panel-2-blinker {
-    0%, 75% {opacity: 0;}
-    75.1%, 100% {opacity: 1;}
-    }
 
 .header{
     background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;

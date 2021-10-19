@@ -175,14 +175,10 @@
     padding: 4px;
 }
 
-.player-speaker img{
+.player-speaker svg{
     width: 22px;
     height: 22px;
     display: block;
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    background-position: 100% 0%;
 }
 
 .player-winner{

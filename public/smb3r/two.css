@@ -374,13 +374,6 @@ tr-timer span {
     align-items: center;
 }
 
-.production-team-swap{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 8px;
-    padding: 8px;
-}
-
 .staff{
     overflow: hidden;
     font-size: 20px;
@@ -389,53 +382,14 @@ tr-timer span {
     color: rgba(0,0,0,.9);
 }
 
-.staff-panel-1, .staff-panel-2{
-    grid-area: 1/1;
-    display: grid;
-    align-items: center;
-}
-
-.staff-panel-1{grid-template-columns: auto 1fr;}
-.staff-panel-2{grid-template-columns: 1fr;}
-
-.commentators-contain, .restreamers-contain, .trackers-contain{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-}
-
 .commentators, .restreamers, .trackers{
     width: 216px;
 }
 
-.staff img {
-    background-image: url("../shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
-    margin: 0 6px;
-    z-index: 2;
-    width: auto;
-    height: 1em;
-    opacity: .9;
-    filter: drop-shadow(0 -1px 0 rgba(255,255,255,.75));
+.staff svg {
+    margin: 0 0.5em;
+    filter: drop-shadow(0 -2px 0 rgba(255,255,255,.75));
   }
-
-.commentators-img{background-position: 75% 33.3%;}
-.restreamers-img{background-position: 0 33.3%;}
-.trackers-img{background-position: 50% 33.3%;}
-
-.production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
-.production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
-
-@keyframes panel-1-blinker {
-    0%, 75% {opacity: 1;}
-    75.1%, 100% {opacity: 0;}
-    }
-    
-@keyframes panel-2-blinker {
-    0%, 75% {opacity: 0;}
-    75.1%, 100% {opacity: 1;}
-    }
 
 /* dialog styles */
     

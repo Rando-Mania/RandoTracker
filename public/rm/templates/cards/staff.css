@@ -30,10 +30,7 @@
     width: 230px;
   }
   
-  .staff img {
-    background-image: url("/shared/images/icons/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 500% 400%;
+  .staff svg {
     margin: 0 6px;
     z-index: 2;
     width: auto;
