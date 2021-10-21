@@ -396,13 +396,32 @@ tr-timer span {
 
 .variable-panels{
     display: flex;
-    place-content: space-around; 
+    place-content: center; 
     place-items: center;
+    justify-self: center;
+    gap: 8px;
     flex-wrap: wrap;
     align-self: stretch;
     height: 100%;
-    width: 100%;
     grid-column: 2;
+    width: 584px;
+}
+
+.variable-panels .card, .variable-panels .staff{
+    flex: 288px;
+    min-height: 32px;
+    align-self: stretch;
+}
+
+.variable-panels .card-body{
+    min-height: 32px;
+}
+[target="#free_text"]{
+    display: flex;
+}
+
+[target="#free_text"] .card-body{
+    align-self: center;
 }
 
 /* Menu */
