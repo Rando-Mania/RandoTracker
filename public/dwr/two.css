@@ -949,6 +949,8 @@ figcaption{
 
 img[src="images/monsters/true-dragonlord.png"]{
     transform: scale(2) rotateY(180deg) translate(-1px, 11px);
+    height: 120px;
+    width: auto;
 }
 
 img[src="images/monsters/demon-knight.png"]{
