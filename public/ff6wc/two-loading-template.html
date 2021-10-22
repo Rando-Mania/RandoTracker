@@ -69,7 +69,6 @@ display: block;
     }
 }
 
-
 .lightning-top-left{
     position: absolute;
     top: 82px;
@@ -219,6 +218,50 @@ display: none;
 .show-and .load-and{display: block;}
 .show-and .load-vs{display: none;}
 
+.loadscreen.banon{
+    background-image: url(images/2p/Banons_Battle_Plan_nologo.png);
+    background-repeat: no-repeat;
+    background-position: -276px 0;
+    background-color: #100018;
+}
+.loadscreen.banon [class*="lightning-"]{
+    display: none;
+}
+
+.loadscreen.banon .loadscreen-main{
+    width: 60%;
+    margin-left: auto;
+    gap: 0;
+    align-content: space-around;
+}
+
+.loadscreen.banon .player-info{
+    grid-template-columns: 1fr;
+}
+
+.banon-logo{
+    display: none;
+}
+
+.loadscreen.banon .banon-logo{
+    margin: 0 auto;
+    display: block;
+    width: 54%;
+    height: auto;
+}
+
+.loadscreen.banon .load-title{
+    order: 1;
+}
+
+.loadscreen.banon .ff6wc-logo{
+    width: 43%;
+}
+
+.loadscreen.banon .vs{
+    transform: scale(3);
+}
+
 </style>
     <div class="loadscreen">
         <img class="lightning-top-left" src="images/lightning.png" width="360" alt="">
@@ -231,27 +274,6 @@ display: none;
                     <source srcset="images/wc_logo.avif" type="image/avif">
                     <img class="ff6wc-logo" src="images/wc_logo.png" width="560" alt="">
                 </picture>
-                <!-- <svg width="780" height="205">
-                    <style>
-                        svg{
-                            background-color: #181820;
-                            font-family: 'Ferrum', 'Times New Roman', Times, serif;
-                        }
-                        svg .svg-head{
-                            dominant-baseline: hanging;
-                            font-size: 144px;
-                            fill: #fade2f;
-                        }
-                        svg .svg-subhead{
-                            font-size: 42px;
-                            fill: #c31b01;
-                            text-anchor: end;
-                        }
-                    </style>
-                    <text class="svg-head" y="12">Worlds Collide</text>
-                    
-                    <text class="svg-subhead" x="100%" y="99%">Final Fantasy VI Randomizer</text>
-                </svg> -->
                 <div class="subheadings fs-l ta-c">
                     <tr-text class="subhead-text text-shadow" property="subheading"></tr-text>
                     <div class="subhead-link text-shadow">
@@ -268,6 +290,7 @@ display: none;
                     </div>
                 </div>
             </div>
+            <img class="banon-logo" width="319" height="108" src="images/2p/bbp_logo.png" alt="">
             <template id="player_loading_template">
                 <div class="player-contain rel">
                     <tr-text class="player-name" property="player-name"></tr-text>
