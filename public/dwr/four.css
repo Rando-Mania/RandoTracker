@@ -620,13 +620,260 @@ tr-timer span {
 
     .monster-table-ai .heading { text-decoration: underline; margin-bottom: .5em;}
     
-    img[src="images/monsters/true-dragonlord.png"]{
-        transform: scale(2.8) rotateY(180deg) translate(-1px, 11px);
-    }
+    [property="monster_image"] img{
+        place-self: center;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        background-repeat: no-repeat;
+        display: block;
+        transform: scale(2);
+        margin: 16px;
+      }
     
-    img[src="images/monsters/demon-knight.png"]{
+    .notwebp [property="monster_image"] img{background-image: url('images/monsters/monster-spritesheet.png');}
+    .webp [property="monster_image"] img{background-image: url('images/monsters/monster-spritesheet.webp');}
+    
+    .dragon-blue img{
+        width: 62px;
+        height: 43px;
+        background-position: 0 0;
+      }
+      
+      .dragon-green img{
+        width: 58px;
+        height: 43px;
+        background-position: -62px 0;
+      }
+      
+      .dragon-red img{
+        width: 63px;
+        height: 43px;
+        background-position: -120px 0;
+      }
+      
+      .dragonlord-human img{
+        width: 26px;
+        height: 40px;
+        background-position: -182px 0;
+      }
+      
+      .dragonlord-true img{
+        width: 76px;
+        height: 94px;
+        background-position: 0 -43px;
+        transform: scale(2) rotateY(180deg);
+      }
+      
+      .drakee img{
+        width: 26px;
+        height: 20px;
+        background-position: -211px 0;
+      }
+      
+      .drakee-magic img {
+        width: 26px;
+        height: 20px;
+        background-position: -211px -20px;
+      }
+      
+      .drakeema img{
+        width: 26px;
+        height: 20px;
+        background-position: -182px -40px;
+      }
+      
+      .droll img {
+        width: 34px;
+        height: 38px;
+        background-position: -208px -40px;
+      }
+      
+      .drollmagi img{
+        width: 34px;
+        height: 38px;
+        background-position: -76px -78px;
+      }
+      
+      .druin img{
+        width: 38px;
+        height: 31px;
+        background-position: -110px -78px;
+      }
+      
+      .druinlord img{
+        width: 38px;
+        height: 31px;
+        background-position: -148px -78px;
+      }
+      
+      .ghost img{
+        width: 26px;
+        height: 32px;
+        background-position: -186px -78px;
+      }
+      
+      .ghost-poltergeist img{
+        width: 26px;
+        height: 32px;
+        background-position: -212px -78px;
+      }
+      
+      .ghost-specter img{
+        width: 26px;
+        height: 32px;
+        background-position: -110px -110px;
+      }
+      
+      .knight img {
+        width: 47px;
+        height: 46px;
+        background-position: -136px -110px;
+      }
+      
+      .knight-armored img{
+        width: 51px;
+        height: 52px;
+        background-position: -183px -110px;
+      }
+      
+      .knight-axe img{
+        width: 49px;
+        height: 52px;
+        background-position: 0 -162px;
+      }
+      
+      .magician img {
+        width: 33px;
+        height: 33px;
+        background-position: -49px -162px;
+      }
+      
+      .magician-warlock img{
+        width: 34px;
+        height: 37px;
+        background-position: -82px -162px;
+      }
+      
+      .magician-wizard img{
+        width: 34px;
+        height: 37px;
+        background-position: -116px -162px;
+      }
+      
+      .man-gold img{
+        width: 50px;
+        height: 49px;
+        background-position: -150px -162px;
+      }
+      
+      .man-golem img{
+        width: 49px;
+        height: 49px;
+        background-position: -200px -162px;
+      }
+      
+      .man-stone img{
+        width: 49px;
+        height: 49px;
+        background-position: -242px 0;
+      }
+      
+      .scorpion img{
+        width: 40px;
+        height: 33px;
+        background-position: -242px -49px;
+      }
+      
+      .scorpion-metal img{
+        width: 40px;
+        height: 33px;
+        background-position: -238px -82px;
+      }
+      
+      .scorpion-rogue img{
+        width: 40px;
+        height: 33px;
+        background-position: -234px -115px;
+      }
+      
+      .skeleton img{
+        width: 34px;
+        height: 46px;
+        background-position: -249px -148px;
+      }
+      
+      .skeleton-demon-knight img{
+        width: 34px;
+        height: 47px;
+        background-position: -249px -194px;
         filter: drop-shadow(0 0 4px orange);
-    }
+      }
+      
+      .skeleton-wraith img{
+        width: 34px;
+        height: 46px;
+        background-position: 0 -241px;
+      }
+      
+      .skeleton-wraith-knight img{
+        width: 34px;
+        height: 46px;
+        background-position: -34px -241px;
+      }
+      
+      .slime img{
+        width: 17px;
+        height: 18px;
+        background-position: -76px -49px;
+      }
+      
+      .slime-metal img{
+        width: 17px;
+        height: 18px;
+        background-position: -93px -49px;
+      }
+      
+      .slime-red img {
+        width: 17px;
+        height: 18px;
+        background-position: -110px -49px;
+      }
+      
+      .wolf img{
+        width: 46px;
+        height: 41px;
+        background-position: -68px -241px;
+      }
+      
+      .wolf-were img{
+        width: 46px;
+        height: 41px;
+        background-position: -114px -241px;
+      }
+      
+      .wolflord img{
+        width: 46px;
+        height: 41px;
+        background-position: -160px -241px;
+      }
+      
+      .wyvern img{
+        width: 39px;
+        height: 36px;
+        background-position: -206px -241px;
+      }
+      
+      .wyvern-magi img{
+        width: 39px;
+        height: 36px;
+        background-position: -245px -241px;
+      }
+      
+      .wyvern-star img{
+        width: 39px;
+        height: 36px;
+        background-position: -291px 0;
+      }
 
     .league {
         padding: 1em;
@@ -844,6 +1091,7 @@ tr-timer span {
 .highlight{
     background-color: #f8b800;
     color: #000;
+    accent-color: black;
 }
 
 .rank-input input {width: 3em;} 
