@@ -67,18 +67,13 @@
     position: relative;
 }
 
-.map-background{background-color: #002781;}
+.map-background{background-color: #002899;}
+
 .notavif.notwebp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.png');
+    background-image: url('images/alefgard_crop_dark.png');
 }
-.notavif.webp .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.webp');
-}
-.avif.notjxl .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.avif');
-}
-.jxl .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.3) 0 0), url('images/alefgard_crop_test.jxl');
+.avif .map-background{
+    background-image: url('images/alefgard_crop_dark.avif');
 }
 
 .player-panels-contain{
@@ -147,12 +142,12 @@
     mask-repeat: no-repeat;
 }
 
-.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
-.tourney-background{background-image: url('images/video-background/layout_2021.png');}
-.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
+.player-video.tourney-background{background-image: url('images/video-background/layout_2021.png');}
+.player-video.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
 
-.league-background{background-image: url('images/video-background/DWR2021.png');}
-[player="2"] .league-background{
+.player-video.league-background{background-image: url('images/video-background/DWR2021.png');}
+[player="2"] .player-video.league-background{
     background-image: url('images/video-background/winter_league.png');
     background-size: contain;
 }

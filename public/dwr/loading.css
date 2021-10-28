@@ -44,26 +44,34 @@
   text-shadow: 4px 4px #000, 2px 2px #000, -2px -2px #000, 2px -2px #000, -2px 2px #000;
   }
 
+.loadscreen{
+  background:
+    url(images/monsters/true-dragonlord.png) no-repeat right -200% top / auto 190%,
+    url(images/loadscreen-alefgard-dark.png) repeat 0 0 / contain
+   #0d3d87;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}
+
 .loadscreen main{
   text-align: center;
   height: 100%;
   display: grid;
   grid-template-columns: 60%;
   align-content: space-around;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
-  background:
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
-    url(images/monsters/true-dragonlord.png) no-repeat right -200% top / auto 190%, 
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)) repeat 0 0 / auto,
-    url(images/loadscreen-alefgard.png) repeat 0 0 / contain
-   #0078f8;
 }
 
 .loadscreen.league-background main{
   background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
   grid-template-columns: minmax(52%, max-content);
   justify-content: start;
+}
+
+.loadscreen.chaos-background{
+  background:
+  url(images/monsters/drollgon-lord.png) no-repeat right -50% top / auto 190%,
+  url(images/loadscreen-alefgard-dark.png) repeat 0 0 / contain
+  #0d3d87;
 }
 
 #changeText{
