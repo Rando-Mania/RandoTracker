@@ -117,19 +117,17 @@
 .layout.zz4-semifinals{background-image: url('images/2p/zz4/SemiFinals-Live-BG.jpg');}
 .layout.zz4-finals{background-image: url('images/2p/zz4/TheFinals-Live-BG.jpg');}*/
 
-.layout.ccs-mysidian-jumping{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.png), linear-gradient(#73d417,#122c04);}
-.webp.notavif .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.webp), linear-gradient(#73d417,#122c04);}
-.avif .layout.ccs-mysidian-jumping{background-image: url(images/2p/ccs/CCS-BG-MysidianJumpingClub.avif), linear-gradient(#73d417,#122c04);}
-
 .layout.ccs-pink-puff{background-image: linear-gradient(#627079,#425059);}
 .notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
 .webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.webp), linear-gradient(#627079,#425059);}
 
-.layout.ccs-wacky{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-wacky{background-image: url(images/2p/ccs/CCS-BG-Wacky.png), linear-gradient(#73d417,#122c04);}
-.webp.notavif .layout.ccs-wacky{background-image: url(images/2p/ccs/CCS-BG-Wacky.png), linear-gradient(#73d417,#122c04);}
-.avif .layout.ccs-wacky{background-image: url(images/2p/ccs/CCS-BG-Wacky.avif), linear-gradient(#73d417,#122c04);}
+.layout.ccs-baron-hero{background-image: linear-gradient(#73d417,#122c04);}
+.notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/Hero-BG.png), linear-gradient(#73d417,#122c04);}
+.webp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/Hero-BG.webp), linear-gradient(#73d417,#122c04);}
+
+.layout.ccs-spoil{background-image: linear-gradient(#73d417,#122c04);}
+.notwebp .layout.ccs-spoil{background-image: url(images/2p/ccs/Spoil-BG.png), linear-gradient(#73d417,#122c04);}
+.webp .layout.ccs-spoil{background-image: url(images/2p/ccs/Spoil-BG.webp), linear-gradient(#73d417,#122c04);}
 
 .layout.ccs-sunday-slapdash{background-color: #404140;}
 .notwebp .layout.ccs-sunday-slapdash{background-image: url(images/2p/ccs/CCS-BG-SundaySlapdash.png);}
@@ -485,17 +483,17 @@ tr-timer span {
 .hero-name {
     display: none;
     width: 73px;
-    height: 70px;
+    height: 88px;
     left: 604px;
-    top: 299px;
+    top: 281px;
 }
 
-/*.webp .hero-name {
-    background-image: url(images/2p/zz4/OurHero.webp);
+.webp .hero-name {
+    background-image: url(images/2p/OurHero.webp);
 }
 .notwebp .hero-name {
-    background-image: url(images/2p/zz4/OurHero.png);
-}*/
+    background-image: url(images/2p/OurHero.png);
+}
 
 .hero-indicator {
     background-image: url('images/2p/HeroSheet.png');
