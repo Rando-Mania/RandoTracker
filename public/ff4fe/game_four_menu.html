@@ -40,9 +40,8 @@
         <h4 class="legend">Background</h4>
         <div>
             <tr-select-toggle property="layout-back-select">
-                <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="zemus-qualifier" value="1">ZZ4 Qualifier</tr-option>
-<!--                 <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-monday" value="2">Weekly Monday</tr-option>
-                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-friday" value="3">Weekly Friday</tr-option> -->
+                <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-monday" value="1">Weekly Monday</tr-option>
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-friday" value="2">Weekly Friday</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="trans" value="0">None</tr-option>
 
             </tr-select-toggle>
@@ -72,7 +71,7 @@
             </div>
         </div>
         <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
-        <div id="menu_flags" class="fieldset">
+<!--         <div id="menu_flags" class="fieldset">
             <h4 class="legend">Flagset</h4>
             <div>
                 <tr-input-text oninput class="flags-input" property="flags"></tr-input-text>
@@ -84,8 +83,8 @@
                 <tr-input-text class="round-input" property="round-text"></tr-input-text>
             </div>
             <div></div>
-        </div>
-<!--         <div id="menu_flags" class="fieldset">
+        </div> -->
+        <div id="menu_flags" class="fieldset">
             <h4 class="legend">Flags</h4>
             <div>
                 <label>Nickname:</label>
@@ -96,7 +95,7 @@
                 <tr-input-textarea oninput rows="4" class="flags-input" property="flags-full"></tr-input-textarea>
             </div>
             <button class="dummy-text-button" title="Dummy Text" onclick="flagsDummyText()"></button>
-        </div> -->
+        </div>
 
         <div id="menu_credits" class="fieldset">
             <h4 class="legend">Credits</h4>
