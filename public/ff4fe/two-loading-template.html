@@ -53,9 +53,8 @@
     width: 100%;
 }*/
 
-/*NOTE: The weekly layout is completely disabled until we fix a buggy interaction with display: none and scaleToFit text.*/
 .loadscreen-main{
-    display: none;
+    display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
     align-content: space-between;
@@ -71,7 +70,7 @@
 }
 
 .loadscreen-zemus{
-    display: grid;
+    display: none;
     grid-template-columns: 760px 497px auto;
     grid-template-rows: 1fr;
     align-content: space-between;
@@ -293,19 +292,19 @@
     background-image: var(--ccs-load-fallback);
 }
 
-[class*="zz4-"] .loadscreen{background-color: #21254f;}
+/*[class*="zz4-"] .loadscreen{background-color: #21254f;}
 .notwebp [class*="zz4-"] .loadscreen{
     background-image: url('images/2p/zz4/Finals-Intro-BG.jpg');
 }
 .webp [class*="zz4-"] .loadscreen{
     background-image: url('images/2p/zz4/Finals-Intro-BG.webp');
-}
+}*/
 
-.notwebp .ccs-mysidian-jumping .loadscreen{
-    background-image: url('images/2p/ccs/splash-MJC.png'), var(--ccs-load-fallback);
+.notwebp .ccs-baron-hero .loadscreen{
+    background-image: url('images/2p/ccs/Hero-Splash.png'), var(--ccs-load-fallback);
 }
-.webp .ccs-mysidian-jumping .loadscreen{
-    background-image: url('images/2p/ccs/splash-MJC.webp'), var(--ccs-load-fallback);
+.webp .ccs-baron-hero .loadscreen{
+    background-image: url('images/2p/ccs/Hero-Splash.webp'), var(--ccs-load-fallback);
 }
 
 .notwebp .ccs-pink-puff .loadscreen{
@@ -315,11 +314,11 @@
     background-image: url('images/2p/ccs/splash-PinkPuff.webp'), var(--ccs-load-fallback);
 }
 
-.notwebp .ccs-wacky .loadscreen{
-    background-image: url('images/2p/ccs/splash-Wacky.png'), var(--ccs-load-fallback);
+.notwebp .ccs-spoil .loadscreen{
+    background-image: url('images/2p/ccs/Spoil-Splash.png'), var(--ccs-load-fallback);
 }
-.webp .ccs-wacky .loadscreen{
-    background-image: url('images/2p/ccs/splash-Wacky.webp'), var(--ccs-load-fallback);
+.webp .ccs-spoil .loadscreen{
+    background-image: url('images/2p/ccs/Spoil-Splash.webp'), var(--ccs-load-fallback);
 }
 
 .notwebp .ccs-sunday-slapdash .loadscreen{

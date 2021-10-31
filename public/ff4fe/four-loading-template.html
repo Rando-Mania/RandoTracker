@@ -49,9 +49,8 @@
     padding: 0;
 }
 
-/*NOTE: The weekly layout is completely disabled until we fix a buggy interaction with display: none and scaleToFit text.*/
 .loadscreen-main{
-    display: none;
+    display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
     align-content: space-between;
@@ -67,7 +66,7 @@
 }
 
 .loadscreen-zemus{
-    display: grid;
+    display: none;
     grid-template-columns: 760px 497px auto;
     grid-template-rows: 1fr;
     align-content: space-between;
