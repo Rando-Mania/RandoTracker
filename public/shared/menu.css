@@ -373,7 +373,9 @@ button.active{
         linear-gradient(45deg, #c0c0c0 25%, #0000 0 75%, #c0c0c0 0 100%) 0 0 / 8px 8px,
         linear-gradient(45deg, #c0c0c0 25%, #0000 0 75%, #c0c0c0 0 100%) 4px 4px / 8px 8px
         #808080;
-    background: repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
+    background: 
+        url("../shared/images/icons/content_cut_black_24dp.svg") center / 100% 100%,
+        repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
 }
 
 .layout.transparent-background .player-video{background-color: #fff;}
@@ -384,7 +386,7 @@ button.active{
 #magenta, .layout.magenta-background .player-video{background-color: #f0f;}
 
 #tech-diff{
-    background-image: linear-gradient(to right, #fff 14.3%, #ff0 0 28.6%, #0ff 0 42.8%, #0f0 0 57.1%, #f0f 0 71.4%, #f00 0 85.7%, #00f 0 100%);
+    background-image: linear-gradient(to right, #fff 33.3%, #f0f 0 66.6%, #00f 0 100%);
 }
 .layout.tech-diff-background .player-video{
     background-color: #000;
