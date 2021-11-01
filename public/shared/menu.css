@@ -71,11 +71,19 @@ button.dummy-text-button.disable,
     margin: 0;
 }
 
+#menu_layout #menu_video_background{
+    justify-content: flex-start;
+}
+
 button.dummy-text-button:hover,
 #menu_video_background #screen:hover,
 #menu_video_background #screen:checked{
     background-color: var(--highlight-color);
     box-shadow: none;
+}
+
+.radio-options{
+    flex: 1;
 }
 
 /* Menu Containers */
@@ -351,8 +359,9 @@ button.active{
 #menu_layout #menu_video_background{
     display: flex;
     width: 240px;
+    gap: 1em;
 }
-
+#menu_video_background tr-input-radio,
 #menu_video_background input[type="radio"],  
 #menu_video_background input[type="radio"]:hover:checked{
     -webkit-appearance: none;
@@ -364,8 +373,17 @@ button.active{
     border: 1px solid #333;
 }
 
-#menu_video_background [type="radio"]{
-    margin-right: .25em;
+#menu_video_background .radio-contain{
+    display: grid;
+}
+
+#menu_video_background .radio-contain > *{
+    grid-area: 1/1; 
+}
+
+#menu_video_background .radio-options{
+    display: flex;
+    justify-content: space-between;
 }
 
 #transparent{ 
@@ -374,16 +392,23 @@ button.active{
         linear-gradient(45deg, #c0c0c0 25%, #0000 0 75%, #c0c0c0 0 100%) 4px 4px / 8px 8px
         #808080;
     background: 
-        url("../shared/images/icons/content_cut_black_24dp.svg") center / 100% 100%,
         repeating-conic-gradient(#c0c0c0 0 90deg, #808080 0 180deg) 0 0 / 8px 8px;
+}
+
+[for="transparent"] svg{
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+#menu_video_background label.video-bgcolor{
+    height: 24px;
+    width: 24px;
 }
 
 .layout.transparent-background .player-video{background-color: #fff;}
 
 #black, .layout.black-background .player-video{background-color: #000;}
-#blue, .layout.blue-background .player-video{background-color: #00f;}
-#green, .layout.green-background .player-video{background-color: #0f0;}
-#magenta, .layout.magenta-background .player-video{background-color: #f0f;}
 
 #tech-diff{
     background-image: linear-gradient(to right, #fff 33.3%, #f0f 0 66.6%, #00f 0 100%);
@@ -395,17 +420,6 @@ button.active{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.layout.tech-diff-background .player-video:after{
-    content: 'Technical Difficulties';
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-    font-size: 500%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .2em .2em 0;
 }
 
 .layout.screen-background .player-video{

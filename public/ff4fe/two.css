@@ -155,10 +155,9 @@
 .notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}
 .webp .layout.black-background .player-video{background-image: url(images/The-End.webp);}
 
-.layout.magenta-background .player-video{background-color: #f0f;}
-.notwebp .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
-.webp.notavif .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
-.avif .layout.magenta-background .player-video{background-image: url(images/2p/TechDifficulties-RM.avif);}
+.notwebp .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
+.webp.notavif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
+.avif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.avif);}
 
 .player-info{
     font-size: 18px;
