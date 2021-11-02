@@ -653,7 +653,7 @@ function playerDummyText() {
 }
 function staffDummyText() {
 	Tracker.updateLayoutMultiple([
-		{property: 'commentators', value: 'Chewbacca\nJar Jar Binks'},
+		{property: 'commentators', value: 'Chewbacca (he/him)\nJar Jar Binks (messa/yousa)'},
 		{property: 'restreamers', value: 'R2D2'},
 		{property: 'trackers', value: 'C3PO, BB-8'}
 	]);

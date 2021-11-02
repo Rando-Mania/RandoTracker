@@ -480,6 +480,7 @@ tr-timer span {
 .staff{
     overflow: hidden;
     font-size: 18px;
+    width: 420px;
 }
 
 .commentators, .restreamers, .trackers{
@@ -949,6 +950,11 @@ tr-timer span {
         margin-bottom: 8px;
     }
 
+    .menu-button-row label.panel-playing{
+        position: relative;
+        overflow: hidden;
+    }
+
     .menu-button-row label.panel-playing:after{
         content: '';
         background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.5));
@@ -959,10 +965,10 @@ tr-timer span {
         width: 100%;
         animation: panel-timer linear 30s;
         z-index: -1;
+        transform: translateX(-100%);
     }
 
     @keyframes panel-timer{
-        from{transform: translateX(-100%);}
         to{transform: translateX(0);}
     }
 
