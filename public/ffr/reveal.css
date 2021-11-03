@@ -61,12 +61,15 @@
 }
 
 .layout.transparent-background{
-    -webkit-mask:
-        linear-gradient(to right, red var(--clipX1), #0000 var(--clipX1) var(--clipX2), red 0), 
-        linear-gradient(red var(--clipY1), #0000 var(--clipY1) var(--clipY2), red 0);
-    mask:
-        linear-gradient(to right, red var(--clipX1), #0000 var(--clipX1) var(--clipX2), red 0), 
-        linear-gradient(red var(--clipY1), #0000 var(--clipY1) var(--clipY2), red 0);
+    --solid: linear-gradient(#000, #000);
+    -webkit-mask: var(--solid),
+        var(--solid) var(--clipX1) var(--clipY1);
+    -webkit-mask-size: 
+        100% 100%, 
+        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .ffr-default{

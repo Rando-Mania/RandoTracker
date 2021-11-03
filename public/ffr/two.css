@@ -70,15 +70,20 @@
 }
 
 .layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat
+    /* -webkit-mask-image:
+        linear-gradient(to right, red var(--clipX1), #0000 0 var(--clipX2),red 0 calc(1280px - var(--clipX2)),#0000 0 calc(1280px - var(--clipX1)),red 0 100%),
+        linear-gradient(red var(--clipY1), #0000 0 var(--clipY2), red 0 100%); */
+    --solid: linear-gradient(#000, #000);
+    -webkit-mask: var(--solid),
+        var(--solid) var(--clipX1) var(--clipY1),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1);
+    -webkit-mask-size:
+        100% 100%,
+        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border)),
+        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .player-video{

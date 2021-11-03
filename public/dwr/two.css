@@ -69,7 +69,7 @@
 
 .map-background{background-color: #002899;}
 
-.notavif.notwebp .map-background{
+.notavif .map-background{
     background-image: url('images/alefgard_crop_dark.png');
 }
 .avif .map-background{
