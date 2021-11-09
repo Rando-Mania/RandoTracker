@@ -1160,7 +1160,7 @@ tr-timer span {
 
 .loading-runners .player-final, 
 .loading-runners .player-winner{
-    top: -.25em;
+    top: -2em;
 }
 
 .loading-runners .player-winner{
