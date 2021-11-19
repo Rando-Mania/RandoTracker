@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        .tracker-layout{
+            font-family: 'Chicago', Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            background-position: bottom;
+            display: grid;
+            max-width: 972px;
+            grid-template-columns: repeat(2, auto);
+            gap: 24px;
+            padding: 24px;
+        }
+        
+        tr-player{
+            display: contents;
+        }
+
+        tr-template{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 2px;
+            align-items: start;
+        }
+
+        .player-grid{
+            border-top: solid 6px;
+            width: 100%;
+        }
+        .player-grid, .winner-final-contain{
+            grid-column: 1 / -1;
+        }
+        .player-name{
+            border-top: none;
+        }
+        .winner-final-contain{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        .player-final, .player-winner{
+            border-top: 6px solid;
+        }
+        .player-best-of{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .player-grid{grid-area: icons;}
+        .record-contain{grid-area: record;}
+        .player-pronoun{grid-area: pronoun;}
+        .player-name{grid-area: name;}
+        .player-speaker{grid-area: speaker;}
+        .player-best-of{grid-area: best-of;}
+        .winner-final-contain{grid-area: win-final;}
+
+        [player="1"] tr-template{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "name      pronoun   record"
+                "best-of   speaker   ."
+                "win-final win-final win-final";
+        }
+
+        [player="2"] tr-template{
+            grid-template-areas: 
+                "icons     icons     icons"
+                "record    pronoun   name"
+                ".         speaker   best-of"
+                "win-final win-final win-final";
+        }
+
+        @media (max-width: 972px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+            }
+        }
+        
+        @media (max-width: 486px) {
+            .tracker-layout{
+                grid-template-columns: 1fr;
+                width: auto;
+                padding: 0;
+            }
+            .player-grid{
+                grid-template-columns: repeat(4, auto);
+                grid-template-rows: repeat(6, auto);
+                width: 100%;
+            }
+            tr-template{
+                grid-template-columns: repeat(1, auto);
+            }
+            .menu-contain{
+                grid-template-columns: repeat(3, auto);
+            }
+        }
+     </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <template id="player_info_template">
+            <tr-template class="player-grid background-1 border-1" href="icons-2020.html"></tr-template>
+			<div class="player-name border-1 background-1">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+			</div>
+            <tr-text property="player-pronoun" class="player-pronoun background-1 border-1 border-bottom"></tr-text>
+			<tr-text property="player-number" class="record-contain background-1 border-1 border-bottom"></tr-text>        
+            <tr-template class="player-best-of" href="../shared/bestof.html"></tr-template>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+				<img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <div class="winner-final-contain">
+                <tr-text property="player-final" class="player-final background-1 border-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner background-1 border-1">
+                    <div>Winner</div>
+                </tr-toggle>
+            </div>
+		</template>
+       <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+    </div>
+
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+
+    <script src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="../components/components.js"></script>
+    <script src="../components/tracker.js"></script>
+    <script src="../shared/script/two_game.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<style>
+    /* Loading Screen */
+
+.loadscreen-contain, .two-loading{
+    font-family: Arial, Verdana, sans-serif;
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    text-align: center;
+    animation: zoomIn .5s linear;
+    z-index: 50;
+    display: none;
+}
+
+.loadscreen-contain.show, .two-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    animation: zoomIn .5s;
+    display: block;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    background-color: #8dc8ff;
+  --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
+    background-image: var(--loadscreen-fallback);
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+
+.notwebp .loadscreen{background-image: url('images/bg-loading.png'), var(--loadscreen-fallback);}
+.webp .loadscreen{background-image: url('images/bg-loading.webp'), var(--loadscreen-fallback);}
+
+.loadscreen-main{
+    position: absolute;
+    left: 42px;
+    top: 96px;
+    background-color: #000;
+    background-clip: content-box;
+    border: solid #0000;
+    border-width: 19px 25px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-width: 479px;
+    height: 309px;
+}
+
+.notwebp .loadscreen-main{border-image: url('images/border-loading.png') 25;}
+.webp .loadscreen-main{border-image: url('images/border-loading.webp') 25;}
+
+.loadscreen-main *{
+    justify-content: center;
+}
+
+.loadscreen-main > div{
+    display: flex;
+    justify-content: center;
+}
+
+.player-number-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadscreen-main .player-name{
+    width: auto;
+}
+
+.load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{
+    display: none;
+}
+.load-best-of.best-of-3, .load-best-of.best-of-3 > .best-of-3{display: block;}
+.load-best-of.best-of-5, .load-best-of.best-of-5 > .best-of-5{display: block;}
+.load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
+
+</style>
+<div class="loadscreen">
+    <div class="loadscreen-main">
+        <div>
+            <tr-text player="1" class="player-name" property="player-number"></tr-text>
+            <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+        </div>
+        vs.
+        <div>
+            <tr-text player="2" class="player-name" property="player-number">Dummy</tr-text>
+            <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+        </div>
+        <div class="load-best-of">
+            <p class="best-of-3">Best of 3</p>
+            <p class="best-of-5">Best of 5</p>
+            <p class="best-of-7">Best of 7</p>
+        </div>
+    </div>
+</div>
