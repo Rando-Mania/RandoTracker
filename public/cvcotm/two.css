@@ -6,10 +6,10 @@
 
 :root{
     --border1: 1px solid #fff;
-    --vidWidth: 560px;
+    --vidWidth: 558px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 3 / 2;
-    --videoX: 10px; --videoY: 61px;
+    --videoX: 11px; --videoY: 62px;
 	--nameblockX: 288px; --nameblockY: 10px;
     --nameWidth: 230px;
     --nameX: 290px; --nameY: 18px;
@@ -26,7 +26,7 @@
     --backgroundColor1: #000;
     --backgroundColor2: #005;
 
-    --border: 6px;
+    --border: 2px;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -35,13 +35,16 @@
 }
 
 .border-1{
-    border: 5px solid #b1b1b1;
-    border-image: url(images/border-player-1.png) 5;
+    border: 1px solid #f0b040;
+    border-image: url(images/border-player-1.png) 8 5 5 7 / 8px 5px 5px 7px / 1px;
+    image-rendering: pixelated;
 }
 
 .border-2{
-    border: 5px solid #b1b1b1;
-    border-image: url(images/border-tracker-1.png) 5;
+    border: 1px solid #f0b040;
+    border-image: url(images/border-tracker-1.png) 8 5 5 7 / 8px 5px 5px 7px / 1px;
+    image-rendering: pixelated;
+
 }
 
 .border-bottom{border-top: none;}
@@ -59,21 +62,11 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #000;
+    background-color: #180820;
 }
 
 .layout.transparent-background{
-    /* -webkit-mask-image:
-        linear-gradient(to right, red var(--clipX1), #0000 0 var(--clipX2),red 0 calc(1280px - var(--clipX2)),#0000 0 calc(1280px - var(--clipX1)),red 0 100%),
-        linear-gradient(red var(--clipY1), #0000 0 var(--clipY2), red 0 100%); */
     --solid: linear-gradient(#000, #000);
-    /* -webkit-mask: var(--solid),
-        var(--solid) var(--clipX1) var(--clipY1),
-        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1);
-    -webkit-mask-size:
-        100% 100%,
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border)),
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border)); */
     -webkit-mask: var(--solid),
         repeating-linear-gradient(
             to right,
@@ -88,10 +81,14 @@
 }
 
 .cotm-default{
-    background-color: #000;
+    background-color: #180820;
+    background-image: url("images/bg-page.png");
+    background-image: image-set(
+        url("images/bg-page.avif") type("image/avif"),
+        url("images/bg-page.webp") type("image/webp"),
+        url("images/bg-page.png") type("image/png")
+    );
 }
-.notwebp .cotm-default{background-image: url(images/bg-page.png);}
-.webp .cotm-default{background-image: url(images/bg-page.webp);}
 
 .player-video{
     width: var(--vidWidth);
@@ -126,7 +123,7 @@
 
 .player-name{
     font-size: 26px;
-	text-shadow: 0 0 5px #000000;
+	text-shadow: 0 0 5px #000;
     width: calc(var(--nameWidth) + 8px * 2);
 	color: #fff;
     display: flex;
@@ -180,6 +177,10 @@
 .player-grid img, .dialog img{
     background-image: url(images/tracker-icons.png);
     background-size: 320px 260px;
+}
+
+img.sprite-2{
+    height: 44px;
 }
 
 .blank{background-position: 0 0;}
@@ -273,9 +274,11 @@
 .player-needs{
     display: grid;
     grid-template-columns: repeat(4, auto);
-    padding: 0px;
-    grid-gap: 0px;
+    gap: 0;
 	z-index: 10;
+    padding: 0 0 1px 5px;
+    border-bottom: solid 1px #7080b0;
+    box-shadow: 0 3px #485898;
 }
 
 .player-needs img{
@@ -314,11 +317,6 @@
 .text-slash{background-position: -37px 0px;}
 .text-bslash{background-position: -37px -32px;}
 .text-dash{background-position: -37px -64px;}
-
-.player-needs{
-background: url(images/tracker-needed-flair.png) repeat-x right bottom;
-padding: 0 0 5px 5px;
-}
 
 .player-speaker{
     padding: 4px;
