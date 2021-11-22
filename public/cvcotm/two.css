@@ -21,7 +21,7 @@
     --finalX: 30px; --finalY: 10px;
     --bestX: 10px; --bestY: 590px;
 	--timeX: 10px; --timeY: 10px;
-	--needsX: 384px; --needsY: 440px;
+	--needsX: 377px; --needsY: 440px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -67,14 +67,12 @@
 
 .layout.transparent-background{
     --solid: linear-gradient(#000, #000);
-    -webkit-mask: var(--solid),
-        repeating-linear-gradient(
-            to right,
-             #000 0 calc( var(--vidWidth) - var(--border) * 2),
-              #0000 calc( var(--vidWidth) - var(--border) * 2) calc(1280px - var(--clipX2) - 1.5 * var(--border))
-              ) 
-              var(--clipX1) var(--clipY1) /
-               calc(1280px - 2 * var(--clipX1)) calc( var(--vidHeight) - 2 * var(--border)) ;
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -276,9 +274,8 @@ img.sprite-2{
     grid-template-columns: repeat(4, auto);
     gap: 0;
 	z-index: 10;
-    padding: 0 0 1px 5px;
-    border-bottom: solid 1px #7080b0;
-    box-shadow: 0 3px #485898;
+    padding: 0 0 3px 5px;
+    box-shadow: 0 1px #7080b0, 0 4px #485898;
 }
 
 .player-needs img{

@@ -406,8 +406,6 @@ button.active{
     width: 24px;
 }
 
-.layout.transparent-background .player-video{background-color: #fff;}
-
 #black, .layout.black-background .player-video{background-color: #000;}
 
 #tech-diff{
