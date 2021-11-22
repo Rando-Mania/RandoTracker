@@ -1,0 +1,186 @@
+    <div class="menu-game-specific">
+        <div id="menu_pronouns" class="fieldset">
+            <h4 class="legend">Players Misc.</h4>
+            <div id="menu_player_labels">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Pronoun</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><tr-input-text player="1" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><tr-input-text player="2" class="number-input" property="player-number"></tr-input-text></td>
+                        <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+            <h4 class="legend">Backgrounds</h4>
+            <div>
+                <label>Image:</label>
+                <tr-select-toggle property="layout-back-select">
+                    <tr-option selected target=".layout, .tracker-layout" toggle-class="cotm-default" value="1">Default</tr-option>
+                </tr-select-toggle>
+            </div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>darkmoon</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>darkmoon, capt_uhu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+		
+		<div id="menu_soul" class="fieldset">
+			<h4 class="legend">Soul Select</h4>
+			<div>
+				<label>Red Soul:</label>
+				<tr-select property="redSoul">
+					<tr-option selected value="? ? ?">? ? ?</tr-option>
+					<tr-option value="Altair">Altair</tr-option>
+					<tr-option value="Arachne">Arachne</tr-option>
+					<tr-option value="Axe Armor">Axe Armor</tr-option>
+					<tr-option value="Balore">Balore</tr-option>
+					<tr-option value="Bat">Bat</tr-option>
+					<tr-option value="Beam Skeleton">Beam Skeleton</tr-option>
+					<tr-option value="Biphron">Biphron</tr-option>
+					<tr-option value="Blue Crow">Blue Crow</tr-option>
+					<tr-option value="Bomber Armor">Bomber Armor</tr-option>
+					<tr-option value="Chronomage">Chronomage</tr-option>
+					<tr-option value="Cockatrice">Cockatrice</tr-option>
+					<tr-option value="Demon Lord">Demon Lord</tr-option>
+					<tr-option value="Disc Armor">Disc Armor</tr-option>
+					<tr-option value="Dryad">Dryad</tr-option>
+					<tr-option value="Durga">Durga</tr-option>
+					<tr-option value="Evil Butcher">Evil Butcher</tr-option>
+					<tr-option value="Fish Head">Fish Head</tr-option>
+					<tr-option value="Flame Demon">Flame Demon</tr-option>
+					<tr-option value="Fleaman">Fleaman</tr-option>        
+					<tr-option value="Ghost">Ghost</tr-option>
+					<tr-option value="Giant Skeleton">Giant Skeleton</tr-option>
+					<tr-option value="Gladiator">Gladiator</tr-option>
+					<tr-option value="Harpy">Harpy</tr-option>
+					<tr-option value="Killer Doll">Killer Doll</tr-option>
+					<tr-option value="Killer Fish">Killer Fish</tr-option>
+					<tr-option value="Killer Mantle">Killer Mantle</tr-option>
+					<tr-option value="Kyoma Demon">Kyoma Demon</tr-option>
+					<tr-option value="Legion">Legion</tr-option>
+					<tr-option value="Lightning Doll">Lightning Doll</tr-option>
+					<tr-option value="Man-Eater">Man-Eater</tr-option>
+					<tr-option value="Mandragora">Mandragora</tr-option>
+					<tr-option value="Merman">Merman</tr-option>
+					<tr-option value="Mudman">Mudman</tr-option>
+					<tr-option value="Needles">Needles</tr-option>
+					<tr-option value="Nemesis">Nemesis</tr-option>
+					<tr-option value="Nightmare">Nightmare</tr-option>
+					<tr-option value="Red Minotaur">Red Minotaur</tr-option>
+					<tr-option value="Ripper">Ripper</tr-option>
+					<tr-option value="Rock Armor">Rock Armor</tr-option>
+					<tr-option value="Siren">Siren</tr-option>
+					<tr-option value="Skeleton">Skeleton</tr-option>
+					<tr-option value="Skull Archer">Skull Archer</tr-option>
+					<tr-option value="Skull Millione">Skull Millione</tr-option>
+					<tr-option value="Slime">Slime</tr-option>
+					<tr-option value="Student Witch">Student Witch</tr-option>
+					<tr-option value="Tiny Devil">Tiny Devil</tr-option>
+					<tr-option value="Ukoback">Ukoback</tr-option>
+					<tr-option value="Une">Une</tr-option>
+					<tr-option value="Valkyrie">Valkyrie</tr-option>
+					<tr-option value="Waiter Skeleton">Waiter Skeleton</tr-option>
+					<tr-option value="Werejaguar">Werejaguar</tr-option>
+					<tr-option value="Weretiger">Weretiger</tr-option>
+					<tr-option value="Werewolf">Werewolf</tr-option>
+					<tr-option value="Winged Skeleton">Winged Skeleton</tr-option>
+					<tr-option value="Zombie Soldier">Zombie Soldier</tr-option>               
+				</tr-select>
+			</div>
+
+			<div>
+				<label>Blue Soul:</label>
+				<tr-select property="blueSoul">
+					<tr-option selected value="? ? ?">? ? ?</tr-option>
+					<tr-option value='Alastor'>Alastor</tr-option>
+					<tr-option value='Alura Une'>Alura Une</tr-option>
+					<tr-option value='Big Golem'>Big Golem</tr-option>
+					<tr-option value='Black Panther'>Black Panther</tr-option>
+					<tr-option value='Bone Pillar'>Bone Pillar</tr-option>
+					<tr-option value='Buer'>Buer</tr-option>
+					<tr-option value='Cagnazzo'>Cagnazzo</tr-option>
+					<tr-option value='Catoblepas'>Catoblepas</tr-option>
+					<tr-option value='Creaking Skull'>Creaking Skull</tr-option>
+					<tr-option value='Curly'>Curly</tr-option>
+					<tr-option value='Death'>Death</tr-option>
+					<tr-option value='Devil'>Devil</tr-option>
+					<tr-option value='Final Guard'>Final Guard</tr-option>
+					<tr-option value='Flying Armor'>Flying Armor</tr-option>
+					<tr-option value='Giant Bat'>Giant Bat</tr-option>
+					<tr-option value='Giant Ghost'>Giant Ghost</tr-option>
+					<tr-option value='Great Armor'>Great Armor</tr-option>
+					<tr-option value='Imp'>Imp</tr-option>
+					<tr-option value='Manticore'>Manticore</tr-option>
+					<tr-option value='Medusa Head'>Medusa Head</tr-option>
+					<tr-option value='Persephone'>Persephone</tr-option>
+					<tr-option value='Shadow Knight'>Shadow Knight</tr-option>
+					<tr-option value='Sky Fish'>Sky Fish</tr-option>
+					<tr-option value='Witch'>Witch</tr-option>
+				</tr-select>
+			</div>
+
+			<div>
+				<label>Yellow Soul:</label>
+				<tr-select property="yellowSoul">
+					<tr-option selected value="? ? ?">? ? ?</tr-option>
+					<tr-option value='Arc Demon'>Arc Demon</tr-option>
+					<tr-option value='Bael'>Bael</tr-option>
+					<tr-option value='Basilisk'>Basilisk</tr-option>
+					<tr-option value='Dead Crusader'>Dead Crusader</tr-option>
+					<tr-option value='Dead Warrior'>Dead Warrior</tr-option>
+					<tr-option value='Ectoplasm'>Ectoplasm</tr-option>
+					<tr-option value='Erinys'>Erinys</tr-option>
+					<tr-option value='Flesh Golem'>Flesh Golem</tr-option>
+					<tr-option value='Gargoyle'>Gargoyle</tr-option>
+					<tr-option value='Ghost Dancer'>Ghost Dancer</tr-option>
+					<tr-option value='Giant Worm'>Giant Worm</tr-option>
+					<tr-option value='Golem'>Golem</tr-option>
+					<tr-option value='Gorgon'>Gorgon</tr-option>
+					<tr-option value='Gremlin'>Gremlin</tr-option>
+					<tr-option value='Headhunter'>Headhunter</tr-option>
+					<tr-option value='Iron Golem'>Iron Golem</tr-option>
+					<tr-option value='Lilith'>Lilith</tr-option>
+					<tr-option value='Lubicant'>Lubicant</tr-option>
+					<tr-option value='Mimic'>Mimic</tr-option>
+					<tr-option value='Minotaur'>Minotaur</tr-option>
+					<tr-option value='Peeping Eye'>Peeping Eye</tr-option>
+					<tr-option value='Poison Worm'>Poison Worm</tr-option>
+					<tr-option value='Quezlcoatl'>Quezlcoatl</tr-option>
+					<tr-option value='Red Crow'>Red Crow</tr-option>
+					<tr-option value='Skeleton Knight'>Skeleton Knight</tr-option>
+					<tr-option value='Skula'>Skula</tr-option>
+					<tr-option value='Stolas'>Stolas</tr-option>
+					<tr-option value='Succubus'>Succubus</tr-option>
+					<tr-option value='Triton'>Triton</tr-option>
+					<tr-option value='Tsuchinoko'>Tsuchinoko</tr-option>
+					<tr-option value='Undine'>Undine</tr-option>
+					<tr-option value='White Dragon'>White Dragon</tr-option>
+					<tr-option value='Wooden Golem'>Wooden Golem</tr-option>
+					<tr-option value='Zombie'>Zombie</tr-option>
+					<tr-option value='Zombie Officer'>Zombie Officer</tr-option>                
+				</tr-select>
+			</div>
+		</div>
+    </div>
