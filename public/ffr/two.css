@@ -21,6 +21,7 @@
     --finalX: 3px; --finalY: 31px;
     --bestX: 3px; --bestY: 640px;
 	--timeX: 3px; --timeY: 31px;
+    --camX: 322px; --camY: 505px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -31,10 +32,6 @@
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
     --clipY1: calc(var(--videoY) + var(--border));
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
-}
-
-.layout.show-cams{
-    --camX: 322px; --camY: 505px;
 }
 
 .border-1{
@@ -73,18 +70,32 @@
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 2;
+    border-radius: 8px;
     background-color: #000; 
     transition: background-color .5s;
 }
 
+.layout.show-cams.transparent-background{
+    -webkit-mask: 
+        var(--solid) 0 0 / 100% 100%, 
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(var(--camX) + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border)),
+        var(--solid) calc(1280px - var(--camX) - 160px + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
 .player-cam{
     display: none;
+    width: 160px;
+    height: 130px;
+    border-top: none;
 }
  
 .layout.show-cams .player-cam{
     display: block;
-    width: 262px;
-    height: 185px;
 }
 
 .ffr-default{
@@ -145,30 +156,10 @@
 .webp.notavif .ffr-duckling{background-image: url(images/2p/base-duckling.webp);}
 .avif .ffr-duckling{background-image: url(images/2p/base-duckling.avif);}
 
-.player-video{
-    width: var(--vidWidth);
-    height: var(--vidHeight);
-    z-index: 2;
-    border-radius: 8px;
-    background-color: #000; 
-    transition: background-color .5s;
-}
-
 .player-name-block{
     height: 50px;
 	width: 255px;
 	border-bottom: none;
-}
-
-.player-cam{
-    display: none;
-}
- 
-.layout.show-cams .player-cam{
-    display: block;
-    width: 160px;
-    height: 130px;
-	border-top: none;
 }
 
 .player-name{
