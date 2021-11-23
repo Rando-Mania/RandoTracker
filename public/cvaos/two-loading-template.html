@@ -36,15 +36,18 @@
   }
 
 .loadscreen{
-    background-color: #8dc8ff;
-  --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
-    background-image: var(--loadscreen-fallback);
     height: 100%;
     display: grid;
     grid-auto-rows: 1fr auto;
     grid-gap: 1em;
     place-items: center;
     padding: 1em;
+    background-color: #380040;
+    background-image: url("images/loading_screen.png");
+    background-image: image-set(
+        url("images/loading_screen.webp") type("image/webp"),
+        url("images/loading_screen.png") type("image/png")
+    );
 }
 
 .notwebp .loadscreen{background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);}
@@ -63,10 +66,14 @@
     justify-content: center;
     min-width: 479px;
     height: 309px;
+    border: 2px solid #0000;
+    border-image: url("images/loading_screen_border.png") 10 / 40px;
+    border-image-source: image-set(
+        url("images/loading_screen_border.webp") type("image/webp"),
+        url("images/loading_screen_border.png") type("image/png")
+        );
+    image-rendering: pixelated;
 }
-
-.notwebp .loadscreen-main{border-image: url('images/loading_screen_border.png') 10 10;}
-.webp .loadscreen-main{border-image: url('images/loading_screen_border.webp')  10 10;}
 
 .loadscreen-main *{
     justify-content: center;

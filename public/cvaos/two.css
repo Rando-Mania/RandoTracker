@@ -26,7 +26,7 @@
     --backgroundColor1: #000;
     --backgroundColor2: #005;
 
-    --border: 6px;
+    --border: 3px;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -37,6 +37,7 @@
 .border-1{
     border: 10px solid #b1b1b1;
     border-image: url(images/border-player-1.png) 10;
+    image-rendering: pixelated;
 }
 
 .border-2{
@@ -63,35 +64,27 @@
 }
 
 .layout.transparent-background{
-    /* -webkit-mask-image:
-        linear-gradient(to right, red var(--clipX1), #0000 0 var(--clipX2),red 0 calc(1280px - var(--clipX2)),#0000 0 calc(1280px - var(--clipX1)),red 0 100%),
-        linear-gradient(red var(--clipY1), #0000 0 var(--clipY2), red 0 100%); */
     --solid: linear-gradient(#000, #000);
-    /* -webkit-mask: var(--solid),
-        var(--solid) var(--clipX1) var(--clipY1),
-        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1);
-    -webkit-mask-size:
-        100% 100%,
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border)),
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border)); */
-    -webkit-mask: var(--solid),
-        repeating-linear-gradient(
-            to right,
-             #000 0 calc( var(--vidWidth) - var(--border) * 2),
-              #0000 calc( var(--vidWidth) - var(--border) * 2) calc(1280px - var(--clipX2) - 1.5 * var(--border))
-              ) 
-              var(--clipX1) var(--clipY1) /
-               calc(1280px - 2 * var(--clipX1)) calc( var(--vidHeight) - 2 * var(--border)) ;
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
 
 .cotm-default{
-    background-color: #000;
+    background-color: #001868;
+    background-image: url("images/bg-page.png");
+    background-image: image-set(
+        url("images/bg-page.avif") type("image/avif"),
+        url("images/bg-page.webp") type("image/webp"),
+        url("images/bg-page.png") type("image/png")
+    );
 }
-.notwebp .cotm-default{background-image: url(images/bg-page.png);}
-.webp .cotm-default{background-image: url(images/bg-page.webp);}
 
 .player-video{
     width: var(--vidWidth);
@@ -126,7 +119,7 @@
 
 .player-name{
     font-size: 26px;
-	text-shadow: 0 0 5px #000000;
+	text-shadow: 0 0 5px #000;
     width: calc(var(--nameWidth) + 8px * 2);
 	color: #fff;
     display: flex;

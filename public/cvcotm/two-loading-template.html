@@ -57,12 +57,12 @@
     background-color: #000;
     background-clip: content-box;
     border: 4px solid #0000;
-    border-image-source: url("images/border-loading.png");
+    border-image: url("images/border-loading.png") round 4;
     border-image-source: image-set(
         url("images/border-loading.webp") type("image/webp"),
         url("images/border-loading.png") type("image/png")
         );
-    border-image-slice: 4;
+    image-rendering: pixelated;
     display: grid;
     align-items: center;
     justify-content: center;

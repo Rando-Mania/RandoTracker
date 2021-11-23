@@ -20,15 +20,13 @@
 [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
 
 .layout.transparent-background{
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
-    --solid: linear-gradient(#000,#000);
-    --borderX2: var(--border) * 2;
-    -webkit-mask: var(--solid), repeating-linear-gradient(to right, #000 0 calc(var(--vidWidth) - var(--borderX2)), #0000 calc(var(--vidWidth) - var(--borderX2)) calc(1280px - var(--clipX2) - var(--border)));
-    -webkit-mask-position: 0 0, var(--clipX1) var(--clipY1);
-    -webkit-mask-size: 100% 100%, calc(1280px - 2 * var(--clipX1)) calc(var(--vidHeight) - var(--borderX2));
+    --solid: linear-gradient(#000, #000);
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
