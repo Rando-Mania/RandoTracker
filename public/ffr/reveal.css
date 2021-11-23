@@ -62,15 +62,17 @@
 
 .layout.transparent-background{
     --solid: linear-gradient(#000, #000);
-    -webkit-mask: var(--solid),
-        var(--solid) var(--clipX1) var(--clipY1);
-    -webkit-mask-size: 
-        100% 100%, 
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border));
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(var(--camX) + var(--border)) calc(var(--camY) + var(--border)) / calc(142px -  2 * var(--border)) calc(121px -  2 * var(--border));
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
+
 
 .ffr-default{
     background: var(--backgroundImg) #000;
