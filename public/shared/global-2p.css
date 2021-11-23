@@ -1,11 +1,11 @@
 [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
 [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
 
-[player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
-[player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+[player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+[player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
 
-[player="1"] .player-panels-contain {left: var(--gridX); bottom: var(--gridY);}
-[player="2"] .player-panels-contain {right: var(--gridX); bottom: var(--gridY);}
+[player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+[player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
 
 [player="1"] .player-final {right: var(--finalX); top: var(--finalY);}
 [player="2"] .player-final {left: var(--finalX); top: var(--finalY);}
