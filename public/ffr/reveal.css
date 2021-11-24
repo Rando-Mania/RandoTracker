@@ -18,7 +18,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('images/1p/base-background.png');
 
     --border: 6px;
 
@@ -57,7 +56,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg) #000;
+    background-color: #000;
 }
 
 .layout.transparent-background{
@@ -75,36 +74,73 @@
 
 
 .ffr-default{
-    background: var(--backgroundImg) #000;
+    background-color: #000;
+    background-image: url('images/1p/base-background.png');
+    background-image: image-set(
+        url("images/1p/base-background.avif") type("image/avif"),
+        url("images/1p/base-background.webp") type("image/webp"),
+        url("images/1p/base-background.png") type("image/png")
+    );
 }
 
 .ffr-irongol{
-    background: url(images/1p/base-irongol.png) #000076;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
+    background-color: #000076;
+    background-image: url('images/1p/base-irongol.png');
+    background-image: image-set(
+        url("images/1p/base-irongol.avif") type("image/avif"),
+        url("images/1p/base-irongol.png") type("image/png")
+    );
    --backgroundColor2: #500;
 }
 
 .ffr-tourney{
-    background: url(images/1p/base-tourney.png) #291901;
-    background: url(images/1p/base-tourney.webp) #291901;
+    background-color: #291901;
+    background-image: url('images/1p/base-tourney.png');
+    background-image: image-set(
+        url("images/1p/base-tourney.avif") type("image/avif"),
+        url("images/1p/base-tourney.webp") type("image/webp"),
+        url("images/1p/base-tourney.png") type("image/png")
+    );
     --backgroundColor2: #050;
 }
 
 .ffr-league{
-    background: url(images/1p/base-league.png) #000076;
+    background-color: #000076;
+    background-image: url('images/1p/base-league.png');
+    background-image: image-set(
+        url("images/1p/base-league.webp") type("image/webp"),
+        url("images/1p/base-league.png") type("image/png")
+    );
     --backgroundColor2: #500;
 }
 
 .ffr-rush{
-    background: url(images/1p/base-rush.png), linear-gradient(#0094ff 58%, #9c9c9c 58%);
+    background-color: #0094ff;
+    background-image: url('images/1p/base-rush.png');
+    background-image: image-set(
+        url("images/1p/base-rush.avif") type("image/avif"),
+        url("images/1p/base-rush.webp") type("image/webp"),
+        url("images/1p/base-rush.png") type("image/png")
+    );
 }
 
 .ffr-dark{
-    background: url(images/1p/base-dark.png) #000;
+    background-image: url('images/1p/base-dark.png');
+    background-image: image-set(
+        url("images/1p/base-dark.avif") type("image/avif"),
+        url("images/1p/base-dark.webp") type("image/webp"),
+        url("images/1p/base-dark.png") type("image/png")
+    );
 }
 
 .ffr-duckling{
-    background: url(images/1p/base-duckling.png) #428fa6;
+    background-color: #428fa6;
+    background-image: url('images/1p/base-duckling.png');
+    background-image: image-set(
+        url("images/1p/base-duckling.avif") type("image/avif"),
+        url("images/1p/base-duckling.webp") type("image/webp"),
+        url("images/1p/base-duckling.png") type("image/png")
+    );
 }
 
 .player-video{
