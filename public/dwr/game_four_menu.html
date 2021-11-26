@@ -51,10 +51,8 @@
                 </tr>
             </table>
         </div>
-    </div>
-    <div id="menu_team_names" class="fieldset">
-        <h4 class="legend">Team Names</h4>
         <div id="menu_team_labels">
+            <h4>Team Names</h4>
             <table>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
@@ -65,7 +63,6 @@
             </table>
         </div>
     </div>
-
     <div id="menu_settings_extra" class="fieldset">
         <h4 class="legend">Settings</h4>
         <div class="menu-label-input">
@@ -76,8 +73,50 @@
                 <tr-option value="tourney" target=".layout, .player-video, .loadscreen" toggle-class="tourney-background">Tourney</tr-option>
                 <tr-option value="chaos" target=".layout, .player-video, .loadscreen" toggle-class="chaos-background">Chaos</tr-option>
                 <tr-option value="league" target=".layout, .player-video, .loadscreen" toggle-class="league-background">League</tr-option>
-                <tr-option value="coop" target=".layout, .player-video, .loadscreen" toggle-class="coop-background">Co-Op</tr-option>
+                <tr-option value="coop" target=".layout, .menu-contain ,.player-video, .loadscreen" toggle-class="coop-background">Co-Op</tr-option>
             </tr-select-toggle>
+        </div>
+        <div id="menu_video_background">
+            <label>Video Background:</label>
+            <div class="radio-options">
+                <div class="radio-contain">
+                    <tr-input-radio checked title="Black" id="black" property="video-bgcolor" value="black" target=".layout" toggle-class="black-background"></tr-input-radio>
+                    <label class="video-bgcolor" title="Black" for="black"></label>
+                </div>
+                <div class="radio-contain">
+                    <tr-input-radio title="Technical Difficulties" id="tech-diff" property="video-bgcolor" value="tech-diff" target=".layout" toggle-class="tech-diff-background"></tr-input-radio>
+                    <label class="video-bgcolor" title="Technical Difficulties" for="tech-diff"></label>
+                </div>
+                <div class="radio-contain">
+                    <tr-input-radio title="Clipped (in OBS)" id="transparent" property="video-bgcolor" value="transparent" target=".layout" toggle-class="transparent-background"></tr-input-radio>
+                    <label class="video-bgcolor" title="Clipped (in OBS)" for="transparent">
+                        <svg height="24" width="24" viewbox="0 0 24 24" fill="#000"><path d="M0 0h24v24H0z" fill="none"/><circle cx="6" cy="18" fill="none" r="2"/><circle cx="12" cy="12" fill="none" r=".5"/><circle cx="6" cy="6" fill="none" r="2"/><path transform="rotate(-90,12,12)" d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"/></svg>
+                    </label>
+                </div>
+                <div class="radio-contain" id="screen">
+                    <tr-input-radio title="Screen Shots" property="video-bgcolor" value="screen" target=".layout" toggle-class="screen-background"></tr-input-radio>
+                    <label class="video-bgcolor" title="Screen Shots" for="screen"></label>
+                </div>
+            </div>
+        </div>
+        <div id="menu_overlays_contain">
+            <label>Overlays:</label>
+            <div class="menu-button-row">
+                <tr-input-radio id="none" property="radio-test-toggle" value="no-overlay" target=".layout, .overlay-label-none" toggle-class="show" checked></tr-input-radio>
+                <label class="overlay-label-none" for="none">None</label>
+                <tr-input-radio id="load" property="radio-test-toggle" value="load" target=".loadscreen-contain, .overlay-label-load" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-load" for="load">Loading</label>
+            <!--
+                <tr-input-radio id="bracket" property="radio-test-toggle" value="brac" target=".bracket-contain" toggle-class="show"></tr-input-radio>
+                <label for="bracket">Bracket</label>
+            -->
+                <tr-input-radio id="calendar" property="radio-test-toggle" value="cal" target=".calendar-contain, .overlay-label-calendar" toggle-class="show"></tr-input-radio>
+                <label class="overlay-label-calendar" for="calendar">Calendar</label>
+            </div>
+        </div>
+        <div>
+            <tr-input-toggle-class id="menu_vs" property="toggle-vs" target=".load-and-vs" toggle-class="show-and"></tr-input-toggle-class>
+            <label for="menu_vs">Two 1 vs 1</label>
         </div>
     </div>
 
@@ -109,77 +148,77 @@
             <tr-template href="over-world-items.html"></tr-template>
             <tr-input-text oninput class="coordinates" property="coordinates"></tr-input-text>
         </div>
-    </div>
-    <div id="menu_league" class="fieldset">
-        <h4 class="legend">League</h4>
-        <div class="menu-flags-wrapper">
-            <h4>Flags: </h4>
-            <tr-select-toggle>
-                <tr-option selected value="none">None</tr-option>
-                <tr-option value="week-1">Week 1</tr-option>
-                <tr-option value="week-2">Week 2</tr-option>
-                <tr-option value="week-3">Week 3</tr-option>
-                <tr-option value="week-4">Week 4</tr-option>
-                <tr-option value="week-5">Week 5</tr-option>
-                <tr-option value="week-6">Week 6</tr-option>
-                <tr-option value="week-7">Week 7</tr-option>
-                <tr-option value="week-8-1">Week 8 Match 1</tr-option>
-                <tr-option value="week-8-2">Week 8 Match 2</tr-option>
-            </tr-select-toggle>
-        </div>
-        <div class="menu-repel-wrapper">
-            <tr-input-toggle-class id="permanent_repel" target="[property='repel']" toggle-class="spell-highlight" property="permanent-repel">
-                <label id="permanent_repel_label" for="permanent_repel">Permanent Repel:</label>
-            </tr-input-toggle-class>
-        </div>
-    </div>
-    <div id="menu_monsters" class="fieldset">
-        <h4 class="legend">Monster Stats</h4>
-        <div class="menu-monster-wrapper menu-label-input">
-            <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats"></tr-input-toggle-class>
+        <div>
+            <h4>League:</h4>
             <div>
-              <tr-select property="monster">
-                <tr-option selected value="0" target="[property='monster_image']" toggle-class="slime">Slime</tr-option>
-                <tr-option value="1" target="[property='monster_image']" toggle-class="slime-red">Red Slime</tr-option>
-                <tr-option value="2" target="[property='monster_image']" toggle-class="drakee">Drakee</tr-option>
-                <tr-option value="3" target="[property='monster_image']" toggle-class="ghost">Ghost</tr-option>
-                <tr-option value="4" target="[property='monster_image']" toggle-class="magician">Magician</tr-option>
-                <tr-option value="5" target="[property='monster_image']" toggle-class="drakee-magic">Magidrakee</tr-option>
-                <tr-option value="6" target="[property='monster_image']" toggle-class="scorpion">Scorpion</tr-option>
-                <tr-option value="7" target="[property='monster_image']" toggle-class="druin">Druin</tr-option>
-                <tr-option value="8" target="[property='monster_image']" toggle-class="ghost-poltergeist">Poltergeist</tr-option>
-                <tr-option value="9" target="[property='monster_image']" toggle-class="droll">Droll</tr-option>
-                <tr-option value="10" target="[property='monster_image']" toggle-class="drakeema">Drakeema</tr-option>
-                <tr-option value="11" target="[property='monster_image']" toggle-class="skeleton">Skeleton</tr-option>
-                <tr-option value="12" target="[property='monster_image']" toggle-class="magician-warlock">Warlock</tr-option>
-                <tr-option value="13" target="[property='monster_image']" toggle-class="scorpion-metal">Metal Scorpion</tr-option>
-                <tr-option value="14" target="[property='monster_image']" toggle-class="wolf">Wolf</tr-option>
-                <tr-option value="15" target="[property='monster_image']" toggle-class="skeleton-wraith">Wraith</tr-option>
-                <tr-option value="16" target="[property='monster_image']" toggle-class="slime-metal">Metal Slime</tr-option>
-                <tr-option value="17" target="[property='monster_image']" toggle-class="ghost-specter">Specter</tr-option>
-                <tr-option value="18" target="[property='monster_image']" toggle-class="wolflord">Wolflord</tr-option>
-                <tr-option value="19" target="[property='monster_image']" toggle-class="druinlord">Druinlord</tr-option>
-                <tr-option value="20" target="[property='monster_image']" toggle-class="drollmagi">Drollmagi</tr-option>
-                <tr-option value="21" target="[property='monster_image']" toggle-class="wyvern">Wyvern</tr-option>
-                <tr-option value="22" target="[property='monster_image']" toggle-class="scorpion-rogue">Rogue Scorpion</tr-option>
-                <tr-option value="23" target="[property='monster_image']" toggle-class="skeleton-wraith-knight">Wraith Knight</tr-option>
-                <tr-option value="24" target="[property='monster_image']" toggle-class="man-golem">Golem</tr-option>
-                <tr-option value="25" target="[property='monster_image']" toggle-class="man-gold">Goldman</tr-option>
-                <tr-option value="26" target="[property='monster_image']" toggle-class="knight">Knight</tr-option>
-                <tr-option value="27" target="[property='monster_image']" toggle-class="wyvern-magi">Magiwyvern</tr-option>
-                <tr-option value="28" target="[property='monster_image']" toggle-class="skeleton-demon-knight">Demon Knight</tr-option>
-                <tr-option value="29" target="[property='monster_image']" toggle-class="wolf-were">Werewolf</tr-option>
-                <tr-option value="30" target="[property='monster_image']" toggle-class="dragon-green">Green Dragon</tr-option>
-                <tr-option value="31" target="[property='monster_image']" toggle-class="wyvern-star">Starwyvern</tr-option>
-                <tr-option value="32" target="[property='monster_image']" toggle-class="magician-wizard">Wizard</tr-option>
-                <tr-option value="33" target="[property='monster_image']" toggle-class="knight-axe">Axe Knight</tr-option>
-                <tr-option value="34" target="[property='monster_image']" toggle-class="dragon-blue">Blue Dragon</tr-option>
-                <tr-option value="35" target="[property='monster_image']" toggle-class="man-stone">Stoneman</tr-option>
-                <tr-option value="36" target="[property='monster_image']" toggle-class="knight-armored">Armored Knight</tr-option>
-                <tr-option value="37" target="[property='monster_image']" toggle-class="dragon-red">Red Dragon</tr-option>
-                <tr-option value="38" target="[property='monster_image']" toggle-class="dragonlord-human">Dragonlord 1</tr-option>
-                <tr-option value="39" target="[property='monster_image']" toggle-class="dragonlord-true">Dragonlord 2</tr-option>
-              </tr-select>
+                <label>Flags:</label>
+                <tr-select-toggle>
+                    <tr-option selected value="none">None</tr-option>
+                    <tr-option value="week-1">Week 1</tr-option>
+                    <tr-option value="week-2">Week 2</tr-option>
+                    <tr-option value="week-3">Week 3</tr-option>
+                    <tr-option value="week-4">Week 4</tr-option>
+                    <tr-option value="week-5">Week 5</tr-option>
+                    <tr-option value="week-6">Week 6</tr-option>
+                    <tr-option value="week-7">Week 7</tr-option>
+                    <tr-option value="week-8-1">Week 8 Match 1</tr-option>
+                    <tr-option value="week-8-2">Week 8 Match 2</tr-option>
+                </tr-select-toggle>
+            </div>
+            <div class="menu-repel-wrapper">
+                <tr-input-toggle-class id="permanent_repel" target="[property='repel']" toggle-class="spell-highlight" property="permanent-repel">
+                    <label id="permanent_repel_label" for="permanent_repel">Permanent Repel:</label>
+                </tr-input-toggle-class>
+            </div>
+        </div>
+        <div id="menu_monsters">
+            <h4>Monster Stats:</h4>
+            <div class="menu-monster-wrapper menu-label-input">
+                <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats"></tr-input-toggle-class>
+                <div>
+                  <tr-select property="monster">
+                    <tr-option selected value="0" target="[property='monster_image']" toggle-class="slime">Slime</tr-option>
+                    <tr-option value="1" target="[property='monster_image']" toggle-class="slime-red">Red Slime</tr-option>
+                    <tr-option value="2" target="[property='monster_image']" toggle-class="drakee">Drakee</tr-option>
+                    <tr-option value="3" target="[property='monster_image']" toggle-class="ghost">Ghost</tr-option>
+                    <tr-option value="4" target="[property='monster_image']" toggle-class="magician">Magician</tr-option>
+                    <tr-option value="5" target="[property='monster_image']" toggle-class="drakee-magic">Magidrakee</tr-option>
+                    <tr-option value="6" target="[property='monster_image']" toggle-class="scorpion">Scorpion</tr-option>
+                    <tr-option value="7" target="[property='monster_image']" toggle-class="druin">Druin</tr-option>
+                    <tr-option value="8" target="[property='monster_image']" toggle-class="ghost-poltergeist">Poltergeist</tr-option>
+                    <tr-option value="9" target="[property='monster_image']" toggle-class="droll">Droll</tr-option>
+                    <tr-option value="10" target="[property='monster_image']" toggle-class="drakeema">Drakeema</tr-option>
+                    <tr-option value="11" target="[property='monster_image']" toggle-class="skeleton">Skeleton</tr-option>
+                    <tr-option value="12" target="[property='monster_image']" toggle-class="magician-warlock">Warlock</tr-option>
+                    <tr-option value="13" target="[property='monster_image']" toggle-class="scorpion-metal">Metal Scorpion</tr-option>
+                    <tr-option value="14" target="[property='monster_image']" toggle-class="wolf">Wolf</tr-option>
+                    <tr-option value="15" target="[property='monster_image']" toggle-class="skeleton-wraith">Wraith</tr-option>
+                    <tr-option value="16" target="[property='monster_image']" toggle-class="slime-metal">Metal Slime</tr-option>
+                    <tr-option value="17" target="[property='monster_image']" toggle-class="ghost-specter">Specter</tr-option>
+                    <tr-option value="18" target="[property='monster_image']" toggle-class="wolflord">Wolflord</tr-option>
+                    <tr-option value="19" target="[property='monster_image']" toggle-class="druinlord">Druinlord</tr-option>
+                    <tr-option value="20" target="[property='monster_image']" toggle-class="drollmagi">Drollmagi</tr-option>
+                    <tr-option value="21" target="[property='monster_image']" toggle-class="wyvern">Wyvern</tr-option>
+                    <tr-option value="22" target="[property='monster_image']" toggle-class="scorpion-rogue">Rogue Scorpion</tr-option>
+                    <tr-option value="23" target="[property='monster_image']" toggle-class="skeleton-wraith-knight">Wraith Knight</tr-option>
+                    <tr-option value="24" target="[property='monster_image']" toggle-class="man-golem">Golem</tr-option>
+                    <tr-option value="25" target="[property='monster_image']" toggle-class="man-gold">Goldman</tr-option>
+                    <tr-option value="26" target="[property='monster_image']" toggle-class="knight">Knight</tr-option>
+                    <tr-option value="27" target="[property='monster_image']" toggle-class="wyvern-magi">Magiwyvern</tr-option>
+                    <tr-option value="28" target="[property='monster_image']" toggle-class="skeleton-demon-knight">Demon Knight</tr-option>
+                    <tr-option value="29" target="[property='monster_image']" toggle-class="wolf-were">Werewolf</tr-option>
+                    <tr-option value="30" target="[property='monster_image']" toggle-class="dragon-green">Green Dragon</tr-option>
+                    <tr-option value="31" target="[property='monster_image']" toggle-class="wyvern-star">Starwyvern</tr-option>
+                    <tr-option value="32" target="[property='monster_image']" toggle-class="magician-wizard">Wizard</tr-option>
+                    <tr-option value="33" target="[property='monster_image']" toggle-class="knight-axe">Axe Knight</tr-option>
+                    <tr-option value="34" target="[property='monster_image']" toggle-class="dragon-blue">Blue Dragon</tr-option>
+                    <tr-option value="35" target="[property='monster_image']" toggle-class="man-stone">Stoneman</tr-option>
+                    <tr-option value="36" target="[property='monster_image']" toggle-class="knight-armored">Armored Knight</tr-option>
+                    <tr-option value="37" target="[property='monster_image']" toggle-class="dragon-red">Red Dragon</tr-option>
+                    <tr-option value="38" target="[property='monster_image']" toggle-class="dragonlord-human">Dragonlord 1</tr-option>
+                    <tr-option value="39" target="[property='monster_image']" toggle-class="dragonlord-true">Dragonlord 2</tr-option>
+                  </tr-select>
+                </div>
             </div>
         </div>
     </div>
@@ -194,12 +233,12 @@
                 </tr>
                 <tr>
                     <td>Code:</td>
-                    <td>capt_uhu, <br/>datyedyeguy, <br/>brianwilliams42</td>
+                    <td>capt_uhu, datyedyeguy, <br/>brianwilliams42</td>
                 </tr>
             </table>
         </div>
     </div>
-    <div id="menu_bot" class="fieldset">
+    <!-- <div id="menu_bot" class="fieldset">
         <h4 class="legend">Bot Commands</h4>
         <a class="randroid" target="_blank" href="https://www.twitch.tv/popout/the_randroid/chat?popout=">the_randroid</a> 
         <a class="more-info" target="_blank" href="https://docs.google.com/document/d/1OZdV1TVj34J7QmbgNU-SsC6TRAtHdjkrMvv2MZOkZBA/edit">more info</a>
@@ -225,7 +264,7 @@
                 <p>!h <span class="channel" title="1 = randomania, 2 = randomania2, etc.">#</span> live [streamer name]</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="menu_view_game" class="fieldset">
         <h4 class="legend">View</h4>

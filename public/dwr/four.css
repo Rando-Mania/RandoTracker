@@ -255,6 +255,14 @@ html{
     border: solid 1px rgba(255,255,255,.5);
 }
 
+#menu_team_labels{
+    display: none;
+}
+
+.coop-background #menu_team_labels{
+    display: block;
+}
+
 .player-team:nth-of-type(1){
     border-right: solid 2px #fff;
 }
@@ -508,7 +516,7 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 }
 
 tr-timer{
-	width: 9em;
+	width: 10em;
     height: 52px;
     z-index: 1;
 	font-size: 20px;
@@ -650,17 +658,6 @@ tr-timer span {
         height: 81px;
     }
     
-    #menu_other .menu-monster-wrapper{
-        display: grid;
-        grid-template-columns: 1fr;
-        padding: 8px;
-        grid-gap: 8px;
-        border-top: dotted 1px rgba(255,255,255,.2);
-    }
-    .menu-monster-wrapper div{
-        display: flex;
-        justify-content: space-between;
-    }
     .monster-table-stats, .monster-table-resist{
         margin: auto;
         width: 72%;
@@ -1083,7 +1080,10 @@ tr-timer span {
 }
 
 .menu-general #menu_players{grid-area: players;}
-.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_layout{
+    grid-area: layout;
+    grid-area: 3/3;
+}
 .menu-general #menu_production{grid-area: team;}
 .menu-general #menu_timer{grid-area: timer;}
 .menu-general #menu_view{grid-area: view;}
@@ -1092,22 +1092,33 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
-        "players   players-2 players-2     timer   commands commands"
-        "teams     teams     league         team    commands commands"
-        "playlist  monsters  settings-game team    commands commands"
-        "playlist  dwr       layout        credits view     reset"
+        "players   players-2 players-2     team    team"
+        "playlist  dwr       timer         credits credits"
+        "playlist  dwr       settings-game        view     reset"
     }
 
-#menu_team_names{grid-area: teams;}
 #menu_players_extra{grid-area: players-2;}
-#menu_other{grid-area: dwr;}
+#menu_other{
+    grid-area: dwr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5em;
+}
+#menu_other > div h4 {margin-bottom: .5em;}
+
 #menu_playlist {grid-area: playlist;}
 #menu_credits {grid-area: credits;}
-#menu_settings_extra {grid-area: settings-game;}
+#menu_settings_extra {
+    grid-area: settings-game;
+    background-color: #000;
+    z-index: 2;
+}
 #menu_league {grid-area: league;
+    flex-direction: row;
     justify-content: space-around;}
 #menu_view_game {
-    grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
+    grid-area: 3/4/span 2; background-color: #000; z-index: 3; justify-content: space-around;}
 #menu_view_game button {
         width: 8em;
     }
@@ -1115,7 +1126,9 @@ tr-timer span {
 #menu_monsters {grid-area: monsters;}
 
 #menu_bot{
-    width: 400px; grid-area: commands;
+    width: 400px; 
+    grid-area: commands;
+    display: none;
 }
 
 #menu_bot .trackers, #menu_bot .commentators{
@@ -1147,7 +1160,16 @@ tr-timer span {
     gap: 8px;
 }
 
-.menu-flags-wrapper{
+#menu_video_background{
+    display: flex;
+    gap: 1em;
+}
+
+#menu_settings_extra .menu-button-row{
+    display: flex;
+}
+
+#menu_settings_extra .menu-flags-wrapper{
     display: flex;
 }
 .highlight{
