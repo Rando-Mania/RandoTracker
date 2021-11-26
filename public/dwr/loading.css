@@ -69,43 +69,33 @@
 
 .loadscreen.chaos-background{
   background:
-  url(images/monsters/drollgon-lord.png) no-repeat right -50% top / auto 190%,
-  url(images/loadscreen-alefgard-dark.png) repeat 0 0 / contain
+    url(images/monsters/drollgon-lord.png) no-repeat right -50% top / auto 190%,
+    url(images/loadscreen-alefgard-dark.png) repeat 0 0 / contain
   #0d3d87;
+}
+
+.loadscreen.coop-background{
+  background:
+    url('images/Bucket_brigade_with_bottle_and_portal.png') no-repeat right top / 51%, 
+    linear-gradient(102deg, #000, #292121 75%) #292121;
+    background-image: image-set(
+      url("images/Bucket_brigade_with_bottle_and_portal.avif") type("image/avif"), linear-gradient(102deg, #000, #292121 75%),
+      url("images/Bucket_brigade_with_bottle_and_portal.png") type("image/png"), linear-gradient(102deg, #000, #292121 75%));
+}
+
+.logo-official{
+  filter: drop-shadow(2px 2px #000);
+  background-color: #000;
+  padding: 8px;
+}
+
+.loadscreen.coop-background .logo-official{
+  background-color: #0000;
 }
 
 #changeText{
   font-size: 17px;
   letter-spacing: 1px;
-}
-
-.loadscreen main h1{
-  color: #fd3401;
-  font-family: 'Ferrum', serif;
-  font-size: 72px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-image: linear-gradient(#fe3401, #fe9934 60%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: #0000;
-  text-shadow: none;
-  filter: drop-shadow(1px 1px #000) drop-shadow(-1px -1px #000) drop-shadow(1px -1px #000) drop-shadow(-1px 1px #000);
-}
-
-.loadscreen main h1 span{
-  font-size: 1.3em;
-  vertical-align: top;
-}
-
-.loadscreen header h2{
-  font-size: 32px;
-  color: #fff;
-  text-transform: uppercase;
-  transform: scaleX(1.2);
-  font-weight: normal;
-  position: relative;
-  top: -28px;
 }
 
 .loading-runners{

@@ -52,17 +52,31 @@
             </table>
         </div>
     </div>
+    <div id="menu_team_names" class="fieldset">
+        <h4 class="legend">Team Names</h4>
+        <div id="menu_team_labels">
+            <table>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-textarea oninput player="1" class="team-input" property="player-team"></tr-input-textarea></td>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-textarea oninput player="2" class="team-input" property="player-team"></tr-input-textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <div id="menu_settings_extra" class="fieldset">
         <h4 class="legend">Settings</h4>
         <div class="menu-label-input">
             <label>Video Background Image:</label>
             <tr-select-toggle property="video-bgImage">
-                <tr-option value="none" target=".player-video" toggle-class="none">none</tr-option>
-                <tr-option selected value="weekly" target=".player-video" toggle-class="weekly-background">Weekly</tr-option>
-                <tr-option value="tourney" target=".player-video" toggle-class="tourney-background">Tourney</tr-option>
-                <tr-option value="chaos" target=".player-video" toggle-class="chaos-background">Chaos</tr-option>
-                <tr-option value="league" target=".player-video" toggle-class="league-background">League</tr-option>
+                <tr-option value="none" target=".layout, .player-video, .loadscreen" toggle-class="none">none</tr-option>
+                <tr-option selected value="weekly" target=".layout, .player-video, .loadscreen" toggle-class="weekly-background">Weekly</tr-option>
+                <tr-option value="tourney" target=".layout, .player-video, .loadscreen" toggle-class="tourney-background">Tourney</tr-option>
+                <tr-option value="chaos" target=".layout, .player-video, .loadscreen" toggle-class="chaos-background">Chaos</tr-option>
+                <tr-option value="league" target=".layout, .player-video, .loadscreen" toggle-class="league-background">League</tr-option>
+                <tr-option value="coop" target=".layout, .player-video, .loadscreen" toggle-class="coop-background">Co-Op</tr-option>
             </tr-select-toggle>
         </div>
     </div>

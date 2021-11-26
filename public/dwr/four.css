@@ -21,6 +21,7 @@
     --finalX: 579px; --finalY: 40px; --finalY2: 252px;
     --vsX: 50%; --vsY: 150px;
     --winX: 459px; --winY1: 38px; --winY2: 242px;
+    --teamX: 0; --teamY: 328px;
 
     --border: 2px;
 
@@ -123,6 +124,16 @@ html{
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/layout_2021.png');}
 .player-video.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
+.player-video.coop-background{
+    background-color: #292121;
+    background-image: url('images/Bucket_brigade_with_bottle_and_portal.png');
+    background-image: image-set(
+        url("images/Bucket_brigade_with_bottle_and_portal.avif") type("image/avif"),
+        url("images/Bucket_brigade_with_bottle_and_portal.png") type("image/png")
+    );
+    background-size: cover;
+    background-position: center -30px;
+}
 
 .player-video.league-background{background-image: url('images/video-background/DWR2021.png');}
 [player="2"] .player-video.league-background,
@@ -210,6 +221,51 @@ html{
 .pronoun-input input {
     width: 5em;
     resize: none;
+}
+
+.player-team{
+    width: 257px;
+    height: 65px;
+    text-align: center;
+    white-space: pre-line;
+    display: none;
+}
+
+.coop-background .player-team{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coop-background .player-team:empty{
+    display: none;
+}
+
+.coop-background .staff{
+    left: 250px;
+    color: rgba(255,255,255,.9);
+}
+
+.coop-background .coordinates-contain{
+    left: 70%;
+    color: rgba(255,255,255,.9);
+}
+
+.coop-background tr-timer{
+    background-color: rgba(0,0,0,.75);
+    border: solid 1px rgba(255,255,255,.5);
+}
+
+.player-team:nth-of-type(1){
+    border-right: solid 2px #fff;
+}
+
+.player-team:nth-of-type(2){
+    border-left: solid 2px #fff;
+}
+
+.team-input textarea{
+    width: 218px;
+    height: 3.1rem;
 }
 
 .player-grid{
@@ -452,10 +508,10 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 }
 
 tr-timer{
-	width: 11em;
-    height: 53px;
+	width: 9em;
+    height: 52px;
     z-index: 1;
-	font-size: 24px;
+	font-size: 20px;
 }
 
 tr-timer span {
@@ -481,6 +537,9 @@ tr-timer span {
     overflow: hidden;
     font-size: 18px;
     width: 420px;
+    left: -2px; 
+    top: 50%; 
+    transform: translateY(-50%);
 }
 
 .commentators, .restreamers, .trackers{
@@ -494,6 +553,9 @@ tr-timer span {
         grid-gap: .75rem;
         align-items: center;
         font-size: 19px;
+        transform: translate(-50%,-50%); 
+        top: 50%; 
+        left: 83%;
     }
     
     .coordinates-contain img{
@@ -1031,19 +1093,18 @@ tr-timer span {
     grid-template-columns: repeat(5, auto);
     grid-template-areas:
         "players   players-2 players-2     timer   commands commands"
-        "players   players-2 players-2     team    commands commands"
+        "teams     teams     league         team    commands commands"
         "playlist  monsters  settings-game team    commands commands"
         "playlist  dwr       layout        credits view     reset"
-        "playlist  league    league        credits view     reset"
     }
 
+#menu_team_names{grid-area: teams;}
 #menu_players_extra{grid-area: players-2;}
 #menu_other{grid-area: dwr;}
 #menu_playlist {grid-area: playlist;}
 #menu_credits {grid-area: credits;}
 #menu_settings_extra {grid-area: settings-game;}
 #menu_league {grid-area: league;
-    flex-direction: row;
     justify-content: space-around;}
 #menu_view_game {
     grid-area: 4/5/span 2; background-color: #000; z-index: 3; justify-content: space-around;}

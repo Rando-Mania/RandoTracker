@@ -46,6 +46,9 @@
         [player="2"] .player-winner {right: var(--winX); top: var(--winY2);}
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY2);}
         [player="4"] .player-winner {right: var(--winX); bottom: var(--winY1);}
+
+        .player-team:nth-of-type(1) {left: var(--teamX); top: var(--teamY);}
+        .player-team:nth-of-type(2) {right: var(--teamX); top: var(--teamY);}
     </style>
 </head>
 <body>
@@ -81,10 +84,13 @@
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
-<!-- timer/staff -->
+        <tr-text player="1" property="player-team" class="abs background-1 player-team"></tr-text>
+        <tr-text player="2" property="player-team" class="abs background-1 player-team"></tr-text>
+
+        <!-- timer/staff -->
 
         <tr-timer class="abs" property="timer-test" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></tr-timer>
-        <tr-hide-if-empty class="staff abs" style="left: -2px; top: 50%; transform: translateY(-50%);" toggle-class="wtf">
+        <tr-hide-if-empty class="staff abs" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
         <!-- <tr-template class="abs" 
@@ -92,7 +98,7 @@
 
 
 <!-- coordinates -->
-    <tr-hide-if-empty toggle-class="display-none" target="#coordinates" class="coordinates-contain abs" style="transform: translate(-50%,-50%); top: 50%; left: 83%;">
+    <tr-hide-if-empty toggle-class="display-none" target="#coordinates" class="coordinates-contain abs">
         <tr-template href="over-world-items.html"></tr-template>
         <tr-text property="coordinates" id="coordinates"></tr-text>
     </tr-hide-if-empty>
