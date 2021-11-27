@@ -66,3 +66,17 @@ var dwrlist = [
 	  counter = 0;
 	}
   }
+
+//   window.onload = function(){
+// 	var hideMe = document.getElementById('menu_team_names_drop');
+// 	// var dropSummary = document.querySelector('#menu_team_names_drop summary');
+
+// 	document.onclick = function(e){
+// 		if(e.target.id !== 'hideMe'){
+// 			hideMe.removeAttribute("open");
+// 			e.stopPropagation();
+// 		}
+// 		// if(e.target.id == 'dropSummary'){
+// 		// 	dropSummary.toggleAttribute("open");}
+// 		};
+//  };

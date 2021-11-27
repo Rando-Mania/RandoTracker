@@ -272,7 +272,7 @@ html{
 }
 
 .team-input textarea{
-    width: 218px;
+    width: 172px;
     height: 3.1rem;
 }
 
@@ -1097,7 +1097,7 @@ tr-timer span {
         "playlist  dwr       settings-game        view     reset"
     }
 
-#menu_players_extra{grid-area: players-2;}
+#menu_players_extra{grid-area: players-2;z-index: 4;}
 #menu_other{
     grid-area: dwr;
     display: flex;
@@ -1172,6 +1172,7 @@ tr-timer span {
 #menu_settings_extra .menu-flags-wrapper{
     display: flex;
 }
+
 .highlight{
     background-color: #f8b800;
     color: #000;
@@ -1180,6 +1181,42 @@ tr-timer span {
 
 .rank-input input {width: 3em;} 
 .record-input input {width: 4em;}
+
+#menu_team_names_drop{
+    display: none;
+}
+
+.coop-background #menu_team_names_drop{
+    display: block;
+}
+#menu_team_names_drop summary{
+    margin-left: auto;
+    width: max-content;
+    background-color: #000;
+    padding: 0 .5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+#menu_team_names_drop[open] summary{
+    background-color: #f8b800;
+    color: #000;
+    border-radius: 3px 3px 0 0;
+    border: solid #fff;
+    border-width: 1px 1px 0 1px;
+}
+
+details#menu_team_names_drop.menu-toggle-legend{
+    background-color: #0000;
+}
+
+#menu_team_names_drop div{
+    background-color: #f8b800;
+    border: solid 1px #fff;
+    padding: .5em;
+    position: relative;
+    color: #000;
+    border-radius: 3px 0 3px 3px;
+}
 
 #start_auto_play_panels, #stop_auto_play_panels{
     display: flex;

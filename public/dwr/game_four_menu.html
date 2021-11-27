@@ -51,17 +51,20 @@
                 </tr>
             </table>
         </div>
-        <div id="menu_team_labels">
-            <h4>Team Names</h4>
-            <table>
-                <tr>
-                    <td><label player="1" for="player-1">1</label></td>
-                    <td><tr-input-textarea oninput player="1" class="team-input" property="player-team"></tr-input-textarea></td>
-                    <td><label player="2" for="player-2">2</label></td>
-                    <td><tr-input-textarea oninput player="2" class="team-input" property="player-team"></tr-input-textarea></td>
-                </tr>
-            </table>
-        </div>
+        <details id="menu_team_names_drop" class="menu-toggle-legend">
+            <summary>Team Names</summary>
+            <div>
+                <h4>Team Names</h4>
+                <table>
+                    <tr>
+                        <td><label player="1" for="player-1">1</label></td>
+                        <td><tr-input-textarea oninput player="1" class="team-input" property="player-team"></tr-input-textarea></td>
+                        <td><label player="2" for="player-2">2</label></td>
+                        <td><tr-input-textarea oninput player="2" class="team-input" property="player-team"></tr-input-textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </details>
     </div>
     <div id="menu_settings_extra" class="fieldset">
         <h4 class="legend">Settings</h4>
