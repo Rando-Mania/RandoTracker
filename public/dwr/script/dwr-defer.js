@@ -80,3 +80,11 @@ var dwrlist = [
 // 		// 	dropSummary.toggleAttribute("open");}
 // 		};
 //  };
+
+document.addEventListener("click",function(event) {
+    if (!event.target.closest("details")) {closeModal()}
+},false)
+
+function closeModal() {
+  document.querySelector("details").removeAttribute('open');
+}

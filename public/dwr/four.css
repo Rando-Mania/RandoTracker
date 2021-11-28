@@ -263,6 +263,23 @@ html{
     display: block;
 }
 
+.coop-background.player-grids-contain, .coop-background.player-stats-contain{
+    z-index: 0;
+} 
+
+.coop-background [player="3"] .player-grid, .coop-background [player="4"] .player-grid,
+.coop-background [player="3"] .stats-and-spells, .coop-background [player="4"] .stats-and-spells{
+    display: none;
+}
+
+.coop-background [player="1"] .stats-and-spells{
+    top: 444px;
+}
+
+.coop-background [player="2"] .stats-and-spells{
+    top: 469px;
+}
+
 .player-team:nth-of-type(1){
     border-right: solid 2px #fff;
 }
