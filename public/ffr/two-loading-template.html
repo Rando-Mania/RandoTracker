@@ -37,8 +37,11 @@
 
 .loadscreen{
     background-color: #8dc8ff;
-  --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
-    background-image: var(--loadscreen-fallback);
+    background-image: url('images/loading_screen.png');
+    background-image: image-set(
+        url("images/loading_screen.webp") type("image/webp"),
+        url("images/loading_screen.png") type("image/png"));
+    color: #fff;
     height: 100%;
     display: grid;
     grid-auto-rows: 1fr auto;
@@ -46,9 +49,6 @@
     place-items: center;
     padding: 1em;
 }
-
-.notwebp .loadscreen{background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);}
-.webp .loadscreen{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
 
 .loadscreen-main{
     position: absolute;
@@ -58,15 +58,16 @@
     background-clip: content-box;
     border: solid #0000;
     border-width: 19px 25px;
+    border-image: url('images/loading_screen_border.png') 19 25;
+    border-image-source: image-set(
+        url("images/loading_screen_border.webp") type("image/webp"),
+        url("images/loading_screen_border.png") type("image/png"));
     display: grid;
     align-items: center;
     justify-content: center;
     min-width: 479px;
     height: 309px;
 }
-
-.notwebp .loadscreen-main{border-image: url('images/loading_screen_border.png') 19 25;}
-.webp .loadscreen-main{border-image: url('images/loading_screen_border.webp') 19 25;}
 
 .loadscreen-main *{
     justify-content: center;

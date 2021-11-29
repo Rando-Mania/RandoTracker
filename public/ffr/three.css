@@ -69,81 +69,72 @@
 .background-layer{
     width: 1280px;
     height: 720px;
-    background: url(images/4p/base-background.png) #000;
-}
-
-.layout.transparent-background .background-layer{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1),
-        /* cover "4p" */
-        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
-    -webkit-mask-repeat: no-repeat
+    background-color: #000;
 }
 
 .ffr-default .background-layer{
-    background-color: #000;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
-    background-image: var(--default-fallback);
+    background-image: url("images/4p/base-background.png");
+    background-image: image-set(
+        url("images/4p/base-background.avif") type("image/avif"),
+        url("images/4p/base-background.webp") type("image/webp"),
+        url("images/4p/base-background.png") type("image/png")
+    );
 }
-.notwebp.notavif .ffr-default .background-layer{background-image: url(images/4p/base-background.png), var(--default-fallback);}
-.webp .ffr-default .background-layer{background-image: url(images/4p/base-background.webp), var(--default-fallback);}
-/* .avif .ffr-default{background-image: url(images/4p/base-background.avif);} */
 
 .ffr-irongol .background-layer{
     --backgroundColor2: #500;
     background-color: #000076;
+    background-image: url(images/4p/base-irongol.png);
+    background-image: image-set(
+        url("images/4p/base-irongol.avif") type("image/avif"),
+        url("images/4p/base-irongol.webp") type("image/webp"),
+        url("images/4p/base-irongol.png") type("image/png"));
 }
-.notwebp .ffr-irongol .background-layer{background-image: url(images/4p/base-irongol.png);}
-.webp .ffr-irongol .background-layer{background-image: url(images/4p/base-irongol.webp);}
 
 .ffr-hardcore .background-layer{
     --backgroundColor2: #2c0055;
     background-color: #000076;
+    background-image: url(images/4p/base-hardcore.png);
+    background-image: image-set(
+        url("images/4p/base-hardcore.avif") type("image/avif"),
+        url("images/4p/base-hardcore.webp") type("image/webp"),
+        url("images/4p/base-hardcore.png") type("image/png"));
 }
-.notwebp .ffr-hardcore .background-layer{background-image: url(images/4p/base-hardcore.png);}
-.webp .ffr-hardcore .background-layer{background-image: url(images/4p/base-hardcore.webp);}
 
 .ffr-tourney .background-layer{
     --backgroundColor2: #050;
     background-color: #291901;
+    background-image: url(images/4p/base-tourney.png);
+    background-image: image-set(
+        url("images/4p/base-tourney.avif") type("image/avif"),
+        url("images/4p/base-tourney.webp") type("image/webp"),
+        url("images/4p/base-tourney.png") type("image/png"));
 }
-.notwebp .ffr-tourney .background-layer{background-image: url(images/4p/base-tourney.png);}
-.webp.notavif .ffr-tourney .background-layer{background-image: url(images/4p/base-tourney.webp);}
-.avif .ffr-tourney .background-layer{background-image: url(images/4p/base-tourney.avif);}
 
 .ffr-league .background-layer{
     --backgroundColor2: #500;
-    --league-fallback: linear-gradient(#b1cbda, #1f2a44);
-    background-image: var(--league-fallback);
+    background-image: url(images/4p/base-league.png);
+    background-image: image-set(
+        url("images/4p/base-league.webp") type("image/webp"),
+        url("images/4p/base-league.png") type("image/png"));
 }
-.notwebp .ffr-league .background-layer{background-image: url(images/4p/base-league.png), var(--league-fallback);}
-.webp.notavif .ffr-league .background-layer{background-image: url(images/4p/base-league.webp), var(--league-fallback);}
-.avif .ffr-league .background-layer{background-image: url(images/4p/base-league.avif), var(--league-fallback);}
 
 .ffr-rush .background-layer{
     background-color:#0094ff; 
-    --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
-    background-image: var(--rush-fallback);
+    background-image: url(images/4p/base-rush.png);
+    background-image: image-set(
+        url("images/4p/base-rush.webp") type("image/webp"),
+        url("images/4p/base-rush.png") type("image/png"));
 }
-.notwebp .ffr-rush .background-layer{background-image: url(images/4p/base-rush.png), var(--rush-fallback);}
-.webp .ffr-rush .background-layer{background-image: url(images/4p/base-rush.webp), var(--rush-fallback);}
 
 .layout.ffr-rush .background-layer .player-grid {display: none;}
 
 .ffr-dark .background-layer{
-    background-color: #000;
-    --darkfallback: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4,11h1v1h-1zM8,9h1v1h-1zM13,15h1v1h-1zM15,8h1v1h-1z' fill='%2300f'/%3E%3C/svg%3E");
-    background-image: var(--darkfallback);
+    background-image: url(images/4p/base-dark.png);
+    background-image: image-set(
+        url("images/4p/base-dark.webp") type("image/webp"),
+        url("images/4p/base-dark.png") type("image/png"));
 }
-.notwebp .ffr-dark .background-layer{background-image: url(images/4p/base-dark.png), var(--darkfallback);}
-.webp .ffr-dark .background-layer{background-image: url(images/4p/base-dark.webp), var(--darkfallback);}
 
 .player-video{
     width: var(--vidWidth);

@@ -100,61 +100,87 @@
 
 .ffr-default{
     background-color: #000;
+    background-image: url('images/2p/base-background.png');
+    background-image: image-set(
+        url("images/2p/base-background.avif") type("image/avif"),
+        url("images/2p/base-background.webp") type("image/webp"),
+        url("images/2p/base-background.png") type("image/png")
+    );
 }
-.notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
-.webp .ffr-default{background-image: url(images/2p/base-background.webp);}
 
 .ffr-irongol{
     --backgroundColor2: #500;
     background-color: #295280;
+    background-image: url('images/2p/base-irongol.png');
+    background-image: image-set(
+        url("images/2p/base-irongol.avif") type("image/avif"),
+        url("images/2p/base-irongol.webp") type("image/webp"),
+        url("images/2p/base-irongol.png") type("image/png")
+    );
 }
-.notwebp .ffr-irongol{background-image: url(images/2p/base-irongol.png);}
-.webp .ffr-irongol{background-image: url(images/2p/base-irongol.webp);}
 
 .ffr-hardcore{
     --backgroundColor2: #2c0055;
     background-color: #000076;
+    background-image: url('images/2p/base-hardcore.png');
+    background-image: image-set(
+        url("images/2p/base-hardcore.avif") type("image/avif"),
+        url("images/2p/base-hardcore.webp") type("image/webp"),
+        url("images/2p/base-hardcore.png") type("image/png")
+    );
 }
-.notwebp .ffr-hardcore{background-image: url(images/2p/base-hardcore.png);}
-.webp .ffr-hardcore{background-image: url(images/2p/base-hardcore.webp);}
 
 .ffr-tourney{
     --backgroundColor2: #050;
     background-color: #291901;
+    background-image: url('images/2p/base-tourney.png');
+    background-image: image-set(
+        url("images/2p/base-tourney.avif") type("image/avif"),
+        url("images/2p/base-tourney.webp") type("image/webp"),
+        url("images/2p/base-tourney.png") type("image/png")
+    );
 }
-.notwebp .ffr-tourney{background-image: url(images/2p/base-tourney.png);}
-.webp.notavif .ffr-tourney{background-image: url(images/2p/base-tourney.webp);}
-.avif .ffr-tourney{background-image: url(images/2p/base-tourney.avif);}
 
 .ffr-league{
-    background-color: #b1cbda;
-    --league-fallback: linear-gradient(#b1cbda, #1f2a44);
-    background-image: var(--league-fallback);
     --backgroundColor2: #500;
+    background-color: #b1cbda;
+    background-image: url('images/2p/base-league.png');
+    background-image: image-set(
+        url("images/2p/base-league.webp") type("image/webp"),
+        url("images/2p/base-league.png") type("image/png")
+    );
 }
-.notwebp .ffr-league{background-image: url(images/2p/base-league.png), var(--league-fallback);}
-.webp.notavif .ffr-league{background-image: url(images/2p/base-league.webp), var(--league-fallback);}
-.avif .ffr-league{background-image: url(images/2p/base-league.avif), var(--league-fallback);}
 
 .ffr-rush{
-    background-color:#0094ff; 
-    --rush-fallback: linear-gradient(#0094ff 58%, #9c9c9c 58%);
-    background-image: var(--rush-fallback);
+    background-color:#0094ff;
+    background-image: url('images/2p/base-rush.png');
+    background-image: image-set(
+        url("images/2p/base-rush.avif") type("image/avif"),
+        url("images/2p/base-rush.webp") type("image/webp"),
+        url("images/2p/base-rush.png") type("image/png")
+    );
 }
-.notwebp .ffr-rush{background-image: url(images/2p/base-rush.png), var(--rush-fallback);}
-.webp .ffr-rush{background-image: url(images/2p/base-rush.webp), var(--rush-fallback);}
-
 .layout.ffr-rush .player-grid {display: none;}
 
-.ffr-dark{background-color: #000;}
-.notwebp .ffr-dark{background-image: url(images/2p/base-dark.png);}
-.webp.notavif .ffr-dark{background-image: url(images/2p/base-dark.webp);}
-.avif .ffr-dark{background-image: url(images/2p/base-dark.avif);}
+.ffr-dark{
+    background-color: #000;
+    background-image: url('images/2p/base-dark.png');
+    background-image: image-set(
+        url("images/2p/base-dark.avif") type("image/avif"),
+        url("images/2p/base-dark.webp") type("image/webp"),
+        url("images/2p/base-dark.png") type("image/png")
+    );
+}
 
-.ffr-duckling{background-color: #428fa6;}
-.notwebp .ffr-duckling{background-image: url(images/2p/base-duckling.png);}
-.webp.notavif .ffr-duckling{background-image: url(images/2p/base-duckling.webp);}
-.avif .ffr-duckling{background-image: url(images/2p/base-duckling.avif);}
+.ffr-duckling{
+    background-color: #428fa6;
+    background-image: url('images/2p/base-duckling.png');
+    background-image: image-set(
+        url("images/2p/base-duckling.avif") type("image/avif"),
+        url("images/2p/base-duckling.webp") type("image/webp"),
+        url("images/2p/base-duckling.png") type("image/png")
+    );
+}
 
 .player-name-block{
     height: 50px;

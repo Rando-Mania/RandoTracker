@@ -14,9 +14,10 @@
     width: 1280px;
     height: 720px;
     background-color: #8dc8ff;
-    --loadscreen-fallback: linear-gradient(#8dc8ff 617px, #5877f7 617px 618px);
-    background-image: var(--loadscreen-fallback);
-    background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);
+    background-image: url('images/loading_screen.png');
+    background-image: image-set(
+        url("images/loading_screen.webp") type("image/webp"),
+        url("images/loading_screen.png") type("image/png"));
     color: #fff;
     text-align: center;
     animation: zoomIn .5s linear;
@@ -65,7 +66,9 @@
     border: solid #0000;
     border-width: 19px 25px;
     border-image: url('images/loading_screen_border.png') 19 25;
-    border-image: url('images/loading_screen_border.webp') 19 25;
+    border-image-source: image-set(
+        url("images/loading_screen_border.webp") type("image/webp"),
+        url("images/loading_screen_border.png") type("image/png"));
     display: grid;
     align-items: center;
     justify-content: center;

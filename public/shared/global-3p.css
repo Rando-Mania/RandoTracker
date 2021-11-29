@@ -1,0 +1,51 @@
+[player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+[player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+[player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+
+[player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+[player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+[player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
+
+[player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+[player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+[player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
+
+[player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+[player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+[player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+
+[player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+[player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+[player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
+
+[player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+[player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+[player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+
+/* .layout.transparent-background{
+    --solid: linear-gradient(#000, #000);
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+} */
+
+.layout.transparent-background .background-layer{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1),
+        /* cover "4p" */
+        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
+    -webkit-mask-repeat: no-repeat
+}

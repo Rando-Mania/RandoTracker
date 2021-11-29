@@ -85,9 +85,10 @@
 .ffr-default .background-layer{
     background-image: url("images/4p/base-background.png");
     background-image: image-set(
+        url("images/4p/base-background.avif") type("image/avif"),
         url("images/4p/base-background.webp") type("image/webp"),
         url("images/4p/base-background.png") type("image/png")
-        );
+    );
 }
 
 .ffr-irongol .background-layer{
@@ -95,6 +96,7 @@
     background-color: #000076;
     background-image: url(images/4p/base-irongol.png);
     background-image: image-set(
+        url("images/4p/base-irongol.avif") type("image/avif"),
         url("images/4p/base-irongol.webp") type("image/webp"),
         url("images/4p/base-irongol.png") type("image/png"));
 }
@@ -104,6 +106,7 @@
     background-color: #000076;
     background-image: url(images/4p/base-hardcore.png);
     background-image: image-set(
+        url("images/4p/base-hardcore.avif") type("image/avif"),
         url("images/4p/base-hardcore.webp") type("image/webp"),
         url("images/4p/base-hardcore.png") type("image/png"));
 }
@@ -122,7 +125,6 @@
     --backgroundColor2: #500;
     background-image: url(images/4p/base-league.png);
     background-image: image-set(
-        url("images/4p/base-league.avif") type("image/avif"),
         url("images/4p/base-league.webp") type("image/webp"),
         url("images/4p/base-league.png") type("image/png"));
 }
@@ -138,7 +140,7 @@
 .layout.ffr-rush .background-layer .player-grid {display: none;}
 
 .ffr-dark .background-layer{
-    background-image: url(images/4p/base-rush.png);
+    background-image: url(images/4p/base-dark.png);
     background-image: image-set(
         url("images/4p/base-dark.webp") type("image/webp"),
         url("images/4p/base-dark.png") type("image/png"));
