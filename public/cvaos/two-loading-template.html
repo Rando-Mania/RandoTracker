@@ -50,9 +50,6 @@
     );
 }
 
-.notwebp .loadscreen{background-image: url('images/loading_screen.png'), var(--loadscreen-fallback);}
-.webp .loadscreen{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
-
 .loadscreen-main{
     position: absolute;
     left: 42px;
@@ -66,12 +63,9 @@
     justify-content: center;
     min-width: 479px;
     height: 309px;
-    border: 2px solid #0000;
-    border-image: url("images/loading_screen_border.png") 10 / 40px;
-    border-image-source: image-set(
-        url("images/loading_screen_border.webp") type("image/webp"),
-        url("images/loading_screen_border.png") type("image/png")
-        );
+    border: 4px solid;
+    border-color: #c0c0b8 #e0e0e0;
+    border-image: url(images/loading_screen_border.png) 40 / 40px / 4px;
     image-rendering: pixelated;
 }
 

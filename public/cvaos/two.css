@@ -35,14 +35,15 @@
 }
 
 .border-1{
-    border: 10px solid #b1b1b1;
-    border-image: url(images/border-player-1.png) 10;
+    border: 1px solid;
+    border-color: #c0c0b8 #e0e0e0;
+    border-image: url(images/border-player-1.png) 10 / 10px / 1px;
     image-rendering: pixelated;
 }
 
 .border-2{
-    border: 2px solid #b1b1b1;
-    border-image: url(images/border-tracker.png) 2;
+    border: 1px solid #7683b8;
+    border-image: url(images/border-tracker.png) 2 / 1px;
 }
 
 .border-bottom{border-top: none;}
@@ -64,7 +65,7 @@
 }
 
 .cotm-default{
-    background-color: #001868;
+    background-color: #001d3e;
     background-image: url("images/bg-page.png");
     background-image: image-set(
         url("images/bg-page.avif") type("image/avif"),
