@@ -80,7 +80,6 @@
 <body>
 	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>
 			<div class="player-name-block abs border-1 background-1"></div>
 			<div class="player-name abs">
 				<tr-text scale-to-fit property="player-name"></tr-text>
@@ -88,7 +87,6 @@
             <tr-text property="player-pronoun" class="player-pronoun abs"></tr-text>
 			<tr-text property="player-number" class="record-contain abs"></tr-text>
             <tr-template class="player-grid abs border-1 background-1" href="../ffr/icons-2020.html"></tr-template>
-            <tr-template class="player-video team-flag abs border-1"></tr-template>
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
                 <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
@@ -103,6 +101,24 @@
                 <tr-text scale-to-fit property="team-name"></tr-text>
             </div>
         </template>
+        <template id="background_layer_template">
+            <div class="border-1 player-video abs"></div>
+            <tr-template class="player-video team-flag abs border-1"></tr-template>
+        </template>
+        <div class="background-layer">
+            <tr-player player="1">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="3">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="4">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+        </div>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>

@@ -48,7 +48,6 @@
 <body>
 	<div class="layout">
         <template id="player_info_template">
-			<div class="border-1 player-video abs"></div>
 			<div class="player-name-block abs border-1 background-1"></div>
             <div class="player-name abs">
                 <tr-text scale-to-fit property="player-name"></tr-text>
@@ -67,13 +66,24 @@
             </tr-toggle>
             <tr-template class="bingo-option abs border-1 background-1" href="icons-bingo.html"></tr-template>
         </template>
+        <template id="background_layer_template">
+            <div class="border-1 player-video abs"></div>
+        </template>
+        <div class="background-layer">
+            <tr-player player="1">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <div class="player-video play-field abs border-1"></div>
+        </div>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <div class="player-video play-field abs border-1"></div>
 
 <!-- class info -->        
 

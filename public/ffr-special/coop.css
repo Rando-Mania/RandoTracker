@@ -25,7 +25,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
-    --backgroundImg: url('../ffr/images/images/4p/base-background.png');
 
     --border: 6px;
 
@@ -68,63 +67,68 @@ html{
     height: 720px;
     color: #fff;
     position: relative;
-    background: url(images/coop/base-background.png) #000;
 }
 
-.layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
-    -webkit-mask-repeat: no-repeat;
-    mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
-    mask-repeat: no-repeat;
-}
-
-.ffr-default{
+.background-layer{
+    width: 1280px;
+    height: 720px;
     background-color: #000;
-    --default-fallback: url("data:image/svg+xml,%3Csvg width='1280' height='720' viewBox='0 .5 31 23' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13,0h5v23h-5zm-3,1h11v22h-11zm-3,1h17v22h-17zm-2,1h21v22h-21zm-1,1h23v22h-23zm-1,1h25v22h-25zm-1,2h27v22h-27zm-1,3h29v14h-29zm-1,3h31v7h-31z' fill='%233e3e3e'/%3E%3Cpath d='M13,12h5v9h-5zm-1,1h7v7h-7zm-1,2h9v3h-9z' fill='black'/%3E%3C/svg%3E");
-    background-image: var(--default-fallback);
 }
-.notwebp.notavif .ffr-default{background-image: url(../ffr/images/4p/base-background.png), var(--default-fallback);}
-.webp .ffr-default{background-image: url(../ffr/images/4p/base-background.webp), var(--default-fallback);}
-/* .avif .ffr-default{background-image: url(../ffr/images/4p/base-background.avif);} */
 
-.ffr-irongol{
+.layout.transparent-background .background-layer{
+    --solid: linear-gradient(#000, #000);
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask:
+        var(--solid) 0 0 / 100% 100%, 
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) var(--clipX1) calc(720px - var(--clipY2)) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) calc(720px - var(--clipY2)) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(var(--gridX) + var(--border)) 493px / 150px 150px,
+        var(--solid) calc(1280px - var(--gridX) - var(--border) - 150px) 493px / 150px 150px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.ffr-default .background-layer{
+    background-image: url("../ffr/images/4p/base-background.png");
+    background-image: image-set(
+        url("../ffr/images/4p/base-background.avif") type("image/avif"),
+        url("../ffr/images/4p/base-background.webp") type("image/webp"),
+        url("../ffr/images/4p/base-background.png") type("image/png")
+    );
+}
+
+.ffr-irongol .background-layer{
     --backgroundColor2: #500;
     background-color: #000076;
+    background-image: url("../ffr/images/4p/base-irongol.png");
+    background-image: image-set(
+        url("../ffr/images/4p/base-irongol.webp") type("image/webp"),
+        url("../ffr/images/4p/base-irongol.png") type("image/png")
+    );
 }
-.notwebp .ffr-irongol{background-image: url(../ffr/images/4p/base-irongol.png);}
-.webp .ffr-irongol{background-image: url(../ffr/images/4p/base-irongol.webp);}
 
-.ffr-tourney{
+.ffr-tourney .background-layer{
     --backgroundColor2: #005;
-    background-color:#0094ff; 
+    background-color: #4ea0cf;
+    background-image: url("images/coop/base-tourney.png");
+    background-image: image-set(
+        url("images/coop/base-tourney.avif") type("image/avif"),
+        url("images/coop/base-tourney.webp") type("image/png"),
+        url("images/coop/base-tourney.png") type("image/png")
+    );
 }
-.notwebp .ffr-tourney{background-image: url(images/coop/base-tourney.png);}
-.webp.notavif .ffr-tourney{background-image: url(images/coop/base-tourney.webp);}
-.avif .ffr-tourney{background-image: url(images/coop/base-tourney.avif);}
 
-.ffr-dark{
-    background-color: #000;
-    --darkfallback: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4,11h1v1h-1zM8,9h1v1h-1zM13,15h1v1h-1zM15,8h1v1h-1z' fill='%2300f'/%3E%3C/svg%3E");
-    background-image: var(--darkfallback);
+.ffr-dark .background-layer{
+    background-image: url("../ffr/images/4p/base-dark.png");
+    background-image: image-set(
+        url("../ffr/images/4p/base-dark.webp") type("image/webp"),
+        url("../ffr/images/4p/base-dark.png") type("image/png")
+    );
 }
-.notwebp .ffr-dark{background-image: url(../ffr/images/4p/base-dark.png), var(--darkfallback);}
-.webp .ffr-dark{background-image: url(../ffr/images/4p/base-dark.webp), var(--darkfallback);}
 
 .player-video{
     width: var(--vidWidth);
