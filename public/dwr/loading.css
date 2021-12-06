@@ -76,11 +76,11 @@
 
 .loadscreen.coop-background{
   background:
-    url('images/Bucket_brigade_with_bottle_and_portal.png') no-repeat right top / 51%, 
-    linear-gradient(102deg, #000, #292121 75%) #292121;
-    background-image: image-set(
-      url("images/Bucket_brigade_with_bottle_and_portal.avif") type("image/avif"), linear-gradient(102deg, #000, #292121 75%),
-      url("images/Bucket_brigade_with_bottle_and_portal.png") type("image/png"), linear-gradient(102deg, #000, #292121 75%));
+    url('images/Bucket_brigade_with_bottle_and_portal.png') no-repeat right top / 51% #292121;
+  background-image: image-set(
+    url("images/Bucket_brigade_with_bottle_and_portal.avif") type("image/avif"),
+    url("images/Bucket_brigade_with_bottle_and_portal.png") type("image/png")
+  );
 }
 
 .logo-official{
@@ -96,22 +96,67 @@
 #changeText{
   font-size: 17px;
   letter-spacing: 1px;
+  /* color: #adadad; */
+}
+
+.loadscreen.coop-background .player-team{
+  border: none;
+  background-color: #000;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.loadscreen.coop-background .player-name{
+  font-size: 1.5rem;
+}
+
+.loadscreen.coop-background .separator-1 .load-and,
+.loadscreen.coop-background .separator-3 .load-and{
+  display: block;
+}
+.loadscreen.coop-background .separator-1 .load-vs,
+.loadscreen.coop-background .separator-3 .load-vs{
+  display: none;
+}
+
+.loadscreen.coop-background .separator-1 .load-and,
+.loadscreen.coop-background .separator-3 .load-and{
+  margin: 0;
+  line-height: 1;
+}
+
+.loadscreen.coop-background .separator-2{
+  background-color: #000;
+  width: 3em;
+  margin: auto;
 }
 
 .loading-runners{
   display: grid;
+  align-items: center;
   gap: 1em;
+}
+
+.loadscreen.coop-background .loading-runners{
+  grid-template-columns: 20em 4em 20em;
+  width: 500px;
+}
+
+.loadscreen.coop-background .player-team, .loadscreen.coop-background .separator-2{
+  grid-column: span 3;
 }
 
 .loadscreen .player-name{
   letter-spacing: 2px;
 }
 
-.load-vs{
+.separator-1, .separator-2, .separator-3{
   display: block;
   font-family:'Ferrum', 'Times New Roman', Times, serif;
   font-size: 3em;
 }
+
 .load-and{
   display: none;
   margin: 1.1em 0;

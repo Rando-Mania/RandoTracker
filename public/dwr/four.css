@@ -10,13 +10,13 @@
     --vidAspect: 4 / 3;
 
     --border1: var(--border) solid rgba(255,255,255,.8);
-    --backgroundColor1: rgba(0,0,0,.75);
+    --backgroundColor1: #001018;
     --backgroundColor2: rgba(0,0,0,1);
 
     --videoX: -2px; --videoY: -2px;
     --nameWidth: 257px;
     --nameX: 436px; --nameY1: -2px; --nameY2: 276px;
-    --gridX: 438px; --gridY: 50px; --gridY2: 74px;
+    --gridX: 438px; --gridY: 48px; --gridY2: 71px;
     --speakerX1: 722px; --speakerX2: 439px; --speakerY1: 4px; --speakerY2: 284px;
     --finalX: 579px; --finalY: 40px; --finalY2: 252px;
     --vsX: 50%; --vsY: 150px;
@@ -246,12 +246,12 @@ html{
 }
 
 .coop-background .coordinates-contain{
-    left: 70%;
+    left: 69%;
     color: rgba(255,255,255,.9);
 }
 
 .coop-background tr-timer{
-    background-color: rgba(0,0,0,.75);
+    background-color: #001018;
     border: solid 1px rgba(255,255,255,.5);
 }
 
@@ -277,15 +277,15 @@ html{
 }
 
 .coop-background [player="2"] .stats-and-spells{
-    top: 469px;
+    top: 470px;
 }
 
 .player-team:nth-of-type(1){
-    border-right: solid 2px #fff;
+    border-right: solid 1px #fff;
 }
 
 .player-team:nth-of-type(2){
-    border-left: solid 2px #fff;
+    border-left: solid 1px #fff;
 }
 
 .team-input textarea{
@@ -567,8 +567,16 @@ tr-timer span {
     transform: translateY(-50%);
 }
 
+.coop-background .staff{
+    width: 283px;
+}
+
 .commentators, .restreamers, .trackers{
     width: 390px;
+}
+
+.coop-background .commentators, .coop-background .restreamers, .coop-background .trackers {
+    width: 230px;
 }
 
     .coordinates-contain{

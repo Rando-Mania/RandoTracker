@@ -6,34 +6,42 @@
                 <img class="logo-official" src="images/logo.png" alt="Dragon Warrior Randomizer">
             </header>
             <div class="loading-runners">
+                <tr-text player="1" property="player-team" class="player-team"></tr-text>
                 <div class="player-info-contain">
                     <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
                     <tr-text player="1" property="player-final" class="player-final"></tr-text>
                     <tr-toggle player="1" property="toggle-winner" class="player-winner">WIN!</tr-toggle>
                 </div>
-                <div class="load-vs">vs</div>
-                <div class="player-info-contain">
+                <div class="separator-1">
+                    <span class="load-vs">vs</span>
+                    <span class="load-and">and</span>
+                </div>
+                <div class="player-2 player-info-contain">
                     <tr-text player="2" class="player-name" property="player-name">Dummy</tr-text>
                     <tr-text player="2" property="player-final" class="player-final"></tr-text>
                     <tr-toggle player="2" property="toggle-winner" class="player-winner">WIN!</tr-toggle>
                 </div>
-                <div class="load-and-vs">
+                <div class="separator-2">
                     <span class="load-vs">vs</span>
                     <span class="load-and">and</span>
                 </div>
-                <div class="player-info-contain">
+                <tr-text player="2" property="player-team" class="player-team"></tr-text>
+                <div class="player-3 player-info-contain">
                     <tr-text player="3" class="player-name" property="player-name">Dummy</tr-text>
                     <tr-text player="3" property="player-final" class="player-final"></tr-text>
                     <tr-toggle player="3" property="toggle-winner" class="player-winner">WIN!</tr-toggle>
                 </div>
-                <div class="load-vs">vs</div>
+                <div class="separator-3">
+                    <span class="load-vs">vs</span>
+                    <span class="load-and">and</span>
+                </div>
                 <div class="player-info-contain">
                     <tr-text player="4" class="player-name" property="player-name">Dummy</tr-text>
                     <tr-text player="4" property="player-final" class="player-final"></tr-text>
                     <tr-toggle player="4" property="toggle-winner" class="player-winner">WIN!</tr-toggle>
                 </div>
             </div>
-            <div>
+            <div style="height: 4em;">
                 <h2 id="changeText">Randomizing Dragon Warrior...</h2>
             </div>
         </main>
