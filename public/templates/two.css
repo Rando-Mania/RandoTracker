@@ -14,7 +14,7 @@
     font-family: Arial, sans-serif;
     font-size: 1em;
     --vidWidth: 604px;
-    --vidAspect: 4 / 3;
+    --vidAspect: 1.333;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --nameWidth: 375px;
@@ -23,8 +23,16 @@
 
     --backgroundColor1: #000;
 
+    --videoX: 20px; --videoY: 20px;
+    --nameWidth: 367px;
+    --nameX: 20px; --nameY: 480px;
+    --gridX: 20px; --gridY: 540px;
+    --speakerX: 407px; --speakerY: 484px;
+    --finalX: 285px; --finalY: 510px;
+    --winX: 285px; --winY: 144px;
+    --bestX: 460px; --bestY: 494px;
+
     --border: 2px;
-    --gap-size: 20px;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -52,8 +60,6 @@
 
 .border-1{border: var(--border) solid currentColor;}
 .background-1{background-color: var(--backgroundColor1);}
-
-.abs{position: absolute;}
 
 
 /*  ==========
@@ -86,64 +92,10 @@
     background-image: var(--backgroundImg);
     background-color: #c0c0c0;
     line-height: 1;
-    row-gap: var(--gap-size);
-    padding: var(--gap-size);
-    display: grid !important;
-    grid-template-columns: auto 1fr 1fr auto;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas:
-        "v1 v1 v2 v2"
-        "i1 t  t  i2"
-        "g1 s  s  g2";
 }
-
-.layout > tr-player,
-.layout > tr-player > tr-template{
-    display: contents;
-} 
 
 .layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat;
-    mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    mask-repeat: no-repeat;
-}
-
-[player="1"] *{justify-self: flex-start;}
-[player="2"] *{justify-self: flex-end;}
-
-.player-video{
-    width: var(--vidWidth);
-    height: var(--vidHeight);
-    z-index: 2;
-    background-color: #000; 
-    transition: background-color .5s;
-}
-[player="1"] .player-video{grid-area: v1;}
-[player="2"] .player-video{grid-area: v2;}
-
-.player-info-contain{
-    position: relative;
-}
-
-[player="1"] .player-info-contain{grid-area: i1;}
-[player="2"] .player-info-contain{
-    grid-area: i2;
-    flex-direction: row-reverse;
+    -webkit-mask-image: paint(clipMask);
 }
 
 .player-name{
@@ -161,8 +113,6 @@
     padding: 4px;
     grid-gap: 4px;
 }
-[player="1"] .player-grid{grid-area: g1;}
-[player="2"] .player-grid{grid-area: g2;}
 
 .player-grid img, .dialog img{
     width: 32px;
@@ -181,9 +131,6 @@
     padding: 4px;
 }
 
-[player="1"] .player-speaker{left: 100%;}
-[player="2"] .player-speaker{right: 100%;}
-
 .player-speaker img{
     width: 32px;
     height: 32px;
@@ -195,28 +142,21 @@
     transform: rotateY(180deg);
 }
 
-.final-winner-contain{
-   top: 40px;
-   color: #f8b800;
-}
-
-[player="1"] .final-winner-contain{right: 40px;}
-[player="2"] .final-winner-contain{left: 40px;}
-
-.final-winner-contain > *~*{
-    margin-top: calc(var(--border) * -1);
-}
-
 .player-winner{
+    color: #f8b800;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     height: 34px;
+    width: 5.5em;
     padding: 0 .5em;
+    z-index: 2;
 }
 
 .player-final{
+    color: #f8b800;
     height: 34px;
     width: 5.5em;
+    z-index: 2;
 }
 .player-final:empty{
     display:none;
@@ -224,7 +164,6 @@
 
 .player-best-of{
     display: grid;
-    grid-template-columns: repeat(5, auto);
     display: none;
 }
 .player-best-of img{
@@ -245,17 +184,23 @@
 }
 
 tr-timer{
-    grid-area: t;
     width: 11em;
     height: 52px;
     z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 482px;
 }
 tr-timer span {
     width: 26px;
     text-align: center;
 }
 
-.staff{grid-area: s;}
+.staff{
+    left: 50%;
+    transform: translateX(-50%);
+    top: 552px;
+}
 
 /* dialog styles */
     
