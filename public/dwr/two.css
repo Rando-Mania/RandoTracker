@@ -5,7 +5,7 @@
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --border-1: var(--border) solid rgba(255,255,255,.8);;
-    --background-color-1: rgba(0,0,0,.75);
+    --background-color-1: rgba(0,0,0,1);
     --background-color-2: rgba(0,0,0,1);
     line-height: 1;
 
@@ -295,6 +295,7 @@
 
 .player-final{
     color: #fc9838;
+    border: solid 1px;
     position: relative;
     bottom: 1.5em;
     font-size: 16px;
@@ -507,12 +508,12 @@ td:nth-of-type(2){
 }
 
 [player="1"] .spells{
-    background-image: linear-gradient(to top right, rgba(0,0,0,.75) 63%, #0000);
+    background-image: linear-gradient(to top right, rgba(0,0,0,1) 63%, #0000);
 }
 
 [player="2"] .spells{
     text-align: right;
-    background-image: linear-gradient(to top left, rgba(0,0,0,.75) 63%, #0000);
+    background-image: linear-gradient(to top left, rgba(0,0,0,1) 63%, #0000);
 }
 
 [property="repel"].spell-highlight{

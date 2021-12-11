@@ -9,11 +9,11 @@
       url("fonts/Warrior Quest I and II.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Ferrum";
-  src: local('Ferrum'),
-       url('../ff6wc/fonts/ferrum.woff2') format('woff2'),
-       url('../ff6wc/fonts/ferrum.woff') format('woff'),         
-       url('../ff6wc/fonts/ferrum.otf') format('opentype');
+  font-family: "Lobster";
+  src: local('Lobster'),
+      url("../shared/fonts/lobster-regular.woff2") format("woff2"),
+      url("../shared/fonts/lobster-regular.woff") format("woff"),
+      url('../shared/fonts/Lobster-Regular.ttf') format('truetype');
 }
 
 .loadscreen-contain{
@@ -61,6 +61,16 @@
   align-content: space-around;
 }
 
+.loadscreen .player-final, .loadscreen .player-winner{
+  color: #5ce430;
+  --border-color: #5ce430;
+}
+
+.loadscreen .player-winner:after{
+    color: #00a800;
+    --border-color: #00a800;
+}
+
 .loadscreen.league-background main{
   background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
   grid-template-columns: minmax(52%, max-content);
@@ -101,14 +111,18 @@
 
 .loadscreen.coop-background .player-team{
   border: none;
-  background-color: #000;
   margin: 0 auto;
+  height: auto;
+  padding: .5em;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  background: 
+    linear-gradient(#000, #000) no-repeat center / calc(100% - 10px) 100%,
+    linear-gradient(#000, #000) no-repeat center / 100% calc(100% - 10px);
 }
 
-.loadscreen.coop-background .player-name{
-  font-size: 1.5rem;
+.loadscreen.coop-background .player-info-contain{
+  z-index: 1;
 }
 
 .loadscreen.coop-background .separator-1 .load-and,
@@ -127,15 +141,52 @@
 }
 
 .loadscreen.coop-background .separator-2{
-  background-color: #000;
+  background: 
+    linear-gradient(#000, #000) no-repeat center center / calc(100% - 10px) 100%,
+    linear-gradient(#000, #000) no-repeat center center / 100% calc(100% - 10px);
   width: 3em;
   margin: auto;
 }
+
+.loadscreen.coop-background .player-1,
+.loadscreen.coop-background .player-3{
+  justify-self: end;
+}
+.loadscreen.coop-background .player-2,
+.loadscreen.coop-background .player-4{
+  justify-self: start;
+}
+
+.coop-background [player="1"][property="player-team"]{order:1;}
+.coop-background .player-1.player-info-contain{order:2;}
+.loadscreen.coop-background .separator-1{order:3;}
+.coop-background .player-2.player-info-contain{
+  order:7;
+  justify-self: end;
+}
+
+.loadscreen.coop-background .separator-2{order:5;}
+
+.coop-background [player="2"][property="player-team"]{order:6;}
+.coop-background .player-3.player-info-contain{
+  order:4;
+  justify-self: start;
+}
+.loadscreen.coop-background .separator-3{order:8;}
+.coop-background .player-4.player-info-contain{order:9;}
+
 
 .loading-runners{
   display: grid;
   align-items: center;
   gap: 1em;
+}
+
+.loading-runners .player-name{
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: normal;
 }
 
 .loadscreen.coop-background .loading-runners{
@@ -151,20 +202,49 @@
   letter-spacing: 2px;
 }
 
+.loadscreen.coop-background .player-name{
+  font-size: 2.4rem;
+}
+
 .separator-1, .separator-2, .separator-3{
   display: block;
-  font-family:'Ferrum', 'Times New Roman', Times, serif;
-  font-size: 3em;
+  font-size: 1.5em;
+  margin: .5em;
 }
+
+.loadscreen.coop-background .separator-1,
+.loadscreen.coop-background .separator-3{
+margin: 0;
+}
+
+.loadscreen.coop-background .separator-1,
+.loadscreen.coop-background .separator-3{
+  color: #adadad;
+  text-shadow: none;
+  transform: scale(1.8);
+  z-index: 0;
+  opacity: .5;
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+}
+
+.loadscreen.coop-background .separator-2{
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+  font-family: inherit;
+  color: #fff;
+  font-size: 1.75em;
+  line-height: 1.5;
+  opacity: 1;
+}
+
+.loadscreen.coop-background .separator-2 .load-and{display: none;}
+.loadscreen.coop-background .separator-2 .load-vs{display: block;}
 
 .load-and{
   display: none;
   margin: 1.1em 0;
 }
 
-.show-and .load-vs{
-  display: none;
-}
-.show-and .load-and{
-  display: block;
-}
+.two1Vs1.separator-2 .load-and{display:block;}
+.two1Vs1.separator-2 .load-vs{display:none;}

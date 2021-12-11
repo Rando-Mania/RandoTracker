@@ -476,9 +476,8 @@ tr-toggle-class[property="repel"].spell-highlight:after{
     text-align: center;
     font-size: 16px;
     color: #f88019;
-    border: solid 1px #f88019;
+    border: solid 1px;
     z-index: 3;
-    border-width: 1px;
 }
 
 .player-final:empty{
@@ -578,7 +577,6 @@ tr-timer span {
 .coop-background .commentators, .coop-background .restreamers, .coop-background .trackers {
     width: 230px;
 }
-
     .coordinates-contain{
         padding: .75rem;
         display: grid;
@@ -1278,11 +1276,6 @@ details#menu_team_names_drop.menu-toggle-legend{
     position: relative;
 }
 
-.loading-runners .player-name{
-    font-size: 2.4rem;
-    line-height: 1;
-    font-weight: normal;
-}
 
 .loading-runners .player-final{
     right: -2em;
@@ -1305,7 +1298,7 @@ details#menu_team_names_drop.menu-toggle-legend{
 
 .loading-runners .player-final, 
 .loading-runners .player-winner{
-    top: -2em;
+    top: -1em;
 }
 
 .loading-runners .player-winner{
@@ -1316,9 +1309,4 @@ details#menu_team_names_drop.menu-toggle-legend{
 
 .loading-runners .load-and {
     margin: 2em 0;
-}
-
-.loading-runners .load-vs{
-    opacity: .75;
-    font-weight: bold;
 }
