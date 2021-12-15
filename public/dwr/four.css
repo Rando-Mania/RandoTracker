@@ -1067,6 +1067,39 @@ tr-timer span {
         justify-content: space-between; 
     }
 
+    .coop-background .name-input:after, .coop-background .rank-input:after{
+        position: absolute;
+        left: 1em;
+        background-color: #000;
+    }
+    .coop-background [player="1"].name-input:after,
+    .coop-background [player="1"].rank-input:after{
+        content: '1:1';
+    }
+    .coop-background [player="2"].name-input:after,
+    .coop-background [player="2"].rank-input:after{
+        content: '2:1';
+    }
+    .coop-background [player="3"].name-input:after,
+    .coop-background [player="3"].rank-input:after{
+        content: '1:2';
+    }
+    .coop-background [player="4"].name-input:after,
+    .coop-background [player="4"].rank-input:after{
+        content: '2:2';
+    }
+    .coop-background #menu_player_labels tbody{
+        display: grid;
+    }
+    .coop-background #menu_player_labels tbody tr:nth-of-type(1){
+        justify-self: end;
+        display: flex;
+        gap: 1.1em;
+    }
+    .coop-background #menu_player_labels tbody tr:nth-of-type(3){order:2;}
+    .coop-background #menu_player_labels tbody tr:nth-of-type(4){order:1;}
+    .coop-background #menu_player_labels tbody tr:nth-of-type(5){order:3;}
+
 /* dialog styles */
     
 .dialog{
