@@ -32,7 +32,8 @@ class stampBorder {
   class dw1Border {  
     paint(ctx, geom) {
       ctx.strokeStyle = '#000';
-      ctx.lineWidth = 4; ctx.strokeRect(2, 2, geom.width - 4, geom.height - 4);
+      ctx.lineWidth = 4; 
+      ctx.strokeRect(2, 2, geom.width - 4, geom.height - 4);
 
       ctx.fillStyle = '#fff';
       ctx.fillRect(2, 1, geom.width - 4, geom.height - 2);
