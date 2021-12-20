@@ -373,7 +373,19 @@
 					};
 					image.src = option.getAttribute("path");
 					image.setAttribute("value", index);
-					image.className = option.className;
+					image.className = option.className; // legacy class for dialog
+
+					var dialogImgClass = option.getAttribute("dialog-img-class");
+
+					if (dialogImgClass) {
+						if (dialogImgClass.indexOf(" ") !== -1) {
+							dialogImgClass.split(" ").forEach(function(dic) {
+								image.classList.add(dic);
+							});
+						} else {
+							image.classList.add(dialogImgClass);
+						}
+					}
 					
 					image.onclick = function(e) {
 						e.stopPropagation();
@@ -439,6 +451,18 @@
 								});
 							} else {
 								instance.image.classList.remove(classToRemove);
+							}
+							
+						}
+						var classToRemove2 = option.getAttribute("img-class");
+
+						if (classToRemove2) {
+							if (classToRemove2.indexOf(" ") !== -1) {
+								classToRemove2.split(" ").forEach(function(ctr2) {
+									instance.image.classList.remove(ctr2);
+								});
+							} else {
+								instance.image.classList.remove(classToRemove2);
 							}
 							
 						}
@@ -535,6 +559,18 @@
 									});
 								} else {
 									instance.image.classList.add(classToSet);
+								}
+							}
+
+							var imgClass = option.getAttribute("img-class");
+
+							if (imgClass) {
+								if (imgClass.indexOf(" ") !== -1) {
+									imgClass.split(" ").forEach(function(ic) {
+										instance.image.classList.add(ic);
+									});
+								} else {
+									instance.image.classList.add(imgClass);
 								}
 							}
 						}
