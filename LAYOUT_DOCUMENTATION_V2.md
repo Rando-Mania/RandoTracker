@@ -93,15 +93,16 @@ Similar to `tr-class-if-full`, however also sets the `display` of itself to `non
 ### tr-image-option
 
 ```
-<tr-image property="double" title="Double Jump" class="small-icon">
-    <tr-image-option img-class="double-off" dialog-img-class="double-off" path="../shared/images/icons/blank.svg"></tr-image-option>
-    <tr-image-option img-class="double-on" dialog-img-class="double-on" path="../shared/images/icons/blank.svg"></tr-image-option>
+<tr-image property="objective" title="objective">
+    <tr-image-option img-class="in-active objective-1" dialog-img-class="in-active objective-1" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="objective-1" dialog-img-class="objective-1" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="objective-2" dialog-img-class="objective-2" path="../shared/images/icons/blank.svg"></tr-image-option>
 </tr-image>
 ```
 
 generates an <img> that when clicked pops-up a `.dialog` allowing the selection of the different `tr-image-options`
 
-`img-class` attribute contains a class name to be added to the generated image when selected(`class-to-set` is still available as an alias for legacy reasons)
+`img-class` attribute contains a class name to be added to the generated image when selected
 
  `dialog-img-class` attribute contains a class name to be add to the generated image inside the popup dialog (`class` is still available as an alias for legacy reasons)
 

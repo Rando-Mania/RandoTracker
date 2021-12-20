@@ -86,7 +86,7 @@ figcaption{
     opacity: .3;
 }
 
-.in-active[selected="selected"] ~ tr-label{
+[img-class*="in-active"][selected="selected"] ~ tr-label{
     opacity: .3;
     filter: grayscale(1);
 }

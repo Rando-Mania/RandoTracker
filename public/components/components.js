@@ -442,7 +442,7 @@
 				var clearClassesToAdd = function() {
 					// Remove all possible classes to be added
 					instance.options.forEach(function(option) {
-						var classToRemove = option.getAttribute("class-to-set");
+						var classToRemove = option.getAttribute("img-class");
 
 						if (classToRemove) {
 							if (classToRemove.indexOf(" ") !== -1) {
@@ -451,18 +451,6 @@
 								});
 							} else {
 								instance.image.classList.remove(classToRemove);
-							}
-							
-						}
-						var classToRemove2 = option.getAttribute("img-class");
-
-						if (classToRemove2) {
-							if (classToRemove2.indexOf(" ") !== -1) {
-								classToRemove2.split(" ").forEach(function(ctr2) {
-									instance.image.classList.remove(ctr2);
-								});
-							} else {
-								instance.image.classList.remove(classToRemove2);
 							}
 							
 						}
@@ -549,18 +537,6 @@
 							instance.image.src = option.getAttribute("path");
 							option.setAttribute("selected", "selected");
 							clearClassesToAdd();
-
-							var classToSet = option.getAttribute("class-to-set");
-
-							if (classToSet) {
-								if (classToSet.indexOf(" ") !== -1) {
-									classToSet.split(" ").forEach(function(cts) {
-										instance.image.classList.add(cts);
-									});
-								} else {
-									instance.image.classList.add(classToSet);
-								}
-							}
 
 							var imgClass = option.getAttribute("img-class");
 
