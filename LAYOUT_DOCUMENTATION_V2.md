@@ -1,6 +1,6 @@
 # Layout Development
 
-This details out all of the different components that you have available to you, along with all their options and interworkings.  Hopefully it's a useful resource for layout development.
+This details out all of the different components that you have available to you, along with all their options and inner-workings.  Hopefully it's a useful resource for layout development.
 
 # Components
 
@@ -90,7 +90,31 @@ Similar to `tr-class-if-full`, however also sets the `display` of itself to `non
 
 ### tr-image
 
+### tr-image-option
+
+```
+<tr-image property="objective" title="objective">
+    <tr-image-option img-class="in-active objective-1" dialog-img-class="in-active objective-1" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="objective-1" dialog-img-class="objective-1" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="objective-2" dialog-img-class="objective-2" path="../shared/images/icons/blank.svg"></tr-image-option>
+</tr-image>
+```
+
+generates an <img> that when clicked pops-up a `.dialog` allowing the selection of the different `tr-image-options`
+
+`img-class` attribute contains a class name to be added to the generated image when selected
+
+ `dialog-img-class` attribute contains a class name to be add to the generated image inside the popup dialog (`class` is still available as an alias for legacy reasons)
+
 ### tr-image-toggle
+
+allows for toggling a class on an image on click
+
+```
+<tr-image-toggle class="active" property="test-img1" src="images/witch_doctor.png"></tr-image-toggle>
+```
+
+Use `tr-toggle-class` to toggle class on other elements
 
 ### tr-input-number
 
@@ -124,6 +148,14 @@ outputs
 ### tr-input-toggle
 
 ### tr-input-toggle-class
+
+```
+<tr-toggle-class property="toggle-class-image" toggle-class="toggle-active">
+    <img src="images/baramos.png" />
+</tr-toggle-class>
+```
+
+toggles a specified class on and off on click
 
 ### tr-label
 

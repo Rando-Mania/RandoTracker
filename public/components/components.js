@@ -373,7 +373,19 @@
 					};
 					image.src = option.getAttribute("path");
 					image.setAttribute("value", index);
-					image.className = option.className;
+					image.className = option.className; // legacy class for dialog
+
+					var dialogImgClass = option.getAttribute("dialog-img-class");
+
+					if (dialogImgClass) {
+						if (dialogImgClass.indexOf(" ") !== -1) {
+							dialogImgClass.split(" ").forEach(function(dic) {
+								image.classList.add(dic);
+							});
+						} else {
+							image.classList.add(dialogImgClass);
+						}
+					}
 					
 					image.onclick = function(e) {
 						e.stopPropagation();
@@ -430,7 +442,7 @@
 				var clearClassesToAdd = function() {
 					// Remove all possible classes to be added
 					instance.options.forEach(function(option) {
-						var classToRemove = option.getAttribute("class-to-set");
+						var classToRemove = option.getAttribute("img-class");
 
 						if (classToRemove) {
 							if (classToRemove.indexOf(" ") !== -1) {
@@ -526,15 +538,15 @@
 							option.setAttribute("selected", "selected");
 							clearClassesToAdd();
 
-							var classToSet = option.getAttribute("class-to-set");
+							var imgClass = option.getAttribute("img-class");
 
-							if (classToSet) {
-								if (classToSet.indexOf(" ") !== -1) {
-									classToSet.split(" ").forEach(function(cts) {
-										instance.image.classList.add(cts);
+							if (imgClass) {
+								if (imgClass.indexOf(" ") !== -1) {
+									imgClass.split(" ").forEach(function(ic) {
+										instance.image.classList.add(ic);
 									});
 								} else {
-									instance.image.classList.add(classToSet);
+									instance.image.classList.add(imgClass);
 								}
 							}
 						}
