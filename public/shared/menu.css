@@ -430,6 +430,12 @@ button.active{
     background-position: 100% 100%;
 }
 
+.hide-p4 [player="4"],
+.hide-p4 tr-timer:nth-of-type(4), 
+.hide-p4 .player-info-contain:nth-of-type(4){
+    display: none;
+}
+
 #menu_layout div{
     display: block;
 }
