@@ -133,3 +133,24 @@
     border: solid var(--borderWidth) currentColor;
     z-index: 3;
 }
+
+/* menu */
+
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+#menu_credits{
+    grid-area: credits;
+    z-index: 1;
+}
+#menu_players_extra{grid-area: players2;}
+
+.menu-contain{
+    grid-template-areas:
+        "players2 players layout team"
+        "reset    timer   view   credits";
+    }
