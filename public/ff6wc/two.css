@@ -470,6 +470,30 @@ tr-image-toggle img.active, tr-toggle-class.active {
     color: gold;
     place-self: end;
 }
+.flag-contain{
+    display: none;
+}
+
+.banon .flag-contain{
+    transform: translateX(-50%);
+    left: 50%;
+    top: 85%;
+    display: flex;
+    gap: 8px;
+}
+.banon .flag-contain > *{
+    width: 32px;
+    height: 32px;
+    background-image: url(../ff4fe/images/2p/ff4fe-spritesheet.png);
+    background-size: 160px 160px;
+}
+
+.flag-none{display: none;}
+.flag-option-1{background-position: 25% 0;}
+.flag-option-2{background-position: 50% 0;}
+.flag-option-3{background-position: 75% 0;}
+.flag-option-4{background-position: 0 25%;}
+.flag-option-5{background-position: 25% 25%;}
 
 .logo{
     display: block;
@@ -777,10 +801,14 @@ tr-timer span {
     .menu-general #menu_view{grid-area: view;}
     .menu-general #menu_reset{grid-area: reset;}
     
-    #menu_credits{grid-area: credits;}
+    #menu_credits{
+        z-index: 1;
+        grid-area: credits;}
     #menu_players_extra{grid-area: players2;}
     #menu_subheading{grid-area: subhead;}
-    #menu_backgrounds{grid-area: backgrounds;}
+    #menu_backgrounds{
+        z-index: 1;
+        grid-area: backgrounds;}
     #menu_playlist{grid-area: playlist;}
     #menu_goals{grid-area: goals;}
     
