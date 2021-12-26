@@ -96,16 +96,16 @@
 }
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
-    .notwebp .layout.default{
+    .default.notwebp .layout{
         background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
-    .webp.notavif .layout.default{
+    .default.webp.notavif .layout{
         background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
-    .avif .layout.default{
+    .default.avif .layout{
         background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
-    .layout.default{
+    .default .layout{
         background-image: 
             var(--background-overlay),
             image-set(
@@ -116,19 +116,20 @@
     }
 }
 
-.layout.default{
+.default .layout{
     --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
 }
 
 /* linear-gradient(#36172f,#e6b24a 41%, #8f6752 41%),
 linear-gradient(#b6cbe7, #fffafe 41%, #3e615b 41%) */
 
-.banon.layout{
-    background-color: #100018;
-    background-image: url('images/2p/Banons_Battle_Plan_2_Flattened_3.png');
+.draft .layout{
+    background-color: #181820;
+    background-image: url('images/clouds.png');
+    background-position: 0 -460px;
 }
 
-.banon.layout .logo {display: none;}
+.draft .layout .logo {display: none;}
 
 .layout > tr-player,
 .layout > tr-player > tr-template{
@@ -474,26 +475,66 @@ tr-image-toggle img.active, tr-toggle-class.active {
     display: none;
 }
 
-.banon .flag-contain{
+.draft .flag-contain{
     transform: translateX(-50%);
     left: 50%;
     top: 85%;
     display: flex;
     gap: 8px;
+    padding: 8px;
 }
-.banon .flag-contain > *{
+.draft .flag-contain > *{
     width: 32px;
     height: 32px;
     background-image: url(../ff4fe/images/2p/ff4fe-spritesheet.png);
     background-size: 160px 160px;
 }
 
-.flag-none{display: none;}
-.flag-option-1{background-position: 25% 0;}
-.flag-option-2{background-position: 50% 0;}
-.flag-option-3{background-position: 75% 0;}
-.flag-option-4{background-position: 0 25%;}
-.flag-option-5{background-position: 25% 25%;}
+.standard{display: none;}
+
+.requirements.none{background-position: 25% 0;}
+.requirements.low{background-position: 50% 0;}
+.requirements.high{background-position: 75% 0;}
+
+.draft-dragons.annoyance{background-position: 100% 25%;}
+.draft-dragons.pain{background-position: 0 25%;}
+.draft-dragons.hassle{background-position: 25% 25%;}
+
+.start.affluent{background-position: 50% 25%;}
+.start.austere{background-position: 75% 25%;}
+
+.experience.finesse{background-position: 100% 25%;}
+.experience.abundant{background-position: 0 50%;}
+.experience.stupid{background-position: 25% 50%;}
+
+.abilities.original{background-position: 50% 50%;}
+.abilities.jump{background-position: 75% 50%;}
+.abilities.weaker{background-position: 100% 50%;}
+.abilities.stronger{background-position: 0 75%;}
+
+.stats.nerfs{background-position: 25% 75%;}
+.stats.buffs{background-position: 50% 75%;}
+.stats.chaotic{background-position: 75% 75%;}
+
+.magic.ubiquitous{background-position: 100% 75%;}
+.magic.rare{background-position: 0 100%;}
+.magic.post-statue-death{background-position: 25% 100%;}
+
+.enemies.easy{background-position: 50% 100%;}
+.enemies.tough{background-position: 75% 100%;}
+.enemies.rough{background-position: 100% 100%;}
+
+.equipment.impoverished{background-position: 0 0;}
+.equipment.post-scarcity{background-position: 25% 0;}
+
+.draft-coliseum.og-rewards{background-position: 50% 0;}
+.draft-coliseum.open-season{background-position: 75% 0;}
+
+.y-remove.on{background-position: 100% 0;}
+
+.ultima.available{background-position: 0 25%;}
+
+.free-progression.no-free-progression{background-position: 25% 25%;}
 
 .logo{
     display: block;
@@ -669,7 +710,7 @@ tr-timer span {
 
 /* coliseum */
 
-.coliseum.layout{
+.coliseum .layout{
     grid-template-columns: auto 1fr 1fr auto;
     grid-template-rows: auto auto 1fr;
     grid-template-areas:
@@ -683,7 +724,7 @@ tr-timer span {
         linear-gradient(#b1995b, #b1995b);
 }
 
-.coliseum.layout:after{
+.coliseum .layout:after{
     content: 'VS';
     position: absolute;
     font-size: 82px;
@@ -695,17 +736,17 @@ tr-timer span {
     mix-blend-mode: overlay;
 }
 
-.coliseum.layout .logo img{
+.coliseum .layout .logo img{
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,.5)) drop-shadow(-1px -1px 1px rgba(0,0,0,.5));
 }
 
-.coliseum.layout .player-video{
+.coliseum .layout .player-video{
     --vidWidth: 631px;
 }
-.coliseum.layout [player="1"] .player-video{border-left: none;}
-.coliseum.layout [player="2"] .player-video{border-right: none;}
+.coliseum .layout [player="1"] .player-video{border-left: none;}
+.coliseum .layout [player="2"] .player-video{border-right: none;}
 
-.coliseum.layout .player-name{
+.coliseum .layout .player-name{
     border-radius: 0;
     border: none;
     color: #000;
@@ -714,33 +755,33 @@ tr-timer span {
     font-size: 38px;
 }
 
-.coliseum.layout .player-info-contain{
+.coliseum .layout .player-info-contain{
     align-content: flex-end;
 }
 
-.coliseum.layout .player-grid:nth-of-type(1){
+.coliseum .layout .player-grid:nth-of-type(1){
     left: 194px;
     top: 616px;
     transform: translateX(-50%);
 }
-.coliseum.layout .player-grid:nth-of-type(2){
+.coliseum .layout .player-grid:nth-of-type(2){
     right: 194px;
     top: 616px;
     transform: translateX(50%);
 }
 
-.coliseum.layout .player-speaker{
+.coliseum .layout .player-speaker{
     background-color: rgba(0,0,0,.5);
     border-radius: 4px;
     padding: 2px 4px;
     mix-blend-mode: overlay;
 }
 
-.coliseum.layout .player-speaker img{
+.coliseum .layout .player-speaker img{
     background: url("../shared/images/icons/sprite.svg") no-repeat 100% 33.3% / 500% 400%;
 }
 
-.coliseum.layout .player-grid-back{
+.coliseum .layout .player-grid-back{
     display: none;   
 }
 
@@ -755,21 +796,21 @@ tr-timer span {
     image-rendering: initial;
 }
 
-.coliseum.layout .player-grid.border-1{border: none;}
+.coliseum .layout .player-grid.border-1{border: none;}
 
-.coliseum.layout .player-grid.background-1{
+.coliseum .layout .player-grid.background-1{
     background-image: none;
     background-color: #0000;
 }
 
-.coliseum.layout .footer{
+.coliseum .layout .footer{
     grid-area: f;
     place-items: center;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-.coliseum.layout .player-best-of{
+.coliseum .layout .player-best-of{
     top: 95px;
 }
 
@@ -811,11 +852,42 @@ tr-timer span {
         grid-area: backgrounds;}
     #menu_playlist{grid-area: playlist;}
     #menu_goals{grid-area: goals;}
+    #menu_flags{
+        display: none;
+        grid-area: flags;}
     
+    .draft #menu_flags{
+        display: block;
+    }
+    #menu_flags select{
+        width: 11em;
+    }
+    #menu_flags > div{
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(4, max-content);
+        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+    #menu_flags > div > div{
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
     .menu-contain{
         grid-template-areas:
             "playlist players2    players layout  layout  team"
             "playlist  goals       timer   view    reset   credits"
             "subhead   goals       timer   view    reset   credits"
             "subhead   goals      backgrounds view    reset   credits";
+        }
+
+    .draft .menu-contain{
+        grid-template-areas:
+            "playlist players2    players layout  layout  team"
+            "playlist  goals       timer   view    reset   credits"
+            "subhead   goals       timer   view    reset   credits"
+            "subhead   goals      backgrounds view    reset   credits"
+            "flags    flags       flags   .    .  .";
         }

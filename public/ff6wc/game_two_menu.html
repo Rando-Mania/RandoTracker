@@ -68,9 +68,9 @@
 			<div>
 				<label>Layout:</label>
 				<tr-select-toggle property="layout-back-select">
-					<tr-option selected target=".layout, .tracker-layout, .loadscreen" toggle-class="default" value="1">Default</tr-option>
-					<tr-option target=".layout, .tracker-layout, .loadscreen" toggle-class="coliseum" value="2">Coliseum</tr-option>
-                    <tr-option target=".layout, .tracker-layout, .loadscreen" toggle-class="banon" value="3">Banon</tr-option>
+					<tr-option selected target="html" toggle-class="default" value="1">Default</tr-option>
+					<tr-option target="html" toggle-class="coliseum" value="2">Coliseum</tr-option>
+                    <tr-option target="html" toggle-class="draft" value="3">Draft</tr-option>
 				</tr-select-toggle>
 			</div>
         </div>
@@ -104,51 +104,117 @@
                 </table>
             </div>
         </div>
-        <div id="menu_flag_1" class="fieldset flag-menu">
-            <h4 class="legend">Flags</h4>
+        <div id="menu_flags" class="fieldset draft-menu">
+            <h4 class="legend">Draft Flags</h4>
             <div>
                 <div>
-                    <label for="">Flag 1:</label>
-                    <tr-select-toggle property="layout-flag-select-1"> 
-                        <tr-option target=".flag-1" toggle-class="flag-none" value="100">None</tr-option>
-                        <tr-option target=".flag-1" toggle-class="flag-option-1" value="101">Option 1</tr-option>
-                        <tr-option target=".flag-1" toggle-class="flag-option-2" value="102">Option 2</tr-option>
-                        <tr-option target=".flag-1" toggle-class="flag-option-3" value="103">Option 3</tr-option>
-                        <tr-option target=".flag-1" toggle-class="flag-option-4" value="104">Option 4</tr-option>
-                        <tr-option target=".flag-1" toggle-class="flag-option-5" value="105">Option 5</tr-option>
+                    <label for="">Requirements:</label>
+                    <tr-select-toggle property="requirements"> 
+                        <tr-option target=".requirements" toggle-class="standard" value="100">Standard</tr-option>
+                        <tr-option target=".requirements" toggle-class="none" value="101">None</tr-option>
+                        <tr-option target=".requirements" toggle-class="low" value="102">Low</tr-option>
+                        <tr-option target=".requirements" toggle-class="high" value="103">High</tr-option>
                     </tr-select-toggle>
                 </div>
                 <div>
-                    <label for="">Flag 2:</label>
-                    <tr-select-toggle property="layout-flag-select-2"> 
-                        <tr-option target=".flag-2" toggle-class="flag-none" value="200">None</tr-option>
-                        <tr-option target=".flag-2" toggle-class="flag-option-1" value="201">Option 1</tr-option>
-                        <tr-option target=".flag-2" toggle-class="flag-option-2" value="202">Option 2</tr-option>
-                        <tr-option target=".flag-2" toggle-class="flag-option-3" value="203">Option 3</tr-option>
-                        <tr-option target=".flag-2" toggle-class="flag-option-4" value="204">Option 4</tr-option>
-                        <tr-option target=".flag-2" toggle-class="flag-option-5" value="205">Option 5</tr-option>
+                    <label for="">Dragons:</label>
+                    <tr-select-toggle property="draft-dragons"> 
+                        <tr-option target=".draft-dragons" toggle-class="standard" value="200">Standard</tr-option>
+                        <tr-option target=".draft-dragons" toggle-class="annoyance" value="201">Annoyance</tr-option>
+                        <tr-option target=".draft-dragons" toggle-class="pain" value="202">Pain</tr-option>
+                        <tr-option target=".draft-dragons" toggle-class="hassle" value="203">Hassle</tr-option>
                     </tr-select-toggle>
                 </div>
                 <div>
-                    <label for="">Flag 3:</label>
-                    <tr-select-toggle property="layout-flag-select-3"> 
-                        <tr-option target=".flag-3" toggle-class="flag-none" value="300">None</tr-option>
-                        <tr-option target=".flag-3" toggle-class="flag-option-1" value="301">Option 1</tr-option>
+                    <label for="">Start:</label>
+                    <tr-select-toggle property="start"> 
+                        <tr-option target=".start" toggle-class="affluent" value="301">Affluent</tr-option>
+                        <tr-option selected target=".start" toggle-class="standard" value="300">Standard</tr-option>
+                        <tr-option target=".start" toggle-class="austere" value="302">Austere</tr-option>
                     </tr-select-toggle>
                 </div>
                 <div>
-                    <label for="">Flag 4:</label>
-                    <tr-select-toggle property="layout-flag-select-4"> 
-                        <tr-option target=".flag-4" toggle-class="flag-none" value="400">None</tr-option>
-                        <tr-option target=".flag-4" toggle-class="flag-option-1" value="401">Option 1</tr-option>
+                    <label for="">Experience:</label>
+                    <tr-select-toggle property="experience"> 
+                        <tr-option target=".experience" toggle-class="standard" value="400">Standard</tr-option>
+                        <tr-option target=".experience" toggle-class="finesse" value="401">Finesse</tr-option>
+                        <tr-option target=".experience" toggle-class="abundant" value="402">Abundant</tr-option>
+                        <tr-option target=".experience" toggle-class="stupid" value="403">Stupid</tr-option>
                     </tr-select-toggle>
                 </div>
                 <div>
-                    <label for="">Flag 5:</label>
-                    <tr-select-toggle property="layout-flag-select-5"> 
-                        <tr-option target=".flag-5" toggle-class="flag-none" value="500">None</tr-option>
-                        <tr-option target=".flag-5" toggle-class="flag-option-1" value="501">Option 1</tr-option>
+                    <label for="">Abilities:</label>
+                    <tr-select-toggle property="abilities"> 
+                        <tr-option target=".abilities" toggle-class="standard" value="500">Standard</tr-option>
+                        <tr-option target=".abilities" toggle-class="original" value="501">Original</tr-option>
+                        <tr-option target=".abilities" toggle-class="jump" value="502">Jump</tr-option>
+                        <tr-option target=".abilities" toggle-class="weaker" value="503">Weaker</tr-option>
+                        <tr-option target=".abilities" toggle-class="stronger" value="504">Stronger</tr-option>
                     </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Stats:</label>
+                    <tr-select-toggle property="stats"> 
+                        <tr-option target=".stats" toggle-class="standard" value="600">Standard</tr-option>
+                        <tr-option target=".stats" toggle-class="nerfs" value="601">Nerfs</tr-option>
+                        <tr-option target=".stats" toggle-class="buffs" value="602">Buffs</tr-option>
+                        <tr-option target=".stats" toggle-class="chaotic" value="603">Chaotic</tr-option>
+                    </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Magic:</label>
+                    <tr-select-toggle property="magic"> 
+                        <tr-option target=".magic" toggle-class="standard" value="700">Standard</tr-option>
+                        <tr-option target=".magic" toggle-class="ubiquitous" value="701">Ubiquitous</tr-option>
+                        <tr-option target=".magic" toggle-class="rare" value="702">Rare</tr-option>
+                        <tr-option target=".magic" toggle-class="post-statue-death" value="703">Post-Statue Death</tr-option>
+                    </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Enemies:</label>
+                    <tr-select-toggle property="enemies"> 
+                        <tr-option target=".enemies" toggle-class="standard" value="800">Standard</tr-option>
+                        <tr-option target=".enemies" toggle-class="easy" value="801">Easy</tr-option>
+                        <tr-option target=".enemies" toggle-class="tough" value="802">Tough</tr-option>
+                        <tr-option target=".enemies" toggle-class="rough" value="803">Rough</tr-option>
+                    </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Equipment:</label>
+                    <tr-select-toggle property="equipment"> 
+                        <tr-option target=".equipment" toggle-class="standard" value="900">Standard</tr-option>
+                        <tr-option target=".equipment" toggle-class="impoverished" value="901">Impoverished</tr-option>
+                        <tr-option target=".equipment" toggle-class="post-scarcity" value="902">Post-Scarcity</tr-option>
+                     </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Coliseum:</label>
+                    <tr-select-toggle property="coliseum"> 
+                        <tr-option target=".draft-coliseum" toggle-class="standard" value="1000">Standard</tr-option>
+                        <tr-option target=".draft-coliseum" toggle-class="og-rewards" value="1001">OG Rewards</tr-option>
+                        <tr-option target=".draft-coliseum" toggle-class="open-season" value="1002">Open Season</tr-option>
+                     </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Y-Remove:</label>
+                    <tr-select-toggle property="y-remove"> 
+                        <tr-option target=".y-remove" toggle-class="standard" value="1100">Standard</tr-option>
+                        <tr-option target=".y-remove" toggle-class="on" value="1101">On</tr-option>
+                     </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Ultima:</label>
+                    <tr-select-toggle property="ultima"> 
+                        <tr-option target=".ultima" toggle-class="standard" value="1200">Standard</tr-option>
+                        <tr-option target=".ultima" toggle-class="available" value="1201">Available</tr-option>
+                     </tr-select-toggle>
+                </div>
+                <div>
+                    <label for="">Free Progression:</label>
+                    <tr-select-toggle property="free-progression"> 
+                        <tr-option target=".free-progression" toggle-class="standard" value="1300">Standard</tr-option>
+                        <tr-option target=".free-progression" toggle-class="no-free-rogression" value="1301">No Free Progression</tr-option>
+                     </tr-select-toggle>
                 </div>
             </div>
         </div>  
