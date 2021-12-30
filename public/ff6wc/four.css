@@ -69,7 +69,8 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
+    background-size: auto, 100% 100%, 100% 100%;
     background-color: #21384a;
     --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
     --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
@@ -102,21 +103,23 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .notwebp .layout{
-        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
+        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
     .webp.notavif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
+        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
     .avif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .layout{
-        background-image: var(--background-overlay),
-        image-set(
-            "images/justbackground.avif" type("image/avif"),
-            "images/justbackground.webp" type("image/webp"),
-            "images/justbackground.jpg" type("image/jpeg")
-        ), var(--background-fallback);
+        background-image: 
+            url('images/snow.png'), 
+            var(--background-overlay),
+            image-set(
+                "images/justbackground.avif" type("image/avif"),
+                "images/justbackground.webp" type("image/webp"),
+                "images/justbackground.jpg" type("image/jpeg")), 
+            var(--background-fallback);
     }
 }
 .player-video{

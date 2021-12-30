@@ -86,6 +86,7 @@
     --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
     padding: var(--gap-size) var(--gap-size) 0;
     background-size: 100% 100%;
+    background-size: auto, 100% 100%, 100% 100%, 100% 100%;
     display: grid !important;
     grid-template-columns: auto 1fr 1fr auto;
     grid-template-rows: auto auto 1fr;
@@ -97,16 +98,17 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .default.notwebp .layout{
-        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
+        background-image: url('images/snow.png'), var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
     .default.webp.notavif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
+        background-image: url('images/snow.png'), var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
     .default.avif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: url('images/snow.png'), var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .default .layout{
-        background-image: 
+        background-image:
+            url('images/snow.png'), 
             var(--background-overlay),
             image-set(
                 "images/justbackground.avif" type("image/avif"),
