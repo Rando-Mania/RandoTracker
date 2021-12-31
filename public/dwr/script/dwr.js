@@ -480,8 +480,13 @@
 			monster.move2Chance = rom[startByte + 3] % 4;
 			monster.move1 = Math.floor(((rom[startByte + 3] - monster.move2) / 16) / 4);
 			monster.move1Chance = Math.floor((rom[startByte + 3] - monster.move2) / 16) % 4;
-			monster.experience = rom[startByte + 6];
-			monster.gold = rom[startByte + 7];
+			// DWR 2.0- ROM
+			// monster.experience = rom[startByte + 6];
+			// monster.gold = rom[startByte + 7];
+
+			// DWR 3.0+ ROM
+			monster.experience = (rom[startByte+7] << 8) + rom[startByte+6];
+			monster.gold = (rom[startByte+9] << 8) + rom[startByte+8];
 			monsters[i] = monster;
 		}
 

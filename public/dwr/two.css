@@ -4,7 +4,7 @@
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
-    --border-1: var(--border) solid rgba(255,255,255,.8);;
+    --border-1: var(--border) solid rgba(255,255,255,.8);
     --background-color-1: #001018;
     --background-color-2: rgba(0,0,0,1);
     line-height: 1;
