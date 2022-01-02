@@ -61,11 +61,11 @@
     box-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff;
 }
 
-.layout.zemus-qualifier .border-1, .border-2{
+/* .layout.zemus-qualifier .border-1, .border-2{
     border: var(--border) solid var(--zemusBorderColor);
     border-radius: 1px;
     box-shadow: none;
-}
+} */
 
 .background-1{background-color: var(--backgroundColor1);}
 .background-2{background-color: var(--backgroundColor2);}
@@ -334,18 +334,6 @@ tr-toggle-class, .in-active {
 .player-speaker svg{
     width: 32px;
     height: 32px;
-}
-
-.player-speaker path{
-    fill: var(--backgroundColor1);
-}
-
-
-.layout.zemus-qualifier .player-speaker img{
-    /* White shows poorly on the qualifier background.
-       So, pre-filter the speaker icon to black, then convert to --zemusBackgroundColor
-       see: https://codepen.io/sosuke/pen/Pjoqqp */
-    filter: brightness(0) invert(13%) sepia(40%) saturate(936%) hue-rotate(196deg) brightness(90%) contrast(90%);
 }
 
 [player="2"] .player-speaker, [player="4"] .player-speaker{
