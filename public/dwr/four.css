@@ -1100,6 +1100,9 @@ tr-timer span {
     .coop-background #menu_player_labels tbody tr:nth-of-type(4){order:1;}
     .coop-background #menu_player_labels tbody tr:nth-of-type(5){order:3;}
 
+    #menu_team_names{display: none;}
+    .coop-background #menu_team_names{display: block;}
+
 /* dialog styles */
     
 .dialog{
