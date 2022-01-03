@@ -573,7 +573,6 @@ tr-timer span {
 .menu-contain{
     grid-template-areas:
         "objectives players2    players layout  layout  team"
-        "objectives backgrounds timer   view    reset   credits"
-        "objectives tourney     timer   view    reset   credits"
-        "objectives match       hero   view    reset   credits";
+        "tourney backgrounds timer   view    reset   credits"
+        "match      hero        timer   view    reset   credits";
     }    

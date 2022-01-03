@@ -5,7 +5,6 @@
 }
 
 :root{
-    /* --backgroundImg: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png'); */
     --vidWidth: 463px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
@@ -88,8 +87,7 @@
     height: 720px;
     color:#fff;
     position: relative;
-    background-image: var(--backgroundImg);
-    background-color: var(--backgroundColor1);
+    background-color: #012f83;
 }
 
 .layout.zemus-qualifier{background-image: linear-gradient(#589877,#709d88);}
@@ -101,23 +99,19 @@
 }
 
 .notwebp.notavif .layout.weekly-monday{
-    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.png');
-    background-color: #012f83;
+    background-image: url('images/4p/weekly/FF4FE-Weekly-4P-MondayBG.jpg');
 }
 
 .webp .layout.weekly-monday{
-    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Monday-BG.webp');
-    background-color: #012f83;
+    background-image: url('images/4p/weekly/FF4FE-Weekly-4P-MondayBG.webp');
 }
 
 .notwebp.notavif .layout.weekly-friday{
-    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.png');
-    background-color: #012f83;
+    background-image: url('images/4p/weekly/FF4FE-Weekly-4P-FridayBG.jpg');
 }
 
 .webp .layout.weekly-friday{
-    background-image: url('images/4p/weekly/FF4FE-WeeklyRace-Live-Friday-BG.webp');
-    background-color: #012f83;
+    background-image: url('images/4p/weekly/FF4FE-Weekly-4P-FridayBG.webp');
 }
 
 .trans{background-color: #0000; background-image: none;}
@@ -557,6 +551,54 @@ tr-timer span {
 
 .show{ display: block; }
 
+.hero-name {
+    width: 56px;
+    height: 34px;
+    top: 113px;
+    transform: translateX(-50%);
+    left: 50%;
+    font-size: 0.8em;
+    display: none;
+    padding-top: 0.65em;
+}
+
+.hero-indicator {
+    background-image: url('images/4p/weekly/HeroSheet-4P.png');
+    background-size: 400% 300%;
+    display: none;
+    top: 152px;
+    width: 32px;
+    height: 48px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
+.hero-palom, .hero-porom, .hero-edge, .hero-fusoya {
+    display: initial;
+}
+
+/*.notwebp [class*="zz4-"] .hero-indicator {
+    background-image: url('images/2p/zz4/HeroSheet-zz4.png');
+}
+.webp [class*="zz4-"] .hero-indicator {
+    background-image: url('images/2p/zz4/HeroSheet-zz4.webp');
+}*/
+
+.hero-indicator.hero-cecil {background-position: 0 0;}
+.hero-indicator.hero-rosa {background-position: 33.3% 0;}
+.hero-indicator.hero-kain {background-position: 66.6% 0;}
+.hero-indicator.hero-rydia {background-position: 100% 0;}
+.hero-indicator.hero-tellah {background-position: 0 50%;}
+.hero-indicator.hero-edward {background-position: 33.3% 50%;}
+.hero-indicator.hero-yang {background-position: 66.6% 50%;}
+.hero-indicator.hero-cid {background-position: 100% 50%;}
+.hero-indicator.hero-palom {background-position: 0 100%;}
+.hero-indicator.hero-porom {background-position: 33.3% 100%;}
+.hero-indicator.hero-edge {background-position: 66.6% 100%;}
+.hero-indicator.hero-fusoya {background-position: 100% 100%;}
+
+
 #menu_layout div{
     display: block;
 }
@@ -575,10 +617,10 @@ tr-timer span {
 .menu-contain{
     grid-template-columns: repeat(6, auto);
     grid-template-areas:
-        "players-extra players backgrounds team team"
-        "players-extra players layout      team team"
-        "objectives    timer   flags       view reset"
-        "objectives    credits flags       view reset"
+        "players-extra players backgrounds hero   team    team"
+        "players-extra players layout      layout team    team"
+        "objectives    timer   flags       flags  credits credits"
+        "objectives    view    flags       flags  reset   reset"
     }
 
 #menu_player_extra{grid-area: players-extra;}
@@ -586,5 +628,6 @@ tr-timer span {
 #menu_objectives {grid-area: objectives;}
 #menu_flags {grid-area: flags; z-index: 3;}
 #menu_credits {grid-area: credits; z-index: 2;}
+#menu_hero {grid-area: hero; z-index: 2;}
 
 .record-input input, .seed-input input{width: 3em;}
