@@ -84,9 +84,12 @@
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
 
-        <tr-text player="1" property="player-team" class="abs background-1 player-team"></tr-text>
-        <tr-text player="2" property="player-team" class="abs background-1 player-team"></tr-text>
-
+        <div class="abs background-1 player-team">
+            <tr-text scale-to-fit-height player="1" property="player-team"></tr-text>
+        </div>
+        <div class="abs background-1 player-team">
+            <tr-text scale-to-fit-height player="2" property="player-team"></tr-text>
+        </div>
         <!-- timer/staff -->
 
         <tr-timer class="abs" property="timer-test" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></tr-timer>

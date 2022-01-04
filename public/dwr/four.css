@@ -23,6 +23,7 @@
     --winX: 459px; --winY1: 38px; --winY2: 242px;
     --teamX: 0; --teamY: 328px;
 
+    --team-1-background-color: #000;
     --border: 2px;
 
     --clipX1: calc(var(--videoX) + var(--border));
@@ -80,6 +81,63 @@ html{
     color:#fff;
     position: relative;
     overflow: hidden;
+}
+
+.coop-background.layout{
+    --backgroundColor1: #222526;
+    --winX: 160px; --winY1: 338px; --winY2: 336px;
+}
+
+.coop-background.layout .player-winner{
+    background-color: rgba(0,0,0,.5);
+}
+
+.layout.coop-background [player="1"],
+.layout.coop-background [player="1"] .player-info,
+.player-grids-contain.coop-background [player="1"] .player-grid,
+.player-stats-contain.coop-background [player="1"] .stats,
+.player-stats-contain.coop-background [player="1"] .spells,
+.layout.coop-background [player="3"],
+.layout.coop-background [player="3"] .player-info,
+.player-grids-contain.coop-background [player="3"] .player-grid,
+.player-stats-contain.coop-background [player="3"] .stats,
+.player-stats-contain.coop-background [player="3"] .spells,
+.layout.coop-background .player-team:nth-of-type(1){
+    --backgroundColor1: #000;
+ }
+
+ .layout.coop-background [player="2"],
+ .layout.coop-background [player="2"] .player-info,
+ .player-grids-contain.coop-background [player="2"] .player-grid,
+ .player-stats-contain.coop-background [player="2"] .stats,
+ .player-stats-contain.coop-background [player="2"] .spells,
+ .layout.coop-background [player="4"],
+ .layout.coop-background [player="4"] .player-info,
+ .player-grids-contain.coop-background [player="4"] .player-grid,
+ .player-stats-contain.coop-background [player="4"] .stats,
+ .player-stats-contain.coop-background [player="4"] .spells,
+ .layout.coop-background .player-team:nth-of-type(2){
+    --backgroundColor1: #222526;
+    background-image: conic-gradient(#0000 270deg, #000 0);
+    background-size: 2px 2px;
+}
+
+.layout.coop-background tr-timer{
+    position: relative;
+    background-image: 
+        conic-gradient(#0000 270deg, #000 0), 
+        linear-gradient(135deg, #000 33%, #222526 66%);
+        background-size: 2px 2px, auto;
+}
+
+.coop-background tr-timer:after{
+    content: 'Co-op';
+    position: absolute;
+    width: 5em;
+    height: 1em;
+    right: 3.5em;
+    top: -5px;
+    font-size: .8em;
 }
 
 .full-layout{
@@ -238,6 +296,10 @@ html{
 }
 .coop-background .player-team:empty{
     display: none;
+}
+
+.coop-background .player-team > tr-text{
+    white-space: initial;
 }
 
 .coop-background .staff{
