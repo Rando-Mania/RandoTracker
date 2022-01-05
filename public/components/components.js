@@ -1447,10 +1447,6 @@
 				return this.hasAttribute("scale-to-fit");
 			}
 
-			get scaleToFitMaxWidth() {
-				return this.hasAttribute("scale-to-fit-max-width");
-			}
-
 			connectedCallback() {
 				const instance = this;
 
@@ -1490,26 +1486,23 @@
 						}
 
 						var goalWidth = instance.goalWidth;
-						if (instance.scaleToFitMaxWidth) {
-							goalWidth = instance.offsetWidth;
-						}
+						// if (instance.scaleToFitMaxWidth) {
+						// 	goalWidth = instance.offsetWidth;
+						// }
 						if (target.scrollWidth > goalWidth) {
 							var scaleAmount = goalWidth / target.scrollWidth;
-							var marginAmount = scaleAmount * ((goalWidth - target.scrollWidth) / 2);
 
 							finalTransform += " scaleX(" + scaleAmount + ") ";
-							target.style.marginLeft = marginAmount + "px";
 						} else {
 							finalTransform += " scaleX(1) ";
-							target.style.marginLeft = 0;
 						}
 
 						target.style.transform = finalTransform;
+						target.style.transformOrigin = "left"
 
 						// TODO: completely replace the marginLeft adjustment with transform-origin: left
 						// It does the same thing but works with any text alignment.
 						if (instance.scaleToFitMaxWidth) {
-							target.style.marginLeft = 0;
 							target.style.transformOrigin = "left"
 						}
 					});
