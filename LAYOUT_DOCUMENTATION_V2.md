@@ -203,22 +203,22 @@ Used to output text based database entries onto a layout. Pairs with a `tr-input
 </tr-text>
 ```
 
-### `scale-to-fit`
+### `scale-to-fit-x`
 
-`scale-to-fit` is an attribute for horizontally scaling overflowing text to fit in a fixed width container. Accomplished through a `transform: scaleX();` and a `margin-left`.
+`scale-to-fit-x` is an attribute for horizontally scaling overflowing text to fit in a fixed width container. Accomplished through a `transform: scaleX();` and a `transform-origin: left;`.
 
 Trouble shooting:
 
 - Container must be a block element (components.css takes care of this)
 - must have a width
-- because _`scale-to-fit`_ is computed at load time adding a default `display: none;` to a _`scale-to-fit`_ element will compute to `transform: scaleX(0)` causing the element to disappear.  Use `visibility: hidden;` or `visibility: collapse;` to hide an element instead. 
+- because _`scale-to-fit-x`_ is computed at load time adding a default `display: none;` to a _`scale-to-fit-x`_ element will compute to `transform: scaleX(0)` causing the element to disappear.  Use `visibility: hidden;` or `visibility: collapse;` to hide an element instead. 
 
 ```
-<tr-text scale-to-fit property="player-name"></tr-text>
+<tr-text scale-to-fit-x property="player-name"></tr-text>
 ```
 
 ```
-<tr-text scale-to-fit property="player-name" style="margin-left: -28.7335px; transform: scaleX(0.845103);">
+<tr-text scale-to-fit-x property="player-name" style="transform: scaleX(0.845103); transform-origin: left center;">
     AlbusPercivalWulfricBrianDumbledore
 </tr-text>
 ```

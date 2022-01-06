@@ -59,7 +59,7 @@
                 <tr-text property="player-rank" class="player-rank"></tr-text>
                 <div class="player-info-right">
                     <div class="player-name-contain">
-                        <tr-text scale-to-fit property="player-name" class="player-name"></tr-text> 
+                        <tr-text scale-to-fit-x property="player-name" class="player-name"></tr-text> 
                     </div>
                     <tr-text property="player-record" class="player-record"></tr-text>
                     <tr-text property="player-pronoun" class="player-pronoun"></tr-text>
@@ -85,10 +85,10 @@
         </tr-player>
 
         <div class="abs background-1 player-team">
-            <tr-text scale-to-fit-height player="1" property="player-team"></tr-text>
+            <tr-text scale-to-fit-y player="1" property="player-team"></tr-text>
         </div>
         <div class="abs background-1 player-team">
-            <tr-text scale-to-fit-height player="2" property="player-team"></tr-text>
+            <tr-text scale-to-fit-y player="2" property="player-team"></tr-text>
         </div>
         <!-- timer/staff -->
 
@@ -206,7 +206,7 @@
         </table>
         <div class="monster-table-ai">
             <div class="heading">AI</div>
-            <div><tr-text scale-to-fit property="monster_ai"></tr-text></div>
+            <div><tr-text scale-to-fit-x property="monster_ai"></tr-text></div>
         </div>
     </div>
 </tr-toggle>

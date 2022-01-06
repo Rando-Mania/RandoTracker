@@ -117,7 +117,7 @@ tr-timer span{
     height: 32px;
 }
 
-[scale-to-fit]{
+[scale-to-fit-x], [scale-to-fit-y]{
     display: block;
 }
 

@@ -1443,8 +1443,8 @@
 				return Tracker.getPropertyAttribute(this);
 			}
 
-			get scaleToFit() {
-				return this.hasAttribute("scale-to-fit");
+			get scaleToFitX() {
+				return this.hasAttribute("scale-to-fit-x");
 			}
 
 			connectedCallback() {
@@ -1469,9 +1469,8 @@
 					instance.textContent = value;
 				});
 
-				if (instance.scaleToFit) {
+				if (instance.scaleToFitX) {
 					var mutationObserver = new MutationObserver(function(mutationList) {
-						// TODO: Find out why and/or workaround to width not being defined leading to right offset
 						var mutation = mutationList[0];
 						var target = mutation.target;
 
@@ -1485,13 +1484,10 @@
 							finalTransform = finalTransform.replace(/scaleX\(.*?\) */g, "");
 						}
 
-						var goalWidth = instance.goalWidth;
-						// if (instance.scaleToFitMaxWidth) {
-						// 	goalWidth = instance.offsetWidth;
-						// }
+						var goalWidth = instance.offsetWidth;
+
 						if (target.scrollWidth > goalWidth) {
 							var scaleAmount = goalWidth / target.scrollWidth;
-
 							finalTransform += " scaleX(" + scaleAmount + ") ";
 						} else {
 							finalTransform += " scaleX(1) ";
@@ -1500,11 +1496,6 @@
 						target.style.transform = finalTransform;
 						target.style.transformOrigin = "left"
 
-						// TODO: completely replace the marginLeft adjustment with transform-origin: left
-						// It does the same thing but works with any text alignment.
-						if (instance.scaleToFitMaxWidth) {
-							target.style.transformOrigin = "left"
-						}
 					});
 
 					mutationObserver.observe(this, {
