@@ -110,6 +110,7 @@
     background-image: url("images/bingo/base-winter.png");
     background-image: image-set(
         url("images/bingo/base-winter.avif") type("image/avif"),
+        url("images/bingo/base-winter.webp") type("image/webp"),
         url("images/bingo/base-winter.png") type("image/png")
     );
 }
