@@ -117,7 +117,7 @@ html{
  .player-stats-contain.coop-background [player="4"] .stats,
  .player-stats-contain.coop-background [player="4"] .spells,
  .layout.coop-background .player-team:nth-of-type(2){
-    --backgroundColor1: #222526;
+    --backgroundColor1: #001f8c;
     background-image: conic-gradient(#0000 270deg, #000 0);
     background-size: 2px 2px;
 }
@@ -126,7 +126,7 @@ html{
     position: relative;
     background-image: 
         conic-gradient(#0000 270deg, #000 0), 
-        linear-gradient(135deg, #000 33%, #222526 66%);
+        linear-gradient(90deg, #000 33%, #001f8c 66%);
         background-size: 2px 2px, auto;
 }
 
@@ -325,11 +325,11 @@ html{
     display: block;
 }
 
-.coop-background.player-grids-contain, .coop-background.player-stats-contain{
+/* .coop-background.player-grids-contain, .coop-background.player-stats-contain{
     z-index: 0;
-} 
+}  */
 
-.coop-background [player="3"] .player-grid, .coop-background [player="4"] .player-grid,
+/* .coop-background [player="3"] .player-grid, .coop-background [player="4"] .player-grid,
 .coop-background [player="3"] .stats-and-spells, .coop-background [player="4"] .stats-and-spells{
     display: none;
 }
@@ -340,7 +340,7 @@ html{
 
 .coop-background [player="2"] .stats-and-spells{
     top: 470px;
-}
+} */
 
 .player-team:nth-of-type(1){
     border-right: solid 1px #fff;
