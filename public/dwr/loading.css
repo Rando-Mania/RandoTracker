@@ -130,9 +130,9 @@
   padding: .5em;
   width: 100%;
   font-size: 1.75rem;
-  background: 
-    linear-gradient(#000, #000) no-repeat center / calc(100% - 10px) 100%,
-    linear-gradient(#000, #000) no-repeat center / 100% calc(100% - 10px);
+  background-color: #000;
+  --clip-depth: 5px;
+  clip-path: polygon(0 var(--clip-depth), var(--clip-depth) var(--clip-depth), var(--clip-depth) 0, calc(100% - var(--clip-depth)) 0%, calc(100% - var(--clip-depth)) var(--clip-depth), 100% var(--clip-depth), 100% calc(100% - var(--clip-depth)), calc(100% - var(--clip-depth)) calc(100% - var(--clip-depth)), calc(100% - var(--clip-depth)) 100%, var(--clip-depth) 100%, var(--clip-depth) calc(100% - var(--clip-depth)), 0 calc(100% - var(--clip-depth)));
 }
 
 .loadscreen.coop-background .player-info-contain{
@@ -155,11 +155,21 @@
 }
 
 .loadscreen.coop-background .separator-2{
-  background: 
-    linear-gradient(#000, #000) no-repeat center center / calc(100% - 10px) 100%,
-    linear-gradient(#000, #000) no-repeat center center / 100% calc(100% - 10px);
+  background-image: 
+    conic-gradient(#0000 270deg, #000 0),
+    linear-gradient(#000, #001f8c);
+  background-size: 2px 2px, 100% 100%;
+  --clip-depth: 6px;
+  clip-path: polygon(0 var(--clip-depth), var(--clip-depth) var(--clip-depth), var(--clip-depth) 0, calc(100% - var(--clip-depth)) 0%, calc(100% - var(--clip-depth)) var(--clip-depth), 100% var(--clip-depth), 100% calc(100% - var(--clip-depth)), calc(100% - var(--clip-depth)) calc(100% - var(--clip-depth)), calc(100% - var(--clip-depth)) 100%, var(--clip-depth) 100%, var(--clip-depth) calc(100% - var(--clip-depth)), 0 calc(100% - var(--clip-depth)));
   width: 3em;
   margin: auto;
+}
+
+.coop-background [player="2"][property="player-team"]{
+  background-color: #001f8c;
+  background-image: 
+    conic-gradient(#0000 270deg, #000 0);
+  background-size: 2px 2px;
 }
 
 .loadscreen.coop-background .player-1,
