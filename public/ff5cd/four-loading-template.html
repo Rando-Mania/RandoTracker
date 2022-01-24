@@ -1,0 +1,129 @@
+    <style>
+        /* Loading Screen */
+        @font-face {
+            font-family: "Chicago";
+            src: local('Chicago'),
+                url('../shared/fonts/chicago.woff2') format('woff2'),
+                url('../shared/fonts/chicago.woff') format('woff'),         
+                url('../shared/fonts/chicago.ttf') format('truetype');
+        }
+
+.loadscreen-contain, .four-loading{
+    font-family: 'Chicago', Arial, sans-serif;
+    width: 1280px;
+    height: 720px;
+    background-color: #d0e0fb;
+    --loadscreen-fallback: linear-gradient(#d0e0fb, #043270);
+    background-image: var(--loadscreen-fallback);
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
+}
+
+.notwebp.notavif .loadscreen-contain, .notwebp.notavif .four-loading{background-image: url('images/loading_screen.jpg'), var(--loadscreen-fallback);}
+.webp.notavif .loadscreen-contain, .webp.notavif .four-loading{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
+.avif .loadscreen-contain, .avif .four-loading{background-image: url('images/loading_screen.avif'), var(--loadscreen-fallback);}
+
+.four-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    animation: zoomIn .5s;
+    display: block;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+
+.loadscreen-main{
+    position: absolute;
+    left: 30px;
+    top: 300px;
+    background-color: #00155f;
+    background-clip: content-box;
+    border: 6px solid #b1b1b1;
+    border-image: url('images/border.svg#svgView(viewBox(0, 0, 16, 16))') 6;
+    border-radius: 8px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-width: 479px;
+    height: 309px;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+}    
+
+.loadscreen-main > div{
+    display: flex;
+    justify-content: center;
+}
+
+.player-number-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadscreen-main .player-name{
+    width: auto;
+}
+
+.load-and{
+    margin: .25em auto;
+    display: none;
+}
+
+.show-and .load-and{display: block;}
+.show-and .load-vs{display: none;}
+
+    </style>
+    <div class="loadscreen">
+        <div class="loadscreen-main">
+            <div>
+                <tr-text player="1" property="player-number" class="player-number-contain"></tr-text>
+                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+            </div>
+            vs.
+            <div>
+                <tr-text player="2" property="player-number" class="player-number-contain"></tr-text>
+                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+            </div>
+            <span class="load-and-vs">
+                <span class="load-vs">vs.</span>
+                <span class="load-and">and</span>
+            </span>
+            <div>
+                <tr-text player="3" property="player-number" class="player-number-contain"></tr-text>
+                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
+            </div>
+            vs.
+            <div>
+                <tr-text player="4" property="player-number" class="player-number-contain"></tr-text>
+                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,93 @@
+<style>
+    /* Loading Screen */
+
+    @font-face {
+            font-family: "Chicago";
+            src: local('Chicago'),
+                url('../shared/fonts/chicago.woff2') format('woff2'),
+                url('../shared/fonts/chicago.woff') format('woff'),         
+                url('../shared/fonts/chicago.ttf') format('truetype');
+        }
+
+.loadscreen-contain, .one-loading{
+    font-family: 'Chicago', Arial, sans-serif;
+    width: 1280px;
+    height: 720px;
+    background-color: #d0e0fb;
+    --loadscreen-fallback: linear-gradient(#d0e0fb, #043270);
+    background-image: var(--loadscreen-fallback);
+    color: #fff;
+    text-align: center;
+    animation: zoomIn .5s linear;
+    z-index: 50;
+    display: none;
+}
+
+.notwebp.notavif .loadscreen-contain, .notwebp.notavif .one-loading{background-image: url('images/loading_screen.jpg'), var(--loadscreen-fallback);}
+.webp.notavif .loadscreen-contain, .webp.notavif .one-loading{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
+.avif .loadscreen-contain, .avif .one-loading{background-image: url('images/loading_screen.avif'), var(--loadscreen-fallback);}
+
+.loadscreen-contain.show, .one-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    animation: zoomIn .5s;
+    display: block;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+
+.loadscreen-main{
+    position: absolute;
+    left: 42px;
+    top: 96px;
+    background-color: #005;
+    background-clip: content-box;
+    border: 4px solid #ffffff;
+    border-width: 4px 4px;
+    border-image: url('images/border.png') 4 4;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-width: 479px;
+    height: 309px;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+}
+
+</style>
+<div class="loadscreen">
+    <div class="loadscreen-main">
+        <div style="font-size: 26px;">
+            Reveal Show
+        </div>
+        <h4>
+            with
+        </h4>
+        <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="reveal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            font-family: 'Chicago', Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto auto 117px;
+            gap: 2px;
+            padding: 24px;
+            align-content: start;
+            background-position: bottom right;
+            background-size: auto 100%;
+        }
+        tr-player[player="1"]{
+            display: contents;
+        }
+        .player-grid, .player-final{
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+        .player-pronoun{
+            align-self: start;
+        }
+        .player-final{
+            justify-self: start;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <tr-player player="1">
+            <tr-template class="player-grid border-1 background-2" href="icons-2020.html"></tr-template>
+			<div class="player-name border-1 border-bottom background-2">
+				<tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-text property="player-pronoun" class="player-pronoun border-1 border-bottom background-2"></tr-text>
+			<tr-text property="player-final" class="player-final border-1 background-2"></tr-text>
+        </tr-player>
+    </div>
+    <tr-template href="../shared/one-menus-contain.html"></tr-template>
+
+    <script src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="../components/components.js"></script>
+    <script src="../components/tracker.js"></script>
+    <script src="../shared/script/one_game.js"></script>
+</body>
+</html>
