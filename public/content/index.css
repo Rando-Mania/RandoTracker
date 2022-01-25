@@ -119,15 +119,12 @@ article{
 
 @supports (background: image-set(url("") type("")) ){
   article{
-    background-image: 
-    url('../ff6wc/images/snow.png'), /* snow */
+    background-image:
     image-set(
       url('../shared/images/rm-generic-half.avif') type("image/avif"),
       url('../shared/images/rm-generic-half.png') type("image/png")
     ), var(--calendar-fallback);
     background-blend-mode: normal, screen;
-    background-blend-mode: normal, normal, screen; /* snow */
-    background-size: auto, 640px 360px, 100% 100%; /* snow */
   }
 }
 

@@ -103,17 +103,16 @@
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
     .notwebp .layout{
-        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
     .webp.notavif .layout{
-        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
     .avif .layout{
-        background-image: url(images/snow.png), var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
     .layout{
-        background-image: 
-            url('images/snow.png'), 
+        background-image:
             var(--background-overlay),
             image-set(
                 "images/justbackground.avif" type("image/avif"),
