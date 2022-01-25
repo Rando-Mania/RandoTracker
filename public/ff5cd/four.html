@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>FFR 4-Player Basic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/production.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="preload" href="images/border.png" as="image" type="image/png">
+    <link rel="preload" href="images/retro_tracker/ctr-items-sprite-2020.webp" as="image" type="image/webp">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+    
+        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
+        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
+        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
+
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+        [player="3"] .player-grid {left: var(--gridX); bottom: var(--gridY);}
+        [player="4"] .player-grid {right: var(--gridX); bottom: var(--gridY);}
+
+        [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
+        [player="2"] .player-pronoun {right: var(--pronounX); top: var(--pronounY);}
+        [player="3"] .player-pronoun {left: var(--pronounX); bottom: var(--pronounY);}
+        [player="4"] .player-pronoun {right: var(--pronounX); bottom: var(--pronounY);}
+
+        [player="1"] .record-contain {left: var(--rankX); top: var(--rankY);}
+        [player="2"] .record-contain {right: var(--rankX); top: var(--rankY);}
+        [player="3"] .record-contain {left: var(--rankX); bottom: var(--rankY);}
+        [player="4"] .record-contain {right: var(--rankX); bottom: var(--rankY);}
+        
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
+        [player="4"] .player-final {right: var(--finalX); bottom: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
+        [player="4"] .player-speaker {right: var(--speakerX); bottom: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
+        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
+    </style>
+</head>
+<body>
+	<div class="layout">
+        <template id="player_info_template">
+            <div class="player-name abs border-1 background-1">
+                <tr-text scale-to-fit property="player-name"></tr-text>
+            </div>
+            <tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
+            <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
+			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
+            <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
+            <tr-toggle property="toggle-speaker" class="abs player-speaker">
+                <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
+                    <path fill="currentColor" d="M5 7h-4v6h4l5 5v-16l-5 5zM16.36 16.36l-1.41-1.41c1.272-1.265 2.059-3.015 2.059-4.95s-0.787-3.685-2.059-4.95l-0-0 1.41-1.41c1.634 1.625 2.645 3.874 2.645 6.36s-1.011 4.735-2.644 6.36l-0 0zM13.54 13.54l-1.42-1.42c0.542-0.543 0.877-1.292 0.877-2.12s-0.335-1.577-0.877-2.12l0 0 1.42-1.42c0.912 0.903 1.477 2.156 1.477 3.54s-0.565 2.637-1.477 3.54l-0 0z"></path>
+                </svg>
+            </tr-toggle>
+            <tr-toggle property="toggle-winner" class="abs player-winner border-1 background-2">
+                <div>Winner</div>
+            </tr-toggle>
+        </template>
+        <template id="background_layer_template">
+            <div class="border-1 player-video abs"></div>
+        </template>
+        <div class="background-layer">
+            <tr-player player="1">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="3">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="4">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+        </div>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+<!-- vs -->
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
+        <tr-toggle property="toggle-vs" class="abs vs" id="vs_2" style="transform: translateX(-50%); left: 50%; bottom: var(--vsY);">VS</tr-toggle>
+
+<!-- timer/staff -->
+
+        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 175px; left: 508px;"></tr-timer>
+        <tr-hide-if-empty class="staff abs border-1 background-2" style="top: 175px; left: 500px;" toggle-class="wtf">
+            <tr-template href="../shared/production-team.html"></tr-template>
+        </tr-hide-if-empty>
+        <!-- <tr-template class="abs horizontal" 
+        style="z-index: 10; width: 435px; top: 50%; right: 11px; transform: translateY(-50%);" id="donation-template" href="../rm/templates/cards/donation-tracker.html"></tr-template> -->
+
+    </div>
+
+<!-- loadscreen -->
+<div class="loadscreen-contain abs" style="top:0; left: 0;">
+    <tr-template href="four-loading-template.html"></tr-template>
+</div>
+
+<!-- RM calendar -->
+<div class="calendar-contain abs" style="top: 0; left: 0;">
+    <tr-template href="../shared/calendar-template.html"></tr-template>
+</div>
+
+<tr-template href="../shared/four-menus-contain.html"></tr-template>
+
+    <script src="../shared/script/imgsupport.js"></script>
+	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="../components/components.js"></script>
+	<script src="../components/tracker.js"></script>
+    <script src="../shared/script/four_game.js"></script>
+    <!-- <script src="../rm/scripts/donation.js"></script> -->
+</body>
+</html>
