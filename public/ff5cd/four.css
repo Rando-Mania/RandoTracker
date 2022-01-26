@@ -69,8 +69,7 @@
 .background-layer{
     width: 1280px;
     height: 720px;
-    background-color: #202028;
-    background-image: var(--bgFallback);
+    background-color: #001880;
 }
 .layout.transparent-background .background-layer{
     -webkit-mask:
@@ -85,8 +84,8 @@
     -webkit-mask-repeat: no-repeat;
 }
 
-.notwebp .cd-default .background-layer{background-image: url('images/4p/base-background.png'),  var(--bgFallback);}
-.webp .cd-default .background-layer{background-image: url('images/4p/base-background.webp'),  var(--bgFallback);}
+.notwebp .cd-default .background-layer{background-image: url('images/4p/base-background.png');}
+.webp .cd-default .background-layer{background-image: url('images/4p/base-background.webp');}
 
 .player-video{
     width: var(--vidWidth);

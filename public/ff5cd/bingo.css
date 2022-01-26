@@ -24,8 +24,6 @@
     --backgroundColor1: #000;
     --backgroundColor2: #005;
     --backgroundImg: url('images/bingo/base-background.png');
-    --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
-
 
     --border: 4px;
 
@@ -70,24 +68,24 @@
 .background-layer{
     width: 1280px;
     height: 720px;
-    background-color: #202028;
-    background-image: var(--bgFallback);
+    background-color: #001880;
 }
 .layout.transparent-background .background-layer{
+    --solid: linear-gradient(#000, #000);
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
     -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
+        var(--solid) 0 0 / 100% 100%,
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) var(--clipX1) calc(720px - var(--clipY1) - var(--vidHeight-contentBox)) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) 704px 7px / 562px 562px;
     -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
-.notwebp .cd-default .background-layer{background-image: url('images/bingo/base-background.png'),  var(--bgFallback);}
-.webp .cd-default .background-layer{background-image: url('images/bingo/base-background.webp'),  var(--bgFallback);}
+.notwebp .cd-default .background-layer{background-image: url('images/bingo/base-background.png');}
+.webp .cd-default .background-layer{background-image: url('images/bingo/base-background.webp');}
 
 .player-video{
     width: var(--vidWidth);

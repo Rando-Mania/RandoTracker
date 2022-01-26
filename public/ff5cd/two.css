@@ -93,11 +93,11 @@
     transition: background-color .5s;
 }
 
-.ffr-default{
+.cd-default{
     background-color: #001880;
 }
-.notwebp .ffr-default{background-image: url(images/2p/base-background.png);}
-.webp .ffr-default{background-image: url(images/2p/base-background.webp);}
+.notwebp .cd-default{background-image: url(images/2p/base-background.png);}
+.webp .cd-default{background-image: url(images/2p/base-background.webp);}
 
 .player-name{
     font-size: 26px;

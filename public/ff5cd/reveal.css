@@ -16,7 +16,6 @@
 
     --backgroundColor1: #000;
     --backgroundColor2: #000a62;
-    --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
     --border: 6px;
 
@@ -55,8 +54,7 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #202028;
-    background-image: var(--bgFallback);
+    background-color: #001880;
 }
 
 .layout.transparent-background{
@@ -71,8 +69,8 @@
     mask-composite: exclude;
 }
 
-.notwebp .cd-default{background-image: url('images/1p/base-background.png'),  var(--bgFallback);}
-.webp .cd-default{background-image: url('images/1p/base-background.webp'),  var(--bgFallback);}
+.notwebp .cd-default{background-image: url('images/1p/base-background.png');}
+.webp .cd-default{background-image: url('images/1p/base-background.webp');}
 
 .player-video{
     width: var(--vidWidth);
