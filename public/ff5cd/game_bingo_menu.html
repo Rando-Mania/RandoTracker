@@ -1,4 +1,48 @@
 <div class="menu-game-specific">
+ 	<div id="menu_track_options" class="fieldset">
+		<h4 class="legend">Players</h4>
+		<div id="menu_player_labels">
+			<table>
+				<tr>
+					<th>#</th>
+					<th>Pianos</th>
+					<th>Jobs</th>
+					<th>Hints</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><tr-input-number oninput player="1" min="0" max="8" value="0" property="pianos-count"></tr-input-number></td>
+					<td><tr-input-number oninput player="1" min="1" max="22" value="1" property="jobs-count"></tr-input-number></td>
+					<td><tr-input-number oninput player="1" min="0" max="15" value="0" property="hints-count"></tr-input-number></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><tr-input-number oninput player="2" min="0" max="8" value="1" property="pianos-count"></tr-input-number></td>
+					<td><tr-input-number oninput player="2" min="1" max="22" value="0" property="jobs-count"></tr-input-number></td>
+					<td><tr-input-number oninput player="2" min="0" max="15" value="0" property="hints-count"></tr-input-number></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="menu_goals" class="fieldset">
+		<h4 class="legend">Goals</h4>
+		<div id="goal_labels">
+			<table>
+				<tr>
+					<th></th>
+					<th>Pianos</th>
+					<th>Jobs</th>
+					<th>Hints</th>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><tr-input-number oninput min="0" max="8" value="0" property="pianos-goal"></tr-input-number></td>
+					<td><tr-input-number oninput min="1" max="22" value="1" property="jobs-goal"></tr-input-number></td>
+					<td><tr-input-number oninput min="0" max="15" value="0" property="hints-goal"></tr-input-number></td>
+				</tr>
+			</table>
+		</div>
+	</div>
     <div id="menu_backgrounds" class="fieldset backgrounds-menu">
         <h4 class="legend">Backgrounds</h4>
         <div>
@@ -8,7 +52,7 @@
             </tr-select-toggle>
         </div>
     </div>
-    <div id="menu_credits" class="fieldset">
+   <div id="menu_credits" class="fieldset">
         <h4 class="legend">Credits</h4>
         <div id="menu_layout_credits">
             <table>
