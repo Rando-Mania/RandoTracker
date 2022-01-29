@@ -41,6 +41,9 @@
 
         [player="1"] .bingo-option {left: var(--bingoX); top: var(--bingoY);}
         [player="2"] .bingo-option {left: var(--bingoX); bottom: var(--bingoY);}
+
+        [player="1"] .player-grid-counters {left: var(--countersX); top: var(--countersY);}
+        [player="2"] .player-grid-counters {left: var(--countersX); bottom: var(--countersY);}
     </style>
 </head>
 <body>
@@ -62,10 +65,39 @@
                 <div>Winner</div>
             </tr-toggle>
 			<tr-template class="bingo-option abs border-1 background-1" href="icons-bingo.html"></tr-template>
-        </template>
+			<div class="tracker-grids">
+				<div class="player-grid-counters abs border-1 background-1">
+					<div class="icon-slot pianos">
+						<div class="counter">
+							<tr-text oninput property="pianos-count">?</tr-text>
+						</div>
+						<div class="out-of">
+							<tr-text oninput property="pianos-goal">?</tr-text>
+						</div>
+					</div>
+					<div class="icon-slot jobs">
+						<div class="counter">
+							<tr-text oninput property="jobs-count">?</tr-text>
+						</div>
+						<div class="out-of">
+							<tr-text oninput property="jobs-goal">?</tr-text>
+						</div>
+					</div>
+					<div class="icon-slot hints">
+						<div class="counter">
+							<tr-text oninput property="hints-count">?</tr-text>
+						</div>
+						<div class="out-of">
+							<tr-text oninput property="hints-goal">?</tr-text>
+						</div>
+					</div> 
+				</div>
+			</div>       
+		</template>
         <template id="background_layer_template">
             <div class="border-1 player-video abs"></div>
         </template>
+
         <div class="background-layer">
             <tr-player player="1">
                 <tr-template source="#background_layer_template"></tr-template>
@@ -77,11 +109,72 @@
         </div>
         <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
-        </tr-player>
+        </tr-player>		
+<!--		<div class="tracker-grids">
+            <div class="player-grid-counters abs border-1 background-1">
+                <div class="icon-slot pianos">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="1" oninput property="pianos-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="pianos-goal">?</tr-text>
+                    </div>
+                </div>
+                <div class="icon-slot jobs">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="1" oninput property="jobs-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="jobs-goal">?</tr-text>
+                    </div>
+                </div>
+                <div class="icon-slot hints">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="1" oninput property="hints-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="hints-goal">?</tr-text>
+                    </div>
+                </div> 
+            </div>
+		</div> -->
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
-        </tr-player>
-
+        </tr-player>		
+<!--		<div class="tracker-grids">
+            <div class="player-grid-counters abs border-1 background-1">
+                <div class="icon-slot pianos">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="2" oninput property="pianos-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="pianos-goal">?</tr-text>
+                    </div>
+                </div>
+                <div class="icon-slot jobs">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="2" oninput property="jobs-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="jobs-goal">?</tr-text>
+                    </div>
+                </div>
+                <div class="icon-slot hints">
+                    <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                    <div class="counter">
+                        <tr-text player="2" oninput property="hints-count">?</tr-text>
+                    </div>
+                    <div class="out-of">
+                        <tr-text oninput property="hints-goal">?</tr-text>
+                    </div>
+                </div> 
+            </div>
+		</div> -->
 <!-- vs -->
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
 

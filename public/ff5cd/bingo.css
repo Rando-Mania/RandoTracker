@@ -19,7 +19,8 @@
     --winX: 400px; --winY: 120px;
     --finalX: 400px; --finalY: 80px;
     --vsX: 50%; --vsY: 140px;
-	--bingoX: 449px; --bingoY: 222px;
+	--bingoX: 449px; --bingoY: 224px;
+	--countersX: 489px; --countersY: 224px;
 
     --backgroundColor1: #000;
     --backgroundColor2: #005;
@@ -165,6 +166,30 @@
 .bingo-option img, .dialog[id$="bingo-color"] img{
     background-image: url('images/bingo/bingo-icons.png');
     background-size: 100% 1200%;
+}
+
+.player-grid-counters{
+height: 48px;
+padding: 4px;
+}
+
+.icon-slot{
+float: left; 
+padding-left: 36px;	
+padding-right: 10px;
+height: 32px;
+}
+
+.icon-slot.pianos{
+background: url(images/retro_tracker/counters-sprites.png) no-repeat left top;
+}
+
+.icon-slot.jobs{
+background: url(images/retro_tracker/counters-sprites.png) no-repeat left center;
+}
+
+.icon-slot.hints{
+background: url(images/retro_tracker/counters-sprites.png) no-repeat left bottom;
 }
 
 .tablet-1{background-position: 0 0;}
