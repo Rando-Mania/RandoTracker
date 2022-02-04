@@ -142,7 +142,7 @@
 }
 
 .player-grid img, .dialog img{
-    background-image: url('images/retro_tracker/items-sprite-2020.png');
+    background-image: url('images/retro_tracker/items-sprite-2020.webp');
     background-size: 600% 400%;
 }
 
@@ -196,7 +196,7 @@
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/retro_tracker/items-sprite-2020.png');
+    background-image: url('images/retro_tracker/items-sprite-2020.webp');
     background-size: 600% 400%;
     background-position: 100% 100%;
 }
