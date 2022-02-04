@@ -15,11 +15,11 @@
     --gridX: 449px; --gridY: 64px;
     --pronounX: 500px; --pronounY: 222px;
     --rankX: 589px; --rankY: 222px;
-    --speakerX: 449px; --speakerY: 260px;
+    --speakerX: 490px; --speakerY: 280px;
     --winX: 400px; --winY: 120px;
     --finalX: 400px; --finalY: 80px;
     --vsX: 50%; --vsY: 140px;
-	--bingoX: 449px; --bingoY: 224px;
+	--bingoX: 449px; --bingoY: 283px;
 	--countersX: 489px; --countersY: 224px;
 
     --backgroundColor1: #000;
@@ -168,9 +168,19 @@
     background-size: 100% 1200%;
 }
 
+
 .player-grid-counters{
-height: 48px;
+height: 58px;
 padding: 4px;
+left: 449px;
+}
+
+.one-play{
+top: 224px;	
+}
+
+.two-play{
+bottom: 224px;	
 }
 
 .icon-slot{
@@ -178,6 +188,10 @@ float: left;
 padding-left: 36px;	
 padding-right: 10px;
 height: 32px;
+}
+
+.out-of{
+color: #aaaaee;
 }
 
 .icon-slot.pianos{
