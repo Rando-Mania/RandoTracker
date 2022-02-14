@@ -1025,7 +1025,10 @@ tr-timer span {
         transform: translate(-50%, 50%);
         z-index: -1; /* To show below stats/spells */
     }
-    
+    .league.z-show{
+        z-index: 2;
+    }
+
     .layout [property="week-6"], .layout [property="week-7"]{
         filter: hue-rotate(180deg);
     }

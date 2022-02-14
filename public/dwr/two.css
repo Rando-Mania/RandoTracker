@@ -745,6 +745,7 @@ figcaption{
     left: 50%;
     max-width: 250px;
     max-height: 187px;
+    min-height: auto;
     transform: translateX(-50%);
 }
 
