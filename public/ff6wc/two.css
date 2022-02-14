@@ -96,12 +96,10 @@
 }
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
-    .default.notwebp .layout{
-        background-image: var(--background-overlay), url('images/justbackground.jpg'), var(--background-fallback);}
-    .default.webp.notavif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.webp'), var(--background-fallback);}
+    .default.notavif .layout{
+        background-image: var(--background-overlay), url('images/ff6wcrestreambg2.jpg'), var(--background-fallback);}
     .default.avif .layout{
-        background-image: var(--background-overlay), url('images/justbackground.avif'), var(--background-fallback);}
+        background-image: var(--background-overlay), url('images/ff6wcrestreambg2.avif'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
@@ -109,9 +107,8 @@
         background-image:
             var(--background-overlay),
             image-set(
-                "images/justbackground.avif" type("image/avif"),
-                "images/justbackground.webp" type("image/webp"),
-                "images/justbackground.jpg" type("image/jpg")), 
+                "images/ff6wcrestreambg2.avif" type("image/avif"),
+                "images/ff6wcrestreambg2.jpg" type("image/jpg")), 
             var(--background-fallback);
     }
 }

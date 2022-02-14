@@ -65,7 +65,7 @@
   position: relative;
 }
 .loadscreen header:after{
-  content: '!dwr !bb';
+  content: '!dwr';
   position: absolute;
   bottom: 0.15em;
   left: 2.75em;
