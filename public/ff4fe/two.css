@@ -16,12 +16,12 @@
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
     --gridX: 12px; --gridY: 529px;
-    --grid2X: 169px; --grid2Y: 530px;
+    --grid2X: 169px; --grid2Y: 586px;
     --speakerX: 386px; --speakerY: 473px;
     --winX: 169px; --winY: 530px;
-    --finalX: 169px; --finalY: 591px;
+    --finalX: 169px; --finalY: 529px;
     --bestX: 390px; --bestY: 554px;
-    --timerX: 169px; --timerY: 591px;
+    --timerX: 169px; --timerY: 529px;
     
     --border: 2px;
     --borderImage: url(images/ff4-border.png) 3 / 3px / 1px;
@@ -119,7 +119,7 @@
 
 .layout.ccs-pink-puff{background-image: linear-gradient(#627079,#425059);}
 .notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
-.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.webp), linear-gradient(#627079,#425059);}
+.webp .layout.ccs-pink-puff{background-image: url(images/unknown.png), linear-gradient(#627079,#425059);}
 
 .layout.ccs-baron-hero{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/Hero-BG.png), linear-gradient(#73d417,#122c04);}
@@ -162,7 +162,7 @@
 .player-info{
     font-size: 18px;
     height: 55px;
-    width: 366px;
+    width: 373px;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -223,7 +223,7 @@
     display: flex;
     justify-content: space-around;
     padding: 7px 8px;
-    width: 209px;
+    width: 216px;
     height: 50px;
 }
 
@@ -294,8 +294,8 @@ tr-toggle-class, .in-active {
 [property="objective-seven"] img{background-position: 100% 100%;}
 
 .objectives-contain{
-    left: 451px;
-    top: 529px;
+    left: 458px;
+    top: 554px;
     display: flex;
     flex-direction: column;
 }
@@ -409,13 +409,13 @@ tr-toggle-class, .in-active {
 }
 
 tr-timer, .player-final{
-	width: 209px;
+	width: 216px;
     height: 50px;
     z-index: 1;
     font-size: 27px;
     justify-content: flex-end;
     align-items: center;
-    padding: 3px;
+    padding: 10px;
     display: flex;
     letter-spacing: 1px;
 }
@@ -441,6 +441,8 @@ tr-timer span {
 .staff{
     width: 366px;
     height: 55px;
+    top: 464px;
+    left: 457px;
 }
 
 .staff-panel-1{line-height: 1.5;}
