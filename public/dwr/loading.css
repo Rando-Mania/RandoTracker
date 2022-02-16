@@ -63,12 +63,14 @@
 
 .loadscreen header{
   position: relative;
+  width: fit-content;
+  margin: 0 auto;
 }
 .loadscreen header:after{
   content: '!dwr';
   position: absolute;
   bottom: 0.15em;
-  left: 2.75em;
+  left: 8px;
   font-family: 'Lobster';
   font-size: 1.5em;
   /* color: #adadad; */
@@ -85,8 +87,19 @@
     --border-color: #00a800;
 }
 
-.loadscreen.league-background main{
+/* .loadscreen.league-background main{
   background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
+  grid-template-columns: minmax(52%, max-content);
+  justify-content: start;
+} */
+
+.loadscreen.league-background main{
+  background:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url(images/true-dragonlord-th.png) no-repeat right -384px top / auto 200%,
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url(images/Alefgard_in_Winter.png) repeat 0 0
+   #0d3d87;
   grid-template-columns: minmax(52%, max-content);
   justify-content: start;
 }
