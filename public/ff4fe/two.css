@@ -290,6 +290,8 @@ tr-toggle-class, .in-active {
 [property="objective-three"] img{background-position: 100% 50%;}
 [property="objective-four"] img{background-position: 100% 75%;}
 [property="objective-five"] img{background-position: 100% 100%;}
+[property="objective-six"] img{background-position: 100% 100%;}
+[property="objective-seven"] img{background-position: 100% 100%;}
 
 .objectives-contain{
     left: 451px;
