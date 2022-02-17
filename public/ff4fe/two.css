@@ -16,11 +16,11 @@
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
     --gridX: 12px; --gridY: 529px;
-    --grid2X: 169px; --grid2Y: 586px;
+    /* --grid2X: 169px; --grid2Y: 586px; */
     --speakerX: 386px; --speakerY: 473px;
-    --winX: 169px; --winY: 530px;
+    --winX: 169px; --winY: 586px;
     --finalX: 169px; --finalY: 529px;
-    --bestX: 390px; --bestY: 554px;
+    --bestX: 169px; --bestY: 586px;
     --timerX: 169px; --timerY: 529px;
     
     --border: 2px;
@@ -164,6 +164,7 @@
     height: 55px;
     width: 373px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     z-index: 2;
 }
@@ -285,14 +286,6 @@ tr-toggle-class, .in-active {
 [property="rat-tail"]{grid-column: 2;}
 [property="pink-tail"] img{background-position: 50% 100%;}
 
-[property="objective-one"] img{background-position: 100% 0;}
-[property="objective-two"] img{background-position: 100% 25%;}
-[property="objective-three"] img{background-position: 100% 50%;}
-[property="objective-four"] img{background-position: 100% 75%;}
-[property="objective-five"] img{background-position: 100% 100%;}
-[property="objective-six"] img{background-position: 100% 100%;}
-[property="objective-seven"] img{background-position: 100% 100%;}
-
 .objectives-contain{
     left: 458px;
     top: 554px;
@@ -313,7 +306,7 @@ tr-toggle-class, .in-active {
 }
 
 .objective-label{
-    font-size: 19px;
+    font-size: 18px;
     width: 22px;
     height: 24px;
     display: flex;
@@ -324,19 +317,37 @@ tr-toggle-class, .in-active {
     z-index: 1;
     padding-left: 3px;
     padding-top: 2.5px;
+    background-color: #252525;
+    color: #a7a7a7;
 }
+
+.active .objective-label{color: #fff;}
+
+.objective-contain tr-toggle-class, .objective-contain .in-active {
+    opacity: 1;
+    filter: none;
+}
+
+.objective-1.active .objective-label{background-color: #470909;}
+.objective-2.active .objective-label{background-color: #472a09;}
+.objective-3.active .objective-label{background-color: #474509;}
+.objective-4.active .objective-label{background-color: #09470f;}
+.objective-5.active .objective-label{background-color: #003789;}
+.objective-6.active .objective-label{background-color: #440557;}
+.objective-7.active .objective-label{background-color: #70014c;}
 
 .objective-text-contain{
     height: 24px;
-    width: 345px;
+    width: 322px;
     margin-left: -1px;
+    text-align: center;
 }
 
 .objectives-contain tr-text{
     font-size: 14px;
     padding: 6px 6px 4px;
     z-index: 2;
-    width: 345px;
+    width: 322px;
     height: 24px;
 }
 
@@ -361,7 +372,7 @@ tr-toggle-class, .in-active {
 }
 
 .player-winner{
-    width: 209px;
+    width: 216px;
     height: 50px;
     font-weight: bold;
     font-size: 27px;
@@ -378,8 +389,11 @@ tr-toggle-class, .in-active {
 [class*="zz4-"] .winner-text{ display:none;}*/
 
 .player-best-of{
-    display: grid;
-    grid-template-columns: 32px;
+    width: 216px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     display: none;
 }
 .player-best-of img{
@@ -398,7 +412,7 @@ tr-toggle-class, .in-active {
 }
 
 .best-of-3, .best-of-5, .best-of-7{
-    display: grid;
+    display: flex;
 }
 .best-of-3 tr-toggle-class:nth-child(n+3){display: none;}
 .best-of-5 tr-toggle-class:nth-child(n+4){display: none;}
