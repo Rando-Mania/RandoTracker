@@ -193,11 +193,10 @@ html{
     background-position: center -30px;
 }
 
-.player-video.league-background{background-image: url('images/video-background/DWR2021.png');}
-[player="2"] .player-video.league-background,
-[player="3"] .player-video.league-background{
-    background-image: url('images/video-background/winter_league.png');
+.player-video.league-background{
+    background-image: url(images/video-background/winter_league.png), radial-gradient(#0000, #000), url(images/Alefgard_in_Winter.png);
     background-size: contain;
+    background-position: center top -16px, center, center;
 }
 
 .player-info{
