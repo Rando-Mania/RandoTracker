@@ -20,12 +20,21 @@
             width: max-content;
         }
         .tracker-layout{
+            font-family: "FF4", sans-serif;
             background-color: #000;
             color: #fff;
             display: grid;
             grid-template-columns: repeat(2, auto);
             grid-gap: 24px;
             padding: 24px;
+        }
+
+        @font-face {
+            font-family: "FF4";
+            src:
+                url("fonts/final_fantasy_iv-webfont.woff2") format("woff2"),
+                url("fonts/final_fantasy_iv-webfont.woff") format("woff"),
+                url("fonts/Final Fantasy IV.ttf") format("truetype");
         }
 
         .player-info-row{
@@ -90,7 +99,6 @@
         </div>
         <div class="grid-contain">
             <tr-template class="player-grid border-background-1" href="icons.html"></tr-template>
-            <tr-template class="player-grid-2 border-background-1" href="icons-two.html"></tr-template>
         </div>
         <tr-text property="player-final" class="player-final border-background-1"></tr-text>
         <tr-toggle property="toggle-winner" class="player-winner border-background-1">
@@ -105,43 +113,7 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <div class="objectives-contain">
-            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-one-text']" toggle-class="show-objective">
-                <div class="objective-label border-background-1">1</div>
-                <div class="objective-text-contain border-background-1">
-                    <tr-text scale-to-fit-x property="objective-one-text" class="objective-text"></tr-text>
-                </div>
-            </tr-class-if-full>
-
-            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-two-text']" toggle-class="show-objective">
-                <div class="objective-label border-background-1">2</div>
-                <div class="objective-text-contain border-background-1">
-                  <tr-text scale-to-fit-x property="objective-two-text" class="objective-text"></tr-text>
-                </div>
-            </tr-class-if-full>
-
-            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-three-text']" toggle-class="show-objective">
-                <div class="objective-label border-background-1">3</div>
-                <div class="objective-text-contain border-background-1">
-                    <tr-text scale-to-fit-x property="objective-three-text" class="objective-text"></tr-text>
-                </div>
-            </tr-class-if-full>
-
-            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-four-text']" toggle-class="show-objective">
-                <div class="objective-label border-background-1">4</div>
-                <div class="objective-text-contain border-background-1">
-                    <tr-text scale-to-fit-x property="objective-four-text" class="objective-text"></tr-text>
-                </div>
-            </tr-class-if-full>
-
-            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-five-text']" toggle-class="show-objective">
-                <div class="objective-label border-background-1">5</div>
-                <div class="objective-text-contain border-background-1">
-                    <tr-text scale-to-fit-x property="objective-five-text" class="objective-text"></tr-text>
-                </div>
-            </tr-class-if-full>    
-        </div>
-
+        <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
     </div>
     
     <tr-template href="../shared/two-menus-contain.html"></tr-template>

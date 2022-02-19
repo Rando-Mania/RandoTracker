@@ -119,7 +119,7 @@
 
 .layout.ccs-pink-puff{background-image: linear-gradient(#627079,#425059);}
 .notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
-.webp .layout.ccs-pink-puff{background-image: url(images/unknown.png), linear-gradient(#627079,#425059);}
+.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
 
 .layout.ccs-baron-hero{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/Hero-BG.png), linear-gradient(#73d417,#122c04);}
@@ -220,33 +220,9 @@
     height: 181px;
 }
 
-.player-grid-2{
-    display: flex;
-    justify-content: space-around;
-    padding: 7px 8px;
-    width: 216px;
-    height: 50px;
-}
-
-.player-grid-2 tr-class-if-full{
-    display: none;
-}
-.player-grid-2 tr-class-if-full.show-objective{
-    display: block;
-}
-
 tr-image-toggle img.active, tr-toggle-class.active {
     opacity: 1;
     filter: grayscale(0) brightness(1);
-}
-
-.player-grid-2 tr-toggle-class.active{
-    animation: objective-blink .5s steps(1) 3;
-}
-
-@keyframes objective-blink{
-    from{filter: grayscale(0) brightness(1);}
-    50%{filter: grayscale(0) brightness(.5);}
 }
 
 tr-toggle-class, .in-active {
@@ -254,14 +230,14 @@ tr-toggle-class, .in-active {
     filter: grayscale(1) brightness(.5);
 }
 
-.player-grid img, .player-grid-2 img{
+.player-grid img{
     width: 32px;
     height: 32px;
     display: block;
 }
 
-.notwebp .player-grid img, .notwebp .player-grid-2 img{background-image: url(images/2p/ff4fe-spritesheet.png);}
-.webp .player-grid img, .webp .player-grid-2 img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
+.notwebp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.png);}
+.webp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
 
 [property="pass"] img{background-position: 25% 0;}
 [property="hook"] img{background-position: 50% 0;}
@@ -319,6 +295,7 @@ tr-toggle-class, .in-active {
     padding-top: 2.5px;
     background-color: #252525;
     color: #a7a7a7;
+    position: relative;
 }
 
 .active .objective-label{color: #fff;}
@@ -328,13 +305,29 @@ tr-toggle-class, .in-active {
     filter: none;
 }
 
-.objective-1.active .objective-label{background-color: #470909;}
-.objective-2.active .objective-label{background-color: #472a09;}
-.objective-3.active .objective-label{background-color: #474509;}
-.objective-4.active .objective-label{background-color: #09470f;}
-.objective-5.active .objective-label{background-color: #003789;}
-.objective-6.active .objective-label{background-color: #440557;}
-.objective-7.active .objective-label{background-color: #70014c;}
+.active .objective-label:after{
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    z-index: -1;
+    animation: objective-blink .5s steps(1) 3;
+}
+
+@keyframes objective-blink{
+    from{opacity: 1;}
+    50%{opacity: 0;}
+}
+
+.objective-1.active .objective-label:after{background-color: #470909;}
+.objective-2.active .objective-label:after{background-color: #472a09;}
+.objective-3.active .objective-label:after{background-color: #474509;}
+.objective-4.active .objective-label:after{background-color: #09470f;}
+.objective-5.active .objective-label:after{background-color: #003789;}
+.objective-6.active .objective-label:after{background-color: #440557;}
+.objective-7.active .objective-label:after{background-color: #70014c;}
 
 .objective-text-contain{
     height: 24px;
