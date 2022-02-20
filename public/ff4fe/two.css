@@ -273,12 +273,11 @@ tr-toggle-class, .in-active {
     z-index: 1;
     padding-left: 3px;
     padding-top: 2.5px;
-    background-color: #252525;
+    background-color: currentColor;
     color: #252525;
     position: relative;
+    -webkit-text-stroke: 1px currentColor;
 }
-
-.active .objective-label{color: #fff;}
 
 .objective-contain tr-toggle-class, .objective-contain .in-active {
     opacity: 1;
@@ -286,6 +285,7 @@ tr-toggle-class, .in-active {
 }
 
 .active .objective-label{
+    color: #fff;
     animation: objective-blink .5s steps(1) 3;
 }
 
@@ -293,16 +293,17 @@ tr-toggle-class, .in-active {
     50%{
         background-color: #252525;
         color: #a7a7a7;
+        -webkit-text-stroke-color: #470909;
     }
 }
 
-.objective-1.active .objective-label{background-color: #470909;}
-.objective-2.active .objective-label{background-color: #472a09;}
-.objective-3.active .objective-label{background-color: #474509;}
-.objective-4.active .objective-label{background-color: #09470f;}
-.objective-5.active .objective-label{background-color: #003789;}
-.objective-6.active .objective-label{background-color: #440557;}
-.objective-7.active .objective-label{background-color: #70014c;}
+.objective-1.active .objective-label{background-color: #ad170c; -webkit-text-stroke-color: #470909;}
+.objective-2.active .objective-label{background-color: #ad5601; -webkit-text-stroke-color: #472a09;}
+.objective-3.active .objective-label{background-color: #a59002; -webkit-text-stroke-color: #474509;}
+.objective-4.active .objective-label{background-color: #0c6527; -webkit-text-stroke-color: #09470f;}
+.objective-5.active .objective-label{background-color: #0050b0; -webkit-text-stroke-color: #003789;}
+.objective-6.active .objective-label{background-color: #741d87; -webkit-text-stroke-color: #440557;}
+.objective-7.active .objective-label{background-color: #dc2584; -webkit-text-stroke-color: #70014c;}
 
 .objective-text-contain{
     height: 24px;
