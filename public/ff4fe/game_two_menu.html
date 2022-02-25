@@ -120,5 +120,43 @@
                 <!-- <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="hero-fusoya" value="13">FuSoYa</tr-option> -->
             </tr-select-toggle>
         </div>
-    </div>    
+    </div>
+    <div id="menu_production_two" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div class="menu-toggle-legend">
+            <tr-input-toggle-class id="toggle-mic" property="toggle-mic" target=".commentators-img path" toggle-class="fill-none"></tr-input-toggle-class>
+            <label for="toggle-mic"> Hide Mics</label>
+        </div>
+        <div>
+            <h4>Commentator 1:</h4>
+            <div>
+                <label for="commentator-name-1">Name:</label>
+                <tr-input-text class="comm-input" id="commentator-name-1" property="commentator-name-1"></tr-input-text>
+            </div>
+            <div>
+                <label for="commentator-pronoun-1">Pronoun:</label>
+                <tr-input-text class="comm-input" property="commentator-pronoun-1"></tr-input-text>
+            </div>
+        </div>
+        <div>
+            <h4>Commentator 2:</h4>
+            <div>
+                <label for="commentator-name-2">Name:</label>
+                <tr-input-text class="comm-input" id="commentator-name-2" property="commentator-name-2"></tr-input-text>
+            </div>
+            <div>
+                <label for="commentator-pronoun-2">Pronoun:</label>
+                <tr-input-text class="comm-input" property="commentator-pronoun-2"></tr-input-text>
+            </div>
+        </div>
+        <div>
+            <h4>Restreamer:</h4>
+            <tr-input-text class="restreamer-input" property="restreamers"></tr-input-text>
+        </div>
+        <div>
+            <h4>Tracker:</h4>
+            <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
+        </div>
+        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
+    </div>
 </div>

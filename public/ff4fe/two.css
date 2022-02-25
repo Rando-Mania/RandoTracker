@@ -99,7 +99,7 @@
 
 .layout.ccs-pink-puff{background-image: linear-gradient(#627079,#425059);}
 .notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
-.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.png), linear-gradient(#627079,#425059);}
+.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/CCS-BG-PinkPuff.webp), linear-gradient(#627079,#425059);}
 
 .layout.ccs-baron-hero{background-image: linear-gradient(#73d417,#122c04);}
 .notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/Hero-BG.png), linear-gradient(#73d417,#122c04);}
@@ -243,7 +243,7 @@ tr-toggle-class, .in-active {
 [property="pink-tail"] img{background-position: 50% 100%;}
 
 .objectives-contain{
-    left: 458px;
+    left: 457px;
     top: 554px;
     display: flex;
     flex-direction: column;
@@ -271,12 +271,13 @@ tr-toggle-class, .in-active {
     text-align: center;
     position: relative;
     z-index: 1;
-    padding-left: 3px;
-    padding-top: 2.5px;
-    background-color: currentColor;
-    color: #252525;
+    padding-left: 2px;
+    padding-top: 2px;
+    --stroke-color: #252525;
+    background-color: var(--stroke-color);
+    color: var(--stroke-color);
     position: relative;
-    -webkit-text-stroke: 1px currentColor;
+    text-shadow: 1px 1px var(--stroke-color), -1px -1px var(--stroke-color), -1px 1px var(--stroke-color), 1px -1px var(--stroke-color);
 }
 
 .objective-contain tr-toggle-class, .objective-contain .in-active {
@@ -293,23 +294,24 @@ tr-toggle-class, .in-active {
     50%{
         background-color: #252525;
         color: #a7a7a7;
-        -webkit-text-stroke-color: #470909;
+        --stroke-color: #000;
     }
 }
 
-.objective-1.active .objective-label{background-color: #ad170c; -webkit-text-stroke-color: #470909;}
-.objective-2.active .objective-label{background-color: #ad5601; -webkit-text-stroke-color: #472a09;}
-.objective-3.active .objective-label{background-color: #a59002; -webkit-text-stroke-color: #474509;}
-.objective-4.active .objective-label{background-color: #0c6527; -webkit-text-stroke-color: #09470f;}
-.objective-5.active .objective-label{background-color: #0050b0; -webkit-text-stroke-color: #003789;}
-.objective-6.active .objective-label{background-color: #741d87; -webkit-text-stroke-color: #440557;}
-.objective-7.active .objective-label{background-color: #dc2584; -webkit-text-stroke-color: #70014c;}
+.objective-1.active .objective-label{background-color: #ad170c; --stroke-color: #470909;}
+.objective-2.active .objective-label{background-color: #ad5601; --stroke-color: #472a09;}
+.objective-3.active .objective-label{background-color: #a59002; --stroke-color: #474509;}
+.objective-4.active .objective-label{background-color: #0c6527; --stroke-color: #09470f;}
+.objective-5.active .objective-label{background-color: #0050b0; --stroke-color: #003789;}
+.objective-6.active .objective-label{background-color: #741d87; --stroke-color: #440557;}
+.objective-7.active .objective-label{background-color: #dc2584; --stroke-color: #70014c;}
 
 .objective-text-contain{
     height: 24px;
-    width: 322px;
+    width: 323px;
     margin-left: -1px;
     text-align: center;
+    z-index: 2;
 }
 
 .objectives-contain tr-text{
@@ -423,9 +425,9 @@ tr-timer span {
 
 .staff{
     width: 366px;
-    height: 55px;
     top: 464px;
     left: 457px;
+    font-size: 13px;
 }
 
 .staff-panel-1{line-height: 1.5;}
@@ -434,12 +436,79 @@ tr-timer span {
     gap: 4px;
 }
 
-.commentators, .restreamers, .trackers {
-    width: 307px;
+.fill-none{
+    fill: none;
+}
+
+.commentators{
+    width: 135px;
+}
+
+.staff-panel-1{
+    display: flex;
+}
+
+.commentators-contain:nth-child(1){
+    position: relative;
+    z-index: 2;
+}
+
+.commentators-contain{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    flex: 186px;
+    height: 52px;
+    padding: 6px 0;
+    z-index: 1;
+    position: relative;
 }
 
 .commentators-img{
-    transform: scale(2.1);
+    grid-area: span 2;
+    justify-self: center;
+    align-self: center;
+    width: 42px;
+}
+
+.staff-panel-2{
+    display: grid;
+}
+
+.restreamers-contain, .trackers-contain{
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    width: 366px;
+    height: 28px;
+    padding: 4px;
+    position: relative;
+    top: -1px;
+}
+
+.restreamers-img, .trackers-img{
+    margin: 0 12px 0 7px;
+}
+
+.restreamers, .trackers{
+    width: 320px;
+}
+
+.production-swap .restreamers-contain {animation: panel-1-blinker 60s steps(1) infinite;}
+.production-swap .trackers-contain {animation: panel-2-blinker 60s steps(1) infinite;}
+
+@keyframes panel-1-blinker {
+    0%, 75% {opacity: 1;}
+    75.1%, 100% {opacity: 0;}
+    }
+    
+@keyframes panel-2-blinker {
+    0%, 75% {opacity: 0;}
+    75.1%, 100% {opacity: 1;}
+    }
+
+.display-none{
+    display: none;
 }
 
 /* dialog styles */
@@ -539,7 +608,19 @@ tr-timer span {
 .menu-general #menu_view{grid-area: view;}
 .menu-general #menu_reset{grid-area: reset;}
 
-#menu_credits{grid-area: credits; z-index: 1;}
+#menu_production_two{
+    grid-area: 1/6;
+    background-color: #000;
+    z-index: 2;
+}
+#menu_production_two h4{
+    margin-bottom: 0.3em;
+}
+#menu_production_two div div{
+    display: flex;
+    justify-content: space-between;
+}
+#menu_credits{grid-area: credits; z-index: 3;}
 #menu_players_extra{grid-area: players2;}
 #menu_round{grid-area: tourney;}
 #menu_objectives{
