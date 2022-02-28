@@ -52,9 +52,25 @@
     </style>
 </head>
 <body>
-	<div class="layout map-background">
+    <div class="abs background-layer map-background">
+        <template id="background_layer_template">
+            <div class="border-1 player-video abs"></div>
+        </template>
+        <tr-player player="1">
+            <tr-template source="#background_layer_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#background_layer_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#background_layer_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#background_layer_template"></tr-template>
+        </tr-player>
+    </div>
+	<div class="layout">
         <template id="player_info_template">
-            <div class="border-1 player-video abs"></div>                
             <div class="background-1 abs player-info">
                 <tr-text property="player-rank" class="player-rank"></tr-text>
                 <div class="player-info-right">
@@ -67,8 +83,6 @@
                 </div>
             </div>
             <tr-toggle property="toggle-speaker" class="abs player-speaker">&#9835;</tr-toggle>
-            <tr-text property="player-final" class="player-final background-2 abs"></tr-text>
-            <tr-toggle property="toggle-winner" class="player-winner background-2 abs">WIN!</tr-toggle>
         </template>
 
         <tr-player player="1">
@@ -155,6 +169,27 @@
             <tr-template source="#player_stats_template"></tr-template>
         </tr-player>
     </div>
+
+    <div class="player-winner-final-contain abs">
+        <template id="player_winner-final_template">
+            <tr-text property="player-final" class="player-final background-2 abs"></tr-text>
+            <tr-toggle property="toggle-winner" class="player-winner background-2 abs">WIN!</tr-toggle>
+        </template>
+
+        <tr-player player="1">
+            <tr-template source="#player_winner-final_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_winner-final_template"></tr-template>
+        </tr-player>
+        <tr-player player="3">
+            <tr-template source="#player_winner-final_template"></tr-template>
+        </tr-player>
+        <tr-player player="4">
+            <tr-template source="#player_winner-final_template"></tr-template>
+        </tr-player>
+    </div>
+
     <!-- loadscreen -->
 <div class="loadscreen-contain map-background abs" style="top:0; left: 0;">
     <tr-template href="four-loading-template.html"></tr-template>

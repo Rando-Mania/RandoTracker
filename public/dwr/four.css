@@ -83,6 +83,14 @@ html{
     overflow: hidden;
 }
 
+.background-layer, .player-winner-final-contain{
+    width: 1280px;
+    height: 720px;
+    left: 0;
+    top: 0;
+    font-family: "Warrior Quest I and II", "Press Start 2P";
+}
+
 .coop-background.layout{
     --backgroundColor1: #222526;
     --winX: 160px; --winY1: 338px; --winY2: 336px;
@@ -155,12 +163,11 @@ html{
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000; 
     transition: background-color .5s;
 }
 
-.layout.transparent-background{
-    --red: linear-gradient(red,red);
+.background-layer.transparent-background{
+    --red: linear-gradient(#000,#000);
     -webkit-mask:
         var(--red) left / var(--clipX1),
         var(--red) center / calc(100% - var(--clipX2) * 2),
@@ -169,14 +176,6 @@ html{
         var(--red) center / 100% calc(100% - var(--clipY2) * 2),
         var(--red) bottom / 100% var(--clipY1);
     -webkit-mask-repeat: no-repeat;
-    mask:
-        var(--red) left / var(--clipX1),
-        var(--red) center / calc(100% - var(--clipX2) * 2),
-        var(--red) right / var(--clipX1),
-        var(--red) top / 100% var(--clipY1),
-        var(--red) center / 100% calc(100% - var(--clipY2) * 2),
-        var(--red) bottom / 100% var(--clipY1);
-    mask-repeat: no-repeat;
 }
 
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
