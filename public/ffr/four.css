@@ -112,8 +112,8 @@
 }
 
 .ffr-tourney .background-layer{
-    --backgroundColor2: #050;
-    background-color: #291901;
+    --backgroundColor2: #082a53;
+    background-color: #092f32;
     background-image: url(images/4p/base-tourney.png);
     background-image: image-set(
         url("images/4p/base-tourney.avif") type("image/avif"),
