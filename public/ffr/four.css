@@ -90,9 +90,8 @@
         url("images/4p/base-background.png") type("image/png")
     );
 }
-
+.ffr-irongol{--backgroundColor2: #500;}
 .ffr-irongol .background-layer{
-    --backgroundColor2: #500;
     background-color: #000076;
     background-image: url(images/4p/base-irongol.png);
     background-image: image-set(
@@ -101,8 +100,8 @@
         url("images/4p/base-irongol.png") type("image/png"));
 }
 
+.ffr-hardcore{--backgroundColor2: #2c0055;}
 .ffr-hardcore .background-layer{
-    --backgroundColor2: #2c0055;
     background-color: #000076;
     background-image: url(images/4p/base-hardcore.png);
     background-image: image-set(
@@ -111,8 +110,8 @@
         url("images/4p/base-hardcore.png") type("image/png"));
 }
 
+.ffr-tourney{--backgroundColor2: #082a53;}
 .ffr-tourney .background-layer{
-    --backgroundColor2: #082a53;
     background-color: #092f32;
     background-image: url(images/4p/base-tourney.png);
     background-image: image-set(
@@ -121,8 +120,8 @@
         url("images/4p/base-tourney.png") type("image/png"));
 }
 
+.ffr-league{--backgroundColor2: #500;}
 .ffr-league .background-layer{
-    --backgroundColor2: #500;
     background-image: url(images/4p/base-league.png);
     background-image: image-set(
         url("images/4p/base-league.webp") type("image/webp"),

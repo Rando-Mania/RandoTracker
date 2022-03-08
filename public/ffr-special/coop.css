@@ -101,8 +101,8 @@ html{
     );
 }
 
+.ffr-irongol{--backgroundColor2: #500;}
 .ffr-irongol .background-layer{
-    --backgroundColor2: #500;
     background-color: #000076;
     background-image: url("../ffr/images/4p/base-irongol.png");
     background-image: image-set(
@@ -111,8 +111,8 @@ html{
     );
 }
 
+.ffr-tourney{--backgroundColor2: #005;}
 .ffr-tourney .background-layer{
-    --backgroundColor2: #005;
     background-color: #4ea0cf;
     background-image: url("images/coop/base-tourney.png");
     background-image: image-set(
