@@ -94,9 +94,8 @@
         url("../ffr/images/4p/base-background.png") type("image/png")
     );
 }
-
+.ffr-irongol{--backgroundColor2: #500;}
 .ffr-irongol .background-layer{
-    --backgroundColor2: #500;
     background-color: #000076;
     background-image: url("images/bingo/base-irongol.png");
     background-image: image-set(
