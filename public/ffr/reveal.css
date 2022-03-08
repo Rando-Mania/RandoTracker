@@ -94,14 +94,14 @@
 }
 
 .ffr-tourney{
-    background-color: #291901;
+    background-color: #092f32;
     background-image: url('images/1p/base-tourney.png');
     background-image: image-set(
         url("images/1p/base-tourney.avif") type("image/avif"),
         url("images/1p/base-tourney.webp") type("image/webp"),
         url("images/1p/base-tourney.png") type("image/png")
     );
-    --backgroundColor2: #050;
+    --backgroundColor2: #082a53;
 }
 
 .ffr-league{
