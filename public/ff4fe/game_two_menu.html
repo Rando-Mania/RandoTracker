@@ -83,16 +83,16 @@
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-baron-hero" value="4">Baron's Hero's Journey (CCS)</tr-option>                
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-spoil" value="8">Spoil Sports (CCS)</tr-option>                 -->
 
-                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="trans" value="17">None</tr-option>
-
                 <tr-option target="html" toggle-class="adamant-group" value="18">Adamant (group)</tr-option>
                 <tr-option target="html" toggle-class="adamant-bracket" value="19">Adamant (bracket)</tr-option>
                 <tr-option target="html" toggle-class="adamant-finals" value="20">Adamant (finals)</tr-option>
+
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="trans" value="17">None</tr-option>
             </tr-select-toggle>
         </div>
     </div>
     <div id="menu_group" class="fieldset group-menu">
-        <h4 class="legend">Group</h4>
+        <h4 class="legend">Group/Round</h4>
         <div>
             <tr-select-toggle property="layout-group-select"> 
                 <tr-option target=".group-image" toggle-class="group-none" value="200">None</tr-option>
@@ -116,11 +116,15 @@
                 <tr-option target=".group-image" toggle-class="group-zeus-gauntlet" value="216">Zeus Gauntlet</tr-option>
             </tr-select-toggle>
         </div>
-    </div>
-    <div id="menu_match" class="fieldset match-menu">
-        <h4 class="legend">Match</h4>
         <div>
-            <tr-input-text class="match-input" property="tourney-match"></tr-input-text>
+            <tr-input-text class="menu-round-input" property="round-input"></tr-input-text>
+        </div>
+    </div>
+    <div id="menu_recap" class="fieldset recap-menu">
+        <h4 class="legend">Recap</h4>
+        <div>
+            <tr-input-toggle-class id="toggle-recap" property="toggle-recap" target=".recap-contain" toggle-class="display-none"></tr-input-toggle-class>
+            <label for="toggle-recap">Toggle Recap</label>
         </div>
     </div>
     <div id="menu_hero" class="fieldset hero-menu">

@@ -415,8 +415,6 @@
 
 [class*="adamant-"] .loadscreen .group-image{
     margin: 0 auto;
-    left: 223px; 
-    top: 107px;
     background-image: url(images/2p/adamant/AC22-GroupNames.png);
 }
 .group-none{background-image: none !important;}
@@ -439,10 +437,32 @@
 .group-ninja-shirt{background-position: -362px -306px;}
 .group-zeus-gauntlet{background-position: -362px -357px;}
 
+[class*="adamant-"] .loadscreen .group-round-contain{
+    left: 223px;
+    top: 107px;
+    display: grid;
+}
 
-[class*="adamant-"] .loadscreen .group-image, [class*="adamant-"] .loadscreen .recap-image{
+[class*="adamant-"] .loadscreen .group-image, 
+[class*="adamant-"] .loadscreen .recap-image,
+[class*="adamant-"] .loadscreen .round-name{
     width: 366px;
     height: 55px;
+}
+
+[class*="adamant-"] .loadscreen .group-image,
+[class*="adamant-"] .loadscreen .round-name{
+    grid-area: 1 / 1;
+}
+
+[class*="adamant-"] .loadscreen .round-name{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[class*="adamant-"] .loadscreen .round-name:empty{
+    display: none;
 }
 
 [class*="adamant-"] .loadscreen .staff{
@@ -485,7 +505,10 @@
     </template>    
     <div class="loadscreen-adamant">
         <div class="sidebar-staff-players">
-            <div class="abs border-background-1 group-image"></div>
+            <div class="abs group-round-contain">
+                <div class="border-background-1 group-image"></div>
+                <tr-text class="border-background-1 round-name" property="round-input"></tr-text>
+            </div>
             <div class="players">
                 <tr-player player="1">
                     <tr-template source="#adamant_player_info_load_template"></tr-template>
