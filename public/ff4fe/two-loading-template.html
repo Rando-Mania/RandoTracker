@@ -62,6 +62,7 @@
     height: 720px;
     width: 959px;
     margin: 0 auto;
+    display: none;
 }
 
 .loadscreen-main *{
@@ -90,7 +91,6 @@
 .sidebar-staff-players{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 161px 159px 40px 153px 54px 144px;
     gap: 0;
     grid-column: 2;
 }
@@ -110,7 +110,6 @@
 
 .sidebar-staff-players .players{
     display: grid;
-    grid-row: 4;
     gap: 6px;
     align-content: center;
     justify-items: center;
@@ -123,7 +122,7 @@
 
 .sidebar-staff-players .player-name{
     display: block;
-    text-align: left;
+    /* text-align: left; */
     max-width: 410px;
     width: auto;
 }
@@ -342,12 +341,168 @@
     background-image: url('images/2p/ccs/splash-legacy.webp'), var(--ccs-load-fallback);
 }
 
+.adamant-group .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.jpg);}
+.webp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.webp);}
+
+.adamant-bracket .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-bracket .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-bracket-loading.jpg);}
+.webp.adamant-bracket .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-bracket-loading.webp);}
+
+.adamant-finals .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.jpg);}
+.webp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.webp);}
+
 .loadscreen .commentators-img {
     transform: scale(1);
 }
 
+[class*="adamant-"] .loadscreen {
+    place-items: start;
+}
+
+[class*="adamant-"] .sidebar-staff-players{
+    width: 814px;
+    margin: 73px 0;
+}
+
+[class*="adamant-"] .loadscreen-zemus, [class*="adamant-"] .loadscreen-main{
+    display: none;
+}
+
+[class*="adamant-"] .loadscreen .player-name-contain{
+    display: block;
+}
+[class*="adamant-"] .loadscreen [player="1"] .player-name-contain{
+    left: 29px;
+    bottom: 394px;
+}
+[class*="adamant-"] .loadscreen [player="2"] .player-name-contain{
+    right: 498px;
+    bottom: 394px;
+    text-align: right;
+}
+
+[class*="adamant-"] .loadscreen .player-name{
+    font-size: 19px;
+}
+
+[class*="adamant-"] .loadscreen .name-pronoun-contain{
+    width: 366px;
+    height: 55px;
+}
+[class*="adamant-"] .loadscreen .player-winner, 
+[class*="adamant-"] .loadscreen .player-final{
+    width: 182px;
+    height: 30px;
+    font-size: 16px;
+} 
+[class*="adamant-"] .loadscreen .player-winner{
+    color: #b1fafd;
+    text-shadow: 1px 2px #008496;
+    letter-spacing: 1.5px;
+}
+[class*="adamant-"] .loadscreen .player-final{
+    color: #fff;
+    text-shadow: none;
+    justify-content: center;
+}
+
+[class*="adamant-"] .loadscreen [player="2"] .player-final,
+[class*="adamant-"] .loadscreen [player="2"] .player-winner{
+    margin-left: auto;
+}
+
+[class*="adamant-"] .loadscreen .group-image{
+    margin: 0 auto;
+    left: 223px; 
+    top: 107px;
+    background-image: url(images/2p/adamant/AC22-GroupNames.png);
+}
+.group-none{background-image: none !important;}
+
+.group-artemis-bow{background-position: 0 0;}
+.group-blitz-whip{background-position: 0 -51px;}
+.group-cat-claw{background-position: 0 -102px;}
+.group-defense-sword{background-position: 0 -153px;}
+.group-full-moon{background-position: 0 -204px;}
+.group-lilith-rod{background-position: 0 -255px;}
+.group-ogre-axe{background-position: 0 -306px;}
+.group-spear-spear{background-position: 0 -357px;}
+
+.group-aegis-shield{background-position: -362px 0;}
+.group-crystal-ring{background-position: -362px -51px;}
+.group-dragoon-helm{background-position: -362px -102px;}
+.group-gaea-hat{background-position: -362px -153px;}
+.group-heroine-robe{background-position: -362px -204px;}
+.group-karate-gi{background-position: -362px -255px;}
+.group-ninja-shirt{background-position: -362px -306px;}
+.group-zeus-gauntlet{background-position: -362px -357px;}
+
+
+[class*="adamant-"] .loadscreen .group-image, [class*="adamant-"] .loadscreen .recap-image{
+    width: 366px;
+    height: 55px;
+}
+
+[class*="adamant-"] .loadscreen .staff{
+    left: 223px;
+    top: 417px;
+}
+
+[class*="adamant-"] .loadscreen .recap-contain{
+    left: 223px;
+    top: 572px;
+}
+[class*="adamant-"] .loadscreen .recap-heading{
+    width: 142px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+[class*="adamant-"] .loadscreen .recap-image{
+    position: relative;
+    top: -1px;
+}
 </style>
 <div class="loadscreen">
+    <template id="adamant_player_info_load_template">
+        <div class="abs player-name-contain">
+            <tr-toggle property="toggle-winner" class="border-background-1 player-winner">
+                WINNER
+            </tr-toggle>
+            <tr-text property="player-final" class="player-final border-background-1"></tr-text>
+            <div class="border-background-1 name-pronoun-contain">
+                <div class="player-name-contain">
+                    <tr-text class="player-name" property="player-name"></tr-text>
+                </div>
+                <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+            </div>
+        </div>
+    </template>    
+    <div class="loadscreen-adamant">
+        <div class="sidebar-staff-players">
+            <div class="abs border-background-1 group-image"></div>
+            <div class="players">
+                <tr-player player="1">
+                    <tr-template source="#adamant_player_info_load_template"></tr-template>
+                </tr-player>
+                <tr-player player="2">
+                    <tr-template source="#adamant_player_info_load_template"></tr-template>
+                </tr-player>
+            </div>
+            <tr-hide-if-empty class="staff abs" toggle-class="wtf">
+                <tr-template href="ff4fe-production-team.html"></tr-template>
+            </tr-hide-if-empty>
+            <div class="abs recap-contain">
+                <div class="border-background-1 recap-heading">Recap</div>
+                <div class="border-background-1 recap-image"></div>
+            </div>
+        </div>
+    </div>
     <template id="zemus_player_info_load_template">
         <div style="position: relative;" class="player-name-contain">
             <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>

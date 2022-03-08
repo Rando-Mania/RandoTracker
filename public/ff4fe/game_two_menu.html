@@ -76,21 +76,45 @@
         <div>
             <tr-select-toggle property="layout-back-select">
             <!-- community club showcase -->
-                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-pink-puff" value="3">Pink Puff (CCS)</tr-option>
+                <!-- <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-pink-puff" value="3">Pink Puff (CCS)</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-sunday-slapdash" value="5">Sunday Slapdash (CCS)</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-special-feature" value="6">Special Feature (CCS)</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-enterprise-legacy" value="7">Enterprise Legacy (CCS)</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-baron-hero" value="4">Baron's Hero's Journey (CCS)</tr-option>                
-                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-spoil" value="8">Spoil Sports (CCS)</tr-option>                
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="ccs-spoil" value="8">Spoil Sports (CCS)</tr-option>                 -->
 
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="trans" value="17">None</tr-option>
+
+                <tr-option target="html" toggle-class="adamant-group" value="18">Adamant (group)</tr-option>
+                <tr-option target="html" toggle-class="adamant-bracket" value="19">Adamant (bracket)</tr-option>
+                <tr-option target="html" toggle-class="adamant-finals" value="20">Adamant (finals)</tr-option>
             </tr-select-toggle>
         </div>
     </div>
-    <div id="menu_round" class="fieldset round-menu">
-        <h4 class="legend">Round</h4>
+    <div id="menu_group" class="fieldset group-menu">
+        <h4 class="legend">Group</h4>
         <div>
-            <tr-input-text class="round-input" property="tourney-round"></tr-input-text>
+            <tr-select-toggle property="layout-group-select"> 
+                <tr-option target=".group-image" toggle-class="group-none" value="200">None</tr-option>
+
+                <tr-option target=".group-image" toggle-class="group-artemis-bow" value="201">Artemis Bow</tr-option>
+                <tr-option target=".group-image" toggle-class="group-blitz-whip" value="202">Blitz Whip</tr-option>
+                <tr-option target=".group-image" toggle-class="group-cat-claw" value="203">Cat Claw</tr-option>
+                <tr-option target=".group-image" toggle-class="group-defense-sword" value="204">Defense Sword</tr-option>
+                <tr-option target=".group-image" toggle-class="group-full-moon" value="205">Full Moon</tr-option>
+                <tr-option target=".group-image" toggle-class="group-lilith-rod" value="206">Lilith Rod</tr-option>
+                <tr-option target=".group-image" toggle-class="group-ogre-axe" value="207">Ogre Axe</tr-option>
+                <tr-option target=".group-image" toggle-class="group-spear-spear" value="208">Spear Spear</tr-option>
+                
+                <tr-option target=".group-image" toggle-class="group-aegis-shield" value="209">Aegis Shield</tr-option>
+                <tr-option target=".group-image" toggle-class="group-crystal-ring" value="210">Crystal Ring</tr-option>
+                <tr-option target=".group-image" toggle-class="group-dragoon-helm" value="211">Dragoon Helm</tr-option>
+                <tr-option target=".group-image" toggle-class="group-gaea-hat" value="212">Gaea Hat</tr-option>
+                <tr-option target=".group-image" toggle-class="group-heroine-robe" value="213">Heroine Robe</tr-option>
+                <tr-option target=".group-image" toggle-class="group-karate-gi" value="214">Karate Gi</tr-option>
+                <tr-option target=".group-image" toggle-class="group-ninja-shirt" value="215">Ninja Shirt</tr-option>
+                <tr-option target=".group-image" toggle-class="group-zeus-gauntlet" value="216">Zeus Gauntlet</tr-option>
+            </tr-select-toggle>
         </div>
     </div>
     <div id="menu_match" class="fieldset match-menu">

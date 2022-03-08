@@ -121,6 +121,18 @@
 .notwebp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.png);}
 .webp .layout.ccs-enterprise-legacy{background-image: url(images/2p/ccs/CCS-BG-EnterpriseLegacy.webp);}
 
+.adamant-group .layout{background-color: #0c0946;}
+.notwebp.adamant-group .layout{background-image: url(images/2p/adamant/ff4fe-ac-group-bg.jpg);}
+.webp.adamant-group .layout{background-image: url(images/2p/adamant/ff4fe-ac-group-bg.webp);}
+
+.adamant-bracket .layout{background-color: #0c0946;}
+.notwebp.adamant-bracket .layout{background-image: url(images/2p/adamant/ff4fe-ac-bracket-bg.jpg);}
+.webp.adamant-bracket .layout{background-image: url(images/2p/adamant/ff4fe-ac-bracket-bg.webp);}
+
+.adamant-finals .layout{background-color: #0c0946;}
+.notwebp.adamant-finals .layout{background-image: url(images/2p/adamant/ff4fe-ac-finals-bg.jpg);}
+.webp.adamant-finals .layout{background-image: url(images/2p/adamant/ff4fe-ac-finals-bg.webp);}
+
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
