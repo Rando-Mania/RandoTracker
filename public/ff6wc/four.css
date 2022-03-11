@@ -102,10 +102,10 @@
 }
 
 @supports not (background: image-set("foo.png" type("image/png")) ){
-    .notavif .layout{
-        background-image: var(--background-overlay), url('images/ff6wcrestreambg2.jpg'), var(--background-fallback);}
-    .avif .layout{
-        background-image: var(--background-overlay), url('images/ff6wcrestreambg2.avif'), var(--background-fallback);}
+    .notwebp .layout{
+        background-image: var(--background-overlay), url('images/barron_falls_background.jpg'), var(--background-fallback);}
+    .webp .layout{
+        background-image: var(--background-overlay), url('images/barron_falls_background.webp'), var(--background-fallback);}
 }
 
 @supports (background: image-set("foo.png" type("image/png")) ){
@@ -113,8 +113,8 @@
         background-image:
             var(--background-overlay),
             image-set(
-                "images/ff6wcrestreambg2.avif" type("image/avif"),
-                "images/ff6wcrestreambg2.jpg" type("image/jpg")), 
+                "images/barron_falls_background.webp" type("image/webp"),
+                "images/barron_falls_background.jpg" type("image/jpg")), 
             var(--background-fallback);
     }
 }

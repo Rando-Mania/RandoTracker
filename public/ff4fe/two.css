@@ -418,8 +418,13 @@ tr-timer, .player-final{
 }
 
 .player-final{
+    /* CCS colors */
     color: #ffdd00;
     --text-shadow-color: #940000;
+    /* adamant colors */
+    color: #b1fafd;
+    text-shadow: 1px 2px #008496;
+    --text-shadow-color: #008496;
     text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
 }
 
