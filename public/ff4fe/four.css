@@ -114,6 +114,15 @@
     background-image: url('images/4p/weekly/FF4FE-Weekly-4P-FridayBG.webp');
 }
 
+.notwebp.adamant .layout{
+    background-color: #0c0946;
+    background-image: url('images/4p/adamant/ff4fe-adamantcup-4p-liveBG.jpg');
+}
+.webp.adamant .layout{
+    background-color: #0c0946;
+    background-image: url('images/4p/adamant/ff4fe-adamantcup-4p-liveBG.webp');
+}
+
 .trans{background-color: #0000; background-image: none;}
 
 .layout.transparent-background{
@@ -127,16 +136,6 @@
         linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
         linear-gradient(red,red) bottom / 100% var(--clipY1);
     -webkit-mask-repeat: no-repeat;
-    mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
-    mask-repeat: no-repeat;
 }
 
 .player-video{
@@ -483,6 +482,25 @@ tr-timer span {
     width: 334px;
     height: 62px;
     padding: 4px;
+}
+
+.group-contain{
+    visibility: hidden;
+    text-align: center;
+    display: grid;
+    gap: 0 8px;
+    align-content: space-between;
+    font-size: 14px;
+    top: 342px;
+    transform: translateX(-50%); 
+    left: 50%;
+    width: 334px;
+    height: 62px;
+    padding: 4px;
+}
+
+.visible{
+    visibility: visible;
 }
 
 .layout.zemus-qualifier .flags-contain{

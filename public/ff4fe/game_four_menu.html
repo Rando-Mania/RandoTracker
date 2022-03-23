@@ -43,6 +43,7 @@
                 <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-monday" value="1">Weekly Monday</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-friday" value="2">Weekly Friday</tr-option>
                 <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="trans" value="0">None</tr-option>
+                <tr-option target="html" toggle-class="adamant" value="3">Adamant</tr-option>
 
             </tr-select-toggle>
         </div>
@@ -117,6 +118,13 @@
                     <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-fusoya" value="112">FuSoYa</tr-option>
                     <!-- <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="hero-fusoya" value="13">FuSoYa</tr-option> -->
                 </tr-select-toggle>
+            </div>
+        </div>
+
+        <div id="menu_group" class="fieldset">
+            <h4 class="legend">Group</h4>
+            <div id="menu_group_contain">
+                <tr-input-textarea oninput rows="4" class="group-input" property="group"></tr-input-textarea>
             </div>
         </div>
         <div id="menu_credits" class="fieldset">
