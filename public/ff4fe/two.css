@@ -548,9 +548,10 @@ tr-timer span {
     align-content: end;
 }
 
-.display-none{ display: none; }
+.display-none{ display: none !important; }
 
 .show{ display: block; }
+.show-flex{ display: flex; }
 
 .hero-name {
     display: none;

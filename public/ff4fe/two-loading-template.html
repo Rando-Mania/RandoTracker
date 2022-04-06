@@ -461,8 +461,9 @@
     justify-content: center;
     align-items: center;
 }
-[class*="adamant-"] .loadscreen .round-name:empty{
-    display: none;
+[class*="adamant-"] .loadscreen .round-name tr-text{
+    width: calc(364px - 8px); 
+    padding: 8px;
 }
 
 [class*="adamant-"] .loadscreen .staff{
@@ -507,7 +508,9 @@
         <div class="sidebar-staff-players">
             <div class="abs group-round-contain">
                 <div class="border-background-1 group-image"></div>
-                <tr-text class="border-background-1 round-name" property="round-input"></tr-text>
+                <tr-hide-if-empty class="border-background-1 round-name" target=".round-input" toggle-class="display-none">
+                    <tr-text scale-to-fit-x class="round-input" property="round-input"></tr-text>
+                </tr-hide-if-empty>
             </div>
             <div class="players">
                 <tr-player player="1">

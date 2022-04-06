@@ -225,6 +225,20 @@
 .loadscreen .staff svg{
     margin: 0;
 }
+
+.loadscreen .hero{
+    position: relative;
+}
+
+.loadscreen .adamant-branding{
+    display: none;
+    top: 0;
+    left: 0;
+}
+.adamant .loadscreen .adamant-branding{
+    display: block;
+}
+
 </style>
     <div class="loadscreen">
         <template id="player_info_load_template">
@@ -245,7 +259,7 @@
                 <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
             </div>
         </template>
-        <div class="loadscreen-zemus">
+        <!-- <div class="loadscreen-zemus">
             <div class="sidebar-staff-players">
                 <div class="round-name">
                     <tr-text class="round-input" property="round-text"></tr-text>
@@ -291,7 +305,7 @@
                     </tr-hide-if-empty>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="loadscreen-main">
             <div class="hero">
                 <picture>
@@ -336,6 +350,10 @@
                         <img onload="showSlides()" src="images/4p/weekly/slides/FF4Fe-WeeklyRace-Slideshow9.png" height="337" alt="">
                     </picture>
                 </div>
+                <picture class="abs adamant-branding">
+                    <source srcset="images/4p/adamant/ff4fe-adamantcup-4p-loadingBG.webp" type="image/webp">
+                    <img src="images/4p/adamant/ff4fe-adamantcup-4p-loadingBG.jpg" height="470" alt="">
+                </picture>
             </div>
             <div class="footer-flags">
                 <h2>Flags</h2>
