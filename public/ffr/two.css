@@ -63,7 +63,38 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #000;
+}
+
+.background-layer{
+    width: 1280px;
+    height: 720px;
+    background-color: #202028;
+    background-image: var(--bgFallback);
+}
+
+.layout.transparent-background .background-layer{
+    --solid: linear-gradient(#000, #000);
+    --vidWidth-contentBox: calc(var(--vidWidth) - 2 * var(--border));
+    --vidHeight-contentBox: calc(var(--vidHeight) - 2 * var(--border));
+    -webkit-mask: 
+        var(--solid) 0 0 / 100% 100%, 
+        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.layout.transparent-background.show-cams .background-layer{
+    -webkit-mask: 
+    var(--solid) 0 0 / 100% 100%, 
+    var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+    var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
+    var(--solid) calc(var(--camX) + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border)),
+    var(--solid) calc(1280px - var(--camX) - 160px + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border));
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 }
 
 .player-video{
@@ -73,18 +104,6 @@
     border-radius: 8px;
     background-color: #000; 
     transition: background-color .5s;
-}
-
-.layout.show-cams.transparent-background{
-    -webkit-mask: 
-        var(--solid) 0 0 / 100% 100%, 
-        var(--solid) var(--clipX1) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
-        var(--solid) calc(1280px - var(--clipX2)) var(--clipY1) / var(--vidWidth-contentBox) var(--vidHeight-contentBox),
-        var(--solid) calc(var(--camX) + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border)),
-        var(--solid) calc(1280px - var(--camX) - 160px + var(--border)) var(--camY) / calc(160px - 2 * var(--border)) calc(130px - var(--border));
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
 }
 
 .player-cam{
@@ -98,7 +117,7 @@
     display: block;
 }
 
-.ffr-default{
+.ffr-default .background-layer{
     background-color: #000;
     background-image: url('images/2p/base-background.png');
     background-image: image-set(
@@ -107,8 +126,8 @@
     );
 }
 
-.ffr-irongol{
-    --backgroundColor2: #500;
+.ffr-irongol{--backgroundColor2: #500;}
+.ffr-irongol .background-layer{
     background-color: #295280;
     background-image: url('images/2p/base-irongol.png');
     background-image: image-set(
@@ -118,8 +137,8 @@
     );
 }
 
-.ffr-hardcore{
-    --backgroundColor2: #2c0055;
+.ffr-hardcore{--backgroundColor2: #2c0055;}
+.ffr-hardcore .background-layer{
     background-color: #000076;
     background-image: url('images/2p/base-hardcore.png');
     background-image: image-set(
@@ -129,8 +148,8 @@
     );
 }
 
-.ffr-tourney{
-    --backgroundColor2: #082a53;
+.ffr-tourney{--backgroundColor2: #082a53;}
+.ffr-tourney .background-layer{
     background-color: #092f32;
     background-image: url('images/2p/base-tourney.png');
     background-image: image-set(
@@ -140,8 +159,8 @@
     );
 }
 
-.ffr-league{
-    --backgroundColor2: #500;
+.ffr-league{--backgroundColor2: #500;}
+.ffr-league .background-layer{
     background-color: #b1cbda;
     background-image: url('images/2p/base-league.png');
     background-image: image-set(
@@ -150,7 +169,7 @@
     );
 }
 
-.ffr-rush{
+.ffr-rush .background-layer{
     background-color:#0094ff;
     background-image: url('images/2p/base-rush.png');
     background-image: image-set(
@@ -161,7 +180,7 @@
 }
 .layout.ffr-rush .player-grid {display: none;}
 
-.ffr-dark{
+.ffr-dark .background-layer{
     background-color: #000;
     background-image: url('images/2p/base-dark.png');
     background-image: image-set(
@@ -171,7 +190,7 @@
     );
 }
 
-.ffr-duckling{
+.ffr-duckling .background-layer{
     background-color: #428fa6;
     background-image: url('images/2p/base-duckling.png');
     background-image: image-set(

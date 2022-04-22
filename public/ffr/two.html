@@ -5,7 +5,6 @@
 	<title>FFR 2 Player Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
-    <link rel="stylesheet" type="text/css" href="../shared/global-2p.css">
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
@@ -61,8 +60,6 @@
 <body>
 	<div class="layout">
  		<template id="player_info_template">
-            <div class="player-video border-1 abs"></div>
-            <div class="player-cam player-video border-1 abs"></div>
 			<div class="player-name-block abs border-1 background-1"></div>
 			<div class="player-name abs">
 				<tr-text scale-to-fit-x property="player-name"></tr-text>
@@ -81,6 +78,18 @@
 			</tr-toggle>
 			<tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
 		</template>
+        <template id="background_layer_template">
+            <div class="player-video border-1 abs"></div>
+            <div class="player-cam player-video border-1 abs"></div>
+        </template>
+        <div class="background-layer">
+            <tr-player player="1">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+            <tr-player player="2">
+                <tr-template source="#background_layer_template"></tr-template>
+            </tr-player>
+        </div>
        <tr-player player="1">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
