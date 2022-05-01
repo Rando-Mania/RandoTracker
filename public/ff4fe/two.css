@@ -129,6 +129,10 @@
 .notwebp.adamant-bracket .layout{background-image: url(images/2p/adamant/ff4fe-ac-bracket-bg.jpg);}
 .webp.adamant-bracket .layout{background-image: url(images/2p/adamant/ff4fe-ac-bracket-bg.webp);}
 
+.adamant-semi .layout{background-color: #0c0946;}
+.notwebp.adamant-semi .layout{background-image: url(images/2p/adamant/ff4fe-ac-semifinals-bg.jpg);}
+.webp.adamant-semi .layout{background-image: url(images/2p/adamant/ff4fe-ac-semifinals-bg.webp);}
+
 .adamant-finals .layout{background-color: #0c0946;}
 .notwebp.adamant-finals .layout{background-image: url(images/2p/adamant/ff4fe-ac-finals-bg.jpg);}
 .webp.adamant-finals .layout{background-image: url(images/2p/adamant/ff4fe-ac-finals-bg.webp);}
