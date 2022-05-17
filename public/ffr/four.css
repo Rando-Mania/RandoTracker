@@ -154,6 +154,16 @@
         url("images/4p/base-duck.png") type("image/png"));
 }
 
+.ffr-derby{--backgroundColor2: #4d0640;}
+.ffr-derby .background-layer{
+    background-color: #509ede;
+    background-image: url(images/4p/base-derby.png);
+    background-image: image-set(
+        url("images/4p/base-derby.avif") type("image/avif"),
+        url("images/4p/base-derby.webp") type("image/webp"),
+        url("images/4p/base-derby.png") type("image/png"));
+}
+
 .player-video{
     width: var(--vidWidth);
     height: var(--vidHeight);
