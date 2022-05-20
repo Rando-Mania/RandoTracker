@@ -97,25 +97,29 @@
 .layout.zz4-semifinals{background-image: url('images/2p/zz4/SemiFinals-Live-BG.jpg');}
 .layout.zz4-finals{background-image: url('images/2p/zz4/TheFinals-Live-BG.jpg');}*/
 
-.layout.ccs-pink-puff{background-image: linear-gradient(#627079,#425059);}
-.notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.png), linear-gradient(#627079,#425059);}
-.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.webp), linear-gradient(#627079,#425059);}
+.layout.ccs-pink-puff{background-color: #627079;}
+.notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.png);}
+.webp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.webp);}
 
-.layout.ccs-baron-hero{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.png), linear-gradient(#73d417,#122c04);}
-.webp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.webp), linear-gradient(#73d417,#122c04);}
+.layout.ccs-baron-hero{background-color: #053505;}
+.notwebp .layout.ccs-baron-hero{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.png);}
+.webp.notavif .layout.ccs-baron-hero{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.webp);}
+.avif .layout.ccs-baron-hero{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.avif);}
 
-.layout.ccs-esc{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-esc{background-image: url(images/2p/ccs/summer-2022/Layout-ESC.png), linear-gradient(#73d417,#122c04);}
-.webp .layout.ccs-esc{background-image: url(images/2p/ccs/summer-2022/Layout-ESC.webp), linear-gradient(#73d417,#122c04);}
+.layout.ccs-esc{background-color: #455658;}
+.notwebp .layout.ccs-esc{background-image: url(images/2p/ccs/summer-2022/Layout-ESC.png);}
+.webp.notavif .layout.ccs-esc{background-image: url(images/2p/ccs/summer-2022/Layout-ESC.webp)}
+.avif .layout.ccs-esc{background-image: url(images/2p/ccs/summer-2022/Layout-ESC.avif);}
 
-.layout.ccs-ftp{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-ftp{background-image: url(images/2p/ccs/summer-2022/Layout-FTP.png), linear-gradient(#73d417,#122c04);}
-.webp .layout.ccs-ftp{background-image: url(images/2p/ccs/summer-2022/Layout-FTP.webp), linear-gradient(#73d417,#122c04);}
+.layout.ccs-ftp{background-color: #4e4033;}
+.notwebp .layout.ccs-ftp{background-image: url(images/2p/ccs/summer-2022/Layout-FTP.jpg);}
+.webp.notavif .layout.ccs-ftp{background-image: url(images/2p/ccs/summer-2022/Layout-FTP.webp);}
+.avif .layout.ccs-ftp{background-image: url(images/2p/ccs/summer-2022/Layout-FTP.avif);}
 
-.layout.ccs-mac{background-image: linear-gradient(#73d417,#122c04);}
-.notwebp .layout.ccs-mac{background-image: url(images/2p/ccs/summer-2022/Layout-MAC.png), linear-gradient(#73d417,#122c04);}
-.webp .layout.ccs-mac{background-image: url(images/2p/ccs/summer-2022/Layout-MAC.webp), linear-gradient(#73d417,#122c04);}
+.layout.ccs-mac{background-color: #123cc6;}
+.notwebp .layout.ccs-mac{background-image: url(images/2p/ccs/summer-2022/Layout-MAC.png);}
+.webp.notavif .layout.ccs-mac{background-image: url(images/2p/ccs/summer-2022/Layout-MAC.webp);}
+.avif .layout.ccs-mac{background-image: url(images/2p/ccs/summer-2022/Layout-MAC.avif);}
 
 .layout.ccs-special-feature{background-color: #4d0627;}
 .notwebp .layout.ccs-special-feature{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
