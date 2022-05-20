@@ -114,15 +114,6 @@
     background-image: url('images/4p/weekly/FF4FE-Weekly-4P-FridayBG.webp');
 }
 
-.notwebp.adamant .layout{
-    background-color: #0c0946;
-    background-image: url('images/4p/adamant/ff4fe-adamantcup-4p-liveBG.jpg');
-}
-.webp.adamant .layout{
-    background-color: #0c0946;
-    background-image: url('images/4p/adamant/ff4fe-adamantcup-4p-liveBG.webp');
-}
-
 .trans{background-color: #0000; background-image: none;}
 
 .hide-4p .layout.transparent-background{

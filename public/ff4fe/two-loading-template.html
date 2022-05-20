@@ -44,7 +44,7 @@
     grid-gap: 1em;
     place-items: center;
     --nameWidth: 298px;
-    --nameX: 264px; --nameY: 464px;
+    --nameX: 264px; --nameY: 337px;
     --flameX: 215px; --flameY: 618px;
 }
 
@@ -62,7 +62,6 @@
     height: 720px;
     width: 959px;
     margin: 0 auto;
-    display: none;
 }
 
 .loadscreen-main *{
@@ -189,7 +188,7 @@
     justify-content: flex-end;
 }
 
-.loadscreen .final-winner-contain{bottom: 270px;}
+.loadscreen .final-winner-contain{bottom: 213px;}
 .loadscreen [player="1"] .final-winner-contain{left: 140px;}
 .loadscreen [player="2"] .final-winner-contain{right: 140px;}
 
@@ -205,7 +204,7 @@
 .load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
 
 .loadscreen .staff{
-    top: 344px;
+    top: 435px;
     transform: translateX(-50%); 
     left: 50%;
 }
@@ -333,7 +332,7 @@
     background-image: url('images/2p/ccs/splash-Special.webp'), var(--ccs-load-fallback);
 }
 
-.adamant-group .loadscreen{background-color: #0c0946;}
+/* .adamant-group .loadscreen{background-color: #0c0946;}
 .notwebp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.jpg);}
 .webp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.webp);}
 
@@ -347,7 +346,7 @@
 
 .adamant-finals .loadscreen{background-color: #0c0946;}
 .notwebp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.jpg);}
-.webp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.webp);}
+.webp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.webp);} */
 
 .loadscreen .commentators-img {
     transform: scale(1);
@@ -486,7 +485,7 @@
 }
 </style>
 <div class="loadscreen">
-    <template id="adamant_player_info_load_template">
+    <!-- <template id="adamant_player_info_load_template">
         <div class="abs player-name-contain">
             <tr-toggle property="toggle-winner" class="border-background-1 player-winner">
                 WINNER
@@ -524,8 +523,8 @@
                 <div class="border-background-1 recap-image"></div>
             </div>
         </div>
-    </div>
-    <template id="zemus_player_info_load_template">
+    </div> -->
+    <!-- <template id="zemus_player_info_load_template">
         <div style="position: relative;" class="player-name-contain">
             <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
             <tr-toggle property="toggle-winner" class="abs player-winner">
@@ -574,7 +573,7 @@
                 </tr-hide-if-empty>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="loadscreen-main">
         <template id="player_info_load_template">
             <div class="player-info abs background-1 border-1">
