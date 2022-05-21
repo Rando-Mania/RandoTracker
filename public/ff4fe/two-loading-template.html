@@ -48,11 +48,6 @@
     --flameX: 215px; --flameY: 618px;
 }
 
-/*.loadscreen-main{
-    height: 100%;
-    width: 100%;
-}*/
-
 .loadscreen-main{
     display: grid;
     grid-template-columns: auto auto;
@@ -67,115 +62,6 @@
 .loadscreen-main *{
     justify-content: center;
     justify-items: center;
-}
-
-.loadscreen-zemus{
-    display: none;
-    grid-template-columns: 760px 497px auto;
-    grid-template-rows: 1fr;
-    align-content: space-between;
-    gap: 0;
-    height: 720px;
-    width: 1280px;
-    margin: 0 auto;
-}
-
-.loadscreen-zemus *{
-    color: var(--zemusTextColor);
-    font-family: verdana;
-    font-weight: lighter;
-    text-align: left;
-}
-
-.sidebar-staff-players{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    grid-column: 2;
-}
-
-.sidebar-staff-players .round-name{
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    grid-row: 2;
-    font-size: 54px;
-    text-align: center;
-}
-
-.sidebar-staff-players .match-input{
-    font-size: 48px;
-}
-
-.sidebar-staff-players .players{
-    display: grid;
-    gap: 6px;
-    align-content: center;
-    justify-items: center;
-}
-
-.sidebar-staff-players .player-name{
-    font-size: 36px;
-    height: 100%;
-}
-
-.sidebar-staff-players .player-name{
-    display: block;
-    /* text-align: left; */
-    max-width: 410px;
-    width: auto;
-}
-
-.loadscreen-zemus .sidebar-staff-players .player-winner{
-    width: auto;
-    right: 80%;
-    left: initial;
-    top: 0;
-}
-
-.loadscreen-zemus .sidebar-staff-players [player="1"] .player-winner{
-    transform-origin: bottom left;
-    transform: rotate(-15deg);
-}
-.loadscreen-zemus .sidebar-staff-players [player="2"] .player-winner{
-    transform-origin: top left;
-    transform: rotate(15deg);
-}
-
-.sidebar-staff-players .broadcasters{
-    grid-row: 6;
-    display: grid;
-    grid-template-columns: 45px auto;
-}
-
-.sidebar-staff-players .broadcasters > *{
-    grid-column: 2;
-    height: 100%;
-    width: 100%;
-}
-
-.sidebar-staff-players .broadcasters *{
-    font-size: 25px;
-    /*justify-items: center;*/
-}
-
-.sidebar-staff-players .broadcasters tr-text{
-    max-width: 365px;
-    width: auto;
-}
-
-.sidebar-staff-players .staff img{
-    /* pre-filter comms/stream/tracker icons to black, then convert to #dfd2b4
-       see: https://codepen.io/sosuke/pen/Pjoqqp */
-    filter: brightness(0) saturate(100%) invert(81%) sepia(21%) saturate(280%) hue-rotate(4deg) brightness(104%) contrast(85%)
-}
-
-.sidebar-staff-players .staff{
-    padding: 0;
-}
-
-.sidebar-staff-players .player-name-contain{
-    width: auto;
 }
 
 .loadscreen [player="1"] .player-info{
@@ -209,9 +95,21 @@
     left: 50%;
 }
 
-.sidebar-staff-players .staff{
-    transform: translateX(0);
-    justify-self: center;
+.recap-contain{
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-align: center;
+    background-color: var(--backgroundColor1);
+    padding: 12px;
+    bottom: 20px;
+    left: 311px;
+    height: 153px;
+    width: 660px;
+    display: none;
+}
+
+.display-block{
+    display: block;
 }
 
 /* Community Club Showcase */
@@ -352,63 +250,7 @@
     transform: scale(1);
 }
 
-[class*="adamant-"] .loadscreen {
-    place-items: start;
-}
-
-[class*="adamant-"] .sidebar-staff-players{
-    width: 814px;
-    margin: 73px 0;
-}
-
-[class*="adamant-"] .loadscreen-zemus, [class*="adamant-"] .loadscreen-main{
-    display: none;
-}
-
-[class*="adamant-"] .loadscreen .player-name-contain{
-    display: block;
-}
-[class*="adamant-"] .loadscreen [player="1"] .player-name-contain{
-    left: 29px;
-    bottom: 394px;
-}
-[class*="adamant-"] .loadscreen [player="2"] .player-name-contain{
-    right: 498px;
-    bottom: 394px;
-    text-align: right;
-}
-
-[class*="adamant-"] .loadscreen .player-name{
-    font-size: 19px;
-}
-
-[class*="adamant-"] .loadscreen .name-pronoun-contain{
-    width: 366px;
-    height: 55px;
-}
-[class*="adamant-"] .loadscreen .player-winner, 
-[class*="adamant-"] .loadscreen .player-final{
-    width: 182px;
-    height: 30px;
-    font-size: 16px;
-} 
-[class*="adamant-"] .loadscreen .player-winner{
-    color: #b1fafd;
-    text-shadow: 1px 2px #008496;
-    letter-spacing: 1.5px;
-}
-[class*="adamant-"] .loadscreen .player-final{
-    color: #fff;
-    text-shadow: none;
-    justify-content: center;
-}
-
-[class*="adamant-"] .loadscreen [player="2"] .player-final,
-[class*="adamant-"] .loadscreen [player="2"] .player-winner{
-    margin-left: auto;
-}
-
-[class*="adamant-"] .loadscreen .group-image{
+/* [class*="adamant-"] .loadscreen .group-image{
     margin: 0 auto;
     background-image: url(images/2p/adamant/AC22-GroupNames.png);
 }
@@ -430,156 +272,16 @@
 .group-heroine-robe{background-position: -362px -204px;}
 .group-karate-gi{background-position: -362px -255px;}
 .group-ninja-shirt{background-position: -362px -306px;}
-.group-zeus-gauntlet{background-position: -362px -357px;}
+.group-zeus-gauntlet{background-position: -362px -357px;} */
 
-[class*="adamant-"] .loadscreen .group-round-contain{
-    left: 223px;
-    top: 107px;
-    display: grid;
-}
-
-[class*="adamant-"] .loadscreen .group-image, 
-[class*="adamant-"] .loadscreen .recap-image,
-[class*="adamant-"] .loadscreen .round-name{
-    width: 366px;
-    height: 55px;
-}
-
-[class*="adamant-"] .loadscreen .group-image,
-[class*="adamant-"] .loadscreen .round-name{
-    grid-area: 1 / 1;
-}
-
-[class*="adamant-"] .loadscreen .round-name{
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-[class*="adamant-"] .loadscreen .round-name tr-text{
-    width: calc(364px - 8px); 
-    padding: 8px;
-}
-
-[class*="adamant-"] .loadscreen .staff{
-    left: 223px;
-    top: 417px;
-}
-
-[class*="adamant-"] .loadscreen .recap-contain{
-    left: 223px;
-    top: 572px;
-}
-[class*="adamant-"] .loadscreen .recap-heading{
-    width: 142px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-[class*="adamant-"] .loadscreen .recap-image{
-    position: relative;
-    top: -1px;
-}
 </style>
 <div class="loadscreen">
-    <!-- <template id="adamant_player_info_load_template">
-        <div class="abs player-name-contain">
-            <tr-toggle property="toggle-winner" class="border-background-1 player-winner">
-                WINNER
-            </tr-toggle>
-            <tr-text property="player-final" class="player-final border-background-1"></tr-text>
-            <div class="border-background-1 name-pronoun-contain">
-                <div class="player-name-contain">
-                    <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
-                </div>
-                <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
-            </div>
-        </div>
-    </template>    
-    <div class="loadscreen-adamant">
-        <div class="sidebar-staff-players">
-            <div class="abs group-round-contain">
-                <div class="border-background-1 group-image"></div>
-                <tr-hide-if-empty class="border-background-1 round-name" target=".round-input" toggle-class="display-none">
-                    <tr-text scale-to-fit-x class="round-input" property="round-input"></tr-text>
-                </tr-hide-if-empty>
-            </div>
-            <div class="players">
-                <tr-player player="1">
-                    <tr-template source="#adamant_player_info_load_template"></tr-template>
-                </tr-player>
-                <tr-player player="2">
-                    <tr-template source="#adamant_player_info_load_template"></tr-template>
-                </tr-player>
-            </div>
-            <tr-hide-if-empty class="staff abs" toggle-class="wtf">
-                <tr-template href="ff4fe-production-team.html"></tr-template>
-            </tr-hide-if-empty>
-            <div class="abs recap-contain">
-                <div class="border-background-1 recap-heading">Recap</div>
-                <div class="border-background-1 recap-image"></div>
-            </div>
-        </div>
-    </div> -->
-    <!-- <template id="zemus_player_info_load_template">
-        <div style="position: relative;" class="player-name-contain">
-            <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
-            <tr-toggle property="toggle-winner" class="abs player-winner">
-                <img class="winner-image" src="images/2p/zz4/winner.svg" alt="Winner">
-            </tr-toggle>
-        </div>
-    </template>    
-    <div class="loadscreen-zemus">
-        <div class="sidebar-staff-players">
-            <div class="round-name">
-                <tr-text class="round-input" property="tourney-round"></tr-text>
-                <tr-text class="match-input" property="tourney-match"></tr-text>
-            </div>
-            <div class="players">
-                <tr-player player="1">
-                    <tr-template source="#zemus_player_info_load_template"></tr-template>
-                </tr-player>
-                <tr-player player="2">
-                    <tr-template source="#zemus_player_info_load_template"></tr-template>
-                </tr-player>
-            </div>
-            <div class="broadcasters">
-                <tr-hide-if-empty class="staff" toggle-class="wtf">
-                    <div class="staff-panel-2">
-                        <tr-hide-if-empty class="commentators-contain" target=".commentators" toggle-class="display-none">
-                            <svg class="commentators-img" width="20" height="20" viewbox="0 0 20 20">
-                                <path fill="currentColor" d="M9 18v-1.060c-3.967-0.514-7-3.872-7-7.937 0-0.001 0-0.002 0-0.003v0h2c0 3.314 2.686 6 6 6s6-2.686 6-6v0h2c0 0.001 0 0.002 0 0.003 0 4.066-3.033 7.423-6.96 7.933l-0.040 0.004v1.060h3v2h-8v-2h3zM6 4c0-2.209 1.791-4 4-4s4 1.791 4 4v0 5c0 2.209-1.791 4-4 4s-4-1.791-4-4v0-5z"></path>
-                            </svg>
-                            <tr-text scale-to-fit-x class="commentators" property="commentators"></tr-text>
-                        </tr-hide-if-empty>
-                    </div>
-                    <div class="staff-panel-2">
-                        <tr-hide-if-empty class="restreamers-contain" target=".restreamers" toggle-class="display-none">
-                            <svg class="restreamers-img" width="20" height="20" viewbox="0 0 20 20">
-                                <path fill="currentColor" d="M7 17h-5c-1.105 0-2-0.895-2-2v0-13c0-1.1 0.9-2 2-2h16c1.105 0 2 0.895 2 2v0 13c0 1.105-0.895 2-2 2v0h-5l4 2v1h-14v-1l4-2zM2 2v11h16v-11h-16z"></path>
-                            </svg>
-                            <tr-text scale-to-fit-x class="restreamers" property="restreamers"></tr-text>
-                        </tr-hide-if-empty>
-                        <tr-hide-if-empty class="trackers-contain" target=".tracker" toggle-class="display-none">
-                            <svg class="trackers-img" width="20" height="20" viewbox="0 0 20 20">
-                                <path fill="currentColor" d="M10 20s-7-9.13-7-13c0-3.866 3.134-7 7-7s7 3.134 7 7v0c0 3.87-7 13-7 13zM10 9c1.105 0 2-0.895 2-2s-0.895-2-2-2v0c-1.105 0-2 0.895-2 2s0.895 2 2 2v0z"></path>
-                            </svg>
-                            <tr-text scale-to-fit-x class="trackers" property="trackers"></tr-text>
-                        </tr-hide-if-empty>
-                    </div>
-                </tr-hide-if-empty>
-            </div>
-        </div>
-    </div> -->
     <div class="loadscreen-main">
         <template id="player_info_load_template">
             <div class="player-info abs background-1 border-1">
                 <div class="name-pronoun-contain">
                     <div class="player-name-contain">
-                        <tr-text class="player-name" property="player-name"></tr-text>
+                        <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
                     </div>
                     <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
                 </div>
@@ -615,12 +317,15 @@
             <tr-template href="ff4fe-production-team.html"></tr-template>
         </tr-hide-if-empty>
 
+        <div class="abs recap-contain">
+            <div class="recap-heading">Recap</div>
+            <div class="recap-image"></div>
+        </div>
         <!-- <div class="load-best-of">
             <p class="best-of-3">Best of 3</p>
             <p class="best-of-5">Best of 5</p>
             <p class="best-of-7">Best of 7</p>
         </div> -->
-
         <tr-text class="round abs" property="tourney-round"></tr-text>
     </div>
 </div>
