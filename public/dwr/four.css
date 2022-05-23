@@ -178,6 +178,21 @@ html{
     -webkit-mask-repeat: no-repeat;
 }
 
+.hide-p4 .background-layer.transparent-background{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1),
+        /* cover "4p" */
+        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
+    -webkit-mask-repeat: no-repeat
+}
+
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/layout_2021.png');}
 .player-video.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}

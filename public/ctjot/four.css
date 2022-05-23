@@ -85,7 +85,7 @@
     -webkit-mask-repeat: no-repeat;
 }
 
-.hide-4p .layout.transparent-background .background-layer{
+.hide-p4 .layout.transparent-background .background-layer{
     -webkit-mask:
         /* vertical lines */
         linear-gradient(red,red) left / var(--clipX1),
@@ -96,8 +96,8 @@
         linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
         linear-gradient(red,red) bottom / 100% var(--clipY1),
         /* cover "4p" */
-        linear-gradient(red,red) bottom var(--videoY) right var(--videoY) / var(--vidWidth) var(--vidHeight);
-    -webkit-mask-repeat: no-repeat;
+        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
+    -webkit-mask-repeat: no-repeat
 }
 
 .notwebp .jot-default .background-layer{background-image: url('images/4p/base-background.png'),  var(--bgFallback);}

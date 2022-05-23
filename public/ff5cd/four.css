@@ -84,6 +84,21 @@
     -webkit-mask-repeat: no-repeat;
 }
 
+.hide-p4 .layout.transparent-background .background-layer{
+    -webkit-mask:
+        /* vertical lines */
+        linear-gradient(red,red) left / var(--clipX1),
+        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
+        linear-gradient(red,red) right / var(--clipX1),
+        /* horizontal lines */
+        linear-gradient(red,red) top / 100% var(--clipY1),
+        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
+        linear-gradient(red,red) bottom / 100% var(--clipY1),
+        /* cover "4p" */
+        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
+    -webkit-mask-repeat: no-repeat
+}
+
 .notwebp .cd-default .background-layer{background-image: url('images/4p/base-background.png');}
 .webp .cd-default .background-layer{background-image: url('images/4p/base-background.webp');}
 
