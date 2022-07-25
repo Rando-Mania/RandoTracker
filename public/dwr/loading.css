@@ -87,13 +87,13 @@
     --border-color: #00a800;
 }
 
-/* .loadscreen.league-background main{
+.loadscreen.league-background main{
   background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
   grid-template-columns: minmax(52%, max-content);
   justify-content: start;
-} */
+}
 
-.loadscreen.league-background main{
+/* .loadscreen.league-background main{
   background:
     linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
     url(images/true-dragonlord-th.png) no-repeat right -384px top / auto 200%,
@@ -102,7 +102,7 @@
    #0d3d87;
   grid-template-columns: minmax(52%, max-content);
   justify-content: start;
-}
+} */
 
 .loadscreen.chaos-background{
   background:

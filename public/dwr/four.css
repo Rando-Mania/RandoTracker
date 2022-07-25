@@ -194,7 +194,18 @@ html{
 }
 
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
-.player-video.tourney-background{background-image: url('images/video-background/layout_2021.png');}
+.player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
+.player-video.tourney-background:after{
+    content: '2022';
+    font-size: 1.7em;
+    position: absolute;
+    left: 166px;
+    bottom: 13px;
+    color:#d6d6d6;
+    --shadow-color: #040800;
+    text-shadow: 1px 1px var(--shadow-color), -1px -1px var(--shadow-color), 1px 0 var(--shadow-color), 0 1px var(--shadow-color), -1px 0 var(--shadow-color), 0 -1px var(--shadow-color);
+    filter: blur(0.2px);
+}
 .player-video.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
 .player-video.coop-background{
     background-color: #292121;
