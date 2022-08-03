@@ -1,0 +1,182 @@
+<div class="menu-game-specific">
+    <div id="menu_objectives" class="fieldset objectives-menu">
+        <h4 class="legend">Objectives</h4>
+        <div>
+            <div>1</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
+        </div>
+        <div>
+            <div>2</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
+        </div>
+        <div>
+            <div>3</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
+        </div>
+        <div>
+            <div>4</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
+        </div>
+        <div>
+            <div>5</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+        </div>
+        <div>
+            <div>6</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-six-text"></tr-input-text>
+        </div>
+        <div>
+            <div>7</div>
+            <tr-input-text list="objective_options" class="objective-input" property="objective-seven-text"></tr-input-text>
+        </div>
+    </div>
+    <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
+    <div id="menu_credits" class="fieldset">
+        <h4 class="legend">Credits</h4>
+        <div id="menu_layout_credits">
+            <table>
+                <tr>
+                    <td>Art:</td>
+                    <td>SchalaKitty</td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td>capt_uhu, Soleras</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="menu_players_extra" class="fieldset players-extra">
+        <h4 class="legend">Players Extra</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Record</th>
+                    <th>Seed</th>
+                    <th>Pronoun</th>
+                </tr>
+                <tr>
+                    <td><label player="1" for="player-1">1</label></td>
+                    <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                 </tr>
+                <tr>
+                    <td><label player="2" for="player-2">2</label></td>
+                    <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+        <h4 class="legend">Background</h4>
+        <div>
+            <tr-select-toggle property="layout-back-select">
+            <!-- community club showcase -->
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="blue-moon" value="1">Blue Moon</tr-option>
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="red-moon" value="2">Red Moon</tr-option>
+
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="trans" value="17">None</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div>
+    <div id="menu_group" class="fieldset group-menu">
+        <h4 class="legend">Group/Round</h4>
+        <div>
+            <tr-select-toggle property="layout-group-select"> 
+                <tr-option target=".group-image" toggle-class="group-none" value="200">None</tr-option>
+
+                <tr-option target=".group-image" toggle-class="group-artemis-bow" value="201">Artemis Bow</tr-option>
+                <tr-option target=".group-image" toggle-class="group-blitz-whip" value="202">Blitz Whip</tr-option>
+                <tr-option target=".group-image" toggle-class="group-cat-claw" value="203">Cat Claw</tr-option>
+                <tr-option target=".group-image" toggle-class="group-defense-sword" value="204">Defense Sword</tr-option>
+                <tr-option target=".group-image" toggle-class="group-full-moon" value="205">Full Moon</tr-option>
+                <tr-option target=".group-image" toggle-class="group-lilith-rod" value="206">Lilith Rod</tr-option>
+                <tr-option target=".group-image" toggle-class="group-ogre-axe" value="207">Ogre Axe</tr-option>
+                <tr-option target=".group-image" toggle-class="group-spear-spear" value="208">Spear Spear</tr-option>
+                
+                <tr-option target=".group-image" toggle-class="group-aegis-shield" value="209">Aegis Shield</tr-option>
+                <tr-option target=".group-image" toggle-class="group-crystal-ring" value="210">Crystal Ring</tr-option>
+                <tr-option target=".group-image" toggle-class="group-dragoon-helm" value="211">Dragoon Helm</tr-option>
+                <tr-option target=".group-image" toggle-class="group-gaea-hat" value="212">Gaea Hat</tr-option>
+                <tr-option target=".group-image" toggle-class="group-heroine-robe" value="213">Heroine Robe</tr-option>
+                <tr-option target=".group-image" toggle-class="group-karate-gi" value="214">Karate Gi</tr-option>
+                <tr-option target=".group-image" toggle-class="group-ninja-shirt" value="215">Ninja Shirt</tr-option>
+                <tr-option target=".group-image" toggle-class="group-zeus-gauntlet" value="216">Zeus Gauntlet</tr-option>
+            </tr-select-toggle>
+        </div>
+        <div>
+            <tr-input-text class="menu-round-input" property="round-input"></tr-input-text>
+        </div>
+    </div>
+    <div id="menu_recap" class="fieldset recap-menu">
+        <h4 class="legend">Recap</h4>
+        <div>
+            <tr-input-toggle-class id="toggle-recap" property="toggle-recap" target=".recap-contain" toggle-class="display-block"></tr-input-toggle-class>
+            <label for="toggle-recap">Toggle Recap</label>
+        </div>
+    </div>
+    <div id="menu_hero" class="fieldset hero-menu">
+        <h4 class="legend">Hero</h4>
+        <div>
+            <tr-select-toggle property="layout-hero-select"> 
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-none" value="100">None</tr-option>
+
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-cecil" value="101">Cecil</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-rosa" value="102">Rosa</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-kain" value="103">Kain</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-rydia" value="104">Rydia</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-tellah" value="105">Tellah</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-edward" value="106">Edward</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-yang" value="107">Yang</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-cid" value="108">Cid</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-palom" value="109">Palom</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-porom" value="110">Porom</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-edge" value="111">Edge</tr-option>
+                <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-fusoya" value="112">FuSoYa</tr-option>
+                <!-- <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="hero-fusoya" value="13">FuSoYa</tr-option> -->
+            </tr-select-toggle>
+        </div>
+    </div>
+    <div id="menu_production_two" class="fieldset">
+        <h4 class="legend">Production Team</h4>
+        <div class="menu-toggle-legend">
+            <tr-input-toggle-class id="toggle-mic" property="toggle-mic" target=".layout .commentators-img path" toggle-class="fill-none"></tr-input-toggle-class>
+            <label for="toggle-mic"> Hide Mics</label>
+        </div>
+        <div>
+            <h4>Commentator 1:</h4>
+            <div>
+                <label for="commentator-name-1">Name:</label>
+                <tr-input-text class="comm-input" id="commentator-name-1" property="commentator-name-1"></tr-input-text>
+            </div>
+            <div>
+                <label for="commentator-pronoun-1">Pronoun:</label>
+                <tr-input-text class="comm-input" property="commentator-pronoun-1"></tr-input-text>
+            </div>
+        </div>
+        <div>
+            <h4>Commentator 2:</h4>
+            <div>
+                <label for="commentator-name-2">Name:</label>
+                <tr-input-text class="comm-input" id="commentator-name-2" property="commentator-name-2"></tr-input-text>
+            </div>
+            <div>
+                <label for="commentator-pronoun-2">Pronoun:</label>
+                <tr-input-text class="comm-input" property="commentator-pronoun-2"></tr-input-text>
+            </div>
+        </div>
+        <div>
+            <h4>Restreamer:</h4>
+            <tr-input-text class="restreamer-input" property="restreamers"></tr-input-text>
+        </div>
+        <div>
+            <h4>Tracker:</h4>
+            <tr-input-textarea class="tracker-input" property="trackers"></tr-input-textarea>
+        </div>
+        <button class="dummy-text-button" title="Dummy Text" onclick="staffDummyText()"></button>
+    </div>
+</div>

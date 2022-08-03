@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/2005/10/profile">
+	<meta charset="utf-8">
+	<title>FF4FE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../shared/production.css"> -->
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="../shared/global-2p.css">
+    <link rel="stylesheet" type="text/css" href="zz5.css">
+    <link rel="preload" href="images/ff4-border.png" as="image" type="image/png">
+    <link rel="preload" href="images/2p/ff4fe-spritesheet.webp" as="image" type="image/webp">
+    <style>
+        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+    
+        [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
+        [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
+
+        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+ 
+        [player="1"] .player-grid-2 {left: var(--grid2X); top: var(--grid2Y);}
+        [player="2"] .player-grid-2 {right: var(--grid2X); top: var(--grid2Y);}
+    
+        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
+        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
+    
+        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
+        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
+    
+        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+    
+        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
+        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
+
+        tr-timer:nth-of-type(1) {left: var(--timerX); top: var(--timerY);}
+        tr-timer:nth-of-type(2) {right: var(--timerX); top: var(--timerY);}
+    </style>
+</head>
+<body>
+    <template id="player_info_template">
+        <div class="border-1 player-video abs"></div>
+        <div class="player-info abs border-background-1">
+            <div class="name-pronoun-contain">
+                <div class="player-name-contain">
+                    <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
+                </div>
+                <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+            </div>
+            <div class="record-seed-contain">
+                <tr-hide-if-empty target=".record-seed-contain [property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                    <div>W-L</div>
+                    <tr-text property="player-record"></tr-text>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target=".record-seed-contain [property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                    <div>Seed</div>
+                    <tr-text property="player-seed"></tr-text>
+                </tr-hide-if-empty>
+            </div>
+        </div>
+        <tr-template class="player-grid abs border-background-1" href="icons.html"></tr-template>
+        <tr-text property="player-final" class="player-final abs border-background-1"></tr-text>
+        <tr-toggle property="toggle-speaker" class="abs player-speaker">
+            <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
+                <path fill="currentColor" d="M5 7h-4v6h4l5 5v-16l-5 5zM16.36 16.36l-1.41-1.41c1.272-1.265 2.059-3.015 2.059-4.95s-0.787-3.685-2.059-4.95l-0-0 1.41-1.41c1.634 1.625 2.645 3.874 2.645 6.36s-1.011 4.735-2.644 6.36l-0 0zM13.54 13.54l-1.42-1.42c0.542-0.543 0.877-1.292 0.877-2.12s-0.335-1.577-0.877-2.12l0 0 1.42-1.42c0.912 0.903 1.477 2.156 1.477 3.54s-0.565 2.637-1.477 3.54l-0 0z"></path>
+            </svg>
+        </tr-toggle>
+        <tr-toggle property="toggle-winner" class="abs player-winner border-background-1">
+            <div class="winner-text">Winner</div>
+            <img class="winner-image" src="images/2p/zz4/winner.svg" width="126" alt="Winner">
+        </tr-toggle>
+        <tr-template class="player-best-of abs border-background-1" href="../shared/bestof.html"></tr-template>
+    </template>
+	<div class="layout">
+        <!-- timer/staff -->
+        <tr-timer class="player-timer abs border-background-1" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" include-padding="true" property="timer-test"></tr-timer>
+        <tr-timer class="player-timer abs border-background-1" include-padding="true" property="timer-test"></tr-timer>
+        <tr-hide-if-empty class="staff abs" toggle-class="wtf">
+            <tr-template href="ff4fe-production-team.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+
+        <div class="abs hero-name"></div>
+        <div class="abs hero-indicator"></div>
+
+        <tr-template class="abs objectives-contain" href="objective_tracker.html"></tr-template>
+
+    </div>
+
+<!-- loadscreen -->
+    <div class="loadscreen-contain abs" style="top: 0; left: 0;">
+        <tr-template href="zz5-loading-template.html"></tr-template>
+    </div>
+    
+<!-- RM calendar -->
+    <div class="calendar-contain abs" style="top: 0; left: 0;">
+        <tr-template href="../shared/calendar-template.html"></tr-template>
+    </div>
+
+    <div class="menu-contain">
+        <tr-template href="game_zz5_menu.html"></tr-template>
+        <tr-template href="../shared/two_menu.html"></tr-template>
+    </div>
+
+    <script src="../shared/script/imgsupport.js"></script>
+	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="../components/components.js"></script>
+    <script src="../components/tracker.js"></script>
+    <script src="script/two_game.js"></script>
+</body>
+</html>

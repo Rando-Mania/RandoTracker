@@ -1,0 +1,331 @@
+<style>
+    /* Loading Screen */
+
+.loadscreen-contain, .two-loading{
+    width: 1280px;
+    height: 720px;
+    background-color: var(--backgroundColor1);
+    color: #fff;
+    z-index: 50;
+    display: none;
+    font-family: 'FF4', sans-serif;
+}
+.two-loading{
+    position: relative;
+}
+
+.loadscreen-contain.show, .two-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    display: block;
+    animation: zoomIn .5s;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    --nameWidth: 298px;
+    --nameX: 264px; --nameY: 337px;
+    --flameX: 215px; --flameY: 618px;
+}
+
+.loadscreen-main{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr auto;
+    align-content: space-between;
+    gap: 0 .5em;
+    height: 720px;
+    width: 959px;
+    margin: 0 auto;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+    justify-items: center;
+}
+
+.loadscreen [player="1"] .player-info{
+    left: var(--nameX); top: var(--nameY);}
+.loadscreen [player="2"] .player-info {
+    right: var(--nameX); top: var(--nameY);}
+
+.loadscreen [player="2"] .player-name-contain{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.loadscreen .final-winner-contain{bottom: 213px;}
+.loadscreen [player="1"] .final-winner-contain{left: 140px;}
+.loadscreen [player="2"] .final-winner-contain{right: 140px;}
+
+.loadscreen .versus{
+    display:none;
+}
+
+.load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{
+    display: none;
+}
+.load-best-of.best-of-3, .load-best-of.best-of-3 > .best-of-3{display: block;}
+.load-best-of.best-of-5, .load-best-of.best-of-5 > .best-of-5{display: block;}
+.load-best-of.best-of-7, .load-best-of.best-of-7 > .best-of-7{display: block;}
+
+.loadscreen .staff{
+    top: 435px;
+    transform: translateX(-50%); 
+    left: 50%;
+}
+
+.recap-contain{
+    letter-spacing: 2px;
+    font-size: 25px;
+    text-align: center;
+    background-color: var(--backgroundColor1);
+    padding: 12px;
+    bottom: 20px;
+    left: 311px;
+    height: 153px;
+    width: 660px;
+    display: none;
+}
+
+.display-block{
+    display: block;
+}
+
+/* Community Club Showcase */
+
+[class*="ccs-"] .loadscreen .header{
+    width: 680px;
+    height: 171px;
+    left: 301px;
+    top: 0;
+    background-size: 680px 171px;
+    z-index: 3;
+}
+
+.notwebp [class*="ccs-"] .loadscreen .header{
+    background-image: url('images/2p/ccs/community-club-showcase-title.png');
+}
+.webp [class*="ccs-"] .loadscreen .header{
+    background-image: url('images/2p/ccs/community-club-showcase-title.webp');
+}
+
+[class*="ccs-"] .loadscreen .top-flames{
+    width: 1020px;
+    height: 80px;
+    left: 50px;
+    top: 58px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 80px, 240px 80px, 240px 0, 960px 0, 960px 80px, 1020px 80px, 1020px 0);
+}
+
+[class*="ccs-"] .loadscreen .top-flames:after{
+    content: '';
+    width: 100%;
+    height: 300%;
+    background-image: url('images/2p/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    animation: flicker-top .2s steps(3) alternate infinite;
+}
+
+@keyframes flicker-top {
+    from{transform: translateY(0);}
+    to{transform: translateY(-240px);}
+}
+
+[class*="ccs-"] .loadscreen .bottom-flames{
+    width: 50px;
+    height: 80px;
+    overflow: hidden;
+}
+
+[class*="ccs-"] .loadscreen .bottom-flames::after{
+    content: '';
+    width: 50px;
+    height: 480px;
+    background-image: url('images/2p/ccs/flame-frames.png');
+    background-size: 80px 480px;
+    position: absolute;
+    transform: translateY(-240px);
+    animation: flicker-bottom .2s steps(3) alternate infinite;
+}
+
+@keyframes flicker-bottom {
+    from{transform: translateY(-240px);}
+    to{transform: translateY(-480px);}
+}
+
+[class*="ccs-"] .loadscreen [player="1"] .bottom-flames{
+    left: var(--flameX); top: var(--flameY);
+}
+[class*="ccs-"] .loadscreen [player="2"] .bottom-flames{
+    right: var(--flameX); top: var(--flameY);
+}
+
+[class*="ccs-"] .loadscreen{
+    --ccs-load-fallback: linear-gradient(to right, #d1d1b9 40px, #0000 40px 1240px, #d1d1b9 1240px 1280px), linear-gradient(#d1d1b9 58px, #898981 58px 218px, #680835 218px 538px, #898981 538px 698px, #604f3e 698px 720px);
+    background-image: var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-baron-hero .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-BHJ.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-baron-hero .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-BHJ.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-pink-puff .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-PPL.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-pink-puff .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-PPL.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-esc .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-ESC.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-esc .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-ESC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-ftp .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-FTP.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-ftp .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-FTP.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-mac .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-MAC.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-mac .loadscreen{
+    background-image: url('images/2p/ccs/summer-2022/Loading-MAC.webp'), var(--ccs-load-fallback);
+}
+
+.notwebp .ccs-special-feature .loadscreen{
+    background-image: url('images/2p/ccs/splash-Special.png'), var(--ccs-load-fallback);
+}
+.webp .ccs-special-feature .loadscreen{
+    background-image: url('images/2p/ccs/splash-Special.webp'), var(--ccs-load-fallback);
+}
+
+/* .adamant-group .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.jpg);}
+.webp.adamant-group .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-group-loading.webp);}
+
+.adamant-bracket .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-bracket .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-bracket-loading.jpg);}
+.webp.adamant-bracket .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-bracket-loading.webp);}
+
+.adamant-semi .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-semi .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.jpg);}
+.webp.adamant-semi .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.webp);}
+
+.adamant-finals .loadscreen{background-color: #0c0946;}
+.notwebp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.jpg);}
+.webp.adamant-finals .loadscreen{background-image: url(images/2p/adamant/ff4fe-ac-finals-loading.webp);} */
+
+.loadscreen .commentators-img {
+    transform: scale(1);
+}
+
+/* [class*="adamant-"] .loadscreen .group-image{
+    margin: 0 auto;
+    background-image: url(images/2p/adamant/AC22-GroupNames.png);
+}
+.group-none{background-image: none !important;}
+
+.group-artemis-bow{background-position: 0 0;}
+.group-blitz-whip{background-position: 0 -51px;}
+.group-cat-claw{background-position: 0 -102px;}
+.group-defense-sword{background-position: 0 -153px;}
+.group-full-moon{background-position: 0 -204px;}
+.group-lilith-rod{background-position: 0 -255px;}
+.group-ogre-axe{background-position: 0 -306px;}
+.group-spear-spear{background-position: 0 -357px;}
+
+.group-aegis-shield{background-position: -362px 0;}
+.group-crystal-ring{background-position: -362px -51px;}
+.group-dragoon-helm{background-position: -362px -102px;}
+.group-gaea-hat{background-position: -362px -153px;}
+.group-heroine-robe{background-position: -362px -204px;}
+.group-karate-gi{background-position: -362px -255px;}
+.group-ninja-shirt{background-position: -362px -306px;}
+.group-zeus-gauntlet{background-position: -362px -357px;} */
+
+</style>
+<div class="loadscreen">
+    <div class="loadscreen-main">
+        <template id="player_info_load_template">
+            <div class="player-info abs background-1 border-1">
+                <div class="name-pronoun-contain">
+                    <div class="player-name-contain">
+                        <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
+                    </div>
+                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+                <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                    <div>W-L</div>
+                    <tr-text property="player-record"></tr-text>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                    <div>Seed</div>
+                    <tr-text property="player-seed"></tr-text>
+                </tr-hide-if-empty>  
+            </div>
+            <div class="final-winner-contain abs">
+                <tr-toggle property="toggle-winner" class="player-winner border-background-1">
+                    <div>Winner</div>
+                </tr-toggle>
+                <tr-text property="player-final" class="player-final border-background-1"></tr-text>
+            </div>
+            <div class="bottom-flames abs"></div>
+        </template>
+        
+        <div class="abs header"></div>
+        <div class="abs top-flames"></div>
+        <tr-player player="1">
+            <tr-template source="#player_info_load_template"></tr-template>
+        </tr-player>
+        <div class="versus">vs</div>
+        <tr-player player="2">
+            <tr-template source="#player_info_load_template"></tr-template>
+        </tr-player>
+
+        <tr-hide-if-empty class="staff abs border-background-1" toggle-class="wtf">
+            <tr-template href="ff4fe-production-team.html"></tr-template>
+        </tr-hide-if-empty>
+
+        <div class="abs recap-contain">
+            <div class="recap-heading">Recap</div>
+            <div class="recap-image"></div>
+        </div>
+        <!-- <div class="load-best-of">
+            <p class="best-of-3">Best of 3</p>
+            <p class="best-of-5">Best of 5</p>
+            <p class="best-of-7">Best of 7</p>
+        </div> -->
+        <tr-text class="round abs" property="tourney-round"></tr-text>
+    </div>
+</div>

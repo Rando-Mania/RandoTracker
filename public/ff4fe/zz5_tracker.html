@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            font-family: "FF4", sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 24px;
+            padding: 24px;
+        }
+
+        @font-face {
+            font-family: "FF4";
+            src:
+                url("fonts/final_fantasy_iv-webfont.woff2") format("woff2"),
+                url("fonts/final_fantasy_iv-webfont.woff") format("woff"),
+                url("fonts/Final Fantasy IV.ttf") format("truetype");
+        }
+
+        .player-info-row{
+            position: relative;
+        }
+
+        .player-speaker{
+            position: absolute;
+            left: 0;
+            top: -15px;
+        }
+        [player="2"] .player-speaker{
+            left: 0;
+            right: 0;
+            top: -15px;
+        }
+
+        .player-speaker img{
+            width: 24px;
+            height: 24px;
+        }
+
+        .grid-contain{
+            display: flex;
+        }
+
+        .player-grid-2{
+            grid-template-columns: 1fr;
+            width: min-content;
+            height: auto;
+            grid-gap: 0;
+        }
+
+        .objectives-contain{
+            grid-column-end:span 2;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <template id="player_info_template">
+        <div class="player-info-row">
+            <div class="player-info border-background-1">
+                <div class="name-pronoun-contain">
+                    <div class="player-name-contain">
+                        <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
+                    </div>
+                    <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                </div>
+                <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                    <div>W-L</div>
+                    <tr-text property="player-record"></tr-text>
+                </tr-hide-if-empty>
+                <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                    <div>Seed</div>
+                    <tr-text property="player-seed"></tr-text>
+                </tr-hide-if-empty>
+            </div>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+        </div>
+        <div class="grid-contain">
+            <tr-template class="player-grid border-background-1" href="icons.html"></tr-template>
+        </div>
+        <tr-text property="player-final" class="player-final border-background-1"></tr-text>
+        <tr-toggle property="toggle-winner" class="player-winner border-background-1">
+            <div>Winner</div>
+        </tr-toggle>
+        <tr-template class="player-best-of" href="../shared/bestof.html"></tr-template>
+    </template>
+    <div class="tracker-layout">
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+        </tr-player>
+        <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
+    </div>
+    
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+
+    <script src="../shared/script/imgsupport.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="../components/components.js"></script>
+    <script src="../components/tracker.js"></script>
+    <script src="script/two_game.js"></script>
+</body>
+</html>
