@@ -5,14 +5,14 @@
 }
 
 :root{
-    --vidWidth: 584px;
+    --vidWidth: 580px;
     --vidAspect: 4 / 3.031;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --border1: solid 1px;
     --backgroundColor1: #0c0946;
 
-    --videoX: 12px; --videoY: 10px;
+    --videoX: 14px; --videoY: 12px;
     --nameWidth: 298px;
     --nameX: 12px; --nameY: 464px;
     --gridX: 12px; --gridY: 529px;
@@ -213,6 +213,30 @@ tr-toggle-class, .in-active {
 [property="rat-tail"]{grid-column: 2;}
 [property="pink-tail"] img{background-position: 50% 100%;}
 
+.boss-tracking{
+    transform: translate(-50%);
+    left: 50%;
+    top: 556px;
+    display: grid;
+    grid-template-columns: repeat(8, 43px);
+    gap: 129px 3px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.boss-tracking tr-toggle-class {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #000;
+}
+.boss-tracking tr-toggle-class.active{color: #fff;}
+.boss-tracking tr-toggle-class:nth-of-type(odd).active{background-color: #008159;}
+.boss-tracking tr-toggle-class:nth-of-type(even).active{background-color: #500197;}
+
 .objectives-contain{
     left: 457px;
     top: 554px;
@@ -302,8 +326,6 @@ tr-toggle-class, .in-active {
     height: 32px;
     display: block;
     filter: drop-shadow(0 0 1px #000);
-    /* color: #008159;
-    color: #500197; */
 }
 
 

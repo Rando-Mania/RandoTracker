@@ -4,27 +4,27 @@ if ('paintWorklet' in CSS) {
 
 function playerDummyText() {
     Tracker.updateLayoutMultiple([
-        {property: '__p1__player-name', value: 'AnakinSkywalker'},
+        {property: '__p1__player-name', value: 'Player 1 Player 1 Player 1'},
         {property: '__p1__player-final', value: '1:23:45'},
         {property: '__p1__toggle-speaker', value: 1},
         {property: '__p1__toggle-winner', value: 1},
-        {property: '__p1__player-pronoun', value: 'he/him'},
+        {property: '__p1__player-pronoun', value: '(She/Her)'},
         {property: '__p1__player-record', value: '1-2'},
 
-        {property: '__p2__player-name', value: 'Yoda'},
+        {property: '__p2__player-name', value: 'Player 2'},
         {property: '__p2__player-final', value: '1:23:45'},
         {property: '__p2__toggle-winner', value: 1},
         {property: '__p2__toggle-speaker', value: 1},
-        {property: '__p2__player-pronoun', value: 'he/him'},
+        {property: '__p2__player-pronoun', value: '(He/Him)'},
         {property: '__p2__player-record', value: '1-2'},
     ]);
 }
 function staffDummyText() {
     Tracker.updateLayoutMultiple([
-        {property: 'commentator-name-1', value: 'Chewbacca'},
-        {property: 'commentator-pronoun-1', value: '(he/him)'},
-        {property: 'commentator-name-2', value: 'Jar Jar Binks'},
-        {property: 'commentator-pronoun-2', value: '(meesa/yousa)'},
+        {property: 'commentator-name-1', value: 'Comms 1'},
+        {property: 'commentator-pronoun-1', value: '(They/Them)'},
+        {property: 'commentator-name-2', value: 'Comms 2'},
+        {property: 'commentator-pronoun-2', value: '(Ze/Hir)'},
         {property: 'restreamers', value: 'R2D2'},
         {property: 'trackers', value: 'C3PO, BB-8'}
     ]);
