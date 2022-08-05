@@ -121,10 +121,29 @@ tr-timer span{
     display: block;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
+/* tr-input-number{
+    display: flex;
 }
+
+tr-input-number button{
+    padding-inline: .5em;
+    border-radius: 0;
+    border: none;
+}
+tr-input-number button.minus{
+    order: -1;
+} */
+
+/* input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+  } */
+
 input[type=number]:out-of-range{
     background-color: #f00;
 }
