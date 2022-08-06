@@ -34,22 +34,11 @@
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
-/*[class*="zz4-"].layout{
-    --borderImage: url(images/ff4-zz4-border.png) fill 3 / 3px / 1px;
-    --backgroundColor1: #242847;
-}*/
-
 .border-1{
     border: var(--border1);
     border-image: var(--borderImage) 3 / 3px / 1px;
     image-rendering: pixelated;
 }
-
-/*[class*="zz4-"].layout .player-video.border-1{
-    border: var(--border1);
-    border-image: url(images/ff4-zz4-border-inner-corners.png) 4 / 4px / 1px;
-    image-rendering: pixelated;
-}*/
 
 .background-1{
     background-color: var(--backgroundColor1);
@@ -61,10 +50,6 @@
     background-color: var(--backgroundColor1);
     image-rendering: pixelated;
 }
-
-/*[class*="zz4-"].layout .border-background-1 {
-    border-image-repeat: repeat;
-}*/
 
 .abs{position: absolute;}
 
@@ -86,16 +71,6 @@
 }
 
 .layout.trans{background-color: #0000; background-image: none;}
-
-
-/*[class*="zz4-"].layout{
-    color: var(--zemusTextColor);
-    background-color: #6a9480;
-}
-
-.layout.zz4-quarterfinals{background-image: url('images/2p/zz4/QuarterFinals-Live-BG.jpg');}
-.layout.zz4-semifinals{background-image: url('images/2p/zz4/SemiFinals-Live-BG.jpg');}
-.layout.zz4-finals{background-image: url('images/2p/zz4/TheFinals-Live-BG.jpg');}*/
 
 .layout.ccs-pink-puff{background-color: #627079;}
 .notwebp .layout.ccs-pink-puff{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.png);}
@@ -337,11 +312,6 @@ tr-toggle-class, .in-active {
     filter: drop-shadow(0 0 1px #000);
 }
 
-/*[class*="zz4-"].layout .player-speaker svg{
-    color: var(--backgroundColor1);
-    filter: none;
-}*/
-
 [player="2"] .player-speaker{
     transform: rotateY(180deg);
 }
@@ -359,9 +329,6 @@ tr-toggle-class, .in-active {
 }
 
 .winner-image{ display:none;}
-
-/*[class*="zz4-"] .winner-image{ display:block;}
-[class*="zz4-"] .winner-text{ display:none;}*/
 
 .player-best-of{
     width: 216px;
@@ -574,13 +541,6 @@ tr-timer span {
 .hero-palom, .hero-porom, .hero-edge, .hero-fusoya {
     display: initial;
 }
-
-/*.notwebp [class*="zz4-"] .hero-indicator {
-    background-image: url('images/2p/zz4/HeroSheet-zz4.png');
-}
-.webp [class*="zz4-"] .hero-indicator {
-    background-image: url('images/2p/zz4/HeroSheet-zz4.webp');
-}*/
 
 .hero-indicator.hero-cecil {background-position: 0 0;}
 .hero-indicator.hero-rosa {background-position: 33.3% 0;}
