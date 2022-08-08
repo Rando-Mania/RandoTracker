@@ -42,10 +42,9 @@
     display: grid;
     grid-auto-rows: 1fr auto;
     grid-gap: 1em;
-    place-items: center;
     --nameWidth: 298px;
-    --nameX: 264px; --nameY: 337px;
-    --flameX: 215px; --flameY: 618px;
+    --nameX: 22px;
+    --nameY: 273px;
 }
 
 .loadscreen{
@@ -53,14 +52,14 @@
 }
 
 .loadscreen-main{
+    position: relative;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 1fr auto;
     align-content: space-between;
     gap: 0 .5em;
     height: 720px;
-    width: 959px;
-    margin: 0 auto;
+    width: 810px;
 }
 
 .loadscreen-main *{
@@ -78,9 +77,9 @@
     justify-content: flex-end;
 }
 
-.loadscreen .final-winner-contain{bottom: 213px;}
-.loadscreen [player="1"] .final-winner-contain{left: 140px;}
-.loadscreen [player="2"] .final-winner-contain{right: 140px;}
+.loadscreen .final-winner-contain{bottom: 453px;}
+.loadscreen [player="1"] .final-winner-contain{left: 17px;}
+.loadscreen [player="2"] .final-winner-contain{right: 17px;}
 
 .loadscreen .versus{
     display:none;
@@ -105,10 +104,10 @@
     text-align: center;
     background-color: var(--backgroundColor1);
     padding: 12px;
-    bottom: 20px;
-    left: 311px;
-    height: 153px;
-    width: 660px;
+    bottom: 63px;
+    left: 222px;
+    height: 86px;
+    width: 368px;
     display: none;
 }
 
