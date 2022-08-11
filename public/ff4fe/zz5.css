@@ -65,20 +65,15 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #9cd2ff;
-    background-image: radial-gradient(#9cd2ff, #2e63af);
-    background-image: radial-gradient(ellipse at top center, #2e63af, #9cd2ff);
 }
 
 .layout.trans{background-color: #0000; background-image: none;}
 
-.layout.blue-moon{background-position: left;}
-.notwebp .layout.blue-moon {background-image: url(images/2p/zz5/2P-vibecheck-compare3.png);}
-.webp .layout.blue-moon {background-image: url(images/2p/zz5/2P-vibecheck-compare3.webp);}
+.layout.blue-moon-waxing {background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
+.layout.blue-moon-waning {background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
 
-.layout.red-moon{background-position: right;}
-.notwebp .layout.red-moon {background-image: url(images/2p/zz5/2P-vibecheck-compare3.png);}
-.webp .layout.red-moon {background-image: url(images/2p/zz5/2P-vibecheck-compare3.webp);}
+.layout.red-moon-waxing {background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
+.layout.red-moon-waning {background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
 
 .player-video{
     width: var(--vidWidth);
@@ -218,12 +213,71 @@ tr-toggle-class, .in-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    color: #000;
+    color: rgba(0,0,0,.75);
+    cursor: pointer;
 }
+
 .boss-tracking tr-toggle-class.active{color: #fff;}
-.boss-tracking tr-toggle-class:nth-of-type(odd).active{background-color: #008159;}
-.boss-tracking tr-toggle-class:nth-of-type(even).active{background-color: #500197;}
+.blue-moon-waxing .boss-tracking tr-toggle-class:nth-of-type(odd).active,
+.blue-moon-waning .boss-tracking tr-toggle-class:nth-of-type(odd).active{
+    background-color: #008159;}
+.blue-moon-waxing .boss-tracking tr-toggle-class:nth-of-type(even).active,
+.blue-moon-waning .boss-tracking tr-toggle-class:nth-of-type(even).active{
+    background-color: #500197;}
+
+.red-moon-waxing .boss-tracking tr-toggle-class:nth-of-type(odd).active,
+.red-moon-waning .boss-tracking tr-toggle-class:nth-of-type(odd).active{
+    background-color: #aa4800;}
+.red-moon-waxing .boss-tracking tr-toggle-class:nth-of-type(even).active,
+.red-moon-waning .boss-tracking tr-toggle-class:nth-of-type(even).active{
+    background-color: #b88100;}
+
+
+/* All areas are 89x60
+
+0, 0 - D. Mist
+0, 89 - Kaipo Officer
+0, 178 - Octomamm
+0, 267 - Antlion
+0, 356 - Waterhag
+0, 445 - Mombomb
+
+60, 0 - Fabul Gauntlet
+60, 89 - Milon
+60, 178 - Milon Z
+60, 267 - D. Knight
+60, 356 - Baron Guards
+60, 445 - Karate
+
+120, 0 - Baigan
+120, 89 - Kainazzo
+120, 178 - Dark Elf
+120, 267 - Magus Sisters
+120, 356 - Valvalis
+120, 445 - Calbrena
+
+180, 0 - Golbez
+180, 89 - Lugae
+180, 178 - Dark Imps
+180, 267 - King/Queen Eblan
+180, 356 - Rubicant
+180, 445 - Evilwall
+
+240, 0 - Elements
+240, 89 - CPU
+240, 178 - Odin
+240, 267 - Asura
+240, 356 - Leviatan
+240, 445 - Bahamut
+
+
+300, 0 - Pale Dim
+300, 89 - D. Lunars
+300, 178 - Plague
+300, 267 - Ogopogo
+300, 356 - Wyvern
+300, 445 - Zemus (This one is a joke to fill the space, you don't have to put it on the list.) */
+
 
 .objectives-contain{
     left: 457px;
@@ -325,7 +379,7 @@ tr-toggle-class, .in-active {
     height: 50px;
     font-weight: bold;
     font-size: 27px;
-    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
+    /* text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000; */
     padding: 0 .5em;
     display: flex;
     justify-content: center;
@@ -381,14 +435,15 @@ tr-timer, .player-final{
 }
 
 .player-final{
-    /* CCS colors */
-    color: #ffdd00;
-    --text-shadow-color: #940000;
     /* adamant colors */
     color: #b1fafd;
     text-shadow: 1px 2px #008496;
     --text-shadow-color: #008496;
     text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
+    /* ZZ5 colors */
+    color: #fff;
+    text-shadow: none;
+
 }
 
 tr-timer span {

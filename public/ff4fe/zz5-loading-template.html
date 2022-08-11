@@ -45,11 +45,20 @@
     --nameWidth: 298px;
     --nameX: 22px;
     --nameY: 273px;
+/* zz5 */
+    --nameX: 65px;
+    --nameY: 343px;
 }
 
-.loadscreen{
-    background-image: url(images/2p/zz5/unknown.png);
-}
+/* .loadscreen{
+    place-items: center;
+    --nameX: 264px; --nameY: 337px;
+} */
+
+.blue-moon-waxing .loadscreen{background-image: url(images/2p/zz5/BlueWaxing-Loading.png);}
+.blue-moon-waning .loadscreen{background-image: url(images/2p/zz5/BlueWaning-Loading.png);}
+.red-moon-waxing .loadscreen{background-image: url(images/2p/zz5/RedWaxing-Loading.png);}
+.red-moon-waning .loadscreen{background-image: url(images/2p/zz5/RedWaning-Loading.png);}
 
 .loadscreen-main{
     position: relative;
@@ -60,7 +69,15 @@
     gap: 0 .5em;
     height: 720px;
     width: 810px;
+    width: 890px;
 }
+
+/* Adamant
+.loadscreen-main{
+    width: 959px;
+    margin: 0 auto;
+}
+ */
 
 .loadscreen-main *{
     justify-content: center;
@@ -77,9 +94,39 @@
     justify-content: flex-end;
 }
 
-.loadscreen .final-winner-contain{bottom: 453px;}
-.loadscreen [player="1"] .final-winner-contain{left: 17px;}
-.loadscreen [player="2"] .final-winner-contain{right: 17px;}
+.loadscreen [player="1"] .record-contain{
+    /* box-shadow: inset 2px 2px 2px rgba(0,0,0,.5); */
+    border-left: 3px solid #000;
+}
+.loadscreen [player="2"] .record-contain{
+    /* box-shadow: inset 2px 2px 2px rgba(0,0,0,.5); */
+    border-right: 3px solid #000;
+}
+
+.loadscreen .final-winner-contain{
+    bottom: 453px;
+    bottom: 380px;
+}
+.loadscreen [player="1"] .final-winner-contain{
+    left: 17px;
+    left: 70px;
+}
+.loadscreen [player="2"] .final-winner-contain{
+    right: 17px;
+    right: 70px;
+}
+
+.loadscreen .player-final, .loadscreen .player-winner{
+    font-size: 17px;
+    color: #fff;
+    text-shadow: none;
+    width: 191px;
+    height: 26px;
+}
+.loadscreen .player-winner{
+    font-weight: normal;
+    letter-spacing: 1px;
+}
 
 .loadscreen .versus{
     display:none;
@@ -94,6 +141,7 @@
 
 .loadscreen .staff{
     top: 435px;
+    top: 464px;
     transform: translateX(-50%); 
     left: 50%;
 }
@@ -102,15 +150,21 @@
     letter-spacing: 2px;
     font-size: 25px;
     text-align: center;
-    background-color: var(--backgroundColor1);
     padding: 12px;
-    bottom: 63px;
-    left: 222px;
-    height: 86px;
-    width: 368px;
+    bottom: 33px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 141px;
+    width: 362px;
     display: none;
 }
 
+.blue-moon-waxing .recap-contain, .blue-moon-waning .recap-contain {
+    background-image: url(images/2p/zz5/Blue-Recap.png);
+}
+.red-moon-waxing .recap-contain, .red-moon-waning .recap-contain {
+    background-image: url(images/2p/zz5/Red-Recap.png);
+}
 .display-block{
     display: block;
 }
@@ -165,7 +219,7 @@
             </div>
             <div class="final-winner-contain abs">
                 <tr-toggle property="toggle-winner" class="player-winner border-background-1">
-                    <div>Winner</div>
+                    <div>WINNER</div>
                 </tr-toggle>
                 <tr-text property="player-final" class="player-final border-background-1"></tr-text>
             </div>
@@ -184,7 +238,7 @@
         </tr-hide-if-empty>
 
         <div class="abs recap-contain">
-            <div class="recap-heading">Recap</div>
+            <div class="recap-heading"></div>
             <div class="recap-image"></div>
         </div>
         <!-- <div class="load-best-of">
