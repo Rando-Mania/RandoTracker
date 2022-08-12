@@ -65,15 +65,24 @@
     height: 720px;
     color: #fff;
     position: relative;
+    background-color: #22232d;
 }
 
 .layout.trans{background-color: #0000; background-image: none;}
 
-.layout.blue-moon-waxing {background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
-.layout.blue-moon-waning {background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
+.layout.blue-moon-waxing {
+    background-color: #008ad8;
+    background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
+.layout.blue-moon-waning {
+    background-color: #03258d;
+    background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
 
-.layout.red-moon-waxing {background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
-.layout.red-moon-waning {background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
+.layout.red-moon-waxing {
+    background-color: #ee464b;
+    background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
+.layout.red-moon-waning {
+    background-color: #880100;
+    background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
 
 .player-video{
     width: var(--vidWidth);
@@ -202,7 +211,8 @@ tr-toggle-class, .in-active {
     top: 556px;
     display: grid;
     grid-template-columns: repeat(8, 43px);
-    gap: 129px 3px;
+    grid-template-rows: 12px 60px 60px 12px;
+    gap: 3px;
     font-size: 11px;
     text-align: center;
 }
@@ -233,51 +243,69 @@ tr-toggle-class, .in-active {
     background-color: #b88100;}
 
 
-/* All areas are 89x60
+.boss-option{
+    grid-column: span 2;
+}
+.boss-options{
+    width: 89px;
+    height: 60px;
+    background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.png);
+    background-size: 600% 600%;
+    image-rendering: pixelated;
+}
+.webp .notavif .boss-options{background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.webp);}
+.avif .boss-options{background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.avif);}
 
-0, 0 - D. Mist
-0, 89 - Kaipo Officer
-0, 178 - Octomamm
-0, 267 - Antlion
-0, 356 - Waterhag
-0, 445 - Mombomb
+tr-image.boss-options img{
+    width: 89px;
+    height: 60px;
+}
+.dialog img{
+    width: calc(89px / 2);
+    height: calc(60px / 2);
+}
 
-60, 0 - Fabul Gauntlet
-60, 89 - Milon
-60, 178 - Milon Z
-60, 267 - D. Knight
-60, 356 - Baron Guards
-60, 445 - Karate
+.d-mist {background-position: 0 0;}
+.kaipo-officer {background-position: 20% 0;}
+.octomamm {background-position: 40% 0;}
+.antlion {background-position: 60% 0;}
+.waterhag {background-position: 80% 0;}
+.mombomb {background-position: 100% 0;}
 
-120, 0 - Baigan
-120, 89 - Kainazzo
-120, 178 - Dark Elf
-120, 267 - Magus Sisters
-120, 356 - Valvalis
-120, 445 - Calbrena
+.fabul-gauntlet{background-position: 0 20%;}
+.milon{background-position: 20% 20%;}
+.milon-z{background-position: 40% 20%;} 
+.d-knight{background-position: 60% 20%;}
+.baron-guards{background-position: 80% 20%;}
+.karate{background-position: 100% 20%;}
 
-180, 0 - Golbez
-180, 89 - Lugae
-180, 178 - Dark Imps
-180, 267 - King/Queen Eblan
-180, 356 - Rubicant
-180, 445 - Evilwall
+.baigan{background-position: 0 40%;}
+.kainazzo{background-position: 20% 40%;}
+.dark-elf{background-position: 40% 40%;}
+.magus-sisters{background-position: 60% 40%;}
+.valvalis{background-position: 80% 40%;}
+.calbrena{background-position: 100% 40%;}
 
-240, 0 - Elements
-240, 89 - CPU
-240, 178 - Odin
-240, 267 - Asura
-240, 356 - Leviatan
-240, 445 - Bahamut
+.golbez{background-position: 0 60%;}
+.lugae{background-position: 20% 60%;}
+.dark-imps{background-position: 40% 60%;}
+.king-queen-eblan{background-position: 60% 60%;}
+.rubicant{background-position: 80% 60%;}
+.evilwall{background-position: 100% 60%;}
 
+.elements{background-position: 0 80%;}
+.cpu{background-position: 20% 80%;}
+.odin{background-position: 40% 80%;}
+.asura{background-position: 60% 80%;}
+.leviatan{background-position: 80% 80%;}
+.bahamut{background-position: 100% 80%;}
 
-300, 0 - Pale Dim
-300, 89 - D. Lunars
-300, 178 - Plague
-300, 267 - Ogopogo
-300, 356 - Wyvern
-300, 445 - Zemus (This one is a joke to fill the space, you don't have to put it on the list.) */
-
+.pale-dim{background-position: 0 100%;}
+.d-lunars{background-position: 20% 100%;}
+.plague{background-position: 40% 100%;}
+.ogopogo{background-position: 60% 100%;} 
+.wyvern{background-position: 80% 100%;}
+.zemus{background-position: 100% 100%;}
 
 .objectives-contain{
     left: 457px;
@@ -552,7 +580,7 @@ tr-timer span {
     text-align: center;
     background-color: #000;
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(6,auto);
     gap: 7px;
     padding: 7px;
     border: solid 2px;

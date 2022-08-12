@@ -154,6 +154,10 @@ button.dummy-text-button:hover,
     padding: 0 .25em;
 }
 
+.two-1v1-label.menu-toggle-legend{
+    right: 140px;
+}
+
 /* Players */
 
 #menu_player_labels, #menu_players tr-player{

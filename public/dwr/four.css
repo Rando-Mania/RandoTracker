@@ -678,6 +678,7 @@ tr-timer span {
     left: -2px; 
     top: 50%; 
     transform: translateY(-50%);
+    height: 74px;
 }
 
 .coop-background .staff{
