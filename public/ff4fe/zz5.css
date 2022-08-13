@@ -223,7 +223,6 @@ tr-toggle-class, .in-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(0,0,0,.75);
     cursor: pointer;
 }
 
@@ -471,8 +470,14 @@ tr-timer, .player-final{
     /* ZZ5 colors */
     color: #fff;
     text-shadow: none;
-
 }
+
+[player="1"] .player-final{background-position: -169px -529px;}
+[player="2"] .player-final{background-position: right -169px top -529px;}
+.blue-moon-waxing .player-final{background-image: url(images/2p/zz5/BlueWaxing-Live.png);}
+.blue-moon-waning .player-final{background-image: url(images/2p/zz5/BlueWaning-Live.png);}
+.red-moon-waxing .player-final{background-image: url(images/2p/zz5/RedWaxing-Live.png);}
+.red-moon-waning .player-final{background-image: url(images/2p/zz5/RedWaning-Live.png);}
 
 tr-timer span {
     width: 29px;
@@ -577,6 +582,7 @@ tr-timer span {
 /* dialog styles */
     
 .dialog{
+    transform: translate(-205px, -145px) scale(1);
     text-align: center;
     background-color: #000;
     display: grid;
@@ -585,7 +591,14 @@ tr-timer span {
     padding: 7px;
     border: solid 2px;
     z-index: 3;
+    animation: scale-up .2s;
+    background-color: #331413;
+    background-image: radial-gradient(#331413, #230403);
     }
+
+@keyframes scale-up {
+    from{transform: translate(-205px, -145px) scale(0)}
+}
 
 #production{
     display: grid;
