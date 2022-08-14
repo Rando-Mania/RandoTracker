@@ -592,8 +592,8 @@ tr-timer span {
     border: solid 2px;
     z-index: 3;
     animation: scale-up .2s;
-    background-color: #331413;
-    background-image: radial-gradient(#331413, #230403);
+    background-color: #222434;
+    background-image: linear-gradient(#222434, #202232);
     }
 
 @keyframes scale-up {

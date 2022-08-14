@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
+    <link rel="stylesheet" type="text/css" href="zz5.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         :root{
@@ -72,6 +73,15 @@
             grid-column-end:span 2;
             justify-self: center;
         }
+        .boss-tracking{
+            grid-template-rows: 24px 60px 60px 24px;
+            transform: translate(0,0);
+            grid-column: span 2;
+            justify-self: center;
+        }
+        .boss-tracking > *, .boss-tracking img{
+            box-shadow: 0 0 0 3px #222434;
+        }
     </style>
 </head>
 <body>
@@ -113,7 +123,29 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
+        <!-- <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template> -->
+        
+        <div class="boss-tracking">
+            <tr-toggle-class property="boss-1-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-1-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-2-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-2-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-3-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-3-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-4-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-4-p2" toggle-class="active">2</tr-toggle-class>
+            
+            <tr-template style="display: contents;" href="boss-tracking.html"></tr-template>
+
+            <tr-toggle-class property="boss-5-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-5-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-6-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-6-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-7-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-7-p2" toggle-class="active">2</tr-toggle-class>
+            <tr-toggle-class property="boss-8-p1" toggle-class="active">1</tr-toggle-class>
+            <tr-toggle-class property="boss-8-p2" toggle-class="active">2</tr-toggle-class>
+        </div>
     </div>
     
     <div class="menu-contain">
