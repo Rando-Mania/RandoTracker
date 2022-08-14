@@ -14,7 +14,7 @@
 
     --videoX: 14px; --videoY: 12px;
     --nameWidth: 298px;
-    --nameX: 12px; --nameY: 464px;
+    --nameX: 12px; --nameY: 463px;
     --gridX: 12px; --gridY: 529px;
     /* --grid2X: 169px; --grid2Y: 586px; */
     --speakerX: 402px; --speakerY: 471px;
@@ -150,6 +150,9 @@
     z-index: 1;
     text-align: center;
 }
+
+[player="1"] .record-contain{box-shadow: -3px 0 #232535;}
+[player="2"] .record-contain{box-shadow: inset -3px 0 #232535;}
 
 .seed-contain div{
     font-size: 12px;

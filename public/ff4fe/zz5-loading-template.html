@@ -47,7 +47,7 @@
     --nameY: 273px;
 /* zz5 */
     --nameX: 65px;
-    --nameY: 343px;
+    --nameY: 341px;
 }
 
 /* .loadscreen{
@@ -94,14 +94,11 @@
     justify-content: flex-end;
 }
 
-.loadscreen [player="1"] .record-contain{
-    /* box-shadow: inset 2px 2px 2px rgba(0,0,0,.5); */
-    border-left: 3px solid #000;
-}
-.loadscreen [player="2"] .record-contain{
-    /* box-shadow: inset 2px 2px 2px rgba(0,0,0,.5); */
-    border-right: 3px solid #000;
-}
+div[class*="blue-"] .loadscreen [player="1"] .record-contain{box-shadow: -3px 0 #232535;}
+div[class*="blue-"] .loadscreen [player="2"] .record-contain{box-shadow: inset -3px 0 #232535;}
+
+div[class*="red-"] .loadscreen [player="1"] .record-contain{box-shadow: -3px 0 #000;}
+div[class*="red-"] .loadscreen [player="2"] .record-contain{box-shadow: inset -3px 0 #000;}
 
 .loadscreen .final-winner-contain{
     bottom: 453px;
@@ -177,6 +174,31 @@
     transform: scale(1);
 }
 
+.round-contain{
+    transform: translate(-50%);
+    left: 50%;
+    top: 170px;
+    text-align: center;
+}
+
+.round-header{
+    margin-bottom: 3px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round{
+    width: 360px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-wrap;
+    padding: 0 8px 0 8px;
+}
+
 /* [class*="adamant-"] .loadscreen .group-image{
     margin: 0 auto;
     background-image: url(images/2p/adamant/AC22-GroupNames.png);
@@ -250,6 +272,9 @@
             <p class="best-of-5">Best of 5</p>
             <p class="best-of-7">Best of 7</p>
         </div> -->
-        <tr-text class="round abs" property="tourney-round"></tr-text>
+        <div class="abs round-contain">
+            <div class="round-header">Current Round</div>
+            <tr-text class="round" property="round-input"></tr-text>
+        </div>
     </div>
 </div>
