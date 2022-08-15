@@ -1,6 +1,6 @@
-if ('paintWorklet' in CSS) {
-    CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
-}
+// if ('paintWorklet' in CSS) {
+//     CSS.paintWorklet.addModule('../shared/images/generic-fallback-worklet.js');
+// }
 
 function playerDummyText() {
     Tracker.updateLayoutMultiple([
