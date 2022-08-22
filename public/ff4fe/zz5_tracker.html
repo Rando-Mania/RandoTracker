@@ -73,6 +73,21 @@
             grid-column-end:span 2;
             justify-self: center;
         }
+
+        .boss-count-tracking-contain{
+            grid-column: 1 / -1;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .boss-count-contain{
+            display: grid;
+            gap: 16px;
+            justify-items: center;            
+        }
+        
         .boss-tracking{
             grid-template-rows: 24px 60px 60px 24px;
             transform: translate(0,0);
@@ -125,26 +140,36 @@
         </tr-player>
         <!-- <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template> -->
         
-        <div class="boss-tracking">
-            <tr-toggle-class property="boss-1-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-1-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-2-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-2-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-3-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-3-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-4-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-4-p2" toggle-class="active">2</tr-toggle-class>
-            
-            <tr-template style="display: contents;" href="boss-tracking.html"></tr-template>
+        <div class="boss-count-tracking-contain">
+            <div class="boss-count-contain">
+                <h4>Boss Count P1</h4>
+                <tr-input-number max="7" min="0" value="0" player="1" oninput class="boss-count-input" property="player-boss-count"></tr-input-number>
+            </div>
+            <div class="boss-tracking">
+                <tr-toggle-class property="boss-1-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-1-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-2-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-2-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-3-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-3-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-4-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-4-p2" toggle-class="active">2</tr-toggle-class>
+                
+                <tr-template style="display: contents;" href="boss-tracking.html"></tr-template>
 
-            <tr-toggle-class property="boss-5-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-5-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-6-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-6-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-7-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-7-p2" toggle-class="active">2</tr-toggle-class>
-            <tr-toggle-class property="boss-8-p1" toggle-class="active">1</tr-toggle-class>
-            <tr-toggle-class property="boss-8-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-5-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-5-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-6-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-6-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-7-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-7-p2" toggle-class="active">2</tr-toggle-class>
+                <tr-toggle-class property="boss-8-p1" toggle-class="active">1</tr-toggle-class>
+                <tr-toggle-class property="boss-8-p2" toggle-class="active">2</tr-toggle-class>
+            </div>
+            <div class="boss-count-contain">
+                <h4>Boss Count P2</h4>
+                <tr-input-number max="7" min="0" value="0" player="2" oninput class="boss-count-input" property="player-boss-count"></tr-input-number>
+            </div>
         </div>
     </div>
     

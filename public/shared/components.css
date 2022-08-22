@@ -144,8 +144,17 @@ tr-input-number button.minus{
     -webkit-appearance: none;
   } */
 
+input[type=number]{
+  transition: transform .2s;
+  transform-origin: 75% center;
+}
+
 input[type=number]:out-of-range{
     background-color: #f00;
+}
+
+input[type=number]:hover{
+    transform: scale(1.5);
 }
 
 .visually-hidden { 
