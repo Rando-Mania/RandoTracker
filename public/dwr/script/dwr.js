@@ -606,7 +606,7 @@
 
 DWR.init();
 
-// if ('paintWorklet' in CSS) {
+if ('paintWorklet' in CSS) {
 	CSS.paintWorklet.addModule('images/paint-worklets.js');
 	
 	window.CSS.registerProperty({
@@ -615,7 +615,7 @@ DWR.init();
 		inherits: false,
 		initialValue: '#fc9838',
 	});
-// }
+}
 
 function playerDummyText() {
 	Tracker.updateLayoutMultiple([
