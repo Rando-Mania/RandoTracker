@@ -31,8 +31,8 @@
         [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
         [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
     
-        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
-        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
+        [player="1"] .player-winner, [player="1"] .player-objective-count {left: var(--winX); top: var(--winY);}
+        [player="2"] .player-winner, [player="2"] .player-objective-count {right: var(--winX); top: var(--winY);}
     
         [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
         [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
@@ -73,6 +73,9 @@
             <div class="winner-text">Winner</div>
             <img class="winner-image" src="images/2p/zz4/winner.svg" width="126" alt="Winner">
         </tr-toggle>
+        <div class="abs player-objective-count border-background-1">
+            <span class="number-wrapper"><tr-text property="player-objective-count"></tr-text></span>
+        </div>
         <tr-template class="player-best-of abs border-background-1" href="../shared/bestof.html"></tr-template>
     </template>
 	<div class="layout">

@@ -68,6 +68,20 @@
             grid-gap: 0;
         }
 
+        .objective-count-tracking-contain{
+            grid-column: 1 / -1;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .objective-count-contain{
+            display: grid;
+            gap: 16px;
+            justify-items: center;            
+        }
+
         .objectives-contain{
             grid-column-end:span 2;
             justify-self: center;
@@ -113,7 +127,17 @@
         <tr-player player="2">
             <tr-template source="#player_info_template"></tr-template>
         </tr-player>
-        <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
+        <div class="objective-count-tracking-contain">
+            <div class="objective-count-contain">
+                <h4>Objective Count P1</h4>
+                <tr-input-number max="7" min="0" value="0" player="1" oninput class="objective-count-input" property="player-objective-count"></tr-input-number>
+            </div>
+            <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
+            <div class="objective-count-contain">
+                <h4>Objective Count P2</h4>
+                <tr-input-number max="7" min="0" value="0" player="2" oninput class="objective-count-input" property="player-objective-count"></tr-input-number>
+            </div>
+        </div>
     </div>
     
     <tr-template href="../shared/two-menus-contain.html"></tr-template>

@@ -55,18 +55,21 @@
                     <th>Record</th>
                     <th>Seed</th>
                     <th>Pronoun</th>
+                    <th>Count</th>
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
                     <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="1" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number max="7" min="0" value="0" player="1" oninput class="boss-objective-input" property="player-objective-count"></tr-input-number></td>
                  </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
                     <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
                     <td><tr-input-text player="2" class="seed-input" property="player-seed"></tr-input-text></td>
                     <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                    <td><tr-input-number max="7" min="0" value="0" player="2" oninput class="boss-objective-input" property="player-objective-count"></tr-input-number></td>
                 </tr>
             </table>
         </div>

@@ -507,6 +507,8 @@ tr-timer, .player-final{
     /* ZZ5 colors */
     color: #fff;
     text-shadow: none;
+    justify-content: center;
+    align-items: center;
 }
 
 [player="1"] .player-final{background-position: -169px -529px;}

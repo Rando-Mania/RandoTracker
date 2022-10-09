@@ -328,6 +328,23 @@ tr-toggle-class, .in-active {
     align-items: center;
 }
 
+.player-objective-count{
+    width: 216px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 .5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-wrapper{
+    right: 4px;
+    position: relative;
+    letter-spacing: 4px;
+}
+
 .winner-image{ display:none;}
 
 .player-best-of{
