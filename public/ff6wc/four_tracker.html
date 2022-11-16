@@ -15,7 +15,8 @@
         .tracker-layout{
             font-family: 'FF6', Arial, sans-serif;
             background-color: #000;
-            --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
+            --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
+            --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
             background-image: var(--background-fallback);
             color: #fff;
             display: grid;
@@ -31,11 +32,11 @@
         }
 
         .notwebp .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/justbackground.jpg'), var(--background-fallback);}
+            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.jpg'), var(--background-fallback);}
         .webp.notavif .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/justbackground.webp'), var(--background-fallback);}
+            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.webp'), var(--background-fallback);}
         .avif .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/justbackground.avif'), var(--background-fallback);}
+            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.avif'), var(--background-fallback);}
         
         .tracker-layout .player-wrapper > *~*{
             margin-top: 8px;
@@ -64,6 +65,7 @@
 
         .tracker-layout .player-grid-counters{
             display: flex;
+            gap: 2px;
         }
 
         .tracker-layout .goals{
@@ -90,6 +92,8 @@
         }
         .spinner{
             place-self: start end;
+            position: relative;
+            top: -4px;
             z-index: 5;
         }
         .tracker-layout .player-grid-back {
@@ -147,7 +151,7 @@
                             <tr-text oninput property="magicite-goal">?</tr-text>
                         </div>
                     </div>
-                    <div class="icon-slot dragons display-none">
+                    <div class="icon-slot dragons">
                         <img src="../shared/images/icons/blank.svg" class="icon" alt="">
                         <div class="counter">
                             <tr-text player="1" oninput="" property="dragon-count">1</tr-text>
@@ -157,6 +161,30 @@
                         </div>
                         <div class="out-of">
                             <tr-text oninput property="dragon-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot bosses">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="1" oninput="" property="boss-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="1" min="0" max="100" value="0" property="boss-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="boss-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot checks">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="1" oninput="" property="checks-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="1" min="0" max="100" value="0" property="checks-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="checks-goal">?</tr-text>
                         </div>
                     </div> 
                 </div>
@@ -176,6 +204,14 @@
             <div class="dragons-goal-contain">
                 <label>Dragons</label>
                 <tr-input-number oninput min="0" max="8" value="8" property="dragon-goal"></tr-input-number>
+            </div>
+            <div class="bosses-goal-contain">
+                <label>Bosses</label>
+                <tr-input-number oninput min="0" max="100" value="8" property="boss-goal"></tr-input-number>
+            </div>
+            <div class="bosses-goal-contain">
+                <label>Checks</label>
+                <tr-input-number oninput min="0" max="100" value="8" property="checks-goal"></tr-input-number>
             </div>
         </div>
         <div class="player-wrapper rel">
@@ -210,7 +246,7 @@
                             <tr-text oninput property="magicite-goal">?</tr-text>
                         </div>
                     </div>
-                    <div class="icon-slot dragons display-none">
+                    <div class="icon-slot dragons">
                         <img src="../shared/images/icons/blank.svg" class="icon" alt="">
                         <div class="counter">
                             <tr-text player="2" oninput="" property="dragon-count">1</tr-text>
@@ -220,6 +256,30 @@
                         </div>
                         <div class="out-of">
                             <tr-text oninput property="dragon-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot bosses">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="2" oninput="" property="boss-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="2" min="0" max="100" value="0" property="boss-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="boss-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot checks">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="2" oninput="" property="checks-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="2" min="0" max="100" value="0" property="checks-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="checks-goal">?</tr-text>
                         </div>
                     </div> 
                 </div>
@@ -258,7 +318,7 @@
                             <tr-text oninput property="magicite-goal">?</tr-text>
                         </div>
                     </div>
-                    <div class="icon-slot dragons display-none">
+                    <div class="icon-slot dragons">
                         <img src="../shared/images/icons/blank.svg" class="icon" alt="">
                         <div class="counter">
                             <tr-text player="3" oninput="" property="dragon-count">1</tr-text>
@@ -269,7 +329,31 @@
                         <div class="out-of">
                             <tr-text oninput property="dragon-goal">?</tr-text>
                         </div>
-                    </div> 
+                    </div>
+                    <div class="icon-slot bosses">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="3" oninput="" property="boss-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="3" min="0" max="100" value="0" property="boss-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="boss-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot checks">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="3" oninput="" property="checks-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="3" min="0" max="100" value="0" property="checks-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="checks-goal">?</tr-text>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -306,7 +390,7 @@
                             <tr-text oninput property="magicite-goal">?</tr-text>
                         </div>
                     </div>
-                    <div class="icon-slot dragons display-none">
+                    <div class="icon-slot dragons">
                         <img src="../shared/images/icons/blank.svg" class="icon" alt="">
                         <div class="counter">
                             <tr-text player="4" oninput="" property="dragon-count">1</tr-text>
@@ -317,7 +401,31 @@
                         <div class="out-of">
                             <tr-text oninput property="dragon-goal">?</tr-text>
                         </div>
-                    </div> 
+                    </div>
+                    <div class="icon-slot bosses">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="4" oninput="" property="boss-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="4" min="0" max="100" value="0" property="boss-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="boss-goal">?</tr-text>
+                        </div>
+                    </div>
+                    <div class="icon-slot checks">
+                        <img src="../shared/images/icons/blank.svg" class="icon" alt="">
+                        <div class="counter">
+                            <tr-text player="4" oninput="" property="checks-count">1</tr-text>
+                        </div>
+                        <div class="spinner">
+                            <tr-input-number oninput player="4" min="0" max="100" value="0" property="checks-count"></tr-input-number>
+                        </div>
+                        <div class="out-of">
+                            <tr-text oninput property="checks-goal">?</tr-text>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>

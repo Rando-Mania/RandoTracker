@@ -228,9 +228,9 @@
 .ff6wc-logo-contain{
     margin-bottom: .75em;
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
-    top: 233px;
+    top: 50%;
 }
 
 .center-headers > div{
@@ -292,7 +292,7 @@
 }
 
 .player-grid-counters{
-    padding: 0 2px;
+    padding: 0 4px;
 }
 
 .p2-grid-contain .player-grid-characters, .p4-grid-contain .player-grid-characters {
@@ -324,7 +324,7 @@ tr-player{
     position: relative;
 }
 
-.hide-dragons .dragons{
+.hide-dragons .dragons, .hide-bosses .bosses, .hide-checks .checks{
     display: none;
 }
 
@@ -497,7 +497,12 @@ tr-player{
     transform: scale(1.5);
     z-index: -1;}
 
-    .dragons .icon{background-position: 0 73%;}
+.dragons .icon{background-position: 0 75%;}
+.bosses .icon{background-position: 0 100%;}
+.checks .icon{
+    background-position: 50% 99%;
+    transform: scale(1.4);
+}
 
 .icon-slot{
     display: grid;
