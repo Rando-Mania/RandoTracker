@@ -1,0 +1,94 @@
+<style>
+    /* Loading Screen */
+
+    @font-face {
+            font-family: "Chicago";
+            src: local('Chicago'),
+                url('../shared/fonts/chicago.woff2') format('woff2'),
+                url('../shared/fonts/chicago.woff') format('woff'),         
+                url('../shared/fonts/chicago.ttf') format('truetype');
+        }
+
+.loadscreen-contain, .one-loading{
+    font-family: 'Chicago', Arial, sans-serif;
+    width: 1280px;
+    height: 720px;
+    background-color: #8dc8ff;
+    background-image: url('images/loading_screen.png');
+    background-image: image-set(
+        url("images/loading_screen.webp") type("image/webp"),
+        url("images/loading_screen.png") type("image/png"));
+    color: #fff;
+    text-align: center;
+    animation: zoomIn .5s linear;
+    z-index: 50;
+    display: none;
+}
+
+.loadscreen-contain.show, .one-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    animation: zoomIn .5s;
+    display: block;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+}
+
+.loadscreen-main{
+    position: absolute;
+    left: 42px;
+    top: 96px;
+    background-color: #000;
+    background-clip: content-box;
+    border: solid #0000;
+    border-width: 19px 25px;
+    border-image: url('images/loading_screen_border.png') 19 25;
+    border-image-source: image-set(
+        url("images/loading_screen_border.webp") type("image/webp"),
+        url("images/loading_screen_border.png") type("image/png"));
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-width: 479px;
+    height: 309px;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+}
+
+</style>
+<div class="loadscreen">
+    <div class="loadscreen-main">
+        <div style="font-size: 26px;">
+            Reveal Show
+        </div>
+        <h4>
+            with
+        </h4>
+        <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+    </div>
+</div>
