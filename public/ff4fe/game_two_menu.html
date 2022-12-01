@@ -30,8 +30,18 @@
             <tr-input-text list="objective_options" class="objective-input" property="objective-seven-text"></tr-input-text>
         </div>
         <div>
-            <div># of goals</div>
-            <tr-input-number max="7" min="0" value="0" oninput class="objective-goal-count" property="objective-goal-count"></tr-input-number>
+            <div># of goals&nbsp;</div>
+            <tr-select property="objective-goal-count">
+                <tr-option selected value="?">?</tr-option>
+                <tr-option value="0">0</tr-option>
+                <tr-option value="1">1</tr-option>
+                <tr-option value="2">2</tr-option>
+                <tr-option value="3">3</tr-option>
+                <tr-option value="4">4</tr-option>
+                <tr-option value="5">5</tr-option>
+                <tr-option value="6">6</tr-option>
+                <tr-option value="7">7</tr-option>
+            </tr-select>
         </div>
     </div>
     <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
