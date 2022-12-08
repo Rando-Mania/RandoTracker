@@ -48,10 +48,6 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
 }
 .abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
-
 /* layout specific styles */
 @font-face {
     font-family: "PressStart2P";
@@ -73,6 +69,7 @@ html{
 .webp.notavif .layout{background-image: url('images/4p-layout.webp');}
 .avif .layout{background-image: url('images/4p-layout.avif');}
 
+/* override global 4p mask for non symetrical layout */
 
 .layout.transparent-background{
     -webkit-mask:
