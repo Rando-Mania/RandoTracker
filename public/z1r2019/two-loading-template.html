@@ -1,8 +1,15 @@
 <style>
     /* Loading Screen */
 
+    @font-face {
+    font-family: "PressStart2P";
+    src: local('PressStart2P'),
+         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
+	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
+         url('../shared/fonts/pressstart2p.ttf') format('truetype');
+}
+
 .loadscreen-contain, .two-loading{
-    font-family: 'Orbitron', sans-serif;
     width: 1280px;
     height: 720px;
     color: #fff;
@@ -11,7 +18,14 @@
     z-index: 50;
     display: none;
     background-color: #000;
-    background-image: url(../shared/images/rm-generic-half.png);
+    background-image: url("images/old-man-loading.png");
+    background-image: image-set(
+    "images/old-man-loading.avif" type("image/avif"),
+    "images/old-man-loading.webp" type("image/webp"),
+    "images/old-man-loading.png" type("image/png")
+  );
+    background-size: cover;
+    background-position: center;
 }
 
 .loadscreen-contain.show, .two-loading{
@@ -32,6 +46,12 @@
     } 
 }
 
+.player-name{
+   border: solid 3px var(--player-color); 
+}
+.player-name[player="1"] {--player-color: #40ff00;}
+.player-name[player="2"] {--player-color: #f00;}
+ 
 .loadscreen{
     height: 100%;
     display: grid;
@@ -42,26 +62,62 @@
 }
 
 .loadscreen-main{
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    grid-template-rows: 1fr auto;
-    grid-gap: 1em;
-    align-items: center;
-    justify-content: space-around;
-    justify-content: space-evenly;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .loadscreen-main *{
     justify-content: center;
 }    
 
+.loadscreen-main .header{
+    font: normal 42px 'PressStart2P', Arial, Helvetica, sans-serif;
+    position: absolute;
+    transform: translate(-50%,-50%); 
+    top: 169px;
+    left: 50%;
+    background: none;
+}
+
+.flame{
+    position: absolute;
+    animation: flicker .25s infinite steps(1);
+}
+.flame-left{
+    left: 360px;
+    top: 245px;
+}
+.flame-right{
+    left: 840px;
+    top: 245px;
+}
+@keyframes flicker {
+    50%{transform: rotateY(180deg);}
+}
+
+.z1r-logo{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 352px;
+}
+
+h2{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 511px;
+}
 .loadscreen-main .player-name{
     font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
 }
-.load-vs{
-    font-family: 'Times New Roman', Times, serif;
+
+.loadscreen-main .load-vs{
+    font: normal 42px 'PressStart2P', Arial, Helvetica, sans-serif;
 }
 
 .load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{
@@ -74,15 +130,18 @@
 </style>
 <div class="loadscreen">
     <div class="loadscreen-main">
+        <tr-text property="header" class="header"></tr-text>
+        <img class="flame flame-left" width="80" src="images/zelda-flame.png" alt="flame">
+        <img class="flame flame-right" width="80" src="images/zelda-flame.png" alt="flame">
         <picture>
             <source srcset="images/RandoLogo.avif" type="image/avif">
             <source srcset="images/RandoLogo.webp" type="image/webp">
-            <img width="auto" height="auto" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
+            <img class="z1r-logo abs" width="400" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
         </picture>
         <h2>
-            <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-            <div class="load-vs">vs</div>
-            <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+            <tr-text player="1" scale-to-fit-x class="player-name" property="player-name">Dummy</tr-text>
+            <div class="load-vs">VS</div>
+            <tr-text player="2" scale-to-fit-x class="player-name" property="player-name">Text</tr-text>
         </h2>
         <div class="load-best-of">
             <p class="best-of-3">Best of 3</p>

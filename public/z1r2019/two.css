@@ -23,7 +23,7 @@
     --timeX: 12px; --timeY: 133px;
     --timeH: 43px; --timeW: 165px;
 
-    --border: 3px;
+    --border: 0px;
 
     --clipX1: calc(var(--videoX) + var(--border));
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
@@ -44,10 +44,6 @@ tr-timer:nth-of-type(2), [player="2"] {--player-color: #f00;}
 }
 .abs{position: absolute;}
 
-html{
-    background-color: #c7c7c7;
-}
-
 /* layout specific styles */
 @font-face {
     font-family: "PressStart2P";
@@ -65,24 +61,12 @@ html{
     position: relative;
     font-size: 19px;
     letter-spacing: 2px;
+    background-color: #fddaa8;
 }
 
 .notwebp.notavif .layout{background-image: url('images/all-backgrounds-2.png');}
 .webp.notavif .layout{background-image: url('images/all-backgrounds-2.webp');}
 .avif .layout{background-image: url('images/all-backgrounds-2.avif');}
-
-
-.layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat
-}
 
 .player-video{
     width: var(--vidWidth);
@@ -368,6 +352,12 @@ tr-timer span {
 
 .header{
     background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%;
+    background: paint(cornerShape);
+    --background-color: rgb(0,0,0,.3);
+    --border-color: red;
+    --border-width: 2px;
+    --corner-size: 26px / 22px;
+    --corner-shape: angle;
     text-align: center;
     min-width: 394px;
     min-height: 78px;
@@ -391,6 +381,12 @@ tr-timer span {
     min-height: 78px;
     padding: 11px 23px;
     background: url('images/staff-back-all.svg') no-repeat 0 0 / 394px 300%;
+    background: paint(cornerShape);
+    --background-color: rgb(0,0,0,.3);
+    --border-color: #40ff00;
+    --border-width: 2px;
+    --corner-size: 26px / 22px;
+    --corner-shape: angle;
 }
 
 .staff svg {
