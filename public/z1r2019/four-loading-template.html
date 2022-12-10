@@ -4,9 +4,15 @@
 .loadscreen-contain, .four-loading{
     width: 1280px;
     height: 720px;
-    background: url(../shared/images/rm-generic-half.png);
-    background: url(../shared/images/rm-generic-half.png) 0 0 / auto auto, paint(fallbackImage) 0 0 / 50% 50%;
     background-color: #000;
+    background-image: url("images/old-man-loading.png");
+    background-image: image-set(
+        "images/old-man-loading.avif" type("image/avif"),
+        "images/old-man-loading.webp" type("image/webp"),
+        "images/old-man-loading.png" type("image/png")
+    );
+    background-size: cover;
+    background-position: center;
     color: #fff;
     text-align: center;
     z-index: 50;
@@ -17,6 +23,7 @@
 
 .four-loading{
     display: block;
+    position: relative;
 }
 
 .loadscreen-contain.show{
@@ -62,6 +69,61 @@
     font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
 }    
 
+.loadscreen-main .header{
+    font: normal 42px 'PressStart2P', Arial, Helvetica, sans-serif;
+    position: absolute;
+    transform: translate(-50%,-50%); 
+    top: 169px;
+    left: 50%;
+    background: none;
+}
+
+.flame{
+    position: absolute;
+    animation: flicker .25s infinite steps(1);
+}
+.flame-left{
+    left: 360px;
+    top: 245px;
+}
+.flame-right{
+    left: 840px;
+    top: 245px;
+}
+@keyframes flicker {
+    50%{transform: rotateY(180deg);}
+}
+
+.z1r-logo{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 352px;
+}
+
+h2{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 16px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 511px;
+}
+.loadscreen-main .player-name{
+    font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
+}
+
+.loadscreen-main .player-name{
+   border: solid 3px var(--player-color); 
+   --nameWidth: 390px;
+}
+.player-name[player="1"] {--player-color: #40ff00;}
+.player-name[player="2"] {--player-color: #f00;}
+.player-name[player="3"] {--player-color: #ff0;}
+.player-name[player="4"] {--player-color: #0ff;}
+
 .load-and{
     font-family: 'Times New Roman', Times, serif;
     margin: 1em auto;
@@ -74,24 +136,27 @@
     </style>
     <div class="loadscreen">
         <div class="loadscreen-main">
-            <div>   
+            <tr-text property="header" class="header"></tr-text>
+            <img class="flame flame-left" width="80" src="images/zelda-flame.png" alt="flame">
+            <img class="flame flame-right" width="80" src="images/zelda-flame.png" alt="flame">
+            <div>
                 <picture>
                     <source srcset="images/RandoLogo.avif" type="image/avif">
                     <source srcset="images/RandoLogo.webp" type="image/webp">
-                    <img width="auto" height="auto" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
+                    <img width="400" class="z1r-logo" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
                 </picture>
             </div>
-            <div>
-                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
-                vs.
-                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
-                <span class="load-and-vs">
+            <h2>
+                <tr-text player="1" scale-to-fit-x class="player-name" property="player-name">Dummy</tr-text>
+                <!-- vs. -->
+                <tr-text player="2" scale-to-fit-x class="player-name" property="player-name">Text</tr-text>
+                <!-- <span class="load-and-vs">
                     <span class="load-vs">vs.</span>
                     <span class="load-and">and</span>
-                </span>
-                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
-                vs.
-                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
-            </div>
+                </span> -->
+                <tr-text player="3" scale-to-fit-x class="player-name" property="player-name">Text</tr-text>
+                <!-- vs. -->
+                <tr-text player="4" scale-to-fit-x class="player-name" property="player-name">Text</tr-text>
+            </h2>
         </div>
     </div>

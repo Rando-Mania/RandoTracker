@@ -63,13 +63,14 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
     color:#fff;
     position: relative;
     font-size: 18px;
+    background-color: #fedaab;
 }
 
 .notwebp.notavif .layout{background-image: url('images/4p-layout.png');}
 .webp.notavif .layout{background-image: url('images/4p-layout.webp');}
 .avif .layout{background-image: url('images/4p-layout.avif');}
 
-/* override global 4p mask for non symetrical layout */
+/* override global 4p mask for non symmetrical layout */
 
 .layout.transparent-background{
     -webkit-mask:
@@ -79,8 +80,8 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
         linear-gradient(red,red) right / var(--clipX1),
         /* horizontal lines */
         linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
+        linear-gradient(red,red) 0 50.8% / 100% 13px,
+        linear-gradient(red,red) bottom / 100% 50px;
     -webkit-mask-repeat: no-repeat;
     mask:
         /* vertical lines */
@@ -89,8 +90,8 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
         linear-gradient(red,red) right / var(--clipX1),
         /* horizontal lines */
         linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
+        linear-gradient(red,red) 0 50.8% / 100% 14px,
+        linear-gradient(red,red) bottom / 100% 50px;
     mask-repeat: no-repeat;
 }
 
@@ -417,6 +418,12 @@ tr-timer .dot, tr-timer .ms {
     padding: 11px 28px;
     min-height: 61px;
     background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;
+    background: paint(cornerShape);
+    --background-color: rgb(0,0,0,.3);
+    --border-color: #f0f;
+    --border-width: 2px;
+    --corner-size: 26px / 22px;
+    --corner-shape: angle;
 }
 
 .staff svg {
@@ -455,6 +462,12 @@ tr-timer .dot, tr-timer .ms {
 
 .header{
     background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;
+    background: paint(cornerShape);
+    --background-color: rgb(0,0,0,.3);
+    --border-color: #f0f;
+    --border-width: 2px;
+    --corner-size: 26px / 22px;
+    --corner-shape: angle;
     text-align: center;
     width: 305px;
     min-height: 54px;

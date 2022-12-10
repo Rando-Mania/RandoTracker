@@ -64,7 +64,7 @@
             <tr-hide-if-empty class="staff-panel-contain" toggle-class="visually-hidden">
                 <tr-template href="../shared/production-team.html"></tr-template>
             </tr-hide-if-empty>
-            <tr-text property="header" class="header"></tr-text>
+            <tr-text property="header" scale-to-fit-x class="header"></tr-text>
         </div>
         <div class="rm-logo abs" style="bottom: 28px; left: 431px;">
             <div class="rm-logo-1">tracker by</div>
@@ -190,5 +190,42 @@
     <script src="../components/components.js"></script>
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/four_game.js"></script>
+    <script>
+        if ('paintWorklet' in CSS){
+            CSS.paintWorklet.addModule('../shared/script/corner-shape.js');
+        }
+        if ('registerProperty' in CSS){
+            window.CSS.registerProperty({
+                name: '--border-width',
+                syntax: '<length>',
+                inherits: false,
+                initialValue: 0,
+            });
+            window.CSS.registerProperty({
+                name: '--border-color',
+                syntax: '<color>',
+                inherits: false,
+                initialValue: "black",
+            });
+            window.CSS.registerProperty({
+                name: '--background-color',
+                syntax: '<color>',
+                inherits: false,
+                initialValue: "transparent",
+            });
+            // window.CSS.registerProperty({
+            //     name: '--corner-size',
+            //     syntax: '<length-percentage>+',
+            //     inherits: false,
+            //     initialValue: 0,
+            // });
+            // window.CSS.registerProperty({
+            //     name: '--corner-shape',
+            //     syntax: 'none | round | angle | scoop | notch',
+            //     inherits: false,
+            //     initialValue: "none",
+            // });
+        }
+    </script>
 </body>
 </html>

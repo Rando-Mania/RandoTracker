@@ -10,13 +10,13 @@ class cornerShape {
     
     paint(c, g, properties) {
       var cornerShapes = properties.get('--corner-shape').toString().trim().split(' ');
-      const cornerSizes = properties.get('--corner-size').toString().trim().split(' ');
-      const backgroundColor = properties.get('--background-color').toString();
-      // const borderWidth = properties.get('--border-width').value;
-      const borderWidth = properties.get('--border-width').toString().replace(/px/g, '').trim();
-      const borderColor = properties.get('--border-color').toString();
-  
-      var shapeTL, shapeTR, shapeBR, shapeBL; 
+      const cornerSizes = properties.getAll('--corner-size').toString().trim().split(' ');
+
+      const backgroundColor = properties.get('--background-color');      
+      const borderWidth = properties.get('--border-width').value;
+      const borderColor = properties.get('--border-color');
+
+var shapeTL, shapeTR, shapeBR, shapeBL; 
       
       let shapesLength = cornerShapes.length;
       switch (shapesLength) {
@@ -215,14 +215,17 @@ class cornerShape {
       
       c.fillStyle = backgroundColor;
       
-    if(borderWidth > 0){
-         c.strokeStyle = borderColor; 
-    }
+      if(borderWidth > 0){
+        c.strokeStyle = borderColor;
+      }
+      if(borderWidth <= 0){
+        c.strokeStyle = "transparent";
+      }
   
-        c.clip(p);
-        c.lineWidth = borderWidth * 2;
-        c.fill(p);
-        c.stroke(p);
+      c.clip(p);
+      c.lineWidth = borderWidth * 2;
+      c.fill(p);
+      c.stroke(p);
     }
   }
   registerPaint("cornerShape", cornerShape);

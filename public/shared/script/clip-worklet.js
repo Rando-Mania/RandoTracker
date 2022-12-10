@@ -10,7 +10,7 @@ class maskImage {
       ];
     }
     
-    paint(ctx, geom, properties) {
+    paint(ctx, properties) {
 
       let border = parseFloat(properties.get("--border"));
       let vidWidth = parseFloat(properties.get("--vidWidth")) - 2 * border;
