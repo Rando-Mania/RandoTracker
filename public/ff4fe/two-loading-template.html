@@ -4,7 +4,6 @@
 .loadscreen-contain, .two-loading{
     width: 1280px;
     height: 720px;
-    background-color: var(--backgroundColor1);
     color: #fff;
     z-index: 50;
     display: none;
@@ -232,12 +231,16 @@
 }
 
 .notwebp.ccs-special-feature .loadscreen{
-    background-image: url('images/2p/ccs/splash-Special.png'), var(--ccs-load-fallback);
+    background-image: url('images/2p/ccs/Loading_SF.png'), var(--ccs-load-fallback);
 }
 .webp.ccs-special-feature .loadscreen{
-    background-image: url('images/2p/ccs/splash-Special.webp'), var(--ccs-load-fallback);
+    background-image: url('images/2p/ccs/Loading_SF.webp'), var(--ccs-load-fallback);
 }
 
+.trans .loadscreen{
+    background-image: none;
+    background-color: transparent;
+}
 
 .loadscreen .commentators-img {
     transform: scale(1);
