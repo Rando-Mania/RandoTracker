@@ -238,6 +238,7 @@
   grid-template-columns: repeat(4, auto);
   gap: 2px 6px;
   padding: 3px;
+  justify-items: center;
 }
 
 .player-grid [property*="super-metroid-"] img, .dialog[id*="super-metroid-"] img{
