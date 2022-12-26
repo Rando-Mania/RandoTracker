@@ -70,6 +70,11 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
 .webp.notavif .layout{background-image: url('images/4p-layout.webp');}
 .avif .layout{background-image: url('images/4p-layout.avif');}
 
+
+.hide-p4.notwebp.notavif .layout{background-image: url('images/4p-layout-no-3p.png');}
+.hide-p4.webp.notavif .layout{background-image: url('images/4p-layout-no-3p.webp');}
+.hide-p4.avif .layout{background-image: url('images/4p-layout-no-3p.avif');}
+
 /* override global 4p mask for non symmetrical layout */
 
 .layout.transparent-background{
