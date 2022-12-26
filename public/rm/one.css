@@ -42,13 +42,32 @@
     grid-template-rows: 720px;
 }
 
-.layout.transparent-background{
-  -webkit-mask:
-      linear-gradient(to right, red var(--clipX1), #0000 var(--clipX1) var(--clipX2), red 0), 
-      linear-gradient(red var(--clipY1), #0000 var(--clipY1) var(--clipY2), red 0);
-  -webkit-mask:
-      linear-gradient(to right, red var(--clipX1), #0000 var(--clipX1) var(--clipX2), red 0), 
-      linear-gradient(red var(--clipY1), #0000 var(--clipY1) var(--clipY2), red 0);
+.layout.four-three.transparent-background{
+  -webkit-mask: linear-gradient(to right, #0000 75%, red 0);
+}
+.layout.ten-nine.transparent-background{
+  --vHeight: 652px;
+  -webkit-mask: 
+    linear-gradient(red, red) no-repeat 118px 35px / calc(var(--vHeight) * 10/9) var(--vHeight),
+    linear-gradient(red, red);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.layout.three-two.transparent-background{
+  --vHeight: 642px;
+  -webkit-mask: 
+    linear-gradient(red, red) no-repeat 0 40px / calc(var(--vHeight) * 3/2) var(--vHeight),
+    linear-gradient(red, red);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.layout.sixteen-nine.transparent-background{
+  --vHeight: 540px;
+  -webkit-mask: 
+    linear-gradient(red, red) no-repeat 0 91px / calc(var(--vHeight) * 16/9) var(--vHeight),
+    linear-gradient(red, red);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .layout.show{
