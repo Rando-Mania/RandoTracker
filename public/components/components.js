@@ -662,8 +662,9 @@
 				const instance = this;
 
 				instance.innerHTML = "<input type='number'/>"
-				// instance.innerHTML = `<input type='number'/>
+				// instance.innerHTML = `
 				// <button class="minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">◀</button>
+				// <input type='number'/>
 				// <button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">▶</button>
 				// `
 				const input = instance.childNodes[0];

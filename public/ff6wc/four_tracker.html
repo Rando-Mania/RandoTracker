@@ -84,18 +84,21 @@
             gap: .75em;
         }
         .tracker-layout .player-wrapper [type="number"] {
-            width: 1.15rem;
+            width: 1.75rem;
         }
         .tracker-layout .player-wrapper [type="number"]:hover {
             transform: scale(1.25);
             transform-origin: 75% 0;
         }
         .spinner{
-            place-self: start end;
-            position: relative;
-            top: -4px;
+            position: absolute;
+            top: -13px;
             z-index: 5;
         }
+        .spinner input[type=number]::-webkit-inner-spin-button{
+            opacity: 1;
+        } 
+
         .tracker-layout .player-grid-back {
             position: absolute;
         }
