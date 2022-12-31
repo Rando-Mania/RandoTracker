@@ -5,13 +5,13 @@
 }
 
 :root{
-    --vidWidth: 644px;
+    --vidWidth: 630px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --border1: solid var(--border) #fff;
     --backgroundColor1: #000;
-    --videoX: -3px; --videoY: -3px;
+    --videoX: -2px; --videoY: -2px;
     --nameWidth: 381px;
     --nameX: 16px; --nameY: 486px;
     --speakerX: 409px; --speakerY: 493px;
@@ -66,18 +66,6 @@
     overflow: hidden;
   }
 
-  .layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat
-}
-
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
@@ -87,9 +75,9 @@
 }
 
 .player-video, .layout.four-three .player-video{
-    --vidWidth: 644px;
+    --vidWidth: 630px;
     --vidAspect: 4 / 3;
-    --videoX: -3px; --videoY: -3px;
+    --videoX: -2px; --videoY: -2px;
     --nameWidth: 381px;
     --nameX: 16px; --nameY: 486px;
     --speakerX: 409px; --speakerY: 493px;
@@ -99,17 +87,36 @@
     z-index: 2;
 }
 
+.layout.transparent-background.four-three{
+    --vidWidth: 630px;
+    --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    -webkit-mask-image: linear-gradient(red, red), linear-gradient(red, red), linear-gradient(red, red);
+    -webkit-mask-size: 100% 100%, 
+    calc(var(--vidWidth) - 4px) calc(var(--vidHeight) - 4px), 
+    calc(var(--vidWidth) - 4px) calc(var(--vidHeight) - 4px);
+    -webkit-mask-position: 0 0, top left, top right;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
 .layout.sixteen-nine{
     --nameY: 46px;
     --finalX: 125px; --finalY: 29px;
     --speakerY: 83px;
     --bestY: 58px;
+    --vidWidth: 644px;
+    --vidAspect: 16 / 9;
+
 }
 .layout.sixteen-nine .player-video{
     --videoY: 152px;
     --vidWidth: 644px;
     --vidAspect: 16 / 9;
 }
+
+
 .layout.sixteen-nine .card.timer{
     top: 50px;
 }
