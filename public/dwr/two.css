@@ -149,6 +149,20 @@
     padding: 9px;
     display: grid;
     grid-template-columns: min-content auto;
+    isolation: isolate;
+    overflow: hidden;
+}
+.player-info:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, #fc9838 1px, rgba(255,255,255,.05) 0);
+    transition: transform .5s;
+    z-index: -1;
+    transform: translateX(-100%);
 }
 
 .player-rank{
@@ -190,7 +204,7 @@
     display: none;
 }
 
-.player-pronoun, .player-record, .player-cod{
+.player-pronoun, .player-record, .player-dl2{
     font-family: Arial, Helvetica, sans-serif;
     display: inline;
     font-size: .9em;
@@ -201,16 +215,16 @@
     display: none;
 }
 
-.player-cod{
+.player-dl2{
     color: #f88019;
     text-transform: capitalize;
     font-variant: small-caps;
 }
-.player-cod:before{ 
-    content: 'deaths: ';
+.player-dl2:before{ 
+    content: 'DL2: ';
 }
 
-.player-cod:empty{
+.player-dl2:empty{
     display: none;
 }
 
@@ -743,13 +757,14 @@ figcaption{
   }
   
 .league {
-    padding: 1em;
+    padding: .75em 1em .25em;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     border: none;
     background-color: #000000BD;
     border: #fff 2px solid;
     border-image: url('images/dw-border.png') 4 / 4px;
     border-image: paint(dw1Border) 4 / 4px;
+    border-image: linear-gradient(#f88019, #0000 50%) 1 / 1px;
     image-rendering: pixelated;
     bottom: 0px;
     left: 50%;
@@ -759,15 +774,33 @@ figcaption{
     transform: translateX(-50%);
 }
 
-.layout [property="week-6"], .layout [property="week-7"]{
+.layout [property="week-6"] li, .layout [property="week-7"] li{
     filter: hue-rotate(180deg);
 }
 
-.layout [property="week-8-1"], .layout [property="week-8-2"]{
+.layout [property="week-8-1"] li, .layout [property="week-8-2"] li{
     filter: grayscale(1);
 }
 
+.league h2{
+    font-variant: small-caps;
+    padding: .1em .5em;
+    width: max-content;
+    font-size: 1em;
+    font-weight: bold;
+    background-image: linear-gradient(#fc9838, #f88019);
+    transform: translateX(-50%);
+    position: absolute;
+    margin: 0;
+    top: -12px;
+    left: 50%;
+    color: #000;
+    text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
 .league h4{
+    font-variant: small-caps;
     text-align: center;
     margin: 0;
     padding: 0;

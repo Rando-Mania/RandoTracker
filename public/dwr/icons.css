@@ -22,6 +22,19 @@
 .sprite-drop {background-position: -32px 0;}
 .sprite-flute {background-position: -128px 0;}
 .sprite-gps {background-position: -160px 0;}
+
+.sprite-gps {background-position: -160px 0;}
+.sprite-gps-new{
+	background-image: url(images/item/Coordinates_Checked_with_GPS_2.png);
+	background-size: contain;
+	background-position: 0 0;
+}
+.sprite-gps-new-2{
+	background-image: url(images/item/Coordinates_Checked_without_GPS_2.png);
+	background-size: contain;
+	background-position: 0 0;
+}
+
 .sprite-token, .sprite-token-frames {
 	background-position: 0 -78px;
 	}
@@ -121,6 +134,19 @@ tr-image[property="staff"], .token-fig{
 .equip-sprite-necklace-e {
 	background-position: -96px bottom;
 	background-size: 166px 115px;}
+/* .equip-sprite-necklace-sold {
+	background-position: -64px bottom;
+	background-size: 166px 115px;} */
+.equip-sprite-necklace-un{
+	background-image: url(images/Uncursed_or_Unclaimed_DN_2.png);
+	background-size: contain;
+	background-position: 0 0;
+}
+.equip-sprite-necklace-sold{
+	background-image: url(images/Sold_DN_2.png);
+	background-size: contain;
+	background-position: 0 0;
+}
 
 [property="shield"] img, [property="weapon"] img, [property="armor"] img,
 [property="necklace"] img, [property="scale"] img{
