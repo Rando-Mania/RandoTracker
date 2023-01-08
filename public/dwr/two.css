@@ -151,6 +151,7 @@
     grid-template-columns: min-content auto;
     isolation: isolate;
     overflow: hidden;
+    --player1-dl2-count: -100%;
 }
 .player-info:after{
     content: '';
@@ -162,7 +163,7 @@
     background-image: linear-gradient(to left, #fc9838 1px, rgba(255,255,255,.05) 0);
     transition: transform .5s;
     z-index: -1;
-    transform: translateX(-100%);
+    transform: translateX(var(--player1-dl2-count));
 }
 
 .player-rank{

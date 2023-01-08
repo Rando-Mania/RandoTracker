@@ -602,6 +602,22 @@
 		};
 		reader.readAsArrayBuffer(file);
 	};
+
+
+	// var p1PlayerDl2Count = data["__p1__player-dl2"];
+	// var p2PlayerDl2Count = data["__p2__player-dl2"];
+
+	// var playerOneBox = querySelector('[player="1"] .player-info');
+	
+	// var p1_dl2_Count = p1PlayerDl2Count * (165 / 100); 
+
+	// playerOneBox.style.setProperty('--player1-dl2-count', "-" + p1_dl2_Count + "%");
+
+	// //  width 367px
+	// console.log(playerOneBox)
+	// // vanilla 165
+	// // chaos 230
+
 })(window.DWR = window.DWR || {});
 
 DWR.init();

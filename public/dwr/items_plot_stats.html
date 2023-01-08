@@ -97,6 +97,7 @@
     <tr-image-option img-class="equip-sprite equip-sprite-necklace" dialog-img-class="equip-sprite equip-sprite-necklace" path="../shared/images/icons/blank.svg" label="DN"></tr-image-option>
     <tr-image-option img-class="equip-sprite equip-sprite-necklace" dialog-img-class="equip-sprite equip-sprite-necklace" path="../shared/images/icons/blank.svg" label="E"></tr-image-option>
     <tr-image-option img-class="equip-sprite equip-sprite-necklace" dialog-img-class="equip-sprite equip-sprite-necklace" path="../shared/images/icons/blank.svg" label="$"></tr-image-option>
+    <tr-image-option img-class="equip-sprite equip-sprite-necklace" dialog-img-class="equip-sprite equip-sprite-necklace" path="../shared/images/icons/blank.svg" label="🛇"></tr-image-option>
     <tr-label property="necklace"></tr-label>
 </tr-image>
 
@@ -106,12 +107,13 @@
     <tr-image-option img-class="sprite sprite-key" dialog-img-class="sprite sprite-key" path="../shared/images/icons/blank.svg" label="&infin;"></tr-image-option>
     <tr-label property="key"></tr-label>
 </tr-image>
-<figure class="secondary-item">
-    <tr-toggle-class property="gps" toggle-class="active">
-        <img class="sprite sprite-gps" src="../shared/images/icons/blank.svg" />
-    </tr-toggle-class>
-    <figcaption>GL</figcaption>
-</figure>
+<tr-image class="secondary-item" property="gps">
+    <tr-image-option img-class="sprite sprite-gps in-active" dialog-img-class="sprite sprite-gps in-active" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="sprite sprite-gps" dialog-img-class="sprite sprite-gps" path="../shared/images/icons/blank.svg"></tr-image-option>
+    <tr-image-option img-class="sprite sprite-gps in-active" dialog-img-class="sprite sprite-gps in-active" path="../shared/images/icons/blank.svg" label="✔"></tr-image-option>
+    <tr-image-option img-class="sprite sprite-gps" dialog-img-class="sprite sprite-gps" path="../shared/images/icons/blank.svg" label="✔"></tr-image-option>
+    <tr-label property="gps"></tr-label>
+</tr-image>
 <figure class="secondary-item">
     <tr-toggle-class property="flute" toggle-class="active">
         <img class="sprite sprite-flute" src="../shared/images/icons/blank.svg" />
