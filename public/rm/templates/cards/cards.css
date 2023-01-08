@@ -7,6 +7,7 @@
   .card{
     --highlight-color: #007800;
     border-top: 1px solid var(--highlight-color);
+    --highlight-color: #4857d1;
   }
 
   .player-name .card{
@@ -113,6 +114,7 @@
   
   .timer .card-body{
     background-color: var(--highlight-color);
+    background-image: radial-gradient(ellipse at bottom, var(--highlight-color) 50%, #dc0050);
     padding: 1px 0;
   }
   
@@ -172,11 +174,13 @@
     }
 
     .card-head-left .card-back{
-      clip-path: polygon(0 0, 118px 0, 118px 3px, 115px 3px, 115px 6px, 112px 6px, 112px 9px, 109px 9px, 109px 12px, 106px 12px, 106px 15px, 103px 15px, 103px 18px, 100px 18px, 0 18px);
+      /* clip-path: polygon(0 0, 118px 0, 118px 3px, 115px 3px, 115px 6px, 112px 6px, 112px 9px, 109px 9px, 109px 12px, 106px 12px, 106px 15px, 103px 15px, 103px 18px, 100px 18px, 0 18px); */
+      border-radius: 0 0 20px 0 / 0 0 100% 0;
     }
 
     .card-head-right .card-back{
-      clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px, 15px 18px, 15px 15px, 12px 15px, 12px 12px, 9px 12px, 9px 9px, 6px 9px, 6px 6px, 3px 6px, 3px 3px, 0 3px);
+      /* clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px, 15px 18px, 15px 15px, 12px 15px, 12px 12px, 9px 12px, 9px 9px, 6px 9px, 6px 6px, 3px 6px, 3px 3px, 0 3px); */
+      border-radius: 0 0 0 20px / 0 0 0 100%;
     }
 
     .bottom .card-back{
