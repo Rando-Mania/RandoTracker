@@ -31,7 +31,7 @@
     display: grid;
     grid-template: 1fr / 1fr;
     position: absolute;
-    width: 118px;
+    width: 111px;
   }
 
   .card-head-left{
@@ -171,16 +171,19 @@
     .card-back{
       height: 18px;
       background-color: var(--highlight-color);
+      background-image: linear-gradient(355deg, transparent, rgba(255,255,255,.3), transparent);
     }
 
     .card-head-left .card-back{
       /* clip-path: polygon(0 0, 118px 0, 118px 3px, 115px 3px, 115px 6px, 112px 6px, 112px 9px, 109px 9px, 109px 12px, 106px 12px, 106px 15px, 103px 15px, 103px 18px, 100px 18px, 0 18px); */
-      border-radius: 0 0 20px 0 / 0 0 100% 0;
+      border-radius: 0 17px 17px 0 / 0 100% 100% 0;
+      -webkit-mask-box-image: url("/rm/images/border-mask.png") fill 0 16 0 15 / 0 16px 0 0;
     }
 
     .card-head-right .card-back{
       /* clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px, 15px 18px, 15px 15px, 12px 15px, 12px 12px, 9px 12px, 9px 9px, 6px 9px, 6px 6px, 3px 6px, 3px 3px, 0 3px); */
-      border-radius: 0 0 0 20px / 0 0 0 100%;
+      border-radius: 5% 0 0 11px / 43% 0 0 99%;
+      -webkit-mask-box-image: url("/rm/images/border-mask.png") fill 0 16 0 15 / 0 0 0 15px;
     }
 
     .bottom .card-back{
