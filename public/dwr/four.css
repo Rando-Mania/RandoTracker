@@ -360,6 +360,10 @@ html{
     display: block;
 }
 
+[property="player-dl2"] input[type="number"]{
+    width: 3.5rem;
+}
+
 /* .coop-background.player-grids-contain, .coop-background.player-stats-contain{
     z-index: 0;
 }  */
@@ -1083,6 +1087,7 @@ tr-timer span {
     }
 
     .league h2{
+        font-variant: small-caps;
         padding: .1em .5em;
         width: max-content;
         font-size: 1.1em;
@@ -1106,6 +1111,7 @@ tr-timer span {
     }
 
     .league h4{
+        font-variant: small-caps;
         text-align: center;
         margin: 0;
         padding: 0;

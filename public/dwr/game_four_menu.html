@@ -15,7 +15,7 @@
                     <th>Record</th>
                     <th>Twitch</th>
                     <th>Pronoun</th>
-                    <th>Deaths</th>
+                    <th>DL2</th>
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
@@ -178,7 +178,8 @@
                 <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats"></tr-input-toggle-class>
                 <div>
                   <tr-select property="monster">
-                    <tr-option selected value="0" target="[property='monster_image']" toggle-class="slime">Slime</tr-option>
+                    <tr-option selected value="40" target="[property='monster_image']" toggle-class="none">None</tr-option>
+                    <tr-option value="0" target="[property='monster_image']" toggle-class="slime">Slime</tr-option>
                     <tr-option value="1" target="[property='monster_image']" toggle-class="slime-red">Red Slime</tr-option>
                     <tr-option value="2" target="[property='monster_image']" toggle-class="drakee">Drakee</tr-option>
                     <tr-option value="3" target="[property='monster_image']" toggle-class="ghost">Ghost</tr-option>

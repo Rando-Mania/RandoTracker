@@ -159,6 +159,7 @@ input[type=number]:hover{
 
 input[type=number]::-webkit-inner-spin-button {
     transform: scale(2) translateX(-2px) rotate(90deg);
+    opacity: 1;
 }
 
 .visually-hidden { 

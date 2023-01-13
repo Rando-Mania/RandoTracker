@@ -9,15 +9,6 @@
     <link rel="stylesheet" type="text/css" href="icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
-        body{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-gap: 16px;
-            width: -moz-max-content;
-            width: -webkit-max-content;
-            width: max-content;
-        }
-        
         .charname input{
             width: 4em;
         }
@@ -32,14 +23,10 @@
         }
 
         .tracker-layout {
-            width: -moz-min-content;
-            width: -webkit-min-content;
-            width: min-content;
             padding: 1.5em;
-            background: 
-        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(images/transparent-texture.png) #002e97;
+            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(images/transparent-texture.png) #002e97;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
             grid-gap: 2em;
             font-family: "DWR", sans-serif;
             color: #fff;         
@@ -70,11 +57,6 @@
 
         .tracker-coordinates{
             justify-content: center;
-        }
-        .player-wrapper{
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-gap: 2em;
         }
         
         .tracker-build-contain, .tracker-counter-contain, .tracker-character-name-contain {
@@ -113,11 +95,40 @@
         .tracker-layout .player-grid{
             padding: 4px;
         }
+
+        .coord-monster{
+            display: flex; 
+            justify-content: space-evenly;
+        }
+
+        @media screen and (max-width: 940px) {
+            tr-player[player="2"]{
+                order: 1;
+            }
+        }
+        @media screen and (max-width: 1358px) {
+            .menu-contain{
+                grid-template-columns: repeat(2, auto);
+                grid-template-areas:
+                    "players players"
+                    "players-2 players-2"
+                    "playlist playlist"
+                    "timer timer"
+                    "credits credits"
+                    "layout layout"
+                    "team team"
+                    "settings-game settings-game"
+                    "dwr dwr"
+                    "view reset";}
+            #menu_view{
+                grid-area: -2 / 1 !important;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="tracker-layout">
-        <div>
+        <div class="full-width">
             <span id="rom_upload_wrapper" style="display: none">
                 <input id="rom_upload" type="file" accept=".nes" onchange="DWR.onROMUpload(this.files)" /> <span>← Upload ROM here</span>
             </span>
@@ -180,15 +191,14 @@
             </table>
             <tr-template class="spells background-1" href="spells.html"></tr-template>
         </template>
-        <div class="player-wrapper">
-            <tr-player player="1">
-                <tr-template source="#player-template"></tr-template>
-            </tr-player>
-            <tr-player player="2">
-                <tr-template source="#player-template"></tr-template>
-            </tr-player>
+        <tr-player player="1">
+            <tr-template source="#player-template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player-template"></tr-template>
+        </tr-player>
 
-            <div class="full-width" style="display: flex; justify-content: space-evenly;">
+        <div class="coord-monster full-width">
             <div class="background-style-1 menu-button-row">
                 <h4>Coordinates:</h4>
                 <div style="display: flex; justify-content: space-between;">
@@ -202,7 +212,8 @@
                 <div>
                     <tr-input-toggle-class id="show_monster_stats" target=".menu-monster-wrapper" toggle-class="highlight" property="show_monster_stats"></tr-input-toggle-class>
                     <tr-select property="monster">
-                        <tr-option selected value="0">Slime</tr-option>
+                        <tr-option selected value="40">none</tr-option>
+                        <tr-option value="0">Slime</tr-option>
                         <tr-option value="1">Red Slime</tr-option>
                         <tr-option value="2">Drakee</tr-option>
                         <tr-option value="3">Ghost</tr-option>
@@ -285,7 +296,6 @@
                     </div>
                     <div class="monster-table-ai">AI: <tr-text property="monster_ai"></tr-text></div>
                 -->
-                </div>
                 </div>
             </div>
         </div>

@@ -929,6 +929,10 @@ figcaption{
     font-weight: bold;
 }
 
+[property="player-dl2"] input[type="number"]{
+    width: 3.5rem;
+}
+
 .monster-table{
     display: grid;
     grid-template-columns: 160px 138px 210px;

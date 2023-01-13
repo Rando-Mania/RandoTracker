@@ -22,17 +22,12 @@
 .sprite-drop {background-position: -32px 0;}
 .sprite-flute {background-position: -128px 0;}
 .sprite-gps {background-position: -160px 0;}
+.sprite-gps-check {background-position: -288px -46px;}
+.sprite-gps-check-dim {background-position: -320px -46px;}
 
-.sprite-gps {background-position: -160px 0;}
-.sprite-gps-new{
-	background-image: url(images/item/Coordinates_Checked_with_GPS_2.png);
-	background-size: contain;
-	background-position: 0 0;
-}
-.sprite-gps-new-2{
-	background-image: url(images/item/Coordinates_Checked_without_GPS_2.png);
-	background-size: contain;
-	background-position: 0 0;
+[selected="selected"][label="✔"] ~ tr-label{
+	font-size: 1.25em;
+	padding-left: 1px;
 }
 
 .sprite-token, .sprite-token-frames {
@@ -146,6 +141,17 @@ tr-image[property="staff"], .token-fig{
 	background-image: url(images/Sold_DN_2.png);
 	background-size: contain;
 	background-position: 0 0;
+}
+
+[selected="selected"][label="🛇"] ~ tr-label{
+	font-size: 1.3em;
+	color: #f00;
+	padding-left: 1px;
+}
+[selected="selected"][label="$"] ~ tr-label{
+	font-size: 1.5em;
+	color: #f8d828;
+	padding-left: 1px;
 }
 
 [property="shield"] img, [property="weapon"] img, [property="armor"] img,
