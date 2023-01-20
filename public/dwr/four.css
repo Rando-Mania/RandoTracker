@@ -466,6 +466,7 @@ tr-image, figure{position: relative;}
     font-family: "Warrior Quest I and II", "Press Start 2P";
     color: #fff;
     height: 202px;
+    pointer-events: none;
 }
 
 .stat-bottom {

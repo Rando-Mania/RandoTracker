@@ -530,6 +530,7 @@ td:nth-of-type(2){
     height: 184px;
     display: grid;
     align-items: center;
+    pointer-events: none;
 }
 
 [player="1"] .spells{
