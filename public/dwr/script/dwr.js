@@ -709,7 +709,7 @@ var setupAutoPlayControls = function(){
 	function setAutoPanelsInterval(){
 		// 30 seconds? (should be easy to change) per panel
 		// use timer to sync across instances???
-		autoPanelsInterval = setInterval(autoPlayPanels, 30 * 1000);
+		autoPanelsInterval = setInterval(autoPlayPanels, 25 * 1000);
 	}
 
 	function clearAutoPanelsInterval() {
