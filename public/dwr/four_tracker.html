@@ -51,7 +51,7 @@
         .tracker .player-name { grid-column: span 3;}
         .tracker .player-wrapper [source="#player-template"]{
             display: grid;
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(2, auto);
             grid-row-gap: 1px;
         }
         .tracker .spells{
@@ -80,6 +80,10 @@
             grid-template-columns: 1fr;
             justify-items: center;
         }
+        .tracker .tracker-build-contain{
+            display: none;
+        }
+
         .tracker .player-grid{
             z-index: 2;
         }
@@ -97,11 +101,11 @@
         </div>
         <div class="player-wrapper">
             <template id="player-template">
+                <div class="tracker-name-contain full-width">
+                    <h4>Player</h4>
+                    <tr-text property="player-name"></tr-text>
+                </div>
                 <div class="background-1 tracker-runner-info full-width">
-                    <div class="tracker-name-contain">
-                        <h4>Player</h4>
-                        <tr-text property="player-name"></tr-text>
-                    </div>
                     <div class="tracker-name-contain">
                         <h4>Char. name</h4>
                         <tr-input-text class="charname" property="character_name"></tr-input-text>
@@ -147,7 +151,6 @@
                     </table>
                 </div>
                 <tr-template class="player-grid background-1" href="items_plot_stats.html"></tr-template>
-                <tr-template class="spells background-1" href="spells.html"></tr-template>
             </template>
             <tr-player player="1">
                 <tr-template player="1" source="#player-template"></tr-template>

@@ -26,7 +26,7 @@
             padding: 1.5em;
             background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(images/transparent-texture.png) #002e97;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             grid-gap: 2em;
             font-family: "DWR", sans-serif;
             color: #fff;         
@@ -34,7 +34,7 @@
 
         .tracker-layout tr-template{
             display: grid;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(3, min-content);
             grid-gap: 1px;
         }
         .tracker-layout .player-name{
@@ -66,15 +66,17 @@
             justify-items: center;
         }
 
+        .tracker .tracker-build-contain{
+            display: none;
+        }
+
         .tracker-name-contain{
             font-size: 24px;
             align-self: center;
         }
 
-        .tracker-layout tr-template.spells{
-            grid-template-columns: 1fr;
-            align-content: space-between;
-            grid-gap: 0;
+        .tracker .tracker-build-contain{
+            display: none;
         }
 
         .tracker-layout tr-template.plot{
@@ -189,7 +191,6 @@
                     <td>DP</td><td><tr-text property="dp"></tr-text></td>
                 </tr>
             </table>
-            <tr-template class="spells background-1" href="spells.html"></tr-template>
         </template>
         <tr-player player="1">
             <tr-template source="#player-template"></tr-template>
