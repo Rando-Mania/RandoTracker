@@ -14,13 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .coms {
-        width: 720px;
-        padding: 1em;
-        display: grid;
-        grid-template-columns: 500px 500px ;
-        grid-gap: 16px;
-        font: normal 1em/1.4 Arial, Helvetica, sans-serif;
+      padding: 1em;
+      display: grid;
+      grid-gap: 16px;
+      font: normal 1em/1.4 Arial, Helvetica, sans-serif;
+      grid-template-columns: repeat(auto-fill, minmax(351px, 1fr));
     }
+    
     .coms > *{
       background-color: #555;
       padding: 16px
@@ -93,28 +93,28 @@ td:nth-of-type(2) {
 .scripts tr-text:before{content: '[';}
 .scripts tr-text:after{content: ']';}
 
-    .stat-color-explain h4{
+.stat-color-explain h4{
       margin: .5em 0 1em 0;
       display: flex;
       background: 
-        linear-gradient(to right, #d01000 0 calc(100% / 7), white calc(100% / 7) calc((100% / 7) * 3), #f88019 calc((100% / 7) * 3) calc((100% / 7) * 5), #28c021 calc((100% / 7) * 6) 100%) no-repeat bottom / 100% 5px;
+        linear-gradient(to right, #d01000 0 calc(100% / 7), white 0 calc((100% / 7) * 3), #f88019 0 calc((100% / 7) * 5), #28c021 calc((100% / 7) * 6) 100%) no-repeat bottom / 100% 5px;
+      background-color: rgba(0,0,0,.5);
+      padding: .25em 1em;
+      transform: scale(1.07);
     }
     .stat-color-explain span:first-of-type{flex: 1;}
     .stat-color-explain span:nth-of-type(2){flex: 2;}
     .stat-color-explain span:nth-of-type(3){flex: 2;}
     .stat-color-explain span:nth-of-type(4){flex: 2;}
 
-    .explanations{display: flex;}
     .explanations p {
-      flex: 0 1 50%;
-      background-color: #333;
-      padding: 16px;
+      background-image: linear-gradient(145deg, rgba(0,0,0,.4), #0000);
+      padding: 8px;
+      margin-bottom: .5em;
     }
     .low{border-left: #d01000 3px solid;}
     .caution{border-left: #f88019 3px solid;}
     .gg{border-left: #28c021 3px solid;}
-
-    .explanations p+p {margin-left:1em;}
 
     #tableData td{
       text-align: right;
@@ -282,55 +282,54 @@ td:nth-of-type(2) {
           </details>
       </div>
  
-    <div class="stat-color-explain">
-      <h3>Stat Coloring Explanations</h3>
-      <h4><span>HP</span><span>24</span><span>93</span><span>101</span></h4>
-      <div class="explanations">
-        <p class="low">Red: the choice of 24 for the low threshold on HP is based on the fact that the baby breath can do up to 23 damage.</p>
-        <p class="gg">
-          green: as soon as we get to triple digits.*
-        </p>
+      <div class="stat-color-explain">
+        <h3>Stat Coloring Explanations</h3>
+        <div>
+          <h4><span>HP</span><span>24</span><span>93</span><span>101</span></h4>
+          <div class="explanations">
+            <p class="low">Baby fire breath can do up to 23 damage.</p>
+            <p class="gg">as soon as we get to triple digits.*</p>
+          </div>
+          <footer>* people say "97" a lot as the magic number, but this number should still be approached with "caution" imo as it opens up possibilities for needing to double heal if DP is low or if we roll poorly on our Healmore.  Once we get to about 101 HP, these factors are drastically reduced and are probably balanced by rare double attacks)</footer>        
+        </div>
+  
+        <h4><span>MP</span><span>8</span><span>64</span><span>104</span></h4>
+        <div class="explanations">
+          <p class="low">8 MP allows you to cast any spell at least once</p>
+          <p class="caution">caution and gg values are related to # of times you can cast HEALMORE</p>
+        </div>
+  
+        <h4><span>ST</span><span>10</span><span>82</span><span>90</span></h4>
+        <h4><span>AP</span><span>10</span><span>124</span><span>132</span></h4>
+        <div class="explanations">
+          <p class="low">
+            10 AP allows 1 - 2 damage to a Magician, providing more options in the early game.
+          </p>
+          <p class="caution">
+            124 AP for the orange (below that and we hardly ever have enough MP to compensate)
+          </p>
+          <p class="gg">
+            132 AP for the green (from here we only need double digit MP to compensate). 
+          </p>
+        </div>
+        <footer>
+          <p>
+            These are also coupled together exactly 42 apart to account for Erdrick's Sword and Fighter's Ring.
+          </p>
+        </footer>
+        
+        <h4><span>AG</span><span>10</span><span>60</span><span>72</span></h4>
+        <h4><span>DP</span><span>5</span><span>70</span><span>86</span></h4>
+        <div class="explanations">
+          <p class="caution">
+              The caution figures assume Erdrick's Armor, Dragon's Scale, Large Shield
+          </p>
+          <p class="gg">
+              high figures assume Silver Shield.  This is because obtaining the Silver Shield is not always reasonable, and also because agility is important for the dive as well as for the DL fight.
+          </p>
+          <p class="gg"> with AG at 72 and with full gear, the defense power will be 86 which guarantees DL2 physical attacks are capped at 48.</p>
+        </div>
       </div>
-      <footer>*people say "97" a lot as the magic number, but this number should still be approached with "caution" imo as it opens up possibilities for needing to double heal if DP is low or if we roll poorly on our Healmore.  Once we get to about 101 HP, these factors are drastically reduced and are probably balanced by rare double attacks)</footer>        
-    
-
-      <h4><span>MP</span><span>8</span><span>64</span><span>104</span></h4>
-      <div class="explanations">
-        <p class="low">8 MP allows you to cast any spell at least once</p>
-        <p class="caution">caution and gg values are related to # of times you can cast HEALMORE</p>
-      </div>
-
-      <h4><span>ST</span><span>10</span><span>82</span><span>90</span></h4>
-      <h4><span>AP</span><span>10</span><span>124</span><span>132</span></h4>
-      <div class="explanations">
-        <p class="low">
-          10 AP allows 1 - 2 damage to a Magician, providing more options in the early game.
-        </p>
-        <p class="caution">
-          124 AP for the orange (below that and we hardly ever have enough MP to compensate)
-        </p>
-        <p class="gg">
-          132 AP for the green (from here we only need double digit MP to compensate). 
-        </p>
-      </div>
-      <div class="explanations">
-        <p>
-          These are also coupled together exactly 42 apart to account for Erdrick's Sword and Fighter's Ring.
-        </p>
-      </div>
-      
-      <h4><span>AG</span><span>10</span><span>60</span><span>72</span></h4>
-      <h4><span>DP</span><span>5</span><span>70</span><span>86</span></h4>
-      <div class="explanations">
-        <p class="caution">
-            The caution figures assume Erdrick's Armor, Dragon's Scale, Large Shield
-        </p>
-        <p class="gg">
-            high figures assume Silver Shield.  This is because obtaining the Silver Shield is not always reasonable, and also because agility is important for the dive as well as for the DL fight.
-        </p>
-        <p class="gg"> with AG at 72 and with full gear, the defense power will be 86, which is the crucial number for the DL2 fight, as it guarantees physical attacks are capped at 48.</p>
-      </div>
-    </div>
     <div id="lvexp">
       <h3 style="text-align: center;">Experience Levels</h3>
       <table>
