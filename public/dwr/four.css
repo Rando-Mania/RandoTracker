@@ -194,17 +194,23 @@ html{
 }
 
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
-/* .player-video.tourney-background{
-    background-image: url('images/video-background/aaron2u2.png');
-    background-position: -370px -309px;
-    background-repeat: repeat;
-} */
+
 .player-video.tourney-background{
     background-image: url('images/video-background/summer_tourney.png');
-    background-position: 0 0;}
+    background-position: 0 0;
+}
+/* .player-video.tourney-background{
+    background-image: 
+        radial-gradient(#0000, #000),
+        url('images/logo.png'), 
+        url('images/video-background/aaron2u2.png');
+    background-position: 0 0, top 43px center, -370px -309px;
+    background-repeat: repeat, no-repeat, repeat;
+    background-size: 100%, 80%;
+} */
 
 .player-video.tourney-background:after{
-    content: '2022';
+    content: '2023';
     font-size: 1.7em;
     position: absolute;
     left: 166px;
