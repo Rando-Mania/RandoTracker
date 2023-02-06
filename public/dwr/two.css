@@ -222,7 +222,7 @@
     font-variant: small-caps;
 }
 .player-dl2:before{ 
-    content: 'DL2: ';
+    content: 'Deaths: ';
 }
 
 .player-dl2:empty{
