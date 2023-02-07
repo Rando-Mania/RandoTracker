@@ -201,7 +201,13 @@
 						key.indexOf("comm") !== -1 ||
 						key.indexOf("restream") !== -1 ||
 						key.indexOf("tracker") !== -1 ||
-						key.indexOf("best") !== -1) {
+						key.indexOf("best") !== -1 ||
+						key.indexOf("speaker") !== -1 ||
+						key.indexOf("pronoun") !== -1 ||
+						key.indexOf("record") !== -1 ||
+						key.indexOf("rank") !== -1 ||
+						key.indexOf("number") !== -1 ||
+						key.indexOf("week") !== -1){
 						resetData[key] = data[key];
 					}
 				});
