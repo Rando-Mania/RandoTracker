@@ -21,17 +21,12 @@ body{
   display:flex;
 }
 
-
-header{
-  padding: .25em 1em;
-}
-
 h1{
   font-variant: small-caps;
 }
 
 aside{
-  flex: 1;
+  flex-basis: 256px;
   background-color: var(--purple);
   min-height: 720px;
 }
@@ -98,7 +93,7 @@ article{
   min-height: 720px;
   position: relative;
   overflow: hidden;
-  flex: 4;
+  flex: 1;
   padding: 24px;
   overflow: auto;
 }
@@ -108,23 +103,10 @@ article{
   100%{opacity:1;}
 }
 
-label{
-  color: silver; 
-}
-
-input{
-  padding: 3px;
-}
-
-#filter{
-  margin-bottom:1em;
-}
-
 .games {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 24px;
-
   transition: height .5s;
 }
 
