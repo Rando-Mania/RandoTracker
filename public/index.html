@@ -11,25 +11,27 @@
   <aside>
     <div id="header">
       <h1>RandoTracker</h1>
-      <h3>by <a target="_blank" href="https://randomania.net">RandoMania</a></h3>
+      <h3>by RandoMania</h3>
     </div>
-    <div id="credits">
-      <h4>Credits</h4>
-      <ul>
-        <li>Written by <a target="_blank" href="https://twitter.com/datyedyeguy">Datyedyeguy</a> and <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a></li>
-        <li>Layouts by <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a> and many others.</li>
-        <li>Based on <a target="_blank" href="https://twitter.com/gameboyf9">gameboyf9</a>'s <a target="_blank" href="https://github.com/gameboy9/randoTracker">randoTracker</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Browser Support</h4>
-      <ul>
-        <li>Optimized for OBS browser source capture</li>
-        <li>No Internet Explorer Support</li>
-      </ul>
+    <div class="bordered-container">
+      <div id="credits" class="star-background">
+        <h4>Credits</h4>
+        <ul>
+          <li>Written by <a target="_blank" href="https://twitter.com/datyedyeguy">Datyedyeguy</a> and <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a></li>
+          <li>Layouts by <a target="_blank" href="https://twitter.com/CaptUhu">capt_uhu</a> and many others.</li>
+          <li>Based on <a target="_blank" href="https://twitter.com/gameboyf9">gameboyf9</a>'s <a target="_blank" href="https://github.com/gameboy9/randoTracker">randoTracker</a></li>
+        </ul>
+      </div>
+      <div class="star-background">
+        <h4>Browser Support</h4>
+        <ul>
+          <li>Optimized for OBS browser source capture</li>
+          <li>No Internet Explorer Support</li>
+        </ul>
+      </div>
     </div>
   </aside>
-  <article>
+  <article class="star-background">
     <div id="controls" style="float: right; display: none;">
       Welcome <span id="user_name"></span>!<br/>
       <button onclick="Main.logout()">Logout</button>
@@ -189,7 +191,6 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
   <script src="script/main.js"></script>
-  <script src="../shared/script/imgsupport.js"></script>
   <script>
     function goToRoom(path) {
       var inputRoomID = Math.random().toString(36).slice(2);
