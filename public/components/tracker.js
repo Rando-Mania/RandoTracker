@@ -207,7 +207,8 @@
 						key.indexOf("record") !== -1 ||
 						key.indexOf("rank") !== -1 ||
 						key.indexOf("number") !== -1 ||
-						key.indexOf("week") !== -1){
+						key.indexOf("week") !== -1 ||
+						key.indexOf("video-bg") !== -1) {
 						resetData[key] = data[key];
 					}
 				});

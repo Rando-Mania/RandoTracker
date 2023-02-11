@@ -13,40 +13,45 @@
                     <th></th>
                     <th>Rank</th>
                     <th>Record</th>
-                    <th>Twitch</th>
+                    <!-- <th>Twitch</th> -->
                     <th>Pronoun</th>
                     <th>Deaths</th>
+                    <!-- <th>DL2</th> -->
                 </tr>
                 <tr>
                     <td><label player="1" for="player-1">1</label></td>
                     <td><tr-input-text player="1" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td>
-                    <td><tr-input-text player="1" class="twitch-input" property="player-twitch"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="1" class="twitch-input" property="player-twitch"></tr-input-text></td> -->
                     <td><tr-input-text player="1" class="pronoun-input" list="pronoun_options" property="player-pronoun"></tr-input-text></td>
+                    <!-- <td><tr-input-number oninput player="1" min="0" property="player-deaths"></tr-input-number></td> -->
                     <td><tr-input-number oninput player="1" min="0" property="player-dl2"></tr-input-number></td>
                 </tr>
                 <tr>
                     <td><label player="2" for="player-2">2</label></td>
                     <td><tr-input-text player="2" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td>
-                    <td><tr-input-text player="2" class="twitch-input" property="player-twitch"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="2" class="twitch-input" property="player-twitch"></tr-input-text></td> -->
                     <td><tr-input-text player="2" class="pronoun-input" list="pronoun_options" property="player-pronoun"></tr-input-text></td>
+                    <!-- <td><tr-input-number oninput player="2" min="0" property="player-deaths"></tr-input-number></td> -->
                     <td><tr-input-number oninput player="2" min="0" property="player-dl2"></tr-input-number></td>
                 </tr>
                 <tr>
                     <td><label player="3" for="player-3">3</label></td>
                     <td><tr-input-text player="3" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td>
-                    <td><tr-input-text player="3" class="twitch-input" property="player-twitch"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="3" class="twitch-input" property="player-twitch"></tr-input-text></td> -->
                     <td><tr-input-text player="3" class="pronoun-input" list="pronoun_options" property="player-pronoun"></tr-input-text></td>
+                    <!-- <td><tr-input-number oninput player="3" min="0" property="player-deaths"></tr-input-number></td> -->
                     <td><tr-input-number oninput player="3" min="0" property="player-dl2"></tr-input-number></td>
                 </tr>
                 <tr>
                     <td><label player="4" for="player-4">4</label></td>
                     <td><tr-input-text player="4" class="rank-input" property="player-rank"></tr-input-text></td>
                     <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td>
-                    <td><tr-input-text player="4" class="twitch-input" property="player-twitch"></tr-input-text></td>
+                    <!-- <td><tr-input-text player="4" class="twitch-input" property="player-twitch"></tr-input-text></td> -->
                     <td><tr-input-text player="4" class="pronoun-input" list="pronoun_options" property="player-pronoun"></tr-input-text></td>
+                    <!-- <td><tr-input-number oninput player="4" min="0" property="player-deaths"></tr-input-number></td> -->
                     <td><tr-input-number oninput player="4" min="0" property="player-dl2"></tr-input-number></td>
                 </tr>
             </table>
@@ -68,12 +73,12 @@
         <div class="menu-label-input">
             <label>Video Background Image:</label>
             <tr-select-toggle property="video-bgImage">
-                <tr-option value="none" target=".background-layer, .player-video, .loadscreen" toggle-class="none">none</tr-option>
-                <tr-option value="weekly" target=".background-layer, .player-video, .loadscreen" toggle-class="weekly-background">Weekly</tr-option>
-                <tr-option value="tourney" target=".background-layer, .player-video, .loadscreen" toggle-class="tourney-background">Tourney</tr-option>
-                <tr-option selected value="league" target=".background-layer, .player-video, .loadscreen" toggle-class="league-background">League</tr-option>
-                <tr-option value="chaos" target=".background-layer, .player-video, .loadscreen" toggle-class="chaos-background">Chaos</tr-option>
-                <tr-option value="coop" target=".background-layer, .player-grids-contain, .player-stats-contain, .menu-contain, .player-video, .loadscreen" toggle-class="coop-background">Co-Op</tr-option>
+                <tr-option value="video-bg-none" target=".background-layer, .player-video, .loadscreen" toggle-class="none">none</tr-option>
+                <tr-option value="video-bg-weekly" target=".background-layer, .player-video, .loadscreen" toggle-class="weekly-background">Weekly</tr-option>
+                <tr-option value="video-bg-tourney" target=".background-layer, .player-video, .loadscreen" toggle-class="tourney-background">Tourney</tr-option>
+                <tr-option selected value="video-bg-league" target=".background-layer, .player-video, .loadscreen" toggle-class="league-background">League</tr-option>
+                <tr-option value="video-bg-chaos" target=".background-layer, .player-video, .loadscreen" toggle-class="chaos-background">Chaos</tr-option>
+                <tr-option value="video-bg-coop" target=".background-layer, .player-grids-contain, .player-stats-contain, .menu-contain, .player-video, .loadscreen" toggle-class="coop-background">Co-Op</tr-option>
             </tr-select-toggle>
         </div>
         <div id="menu_video_background">
