@@ -4,20 +4,30 @@
     padding: 0;
   }
 
-@font-face {
-  font-family: "Orbitron";
-  src: local('Orbitron'),
-    url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
-    url('../shared/fonts/orbitron-bold_0.woff') format('woff'),
-    url("../shared/fonts/Orbitron-Bold_0.ttf") format("truetype");
+:root{
+  --pink: #ac0082;
+  --blue: #088fae;
+  --purple: #280642;
+  --white: #fff;
 }
-        
-@font-face {
-  font-family: "Roboto";
-  src: local('Roboto'),
-  url('../shared/fonts/roboto-medium.woff2') format('woff2'),
-  url('../shared/fonts/roboto-medium.woff') format('woff'),
-  url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
+
+.abs{
+  position: absolute;
+}
+
+.star-background, .bordered-container .card{
+  background-color: #150a1e;
+  background-image: url(../rm2/images/stars-background.jpg);
+}
+
+.bordered-container{
+  background-color: var(--pink);
+  background-image: linear-gradient(var(--pink), var(--blue));
+  padding: 1px 0 1px 1px;
+  height: 585px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
   html{
@@ -32,7 +42,7 @@
   }
   
   .layout {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Bebas Neue', cursive;
     color: #fafafa;
     width: 1280px;
     height: 720px;
@@ -84,10 +94,12 @@ main{
 .player-video{
   background-color: #000; 
   transition: background-color .5s;
+  border: solid 2px var(--pink);
+  border-image: linear-gradient(var(--pink), var(--blue)) 2;
 }
 
 .player-video, .layout.four-three .player-video{
-  --vHeight: 720px;
+  --vHeight: 706px;
   width: calc(var(--vHeight) * 4/3);
   height: var(--vHeight);
 }
@@ -104,16 +116,12 @@ main{
   width: calc(var(--vHeight) * 3/2);
 }
 
-aside{
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 0;
-}
-
-.card, .staff{
-  margin-bottom: 16px;
+.layout aside{
+  display: grid;
+  grid-template-rows: 72px 1fr 72px;
+  position: relative;
+  z-index: 0;
+  background-color: var(--purple);
 }
 
 tr-toggle[property="dwr"]{
@@ -121,7 +129,7 @@ tr-toggle[property="dwr"]{
 }
 
 .game-name, .player-name{
-  font-size: 20px;
+  font-size: 30px;
 }
 
 tr-toggle[property="dwr"] .player-grid {

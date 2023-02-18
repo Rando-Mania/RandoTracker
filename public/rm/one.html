@@ -2,55 +2,73 @@
 <html>
 
 <head profile="http://www.w3.org/2005/10/profile">
-  <meta charset="utf-8">
-  <title>RandoMania 1p Layout</title>
-  <link rel="stylesheet" type="text/css" href="../shared/components.css">
-  <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-  <link rel="stylesheet" type="text/css" href="marathon-menu.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
-  <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
-  <link rel="stylesheet" type="text/css" href="one.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
-  <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
-  <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
+    <meta charset="utf-8">
+    <title>RandoMania 1p Layout</title>
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="marathon-menu.css">
+    <!-- <link rel="stylesheet" type="text/css" href="templates/cards/cards.css"> -->
+    <link rel="stylesheet" type="text/css" href="templates/cards/cards-2.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
+    <link rel="stylesheet" type="text/css" href="one.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png"> -->
+    <!-- <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png"> -->
+    <link rel="preload" href="../rm2/images/stars-background.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
-    <div class="layout marathon-background background-repeat-x">
-        <main>
+    <!-- <img style="
+            scale: 1.79;
+    transform-origin: top left;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    opacity: .3;
+    pointer-events: none;" src="../rm2/images/Layout1P_43.png" alt=""> -->
+    <div class="layout">
+        <main class="star-background">
             <div class="card-body player-video"></div>
         </main>
         <aside>
             <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-                <tr-template href="templates/cards/game-info.html"></tr-template>
+                <tr-template href="templates/cards/game-info-2.html"></tr-template>
             </tr-hide-if-empty>
    
-            <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-                <tr-player player="1">
-                    <tr-template href="templates/cards/player-name.html"></tr-template>
-                </tr-player>
-            </tr-hide-if-empty>
+            <div class="bordered-container">
+                <tr-template href="templates/cards/cat-est-2.html"></tr-template>
 
-            <tr-template href="templates/cards/tracking-icons.html"></tr-template>
+                <tr-template href="templates/cards/tracking-icons.html"></tr-template>
 
-            <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>            
+                <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
+                    <tr-player player="1">
+                        <tr-template href="templates/cards/player-name-2.html"></tr-template>
+                    </tr-player>
+                </tr-hide-if-empty>
 
-            <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
+                <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>            
 
-            <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
-                <tr-template href="templates/cards/free-text.html"></tr-template>
-            </tr-hide-if-empty>
+                <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
+                    <tr-template href="../shared/production-team.html"></tr-template>
+                </tr-hide-if-empty>
 
-            <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-                <tr-template href="templates/cards/up-next.html"></tr-template>
-            </tr-hide-if-empty>
+                <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
+                    <tr-template href="templates/cards/free-text.html"></tr-template>
+                </tr-hide-if-empty>
 
-            <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
+                <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
+                    <tr-template href="templates/cards/up-next-2.html"></tr-template>
+                </tr-hide-if-empty>
 
-            <tr-template id="four-three-template" href="templates/cards/4by3-panel.html"></tr-template>
+                <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
+
+                <tr-template id="four-three-template" href="templates/cards/4by3-panel.html"></tr-template>
+            </div>
         </aside>
     </div>
     

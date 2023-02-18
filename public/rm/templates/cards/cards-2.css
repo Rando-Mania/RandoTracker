@@ -1,0 +1,104 @@
+.card{
+    padding: .5em;
+    text-align: center;
+    position: relative;
+}
+
+.card.game-info{
+    padding: 1em;
+    height: 72px;
+}
+
+.card.cat, .card.up-next .card-body{
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+
+.card .player-name{
+    font-size: 36px;
+}
+
+.player-name-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    height: 48px;
+}
+
+.player-pronoun{
+    filter: drop-shadow(0 0 2px var(--blue));
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#player-time-template{
+    flex: 1;
+}
+
+.card.timer, .card.timer .card-body{
+    height: 100%;
+}
+
+.card.timer .card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+tr-timer{
+    display: inline;
+    font-size: 49px;
+    width: auto;
+}
+
+tr-timer .ms{
+    font-size: 24px;
+}
+
+#rm-logo-template{
+    flex: 2;
+}
+
+.rm-logo{
+    height: 100%;
+}
+.rm-logo .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+.rm-logo img{
+    width: 100%;
+    margin: 0 auto;
+}
+.rm-logo img.nami{
+    width: 75%;
+}
+
+
+.cat-est-contain{
+    display: flex;
+    gap: 1px;
+}
+
+.card.cat{
+    flex: 1;
+}
+
+.card-body-label{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 10px;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
