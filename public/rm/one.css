@@ -36,7 +36,6 @@
   }
 
   body {
-    height: 0;
     background-color: #ddd;
     display: flex;
   }
