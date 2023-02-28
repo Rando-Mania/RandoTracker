@@ -1,12 +1,13 @@
 <style>
   .loadscreen{
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
     display: grid;
     grid-template-columns: 432px 1fr 360px;
     grid-template-rows: 1fr auto;
     width: 1280px;
     height: 720px;
+    font-variant: none;
   }
 
   .loadscreen-contain, .one-loading{
@@ -42,8 +43,27 @@
     align-items: center;
 }
 
+
+.loadscreen .player-name{
+  font-size: 18px;
+}
+
 .up-next-game-contain{
+  text-shadow: 0 -1px #000, 0 1px #000, -1px 0 #000, 1px 0 #000;
   background-color: rgb(171 0 130 / 26%);
+  padding: 1em;
+  text-align: left;
+}
+.up-next-game-contain h2{
+  width: fit-content;
+  border-bottom: 2px solid;
+  font-size: 28px;
+  line-height: .75em;
+  margin-bottom: .25em;
+}
+
+h2.on-deck{
+  margin-top: 1em;
 }
 
     tr-template{
@@ -66,25 +86,21 @@
     }
 
   </style>
-  <div class="loadscreen">
+    <div class="loadscreen">
     <header>
         <img src="../rm2/images/MainLogo.png" width="80%" />
     </header>
 
     <div class="up-next-game-contain">
-      <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-          <tr-template href="templates/cards/game-info.html"></tr-template>
-      </tr-hide-if-empty>
+      <h2>UP NEXT</h2>
+      <tr-text scale-to-fit-x property="game-name" class="game-name"></tr-text>
+      <tr-text player="1" scale-to-fit-x class="player-name" property="player-name"></tr-text>
 
-      <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-        <tr-player player="1">
-          <tr-template href="templates/cards/player-name.html"></tr-template>
-        </tr-player>
-      </tr-hide-if-empty>
+      <h2 class="on-deck">ON DECK</h2>
 
-      <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-        <tr-template href="templates/cards/up-next.html"></tr-template>
-      </tr-hide-if-empty>
+      <div class="card-body">
+        <tr-text scale-to-fit-x id="up_next" property="up-next"></tr-text>
+      </div>
     </div>
 
     <div></div>
