@@ -14,9 +14,20 @@ async function fetchDonationData(){
     //     mode: 'cors'
     //   };
 
-    let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations', {cache: 'no-store'});
+
+    // let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations', {cache: 'no-store'});
+ 
+    // let response = await fetch('https://donations.randomania.net/tracker/?json=json', {cache: 'no-store'}); 
+    let response = await fetch('https://donations.randomania.net/tracker/event/1?json', {cache: 'no-store', mode: "no-cors"}); 
     let data = await response.json();
-    let donationTotal = data.data['total-donated'];
+    // let donationTotal = data.data['total-donated'];
+    
+    let donationTotal = data.data.agg['total'];
+    
+    console.log(donationTotal)
+    
+    //agg.amount ? 
+    // agg.total ?
     let adjustedTotal = donationTotal + fakeDonation;
     
     amountEl.textContent = adjustedTotal / 100;

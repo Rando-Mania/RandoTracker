@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="marathon-menu.css">
-    <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
+    <link rel="stylesheet" type="text/css" href="templates/cards/cards-2.css">
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
     <link rel="stylesheet" type="text/css" href="two.css">
     <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://www.googleapis.com">
     <link rel="preconnect" href="https://apis.google.com">
     <link rel="preconnect" href="https://clients6.google.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
@@ -24,8 +27,8 @@
         [player="1"] .player-info {left: var(--nameX); top: var(--nameY);}
         [player="2"] .player-info {right: var(--nameX); top: var(--nameY);}
     
-        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
+        [player="1"] .player-grid, #tracking-icons-template {left: var(--gridX); top: var(--gridY);}
+        [player="2"] .player-grid, #tracking-icons-template-2 {right: var(--gridX); top: var(--gridY);}
     
         [player="1"] .player-final-contain {left: var(--finalX); top: var(--finalY);}
         [player="2"] .player-final-contain {right: var(--finalX); top: var(--finalY);}
@@ -40,10 +43,7 @@
 <body>
     <template id="player_info_template">
         <div class="border-1 player-video abs"></div>
-
-        <tr-hide-if-empty class="abs player-info" id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
-        </tr-hide-if-empty>
+        <tr-template class="abs player-info border-2 marathon-background" href="templates/cards/player-name-no-hide.html"></tr-template>
 
         <tr-toggle property="toggle-speaker" class="abs player-speaker">
             <svg id="volume-up" width="32" height="32" viewbox="0 0 20 20">
@@ -54,45 +54,45 @@
         <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
     </template>
 	<div class="layout marathon-background background-repeat-y">
-        <div>
-            <tr-player player="1">
-                <tr-template source="#player_info_template"></tr-template>
-                <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='1'] #player_final">
-                    <tr-template href="templates/cards/final-winner.html"></tr-template>
-                </tr-hide-if-empty>
-            </tr-player>
-            <tr-player player="2">
-                <tr-template source="#player_info_template"></tr-template>
-                <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='2'] #player_final">
-                    <tr-template href="templates/cards/final-winner.html"></tr-template>
-                </tr-hide-if-empty>
-            </tr-player>
-        </div>
-<!-- timer/staff -->
-        <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
-        <div class="cards">        
-            <tr-template id="tracking-icons-template" href="templates/cards/tracking-icons.html"></tr-template>
+        <tr-player player="1">
+            <tr-template source="#player_info_template"></tr-template>
+            <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='1'] #player_final">
+                <tr-template href="templates/cards/final-winner.html"></tr-template>
+            </tr-hide-if-empty>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_info_template"></tr-template>
+            <tr-hide-if-empty class="abs player-final-contain" toggle-class="visually-hidden" target="[player='2'] #player_final">
+                <tr-template href="templates/cards/final-winner.html"></tr-template>
+            </tr-hide-if-empty>
+        </tr-player>
+<!-- timer/staff -->       
+        <tr-template class="abs player-grid marathon-background" id="tracking-icons-template" href="templates/cards/tracking-icons.html"></tr-template>
+        <tr-template class="abs player-grid marathon-background" id="tracking-icons-template-2" href="templates/cards/tracking-icons-2.html"></tr-template>
 
-            <div class="variable-panels">
-
-                <tr-hide-if-empty id="up_next_contain" target="#up_next, #game_name, #game_category, #system, #game_length" toggle-class="visually-hidden">
-                    <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
-                </tr-hide-if-empty>
-
-                <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
-                    <tr-template href="templates/cards/free-text.html"></tr-template>
-                </tr-hide-if-empty>
-
-                <tr-template id="rm-logo-template" class="visually-hidden" href="templates/cards/rm-logo.html"></tr-template>
-
-                <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
-                    <tr-template href="../shared/production-team.html"></tr-template>
-                </tr-hide-if-empty>
-                
-                <!-- <tr-template id="donation-template" href="templates/cards/donation-tracker.html"></tr-template> -->
+        <div class="abs bottom-bar">
+            <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
+            <div></div>
+            <div id="donation-counter">
+                $1000
             </div>
+        </div>
+        
+        <div class="abs variable-panels">            
+            <tr-hide-if-empty id="up_next_contain" target="#up_next, #game_name, #game_category, #system, #game_length" toggle-class="visually-hidden">
+                <tr-template href="templates/cards/game-and-upnext-2023.html"></tr-template>
+            </tr-hide-if-empty>
 
-            <tr-template id="tracking-icons-template-2" href="templates/cards/tracking-icons-2.html"></tr-template>
+            <tr-hide-if-empty class="marathon-background" target="#free_text" toggle-class="visually-hidden">
+                <tr-template href="templates/cards/free-text.html"></tr-template>
+            </tr-hide-if-empty>
+
+            <tr-hide-if-empty class="marathon-background" id="production_team" class="staff" toggle-class="visually-hidden">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
+            
+            <tr-template class="border-2 marathon-background" id="player-time-template" href="templates/cards/timer.html"></tr-template>
+            <!-- <tr-template id="donation-template" href="templates/cards/donation-tracker.html"></tr-template> -->
         </div>
     </div>
 
@@ -114,7 +114,7 @@
     <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <!-- <script src="scripts/rm.js"></script> -->
+    <script src="scripts/rm.js"></script>
     <script src="../components/components.js"></script>
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/two_game.js"></script>

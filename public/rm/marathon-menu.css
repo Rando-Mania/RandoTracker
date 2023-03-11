@@ -1,29 +1,8 @@
-.marathon-background{
-  background-color: #000;
-  background-size: 50% 50%;
-  background-blend-mode: luminosity;
-}
-
-.notavif .marathon-background {
+.marathon-background {
+  background-color: #1f0d27;
   background-image:
-      url('../shared/images/rm-generic-half.png'), 
-      url('../shared/images/rm-generic-half.png');
+      url('../rm2/images/stars-background.jpg');
   }
-.avif .marathon-background {
-  background-image:
-      url('../shared/images/rm-generic-half.avif'), 
-      url('../shared/images/rm-generic-half.avif');
-  }
-  
-.background-repeat-x {
-  background-position: 0 0, 50% 100%;
-  background-repeat: repeat-x;
-}
-
-.background-repeat-y {
-  background-position: 0 0, 100% 66.6%;
-  background-repeat: repeat-y;
-}
 
 /* menu */
 

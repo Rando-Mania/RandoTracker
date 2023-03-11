@@ -24,7 +24,6 @@
   background-color: var(--pink);
   background-image: linear-gradient(var(--pink), var(--blue));
   padding: 1px 0 1px 1px;
-  height: 585px;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -117,7 +116,9 @@ main{
 
 .layout aside{
   display: grid;
-  grid-template-rows: 72px 1fr 72px;
+  height: 720px;
+  width: 320px;
+  grid-template-rows: 72px 576px 72px;
   position: relative;
   z-index: 0;
   background-color: var(--purple);

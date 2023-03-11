@@ -102,3 +102,11 @@ tr-timer .ms{
     letter-spacing: -4px;
     text-transform: uppercase;
 }
+
+
+#donation-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px
+}
