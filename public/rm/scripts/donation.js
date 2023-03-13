@@ -22,12 +22,10 @@ async function fetchDonationData(){
     let data = await response.json();
     // let donationTotal = data.data['total-donated'];
     
-    let donationTotal = data.data.agg['total'];
+    let donationTotal = data.agg['amount'];
     
     console.log(donationTotal)
-    
-    //agg.amount ? 
-    // agg.total ?
+
     let adjustedTotal = donationTotal + fakeDonation;
     
     amountEl.textContent = adjustedTotal / 100;
