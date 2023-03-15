@@ -1,7 +1,7 @@
-async function fetchDonationData(){
-    const donationCounterEl = document.getElementById("donation-counter");
-    const amountEl = document.getElementById("amount-donated");
-    let fakeDonation = 0;
+const fetchDonationData = async () => {
+    // const donationCounterEl = document.getElementById("donation-counter");
+    // const amountEl = document.getElementById("amount-donated");
+    // let fakeDonation = 0;
 
     // const myInit = {
     //     method: 'GET',
@@ -14,28 +14,45 @@ async function fetchDonationData(){
     //     mode: 'cors'
     //   };
 
-
-    // let response = await fetch('https://www.speedrun.com/api/v1/games/k6q4v49d/donations', {cache: 'no-store'});
+    try{
  
-    // let response = await fetch('https://donations.randomania.net/tracker/?json=json', {cache: 'no-store'}); 
-    let response = await fetch('https://donations.randomania.net/tracker/event/1?json', {cache: 'no-store', mode: "no-cors"}); 
-    let data = await response.json();
+        const myInit = {
+        method: 'GET',
+        headers: {
+            'Host': 'donations.randomania.net',
+            'Accept': 'application/json',
+          },
+        mode: 'cors'
+      };
+
+
+        const api_url = 'https://donations.randomania.net/tracker/event/1?json';
+        const response = await fetch(api_url, myInit);
+        console.log(response.ok);
+        console.log(response.status);
+        console.log(response.body);
+        const data = await response.json();
+        return data;
+    } catch(err) {
+        console.error(err)
+    }
+}
+    
+fetchDonationData().then(data => console.log(data));
+
     // let donationTotal = data.data['total-donated'];
     
-    let donationTotal = data.agg['amount'];
+    // let donationTotal = data.agg['amount'];
+
+    // let adjustedTotal = donationTotal + fakeDonation;
     
-    console.log(donationTotal)
+    // amountEl.textContent = adjustedTotal / 100;
+    // let progressValue = adjustedTotal / 3000_00;
 
-    let adjustedTotal = donationTotal + fakeDonation;
-    
-    amountEl.textContent = adjustedTotal / 100;
-    let progressValue = adjustedTotal / 3000_00;
+    // donationCounterEl.style.setProperty('--progress-scale', "scaleX(" + progressValue + ")");
 
-    donationCounterEl.style.setProperty('--progress-scale', "scaleX(" + progressValue + ")");
-}
-
-setTimeout(
-    function(){
-        fetchDonationData();
-        setInterval(fetchDonationData, 60000)
-    }, 8000);
+// setTimeout(
+//     function(){
+//         fetchDonationData();
+//         setInterval(fetchDonationData, 60000)
+//     }, 8000);
