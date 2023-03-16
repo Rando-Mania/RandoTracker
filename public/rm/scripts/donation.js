@@ -15,19 +15,16 @@ const fetchDonationData = async () => {
     //   };
 
     try{
- 
-        const myInit = {
-        method: 'GET',
-        headers: {
-            'Host': 'donations.randomania.net',
-            'Accept': 'application/json',
-          },
-        mode: 'cors'
-      };
+        const apiInit = {
+            method: 'GET',
+            headers: {
+                'Host': 'donations.randomania.net',
+                'Accept': 'application/json',
+            },
+        };
 
-
-        const api_url = 'https://donations.randomania.net/tracker/event/1?json';
-        const response = await fetch(api_url, myInit);
+        const apiUrl = 'https://donations.randomania.net/tracker/event/1?json';
+        const response = await fetch(apiUrl, apiInit);
         console.log(response.ok);
         console.log(response.status);
         console.log(response.body);
