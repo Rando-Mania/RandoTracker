@@ -1,20 +1,16 @@
 <style>
   .loadscreen{
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
-    padding: 1em;
     display: grid;
-    grid-template-columns: 1fr 320px;
-    grid-template-rows: 1fr 150px;
+    grid-template-columns: 432px 1fr 360px;
+    grid-template-rows: 1fr auto;
     width: 1280px;
     height: 720px;
+    font-variant: none;
   }
 
-  .loadscreen-contain, .two-loading{
+  .loadscreen-contain, .one-loading{
     width: 1280px;
     height: 720px;
     color: #fff;
@@ -26,132 +22,93 @@
     visibility: hidden;
 }
 
-.loadscreen-contain.show, .two-loading{
+.loadscreen-contain.show, .one-loading{
   visibility: visible;
 }
 
-.two-loading.show{
+.one-loading.show{
   display: flex;
 }
 
-main{
-        text-align: center;
-        display: grid;
-       align-content: space-around;
-       height: 100%; 
-    }
-    main tr-template{
-        background-color: #000;
-        padding: 8px;
-    }
-    main tr-template div{
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      justify-content: space-around;
-    }
-    main img{
-        height: 150px;
-    }
+.avif .marathon-background{
+  background-image: url(../rm2/images/stars-background-moz.jpg);
+  background-size: 100%;
+  background-blend-mode: normal;
+}
 
-    main h4{
-      grid-column-end: -1;
-    }
+.loadscreen header{
+  display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loadscreen .player-name{
+  font-size: 18px;
+}
+
+.up-next-game-contain{
+  text-shadow: 0 -1px #000, 0 1px #000, -1px 0 #000, 1px 0 #000;
+  background-color: rgb(171 0 130 / 26%);
+  padding: 1em;
+  text-align: left;
+}
+.up-next-game-contain h2{
+  width: fit-content;
+  border-bottom: 2px solid;
+  font-size: 28px;
+  line-height: .75em;
+  margin-bottom: .25em;
+}
+
+h2.on-deck{
+  margin-top: 1em;
+}
 
     tr-template{
         position: relative;
     }
 
-    .loadscreen aside{
-      font-family: orbitron, arial;
-      letter-spacing: 2px;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-row: span 2;
-      grid-gap: 3em;
+    .charity-contain{
+      align-self: end;
     }
-    main header{
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        grid-column-gap: 1.25em;
-    }
-    main header img{
-        display: block;
-        width: 3em;
-        height: 3em;
-        align-self: center;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: pixelated;
-    }
-    main header img:nth-of-type(1){
-        grid-area: 1 / 1 / span 2 / 2;
-        justify-self: right;
-    }
-    main header img:nth-of-type(2){
-        grid-area: 1 / 3 / span 2;
+    .donation-total{
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 108px;
+      background-color: var(--purple);
+      border: solid 3px var(--pink);
+      border-image: linear-gradient(var(--pink), var(--blue)) 3;
+      font-size: 53px;
     }
 
-.collage{
-    perspective: 400px;
-    display: flex;
-    justify-content: space-evenly;
-}
+  </style>
+    <div class="loadscreen">
+    <header>
+        <img src="../rm2/images/MainLogo.png" width="80%" />
+    </header>
 
-.collage img{
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
-  position: relative;
-}
+    <div class="up-next-game-contain">
+      <h2>UP NEXT</h2>
+      <tr-text scale-to-fit-x property="game-name" class="game-name"></tr-text>
+      <tr-text player="1" scale-to-fit-x class="player-name" property="player-name"></tr-text>
 
-.loadscreen .card-border, .loadscreen tr-hide-if-empty.card-head{
-  width: 288px;
-}
-</style>
-  <div class="loadscreen marathon-background background-repeat-x">
-    <main>
-      <header>
-          <img src="images/RM_marathon_logo.png" alt="RM" width="54" height="54" />
-          <h1>RandoMania</h1>
-          <!-- <h1>Tournaments Of Hope</h1> -->
-          <!-- <h2>Jan/Feb 2021</h2> -->
-          <img src="images/RM_marathon_logo.png" alt="RM" width="54" height="54" />
-      </header>
-      <div class="collage">
-          <img height="171" src="images/gannon_dungeon.png" alt=""/>
-          <img height="150" src="images/axe-knight.png" alt=""/>
-          <img height="150" src="images/mario-desert.png" alt="">
+      <h2 class="on-deck">ON DECK</h2>
+
+      <div class="card-body">
+        <tr-text scale-to-fit-x id="up_next" property="up-next"></tr-text>
       </div>
-      <h3>Your home for all the randomizers</h3>
-      <!-- <h3>!ToH</h3> -->
-    </main>
-      <aside>
-        <tr-hide-if-empty id="game_name_author" toggle-class="visually-hidden">
-            <tr-template href="templates/cards/game-info.html"></tr-template>
-        </tr-hide-if-empty>
+    </div>
 
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-          <tr-player player="1">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
-          </tr-player>
-        </tr-hide-if-empty>          
-
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-          <tr-player player="2">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
-          </tr-player>
-        </tr-hide-if-empty>
-
-        <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
-          <tr-player player="3">
-            <tr-template href="templates/cards/player-name.html"></tr-template>
-          </tr-player>
-        </tr-hide-if-empty>
-
-        <tr-hide-if-empty class="staff" toggle-class="visually-hidden">
-            <tr-template href="../shared/production-team.html"></tr-template>
-        </tr-hide-if-empty>
-
-        <tr-hide-if-empty id="up_next_contain" target="#up_next" toggle-class="visually-hidden">
-            <tr-template href="templates/cards/up-next.html"></tr-template>
-        </tr-hide-if-empty>
-      </aside>
+    <div></div>
+    
+    <div class="charity-contain">
+      <img class="nami" width="248px" src="../rm2/images/nami.png" alt="NAMI" />
+      <div class="donation-total">
+        $0
+      </div>
+    </div>
   </div>

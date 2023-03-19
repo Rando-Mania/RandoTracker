@@ -27,9 +27,29 @@
     --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
     --clipY1: calc(var(--videoY) + var(--border));
     --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
+
+    --pink: #ac0082;
+    --blue: #088fae;
+    --purple: #280642;
+    --white: #fff;
 }
 
-.border-1{border: var(--border1);}
+.border-1{
+    border: var(--border1);
+    border-image: linear-gradient(var(--pink), #7a2c90) 3 / 3px;
+}
+
+[player="3"] .border-1, 
+[player="4"] .border-1{
+    border: var(--border1);
+    border-image: linear-gradient(#7a2c90, var(--blue)) 3 / 3px;
+}
+
+.border-2{
+    border: solid 1px #6d3793;
+    border-image: linear-gradient(#7f278e, #6d3793) 1;
+}
+
 .background-1{background-color: var(--backgroundColor1);}
 .border-background-1 {
     border: var(--border1);
@@ -39,35 +59,19 @@
 
 /* layout specific styles */
 
-@font-face {
-  font-family: "Orbitron";
-  src: local('Orbitron'),
-    url('../shared/fonts/orbitron-bold_0.woff2') format('woff2'),
-    url('../shared/fonts/orbitron-bold_0.woff') format('woff'),
-    url("../shared/fonts/Orbitron-Bold_0.ttf") format("truetype");
-}
-        
-@font-face {
-  font-family: "Roboto";
-  src: local('Roboto'),
-  url('../shared/fonts/roboto-medium.woff2') format('woff2'),
-  url('../shared/fonts/roboto-medium.woff') format('woff'),
-  url("../shared/fonts/Roboto-Medium.ttf") format("truetype");
-}
-
 .layout {
-  font-family: "Orbitron", sans-serif;
-  color: #fafafa;
-  width: 1280px;
-  height: 720px;
-  letter-spacing: 2px;
-  position: relative;
-  padding: var(--spacing);
-  display: grid;
-  grid-row-gap: var(--spacing);
-  grid-template-columns: 1fr;
-  grid-template-rows: 563px auto;
-  overflow: hidden;
+    font-family: 'Bebas Neue', cursive;
+    color: #fafafa;
+    width: 1280px;
+    height: 720px;
+    letter-spacing: 2px;
+    position: relative;
+    padding: var(--spacing);
+    display: grid;
+    grid-row-gap: var(--spacing);
+    grid-template-columns: 1fr;
+    grid-template-rows: 563px auto;
+    overflow: hidden;
 }
 
 .layout.transparent-background{
@@ -322,10 +326,13 @@ tr-text#player_final{
 
 .cards{
     display: grid;
-    gap: 16px;
+    gap: 1px;
+    background-image: linear-gradient(var(--pink), var(--blue));
+    padding: 1px;
 }
 
 .cards .card{
+    height: 100%;
     width: 264px;
 }
 
@@ -345,7 +352,6 @@ tr-timer span {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 8px;
-    padding: 8px;
 }
 
 .staff{
@@ -452,6 +458,7 @@ tr-timer span {
 .menu-contain {
   display: grid;
   grid-template-areas:
+  "autofill autofill autofill . . ."
   "game     game    icons    timer   layout layout"
   "game     game    upnext   timer   layout layout"
   "pronouns players freetext team    view   reset"
@@ -472,6 +479,7 @@ tr-timer span {
 .menu-game-specific #menu_players_extra{grid-area: pronouns;}
 .menu-game-specific #menu_other{grid-area: other;}
 .menu-game-specific #menu_credits{grid-area: credits;}
+.menu-game-specific #menu_fill{grid-area: autofill;}
 
 #menu_layout div{
   display: block;

@@ -1,13 +1,6 @@
 .card, .staff{
     display: grid;
-    background-color: #111;
     width: 288px;
-  }
-
-  .card{
-    --highlight-color: #007800;
-    border-top: 1px solid var(--highlight-color);
-    --highlight-color: #4857d1;
   }
 
   .player-name .card{
@@ -19,9 +12,7 @@
   }
 
   .card-head{
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 16px;
-    color: #000;
     z-index: 0;
     height: 1em;
     position: relative;
@@ -101,7 +92,6 @@
   }
 
   .staff{
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 18px;
   }
   
@@ -113,29 +103,18 @@
   }
   
   .timer .card-body{
-    background-color: var(--highlight-color);
-    background-image: radial-gradient(ellipse at bottom, var(--highlight-color) 50%, #dc0050);
     padding: 1px 0;
+  }
+
+  .card{
+    background-color: #1f0d27;
+    background-image: url(/rm2/images/stars-background.jpg);
   }
   
   tr-timer{
     width: 100%;
-    position: relative;
     z-index: 0;
     overflow: hidden;
-  }
-  
-  tr-timer:after{
-      content: '';
-      background-image: url('/rm/images/zelda_hex_alpha_text.png'), linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6));
-      position: absolute;
-      width: 100%;
-      height: 1356px;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      animation: scroll 4s steps(26) infinite;
-      animation-play-state: paused;
   }
   
   tr-timer[running="true"]:after{
@@ -168,32 +147,9 @@
       position: relative;
     }
 
-    .card-back{
-      height: 18px;
-      background-color: var(--highlight-color);
-      background-image: linear-gradient(355deg, transparent, rgba(255,255,255,.3), transparent);
-    }
-
-    .card-head-left .card-back{
-      /* clip-path: polygon(0 0, 118px 0, 118px 3px, 115px 3px, 115px 6px, 112px 6px, 112px 9px, 109px 9px, 109px 12px, 106px 12px, 106px 15px, 103px 15px, 103px 18px, 100px 18px, 0 18px); */
-      border-radius: 0 17px 17px 0 / 0 100% 100% 0;
-      -webkit-mask-box-image: url("/rm/images/border-mask.png") fill 0 16 0 15 / 0 16px 0 0;
-    }
-
-    .card-head-right .card-back{
-      /* clip-path: polygon(0 0, 118px 0, 118px 18px, 18px 18px, 15px 18px, 15px 15px, 12px 15px, 12px 12px, 9px 12px, 9px 9px, 6px 9px, 6px 6px, 3px 6px, 3px 3px, 0 3px); */
-      border-radius: 5% 0 0 11px / 43% 0 0 99%;
-      -webkit-mask-box-image: url("/rm/images/border-mask.png") fill 0 16 0 15 / 0 0 0 15px;
-    }
-
-    .bottom .card-back{
-      transform: rotateX(180deg);
-    }
 
     .card-border > div, .card-back > div{
       position: absolute;
       width: 100%;
       height: 100%;
     }
-
-    .rainbow-fill div{background-color: #007800;}
