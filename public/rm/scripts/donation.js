@@ -23,7 +23,8 @@ const fetchDonationData = async () => {
             },
         };
 
-        const apiUrl = 'https://donations.randomania.net/tracker/event/1?json';
+        // const apiUrl = 'https://donations.randomania.net/tracker/event/1?json';
+        const apiUrl = 'https://donations.randomania.net/tracker/search/?type=event'
         const response = await fetch(apiUrl, apiInit);
         console.log(response.ok);
         console.log(response.status);

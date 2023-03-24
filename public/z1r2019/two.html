@@ -166,7 +166,41 @@
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/two_game.js"></script>
     <script>
-        CSS.paintWorklet.addModule('../shared/script/corner-shape.js');
+        if ('paintWorklet' in CSS){
+            CSS.paintWorklet.addModule('../shared/script/corner-shape.js');
+        }
+        if ('registerProperty' in CSS){
+            window.CSS.registerProperty({
+                name: '--border-width',
+                syntax: '<length>',
+                inherits: false,
+                initialValue: 0,
+            });
+            window.CSS.registerProperty({
+                name: '--border-color',
+                syntax: '<color>',
+                inherits: false,
+                initialValue: "black",
+            });
+            window.CSS.registerProperty({
+                name: '--background-color',
+                syntax: '<color>',
+                inherits: false,
+                initialValue: "transparent",
+            });
+            // window.CSS.registerProperty({
+            //     name: '--corner-size',
+            //     syntax: '<length-percentage>+',
+            //     inherits: false,
+            //     initialValue: 0,
+            // });
+            // window.CSS.registerProperty({
+            //     name: '--corner-shape',
+            //     syntax: 'none | round | angle | scoop | notch',
+            //     inherits: false,
+            //     initialValue: "none",
+            // });
+        }
     </script>
 </body>
 </html>
