@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="templates/cards/cards.css">
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">  
     <link rel="stylesheet" type="text/css" href="three.css">
-    <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
     <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,13 +79,12 @@
             <tr-template id="tracking-icons-template" href="templates/cards/tracking-icons.html"></tr-template>
             <tr-template id="tracking-icons-template-2" href="templates/cards/tracking-icons-2.html"></tr-template>
             <tr-template id="tracking-icons-template-3" href="templates/cards/tracking-icons-3.html"></tr-template>
-<!-- timer/staff -->
-        <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
+
         <div class="abs cards"> 
             <tr-hide-if-empty id="up_next_contain" target="#up_next, #game_name, #game_category, #system, #game_length" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/game-and-upnext.html"></tr-template>
             </tr-hide-if-empty>
-
+            <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
             <tr-hide-if-empty target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
             </tr-hide-if-empty>
@@ -121,6 +119,7 @@
     <script defer src="/__/firebase/8.3.0/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js"></script>
+    <script src="scripts/rm.js"></script>
     <script src="../components/components.js"></script>
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/three_game.js"></script>

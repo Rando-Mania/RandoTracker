@@ -453,8 +453,6 @@ tr-timer span {
     align-items: center;
 }
 
-
-
 .game-swap .game-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .game-swap .game-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
 

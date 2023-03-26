@@ -68,6 +68,10 @@
     text-align: center;
   }
   
+  #game_name{
+    font-size: 30px;
+  }
+
   .rm-logo .card-body{
     font-size: 24px;
     display: flex;
@@ -79,7 +83,47 @@
     height: 1em;
     margin-right: .25em;
   }
-  
+
+  .rm-logo img.rm-logo-img {
+    width: 95%;
+    height: auto;
+    margin: 0;
+    justify-self: center;
+}
+.rm-logo img.nami {
+    width: 75%;
+    justify-self: center;
+}
+
+.rm-logo .card-body {
+    display: inherit;
+}
+
+#game_swap .card-head.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+  .panel-swap{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+
+.panel-1, .panel-2{
+    grid-area: 1/1;
+    display: grid;
+    align-items: center;
+}
+
+.panel-1{grid-template-columns: auto 1fr;}
+.panel-2{grid-template-columns: 1fr;}
+
+.panel-swap .panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
+.panel-swap .panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
+
   tr-template{
     display: contents;
   }
@@ -112,9 +156,11 @@
   }
   
   tr-timer{
-    width: 100%;
     z-index: 0;
     overflow: hidden;
+    display: inline;
+    font-size: 49px;
+    width: auto;
   }
   
   tr-timer[running="true"]:after{

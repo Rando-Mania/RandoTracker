@@ -327,18 +327,7 @@ tr-text#player_final{
 }
 
 .card.timer{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    width: 264px;
-}
-
-tr-timer{
-	width: 11em;
-    height: 52px;
-    z-index: 1;
-	font-size: 24px;
+    padding: 0.25em 0.5em;
 }
 
 tr-timer span {
@@ -424,7 +413,6 @@ tr-timer span {
     .three-by-four{width: calc(38px * 3); height: calc(38px * 4);} 
     .four-by-four{width: calc(38px * 4); height: calc(38px * 4);}
 
-
 /* dialog styles */
     
 .dialog{
@@ -458,6 +446,7 @@ tr-timer span {
 .menu-contain {
   display: grid;
   grid-template-areas:
+  "autofill autofill autofill .       .      ."
   "game     game    icons    timer   layout layout"
   "game     game    upnext   timer   layout layout"
   "pronouns players freetext team    view   reset"
@@ -478,6 +467,7 @@ tr-timer span {
 .menu-game-specific #menu_players_extra{grid-area: pronouns;}
 .menu-game-specific #menu_other{grid-area: other;}
 .menu-game-specific #menu_credits{grid-area: credits;}
+.menu-game-specific #menu_fill{grid-area: autofill;}
 
 #menu_layout div{
   display: block;
