@@ -2,6 +2,7 @@
   background-color: #1f0d27;
   background-image:
       url('../rm2/images/stars-background.jpg');
+  background-origin: border-box;
   }
 
 /* menu */
@@ -342,6 +343,7 @@
   grid-column-gap: 8px;
   padding: 0;
   width: auto;
+  justify-items: center;
 }
 
 .player-grid-ffiv img{

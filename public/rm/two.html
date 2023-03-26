@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" href="templates/cards/cards-2.css">
     <link rel="stylesheet" type="text/css" href="templates/cards/staff.css">
     <link rel="stylesheet" type="text/css" href="two.css">
-    <link rel="preload" href="images/zelda_hex_alpha_text.png" as="image" type="image/png">
-    <link rel="preload" href="images/RM_marathon_logo.png" as="image" type="image/png">
     <link rel="preload" href="../shared/images/icons/blank.svg" as="image" type="image/svg+xml">
     <link rel="preconnect" href="https://www.googleapis.com">
     <link rel="preconnect" href="https://apis.google.com">
@@ -86,13 +84,13 @@
             <tr-hide-if-empty class="marathon-background" target="#free_text" toggle-class="visually-hidden">
                 <tr-template href="templates/cards/free-text.html"></tr-template>
             </tr-hide-if-empty>
-
-            <tr-hide-if-empty class="marathon-background" id="production_team" class="staff" toggle-class="visually-hidden">
-                <tr-template href="../shared/production-team.html"></tr-template>
-            </tr-hide-if-empty>
             
             <tr-template class="border-2 marathon-background" id="player-time-template" href="templates/cards/timer.html"></tr-template>
             <!-- <tr-template id="donation-template" href="templates/cards/donation-tracker.html"></tr-template> -->
+            
+            <tr-hide-if-empty class="marathon-background" id="production_team" class="staff" toggle-class="visually-hidden">
+                <tr-template href="../shared/production-team.html"></tr-template>
+            </tr-hide-if-empty>
         </div>
     </div>
 

@@ -14,6 +14,10 @@
 .abs{
   position: absolute;
 }
+.game-info .card-body, .card-body{
+  width: 288px;
+  margin: 0 auto;
+}
 
 .star-background, .bordered-container .card{
   background-color: #150a1e;
@@ -54,7 +58,7 @@
   -webkit-mask: linear-gradient(to right, #0000 75%, red 0);
 }
 .layout.ten-nine.transparent-background{
-  --vHeight: 652px;
+  --vHeight: 706px;
   -webkit-mask: 
     linear-gradient(red, red) no-repeat 118px 35px / calc(var(--vHeight) * 10/9) var(--vHeight),
     linear-gradient(red, red);
@@ -62,7 +66,7 @@
   mask-composite: exclude;
 }
 .layout.three-two.transparent-background{
-  --vHeight: 642px;
+  --vHeight: 632px;
   -webkit-mask: 
     linear-gradient(red, red) no-repeat 0 40px / calc(var(--vHeight) * 3/2) var(--vHeight),
     linear-gradient(red, red);
@@ -70,7 +74,7 @@
   mask-composite: exclude;
 }
 .layout.sixteen-nine.transparent-background{
-  --vHeight: 540px;
+  --vHeight: 533px;
   -webkit-mask: 
     linear-gradient(red, red) no-repeat 0 91px / calc(var(--vHeight) * 16/9) var(--vHeight),
     linear-gradient(red, red);
@@ -102,15 +106,15 @@ main{
   height: var(--vHeight);
 }
 .layout.sixteen-nine .player-video{
-  --vHeight: 540px;
+  --vHeight: 533px;
   width: calc(var(--vHeight) * 16/9);
 }
 .layout.ten-nine .player-video{
-  --vHeight: 652px;
+  --vHeight: 706px;
   width: calc(var(--vHeight) * 10/9);
 }
 .layout.three-two .player-video{
-  --vHeight: 642px;
+  --vHeight: 632px;
   width: calc(var(--vHeight) * 3/2);
 }
 

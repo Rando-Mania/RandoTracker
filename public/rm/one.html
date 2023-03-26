@@ -43,15 +43,15 @@
             <div class="bordered-container">
                 <tr-template href="templates/cards/cat-est-2.html"></tr-template>
 
-                <tr-template href="templates/cards/tracking-icons.html"></tr-template>
-
                 <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
                     <tr-player player="1">
                         <tr-template href="templates/cards/player-name-2.html"></tr-template>
                     </tr-player>
                 </tr-hide-if-empty>
 
-                <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>            
+                <tr-template id="player-time-template" href="templates/cards/timer.html"></tr-template>
+
+                <tr-template href="templates/cards/tracking-icons.html"></tr-template>
 
                 <tr-hide-if-empty id="production_team" class="staff" toggle-class="visually-hidden">
                     <tr-template href="../shared/production-team.html"></tr-template>

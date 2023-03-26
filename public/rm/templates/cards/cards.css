@@ -120,6 +120,14 @@
   tr-timer[running="true"]:after{
     animation-play-state: running;
   }
+
+  tr-timer{
+    line-height: 1.1;
+  }
+
+  tr-timer .ms, tr-timer .dot{
+    display: none;
+  }
   
   @keyframes scroll {
       from{ transform: translateY(0); }

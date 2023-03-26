@@ -18,7 +18,7 @@
     --winX: 202px; --winY: 525px;
     --finalX: 360px; --finalY: 507px;
     --bestX: 884px; --bestX2: 18px; --bestY: 486px;
-    --gridX: 27px; --gridY: 538px;
+    --gridX: 27px; --gridY: 537px;
 
     --border: 3px;
 
@@ -98,22 +98,19 @@
 
 .layout.sixteen-nine{
     --nameY: 46px;
-    --finalX: 125px; --finalY: 29px;
-    --speakerY: 83px;
+    --finalX: 377px;
+    --finalY: 44px;
+    --speakerY: 46px;
     --bestY: 58px;
     --vidWidth: 644px;
+    --gridY: 478px;
     --vidAspect: 16 / 9;
-
 }
 .layout.sixteen-nine .player-video{
-    --videoY: 152px;
-    --vidWidth: 644px;
+    --videoY: 114px;
+    --videoX: 5px;
+    --vidWidth: 633px;
     --vidAspect: 16 / 9;
-}
-
-
-.layout.sixteen-nine .card.timer{
-    top: 50px;
 }
 
   .layout.ten-nine .player-video{
@@ -121,23 +118,24 @@
     height: var(--vHeight);
     width: calc(var(--vHeight) * 10/9);
     --videoX: 57px;
+    --videoY: 6px;
   }
 
 
   .layout.three-two{
     --nameY: 20px;
-    --finalX: 125px; --finalY: 29px;
-    --speakerY: 41px;
+    --finalX: 377px;
+    --finalY: 16px;
+    --speakerY: 26px;
     --bestY: 58px;
+    --gridY: 478px;
 }
 .layout.three-two .player-video{
-    --videoY: 107px;
-    --vidWidth: 644px;
+    --videoY: 73px;
+    --videoX: 27px;
+    --vidWidth: 607px;
     --vidAspect: 3 / 2;
 
-}
-.layout.three-two .card.timer{
-    top: 28px;
 }
 
 .player-info .card{
@@ -300,11 +298,16 @@
     width: auto;
     display: grid;
     place-content: center;
+    padding: 0.25em;
 }
 
-.player-final-contain .player-winner, .player-final-contain .card-body{
+.player-final-contain .player-winner, 
+.player-final-contain .card-body,
+.player-final-contain .winner-default{
     grid-area: 1/ 1;
-    padding: 18px 12px;
+    width: 140px;
+    height: 48px;
+    padding: 12px;
 }
 
 tr-text#player_final{
@@ -316,21 +319,25 @@ tr-text#player_final{
     display:none;
 }
 
+.winner-default, .player-winner{
+    border: solid transparent 12px;
+    background: 
+        url(../rm2/images/stars-background.jpg) padding-box no-repeat,
+        repeating-conic-gradient(#0000 0 90deg, var(--check-color) 90deg 180deg) 0 0 / 8px 8px,
+        url(../rm2/images/stars-background.jpg) border-box repeat;
+}
+
 .winner-default{
-    grid-area: 1/ 1;
-    border: double 12px #444;
-    border-image: url('images/checker.svg') round 12 / 12px;
+    --check-color: rgb(255 255 255/.25);
 }
 
 .player-winner{
-    border: double 12px #fff;
-    border-image: url('images/checker.svg#svgView(viewBox(40, 0, 40, 40))') round 12 / 12px;
-    height: 36px;
+    --check-color: rgb(255 255 255/1);
 }
 
 .card.timer{
+    padding: 0.25em 0.5em;
     width: 327px;
-    height: 95px;
     font-size: 45px;
 }
 
@@ -405,12 +412,16 @@ tr-timer span {
     background-color: #280642;
 }
 
-.variable-panels .card-body{
+/* .variable-panels .card-body{
     min-height: 32px;
+} */
+
+.game-name-contain{
+    width: 311px;
 }
 
 #game_name{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #game_swap .card-head.bottom{
@@ -447,6 +458,13 @@ tr-timer span {
 .game-swap .game-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
 .game-swap .game-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
 
+.panel-1, .panel-2{
+    justify-self: center;
+}
+
+.rm-logo img.nami {
+    width: auto;
+}
 
 [target="#free_text"]{
     display: flex;
@@ -457,7 +475,7 @@ tr-timer span {
 }
 
 .bottom-bar{
-    height: 70px;
+    height: 58px;
     width: 100%;
     background-color: #3b0a61;
     display: flex;
