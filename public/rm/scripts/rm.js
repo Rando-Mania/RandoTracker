@@ -96,7 +96,7 @@
 		setTimeout(function(){
 			let script = document.createElement("script");
 
-			script.type = "text/javascript";
+			script.type = "text/json";
 			script.src = "https://donations.randomania.net/tracker/api/v2/runs/?format=json";
 			document.body.appendChild(script);
 		}, 8000)

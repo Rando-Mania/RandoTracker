@@ -1,5 +1,5 @@
 const fetchDonationData = async () => {
-    const donationCounterEl = document.getElementById("donation-counter");
+    const donationCounterEl = document.getElementById("donation_counter");
 
     const apiInit = {
         method: 'GET',

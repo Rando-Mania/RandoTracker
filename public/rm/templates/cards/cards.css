@@ -72,6 +72,12 @@
     font-size: 30px;
   }
 
+  .cat-system-time{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .rm-logo .card-body{
     font-size: 24px;
     display: flex;

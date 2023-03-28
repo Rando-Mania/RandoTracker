@@ -219,13 +219,13 @@ textarea{
     display: block;
   }
 
-  #donation-counter{
+  #donation_counter{
     position: relative;
     overflow: hidden;
     --progress-scale: scaleX(0);
   }
 
-  #donation-counter:after{
+  #donation_counter:after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -236,5 +236,4 @@ textarea{
     transform: var(--progress-scale);
     transform-origin: left;
     transition: transform .5s;
-
   }

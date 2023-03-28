@@ -129,13 +129,6 @@
     height: var(--vidHeight);}
 .three-two .player-video{--vidAspect: 3 / 2;}
 
-.sixteen-nine .cards{
-    width: 85%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
 .sixteen-nine .player-video{--vidAspect: 16 / 9;}
 
 .card-body tr-text {
@@ -337,10 +330,8 @@ tr-text#player_final{
 }
 
 tr-timer{
-	width: 11em;
-    height: 52px;
+
     z-index: 1;
-	font-size: 24px;
 }
 
 tr-timer span {

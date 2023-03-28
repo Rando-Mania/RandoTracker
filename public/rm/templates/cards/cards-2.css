@@ -92,7 +92,7 @@ tr-timer .ms, tr-timer .dot{
 }
 
 
-#donation-counter{
+.donation-counter{
     display: flex;
     justify-content: center;
     align-items: center;
