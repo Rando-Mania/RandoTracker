@@ -92,13 +92,25 @@
 		}
 	}
 
-	document.addEventListener("DOMContentLoaded", function(event) {
-		setTimeout(function(){
-			let script = document.createElement("script");
+	const fetchDonationData = async () => {
+		const donationCounterEl = document.getElementById("donation_counter");
+	
+		const apiInit = {
+			method: 'GET',
+			headers: {
+				'Host': 'donations.randomania.net',
+				'Accept': 'application/json',
+			},
+		};
+		const apiUrl = 'https://donations.randomania.net/tracker/api/v2/runs/?format=json';
+		const response = await fetch(apiUrl, apiInit);
+		const data = await response.json();
 
-			script.type = "text/json";
-			script.src = "https://donations.randomania.net/tracker/api/v2/runs/?format=json";
-			document.body.appendChild(script);
-		}, 8000)
-	});
+		console.log(data);
+		console.log(data[0])
+
+	}
+
+	fetchDonationData()
+
 })(window.RM = window.RM || {});

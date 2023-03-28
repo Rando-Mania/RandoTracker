@@ -33,11 +33,12 @@
         <div class="menu-label-input">
             <label>Video Background Image:</label>
             <tr-select-toggle property="video-bgImage">
-                <tr-option value="video-bg-none" target=".player-video, .loadscreen" toggle-class="none">none</tr-option>
+                <tr-option selected value="video-bg-none" target=".player-video, .loadscreen" toggle-class="none">none</tr-option>
                 <tr-option value="video-bg-weekly" target=".player-video, .loadscreen" toggle-class="weekly-background">Weekly</tr-option>
                 <tr-option value="video-bg-tourney" target=".player-video, .loadscreen" toggle-class="tourney-background">Tourney</tr-option>
-                <tr-option selected value="video-bg-league" target=".player-video, .loadscreen" toggle-class="league-background">League</tr-option>
+                <tr-option value="video-bg-league" target=".player-video, .loadscreen" toggle-class="league-background">League</tr-option>
                 <tr-option value="video-bg-chaos" target=".player-video, .loadscreen" toggle-class="chaos-background">Chaos</tr-option>
+                <tr-option value="rm-marathon" target="html" toggle-class="rm-marathon">RM Marathon</tr-option>
             </tr-select-toggle>
         </div>
     </div>

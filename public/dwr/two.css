@@ -121,6 +121,47 @@
     transition: background-color .5s;
 }
 
+
+.rm-marathon .layout{
+    background-image: url(../rm2/images/stars-background.jpg);
+    --pink: #ac0082;
+    --blue: #088fae;
+    --purple: #280642;
+    --white: #fff;
+}
+.rm-marathon .border-1, .rm-marathon .player-final {
+    border-image: 2 linear-gradient(var(--pink), var(--blue));
+}
+
+.rm-marathon .player-final{
+    color: #fff;
+}
+
+.rm-marathon .player-winner{
+    color: #fff;
+    --border-color: #fff;
+}
+.rm-marathon .player-winner:after{
+    color: #fff;
+    --border-color: #fff;
+}
+.rm-marathon .background-style-1{
+    background-image: url(../rm2/images/stars-background.jpg);
+    border: solid 1px #6d3793;
+    border-image: linear-gradient(#7f278e, #6d3793) 1;
+}
+.rm-marathon .player-info{
+    border: solid 1px #6d3793;
+    border-image: linear-gradient(#7f278e, #6d3793) 1;
+}
+.rm-marathon .background-1{
+    background-image: url(../rm2/images/stars-background.jpg);
+}
+.rm-marathon .background-color-1{
+    background-image: url(../rm2/images/stars-background.jpg);
+}
+
+
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
 .player-video.tourney-background:after{
