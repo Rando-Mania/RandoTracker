@@ -140,15 +140,18 @@
 .rm-marathon .player-winner{
     color: #fff;
     --border-color: #fff;
+    border-image: url(images/winner-border-white.png) repeat 8 / 8px;
 }
 .rm-marathon .player-winner:after{
     color: #fff;
     --border-color: #fff;
+    border-image: url(images/winner-border-white.png) repeat 8 / 8px;
 }
 .rm-marathon .background-style-1{
     background-image: url(../rm2/images/stars-background.jpg);
     border: solid 1px #6d3793;
     border-image: linear-gradient(#7f278e, #6d3793) 1;
+    border-radius: 0;
 }
 .rm-marathon .player-info{
     border: solid 1px #6d3793;
@@ -281,7 +284,7 @@
     width: max-content;
     border: double 8px;
     border-image: url('images/winner-border-small.png') repeat 8 / 8px;
-    border-image: paint(dq9Stamp) 8 / 8px;
+    xborder-image: paint(dq9Stamp) 8 / 8px;
     --border-color: #fc9838;
     padding: 7px 8px 3px;
     font-size: 1.25em;
@@ -776,7 +779,7 @@ figcaption{
 	color: #fff;
     border: 2px solid;
     border-image: url('images/dw-border.png') 4 / 4px;
-    border-image: paint(dw1Border) 4 / 4px;
+    xborder-image: paint(dw1Border) 4 / 4px;
 	-webkit-mask-image: url('images/monsters/dw-spiral.png');
     mask-image: url('images/monsters/dw-spiral.png');
 	-webkit-mask-size: calc(576px * 27) 182px;
@@ -806,7 +809,7 @@ figcaption{
     background-color: #000000BD;
     border: #fff 2px solid;
     border-image: url('images/dw-border.png') 4 / 4px;
-    border-image: paint(dw1Border) 4 / 4px;
+    xborder-image: paint(dw1Border) 4 / 4px;
     border-image: linear-gradient(#f88019, #0000 50%) 1 / 1px;
     image-rendering: pixelated;
     bottom: 0px;
