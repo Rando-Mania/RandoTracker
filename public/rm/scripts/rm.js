@@ -44,19 +44,19 @@
 			var updates = [
 				{
 					property: "game-name",
-					value: listing.data[0]
+					value: listing.data[0].name
 				},
 				{
 					property: "game-system",
-					value: listing.data[3]
+					value: listing.data[0].console
 				},
 				{
 					property: "game-length",
-					value: new Date(1000 * listing.length_t).toISOString().substr(11, 8)
+					value: new Date(1000 * listing.data[0].run_time).toISOString().substr(11, 8)
 				},
 				{
 					property: "game-category",
-					value: listing.data[2]
+					value: listing.data[0].category
 				}
 			];
 
@@ -107,10 +107,28 @@
 		const data = await response.json();
 
 		console.log(data);
-		console.log(data[0])
-
+		console.log(data[0].name)
+		console.log(data[0].console)
+		console.log(data[0].category)
+		console.log(data[0].runners[0].name)
+		console.log(data[0].runners[0].pronouns)
+		console.log(data[0].runners[1].name)
+		console.log(data[0].runners[1].pronouns)
+		// console.log(data[0].runners[2].name)
+		// console.log(data[0].runners[2].pronouns)
+		// console.log(data[0].runners[3].name)
+		// console.log(data[0].runners[3].pronouns)
+		console.log(data[0].run_time)
+		console.log(data[1].name) // next game title
+		console.log(data[0].commentators)
 	}
 
-	fetchDonationData()
+		document.addEventListener("DOMContentLoaded", function(event) {
+			setTimeout(
+				function(){
+					fetchDonationData();
+				}, 1000
+				)
+			});
 
 })(window.RM = window.RM || {});
