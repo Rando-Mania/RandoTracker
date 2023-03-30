@@ -56,14 +56,18 @@
                 },
                 {
                     property: "game-category",
-                    value: listing.category
+                    value: listing.category.substring(2)
+                },
+				{
+                    property: "commentators",
+                    value: listing.commentators
                 }
             ];
 
             if (select.selectedIndex < select.options.length - 1) {
                 updates.push({
                     property: "up-next",
-                    value: select.options[select.selectedIndex+1].data
+                    value: select.options[select.selectedIndex+1].data.name
                 });
             } else {
                 updates.push({
@@ -76,15 +80,25 @@
 
             for (var pID = 1; pID <= 4; pID++) {
                 if (players.length < pID) {
-                    updates.push({
+                    updates.push(
+						{
                         property: "__p" + pID + "__player-name",
                         value: ""
-                    });
+                    	},
+						{
+						property: "__p" + pID + "__player-pronoun",
+						value: ""
+						}
+					);
                 } else {
                     updates.push({
                         property: "__p" + pID + "__player-name",
                         value: players[pID-1].name
-                    });
+                    },
+					{
+						property: "__p" + pID + "__player-pronoun",
+						value: players[pID-1].pronouns
+					});
                 }
             }
 
@@ -104,22 +118,6 @@
 		const response = await fetch(apiUrl, apiInit);
 		const data = await response.json();
 		RM.scheduleCallback(data);
-
-		// console.log(data);
-		// console.log(data[0].name)
-		// console.log(data[0].console)
-		// console.log(data[0].category)
-		// console.log(data[0].runners[0].name)
-		// console.log(data[0].runners[0].pronouns)
-		// console.log(data[0].runners[1].name)
-		// console.log(data[0].runners[1].pronouns)
-		// console.log(data[0].runners[2].name)
-		// console.log(data[0].runners[2].pronouns)
-		// console.log(data[0].runners[3].name)
-		// console.log(data[0].runners[3].pronouns)
-		// console.log(data[0].run_time)
-		// console.log(data[1].name) // next game title
-		// console.log(data[0].commentators)
 	}
 
 		document.addEventListener("DOMContentLoaded", function(event) {
