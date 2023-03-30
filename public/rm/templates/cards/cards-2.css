@@ -12,6 +12,7 @@
 .card.cat, .card.up-next .card-body{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: .5em;
 }
 

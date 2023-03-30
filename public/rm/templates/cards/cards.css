@@ -72,11 +72,12 @@
     font-size: 30px;
   }
 
-  .cat-system-time{
+  .cat-system-time {
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
+    flex-wrap: wrap;
+}
 
   .rm-logo .card-body{
     font-size: 24px;
@@ -110,6 +111,10 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
+}
+
+#game_swap > *{
+  align-items: center;
 }
 
   .panel-swap{

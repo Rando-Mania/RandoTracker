@@ -428,14 +428,16 @@ tr-timer span {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    flex-wrap: wrap;
+    gap: 0 1em;
 }
 
 .game-panel-2 .card-body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    flex-wrap: wrap;
+    gap: 0 1em;
 }
 
 .game-panel-2 .card-body .card-head-label, .game-panel-2 .card-body #up_next{

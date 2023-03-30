@@ -106,7 +106,7 @@
         }
 	}
 
-	const fetchDonationData = async () => {	
+	const fetchRunData = async () => {	
 		const apiInit = {
 			method: 'GET',
 			headers: {
@@ -123,7 +123,7 @@
 		document.addEventListener("DOMContentLoaded", function(event) {
 			setTimeout(
 				function(){
-					fetchDonationData();
+					fetchRunData();
 				}, 1000
 				)
 			});
