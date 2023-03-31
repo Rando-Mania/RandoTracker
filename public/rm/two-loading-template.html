@@ -37,6 +37,14 @@
     align-items: center;
 }
 
+.loadscreen header img{
+  animation: pulse infinite alternate ease-in-out 5s;
+}
+
+@keyframes pulse {
+  from{transform: translateY(-10px);}
+  to{transform: translateY(10px);}
+}
 
 .loadscreen .player-name{
   font-size: 18px;
@@ -82,7 +90,11 @@
   </style>
     <div class="loadscreen">
     <header>
+      <picture>
+        <source srcset="../rm2/images/MainLogo.avif" type="image/avif" />
+        <source srcset="../rm2/images/MainLogo.webp" type="image/webp" />
         <img src="../rm2/images/MainLogo.png" width="80%" />
+      </picture>      
     </header>
 
     <div class="up-next-game-contain">
