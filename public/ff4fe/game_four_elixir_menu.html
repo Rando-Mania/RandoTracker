@@ -1,0 +1,143 @@
+<div class="menu-game-specific">
+    <div id="menu_player_extra" class="fieldset">
+        <h4 class="legend">Players Extra</h4>
+        <div id="menu_player_labels">
+            <table>
+                <tr>
+                    <th></th>
+                    <!-- <th>Record</th> -->
+                    <th>Place</th>
+                    <th>Pronoun</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <!-- <td><tr-input-text player="1" class="record-input" property="player-record"></tr-input-text></td> -->
+                    <td><tr-input-text player="1" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="1" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <!-- <td><tr-input-text player="2" class="record-input" property="player-record"></tr-input-text></td> -->
+                    <td><tr-input-text player="2" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="2" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <!-- <td><tr-input-text player="3" class="record-input" property="player-record"></tr-input-text></td> -->
+                    <td><tr-input-text player="3" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="3" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <!-- <td><tr-input-text player="4" class="record-input" property="player-record"></tr-input-text></td> -->
+                    <td><tr-input-text player="4" class="seed-input" property="player-seed"></tr-input-text></td>
+                    <td><tr-input-text player="4" class="pronoun-input" property="player-pronoun"></tr-input-text></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- <div id="menu_backgrounds" class="fieldset backgrounds-menu">
+        <h4 class="legend">Background</h4>
+        <div>
+            <tr-select-toggle property="layout-back-select">
+                <tr-option selected target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-monday" value="1">Weekly Monday</tr-option>
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="weekly-friday" value="2">Weekly Friday</tr-option>
+                <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .four-loading" toggle-class="trans" value="0">None</tr-option>
+            </tr-select-toggle>
+        </div>
+    </div> -->
+        <div id="menu_objectives" class="fieldset objectives-menu">
+            <h4 class="legend">Objectives</h4>
+            <div>
+                <div>1</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-one-text"></tr-input-text>
+            </div>
+            <div>
+                <div>2</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-two-text"></tr-input-text>
+            </div>
+            <div>
+                <div>3</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-three-text"></tr-input-text>
+            </div>
+            <div>
+                <div>4</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-four-text"></tr-input-text>
+            </div>
+            <div>
+                <div>5</div>
+                <tr-input-text list="objective_options" class="objective-input" property="objective-five-text"></tr-input-text>
+            </div>
+        </div>
+        <tr-template class="objectives-list-menu" href="objective_options.html"></tr-template>
+<!--         <div id="menu_flags" class="fieldset">
+            <h4 class="legend">Flagset</h4>
+            <div>
+                <tr-input-text oninput class="flags-input" property="flags"></tr-input-text>
+            </div>
+        </div>
+        <div id="menu_round" class="fieldset round-menu">
+            <h4 class="legend">Round</h4>
+            <div>
+                <tr-input-text class="round-input" property="round-text"></tr-input-text>
+            </div>
+            <div></div>
+        </div> -->
+        <div id="menu_flags" class="fieldset">
+            <h4 class="legend">Flags</h4>
+            <div>
+                <label>Nickname:</label>
+                <tr-input-textarea oninput class="flags-input" property="flags"></tr-input-textarea>
+            </div>
+            <div id="menu_layout_flags">
+                <label>Full Flagset:</label>
+                <tr-input-textarea oninput rows="4" class="flags-input" property="flags-full"></tr-input-textarea>
+            </div>
+            <button class="dummy-text-button" title="Dummy Text" onclick="flagsDummyText()"></button>
+        </div>
+
+        <div id="menu_hero" class="fieldset hero-menu">
+            <h4 class="legend">Hero</h4>
+            <div>
+                <tr-select-toggle property="layout-hero-select"> 
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-none" value="100">None</tr-option>
+    
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-cecil" value="101">Cecil</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-rosa" value="102">Rosa</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-kain" value="103">Kain</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-rydia" value="104">Rydia</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-tellah" value="105">Tellah</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-edward" value="106">Edward</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-yang" value="107">Yang</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-cid" value="108">Cid</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-palom" value="109">Palom</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-porom" value="110">Porom</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-edge" value="111">Edge</tr-option>
+                    <tr-option target=".hero-name, .hero-indicator" toggle-class="hero-fusoya" value="112">FuSoYa</tr-option>
+                    <!-- <tr-option target=".layout, .tracker-layout, .loadscreen-contain, .two-loading" toggle-class="hero-fusoya" value="13">FuSoYa</tr-option> -->
+                </tr-select-toggle>
+            </div>
+        </div>
+
+        <div id="menu_group" class="fieldset">
+            <h4 class="legend">Group</h4>
+            <div id="menu_group_contain">
+                <tr-input-textarea oninput rows="4" class="group-input" property="group"></tr-input-textarea>
+            </div>
+        </div>
+        <div id="menu_credits" class="fieldset">
+            <h4 class="legend">Credits</h4>
+            <div id="menu_layout_credits">
+                <table>
+                    <tr>
+                        <td>Art:</td>
+                        <td>SchalaKitty</td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td>capt_uhu, Soleras</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
