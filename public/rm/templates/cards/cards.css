@@ -218,3 +218,29 @@
       width: 100%;
       height: 100%;
     }
+
+    #donation_counter{
+      position: relative;
+      overflow: hidden;
+      --progress-scale: scaleX(0);
+      isolation: isolate;
+    }
+  
+    #donation_counter:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--pink);
+      transform: var(--progress-scale);
+      transform-origin: left;
+      transition: transform .5s;
+      z-index: -1;
+    }
+  
+    .loadscreen #donation_counter:after{
+      height: 100%;
+      background-color: rgb(172 0 130 / 25%);
+    }
