@@ -219,7 +219,14 @@
       height: 100%;
     }
 
-    #donation_counter{
+    .donation-counter{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 38px;
+  }
+
+  #donation_counter{
       position: relative;
       overflow: hidden;
       --progress-scale: scaleX(0);

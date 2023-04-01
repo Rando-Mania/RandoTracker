@@ -440,6 +440,10 @@ tr-timer span {
 
 .show{ display: block; }
 
+.donation-counter{
+    font-size: 36px;
+    padding: 0.2em 0 0.1em;
+}
 
 /* Menu */
 .pause-animations #player_time, .pause-animations tr-timer[running="true"]:after{
