@@ -14,6 +14,28 @@
 .abs{
   position: absolute;
 }
+
+.game-category-heading{
+  padding: .75em .5em;
+}
+
+.game-category-heading .card.game-info,
+.game-category-heading .card{
+  padding: 0;
+  height: auto;
+  line-height: 1;
+}
+
+.cat-est-contain > *{
+  flex: 1;
+  padding: .2em;
+}
+
+.game-category{
+  text-align: center;
+  xwidth: 288px;
+}
+
 .game-info .card-body, .card-body{
   width: 288px;
   margin: 0 auto;

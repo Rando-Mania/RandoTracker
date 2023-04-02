@@ -36,10 +36,12 @@
             <div class="card-body player-video"></div>
         </main>
         <aside>
-            <tr-template href="templates/cards/game-info-2.html"></tr-template>
-   
+            <div class="game-category-heading">
+                <tr-template href="templates/cards/game-info-2.html"></tr-template>
+                <tr-text scale-to-fit-x property="game-category" class="game-category"></tr-text>
+            </div>
             <div class="bordered-container">
-                <tr-template href="templates/cards/cat-est-2.html"></tr-template>
+                <tr-template href="templates/cards/cat-est-one-player.html"></tr-template>
 
                 <tr-hide-if-empty id="player_name_contain" toggle-class="visually-hidden" target=".player-name, .player-pronoun">
                     <tr-player player="1">
