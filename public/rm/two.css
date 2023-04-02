@@ -65,9 +65,20 @@
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
-    background-color: #000; 
+    /* background: 
+        image-set(
+            url("images/MainLogo.avif") type("image/avif"),
+            url("images/MainLogo.webp") type("image/webp")
+        );  */
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 75% auto;
     transition: background-color .5s;
 }
+
+.avif .player-video{background-image: url("images/MainLogo.avif");}
+.noavif.webp .player-video{background-image: url("images/MainLogo.webp");}
 
 .player-video, .layout.four-three .player-video{
     --vidWidth: 612px;
