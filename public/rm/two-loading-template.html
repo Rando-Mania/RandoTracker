@@ -57,7 +57,8 @@
 
 .loadscreen .up-next-game-contain{
   text-shadow: 0 -1px #000, 0 1px #000, -1px 0 #000, 1px 0 #000;
-  background-color: rgb(171 0 130 / 26%);
+  xbackground-color: rgb(171 0 130 / 26%);
+  background-image: linear-gradient(62deg, rgb(171 0 130 / 26%) 30%, #0000);
   padding: 1em;
   text-align: left;
 }
@@ -87,10 +88,25 @@
       align-items: center;
       height: 108px;
       background-color: var(--purple);
+      --angle: 0deg;
       border: solid 3px var(--pink);
-      border-image: linear-gradient(var(--pink), var(--blue)) 3;
+      border-image: linear-gradient(var(--angle), var(--pink), var(--blue)) 3;
       font-size: 53px;
+      xanimation: rotate 1s infinite linear; 
+      /* goal met animation */
     }
+
+    @property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotate {
+  from{--angle: 0deg;}
+  to{--angle: 360deg;}
+}
+
 
   </style>
     <div class="loadscreen">
