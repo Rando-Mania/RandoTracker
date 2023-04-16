@@ -1,0 +1,186 @@
+    <style>
+        /* Loading Screen */
+
+.loadscreen-contain, .four-loading{
+    width: 1280px;
+    height: 720px;
+    background-color: #191668;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
+    font-family: 'FF4', sans-serif;
+    background-image: url(images/4p/eblan/4P-Splash-Mockup-Potion.png);
+    background-size: contain;
+}
+
+.four-loading{
+    position: relative;
+}
+
+.loadscreen-contain.show, .four-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    display: block;
+    animation: zoomIn .5s;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+.loadscreen{
+    height: 100%;
+    padding: 0;
+}
+
+.round-name{
+    grid-row: 2;
+    font-size: 58px;
+    text-align: center;
+}
+
+.broadcasters tr-text{
+    max-width: 365px;
+    width: auto;
+}
+
+.hero{
+    height: 448px;
+    width: 100%;
+    grid-column-end: span 2;
+}
+.notwebp.hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.png);
+}
+.webp .hero{
+    background-image: url(images/4p/weekly/FF4FE-WeeklyRace-Loading-BG-Space.webp);
+}
+
+.loadscreen .footer-flags, .loadscreen .footer-staff-players{
+    top: 440px;
+    right: -2px;
+    gap: 11px;
+    text-align: left;
+    margin-bottom: .25em;
+    padding: 1.4em 1em 1em;;
+    background-color: #000084;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    border: var(--border) solid #fff;
+    border-image: url(images/ff4-border-inner-corners.png) 4 / 8px / 2px;
+}
+
+.loadscreen .footer-flags h2, .loadscreen .footer-staff-players h2{
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.loadscreen .flags{
+    margin: .5em 0;
+}
+
+.loadscreen .flags, .loadscreen .flags-full{
+    white-space: normal;
+    text-align: center;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.loadscreen .footer-flags{
+    min-width: 375px;
+}
+.loadscreen .footer-staff-players{
+    width: 570px;
+    display: grid;
+    align-content: space-between;
+}
+
+.loadscreen .players{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.loadscreen .production-team-swap{
+    padding: 16px 4px;
+}
+.loadscreen .staff{
+    transform: translateX(0);
+    justify-self: center;
+}
+.loadscreen .staff svg{
+    margin: 0;
+}
+
+.loadscreen .hero{
+    position: relative;
+}
+
+
+</style>
+    <div class="loadscreen">
+        <div class="loadscreen-main">
+            <template id="player_info_load_template">
+                <div class="player-info abs background-1 border-1">
+                    <div class="name-pronoun-contain">
+                        <div class="player-name-contain">
+                            <tr-text scale-to-fit-x class="player-name" property="player-name"></tr-text>
+                        </div>
+                        <tr-text class="player-pronoun" property="player-pronoun"></tr-text>
+                    </div>
+                    <tr-hide-if-empty target="[property='player-record']" toggle-class="display-none" class="record-contain border-background-1">
+                        <div>W-L</div>
+                        <tr-text property="player-record"></tr-text>
+                    </tr-hide-if-empty>
+                    <tr-hide-if-empty target="[property='player-seed']" toggle-class="display-none" class="seed-contain border-background-1">
+                        <div>Seed</div>
+                        <tr-text property="player-seed"></tr-text>
+                    </tr-hide-if-empty>  
+                </div>
+                <div class="final-winner-contain abs">
+                    <tr-toggle property="toggle-winner" class="player-winner border-background-1">
+                        <div>WINNER</div>
+                    </tr-toggle>
+                    <tr-text property="player-final" class="player-final border-background-1"></tr-text>
+                </div>
+            </template>
+            
+            <tr-player player="1">
+                <tr-template source="#player_info_load_template"></tr-template>
+            </tr-player>
+            <div class="versus">vs</div>
+            <tr-player player="2">
+                <tr-template source="#player_info_load_template"></tr-template>
+            </tr-player>
+
+            <tr-player player="3">
+                <tr-template source="#player_info_load_template"></tr-template>
+            </tr-player>
+            <div class="versus">vs</div>
+            <tr-player player="4">
+                <tr-template source="#player_info_load_template"></tr-template>
+            </tr-player>
+
+            <div class="abs footer-staff-players">
+                <h2>Broadcast Team</h2>
+                <tr-hide-if-empty class="staff border-background-1" toggle-class="wtf">
+                    <tr-template href="ff4fe-production-team.html"></tr-template>
+                </tr-hide-if-empty>
+            </div>
+        </div>
+    </div>

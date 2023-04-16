@@ -37,8 +37,8 @@
     justify-self: start;
 }
 
-.production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
-.production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
+.production-team-swap .staff-panel-1, .production-swap .staff-panel-1 {animation: panel-1-blinker 60s steps(1) infinite;}
+.production-team-swap .staff-panel-2, .production-swap .staff-panel-2 {animation: panel-2-blinker 60s steps(1) infinite;}
 
 @keyframes panel-1-blinker {
     0%, 75% {opacity: 1;}

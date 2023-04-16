@@ -8,11 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-    <link rel="stylesheet" type="text/css" href="four_elixir.css">
+    <link rel="stylesheet" type="text/css" href="eblan4p.css">
     <link rel="preload" href="images/ff4-border.png" as="image" type="image/png">
     <link rel="preload" href="images/4p/FF4FE-SpriteSheet-4P.png" as="image" type="image/png">
     <style>
-/*        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+       [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
         [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
         [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
         [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
@@ -55,51 +55,6 @@
         [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
         [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
         [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
-        [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}        */
-
-      [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
-        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
-        [player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
-        [player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
-    
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
-        [player="3"] .player-name {left: var(--nameX); bottom: var(--nameY);}
-        [player="4"] .player-name {right: var(--nameX); bottom: var(--nameY);}
-
-        [player="1"] .player-pronoun {left: var(--pronounX); top: var(--pronounY);}
-        [player="2"] .player-pronoun {right: var(--pronounX); top: var(--pronounY);}
-        [player="3"] .player-pronoun {left: var(--pronounX); bottom: var(--pronounY);}
-        [player="4"] .player-pronoun {right: var(--pronounX); bottom: var(--pronounY);}
-
-        [player="1"] .player-number {left: var(--numberX); top: var(--numberY);}
-        [player="2"] .player-number {right: var(--numberX); top: var(--numberY);}
-        [player="3"] .player-number {left: var(--numberX); bottom: var(--numberY);}
-        [player="4"] .player-number {right: var(--numberX); bottom: var(--numberY);}
-
-        [player="1"] .player-grid-contain {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid-contain {right: var(--gridX); top: var(--gridY);}
-        [player="3"] .player-grid-contain {left: var(--gridX); bottom: var(--gridY);}
-        [player="4"] .player-grid-contain {right: var(--gridX); bottom: var(--gridY);}
-
-        tr-timer:nth-of-type(1) {left: var(--timeX); top: var(--timeY);}
-        tr-timer:nth-of-type(2) {right: var(--timeX); top: var(--timeY);}
-        tr-timer:nth-of-type(3) {left: var(--timeX); bottom: var(--timeY);}
-        tr-timer:nth-of-type(4) {right: var(--timeX); bottom: var(--timeY);}
-
-        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
-        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
-        [player="3"] .player-final {left: var(--finalX); bottom: var(--finalY);}
-        [player="4"] .player-final {right: var(--finalX); bottom: var(--finalY);}
-    
-        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
-        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
-        [player="3"] .player-speaker {left: var(--speakerX); bottom: var(--speakerY);}
-        [player="4"] .player-speaker {right: var(--speakerX); bottom: var(--speakerY);}
-    
-        [player="1"] .player-winner {left: var(--winX); top: var(--winY);}
-        [player="2"] .player-winner {right: var(--winX); top: var(--winY);}
-        [player="3"] .player-winner {left: var(--winX); bottom: var(--winY);}
         [player="4"] .player-winner {right: var(--winX); bottom: var(--winY);}
     </style>
 </head>
@@ -114,7 +69,7 @@
             <tr-text class="player-number abs border-2 background-1" property="player-seed"></tr-text>
             <div class="player-grid-contain abs border-1 background-1">
                 <tr-template class="player-grid" href="icons.html"></tr-template>
-                <tr-template class="player-grid-2" href="icons-two.html"></tr-template>
+                <tr-template class="player-grid-2" href="icons-two-eblan.html"></tr-template>
             </div>            
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>        
             <tr-toggle property="toggle-speaker" class="abs player-speaker">
@@ -144,39 +99,73 @@
 
         <div class="abs objectives-contain">
             <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-one-text']" toggle-class="show-objective">
-                <div class="objective-label border-1 background-1">1</div>
+                <div class="objective-label objective-one-style border-1 background-1">1</div>
                 <div class="objective-text-contain border-1 background-1">
                     <tr-text scale-to-fit-x property="objective-one-text" class="objective-text"></tr-text>
                 </div>
             </tr-class-if-full>
 
             <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-two-text']" toggle-class="show-objective">
-                <div class="objective-label border-1 background-1">2</div>
+                <div class="objective-label objective-two-style border-1 background-1">2</div>
                 <div class="objective-text-contain border-1 background-1">
                   <tr-text scale-to-fit-x property="objective-two-text" class="objective-text"></tr-text>
                 </div>
             </tr-class-if-full>
 
             <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-three-text']" toggle-class="show-objective">
-                <div class="objective-label border-1 background-1">3</div>
+                <div class="objective-label objective-three-style border-1 background-1">3</div>
                 <div class="objective-text-contain border-1 background-1">
                     <tr-text scale-to-fit-x property="objective-three-text" class="objective-text"></tr-text>
                 </div>
             </tr-class-if-full>
 
             <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-four-text']" toggle-class="show-objective">
-                <div class="objective-label border-1 background-1">4</div>
+                <div class="objective-label objective-four-style border-1 background-1">4</div>
                 <div class="objective-text-contain border-1 background-1">
                     <tr-text scale-to-fit-x property="objective-four-text" class="objective-text"></tr-text>
                 </div>
             </tr-class-if-full>
 
             <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-five-text']" toggle-class="show-objective">
-                <div class="objective-label border-1 background-1">5</div>
+                <div class="objective-label objective-five-style border-1 background-1">5</div>
                 <div class="objective-text-contain border-1 background-1">
                     <tr-text scale-to-fit-x property="objective-five-text" class="objective-text"></tr-text>
                 </div>
-            </tr-class-if-full>    
+            </tr-class-if-full>
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-six-text']" toggle-class="show-objective">
+                <div class="objective-label objective-six-style border-1 background-1">6</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-six-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-seven-text']" toggle-class="show-objective">
+                <div class="objective-label objective-seven-style border-1 background-1">7</div>
+                <div class="objective-text-contain border-1 background-1">
+                  <tr-text scale-to-fit-x property="objective-seven-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-eight-text']" toggle-class="show-objective">
+                <div class="objective-label objective-eight-style border-1 background-1">8</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-eight-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-nine-text']" toggle-class="show-objective">
+                <div class="objective-label objective-nine-style border-1 background-1">9</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-nine-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-ten-text']" toggle-class="show-objective">
+                <div class="objective-label objective-ten-style border-1 background-1">10</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-ten-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
         </div>
 <!-- vs -->
         <tr-toggle property="toggle-vs" class="abs vs" id="vs_1" style="transform: translateX(-50%); left: 50%; top: var(--vsY);">VS</tr-toggle>
@@ -205,7 +194,7 @@
 
 <!-- loadscreen -->
 <div class="loadscreen-contain abs" style="top:0; left: 0;">
-    <tr-template href="four-elixir-loading-template.html"></tr-template>
+    <tr-template href="eblan4p-loading-template.html"></tr-template>
 </div>
 
 <!-- RM calendar -->
@@ -213,7 +202,7 @@
     <tr-template href="../shared/calendar-template.html"></tr-template>
 </div>
 
-<tr-template href="../shared/four-menus-contain.html"></tr-template>
+<tr-template href="eblan4p-menus-contain.html"></tr-template>
 
     <script src="../shared/script/imgsupport.js"></script>
 	<script defer src="/__/firebase/8.3.0/firebase-app.js"></script>

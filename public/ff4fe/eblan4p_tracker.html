@@ -5,7 +5,7 @@
     <title>Tracker</title>
     <link rel="stylesheet" type="text/css" href="../shared/components.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
-    <link rel="stylesheet" type="text/css" href="four.css">
+    <link rel="stylesheet" type="text/css" href="eblan4p.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         body{
@@ -45,7 +45,7 @@
             <div class="player-name border-1 background-1">
                 <tr-text scale-to-fit-x property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid-2 border-1 background-1" href="icons-two.html"></tr-template>
+            <tr-template class="player-grid-2 border-1 background-1" href="icons-two-eblan.html"></tr-template>
             <tr-template class="player-grid border-1 background-1" href="icons.html"></tr-template>
             <tr-text property="player-final" class="player-final"></tr-text>        
             <tr-toggle property="toggle-speaker" class="player-speaker">
@@ -103,11 +103,46 @@
                 <div class="objective-text-contain border-1 background-1">
                     <tr-text scale-to-fit-x property="objective-five-text" class="objective-text"></tr-text>
                 </div>
-            </tr-class-if-full>    
+            </tr-class-if-full> 
+            
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-six-text']" toggle-class="show-objective">
+                <div class="objective-label border-1 background-1">6</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-six-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full> 
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-seven-text']" toggle-class="show-objective">
+                <div class="objective-label border-1 background-1">7</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-seven-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full> 
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-eight-text']" toggle-class="show-objective">
+                <div class="objective-label border-1 background-1">8</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-eight-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full> 
+
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-nine-text']" toggle-class="show-objective">
+                <div class="objective-label border-1 background-1">9</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-nine-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
+            
+            <tr-class-if-full class="objective-contain" target=".objective-contain [property='objective-ten-text']" toggle-class="show-objective">
+                <div class="objective-label border-1 background-1">10</div>
+                <div class="objective-text-contain border-1 background-1">
+                    <tr-text scale-to-fit-x property="objective-ten-text" class="objective-text"></tr-text>
+                </div>
+            </tr-class-if-full>
         </div>
     </div>
 
-    <tr-template href="../shared/four-menus-contain.html"></tr-template>
+    <tr-template href="eblan4p-menus-contain.html"></tr-template>
     
     <script src="../shared/script/imgsupport.js"></script>
     <script defer src="/__/firebase/8.3.0/firebase-app.js"></script>
