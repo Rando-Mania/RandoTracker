@@ -100,6 +100,10 @@
 .notwebp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
 .webp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);}
 
+.eblan .layout{background-color: #110b02;}
+.notwebp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.jpg);}
+.webp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);}
+
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
@@ -227,6 +231,9 @@ tr-toggle-class, .in-active {
     display: flex;
     flex-direction: column;
 }
+.eblan .objectives-contain{
+    top: 529px;
+}
 
 .objectives-contain > *{
     margin-bottom: -2px;
@@ -284,6 +291,16 @@ tr-toggle-class, .in-active {
 .objective-5.active .objective-label{background-color: #0050b0; --stroke-color: #003789;}
 .objective-6.active .objective-label{background-color: #741d87; --stroke-color: #440557;}
 .objective-7.active .objective-label{background-color: #dc2584; --stroke-color: #70014c;}
+.objective-8.active .objective-label{background-color: #dc2584; --stroke-color: #70014c;}
+
+.eblan .objective-1.active .objective-label{background-color: #ad170c; --stroke-color: #570c06;}
+.eblan .objective-2.active .objective-label{background-color: #ad5601; --stroke-color: #572b01;}
+.eblan .objective-3.active .objective-label{background-color: #a59002; --stroke-color: #534801;}
+.eblan .objective-4.active .objective-label{background-color: #0c6527; --stroke-color: #063314;}
+.eblan .objective-5.active .objective-label{background-color: #1f9485; --stroke-color: #104a43;}
+.eblan .objective-6.active .objective-label{background-color: #0050b0; --stroke-color: #002858;}
+.eblan .objective-7.active .objective-label{background-color: #3200b0; --stroke-color: #190058;}
+.eblan .objective-8.active .objective-label{background-color: #741d87; --stroke-color: #3a0f44;}
 
 .objective-text-contain{
     height: 24px;
