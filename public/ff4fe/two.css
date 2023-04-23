@@ -227,12 +227,9 @@ tr-toggle-class, .in-active {
 
 .objectives-contain{
     left: 457px;
-    top: 554px;
+    top: 542px;
     display: flex;
     flex-direction: column;
-}
-.eblan .objectives-contain{
-    top: 529px;
 }
 
 .objectives-contain > *{
