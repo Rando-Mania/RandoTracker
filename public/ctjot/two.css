@@ -89,6 +89,14 @@
     -webkit-mask-repeat: no-repeat
 }
 
+/* .jot-default{
+    background-image: url("images/2p/base-background.png"), var(--bgFallback);
+    background-image: image-set(
+        "images/2p/base-background.webp" type("image/webp"),
+        "images/2p/base-background.png" type("image/png")
+    );
+} */
+
 .notwebp .jot-default{background-image: url('images/2p/base-background.png'),  var(--bgFallback);}
 .webp .jot-default{background-image: url('images/2p/base-background.webp'),  var(--bgFallback);}
 
