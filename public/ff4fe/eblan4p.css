@@ -46,8 +46,8 @@
 .background-1{background-color: var(--backgroundColor1);}
 .background-2{background-color: var(--backgroundColor2);}
 
-[player="1"] .background-1, [player="2"] .background-1{ background-color: #642501;}
-[player="3"] .background-1, [player="4"] .background-1{ background-color: #05484b;}
+[player="1"] .background-1, [player="2"] .background-1{ background-color: #998202;}
+[player="3"] .background-1, [player="4"] .background-1{ background-color: #422071;}
 
 .abs{position: absolute;}
 
@@ -299,7 +299,7 @@ tr-toggle-class, .in-active {
 
 .player-winner{
     height: 34px;
-    color: #f8b800;
+    color: #ffffff;
     padding: 0 .5em;
     text-transform: uppercase;
     display: flex;
