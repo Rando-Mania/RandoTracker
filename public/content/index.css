@@ -88,6 +88,12 @@ aside a{
   position: relative;
 }
 
+table{
+  text-align: center;
+  font-size: .8em;
+  border: solid 1px;
+}
+
 article{
   animation: turn-on 2s linear;
   min-height: 720px;
