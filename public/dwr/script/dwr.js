@@ -624,13 +624,15 @@ DWR.init();
 
 if ('paintWorklet' in CSS) {
 	CSS.paintWorklet.addModule('images/paint-worklets.js');
-	
-	window.CSS.registerProperty({
-		name: '--border-color',
-		syntax: '<color>',
-		inherits: false,
-		initialValue: '#fc9838',
-	});
+
+	if ('registerProperty' in CSS){
+		window.CSS.registerProperty({
+			name: '--border-color',
+			syntax: '<color>',
+			inherits: false,
+			initialValue: '#fc9838',
+		});
+	}
 }
 
 function playerDummyText() {
