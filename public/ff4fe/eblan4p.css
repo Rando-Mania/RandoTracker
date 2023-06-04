@@ -46,7 +46,7 @@
 .background-1{background-color: var(--backgroundColor1);}
 .background-2{background-color: var(--backgroundColor2);}
 
-[player="1"] .background-1, [player="2"] .background-1{ background-color: #998202;}
+[player="1"] .background-1, [player="2"] .background-1{ background-color: #0A9BC5;}
 [player="3"] .background-1, [player="4"] .background-1{ background-color: #422071;}
 
 .abs{position: absolute;}
