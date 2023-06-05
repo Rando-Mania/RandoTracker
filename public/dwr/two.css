@@ -779,7 +779,7 @@ figcaption{
 	color: #fff;
     border: 2px solid;
     border-image: url('images/dw-border.png') 4 / 4px;
-    xborder-image: paint(dw1Border) 4 / 4px;
+    xborder-image: paint(dw2Border) 4 / 4px;
 	-webkit-mask-image: url('images/monsters/dw-spiral.png');
     mask-image: url('images/monsters/dw-spiral.png');
 	-webkit-mask-size: calc(576px * 27) 182px;

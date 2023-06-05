@@ -1,15 +1,40 @@
 <div class="card rm-logo">
-    <div class="card-body panel-swap">
-        <!-- <img class="rm-logo-img" src="images/RM_marathon_logo.png" alt="RM" />RandoMania -->
+    <div class="logo-recreation-contain">
+        <div class="logo-recreation">RANDOMANIA</div>
+    </div>
+    <!-- <div class="card-body panel-swap">
+        <img class="rm-logo-img" src="images/RM_marathon_logo.png" alt="RM" />RandoMania>
         <div class="panel-1">
             <picture>
                 <source srcset="images/MainLogo.avif" type="image/avif" />
                 <source srcset="images/MainLogo.webp" type="image/webp" />
                 <img class="rm-logo-img" src="images/MainLogo.png" alt="RM" />
             </picture>
+            <div class="logo-recreation">RANDOMANIA</div>
         </div>
         <div class="panel-2">
             <img class="nami" src="../rm2/images/nami.png" alt="NAMI" />
         </div>
-    </div>
+    </div> -->
 </div>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+    .logo-recreation-contain{
+        --lightpink: #df2054;
+        --pink: #ac0082;
+        --blue: #088fae;
+        --purple: #3e00fb;
+        filter: drop-shadow(1px 1px var(--blue)) drop-shadow(3px 2px var(--purple));
+    }
+    .logo-recreation{
+        font-size: 2.5em;
+        color: var(--pink);
+        color: transparent;
+        background-image: linear-gradient(var(--lightpink),var(--pink));
+        -webkit-background-clip: text;
+        font-family: 'Permanent Marker', cursive;
+        letter-spacing: 1px;
+        transform: skewY(-4deg);
+        /* font-weight: bold; */
+    }
+</style>
