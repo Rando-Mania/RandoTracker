@@ -96,6 +96,11 @@
     background-image: url(images/2p/ccs/winter-2022/Layout_MM.jpg);
 }
 
+.ccs-ms .layout{background-color: #000;}
+.notwebp.ccs-ms .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
+.webp.ccs-ms .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);}
+
+
 .ccs-special-feature .layout{background-color: #4d0627;}
 .notwebp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
 .webp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);}
@@ -103,6 +108,10 @@
 .eblan .layout{background-color: #110b02;}
 .notwebp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.jpg);}
 .webp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);}
+
+.test .layout{background-color: #ff0000;}
+.notwebp.test .layout{background-image: url(images/2p/test/randomania-test-bg.png);}
+.webp.test .layout{background-image: url(images/2p/test/randomania-test-bg.webp);}
 
 .player-video{
     width: var(--vidWidth);
