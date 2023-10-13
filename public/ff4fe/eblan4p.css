@@ -71,8 +71,8 @@
     background-image: linear-gradient(#210f00 50%, #010808 0);
 }
 
-.notwebp.notavif .layout{background-image: url('images/4p/eblan/FF4-EEL-4P-PP-BG.jpg');}
-.webp .layout{background-image: url('images/4p/eblan/FF4-EEL-4P-PP-BG.webp');}
+.notwebp.notavif .layout{background-image: url('images/4p/omg/omg-layout-background-1280-720.jpg');}
+.webp .layout{background-image: url('images/4p/omg/omg-layout-background-1280-720.webp');}
 
 .trans{background-color: #0000; background-image: none;}
 
