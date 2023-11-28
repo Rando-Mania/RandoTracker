@@ -158,6 +158,10 @@ tr-toggle[property="dwr"]{
   font-size: 30px;
 }
 
+.player-name{
+  width: 216px;
+}
+
 tr-toggle[property="dwr"] .player-grid {
     display: grid;
     grid-template: repeat(3, auto) / repeat(3, 32px);
