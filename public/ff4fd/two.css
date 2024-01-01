@@ -1,0 +1,278 @@
+/*  =============
+    global styles
+    ============= */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* root */
+
+:root{
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    --vidWidth: 639px;
+    --vidAspect: 16 / 10;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
+    --nameWidth: 375px;
+
+    --backgroundImg: url('/ff4fd/images/2p/Falcon_Dive_Layout_no_extras.png');
+    --xbackgroundImg: url('/ff4fd/images/2p/Falcon_Dive_Layout.webp');
+
+    --backgroundColor1: #000;
+    --backgroundColor2: rgba(0 0 0 / .6);
+
+    --videoX: 0; --videoY: 0;
+    --nameWidth: 384px;
+    --nameX: 13px; --nameY: 415px;
+    --gridX: 10px; --gridY: 485px;
+    --speakerX: 417px; --speakerY: 424px;
+    --finalX: 236px; --finalY: 492px;
+    --winX: 258px; --winY: 144px;
+    --bestX: 460px; --bestY: 494px;
+
+    --border: 3px;
+
+    --clipX1: calc(var(--videoX) + var(--border));
+    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
+    --clipY1: calc(var(--videoY) + var(--border));
+    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
+}
+
+/* helper classes */
+
+.dg{display: grid;}
+.df{display: flex;}
+.fd-c{flex-direction: column;}
+
+.ta-c{text-align: center;}
+
+.jc-c{justify-content: center;}
+.ai-c{align-items: center;}
+.as-s{align-self: start;}
+
+.js-c{justify-self: center;}
+.jc-se{
+    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.border-1{border: var(--border) solid #664228;}
+.background-1{background-color: var(--backgroundColor1);}
+.background-2{background-color: var(--backgroundColor2);}
+
+
+/*  ==========
+    Typography
+    ========== */
+
+    @font-face {
+        font-family: "FF4";
+        src:
+            url("../ff4fe/fonts/final_fantasy_iv-webfont.woff2") format("woff2"),
+            url("../ff4fe/fonts/final_fantasy_iv-webfont.woff") format("woff"),
+            url("../ff4fe/fonts/Final Fantasy IV.ttf") format("truetype");
+    }
+
+.fs-s{ font-size: 1rem; }
+.fs-m{ font-size: 1.2rem; }
+.fs-l{ font-size: 1.6rem; }
+
+.fw-b{ font-weight: bold;}
+
+/*  ==========
+    Components
+    ========== */
+
+.layout{
+    width: 1280px;
+    height: 720px;
+    font-family: "FF4", sans-serif;
+    color: #fff;
+    position: relative;
+    background-image: var(--backgroundImg);
+    background-color: #3a2121;
+    background-size: 100% 100%;
+    line-height: 1;
+}
+
+.layout.transparent-background{
+    -webkit-mask-image: paint(clipMask);
+}
+
+.player-name{
+    width: calc(var(--nameWidth) + 8px * 2);
+    height: 58px;
+    padding: 0 8px;
+}
+
+[player="2"] .player-name{
+    text-align: right;
+    background-image: linear-gradient(76deg, transparent 5%, var(--backgroundColor2) 18%);
+    background-color: #0000;
+}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+.player-grid{
+    grid-template-columns: repeat(6, auto);
+    padding: 4px;
+    grid-gap: 4px;
+    /* scale: .6; */
+}
+
+/* [player="1"] .player-grid{
+    transform-origin: top left;
+}
+[player="2"] .player-grid{
+    transform-origin: top right;
+} */
+
+.player-grid img, .dialog img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url(images/2p/Completed_Item_Spritesheet.png);
+    background-size: 306px 172px;
+}
+
+.item-1{background-position: -5px -5px;}
+.item-2{background-position: -55px -5px;}
+.item-3{background-position: -105px -5px;}
+.item-4{background-position: -155px -5px;}
+.item-5{background-position: -205px -5px;}
+.item-6{background-position: -255px -5px;}
+
+.item-7{background-position: -5px -55px;}
+.item-8{background-position: -55px -55px;}
+.item-9{background-position: -105px -55px;}
+.item-10{background-position: -155px -55px;}
+.item-11{background-position: -205px -55px;}
+.item-12{background-position: -255px -55px;}
+
+.item-13{background-position: -5px -105px;}
+.item-14{background-position: -55px -105px;}
+.item-15{background-position: -105px -105px;}
+.item-16{background-position: -155px -105px;}
+.item-17{background-position: -205px -105px;}
+.item-18{background-position: -255px -105px;}
+
+tr-toggle-class, .in-active {
+    filter: grayscale(1);
+    opacity: .5;
+}
+
+.active{
+    filter: grayscale(0);
+}
+
+.player-speaker{
+    padding: 4px;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
+}
+
+[player="2"] .player-speaker{
+    transform: rotateY(180deg);
+}
+
+.player-winner{
+    color: #f8b800;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    height: 34px;
+    width: 5.5em;
+    padding: 0 .5em;
+    z-index: 2;
+}
+
+.player-final{
+    color: #f8b800;
+    width: 180px;
+    height: 52px;
+    z-index: 2;
+}
+.player-final:empty{
+    display:none;
+}
+
+.player-best-of{
+    display: grid;
+    display: none;
+}
+.player-best-of img{
+    width: 32px;
+    height: 32px;
+    background-image: url('images/ff4fe-spritesheet.png');
+    background-size: 500% 500%;
+    background-position: 0 100%;
+}
+
+.best-of-3, .best-of-5, .best-of-7{
+    display: grid;
+}
+.best-of-3 tr-toggle-class:nth-child(n+3),
+.best-of-5 tr-toggle-class:nth-child(n+4),
+.best-of-7 tr-toggle-class:nth-child(n+5){
+    display: none;
+}
+
+tr-timer{
+    width: 267px;
+    height: 59px;
+    z-index: 1;
+    top: 641px;
+    right: 13px;
+    justify-content: end;
+    padding: 14px;
+}
+tr-timer span {
+    width: 26px;
+    text-align: center;
+}
+
+.dot, .ms{
+    display: none;
+}
+
+.staff{
+    top: 641px;
+    left: 13px;
+    width: 400px;
+    height: 59px;
+}
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px currentColor;
+    z-index: 3;
+}
+
+.display-none{ display: none; }
+
+.show{ display: block; }
+
+.commentators, .restreamers, .trackers {
+    width: 368px;
+}
+
+/*  ==========
+    Menu
+    ========== */
