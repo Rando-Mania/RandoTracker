@@ -112,10 +112,13 @@
     padding: 0 8px;
 }
 
+[player="1"] .player-name{
+    background-image: linear-gradient(-134deg, transparent 10%, var(--backgroundColor2) 27%);
+}
+
 [player="2"] .player-name{
     text-align: right;
     background-image: linear-gradient(76deg, transparent 5%, var(--backgroundColor2) 18%);
-    background-color: #0000;
 }
 
 .player-name tr-text{
@@ -162,8 +165,8 @@
 .item-14{background-position: -55px -105px;}
 .item-15{background-position: -105px -105px;}
 .item-16{background-position: -155px -105px;}
-.item-17 img{background-position: -205px -105px;}
-.item-18 img{background-position: -255px -105px;}
+.item-17 img, figure .item-17{background-position: -205px -105px;}
+.item-18 img, figure .item-18{background-position: -255px -105px;}
 
 tr-toggle-class, .in-active {
     filter: grayscale(1);
@@ -173,6 +176,22 @@ tr-toggle-class, .in-active {
 .active{
     filter: grayscale(0);
 }
+
+tr-image, .dialog figure{
+    position: relative;
+}
+
+tr-label, figcaption{
+    pointer-events: none;
+    position: absolute;
+    right: 6px;
+    bottom: 3px;
+    font-family: "FF4", sans-serif;
+    font-size: 20px;
+    text-shadow: -2px -2px #000;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
 
 .player-speaker{
     padding: 4px;
@@ -235,6 +254,7 @@ tr-timer{
     right: 15px;
     justify-content: end;
     padding: 14px;
+    background-image: linear-gradient(67deg, transparent 5%, var(--backgroundColor2) 31%);
 }
 tr-timer span {
     width: 26px;
@@ -246,6 +266,7 @@ tr-timer span {
 }
 
 .staff{
+    background-image: linear-gradient(-134deg, transparent 10%, var(--backgroundColor2) 27%);
     top: 640px;
     left: 15px;
     width: 400px;

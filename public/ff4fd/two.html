@@ -38,7 +38,7 @@
 <body>
     <template id="player_info_template">
         <div class="abs border-1 player-video"></div>
-        <div class="abs player-name background-1 mask-1 df ai-c fs-l">
+        <div class="abs player-name mask-1 df ai-c fs-l">
             <tr-text scale-to-fit-x property="player-name"></tr-text>
         </div>
         <tr-toggle property="toggle-speaker" class="abs player-speaker">
@@ -67,8 +67,8 @@
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs background-2 mask-1 js-c fs-l" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
-        <tr-hide-if-empty class="abs staff background-2 mask-1 as-s js-c fs-m" toggle-class="wtf">
+        <tr-timer class="abs mask-1 js-c fs-l" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
+        <tr-hide-if-empty class="abs staff mask-1 as-s js-c fs-m" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
     </div>
