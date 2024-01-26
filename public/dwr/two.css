@@ -168,7 +168,7 @@
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
 .player-video.tourney-background:after{
-    content: '2022';
+    content: '2024';
     font-size: 2.5em;
     position: absolute;
     bottom: 15px;
@@ -179,10 +179,15 @@
 }
 .player-video.chaos-background{background-image: url('images/video-background/dwr-chaos.png');}
 
-.player-video.league-background{
+/* .player-video.league-background{
     background-image: url(images/video-background/winter_league.png), radial-gradient(#0000, #000), url(images/Alefgard_in_Winter.png);
     background-size: contain;
     background-position: center top -16px, center, center;
+} */
+
+.player-video.league-background{
+    background-image: linear-gradient(rgb(0 0 0 / .25), rgb(0 0 0 / .25)), url(images/video-background/DWR2024_Logo.png);
+    background-size: cover;
 }
 
 .player-info{
