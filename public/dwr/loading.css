@@ -88,10 +88,22 @@
 }
 
 .loadscreen.league-background main{
-  background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000;
+  /* background: url(images/sword-shield-helmet.png) no-repeat right 48px center #000; */
+  background:
+    linear-gradient(to right, rgb(0 0 0/.2), 64%, rgb(0 0 0/.2)), 
+    url(images/dlwinter2-crop.png) no-repeat right -31% center / 61%,
+    linear-gradient(to right, rgb(0 0 0/.6), 64%, rgb(0 0 0/.6)),
+    url(images/Alefgard_in_Winter.png) repeat 0 0 / 100%;
   /* background: url(images/video-background/DWRwinter2024_Text.png) no-repeat right 48px center #000; */
   grid-template-columns: minmax(52%, max-content);
   justify-content: start;
+}
+
+.loadscreen.league-background .logo-official{
+  filter: drop-shadow(2px 2px #000) hue-rotate(288deg);
+}
+.loadscreen.league-background .player-final,.loadscreen.league-background .player-winner {
+  filter: hue-rotate(288deg);
 }
 
 /* .loadscreen.league-background main{
