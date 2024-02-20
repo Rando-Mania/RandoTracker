@@ -58,7 +58,7 @@
 
 			// Convert character name to build type
 			var name_mod_count = 0;
-			var char_mapping_mods = ["gwM'kAQoEU,csIY!","hxNlBRpFV-dtJZ","iyOmCSaqGWeuK)","jzPnDTbrHX?fvL("]
+			var char_mapping_mods = ["gwM'kAQoEU,csIY!","hxNlBRpFV-dtJZ","iyOmCSaqGWeuK)","jzPnDTbrHX?fvL(."]
 			var characters = Math.min(character_name.length, 4);
 			for (var nameindex = 0; nameindex < characters; nameindex++) {
 				for (var mod = 0; mod < 4; mod++) {
