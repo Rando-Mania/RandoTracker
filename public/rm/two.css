@@ -77,8 +77,8 @@
     transition: background-color .5s;
 }
 
-.avif .player-video{background-image: url("images/MainLogo.avif");}
-.noavif.webp .player-video{background-image: url("images/MainLogo.webp");}
+.avif .player-video{background-image: url("images/MainLogo_24.avif");}
+.noavif.webp .player-video{background-image: url("images/MainLogo_24.webp");}
 
 .player-video, .layout.four-three .player-video{
     --vidWidth: 612px;
@@ -333,9 +333,9 @@ tr-text#player_final{
 .winner-default, .player-winner{
     border: solid transparent 12px;
     background: 
-        url(../rm2/images/stars-background.jpg) padding-box no-repeat,
+        url(../rm/images/stars-background.jpg) padding-box no-repeat,
         repeating-conic-gradient(#0000 0 90deg, var(--check-color) 90deg 180deg) 0 0 / 8px 8px,
-        url(../rm2/images/stars-background.jpg) border-box repeat;
+        url(../rm/images/stars-background.jpg) border-box repeat;
 }
 
 .winner-default{

@@ -51,10 +51,10 @@ aside h1{
 
 .star-background{
   background-color: #150a1e;
-  background-image: url(../rm2/images/stars-background-moz.jpg);
+  background-image: url(../rm/images/stars-background-moz.jpg);
   background-image: image-set(
-    "../rm2/images/stars-background.webp" type("image/webp"),
-    "../rm2/images/stars-background-moz.jpg" type("image/jpeg")
+    "../rm/images/stars-background.webp" type("image/webp"),
+    "../rm/images/stars-background-moz.jpg" type("image/jpeg")
   );
 }
 

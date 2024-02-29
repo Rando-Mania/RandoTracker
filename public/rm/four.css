@@ -118,8 +118,8 @@
     z-index: 2;
     /* background: 
         image-set(
-            url("images/MainLogo.avif") type("image/avif"),
-            url("images/MainLogo.webp") type("image/webp")
+            url("images/MainLogo_24.avif") type("image/avif"),
+            url("images/MainLogo_24.webp") type("image/webp")
         );  */
         background-color: #000;
         background-repeat: no-repeat;
@@ -128,8 +128,8 @@
         transition: background-color .5s;
     }
     
-    .avif .player-video{background-image: url("images/MainLogo.avif");}
-    .noavif.webp .player-video{background-image: url("images/MainLogo.webp");}
+    .avif .player-video{background-image: url("images/MainLogo_24.avif");}
+    .noavif.webp .player-video{background-image: url("images/MainLogo_24.webp");}
     
 .ten-nine{
     --nameX: 383px;
