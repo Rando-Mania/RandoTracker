@@ -1,0 +1,130 @@
+<style>
+.player-grid [property*="dw2r-"] img, .dialog[id*="dw2r-"] img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: 500%;
+    background-repeat: no-repeat;
+}
+
+.player-grid [property*="dw2r-"] img, .dialog[id*="dw2r-"] img{
+    background-image: url(images/icons/dw2r-items.png);
+}
+
+/* .notwebp .player-grid [property*="ct-jets-"] img, .notwebp .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.png);
+}
+.webp.notavif .player-grid [property*="ct-jets-"] img, .webp.notavif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.webp);
+}
+.avif .player-grid [property*="ct-jets-"] img, .avif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.avif);
+} */
+
+    .top.dw2r{
+        display: grid;
+        grid-template-columns: repeat(3, 32px);
+        grid-template-rows: repeat(3, 32px);
+        justify-content: space-around;
+        row-gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    [property="dw2r-starcrest"]{grid-area: 1/2;}
+    [property="dw2r-starcrest"] img{background-position: 75% 0;}
+   
+    [property="dw2r-mooncrest"]{grid-area: 2/1;}
+    [property="dw2r-mooncrest"] img{background-position: 50% 0;}
+    
+    [property="dw2r-charm"]{
+        grid-area: 2/2; 
+        transform: scale(1.5);
+        filter: drop-shadow(0 0 8px #fff);}
+    [property="dw2r-charm"] img{background-position: 50% 50%;}
+
+    [property="dw2r-firecrest"]{grid-area: 2/3;}
+    [property="dw2r-firecrest"] img{background-position: 0 0;}
+
+    [property="dw2r-watercrest"]{
+        grid-area: 3/1;
+        position: relative;
+        left: 133%;}
+    [property="dw2r-watercrest"] img{background-position: 100% 0;}
+
+    [property="dw2r-lifecrest"]{
+        grid-area: 3/3;
+        position: relative;
+        right: 133%;}
+    [property="dw2r-lifecrest"] img{background-position: 25% 0;}
+
+
+    .bottom.dw2r{
+        display: grid;
+        grid-template-columns: repeat(4, 32px);
+        justify-content: center;
+        gap: 8px 32px;
+        margin-top: 8px;
+    }
+
+    [property="dw2r-silverkey"] img{background-position: 0 50%;}
+    [property="dw2r-goldkey"] img{background-position: 25% 50%;}
+    [property="dw2r-jailorkey"] img{background-position: 75% 50%;}
+    [property="dw2r-ship"] img{background-position: 100% 50%;}
+    
+    [property="dw2r-mirror"] img{background-position: 0 100%;}
+    [property="dw2r-cloak"] img{background-position: 25% 100%;}
+    [property="dw2r-moonshard"] img{
+        background-position: 50% 100%;
+        transform: scale(1.5) rotate(45deg);
+    }
+    [property="dw2r-eyemalroth"] img{background-position: 75% 100%;}
+
+</style>
+
+<div class="top dw2r">
+    <tr-toggle-class property="dw2r-starcrest" toggle-class="active">
+        <img title="starcrest" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-mooncrest" toggle-class="active">
+        <img title="mooncrest" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-charm" toggle-class="active">
+        <img title="charm" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-firecrest" toggle-class="active">
+        <img title="firecrest" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-watercrest" toggle-class="active">
+        <img title="watercrest" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-lifecrest" toggle-class="active">
+        <img title="lifecrest" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
+
+<div class="bottom dw2r">
+    <tr-toggle-class property="dw2r-silverkey" toggle-class="active">
+        <img title="silverkey" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-goldkey" toggle-class="active">
+        <img title="goldkey" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-jailorkey" toggle-class="active">
+        <img title="jailorkey" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-ship" toggle-class="active">
+        <img title="ship" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-mirror" toggle-class="active">
+        <img title="mirror" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-cloak" toggle-class="active">
+        <img title="cloak" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-moonshard" toggle-class="active">
+        <img title="moonshard" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="dw2r-eyemalroth" toggle-class="active">
+        <img title="eyemalroth" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>

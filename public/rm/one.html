@@ -22,15 +22,6 @@
 </head>
 
 <body>
-    <!-- <img style="
-            scale: 1.79;
-    transform-origin: top left;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    opacity: .3;
-    pointer-events: none;" src="../rm2/images/Layout1P_43.png" alt=""> -->
     <div class="layout">
         <main class="star-background">
             <div class="card-body player-video"></div>
@@ -65,16 +56,16 @@
                     <tr-template href="templates/cards/up-next-2.html"></tr-template>
                 </tr-hide-if-empty>
 
-                <!-- <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template> -->
+                <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
 
                 <tr-template id="four-three-template" href="templates/cards/4by3-panel.html"></tr-template>
             </div>
 
-            <!-- <div class="donation-counter" id="donation_counter">
+            <div class="donation-counter" id="donation_counter">
                 $?
             </div>
-             -->
-            <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template>
+
+            <!-- <tr-template id="rm-logo-template" href="templates/cards/rm-logo.html"></tr-template> -->
         </aside>
     </div>
     
@@ -108,8 +99,8 @@
        const db = firebaseApp.firestore();
        const auth = firebaseApp.auth();
     </script>
-    <!-- <script src="scripts/rm.js"></script> -->
-    <!-- <script src="scripts/donation.js"></script> -->
+    <script src="scripts/rm.js"></script>
+    <script src="scripts/donation.js"></script>
     <script src="../components/components.js"></script>
     <script src="../components/tracker.js"></script>
     <script src="../shared/script/one_game.js"></script>
