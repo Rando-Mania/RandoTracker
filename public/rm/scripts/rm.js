@@ -114,7 +114,7 @@
 				'Accept': 'application/json',
 			},
 		};
-		const apiUrl = 'https://donations.randomania.net/tracker/api/v2/runs/?format=json';
+        const apiUrl = 'https://donations.randomania.net/tracker/api/v2/events/2/runs/';
 		const response = await fetch(apiUrl, apiInit);
 		const data = await response.json();
 		RM.scheduleCallback(data);

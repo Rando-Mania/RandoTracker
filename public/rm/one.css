@@ -119,7 +119,7 @@ main{
   background-color: #000; 
   transition: background-color .5s;
   border: solid 2px var(--pink);
-  border-image: linear-gradient(var(--pink), var(--blue)) 2;
+  border-image: linear-gradient(var(--pink), var(--blue)) 2 / 1 / 1;
 }
 
 .player-video, .layout.four-three .player-video{
