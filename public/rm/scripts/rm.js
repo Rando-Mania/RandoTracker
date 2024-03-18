@@ -20,18 +20,27 @@
 	};
 
 	RM.scheduleCallback = function(data) {
-        var listings = data;
+        const listings = data;
         var select = document.getElementById("schedule_preloads");
 
         select.appendChild(document.createElement("option"));
 
-        listings.forEach(function(listing) {
+
+        for (let listing of listings) {
             var option = document.createElement("option");
 
             option.textContent = listing.name;
             option.data = listing;
             select.appendChild(option);
-        });
+        }
+
+        // listings.forEach(function(listing) {
+        //     var option = document.createElement("option");
+
+        //     option.textContent = listing.name;
+        //     option.data = listing;
+        //     select.appendChild(option);
+        // });
 
         select.onchange = function() {
             var option = select.options[select.selectedIndex];
