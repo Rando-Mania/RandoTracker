@@ -23,6 +23,8 @@
         const listings = data.results;
         var select = document.getElementById("schedule_preloads");
 
+        console.log(data.results);
+
         select.appendChild(document.createElement("option"));
 
 
@@ -50,6 +52,8 @@
                 return;
             }
 
+            
+
             var updates = [
                 {
                     property: "game-name",
@@ -70,6 +74,10 @@
 				{
                     property: "commentators",
                     value: listing.commentators[0].name
+                },
+                {
+                    property: "host",
+                    value: listing.hosts[0].name
                 }
             ];
 
@@ -111,6 +119,41 @@
                 }
             }
 
+            let comList = ""
+            let hostList = ""
+         
+            if (listing.commentators != "") {
+                for (coms of listing.commentators) { 
+                    if (comList === "") {
+                        comList += coms.name
+                        if (coms.pronouns != "") {comList += " (" + coms.pronouns + ")"} 
+                    } else {
+                        comList += ", " + coms.name
+                        if (coms.pronouns != "") {comList += " (" + coms.pronouns + ")"} 
+                    }
+                }
+                updates.push({
+                    property: "commentators",
+                    value: comList
+                })
+            }
+            
+            if (listing.hosts != "") {
+                for (host of listing.hosts) { 
+                    if (hostList === "") {
+                        hostList += host.name
+                        if (host.pronouns != "") {hostList += " (" + host.pronouns + ")"} 
+                    } else {
+                        hostList += ", " + host.name
+                        if (host.pronouns != "") {hostList += " (" + host.pronouns + ")"} 
+                    }
+                }
+                updates.push({
+                    property: "hosts",
+                    value: hostList
+                })
+            }
+
             Tracker.updateLayoutMultiple(updates);
         }
 	}
@@ -133,7 +176,7 @@
 			setTimeout(
 				function(){
 					fetchRunData();
-				}, 100
+				}, 1000
 				)
 			});
 
