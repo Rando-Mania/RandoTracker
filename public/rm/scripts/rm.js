@@ -20,7 +20,7 @@
 	};
 
 	RM.scheduleCallback = function(data) {
-        const listings = data;
+        const listings = data.results;
         var select = document.getElementById("schedule_preloads");
 
         select.appendChild(document.createElement("option"));
@@ -69,7 +69,7 @@
                 },
 				{
                     property: "commentators",
-                    value: listing.commentators
+                    value: listing.commentators[0].name
                 }
             ];
 
@@ -133,7 +133,7 @@
 			setTimeout(
 				function(){
 					fetchRunData();
-				}, 1000
+				}, 100
 				)
 			});
 
