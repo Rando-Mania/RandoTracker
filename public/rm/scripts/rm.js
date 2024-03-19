@@ -50,8 +50,6 @@
                 return;
             }
 
-            
-
             var updates = [
                 {
                     property: "game-name",
@@ -68,14 +66,6 @@
                 {
                     property: "game-category",
                     value: listing.category.substring(2)
-                },
-				{
-                    property: "commentators",
-                    value: listing.commentators[0].name
-                },
-                {
-                    property: "host",
-                    value: listing.hosts[0].name
                 }
             ];
 
@@ -120,7 +110,7 @@
             let comList = ""
             let hostList = ""
          
-            if (listing.commentators != "") {
+            if (listing.commentators.length > 0) {
                 for (coms of listing.commentators) { 
                     if (comList === "") {
                         comList += coms.name
@@ -134,9 +124,14 @@
                     property: "commentators",
                     value: comList
                 })
+            } else {
+                updates.push({
+                    property: "commentators",
+                    value: ""
+                })
             }
             
-            if (listing.hosts != "") {
+            if (listing.hosts.length > 0) {
                 for (host of listing.hosts) { 
                     if (hostList === "") {
                         hostList += host.name
@@ -149,6 +144,11 @@
                 updates.push({
                     property: "hosts",
                     value: hostList
+                })
+            } else {
+                updates.push({
+                    property: "hosts",
+                    value: ""
                 })
             }
 
