@@ -23,8 +23,6 @@
         const listings = data.results;
         var select = document.getElementById("schedule_preloads");
 
-        console.log(data.results);
-
         select.appendChild(document.createElement("option"));
 
 
