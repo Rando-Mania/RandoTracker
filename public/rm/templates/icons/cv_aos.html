@@ -1,0 +1,108 @@
+<style>
+.player-grid [property*="cv-aos-"] img, .dialog[id*="cv-aos-"] img{
+    width: 64px;
+    height: 24px;
+    display: block;
+    background-size: 268px 234px;
+    background-repeat: no-repeat;
+}
+
+.player-grid [property*="cv-aos-"] img, .dialog[id*="cv-aos-"] img{
+    background-image: url(images/icons/cv-aos.png);
+}
+
+/* .notwebp .player-grid [property*="ct-jets-"] img, .notwebp .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.png);
+}
+.webp.notavif .player-grid [property*="ct-jets-"] img, .webp.notavif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.webp);
+}
+.avif .player-grid [property*="ct-jets-"] img, .avif .dialog[id*="ct-jets-"] img{
+    background-image: url(images/icons/chrono-trigger-sprite.avif);
+} */
+
+    .cv-aos{
+        display: grid;
+        grid-template-columns: repeat(4, 64px);
+        grid-template-rows: repeat(4, 24px);
+        justify-content: space-around;
+        row-gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    [property="cv-aos-bdash"] img{background-position: 0 -39px;}
+    [property="cv-aos-2jump"] img{background-position: -68px -39px;}
+    [property="cv-aos-und"] img{background-position: -136px -39px;}
+    [property="cv-aos-skul"] img{background-position: -204px -39px;}
+
+    [property="cv-aos-slide"] img{background-position: 0 -108px;}
+    [property="cv-aos-kick"] img{background-position: -68px -108px;}
+    [property="cv-aos-farm"] img{background-position: -136px -108px;}
+    [property="cv-aos-rush"] img{background-position: -204px -108px;}
+
+    [property="cv-aos-hipp"] img{background-position: 0 -176px;}
+    [property="cv-aos-time"] img{background-position: -68px -176px;}
+    [property="cv-aos-gbat"] img{background-position: -136px -176px;}
+    [property="cv-aos-dash"] img{background-position: -204px -176px;}
+
+    .player-grid [property*="cv-aos-book"] img, .dialog[property*="cv-aos-book"] img{
+        width: 32px;
+        height: 32px;
+    }
+    [property="cv-aos-bookred"] img{background-position: 0 -203px;}
+    [property="cv-aos-bookblue"] img{background-position: -32px -203px;}
+    [property="cv-aos-bookyellow"] img{background-position: -64px -203px;}
+
+
+</style>
+
+<div class="cv-aos">
+    <tr-toggle-class property="cv-aos-bdash" toggle-class="active">
+        <img title="bdash" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-2jump" toggle-class="active">
+        <img title="2jump" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-und" toggle-class="active">
+        <img title="und" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-skul" toggle-class="active">
+        <img title="skul" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="cv-aos-slide" toggle-class="active">
+        <img title="slide" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-kick" toggle-class="active">
+        <img title="kick" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-farm" toggle-class="active">
+        <img title="farm" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-rush" toggle-class="active">
+        <img title="rush" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="cv-aos-hipp" toggle-class="active">
+        <img title="hipp" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-time" toggle-class="active">
+        <img title="time" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-gbat" toggle-class="active">
+        <img title="gbat" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-dash" toggle-class="active">
+        <img title="dash" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="cv-aos-bookred" toggle-class="active">
+        <img title="bookred" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-bookblue" toggle-class="active">
+        <img title="bookblue" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="cv-aos-bookyellow" toggle-class="active">
+        <img title="bookyellow" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>
