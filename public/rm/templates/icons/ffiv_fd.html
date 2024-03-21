@@ -1,0 +1,113 @@
+<style>
+.player-grid [property*="ff4-fd"] img, .dialog[id*="ff4-fd"] img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-size: 306px 172px;
+    background-repeat: no-repeat;
+}
+
+.player-grid [property*="ff4-fd"] img, .dialog[id*="ff4-fd"] img{
+    background-image: url(images/icons/ff4-fd.png);
+}
+
+    .ff4-fd{
+        display: grid;
+        grid-template-columns: repeat(6, 50px);
+        grid-template-rows: repeat(3, 50px);
+        justify-content: space-around;
+        row-gap: 8px;
+    }
+
+[property="ff4-fd-item-1"] img{background-position: -5px -5px;}
+[property="ff4-fd-item-2"] img{background-position: -55px -5px;}
+[property="ff4-fd-item-3"] img{background-position: -105px -5px;}
+[property="ff4-fd-item-4"] img{background-position: -155px -5px;}
+[property="ff4-fd-item-5"] img{background-position: -205px -5px;}
+[property="ff4-fd-item-6"] img{background-position: -255px -5px;}
+
+[property="ff4-fd-item-7"] img{background-position: -5px -55px;}
+[property="ff4-fd-item-8"] img{background-position: -55px -55px;}
+[property="ff4-fd-item-9"] img{background-position: -105px -55px;}
+[property="ff4-fd-item-10"] img{background-position: -155px -55px;}
+[property="ff4-fd-item-11"] img{background-position: -205px -55px;}
+[property="ff4-fd-item-12"] img{background-position: -255px -55px;}
+
+[property="ff4-fd-item-13"] img{background-position: -5px -105px;}
+[property="ff4-fd-item-14"] img{background-position: -55px -105px;}
+[property="ff4-fd-item-15"] img{background-position: -105px -105px;}
+[property="ff4-fd-item-16"] img{background-position: -155px -105px;}
+[property="ff4-fd-item-17"] img, figure [property="ff4-fd-item-17"]{background-position: -205px -105px;}
+[property="ff4-fd-item-18"] img, figure [property="ff4-fd-item-18"]{background-position: -255px -105px;}
+
+
+.ff4-fd tr-toggle-class, .ff4-fd .in-active {
+    filter: grayscale(1);
+    opacity: .4;
+}
+
+.ff4-fd .active{
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+</style>
+
+<div class="ff4-fd">
+    <tr-toggle-class property="ff4-fd-item-1" toggle-class="active">
+        <img title="item-1" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-2" toggle-class="active">
+        <img title="item-2" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-3" toggle-class="active">
+        <img title="item-3" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-4" toggle-class="active">
+        <img title="item-4" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-5" toggle-class="active">
+        <img title="item-5" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-6" toggle-class="active">
+        <img title="item-6" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="ff4-fd-item-7" toggle-class="active">
+        <img title="item-7" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-8" toggle-class="active">
+        <img title="item-8" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-9" toggle-class="active">
+        <img title="item-9" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-10" toggle-class="active">
+        <img title="item-10" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-11" toggle-class="active">
+        <img title="item-11" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-12" toggle-class="active">
+        <img title="item-12" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+
+    <tr-toggle-class property="ff4-fd-item-13" toggle-class="active">
+        <img title="item-13" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-14" toggle-class="active">
+        <img title="item-14" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-15" toggle-class="active">
+        <img title="item-15" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-16" toggle-class="active">
+        <img title="item-16" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-17" toggle-class="active">
+        <img title="item-17" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+    <tr-toggle-class property="ff4-fd-item-18" toggle-class="active">
+        <img title="item-18" width="32" height="32" src="../shared/images/icons/blank.svg"/>
+    </tr-toggle-class>
+</div>

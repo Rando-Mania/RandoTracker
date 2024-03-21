@@ -96,7 +96,7 @@
     font-family: "FF4", sans-serif;
     color: #fff;
     position: relative;
-    background-image: var(--backgroundImg);
+    background-image: linear-gradient(rgb(0 0 0 /.3),rgb(0 0 0 /.3)), var(--backgroundImg);
     background-color: #3a2121;
     background-size: 100% 100%;
     line-height: 1;
@@ -129,7 +129,7 @@
     grid-template-columns: repeat(6, auto);
     padding: 4px;
     grid-gap: 4px;
-    scale: .65;
+    transform: scale(.65);
 }
 
 [player="1"] .player-grid{
