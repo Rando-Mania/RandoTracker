@@ -16,7 +16,7 @@ const fetchDonationData = async () => {
     let donationTotal = data.agg.amount;
     let donationTarget = data.agg.target;
 
-    donationCounterEl.textContent = '$' + donationTotal;
+    donationCounterEl.textContent = '$' + donationTotal.toFixed(2);
     let progressValue = donationTotal / donationTarget;
 
     donationCounterEl.style.setProperty('--progress-scale', "scaleX(" + progressValue + ")");
@@ -25,5 +25,5 @@ const fetchDonationData = async () => {
 setTimeout(
     function(){
         fetchDonationData();
-        setInterval(fetchDonationData, 60000);
+        setInterval(fetchDonationData, 10000);
     }, 8000);

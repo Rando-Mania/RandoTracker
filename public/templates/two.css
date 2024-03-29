@@ -13,7 +13,7 @@
 :root{
     font-family: Arial, sans-serif;
     font-size: 1em;
-    --vidWidth: 604px;
+    --vidWidth: 600px;
     --vidAspect: 1.333;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
@@ -33,11 +33,6 @@
     --bestX: 460px; --bestY: 494px;
 
     --border: 2px;
-
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 /* helper classes */
@@ -58,7 +53,7 @@
     justify-content: space-evenly;
 }
 
-.border-1{border: var(--border) solid currentColor;}
+.border-1{outline: var(--border) solid currentColor;}
 .background-1{background-color: var(--backgroundColor1);}
 
 
@@ -95,7 +90,20 @@
 }
 
 .layout.transparent-background{
-    -webkit-mask-image: paint(clipMask);
+    --red: linear-gradient(red,red);
+    --video-size: var(--vidWidth) var(--vidHeight);
+    
+    -webkit-mask-image: var(--red), var(--red), var(--red);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+    -webkit-mask-size: 100% 100%, var(--video-size), var(--video-size);
+    -webkit-mask-composite: xor;
+
+    mask-image: var(--red), var(--red), var(--red);
+    mask-repeat: no-repeat;
+    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+    mask-size: 100% 100%, var(--video-size), var(--video-size);
+    mask-composite: exclude;
 }
 
 .player-name{
