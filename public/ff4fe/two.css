@@ -110,6 +110,10 @@
 .notwebp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.jpg);}
 .webp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);}
 
+.zz6 .layout{background-color: #110b02;}
+.notwebp.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.png);}
+.webp.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.webp);}
+.avif.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.avif);}
 
 .player-video{
     width: var(--vidWidth);
