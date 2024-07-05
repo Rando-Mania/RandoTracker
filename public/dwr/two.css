@@ -69,8 +69,8 @@
 
 .map-background{
     background-color: #002899;
-    background-image: url('images/alefgard_crop_dark.png');
-    background-image: image-set(
+    background-image: linear-gradient(rgba(0,0,0,.4) 0 0), url('images/alefgard_crop_dark.png');
+    background-image: linear-gradient(rgba(0,0,0,.4) 0 0), image-set(
         url("images/alefgard_crop_dark.avif") type("image/avif"),
         url("images/alefgard_crop_dark.png") type("image/png")
     );
