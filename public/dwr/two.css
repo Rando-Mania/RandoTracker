@@ -530,7 +530,11 @@ img[src*="ring"]{
 }
 
 .stat-bottom {
-    animation: stat-warning 2s steps(2) infinite;
+    background-image: url(images/red-to-orange.gif);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    xanimation: stat-warning 2s steps(2) infinite;
 }
 @keyframes stat-warning {
     from{ color:#f88019;}

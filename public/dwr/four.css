@@ -481,12 +481,16 @@ tr-image, figure{position: relative;}
 }
 
 .stat-bottom {
-    animation: stat-warning 2s steps(2) infinite;
+    background-image: url(images/red-to-orange.gif);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* animation: stat-warning 2s steps(2) infinite; */
 }
-@keyframes stat-warning {
+/* @keyframes stat-warning {
     from{ color:#f88019;}
     to{color:#d01000;}
-}
+} */
 .stat-low {color: #d01000;}
 .stat-caution {color: #f88019;}
 .stat-gg {color: #28c021;}
