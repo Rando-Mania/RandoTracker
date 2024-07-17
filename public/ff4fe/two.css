@@ -346,11 +346,25 @@ tr-toggle-class, .in-active {
     height: 50px;
     font-weight: bold;
     font-size: 27px;
-    text-shadow: 2px 2px #000, 2px -2px #000, -2px 2px #000, -2px -2px #000;
     padding: 0 .5em;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
+    color: #ffdd00;
+    --text-shadow-color: #940000;
+    text-shadow: 1px 2px var(--text-shadow-color);
+    animation: scaleIn .75s;
+}
+
+.eblan .player-winner, .zz6 .player-winner{
+    color: #b1fafd;
+    --text-shadow-color: #008496;
+    text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
+}
+
+@keyframes scaleIn {
+    from{transform: scale(.1);}
 }
 
 .player-objective-count{
@@ -419,12 +433,14 @@ tr-timer, .player-final{
 }
 
 .player-final{
-    /* CCS colors */
     color: #ffdd00;
     --text-shadow-color: #940000;
-    /* adamant colors */
+    text-shadow: 1px 2px var(--text-shadow-color);
+    animation: scaleIn .75s;
+}
+
+.eblan .player-final, .zz6 .player-final{
     color: #b1fafd;
-    text-shadow: 1px 2px #008496;
     --text-shadow-color: #008496;
     text-shadow: 0 3px 0 var(--text-shadow-color), 3px 0 0 var(--text-shadow-color), 3px 3px 0 var(--text-shadow-color);
 }
