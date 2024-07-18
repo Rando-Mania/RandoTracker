@@ -354,7 +354,7 @@ tr-toggle-class, .in-active {
     color: #ffdd00;
     --text-shadow-color: #940000;
     text-shadow: 1px 2px var(--text-shadow-color);
-    animation: scaleIn .75s;
+    animation: scaleIn .5s;
 }
 
 .eblan .player-winner, .zz6 .player-winner{
@@ -436,7 +436,7 @@ tr-timer, .player-final{
     color: #ffdd00;
     --text-shadow-color: #940000;
     text-shadow: 1px 2px var(--text-shadow-color);
-    animation: scaleIn .75s;
+    animation: scaleIn .5s;
 }
 
 .eblan .player-final, .zz6 .player-final{

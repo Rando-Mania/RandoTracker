@@ -167,7 +167,7 @@
 
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
-.player-video.tourney-background:after{
+.layout:not(.tech-diff-background) .player-video.tourney-background:after{
     content: '2024';
     font-size: 2.5em;
     position: absolute;

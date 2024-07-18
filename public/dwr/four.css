@@ -209,7 +209,7 @@ html{
     background-size: 100%, 80%;
 } */
 
-.player-video.tourney-background:after{
+.background-layer:not(.tech-diff-background) .player-video.tourney-background:after{
     content: '2024';
     font-size: 1.7em;
     position: absolute;
