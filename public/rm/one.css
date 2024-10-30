@@ -118,25 +118,24 @@ main{
 .player-video{
   background-color: #000; 
   transition: background-color .5s;
-  border: solid 2px var(--pink);
-  border-image: linear-gradient(var(--pink), var(--blue)) 2 / 1;
+  border-image: linear-gradient(var(--pink), var(--blue)) 2 / 1.6px / 1.6px;
 }
 
 .player-video, .layout.four-three .player-video{
-  --vHeight: 706px;
+  --vHeight: 702px;
   width: calc(var(--vHeight) * 4/3);
   height: var(--vHeight);
 }
 .layout.sixteen-nine .player-video{
-  --vHeight: 533px;
+  --vHeight: 531px;
   width: calc(var(--vHeight) * 16/9);
 }
 .layout.ten-nine .player-video{
-  --vHeight: 706px;
+  --vHeight: 702px;
   width: calc(var(--vHeight) * 10/9);
 }
 .layout.three-two .player-video{
-  --vHeight: 632px;
+  --vHeight: 630px;
   width: calc(var(--vHeight) * 3/2);
 }
 
