@@ -9,6 +9,8 @@
   --blue: #088fae;
   --purple: #280642;
   --white: #fff;
+
+  --nameWidth: 300px;
 }
 
 .abs{
@@ -33,7 +35,7 @@
 
 .game-category{
   text-align: center;
-  xwidth: 288px;
+  /* width: 288px; */
 }
 
 .game-info .card-body, .card-body{
@@ -55,11 +57,6 @@
   gap: 1px;
 }
 
-  html{
-    --vHeight: 720px;
-    --nameWidth: 300px;
-  }
-
   body {
     background-color: #ddd;
     display: flex;
@@ -76,34 +73,6 @@
     grid-template-rows: 720px;
 }
 
-.layout.four-three.transparent-background{
-  -webkit-mask: linear-gradient(to right, #0000 75%, red 0);
-}
-.layout.ten-nine.transparent-background{
-  --vHeight: 706px;
-  -webkit-mask: 
-    linear-gradient(red, red) no-repeat 118px 35px / calc(var(--vHeight) * 10/9) var(--vHeight),
-    linear-gradient(red, red);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-.layout.three-two.transparent-background{
-  --vHeight: 632px;
-  -webkit-mask: 
-    linear-gradient(red, red) no-repeat 0 40px / calc(var(--vHeight) * 3/2) var(--vHeight),
-    linear-gradient(red, red);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-.layout.sixteen-nine.transparent-background{
-  --vHeight: 533px;
-  -webkit-mask: 
-    linear-gradient(red, red) no-repeat 0 91px / calc(var(--vHeight) * 16/9) var(--vHeight),
-    linear-gradient(red, red);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
 .layout.show{
   display: grid;
 }
@@ -116,28 +85,65 @@ main{
 }
 
 .player-video{
+  width: var(--vWidth);
+  height: var(--vHeight);
   background-color: #000; 
   transition: background-color .5s;
+  position: relative;
+}
+
+.player-video::before{
+  content: '';
+  position: absolute;
+  inset: 0px;
+  border: 1.6px solid;
   border-image: linear-gradient(var(--pink), var(--blue)) 2 / 1.6px / 1.6px;
 }
 
-.player-video, .layout.four-three .player-video{
+.four-three{
   --vHeight: 702px;
-  width: calc(var(--vHeight) * 4/3);
-  height: var(--vHeight);
+  --vWidth: calc(var(--vHeight) * 4/3);
 }
-.layout.sixteen-nine .player-video{
-  --vHeight: 531px;
-  width: calc(var(--vHeight) * 16/9);
-}
-.layout.ten-nine .player-video{
+
+.ten-nine{
   --vHeight: 702px;
-  width: calc(var(--vHeight) * 10/9);
+  --vWidth: calc(var(--vHeight) * 10/9);
 }
-.layout.three-two .player-video{
+
+.three-two{
   --vHeight: 630px;
-  width: calc(var(--vHeight) * 3/2);
+  --vWidth: calc(var(--vHeight) * 3/2);
 }
+
+.sixteen-nine{
+  --vHeight: 531px;
+  --vWidth: calc(var(--vHeight) * 16/9);
+}
+
+.transparent-background{
+  -webkit-mask: 
+    linear-gradient(red, red 0) no-repeat 11px center / var(--vWidth) var(--vHeight),
+    linear-gradient(red, red);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;  
+}
+
+.four-three.transparent-background{
+  -webkit-mask-position: 11px center;
+}
+
+.ten-nine.transparent-background{
+  -webkit-mask-position: 90px center;
+}
+
+.three-two.transparent-background{
+  -webkit-mask-position: 7px 44px;
+}
+
+.sixteen-nine.transparent-background{
+  -webkit-mask-position: 8px 95px;
+}
+
 
 .layout aside{
   display: grid;
