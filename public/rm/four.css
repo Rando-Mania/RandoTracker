@@ -5,10 +5,12 @@
 }
 
 .layout{
+    --vidWidth: 436px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
-    --vidWidth: 432px;
     --vidAspect: 4 / 3;
 
+    --border1: solid var(--border) #fff;
+    --backgroundColor1: #000;
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 140px;
     --nameX: 457px; --nameY: 20px;
@@ -19,8 +21,6 @@
     --vsX: 50%; --vsY: 61px;
 
     --border: 2px;
-    --border1: solid var(--border) #fff;
-    --backgroundColor1: #000;
 
     --pink: #ac0082;
     --blue: #088fae;
