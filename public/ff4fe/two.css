@@ -70,55 +70,80 @@
     background-color: var(--backgroundColor1);
 }
 
-.trans .layout{background-color: #0000; background-image: none;}
+.trans .layout{
+    background-color: #0000;
+    background-image: none;
+}
 
-.ccs-pink-puff .layout{background-color: #627079;}
-.notwebp.ccs-pink-puff .layout{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.png);}
-.webp.ccs-pink-puff .layout{background-image: url(images/2p/ccs/summer-2022/Layout-PPL.webp);}
+.ccs-pink-puff .layout{
+    background-color: #627079;
+    background-image: url(images/2p/ccs/summer-2022/Layout-PPL.webp);
+}
 
-.ccs-shi .layout{background-color: #053505;}
-.notwebp.ccs-shi .layout{background-image: url(images/2p/ccs/winter-2023/Layout_SHI.png);}
-.webp.ccs-shi .layout{background-image: url(images/2p/ccs/winter-2023/Layout_SHI.webp);}
+.ccs-shi .layout{
+    background-color: #053505; 
+    background-image: url(images/2p/ccs/winter-2023/Layout_SHI.webp);
+}
 
+.ccs-99 .layout{
+    background-color: #2f3624;
+    background-image: url(images/2p/ccs/winter-2022/Layout_99.webp);
+    background-image:
+        image-set(
+            url("images/2p/ccs/winter-2022/Layout_99.avif") type("image/avif"),
+            url("images/2p/ccs/winter-2022/Layout_99.webp") type("image/webp")
+        );
+}
 
-.ccs-99 .layout{background-color: #2f3624;}
-.notwebp.ccs-99 .layout{background-image: url(images/2p/ccs/winter-2022/Layout_99.png);}
-.webp.notavif.ccs-99 .layout{background-image: url(images/2p/ccs/winter-2022/Layout_99.webp);}
-.avif.ccs-99 .layout{background-image: url(images/2p/ccs/winter-2022/Layout_99.avif);}
+.ccs-bad .layout{
+    background-color: #000;
+    background-image: url(images/2p/ccs/winter-2023/Layout_BAD.webp);
+}
 
-.ccs-bad .layout{background-color: #000;}
-.notwebp.ccs-bad .layout{background-image: url(images/2p/ccs/winter-2023/Layout_BAD.png);}
-.webp.ccs-bad .layout{background-image: url(images/2p/ccs/winter-2023/Layout_BAD.webp);}
+.ccs-ms .layout{
+    background-color: #000; 
+    background-image: url(images/2p/ccs/winter-2023/Layout_MS_New.webp);
+}
 
-.ccs-ms .layout{background-color: #000;}
-.notwebp.ccs-ms .layout{background-image: url(images/2p/ccs/winter-2023/Layout_MS_New.png);}
-.webp.ccs-ms .layout{background-image: url(images/2p/ccs/winter-2023/Layout_MS_New.webp);}
+.ccs-wacky .layout{
+    background-color: #000;
+    background-image: url(images/2p/ccs/winter-2023/Layout_Wacky.webp);
+}
 
-.ccs-wacky .layout{background-color: #000;}
-.notwebp.ccs-wacky .layout{background-image: url(images/2p/ccs/winter-2023/Layout_Wacky.png);}
-.webp.ccs-wacky .layout{background-image: url(images/2p/ccs/winter-2023/Layout_Wacky.webp);}
+.ccs-lrc .layout{
+    background-color: #4d0627;
+    background-image: url(images/2p/ccs/winter-2023/Layout_LRC.webp);
+}
 
-.ccs-lrc .layout{background-color: #4d0627;}
-.notwebp.ccs-lrc .layout{background-image: url(images/2p/ccs/winter-2023/Layout_LRC.png);}
-.webp.ccs-lrc .layout{background-image: url(images/2p/ccs/winter-2023/Layout_LRC.webp);}
+.ccs-baron-hero .layout{
+    background-color: #053505;
+    background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.webp);
+    background-image:
+        image-set(
+            url("images/2p/ccs/summer-2022/Layout-BHJ.avif") type("image/avif"),
+            url("images/2p/ccs/summer-2022/Layout-BHJ.webp") type("image/webp")
+        );
+}
 
-.ccs-baron-hero .layout{background-color: #053505;}
-.notwebp.ccs-baron-hero .layout{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.png);}
-.webp.notavif.ccs-baron-hero .layout{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.webp);}
-.avif.ccs-baron-hero .layout{background-image: url(images/2p/ccs/summer-2022/Layout-BHJ.avif);}
+.ccs-special-feature .layout{
+    background-color: #4d0627;
+    background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);
+}
 
-.ccs-special-feature .layout{background-color: #4d0627;}
-.notwebp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.png);}
-.webp.ccs-special-feature .layout{background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);}
+.eblan .layout{
+    background-color: #110b02;
+    background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);
+}
 
-.eblan .layout{background-color: #110b02;}
-.notwebp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.jpg);}
-.webp.eblan .layout{background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);}
-
-.zz6 .layout{background-color: #110b02;}
-.notwebp.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.png);}
-.webp.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.webp);}
-.avif.zz6 .layout{background-image: url(images/2p/zz6/ZZ2p_live.avif);}
+.zz6 .layout{
+    background-color: #110b02;
+    background-image: url(images/2p/zz6/ZZ2p_live.webp);    
+    background-image:
+        image-set(
+            url("images/2p/zz6/ZZ2p_live.avif") type("image/avif"),
+            url("images/2p/zz6/ZZ2p_live.webp") type("image/webp")
+        );
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -130,13 +155,19 @@
 
 .transparent-background{background-color: #0000;}
 
-.layout.black-background .player-video{background-color: #000;}
-.notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}
-.webp .layout.black-background .player-video{background-image: url(images/The-End.webp);}
+.layout.black-background .player-video{
+    background-color: #000;
+    background-image: url(images/The-End.webp);
+}
 
-.notwebp .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
-.webp.notavif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
-.avif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.avif);}
+.layout.tech-diff-background .player-video{
+    background-image: url(images/2p/TechDifficulties-RM.webp);
+    background-image:
+        image-set(
+            url("images/2p/TechDifficulties-RM.avif") type("image/avif"),
+            url("images/2p/TechDifficulties-RM.webp") type("image/webp")
+        );
+}
 
 .player-info{
     font-size: 18px;
@@ -213,10 +244,8 @@ tr-toggle-class, .in-active {
     width: 32px;
     height: 32px;
     display: block;
+    background-image: url(images/2p/ff4fe-spritesheet.webp);
 }
-
-.notwebp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.png);}
-.webp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
 
 [property="pass"] img{background-position: 25% 0;}
 [property="hook"] img{background-position: 50% 0;}
@@ -581,13 +610,7 @@ tr-timer span {
     height: 88px;
     left: 604px;
     top: 281px;
-}
-
-.webp .hero-name {
     background-image: url(images/2p/OurHero.webp);
-}
-.notwebp .hero-name {
-    background-image: url(images/2p/OurHero.png);
 }
 
 .hero-indicator {
