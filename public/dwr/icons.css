@@ -51,10 +51,8 @@
 
 .sprite-staff-with-rain {
 	background-position: 0 -32px;
+	animation: rain .25s steps(4) 8;
 }
-	[selected="selected"].sprite-staff-with-rain ~ img{
-		animation: rain .25s steps(4) 8;
-	}
 
 	@keyframes rain {
 		from{ background-position: 0 -32px;}
@@ -88,9 +86,6 @@ tr-image[property="staff"], .token-fig{
 }
 
 .sprite-bridge-transparent{
-	background-color: #0070ec;
-}
-[selected="selected"].sprite-bridge-transparent ~ img{
 	background-color: #0070ec;
 	animation: rainbow 2s 2 steps(1);
 }
