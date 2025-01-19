@@ -15,7 +15,7 @@ function playerDummyText() {
         {property: '__p1__toggle-winner', value: 1},
         {property: '__p1__toggle-speaker', value: 1},
         
-        {property: '__p2__player-name', value: 'AlbusPercivalWulfricBrianDumbledor'},
+        {property: '__p2__player-name', value: 'Therm_Scissorpunch'},
         {property: '__p2__player-pronoun', value: 'she/her'},
         {property: '__p2__player-number', value: 3},
         {property: '__p2__player-final', value: '1:23:45'},
