@@ -191,6 +191,17 @@
     background-size: cover;
 }
 
+.player-video.league-background::after{
+    content: '2025';
+    font-size: 1.4em;
+    position: absolute;
+    right: 24%;
+    bottom: 3%;
+    color: #bfbfbf;
+    text-shadow: .5px .5px #000, -.5px -.5px #000, .5px -.5px #000, -.5px .5px #000;
+    font-weight: bold;
+}
+
 .player-info{
     height: 57px;
     align-items: center;
