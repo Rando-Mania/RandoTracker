@@ -40,7 +40,10 @@
     background-color: var(--backgroundColor1);
 }
 
-.map-background{background-color: #002899;}
+.map-background{
+    background-color: #fff;
+    background-blend-mode: luminosity;
+}
 
 .notavif .map-background{
     background-image: linear-gradient(rgba(0,0,0,.4) 0 0), url('images/alefgard_crop_dark.png');
@@ -239,8 +242,18 @@ html{
 } */
 
 .player-video.league-background{
-    background-image: linear-gradient(rgb(0 0 0 / .25), rgb(0 0 0 / .25)), url(images/video-background/DWR2024_Logo.png);
+    background-image: linear-gradient(rgb(0 0 0 / .25), rgb(0 0 0 / .25)), url(images/video-background/DWR_winterleague_yearless.png);
     background-size: cover;
+}
+.player-video.league-background::after{
+    content: '2025';
+    font-size: 1em;
+    position: absolute;
+    right: 106px;
+    bottom: 9px;
+    color: #bfbfbf;
+    text-shadow: .5px .5px #000, -.5px -.5px #000, .5px -.5px #000, -.5px .5px #000;
+    font-weight: bold;
 }
 
 .player-info{
