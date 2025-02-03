@@ -75,16 +75,17 @@
     background-image: none;
 }
 
+/*
 .ccs-pink-puff .layout{
     background-color: #627079;
     background-image: url(images/2p/ccs/summer-2022/Layout-PPL.webp);
 }
-
+*/
 .ccs-shi .layout{
     background-color: #053505; 
     background-image: url(images/2p/ccs/winter-2023/Layout_SHI.webp);
 }
-
+/*
 .ccs-99 .layout{
     background-color: #2f3624;
     background-image: url(images/2p/ccs/winter-2022/Layout_99.webp);
@@ -99,17 +100,17 @@
     background-color: #000;
     background-image: url(images/2p/ccs/winter-2023/Layout_BAD.webp);
 }
-
+*/
 .ccs-ms .layout{
     background-color: #000; 
     background-image: url(images/2p/ccs/winter-2023/Layout_MS_New.webp);
 }
-
+/*
 .ccs-wacky .layout{
     background-color: #000;
     background-image: url(images/2p/ccs/winter-2023/Layout_Wacky.webp);
 }
-
+*/
 .ccs-lrc .layout{
     background-color: #4d0627;
     background-image: url(images/2p/ccs/winter-2023/Layout_LRC.webp);
@@ -129,12 +130,12 @@
     background-color: #4d0627;
     background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);
 }
-
+/*
 .eblan .layout{
     background-color: #110b02;
     background-image: url(images/2p/eblan/FF4-EEL-2P-PP-BG.webp);
 }
-
+*/
 .zz6 .layout{
     background-color: #110b02;
     background-image: url(images/2p/zz6/ZZ2p_live.webp);    
