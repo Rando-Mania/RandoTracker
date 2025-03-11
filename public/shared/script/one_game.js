@@ -1,6 +1,6 @@
 function playerDummyText() {
     Tracker.updateLayoutMultiple([
-        {property: '__p1__player-name', value: 'Yoda'},
+        {property: '__p1__player-name', value: 'Thermoculus_Krisintvolt_Scissorpunch'},
         {property: '__p1__player-pronoun', value: 'they/them'},
         {property: '__p1__player-number', value: 21},
         {property: '__p1__player-final', value: '1:23:45'},

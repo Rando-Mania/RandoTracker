@@ -15,7 +15,7 @@ function playerDummyText() {
         {property: '__p2__toggle-winner', value: 0},
         {property: '__p2__toggle-speaker', value: 1},
         
-        {property: '__p3__player-name', value: 'Therm_Scissorpunch'},
+        {property: '__p3__player-name', value: 'Thermoculus_Krisintvolt_Scissorpunch'},
         {property: '__p3__player-pronoun', value: 'he/him'},
         {property: '__p3__player-number', value: ''},
         {property: '__p3__player-final', value: '1:23:45'},
