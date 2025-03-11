@@ -351,8 +351,6 @@ tr-timer span {
 }
 
 .header{
-    background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%;
-    background: paint(cornerShape);
     --background-color: rgb(0,0,0,.3);
     --border-color: red;
     --border-width: 2px;
@@ -370,7 +368,24 @@ tr-timer span {
     font-size: 16px;
 }
 
-.production-team-swap{
+@supports not (corner-shape: bevel){
+    .header{
+        border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 26 22 fill / 26px 22px;
+        /* background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%; */
+        border-image: paint(cornerShape) 26 22 fill / 26px 22px;
+    }
+}
+
+@supports (corner-shape: bevel){
+    .header{
+        border-radius: var(--corner-size);
+        corner-shape: bevel;
+        background-color: var(--background-color);
+        border: var(--border-width) solid var(--border-color);
+    }
+}
+
+  .production-team-swap{
     display: grid;
     font-size: 17px;
     line-height: 1.15;
