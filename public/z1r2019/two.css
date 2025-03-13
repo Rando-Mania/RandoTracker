@@ -370,9 +370,9 @@ tr-timer span {
 
 @supports not (corner-shape: bevel){
     .header{
-        border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 26 22 fill / 26px 22px;
+        border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 35 30 fill / 35px 30px;
         /* background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%; */
-        border-image: paint(cornerShape) 26 22 fill / 26px 22px;
+        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
     }
 }
 
