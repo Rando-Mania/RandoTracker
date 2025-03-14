@@ -350,15 +350,38 @@ tr-timer span {
     text-align: center;
 }
 
-.header{
+.header, .production-team-swap{
+    min-height: 78px;
     --background-color: rgb(0,0,0,.3);
-    --border-color: red;
+    --border-color: #40ff00;
     --border-width: 2px;
     --corner-size: 26px / 22px;
     --corner-shape: angle;
-    text-align: center;
+}
+
+@supports (corner-shape: bevel){
+    .header, .production-team-swap{
+        border-radius: var(--corner-size);
+        corner-shape: bevel;
+        background-color: var(--background-color);
+        border: var(--border-width) solid var(--border-color);
+    }
+}
+
+@supports not (corner-shape: bevel){
+    .header, .production-team-swap{
+        border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 35 30 fill / 35px 30px;
+        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
+    }
+    .production-team-swap{
+        border-image-source: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 0, 394, 78))');
+    }
+}
+
+.header{
+    --border-color: red;
     min-width: 394px;
-    min-height: 78px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -368,40 +391,15 @@ tr-timer span {
     font-size: 16px;
 }
 
-@supports not (corner-shape: bevel){
-    .header{
-        border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 35 30 fill / 35px 30px;
-        /* background: url('images/staff-back-all.svg') no-repeat 0 50% / 100% 300%; */
-        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
-    }
-}
-
-@supports (corner-shape: bevel){
-    .header{
-        border-radius: var(--corner-size);
-        corner-shape: bevel;
-        background-color: var(--background-color);
-        border: var(--border-width) solid var(--border-color);
-    }
-}
-
-  .production-team-swap{
+.production-team-swap{
     display: grid;
     font-size: 17px;
     line-height: 1.15;
     letter-spacing: -1px;
     grid-template-columns: 1fr;
     grid-gap: 8px;
-    width: 394px;
-    min-height: 78px;
     padding: 11px 23px;
-    background: url('images/staff-back-all.svg') no-repeat 0 0 / 394px 300%;
-    background: paint(cornerShape);
-    --background-color: rgb(0,0,0,.3);
     --border-color: #40ff00;
-    --border-width: 2px;
-    --corner-size: 26px / 22px;
-    --corner-shape: angle;
 }
 
 .staff svg {

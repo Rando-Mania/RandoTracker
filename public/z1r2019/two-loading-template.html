@@ -77,13 +77,10 @@
     transform: translate(-50%,-50%); 
     top: 169px;
     left: 50%;
-    background: none;
+    border: none;
+    font-size: 1.5em;
 }
 
-.flame{
-    position: absolute;
-    animation: flicker .25s infinite steps(1);
-}
 .flame-left{
     left: 360px;
     top: 245px;
@@ -91,9 +88,6 @@
 .flame-right{
     left: 840px;
     top: 245px;
-}
-@keyframes flicker {
-    50%{transform: rotateY(180deg);}
 }
 
 .z1r-logo{
@@ -131,8 +125,8 @@ h2{
 <div class="loadscreen">
     <div class="loadscreen-main">
         <tr-text property="header" class="header"></tr-text>
-        <img class="flame flame-left" width="80" src="images/zelda-flame.png" alt="flame">
-        <img class="flame flame-right" width="80" src="images/zelda-flame.png" alt="flame">
+        <img class="flame abs flame-left" width="80" src="images/zelda-flame-animation.webp" alt="flame">
+        <img class="flame abs flame-right" width="80" src="images/zelda-flame-animation.webp" alt="flame">
         <picture>
             <source srcset="images/RandoLogo.avif" type="image/avif">
             <source srcset="images/RandoLogo.webp" type="image/webp">
