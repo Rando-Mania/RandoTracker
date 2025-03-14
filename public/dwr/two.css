@@ -863,7 +863,19 @@ figcaption{
     left: 50%;
     color: #000;
     text-shadow: 0 1px 0 rgb(255 255 255 / 50%);
-    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+@supports not (corner-shape: bevel){
+    .league h2{
+        clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    }
+}
+
+@supports (corner-shape: bevel){
+    .league h2{
+        corner-shape: bevel;
+        border-radius: 5% / 50%;
+    }
 }
 
 .league h4{

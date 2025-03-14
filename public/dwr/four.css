@@ -1128,7 +1128,19 @@ tr-timer span {
         top: -12px;
         left: 50%;
         color: #000;
-        clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    }
+
+    @supports not (corner-shape: bevel){
+        .league h2{
+            clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+        }
+    }
+
+    @supports (corner-shape: bevel){
+        .league h2{
+            corner-shape: bevel;
+            border-radius: 5% / 50%;
+        }
     }
 
     .layout [property="week-6"] li, .layout [property="week-7"] li{
