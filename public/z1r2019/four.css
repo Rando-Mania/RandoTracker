@@ -422,13 +422,6 @@ tr-timer .dot, tr-timer .ms {
     width: 414px;
     padding: 11px 28px;
     min-height: 61px;
-    background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;
-    background: paint(cornerShape);
-    --background-color: rgb(0,0,0,.3);
-    --border-color: #f0f;
-    --border-width: 2px;
-    --corner-size: 26px / 22px;
-    --corner-shape: angle;
 }
 
 .staff svg {
@@ -466,13 +459,6 @@ tr-timer .dot, tr-timer .ms {
 }
 
 .header{
-    background: url('images/staff-back-magenta.svg') no-repeat 0 0 / 100% 100%;
-    background: paint(cornerShape);
-    --background-color: rgb(0,0,0,.3);
-    --border-color: #f0f;
-    --border-width: 2px;
-    --corner-size: 26px / 22px;
-    --corner-shape: angle;
     text-align: center;
     width: 305px;
     min-height: 54px;
@@ -483,6 +469,31 @@ tr-timer .dot, tr-timer .ms {
     padding: 12px;
     line-height: 1.2  
 }
+
+.production-team-swap, .header{
+    --background-color: rgb(0,0,0,.3);
+    --border-color: #f0f;
+    --border-width: 2px;
+    --corner-size: 26px / 22px;
+    --corner-shape: angle;
+}
+
+@supports (corner-shape: bevel){
+    .header, .production-team-swap{
+        border-radius: var(--corner-size);
+        corner-shape: bevel;
+        background-color: var(--background-color);
+        border: var(--border-width) solid var(--border-color);
+    }
+}
+
+@supports not (corner-shape: bevel){
+    .header, .production-team-swap{
+        border-image: url('images/staff-back-magenta.svg') 35 30 fill / 35px 30px;
+        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
+    }
+}
+
 .header:empty{
     display: none;
 }
