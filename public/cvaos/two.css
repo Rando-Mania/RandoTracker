@@ -94,16 +94,27 @@
     height: 44px;
 	width: 377px;
 	border-bottom: none;
-	/* background: url(images/bg-player-name.png) no-repeat left; */
     --gradient-angle: 45deg;
     background-image: linear-gradient(var(--gradient-angle), #005 74%, #4264ce 89%, #0000 0);
 }
 
 [player="2"] .player-name-block{
-	/* background: url(images/bg-player-name.png) no-repeat right; */
     --gradient-angle: -45deg;
 }
 
+@supports (corner-shape: bevel){
+    .player-name-block{
+        border-bottom: none;
+        background-image: linear-gradient(var(--gradient-angle), #005 74%, #4264ce 89%);
+        border-top-right-radius: 45px;
+        corner-shape: bevel;
+    }
+
+    [player="2"] .player-name-block{
+        border-top-right-radius: 0;
+        border-top-left-radius: 45px;
+    }
+}
 
 .player-cam{
     display: none;
