@@ -87,13 +87,32 @@
     height: 48px;
 	width: 337px;
 	border-bottom: none;
-	background: url(images/bg-player-name.png) no-repeat left;
 }
 
-[player="2"] .player-name-block{
-	background: url(images/bg-player-name.png) no-repeat right;
+@supports not (corner-shape: bevel){
+    .player-name-block{
+        background: url(images/bg-player-name.png) no-repeat left;
+    }
+    [player="2"] .player-name-block{
+	    background-position: right;
+    }
 }
 
+@supports (corner-shape: bevel){
+    .player-name-block{
+        --background-angle: 45deg;
+        background: linear-gradient(var(--background-angle), #98a8c0 0 22px, #7080b0 0 28px, #5459a4 0 34px, #203088 0 40px, #0000 0) #000878 border-box;
+        border: rgba(255,255,255,.3) solid;
+        border-width: 1px 1px 1px 0;
+        corner-shape: bevel;
+        border-radius: 0 100vh 100vh 0;
+    }
+    [player="2"] .player-name-block{
+        --background-angle: -45deg;        
+        border-radius: 100vh 0 0 100vh;
+        border-width: 1px 0 1px 1px;
+    }
+}
 
 .player-cam{
     display: none;
