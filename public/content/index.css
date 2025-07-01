@@ -127,12 +127,28 @@ article.star-background{
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 75% 0 / 50% 71%;
 }
 
+@supports (corner-shape: notch){
+  [data-console="nes"]{
+    corner-shape: notch;
+    border-radius: 0 0 10% 10% / 0 0 20% 20%;
+    clip-path: none;
+  }
+}
+
 [data-console="snes"]{
   clip-path: polygon(0 0, 95% 0, 95% 15%, 100% 15%, 100% 85%, 95% 85%, 95% 100%, 0 100%);
   background: 
   repeating-linear-gradient(to right, #0000 0 10%, var(--back-sec) 10% 12%) no-repeat 0 0 / 100% 15%,
   repeating-linear-gradient(to right, #0000 0 10%, var(--back-sec) 10% 12%) no-repeat 0 100% / 100% 15%,
   linear-gradient(to right, var(--back-sec) 0 45%, #0000 45% 55%, var(--back-sec) 55% 100%) no-repeat 50% 50% / 100% 65%;
+}
+
+@supports (corner-shape: notch){
+  [data-console="snes"]{
+    corner-shape: notch;
+    border-radius: 0 5% 5% 0 / 0 15% 15% 0;
+    clip-path: none;
+  }
 }
 
 [data-console="gb"]{
@@ -142,10 +158,26 @@ article.star-background{
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 75% / 75% 60%;
 }
 
+@supports (corner-shape: notch){
+  [data-console="gb"]{
+    corner-shape: notch;
+    border-top-right-radius: 10% 5%;
+    clip-path: none;
+  }
+}
+
 [data-console="gba"]{
   clip-path: polygon(0 5%, 90% 5%, 90% 0, 100% 0, 100% 100%, 90% 100%, 90% 90%, 0 90%);
   background:
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 50% / 80% 80%;
+}
+
+@supports (corner-shape: notch){
+  [data-console="gba"]{
+    corner-shape: notch;
+    border-radius: 90% 0 0 90% / 5% 0 0 10%;
+    clip-path: none;
+  }
 }
 
 [data-console="n64"]{
