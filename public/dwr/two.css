@@ -169,7 +169,7 @@
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
 .layout:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2024';
+    content: '2025';
     font-size: 2.5em;
     position: absolute;
     bottom: 15px;
@@ -301,7 +301,7 @@
     width: max-content;
     border: double 8px;
     border-image: url('images/winner-border-small.png') repeat 8 / 8px;
-    xborder-image: paint(dq9Stamp) 8 / 8px;
+    border-image: paint(dq9Stamp) 8 / 8px;
     --border-color: #fc9838;
     padding: 7px 8px 3px;
     font-size: 1.25em;
@@ -799,8 +799,7 @@ figcaption{
 	background-color: #000;
 	color: #fff;
     border: 2px solid;
-    border-image: url('images/dw-border.png') 4 / 4px;
-    xborder-image: paint(dw2Border) 4 / 4px;
+    border-image: url('images/dw-border.svg') 4 / 4px;
 	-webkit-mask-image: url('images/monsters/dw-spiral.png');
     mask-image: url('images/monsters/dw-spiral.png');
 	-webkit-mask-size: calc(576px * 27) 182px;
@@ -829,8 +828,6 @@ figcaption{
     border: none;
     background-color: #000000BD;
     border: #fff 2px solid;
-    border-image: url('images/dw-border.png') 4 / 4px;
-    xborder-image: paint(dw1Border) 4 / 4px;
     border-image: linear-gradient(#f88019, #0000 50%) 1 / 1px;
     image-rendering: pixelated;
     bottom: 0px;

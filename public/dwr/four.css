@@ -213,7 +213,7 @@ html{
 } */
 
 .background-layer:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2024';
+    content: '2025';
     font-size: 1.7em;
     position: absolute;
     left: 166px;
@@ -790,7 +790,7 @@ tr-timer span {
         padding: 2em 1em 1em;
         background-color: #000;
         color: #fff;
-        background-image: paint(dw1Border);
+        border-image: url('images/dw-border.svg') 4 / 4px;
         -webkit-mask-image: url('images/monsters/dw-spiral.png');
         mask-image: url('images/monsters/dw-spiral.png');
         -webkit-mask-size: calc(286px * 27) 474.19px;
@@ -1104,6 +1104,7 @@ tr-timer span {
         padding: 1em 1em .25em;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         border: none;
+        border-image: linear-gradient(#f88019, #0000 50%) 1 / 1px;
         background-color: rgba(0,0,0,.75);
         bottom: 22%;
         left: 50%;
