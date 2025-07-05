@@ -124,7 +124,8 @@
 
 
 .rm-marathon .layout{
-    background-image: url(../rm2/images/stars-background.jpg);
+    background-image: url(../rm/images/stars-background.jpg);
+    background-blend-mode: normal;
     --pink: #ac0082;
     --blue: #088fae;
     --purple: #280642;
@@ -149,7 +150,7 @@
     border-image: url(images/winner-border-white.png) repeat 8 / 8px;
 }
 .rm-marathon .background-style-1{
-    background-image: url(../rm2/images/stars-background.jpg);
+    background-image: url(../rm/images/stars-background.jpg);
     border: solid 1px #6d3793;
     border-image: linear-gradient(#7f278e, #6d3793) 1;
     border-radius: 0;
@@ -159,10 +160,10 @@
     border-image: linear-gradient(#7f278e, #6d3793) 1;
 }
 .rm-marathon .background-1{
-    background-image: url(../rm2/images/stars-background.jpg);
+    background-image: url(../rm/images/stars-background.jpg);
 }
-.rm-marathon .background-color-1{
-    background-image: url(../rm2/images/stars-background.jpg);
+.rm-marathon .background-color-1, .rm-marathon .spells{
+    background-image: url(../rm/images/stars-background.jpg) !important;
 }
 
 
