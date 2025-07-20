@@ -491,6 +491,13 @@ tr-image, figure{position: relative;}
     color: #fff;
     height: 202px;
     pointer-events: none;
+    --gridY2: 74px;
+}
+
+.stats, .spells{
+    background-image: url(images/dw9-noise.png);
+    border: solid 1px rgb(0 0 0 / .75);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 25%);
 }
 
 .stat-bottom {
@@ -520,7 +527,6 @@ tr-image, figure{position: relative;}
     user-select: none;
     display: grid;
     align-items: center;
-    box-shadow: 2px 0 2px -3px #fff, -2px 0 2px -3px #fff;
     z-index: 2; /* To show above league flags */
 }
 
@@ -589,7 +595,6 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 .stats {
     font-size: 13px;
     margin-right: 2px;
-    box-shadow: 2px 0 2px -3px #fff, -2px 0 2px -3px #fff;
     z-index: 2; /* To show above league flags */
 }
 .stats table{height: 100%; margin: 0 auto;}
