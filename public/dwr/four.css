@@ -267,7 +267,9 @@ html{
     grid-template-columns: min-content auto;
     z-index: 3;
     background-image: url(images/dw9-noise.png);
+    backdrop-filter: blur(4px);
     background-size: 512px auto;
+    background-color: transparent;
     image-rendering: pixelated;
 }
 
@@ -429,14 +431,23 @@ html{
     width: min-content;
     z-index: -1;
     --background-highlight: rgb(255 255 255/ .075);
+    background: url(images/dw9-noise.png) 0 0 / 512px auto var(--backgroundColor1);
+    image-rendering: pixelated;
+    isolation: isolate;
+}
+
+.player-grid:after{
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
     background:
-        url(images/dw9-noise.png) 0 0 / 512px auto,
         radial-gradient(circle at 50% 21%, var(--background-highlight) 18.5%, #0000 0),
         linear-gradient(var(--background-highlight) 0 0) no-repeat 50% 103px / 92px 27px,
-        linear-gradient(var(--background-highlight) 0 0) no-repeat 50% 152px / 92px 56px
-        var(--backgroundColor1);
-        image-rendering: pixelated;
+        linear-gradient(var(--background-highlight) 0 0) no-repeat 50% 152px / 92px 52px;
 }
+
 
 [player="2"] .player-grid, [player="4"] .player-grid{
     justify-self: end;
@@ -498,20 +509,25 @@ tr-image, figure{position: relative;}
 .stats, .spells{
     border: solid 1px rgb(0 0 0 / .75);
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 25%);
+    background: url(images/dw9-noise.png) 0 0 / 512px auto var(--backgroundColor1);
+    position: relative;
+    isolation: isolate;
 }
 
-.stats{
-    background:
-        url(images/dw9-noise.png) 0 0 / 512px auto,
-        repeating-linear-gradient(var(--background-highlight) 0 2.55em, #0000 0 4.4em) no-repeat center 40px / 80% 150px,
-        var(--backgroundColor1);
+.stats:after, .spells:after{
+    content: '';
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.spells{
-    background:
-        url(images/dw9-noise.png) 0 0 / 512px auto,
-        repeating-linear-gradient(var(--background-highlight) 0 1.8em, #0000 0 3em) no-repeat center 10px / 74% 200px,
-        var(--backgroundColor1)
+.stats:after{
+    background: repeating-linear-gradient(var(--background-highlight) 0 2.55em, #0000 0 4.4em) no-repeat center 40px / 80% 150px;
+}
+
+.spells:after{
+    background: repeating-linear-gradient(var(--background-highlight) 0 1.75em, #0000 0 6em) no-repeat center 10px / 74% 200px;
 }
 
 .stat-bottom {
