@@ -16,7 +16,7 @@
     --videoX: -2px; --videoY: -2px;
     --nameWidth: 257px;
     --nameX: 436px; --nameY1: -2px; --nameY2: 276px;
-    --gridX: 436px; --gridY: 46px; --gridY2: 59px;
+    --gridX: 436px; --gridY: 46px; --gridY2: 62px;
     --speakerX1: 722px; --speakerX2: 439px; --speakerY1: 4px; --speakerY2: 284px;
     --finalX: 579px; --finalY: 40px; --finalY2: 252px;
     --vsX: 50%; --vsY: 150px;
@@ -432,8 +432,8 @@ html{
     background:
         url(images/dw9-noise.png) 0 0 / 512px auto,
         radial-gradient(circle at 50% 21%, var(--background-highlight) 18.5%, #0000 0),
-        linear-gradient(var(--background-highlight), var(--background-highlight)) no-repeat 50% 103px / 92px 27px,
-        linear-gradient(var(--background-highlight), var(--background-highlight)) no-repeat 50% 152px / 92px 56px
+        linear-gradient(var(--background-highlight) 0 0) no-repeat 50% 103px / 92px 27px,
+        linear-gradient(var(--background-highlight) 0 0) no-repeat 50% 152px / 92px 56px
         var(--backgroundColor1);
         image-rendering: pixelated;
 }
@@ -491,13 +491,27 @@ tr-image, figure{position: relative;}
     color: #fff;
     height: 202px;
     pointer-events: none;
-    --gridY2: 74px;
+    --gridY2: 76px;
+    --background-highlight: rgb(255 255 255/ .075);
 }
 
 .stats, .spells{
-    background-image: url(images/dw9-noise.png);
     border: solid 1px rgb(0 0 0 / .75);
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 25%);
+}
+
+.stats{
+    background:
+        url(images/dw9-noise.png) 0 0 / 512px auto,
+        repeating-linear-gradient(var(--background-highlight) 0 2.55em, #0000 0 4.4em) no-repeat center 40px / 80% 150px,
+        var(--backgroundColor1);
+}
+
+.spells{
+    background:
+        url(images/dw9-noise.png) 0 0 / 512px auto,
+        repeating-linear-gradient(var(--background-highlight) 0 1.8em, #0000 0 3em) no-repeat center 10px / 74% 200px,
+        var(--backgroundColor1)
 }
 
 .stat-bottom {
@@ -594,7 +608,7 @@ tr-toggle-class[property="repel"].spell-highlight:after{
 
 .stats {
     font-size: 13px;
-    margin-right: 2px;
+    margin-right: -2px;
     z-index: 2; /* To show above league flags */
 }
 .stats table{height: 100%; margin: 0 auto;}
