@@ -1,6 +1,6 @@
 :root{
 
-    --vidWidth: 641px;
+    --vidWidth: 636px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
@@ -104,7 +104,6 @@
 }
 
 .player-video{
-    border: solid 2px;
     grid-column: span 2;
     display: flex;
     justify-content: center;
@@ -623,7 +622,7 @@ td:nth-of-type(2){
 }
 
         .border-1{
-            border: var(--border-1);
+            outline: var(--border-1);
         }
     
 
