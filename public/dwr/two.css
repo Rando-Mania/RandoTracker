@@ -5,7 +5,7 @@
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --border-1: var(--border) solid rgba(255,255,255,.8);
-    --background-color-1: #001018;
+    --background-color-1: #000;
     --background-color-2: rgba(0,0,0,1);
     line-height: 1;
 
@@ -224,7 +224,7 @@
     overflow: hidden;
     --player1-dl2-count: -100%;
 }
-.player-info:after{
+/* .player-info:after{
     content: '';
     position: absolute;
     top: 0;
@@ -235,7 +235,7 @@
     transition: transform .5s;
     z-index: -1;
     transform: translateX(var(--player1-dl2-count));
-}
+} */
 
 .player-rank{
     font-family: Arial, Helvetica, sans-serif;
@@ -629,19 +629,32 @@ td:nth-of-type(2){
     line-height: 1;
     padding: 4px 8px;
     user-select: none;
-    height: 184px;
     display: grid;
     align-items: center;
     pointer-events: none;
     position: relative;
+    z-index: 10;
 }
 
 [player="2"] .spells{
     text-align: right;
 }
 
+.stats, .spells{
+    height: 184px;
+}
+
 .stats{
+    font-size: 14px;
     position: relative;
+}
+
+.stats table td{
+    padding-top: 4px;
+}
+
+.stats table tr:not(:first-of-type) td{
+    padding-top: 10px;
 }
 
 .stats:after, .spells:after{
@@ -653,7 +666,7 @@ td:nth-of-type(2){
 }
 
 .stats:after{
-    background: repeating-linear-gradient(var(--background-highlight) 0 2.3em, #0000 0 6em) no-repeat center 40px / 84% 150px;
+    background: repeating-linear-gradient(var(--background-highlight) 0 2.4em, #0000 0 7.4em) no-repeat center 36px / 84% 150px;
 }
 
 .spells:after{
@@ -782,14 +795,14 @@ tr-timer{
 [property="hurt+"].active:after{
     content: '';
     bottom: -5px;
-    left: 46px;
+    left: 20px;
     width: calc(270px / 9);
     height: 44px;
     position: absolute;
     background-image: url('images/fireball-frames.png');
     background-position: 0 0;
     animation: fireball 1s steps(9);
-    transform: scale(4.5);
+    transform: scale(4);
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     transform-origin: 50% 100%;
