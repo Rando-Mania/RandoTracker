@@ -95,9 +95,8 @@
 
 .cd-default{
     background-color: #001880;
+    background-image: url(images/2p/base-background.webp);
 }
-.notwebp .cd-default{background-image: url(images/2p/base-background.png);}
-.webp .cd-default{background-image: url(images/2p/base-background.webp);}
 
 .player-name{
     font-size: 26px;
@@ -226,16 +225,20 @@
 
 tr-timer{
 	width: 280px;
-    height: 90px;
+    height: 74px;
     z-index: 1;
 	font-size: 24px;
-	top: 625px; 
+	top: 634px; 
 	left: 705px;
 }
 
 tr-timer span {
-    width: 26px;
+    width: 20px;
     text-align: center;
+}
+
+.dot, .ms{
+    display: none;
 }
 
 .production-team-swap{
@@ -245,10 +248,10 @@ tr-timer span {
 
 .staff{
     overflow: hidden;
-    font-size: 24px;
+    font-size: 18px;
     width: 410px;
-    height: 90px;
-	top: 625px; 
+    height: 74px;
+	top: 634px; 
 	left: 290px; 
     text-align: center;
 }
