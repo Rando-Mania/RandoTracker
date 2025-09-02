@@ -24,7 +24,7 @@
     --timerX: 169px; --timerY: 529px;
     
     --border: 2px;
-    --borderImage: url(images/ff4-border.png) 3 / 3px / 1px;
+    --borderImage: url(images/ff4-border-inner-corners.svg) 4 / 4px / 2px;
 
     --zemusTextColor: #dfd2b4;
 
@@ -141,6 +141,11 @@
 .ccs-special-feature .layout{
     background-color: #4d0627;
     background-image: url(images/2p/ccs/CCS-BG-SpecialFeature.webp);
+}
+
+.community-open .layout{
+    background-color: #006a02;
+    background-image: url(images/2p/community-race/Community_Race_Live_BG.webp);
 }
 /*
 .eblan .layout{

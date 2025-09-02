@@ -111,6 +111,53 @@
     display: block;
 }
 
+.footer-flags{
+    border-image: url(images/ff4-border.svg) 3 / 6px / 3px;
+    image-rendering: pixelated;
+    width: 676px;
+    height: 165px;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px;
+}
+@supports (corner-shape:notch) {
+    .footer-flags{
+        border-image: none;
+        border: #F2F2F5 solid 2px;
+        box-shadow: inset 0 0 0 2px #737373, 0 0 0 2px #737373;
+        border-radius: 2px;
+        corner-shape: notch;
+    }
+}
+
+.loadscreen .footer-flags, .loadscreen .footer-staff-players{
+    text-align: left;
+    margin-bottom: .25em;
+    padding: .5em;
+}
+
+.loadscreen .footer-flags h2, .loadscreen .footer-staff-players h2{
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-weight: normal;
+    text-shadow: 3px 3px 0 #67009b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.loadscreen .flags{
+    margin: .5em 0;
+}
+
+.loadscreen .flags, .loadscreen .flags-full{
+    white-space: normal;
+    text-align: center;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 /* Community Club Showcase */
 
 [class*="ccs-"] .loadscreen .header{
@@ -222,6 +269,13 @@
     background-image: url('images/2p/ccs/Loading_SF.webp'), var(--ccs-load-fallback);
 }
 
+.community-open .loadscreen{
+    background-color: #006a02;
+    background-image: url('images/2p/community-race/Community_Race_Open_and_Close_Edit.webp');
+    /* background-image: url('images/2p/community-race/Community_Race_Open_and_Close.webp'); */
+    background-size: 1280px 720px;
+}
+
 .zz6 .loadscreen{
     background-color: #00012f;
     background-image: url('images/2p/zz6/zz2p_loading.webp');
@@ -307,5 +361,10 @@
             <p class="best-of-7">Best of 7</p>
         </div> -->
         <tr-text class="round abs" property="tourney-round"></tr-text>
+        <div class="footer-flags abs border-background-1">
+            <h2>Feature Flags</h2>
+            <tr-text class="flags" property="flags"></tr-text>
+            <tr-text class="flags" property="flags-full"></tr-text>
+        </div>
     </div>
 </div>
