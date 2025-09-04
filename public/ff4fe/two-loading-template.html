@@ -73,7 +73,7 @@
     justify-content: flex-end;
 }
 
-.loadscreen .final-winner-contain{bottom: 213px;}
+.loadscreen .final-winner-contain{bottom: 213px; z-index: 5;}
 .loadscreen [player="1"] .final-winner-contain{left: 140px;}
 .loadscreen [player="2"] .final-winner-contain{right: 140px;}
 
@@ -92,6 +92,7 @@
     top: 435px;
     transform: translateX(-50%); 
     left: 50%;
+    z-index: 5;
 }
 
 .recap-contain{
@@ -111,15 +112,20 @@
     display: block;
 }
 
-.footer-flags{
+.loadscreen .footer-flags{
+    display: none;
+}
+
+.community-open .loadscreen .footer-flags{
+    display: block;
     border-image: url(images/ff4-border.svg) 3 / 6px / 3px;
     image-rendering: pixelated;
-    width: 676px;
-    height: 165px;
-    bottom: 14px;
+    min-width: 676px;
+    min-height: 165px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    padding: 16px;
+    padding: 8px;
 }
 @supports (corner-shape:notch) {
     .footer-flags{
