@@ -64,16 +64,20 @@ tr-timer:nth-of-type(4), [player="4"] {--player-color: #00bfff;}
     position: relative;
     font-size: 18px;
     background-color: #fedaab;
+    background-image: url('images/4p-layout.webp');
+    background-image: image-set(
+        "images/4p-layout.avif" type("image/avif"),
+        "images/4p-layout.webp" type("image/webp")
+    );
 }
 
-.notwebp.notavif .layout{background-image: url('images/4p-layout.png');}
-.webp.notavif .layout{background-image: url('images/4p-layout.webp');}
-.avif .layout{background-image: url('images/4p-layout.avif');}
-
-
-.hide-p4.notwebp.notavif .layout{background-image: url('images/4p-layout-no-3p.png');}
-.hide-p4.webp.notavif .layout{background-image: url('images/4p-layout-no-3p.webp');}
-.hide-p4.avif .layout{background-image: url('images/4p-layout-no-3p.avif');}
+.hide-p4 .layout{
+    background-image: url('images/4p-layout-no-3p.webp');
+    background-image: image-set(
+        "images/4p-layout-no-3p.avif" type("image/avif"),
+        "images/4p-layout-no-3p.webp" type("image/webp")
+    );
+}
 
 /* override global 4p mask for non symmetrical layout */
 
@@ -490,7 +494,6 @@ tr-timer .dot, tr-timer .ms {
 @supports not (corner-shape: bevel){
     .header, .production-team-swap{
         border-image: url('images/staff-back-magenta.svg') 35 30 fill / 35px 30px;
-        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
     }
 }
 

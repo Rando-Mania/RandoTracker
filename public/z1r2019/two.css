@@ -62,11 +62,12 @@ tr-timer:nth-of-type(2), [player="2"] {--player-color: #f00;}
     font-size: 19px;
     letter-spacing: 2px;
     background-color: #fddaa8;
+    background-image: url('images/all-backgrounds-2.webp');
+    background-image: image-set(
+        "images/all-backgrounds-2.avif" type("image/avif"),
+        "images/all-backgrounds-2.webp" type("image/webp")
+    );
 }
-
-.notwebp.notavif .layout{background-image: url('images/all-backgrounds-2.png');}
-.webp.notavif .layout{background-image: url('images/all-backgrounds-2.webp');}
-.avif .layout{background-image: url('images/all-backgrounds-2.avif');}
 
 .player-video{
     width: var(--vidWidth);
@@ -371,7 +372,6 @@ tr-timer span {
 @supports not (corner-shape: bevel){
     .header, .production-team-swap{
         border-image: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 78, 394, 78))') 35 30 fill / 35px 30px;
-        border-image: paint(cornerShape) 35 30 fill / 35px 30px;
     }
     .production-team-swap{
         border-image-source: url('images/staff-back-all-for-viewbox.svg#svgView(viewBox(0, 0, 394, 78))');
