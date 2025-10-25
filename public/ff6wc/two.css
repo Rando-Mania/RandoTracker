@@ -95,34 +95,15 @@
         "i1 t  t  i2";
 }
 
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .default.notwebp .layout{
-        background-image: var(--background-overlay), url('images/barron_falls_background.jpg'), var(--background-fallback);}
-    .default.webp .layout{
-        background-image: var(--background-overlay), url('images/barron_falls_background.webp'), var(--background-fallback);}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .default .layout{
-        background-image:
-            var(--background-overlay),
-            image-set(
-                "images/barron_falls_background.webp" type("image/webp"),
-                "images/barron_falls_background.jpg" type("image/jpg")), 
-            var(--background-fallback);
-    }
-}
 
 .default .layout{
+    background-image: var(--background-overlay), url('images/barron_falls_background.webp'), var(--background-fallback);
     --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
 }
 
-/* linear-gradient(#36172f,#e6b24a 41%, #8f6752 41%),
-linear-gradient(#b6cbe7, #fffafe 41%, #3e615b 41%) */
-
 .draft .layout{
     background-color: #181820;
-    background-image: url('images/clouds.png');
+    background-image: url('images/clouds.webp');
     background-position: 0 -460px;
 }
 
@@ -174,18 +155,12 @@ linear-gradient(#b6cbe7, #fffafe 41%, #3e615b 41%) */
     image-rendering: initial;
 }
 
-@supports not (background: image-set("" type("")) ){
-    .notavif .layout.black-background .player-video{background-image: url(images/wc_logo.png);}
-    .avif .layout.black-background .player-video{background-image: url(images/wc_logo.avif);}
-}
-
-@supports (background: image-set("" type("")) ){
-    .layout.black-background .player-video{
-        background-image: image-set(
-            "images/wc_logo.avif" type("image/avif"),
-            "images/wc_logo.png" type("image/png")
-        );
-    }
+.layout.black-background .player-video{
+    background-image: url(images/wc_logo.png);
+    background-image: image-set(
+        "images/wc_logo.avif" type("image/avif"),
+        "images/wc_logo.png" type("image/png")
+    );
 }
 
 .player-info-contain{
@@ -314,21 +289,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     background-repeat: no-repeat;
     background-size: 500% 500%;
 }
-
-@supports not (background: image-set("foo.avif" type("image/avif")) ){
-    .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
-    .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    [property^="character"] img, [property="starting-character"] img, .dialog img{
-        background-image: image-set(
-            "images/characters.webp" type("image/webp"),
-            "images/characters.png" type("image/png")
-        );
-    }
-}
-
+[property^="character"] img, [property="starting-character"] img, .dialog img{background-image: url(images/characters.webp);}
 
 [property="starting-character"] img{
     z-index: -1;
@@ -387,8 +348,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     place-self: center;
 }
 
-.notwebp .player-grid .icon {background-image: url(images/characters.png);}
-.webp .player-grid .icon{background-image: url(images/characters.webp);}
+.player-grid .icon{background-image: url(images/characters.webp);}
 
 .player-grid-counters .icon-slot {
     align-self: center;
@@ -576,9 +536,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
     grid-area: ps;
     padding: 4px;
     place-self: center;
-    background-color: #000;
     border-radius: 6px;
-    mix-blend-mode: multiply;
 }
 
 [player="1"] .player-speaker{left: 100%;}
@@ -717,7 +675,13 @@ tr-timer span {
     --gap-size: 0;
     background-image: 
         linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), 
-        url('images/2p/coliseum-mobile.jpg'), 
+        url('images/2p/coliseum-mobile.webp'), 
+        linear-gradient(#b1995b, #b1995b);
+    background-image: 
+        linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), 
+        image-set(
+            "images/2p/coliseum-mobile.avif" type("image/avif"),
+            "images/2p/coliseum-mobile.webp" type("image/webp")), 
         linear-gradient(#b1995b, #b1995b);
 }
 
