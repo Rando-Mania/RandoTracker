@@ -14,10 +14,15 @@
         }
         .tracker-layout{
             font-family: 'FF6', Arial, sans-serif;
-            background-color: #000;
-            --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
-            --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
-            background-image: var(--background-fallback);
+            background-color: #eeb168;
+            background: conic-gradient(from 68deg, #82a0b8, #b3bab7 180deg, #eeb168 180deg, #871f2e 58%);
+            background: linear-gradient(rgba(0, 0, 0, .25) 0 0), url(images/ff6wcrestreambg2.jpg) center / 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, .25) 0 0), 
+                image-set(
+                    "images/ff6wcrestreambg2.avif" type("image/avif"), 
+                    "images/ff6wcrestreambg2.jpg" type("image/jpg")) 
+                center / 100%;
             color: #fff;
             display: grid;
             grid-template-columns: repeat(3, auto);
@@ -27,17 +32,8 @@
             width: -moz-max-content;
             width: -webkit-max-content;
             width: max-content;
-            background-position: center center;
-            background-size: 100%;
         }
 
-        .notwebp .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.jpg'), var(--background-fallback);}
-        .webp.notavif .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.webp'), var(--background-fallback);}
-        .avif .tracker-layout{
-            background-image: linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)), url('images/ff6wcrestreambg2.avif'), var(--background-fallback);}
-        
         .tracker-layout .player-wrapper > *~*{
             margin-top: 8px;
         }
@@ -84,7 +80,7 @@
             gap: .75em;
         }
         .tracker-layout .player-wrapper [type="number"] {
-            width: 1.75rem;
+            width: 2.2rem;
         }
         .tracker-layout .player-wrapper [type="number"]:hover {
             transform: scale(1.25);
@@ -438,7 +434,6 @@
 
     <tr-template href="../shared/four-menus-contain.html"></tr-template>
 
-    <script src="../shared/script/imgsupport.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-database-compat.js"></script>
