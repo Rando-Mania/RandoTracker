@@ -73,7 +73,6 @@
 .logo{
     padding: 8px;
     background-color: #ffff80;
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
     background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
     width: 301px;
     height: 121px;
@@ -358,14 +357,9 @@ tr-timer span {
 .paper-insert{
     background-color: #ffff80;  
     box-shadow: inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), 0 5px 8px -5px rgba(0,0,0,.75), 0-5px 8px -5px rgba(0,0,0,.75);
-}
-
-.notwebp .paper-insert{
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
-}
-.webp .paper-insert{
     background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
 }
+
 .timer-staff-grid{
     height: 216px;
     display: flex;

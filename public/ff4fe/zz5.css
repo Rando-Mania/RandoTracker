@@ -70,21 +70,25 @@
 
 .layout.trans{background-color: #0000; background-image: none;}
 
-.layout.blue-moon-waxing {background-color: #008ad8;}
-.notwebp .layout.blue-moon-waxing {background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
-.webp .layout.blue-moon-waxing{background-image: url(images/2p/zz5/BlueWaxing-Live.webp);}
+.layout.blue-moon-waxing {
+    background-color: #008ad8;
+    background-image: url(images/2p/zz5/BlueWaxing-Live.webp);
+}
 
-.layout.blue-moon-waning {background-color: #03258d;}
-.notwebp .layout.blue-moon-waning{background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
-.webp .layout.blue-moon-waning{background-image: url(images/2p/zz5/BlueWaning-Live.webp);}
+.layout.blue-moon-waning {
+    background-color: #03258d;
+    background-image: url(images/2p/zz5/BlueWaning-Live.webp);
+}
 
-.layout.red-moon-waxing {background-color: #ee464b;}
-.notwep .layout.red-moon-waxing{background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
-.webp .layout.red-moon-waxing{background-image: url(images/2p/zz5/RedWaxing-Live.webp);}
+.layout.red-moon-waxing {
+    background-color: #ee464b;
+    background-image: url(images/2p/zz5/RedWaxing-Live.webp);
+}
 
-.layout.red-moon-waning {background-color: #880100;}
-.notwep .layout.red-moon-waning{background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
-.webp .layout.red-moon-waning{background-image: url(images/2p/zz5/RedWaning-Live.webp);}
+.layout.red-moon-waning {
+    background-color: #880100;
+    background-image: url(images/2p/zz5/RedWaning-Live.webp);
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -96,13 +100,19 @@
 
 .transparent-background{background-color: #0000;}
 
-.layout.black-background .player-video{background-color: #000;}
-.notwebp .layout.black-background .player-video{background-image: url(images/The-End.png);}
-.webp .layout.black-background .player-video{background-image: url(images/The-End.webp);}
+.layout.black-background .player-video{
+    background-color: #000;
+    background-image: url(images/The-End.webp);
+}
 
-.notwebp .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.jpg);}
-.webp.notavif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.webp);}
-.avif .layout.tech-diff-background .player-video{background-image: url(images/2p/TechDifficulties-RM.avif);}
+.layout.tech-diff-background .player-video{
+    background-image: url(images/2p/TechDifficulties-RM.webp);
+    background-image: 
+        image-set(
+            url("images/2p/TechDifficulties-RM.avif") type("image/avif"),
+            url("images/2p/TechDifficulties-RM.webp") type("image/webp")
+        );
+}
 
 .player-info{
     font-size: 18px;
@@ -184,8 +194,7 @@ tr-toggle-class, .in-active {
     display: block;
 }
 
-.notwebp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.png);}
-.webp .player-grid img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
+.player-grid img{background-image: url(images/2p/ff4fe-spritesheet.webp);}
 
 [property="pass"] img{background-position: 25% 0;}
 [property="hook"] img{background-position: 50% 0;}
@@ -256,8 +265,15 @@ tr-toggle-class, .in-active {
     background-size: 600% 600%;
     image-rendering: pixelated;
 }
-.webp .notavif .boss-options{background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.webp);}
-.avif .boss-options{background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.avif);}
+
+.boss-options{
+    background-image: url(images/2p/zz5/SpriteSheet-FF4Bosses.webp);
+    background-image: 
+        image-set(
+            url("images/2p/zz5/SpriteSheet-FF4Bosses.avif") type("image/avif"),
+            url("images/2p/zz5/SpriteSheet-FF4Bosses.webp") type("image/webp")
+        );
+}
 
 tr-image.boss-options img{
     width: 89px;
@@ -421,17 +437,11 @@ tr-image.boss-options img{
 [player="1"] .player-winner{background-position: -169px -586px;}
 [player="2"] .player-winner{background-position: right -169px top -586px;}
 
-.notwebp .blue-moon-waxing .player-winner{background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
-.webp .blue-moon-waxing .player-winner{background-image: url(images/2p/zz5/BlueWaxing-Live.webp);}
+.blue-moon-waxing .player-winner{background-image: url(images/2p/zz5/BlueWaxing-Live.webp);}
+.blue-moon-waning .player-winner{background-image: url(images/2p/zz5/BlueWaning-Live.webp);}
 
-.notwebp .blue-moon-waning .player-winner{background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
-.webp .blue-moon-waning .player-winner{background-image: url(images/2p/zz5/BlueWaning-Live.webp);}
-
-.notwebp .red-moon-waxing .player-winner{background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
-.webp .red-moon-waxing .player-winner{background-image: url(images/2p/zz5/RedWaxing-Live.webp);}
-
-.notwebp .red-moon-waning .player-winner{background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
-.webp .red-moon-waning .player-winner{background-image: url(images/2p/zz5/RedWaning-Live.webp);}
+.red-moon-waxing .player-winner{background-image: url(images/2p/zz5/RedWaxing-Live.webp);}
+.red-moon-waning .player-winner{background-image: url(images/2p/zz5/RedWaning-Live.webp);}
 
 .player-boss-count{
     width: 216px;
@@ -514,17 +524,11 @@ tr-timer, .player-final{
 [player="1"] .player-final{background-position: -169px -529px;}
 [player="2"] .player-final{background-position: right -169px top -529px;}
 
-.notwebp .blue-moon-waxing .player-final{background-image: url(images/2p/zz5/BlueWaxing-Live.jpg);}
-.webp .blue-moon-waxing .player-final{background-image: url(images/2p/zz5/BlueWaxing-Live.webp);}
+.blue-moon-waxing .player-final{background-image: url(images/2p/zz5/BlueWaxing-Live.webp);}
+.blue-moon-waning .player-final{background-image: url(images/2p/zz5/BlueWaning-Live.webp);}
 
-.notwebp .blue-moon-waning .player-final{background-image: url(images/2p/zz5/BlueWaning-Live.jpg);}
-.webp .blue-moon-waning .player-final{background-image: url(images/2p/zz5/BlueWaning-Live.webp);}
-
-.notwebp .red-moon-waxing .player-final{background-image: url(images/2p/zz5/RedWaxing-Live.jpg);}
-.webp .red-moon-waxing .player-final{background-image: url(images/2p/zz5/RedWaxing-Live.webp);}
-
-.notwebp .red-moon-waning .player-final{background-image: url(images/2p/zz5/RedWaning-Live.jpg);}
-.webp .red-moon-waning .player-final{background-image: url(images/2p/zz5/RedWaning-Live.webp);}
+.red-moon-waxing .player-final{background-image: url(images/2p/zz5/RedWaxing-Live.webp);}
+.red-moon-waning .player-final{background-image: url(images/2p/zz5/RedWaning-Live.webp);}
 
 tr-timer span {
     width: 29px;
@@ -665,13 +669,7 @@ tr-timer span {
     height: 88px;
     left: 604px;
     top: 281px;
-}
-
-.webp .hero-name {
     background-image: url(images/2p/OurHero.webp);
-}
-.notwebp .hero-name {
-    background-image: url(images/2p/OurHero.png);
 }
 
 .hero-indicator {

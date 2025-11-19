@@ -588,10 +588,7 @@ tr-timer span {
     display: initial;
 }
 
-/*.notwebp [class*="zz4-"] .hero-indicator {
-    background-image: url('images/2p/zz4/HeroSheet-zz4.png');
-}
-.webp [class*="zz4-"] .hero-indicator {
+/*[class*="zz4-"] .hero-indicator {
     background-image: url('images/2p/zz4/HeroSheet-zz4.webp');
 }*/
 

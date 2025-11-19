@@ -85,8 +85,7 @@
     mask-composite: exclude;
 }
 
-.notwebp .cd-default .background-layer{background-image: url('images/bingo/base-background.png');}
-.webp .cd-default .background-layer{background-image: url('images/bingo/base-background.webp');}
+.cd-default .background-layer{background-image: url('images/bingo/base-background.webp');}
 
 .player-video{
     width: var(--vidWidth);
@@ -159,9 +158,8 @@
 
 .player-grid img, .dialog img{
     background-size: 600% 400%;
+    background-image: url('images/retro_tracker/items-sprite-2020.webp');
 }
-.notwebp .player-grid img, .notwebp .dialog img{background-image: url('images/retro_tracker/items-sprite-2020.png');}
-.webp .player-grid img, .webp .dialog img{background-image: url('images/retro_tracker/items-sprite-2020.webp');}
 
 .bingo-option img, .dialog[id$="bingo-color"] img{
     background-image: url('images/bingo/bingo-icons.png');

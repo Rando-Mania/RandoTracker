@@ -225,17 +225,11 @@
   width: 34px;
   height: 34px;
   display: block;
+  background-image: url(images/icons/super-metroid-icons.webp);
   background-size: 208px 168px;
   background-repeat: no-repeat;
   mix-blend-mode: lighten;
   image-rendering: pixelated;
-}
-
-.notwebp .player-grid [property*="super-metroid-"] img, .notwebp .dialog[id*="super-metroid-"] img{
-  background-image: url(images/icons/super-metroid-icons.png);
-}
-.webp .player-grid [property*="super-metroid-"] img, .webp .dialog[id*="super-metroid-"] img{
-  background-image: url(images/icons/super-metroid-icons.webp);
 }
 
 [property="super-metroid-boss1"] img{background-position: 0 0;}
@@ -276,12 +270,6 @@
   height: 29px;
   display: block;
   background-size: 1100% 1100%;
-}
-
-.notwebp .player-grid .poke img{
-  background-image: url(images/icons/crystal-sprites.png);
-}
-.webp .player-grid .poke img{
   background-image: url(images/icons/crystal-sprites.webp);
 }
 
@@ -347,16 +335,11 @@
 }
 
 .player-grid-ffiv img{
+  background-image: url(images/icons/ff4fe-spritesheet.webp);
   background-size: 500% 500%;
   width: 28px;
   height: 28px;
   display: block;
-}
-.notwebp .player-grid-ffiv img{
-  background-image: url(images/icons/ff4fe-spritesheet.png);
-}
-.webp .player-grid-ffiv img{
-  background-image: url(images/icons/ff4fe-spritesheet.webp);
 }
 
 [property="ff4fe-pass"] img{background-position: 25% 0;}
@@ -400,12 +383,6 @@
   display: block;
   background-image: url(images/icons/ff5_spritesheet.png);
 }
-/* .notwebp .player-grid-ffiv img{
-  background-image: url(images/icons/ff4fe-spritesheet.png);
-} */
-/* .webp .player-grid-ffiv img{
-  background-image: url(images/icons/ff4fe-spritesheet.webp);
-} */
 
 [property="ff5-tablet-1"] img{background-position: 0 0;}
 [property="ff5-tablet-2"] img{background-position: 20% 0;}
@@ -418,14 +395,10 @@
 /* z1r */
 
 #z1r-row-1 img, #z1r-row-2 img, #z1r-row-3 img, [id*="z1r-"].dialog img{
+  background-image: url(images/icons/icon-sheet-z1r.webp);
   background-size: 300% auto;
 }
-.notwebp #z1r-row-1 img, .notwebp #z1r-row-2 img, .notwebp #z1r-row-3 img, .notwebp [id*="z1r-"].dialog img{
-  background-image: url(images/icons/icon-sheet-z1r.png);
-}
-.webp #z1r-row-1 img, .webp #z1r-row-2 img, .webp #z1r-row-3 img, .webp [id*="z1r-"].dialog img{
-  background-image: url(images/icons/icon-sheet-z1r.webp);
-}
+
 #z1r-row-1{
   display: grid;
   grid-template-columns: repeat(8, 32px);

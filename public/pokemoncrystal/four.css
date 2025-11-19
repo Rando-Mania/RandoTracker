@@ -57,13 +57,7 @@
     background-image: var(--conicalFallback);
 }
 
-@supports not (background-image:conic-gradient(#fff,#000)){
-    .layout{background-image: url('images/Crystal_v3_blank_bg.jpg');}
-}
-
-@supports (background-image:conic-gradient(#fff,#000)){
-    .layout{background-image: url('images/Crystal_v3_blank_bg.jpg'), var(--conicalFallback);}
-}
+.layout{background-image: url('images/Crystal_v3_blank_bg.jpg'), var(--conicalFallback);}
 
 .layout.transparent-background{
     -webkit-mask:

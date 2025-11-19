@@ -248,9 +248,6 @@
     box-shadow: inset 2px 2px 0 #fff;
     line-height: 0.7;
     padding-left: 5px;
-    background:
-        repeating-linear-gradient(to right, #000 0 2px, #0000 2px 22px) 2px 2px / 100% 2px repeat-x,
-        repeating-linear-gradient(to right, #000 0 2px, #0000 2px 22px) 2px 25px / 100% 2px repeat-x #ffae4c;
     background: 
         conic-gradient(at 2px 2px, #0000 0.25turn, #0000 0.25turn 0.5turn, #0000 0.5turn 0.75turn, #000 0.75turn) 2px 2px / 22px 23px repeat #ffae4c;
 }
@@ -395,7 +392,6 @@ tr-timer span {
 }
 .paper-insert{
     background-color: #ffff80;
-    background-image:url("../dwr/images/transparent-texture.png"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);
     background-image:url("../dwr/images/transparent-texture.webp"), linear-gradient(#ffcc66 0 3px, #0000 3px, #ffcc66);  
     box-shadow: inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), inset 6px 0 6px -5px rgba(0,0,0,.75), inset -6px 0 6px -5px rgba(0,0,0,.75), 0 5px 8px -5px rgba(0,0,0,.75), 0-5px 8px -5px rgba(0,0,0,.75);
 }

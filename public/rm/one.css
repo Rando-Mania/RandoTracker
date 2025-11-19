@@ -122,8 +122,8 @@ main{
 
 .transparent-background{
   -webkit-mask: 
-    linear-gradient(red, red 0) no-repeat 11px center / var(--vWidth) var(--vHeight),
-    linear-gradient(red, red);
+    linear-gradient(red 0 0) no-repeat 11px center / var(--vWidth) var(--vHeight),
+    linear-gradient(red 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;  
 }

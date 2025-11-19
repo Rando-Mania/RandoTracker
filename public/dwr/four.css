@@ -43,13 +43,13 @@
 .map-background{
     background-color: #fff;
     background-blend-mode: luminosity;
-}
-
-.notavif .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.4) 0 0), url('images/alefgard_crop_dark.png');
-}
-.avif .map-background{
-    background-image: linear-gradient(rgba(0,0,0,.4) 0 0), url('images/alefgard_crop_dark.avif');
+    background-image: linear-gradient(rgba(0,0,0,.4) 0 0), url("images/alefgard_crop_dark.png");
+    background-image: 
+        linear-gradient(rgba(0,0,0,.4) 0 0), 
+        image-set(
+            url("images/alefgard_crop_dark.avif") type("image/avif"),
+            url("images/alefgard_crop_dark.png") type("image/png")
+        );
 }
 
 .abs{position: absolute;}
@@ -888,10 +888,8 @@ tr-timer span {
         display: block;
         transform: scale(2);
         margin: 16px;
-      }
-    
-    .notwebp [property="monster_image"] img{background-image: url('images/monsters/monster-spritesheet.png');}
-    .webp [property="monster_image"] img{background-image: url('images/monsters/monster-spritesheet.webp');}
+        background-image: url('images/monsters/monster-spritesheet.webp');
+    }
     
     .dragon-blue img{
         width: 62px;

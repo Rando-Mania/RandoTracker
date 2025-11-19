@@ -70,10 +70,10 @@
 
 .transparent-background{
     -webkit-mask-image: 
-        linear-gradient(red, red), 
-        linear-gradient(red, red),
-        linear-gradient(red, red),
-        linear-gradient(red, red);
+        linear-gradient(red 0 0), 
+        linear-gradient(red 0 0),
+        linear-gradient(red 0 0),
+        linear-gradient(red 0 0);
     -webkit-mask-size: 
         100% 100%, 
         var(--vidWidth) var(--vidHeight), 
@@ -90,20 +90,13 @@
 }
 
 .player-video{
-    /* background: 
+    background: 
         image-set(
             url("images/MainLogo_24.avif") type("image/avif"),
             url("images/MainLogo_24.webp") type("image/webp")
-        );  */
-        background-color: #000;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 75% auto;
-        transition: background-color .5s;
-    }
-    
-    .avif .player-video{background-image: url("images/MainLogo_24.avif");}
-    .noavif.webp .player-video{background-image: url("images/MainLogo_24.webp");}
+        ) no-repeat center / 75% #000;
+    transition: background-color .5s;
+}
     
 .player-video, .cards{
     width: var(--vidWidth);

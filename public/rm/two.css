@@ -62,23 +62,16 @@
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     z-index: 2;
-    /* background: 
+    background: 
         image-set(
-            url("images/MainLogo.avif") type("image/avif"),
-            url("images/MainLogo.webp") type("image/webp")
-        );  */
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 75% auto;
+            url("images/MainLogo_24.avif") type("image/avif"),
+            url("images/MainLogo_24.webp") type("image/webp")
+        ) no-repeat center / 75% #000;
     transition: background-color .5s;
 }
 
-.avif .player-video{background-image: url("images/MainLogo_24.avif");}
-.noavif.webp .player-video{background-image: url("images/MainLogo_24.webp");}
-
 .transparent-background{
-    -webkit-mask-image: linear-gradient(red, red), linear-gradient(red, red), linear-gradient(red, red);
+    -webkit-mask-image: linear-gradient(red 0 0), linear-gradient(red 0 0), linear-gradient(red 0 0);
     -webkit-mask-size: 
         100% 100%, 
         var(--vidWidth) var(--vidHeight), 

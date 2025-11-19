@@ -75,6 +75,7 @@
     --background-overlay: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25));
     --background-fallback: linear-gradient(#36172f, #8c2832 26.5%, #a54129 26.5%, #e6b24a 41%, #375464 41%, #4c6c5b);
     background-image: var(--background-fallback);
+    background-image: var(--background-overlay), url('images/barron_falls_background.webp'), var(--background-fallback);
     overflow: hidden;
 }
 
@@ -116,23 +117,6 @@
     -webkit-mask-repeat: no-repeat
 }
 
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .notwebp .layout{
-        background-image: var(--background-overlay), url('images/barron_falls_background.jpg'), var(--background-fallback);}
-    .webp .layout{
-        background-image: var(--background-overlay), url('images/barron_falls_background.webp'), var(--background-fallback);}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .layout{
-        background-image:
-            var(--background-overlay),
-            image-set(
-                "images/barron_falls_background.webp" type("image/webp"),
-                "images/barron_falls_background.jpg" type("image/jpg")), 
-            var(--background-fallback);
-    }
-}
 .player-video{
     width: var(--vidWidth);
     height: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
@@ -148,20 +132,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
-}
-
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .notavif .layout.black-background .player-video{background-image: url('images/wc_logo.png');}
-    .avif .layout.black-background .player-video{background-image: url('images/wc_logo.avif');}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .layout.black-background .player-video{
-        background-image: image-set(
-            "images/wc_logo.avif" type("image/avif"),
-            "images/wc_logo.png" type("image/png")
-        );
-    }
+    background-image: url("images/wc_logo.png");
+    background-image: image-set(
+        "images/wc_logo.avif" type("image/avif"),
+        "images/wc_logo.png" type("image/png")
+    );
 }
 
 .player-info-contain{
@@ -444,18 +419,8 @@ tr-player{
     background-size: 500% 500%;
 }
 
-@supports not (background: image-set("foo.avif" type("image/avif")) ){
-    .notwebp .icon-slot .icon, .notwebp [property^="character"] img, .notwebp [property="starting-character"] img, .notwebp .dialog img {background-image: url(images/characters.png);}
-    .webp .icon-slot .icon, .webp [property^="character"] img, .webp [property="starting-character"] img, .webp .dialog img{background-image: url(images/characters.webp);}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .icon-slot .icon, [property^="character"] img, [property="starting-character"] img, .dialog img{
-        background-image: image-set(
-            "images/characters.webp" type("image/webp"),
-            "images/characters.png" type("image/png")
-        );
-    }
+.icon-slot .icon, [property^="character"] img, [property="starting-character"] img, .dialog img{
+    background-image: url("images/characters.webp");
 }
 
 

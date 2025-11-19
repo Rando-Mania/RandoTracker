@@ -57,17 +57,7 @@
     color: #fff;
     position: relative;
     background-color: #0d1632;
-    background-image: var(--conicalFallback);
-}
-
-@supports not (background-image:conic-gradient(#fff,#000)){
-    .notwebp .layout{background-image: url('images/Crystal_v3_2p_no_title.png');}
-    .webp .layout{background-image: url('images/Crystal_v3_2p_no_title.webp');}
-}
-
-@supports (background-image:conic-gradient(#fff,#000)){
-    .notwebp .layout{background-image: url('images/Crystal_v3_2p_no_title.png'), var(--conicalFallback);}
-    .webp .layout{background-image: url('images/Crystal_v3_2p_no_title.webp'), var(--conicalFallback);}
+    background-image: url('images/Crystal_v3_2p_no_title.webp'), var(--conicalFallback);
 }
 
 .layout.transparent-background{
@@ -177,8 +167,7 @@
     /* image-rendering: pixelated; */
 }
 
-.notwebp .player-grid img{background-image: url(images/crystal-sprites.png);}
-.webp .player-grid img{background-image: url(images/crystal-sprites.webp);}
+.player-grid img{background-image: url(images/crystal-sprites.webp);}
 
 [property="rod-old"] img{background-position: 0 0;}
 [property="rod-good"] img{background-position: 10% 0;}

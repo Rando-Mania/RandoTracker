@@ -23,9 +23,14 @@
     display: none;
 }
 
-.notwebp.notavif .loadscreen-contain, .notwebp.notavif .one-loading{background-image: url('images/loading_screen.jpg'), var(--loadscreen-fallback);}
-.webp.notavif .loadscreen-contain, .webp.notavif .one-loading{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
-.avif .loadscreen-contain, .avif .one-loading{background-image: url('images/loading_screen.avif'), var(--loadscreen-fallback);}
+.loadscreen-contain, .one-loading{
+    background-image: url("images/loading_screen.webp");
+    background-image: 
+        image-set(
+            url("images/loading_screen.avif") type("image/avif"),
+            url("images/loading_screen.webp") type("image/webp")
+        );
+}
 
 .loadscreen-contain.show, .one-loading{
     display: block;

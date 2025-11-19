@@ -63,7 +63,11 @@
 .layout{
     font-family: 'FF6', Arial, sans-serif;
     --background-fallback: linear-gradient(-21.5deg, #335755 0 48.5%, #f8f8a8 0 50%, #c57832 0);
-    background-image: var(--background-fallback);
+    background-image: url("images/justbackground.jpg"), var(--background-fallback);
+    background-image: image-set(
+        "images/justbackground.avif" type("image/avif"),
+        "images/justbackground.webp" type("image/webp")
+    ), var(--background-fallback);
     background-size: 100% 100%;
     grid-template-columns: auto 1fr 1fr auto;
     grid-template-areas:
@@ -71,25 +75,6 @@
         "v1  .  . v2"
         "v3  .  . v4"
         "v3 i3 i4 v4";
-}
-
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .notwebp .layout{
-        background-image: url('images/justbackground.jpg'), var(--background-fallback);}
-    .webp.notavif .layout{
-        background-image: url('images/justbackground.webp'), var(--background-fallback);}
-    .avif .layout{
-        background-image: url('images/justbackground.avif'), var(--background-fallback);}
-}
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .layout{
-        background-image: image-set(
-            "images/justbackground.avif" type("image/avif"),
-            "images/justbackground.webp" type("image/webp"),
-            "images/justbackground.jpg" type("image/jpeg")
-        ), var(--background-fallback);
-    }
 }
 
 [player="1"] .player-video, [player="2"] .player-video{border-bottom: 1px solid;}
@@ -201,22 +186,7 @@
     height: 32px;
     display: block;
     background-size: 500% 1000%;
-}
-
-@supports not (background: image-set("foo.png" type("image/png")) ){
-    .webp .player-grid img, .webp .dialog img{
-        background-image: url(images/characters.webp);}
-    .notwebp .player-grid img, .notwebp .dialog img{
-        background-image: url(images/characters.png);}
- }
-
-@supports (background: image-set("foo.png" type("image/png")) ){
-    .player-grid img, .dialog img{
-        background-image: image-set(
-            "images/images/characters.webp" type("image/webp"),
-            "images/images/characters.png" type("image/png")
-        );
-    }
+    background-image: url("images/images/characters.webp");
 }
 
 .terra, [property="character-terra"] img{background-position: 0 0;}

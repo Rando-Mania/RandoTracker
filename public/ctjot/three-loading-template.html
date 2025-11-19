@@ -22,9 +22,15 @@
     display: none;
 }
 
-.notwebp.notavif .loadscreen-contain, .notwebp.notavif .three-loading{background-image: url('images/loading_screen.jpg'), var(--loadscreen-fallback);}
-.webp.notavif .loadscreen-contain, .webp.notavif .three-loading{background-image: url('images/loading_screen.webp'), var(--loadscreen-fallback);}
-.avif .loadscreen-contain, .avif .three-loading{background-image: url('images/loading_screen.avif'), var(--loadscreen-fallback);}
+
+.loadscreen-contain, .three-loading{
+    background-image: url(images/loading_screen.webp), var(--loadscreen-fallback);
+    background-image:
+        image-set(
+            url("images/loading_screen.avif") type("image/avif"),
+            url("images/loading_screen.webp") type("image/webp")
+        ), var(--loadscreen-fallback);
+    }
 
 .three-loading{
     display: block;

@@ -74,11 +74,10 @@
 
 .cotm-default{
     background-color: #001d3e;
-    background-image: url("images/bg-page.png");
+    background-image: url("images/bg-page.webp");
     background-image: image-set(
         "images/bg-page.avif" type("image/avif"),
-        "images/bg-page.webp" type("image/webp"),
-        "images/bg-page.png" type("image/png")
+        "images/bg-page.webp" type("image/webp")
     );
 }
 

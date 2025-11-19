@@ -14,14 +14,12 @@
     image-rendering: pixelated;
 }
 
-.notwebp .player-grid [property*="ct-jets-"] img, .notwebp .dialog[id*="ct-jets-"] img{
-    background-image: url(images/icons/chrono-trigger-sprite.png);
-}
-.webp.notavif .player-grid [property*="ct-jets-"] img, .webp.notavif .dialog[id*="ct-jets-"] img{
+.player-grid [property*="ct-jets-"] img, .dialog[id*="ct-jets-"] img{
     background-image: url(images/icons/chrono-trigger-sprite.webp);
-}
-.avif .player-grid [property*="ct-jets-"] img, .avif .dialog[id*="ct-jets-"] img{
-    background-image: url(images/icons/chrono-trigger-sprite.avif);
+    background-image: image-set(
+        url("images/icons/chrono-trigger-sprite.avif") type("image/avif"),
+        url("images/icons/chrono-trigger-sprite.webp") type("image/webp")
+    );
 }
 
 [property="ct-jets-crono"] img{background-position: 0 0;}

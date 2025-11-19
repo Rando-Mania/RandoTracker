@@ -99,8 +99,7 @@
     -webkit-mask-repeat: no-repeat
 }
 
-.notwebp .cd-default .background-layer{background-image: url('images/4p/base-background.png');}
-.webp .cd-default .background-layer{background-image: url('images/4p/base-background.webp');}
+.cd-default .background-layer{background-image: url('images/4p/base-background.webp');}
 
 .player-video{
     width: var(--vidWidth);
@@ -159,9 +158,8 @@
 
 .player-grid img, .dialog img{
     background-size: 600% 400%;
+    background-image: url('images/retro_tracker/items-sprite-2020.webp');
 }
-.notwebp .player-grid img, .notwebp .dialog img{background-image: url('images/retro_tracker/items-sprite-2020.png');}
-.webp .player-grid img, .webp .dialog img{background-image: url('images/retro_tracker/items-sprite-2020.webp');}
 
 .tablet-1{background-position: 0 0;}
 .tablet-2{background-position: 20% 0%;}

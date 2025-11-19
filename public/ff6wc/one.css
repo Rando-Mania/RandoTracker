@@ -73,11 +73,7 @@
         url("images/ff6wcrestreambg2.webp") type("image/webp"),
         url("images/ff6wcrestreambg2.png") type("image/png")
     ); */
-    background-image: url('images/clouds.png');
-    background-image: image-set(
-        url("images/clouds.webp") type("image/webp"),
-        url("images/clouds.png") type("image/png")
-    );
+    background-image: url('images/clouds.webp');
 }
 
 .layout.transparent-background{
