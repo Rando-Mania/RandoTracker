@@ -12,28 +12,11 @@
     <link rel="stylesheet" type="text/css" href="two.css">
     <link rel="preload" href="../shared/images/checkerboard.png" as="image" type="image/png">
     <link rel="preload" href="images/ff4fe-spritesheet.png" as="image" type="image/png">
-    <style>
-        [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
-        [player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
-
-        [player="1"] .player-name {left: var(--nameX); top: var(--nameY);}
-        [player="2"] .player-name {right: var(--nameX); top: var(--nameY);}
-
-        [player="1"] .player-grid {left: var(--gridX); top: var(--gridY);}
-        [player="2"] .player-grid {right: var(--gridX); top: var(--gridY);}
-
-        [player="1"] .player-final {left: var(--finalX); top: var(--finalY);}
-        [player="2"] .player-final {right: var(--finalX); top: var(--finalY);}
-
-        [player="1"] .player-speaker {left: var(--speakerX); top: var(--speakerY);}
-        [player="2"] .player-speaker {right: var(--speakerX); top: var(--speakerY);}
-
-        [player="1"] .player-winner {left: var(--winX); bottom: var(--winY);}
-        [player="2"] .player-winner {right: var(--winX); bottom: var(--winY);}
-
-        [player="1"] .player-best-of {left: var(--bestX); top: var(--bestY);}
-        [player="2"] .player-best-of {right: var(--bestX); top: var(--bestY);}
-    </style>
+    <script type="module">
+        if (!("anchorName" in document.documentElement.style)) {
+            import("https://unpkg.com/@oddbird/css-anchor-positioning");
+        }
+    </script>
 </head>
 <body>
     <template id="player_info_template">
