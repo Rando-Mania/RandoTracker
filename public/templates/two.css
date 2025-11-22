@@ -24,6 +24,23 @@
     --offset: 12px;
 }
 
+/* helper classes */
+
+.border-1{outline: var(--border) solid currentColor;}
+.background-1{background-color: var(--backgroundColor1);}
+
+/*  ==========
+    Typography
+    ========== */
+
+/* @font-face {
+    font-family: "PressStart2P";
+    src: local('PressStart2P'),
+         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
+	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
+         url('../shared/fonts/pressstart2p.ttf') format('truetype');
+}*/
+
 /*  ==========
     Positioning
     ========== */
@@ -40,7 +57,7 @@
     top: var(--videoY);
 }
 
-.player-name{
+[player] .player-name{
     anchor-name: --name;
     position-anchor: --video;
     top: var(--offset);
@@ -54,7 +71,8 @@
     position-area: span-left bottom;
 }
 
-.player-grid{
+[player] .player-grid{
+    anchor-name: --grid;
     position-anchor: --name;
     top: var(--offset);
 }
@@ -67,43 +85,32 @@
     position-area: span-left bottom;
 }
 
-.player-final{
-    position-anchor: --name;
-    top: var(--offset);
-}
-
-[player="1"] .player-final {
-    position-area: span-left bottom;
-}
-
-[player="2"] .player-final {
-    position-area: span-right bottom;
-}
-
-.player-speaker{position-anchor: --name;}
+[player] .player-speaker{position-anchor: --name;}
 
 [player="1"] .player-speaker {
-    position-area: right;
+    position-area: right center;
     left: var(--offset);
 }
 
 [player="2"] .player-speaker {
-    position-area: left;
+    position-area: left center;
     right: var(--offset);
 }
 
-.player-winner{
-    top: 48px;
-    position-anchor: --name;}
+[player] .player-final-winner-contain{
+    position-anchor: --name;
+    top: var(--offset);
+}
 
-[player="1"] .player-winner {
+[player="1"] .player-final-winner-contain {
     position-area: span-left bottom;
 }
-[player="2"] .player-winner {
+
+[player="2"] .player-final-winner-contain {
     position-area: span-right bottom;
 }
 
-.player-best-of{
+[player] .player-best-of{
     position-anchor: --name;
     top: var(--offset);
 }
@@ -118,58 +125,14 @@
     right: var(--offset);
 }
 
-/* helper classes */
-
-.dg{display: grid;}
-.df{display: flex;}
-.fd-c{flex-direction: column;}
-
-.ta-c{text-align: center;}
-
-.jc-c{justify-content: center;}
-.ai-c{align-items: center;}
-.as-s{align-self: start;}
-
-.js-c{justify-self: center;}
-.jc-se{
-    justify-content: space-between;
-    justify-content: space-evenly;
-}
-
-.border-1{outline: var(--border) solid currentColor;}
-.background-1{background-color: var(--backgroundColor1);}
-
-
-/*  ==========
-    Typography
-    ========== */
-
-/* @font-face {
-    font-family: "PressStart2P";
-    src: local('PressStart2P'),
-         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
-	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
-         url('../shared/fonts/pressstart2p.ttf') format('truetype');
-}*/
-
-.fs-s{ font-size: 1rem; }
-.fs-m{ font-size: 1.2rem; }
-.fs-l{ font-size: 1.6rem; }
-
-.fw-b{ font-weight: bold;}
-
 /*  ==========
     Components
     ========== */
 
 .layout{
-    width: 1280px;
-    height: 720px;
-    color: #fff;
     position: relative;
     background-image: var(--backgroundImg);
     background-color: #c0c0c0;
-    line-height: 1;
 }
 
 .layout.transparent-background{
@@ -236,6 +199,8 @@
     width: 5.5em;
     padding: 0 .5em;
     z-index: 2;
+    position: relative;
+    top: 2px;
 }
 
 .player-final{
@@ -273,9 +238,10 @@ tr-timer{
     width: 11em;
     height: 52px;
     z-index: 1;
+    /* top: 482px; */
+    top: anchor(--name top);
     left: 50%;
     transform: translateX(-50%);
-    top: 482px;
 }
 tr-timer span {
     width: 26px;
@@ -283,9 +249,10 @@ tr-timer span {
 }
 
 .staff{
+    /* top: 552px; */
+    top: anchor(--grid top);
     left: 50%;
     transform: translateX(-50%);
-    top: 552px;
 }
 
 /* dialog styles */

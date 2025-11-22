@@ -34,6 +34,7 @@
 .jc-c{justify-content: center;}
 .ac-c{align-content: center;}
 .ai-c{align-items: center;}
+.as-s{align-self: start;}
 
 .jc-se{
     justify-content: space-between;

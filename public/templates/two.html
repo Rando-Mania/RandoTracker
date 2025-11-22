@@ -29,10 +29,12 @@
                 <path fill="currentColor" d="M5 7h-4v6h4l5 5v-16l-5 5zM16.36 16.36l-1.41-1.41c1.272-1.265 2.059-3.015 2.059-4.95s-0.787-3.685-2.059-4.95l-0-0 1.41-1.41c1.634 1.625 2.645 3.874 2.645 6.36s-1.011 4.735-2.644 6.36l-0 0zM13.54 13.54l-1.42-1.42c0.542-0.543 0.877-1.292 0.877-2.12s-0.335-1.577-0.877-2.12l0 0 1.42-1.42c0.912 0.903 1.477 2.156 1.477 3.54s-0.565 2.637-1.477 3.54l-0 0z"></path>
             </svg>
         </tr-toggle>
-        <tr-text property="player-final" class="abs player-final fs-l df ai-c jc-c ta-c border-1 background-1"></tr-text>
-        <tr-toggle property="toggle-winner" class="abs player-winner fs-l df ai-c jc-c border-1 background-1">
-            <div>Winner</div>
-        </tr-toggle>
+        <div class="player-final-winner-contain abs">
+            <tr-text property="player-final" class="player-final fs-l df ai-c jc-c ta-c border-1 background-1"></tr-text>
+            <tr-toggle property="toggle-winner" class="player-winner fs-l df ai-c jc-c border-1 background-1">
+                <div>Winner</div>
+            </tr-toggle>
+        </div>
         <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
         <tr-template class="abs player-grid dg as-s border-1 background-1" href="icons.html"></tr-template>
     </template>
