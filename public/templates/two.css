@@ -64,10 +64,12 @@
 }
 
 [player="1"] .player-name {
+    inset-area: span-right bottom;
     position-area: span-right bottom;
 }
 
 [player="2"] .player-name {
+    inset-area: span-left bottom;
     position-area: span-left bottom;
 }
 
@@ -78,21 +80,25 @@
 }
 
 [player="1"] .player-grid {
+    inset-area: span-right bottom;
     position-area: span-right bottom;
 }
 
 [player="2"] .player-grid {
+    inset-area: span-left bottom;
     position-area: span-left bottom;
 }
 
 [player] .player-speaker{position-anchor: --name;}
 
 [player="1"] .player-speaker {
+    inset-area: right center;
     position-area: right center;
     left: var(--offset);
 }
 
 [player="2"] .player-speaker {
+    inset-area: left center;
     position-area: left center;
     right: var(--offset);
 }
@@ -103,10 +109,12 @@
 }
 
 [player="1"] .player-final-winner-contain {
+    inset-area: span-left bottom;
     position-area: span-left bottom;
 }
 
 [player="2"] .player-final-winner-contain {
+    inset-area: span-right bottom;
     position-area: span-right bottom;
 }
 
@@ -116,11 +124,13 @@
 }
 
 [player="1"] .player-best-of {
+    inset-area: right bottom;
     position-area: right bottom;
     left: var(--offset);
 }
 
 [player="2"] .player-best-of {
+    inset-area: left bottom;
     position-area: left bottom;
     right: var(--offset);
 }
