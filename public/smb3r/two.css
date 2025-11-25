@@ -9,7 +9,6 @@
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
-    --backgroundImg: url('../shared/images/checkerboard.png');
     --border1: solid 2px #fff;
     --backgroundColor1: #000;
     --videoX: 20px; --videoY: 20px;
@@ -51,7 +50,6 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background: var(--backgroundImg);
     background-color: silver;
     font-family: 'SMB3', Arial, sans-serif;
     background-color: #ffcc66;
@@ -408,8 +406,6 @@ tr-timer span {
 
 
 /* Bracket Screen */
-
-/* .bracket-contain{background: url(../shared/images/checkerboard.png);}
 
 .bracket-contain iframe {
     animation: rotateIn .75s linear;

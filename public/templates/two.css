@@ -17,7 +17,6 @@
     --vidHeight: calc( var(--vidWidth) / (var(--vidAspect)) );
 
     --backgroundColor1: #000;
-    --backgroundImg: url('../shared/images/checkerboard.png');
     --border: 2px;
 
     --videoX: 20px; --videoY: 20px;
@@ -140,9 +139,8 @@
     ========== */
 
 .layout{
+    /* background image and color in html */
     position: relative;
-    background-image: var(--backgroundImg);
-    background-color: #c0c0c0;
 }
 
 .layout.transparent-background{
@@ -177,7 +175,7 @@
     width: 32px;
     height: 32px;
     display: block;
-    background-image: url(images/ff4fe-spritesheet.png);
+    /* background image and color in html */
     background-size: 500% 500%;
 }
 

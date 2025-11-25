@@ -10,13 +10,24 @@
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
-    <link rel="preload" href="../shared/images/checkerboard.png" as="image" type="image/png">
-    <link rel="preload" href="images/ff4fe-spritesheet.png" as="image" type="image/png">
     <script type="module">
         if (!("anchorName" in document.documentElement.style)) {
             import("https://unpkg.com/@oddbird/css-anchor-positioning");
         }
     </script>
+    <style>
+        .layout{
+            background-color: #c0c0c0;
+            background-image: url('../shared/images/checkerboard.webp');
+            background-image: image-set(
+                url("../shared/images/checkerboard.jxl") type("image/jxl"),
+                url("../shared/images/checkerboard.webp") type("image/webp")
+            );
+        }
+        .player-grid img, .dialog img{
+            background-image: url(images/ff4fe-spritesheet.png);
+        }
+    </style>
 </head>
 <body>
     <template id="player_info_template">
