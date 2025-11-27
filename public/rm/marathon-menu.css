@@ -1,7 +1,10 @@
 .marathon-background {
   background-color: #1f0d27;
-  background-image:
-      url('../rm/images/stars-background.jpg');
+  background-image: url("../rm/images/stars-background.webp");
+  background-image: image-set(
+    url("../rm/images/stars-background.jxl") type("image/jxl"),
+    url("../rm/images/stars-background.webp") type("image/webp")
+  );
   background-origin: border-box;
   }
 

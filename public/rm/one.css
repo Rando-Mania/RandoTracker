@@ -45,7 +45,11 @@
 
 .star-background, .bordered-container .card{
   background-color: #150a1e;
-  background-image: url(../rm/images/stars-background.jpg);
+  background-image: url("../rm/images/stars-background.webp");
+  background-image: image-set(
+    url("../rm/images/stars-background.jxl") type("image/jxl"),
+    url("../rm/images/stars-background.webp") type("image/webp")
+  );
 }
 
 .bordered-container{

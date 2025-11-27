@@ -31,7 +31,11 @@
 }
 
 .avif .marathon-background{
-  background-image: url(../rm/images/stars-background-moz.jpg);
+  background-image: url("../rm/images/stars-background.webp");
+  background-image: image-set(
+    url("../rm/images/stars-background.jxl") type("image/jxl"),
+    url("../rm/images/stars-background.webp") type("image/webp")
+  )s;
   background-size: 100%;
   background-blend-mode: normal;
 }

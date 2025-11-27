@@ -135,7 +135,11 @@
 
 
 .rm-marathon .layout{
-    background-image: url(../rm/images/stars-background.jpg);
+    background-image: url("../rm/images/stars-background.webp");
+    background-image: image-set(
+      url("../rm/images/stars-background.jxl") type("image/jxl"),
+      url("../rm/images/stars-background.webp") type("image/webp")
+    );
     background-blend-mode: normal;
     --pink: #ac0082;
     --blue: #088fae;
@@ -161,7 +165,11 @@
     border-image: url(images/winner-border-white.png) repeat 8 / 8px;
 }
 .rm-marathon .background-style-1{
-    background-image: url(../rm/images/stars-background.jpg);
+    background-image: url("../rm/images/stars-background.webp");
+    background-image: image-set(
+      url("../rm/images/stars-background.jxl") type("image/jxl"),
+      url("../rm/images/stars-background.webp") type("image/webp")
+    );
     border: solid 1px #6d3793;
     border-image: linear-gradient(#7f278e, #6d3793) 1;
     border-radius: 0;
@@ -171,10 +179,18 @@
     border-image: linear-gradient(#7f278e, #6d3793) 1;
 }
 .rm-marathon .background-1{
-    background-image: url(../rm/images/stars-background.jpg);
+    background-image: url("../rm/images/stars-background.webp");
+    background-image: image-set(
+      url("../rm/images/stars-background.jxl") type("image/jxl"),
+      url("../rm/images/stars-background.webp") type("image/webp")
+    );
 }
 .rm-marathon .background-color-1, .rm-marathon .spells{
-    background-image: url(../rm/images/stars-background.jpg) !important;
+    background-image: url("../rm/images/stars-background.webp") !important;
+    background-image: image-set(
+      url("../rm/images/stars-background.jxl") type("image/jxl"),
+      url("../rm/images/stars-background.webp") type("image/webp")
+    ) !important;
 }
 
 
