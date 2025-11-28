@@ -114,8 +114,9 @@ article.star-background{
 }
 
 .games {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 142px);
+  grid-template-rows: auto 1fr;
   gap: 20px 24px;
   transition: height .5s;
 }
@@ -186,7 +187,7 @@ article.star-background{
     linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 50% / 80% 80%;
 }
 
-@supports (corner-shape: notch){
+@supports not (corner-shape: notch){
   [data-console="gba"]{
     clip-path: polygon(0 5%, 90% 5%, 90% 0, 100% 0, 100% 100%, 90% 100%, 90% 90%, 0 90%);
   }
@@ -216,11 +217,12 @@ article.star-background{
 
 .games > div{
   color: #fff;
-  flex: 142px 0 1;
+  width: 142px;
   height: 157px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: subgrid;
+  grid-area: span 2;
   position: relative;
   --back-sec: rgba(0,0,0,.25);
   background-color: #282828;
@@ -233,19 +235,32 @@ article.star-background{
   margin: .5em 0;
 }
 
-.link-grid{
+.link-list{
   width: 100%;
   height: 100%; 
   text-align: center; 
   display: grid; 
   grid-template-columns: repeat(2, 1fr);
 }
+
 .games a{
+  display: block;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .games a:hover{
   text-decoration: underline;
   cursor: pointer;
+  background-color: rgb(255 255 255 /.25);
+}
+
+.link-list:not(:has(> :nth-child(3))) a{  
+  grid-column: 1 / -1;
 }
 
 .games .hide{
