@@ -70,7 +70,14 @@
     mask-composite: exclude;
 }
 
-.jot-default{background-image: url('images/1p/base-background.webp'),  var(--bgFallback);}
+.jot-default{
+    background-image: url('images/1p/base-background.webp'),  var(--bgFallback);
+    background-image: 
+        image-set(
+            url('images/1p/base-background.avif') type('image/avif'),
+            url('images/1p/base-background.webp') type('image/webp')
+        ), var(--bgFallback);
+}
 
 .player-video{
     width: var(--vidWidth);

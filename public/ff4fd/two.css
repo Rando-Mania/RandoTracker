@@ -97,6 +97,12 @@
     color: #fff;
     position: relative;
     background-image: linear-gradient(rgb(0 0 0 /.3),rgb(0 0 0 /.3)), var(--backgroundImg);
+    background-image:
+        linear-gradient(rgb(0 0 0 /.3),rgb(0 0 0 /.3)), 
+        image-set(
+            url('/ff4fd/images/2p/Falcon_Dive_Layout_no_extras.jxl') type('image/jxl'),
+            url('/ff4fd/images/2p/Falcon_Dive_Layout_no_extras.jpg') type('image/jpg')
+        );
     background-color: #3a2121;
     background-size: 100% 100%;
     line-height: 1;
