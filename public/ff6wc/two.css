@@ -25,7 +25,7 @@
 /* helper classes */
 
 .border-1{
-    border: var(--border) solid currentColor;
+    border: var(--border) solid #fff;
 }
 .br{
     border-radius: 10px;
@@ -108,6 +108,26 @@
 }
 
 .draft .layout .logo {display: none;}
+
+.chocobo .layout .logo {visibility: hidden;}
+
+.chocobo .layout{
+    background-color: #907537;
+    background-image: url('images/CI_BACKGROUND.webp');
+    background-image:
+        image-set(
+            url("images/CI_BACKGROUND.avif") type("image/avif"),
+            url("images/CI_BACKGROUND.webp") type("image/webp")
+    );
+}
+.chocobo .layout .background-1{
+    background-color: #616178;
+    /* mix-blend-mode: overlay; */
+    background-image: 
+        repeating-linear-gradient(45deg, rgb(255 255 255 / .1) 0 3px, transparent 3px 6px), 
+        repeating-linear-gradient(-45deg, rgb(255 255 255 / .1) 0 3px, transparent 3px 6px);
+    /* corner-shape: bevel; */
+}
 
 .layout > tr-player,
 .layout > tr-player > tr-template{
@@ -347,6 +367,8 @@ tr-image-toggle img.active, tr-toggle-class.active {
 .umaro{background-position: 75% 50%;}
 .player-grid-characters .umaro{background-position-y: 44.5%;}
 
+.chocobo{background-position: 75% 100%;}
+
 .icon-slot{
     display: grid;
     isolation: isolate;
@@ -400,44 +422,15 @@ tr-image-toggle img.active, tr-toggle-class.active {
     display: grid;
     grid-template-columns: repeat(5, auto);
     transform: translate(-117px, -118px);
-    border: none;
     animation: scale-in .1s;
     position: relative;
-    background-color: #0000;
-    -webkit-mask-image:
-        linear-gradient(red 0 62px, #0000 0 114px, red 0 114px),
-        linear-gradient(90deg, red 0 82px, #0000 0 122px, red 0 112px)
     }
-
-.dialog#starting-character:before{
-    content:'';
-    background-color: #f8b800;
-    top: 0; right: 0; bottom: 0; left: 0;
-    border-radius: 10px;
-    border: solid 2px;
-    position: absolute;
-}
-
-.dialog#starting-character:after{
-    content: '';
-    border: inherit;
-    border-radius: 3px;
-    border: solid 2px #000;
-    width: 40px;
-    height: 52px;
-    position: absolute;
-    left: 80px;
-    top: 60px;
-  }
 
   @keyframes scale-in {
     from{transform: translate(-117px, -118px) scale(0);}
     to{transform: translate(-117px, -118px) scale(1);}
 }
 
-.dialog#starting-character figure:nth-of-type(8){
-    grid-column: 4;
-}
 .counter, .out-of{
     pointer-events: none;
 }

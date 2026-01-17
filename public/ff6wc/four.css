@@ -333,40 +333,11 @@ tr-player{
     border: none;
     animation: scale-in .1s;
     position: relative;
-    background-color: #0000;
-    -webkit-mask-image:
-        linear-gradient(red 0 62px, #0000 0 114px, red 0 114px),
-        linear-gradient(90deg, red 0 82px, #0000 0 122px, red 0 112px)
-    }
-
-.dialog#starting-character:before{
-    content:'';
-    background-color: #f8b800;
-    top: 0; right: 0; bottom: 0; left: 0;
-    border-radius: 10px;
-    border: solid 2px;
-    position: absolute;
 }
-
-.dialog#starting-character:after{
-    content: '';
-    border: inherit;
-    border-radius: 3px;
-    border: solid 2px #000;
-    width: 40px;
-    height: 52px;
-    position: absolute;
-    left: 80px;
-    top: 60px;
-  }
 
   @keyframes scale-in {
     from{transform: translate(-117px, -118px) scale(0);}
     to{transform: translate(-117px, -118px) scale(1);}
-}
-
-.dialog#starting-character figure:nth-of-type(8){
-    grid-column: 4;
 }
 
 .active{
@@ -423,7 +394,6 @@ tr-player{
     background-image: url("images/characters.webp");
 }
 
-
 .terra{background-position: 0 0;}
 .locke{background-position: 25% 0;}
 .cyan{background-position: 50% 0;}
@@ -455,6 +425,8 @@ tr-player{
 
 .umaro{background-position: 75% 50%;}
 .player-grid-characters .umaro{background-position-y: 45.5%;}
+
+.chocobo{background-position: 75% 100%;}
 
 .magicite .icon{
     pointer-events: none;
