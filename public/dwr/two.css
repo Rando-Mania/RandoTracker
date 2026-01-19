@@ -197,7 +197,7 @@
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
 .player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
 .layout:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2025';
+    content: '2026';
     font-size: 2.5em;
     position: absolute;
     bottom: 15px;
@@ -220,7 +220,7 @@
 }
 
 .player-video.league-background::after{
-    content: '2025';
+    content: '2026';
     font-size: 1.4em;
     position: absolute;
     right: 24%;

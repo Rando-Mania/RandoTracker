@@ -213,7 +213,7 @@ html{
 } */
 
 .background-layer:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2025';
+    content: '2026';
     font-size: 1.7em;
     position: absolute;
     left: 166px;
@@ -246,7 +246,7 @@ html{
     background-size: cover;
 }
 .player-video.league-background::after{
-    content: '2025';
+    content: '2026';
     font-size: 1em;
     position: absolute;
     right: 24%;
