@@ -129,6 +129,10 @@
     /* corner-shape: bevel; */
 }
 
+.cocobo .border-1{
+    border: var(--border) solid #fffbfc;
+}
+
 .layout > tr-player,
 .layout > tr-player > tr-template{
     display: contents;
@@ -567,12 +571,12 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 .final-winner-contain{
-   top: 53px;
-   color: #f8b800;
-   font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
-   width: min-content;
-   z-index: 10;
-   background-image: linear-gradient(#000,#000), url(images/sky-small.webp);
+    top: 53px;
+    color: #f8b800;
+    font: bold 28px 'Ferrum', 'Times New Roman', Times, serif;
+    width: min-content;
+    z-index: 10;
+    background-image: linear-gradient(#000,#000), url(images/sky-small.webp);
 }
 
 .final-winner-contain > *{
