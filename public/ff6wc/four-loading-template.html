@@ -184,24 +184,24 @@ display: block;
 .loadscreen [player="1"] .final-winner-contain {
     top: initial;
     bottom: 100%;
-    right: initial;
-    left: 53px;
-}
-.loadscreen [player="1"] .player-best-of {
-    top: initial;
-    bottom: -39px;
-    right: initial;
+    right: -40px;
 }
 
 .loadscreen [player="2"] .final-winner-contain {
-    top: -53px;
-    left: initial;
-    right: 53px;
+    top: -100%;
+    right: 50px;
 }
-.loadscreen [player="2"] .player-best-of {
+
+.loadscreen [player="3"] .final-winner-contain {
     top: initial;
-    bottom: 100%;
+    bottom: -100%;
+    right: -40px;
+}
+
+.loadscreen [player="4"] .final-winner-contain {
+    top: 100%;
     right: initial;
+    left: -40px;
 }
 
 .loadscreen .player-winner, .loadscreen .player-final{
@@ -268,12 +268,11 @@ display: none;
                 <div class="player-contain rel">
                     <tr-text class="player-name" property="player-name"></tr-text>
                     <div class="final-winner-contain fs-m abs">
-                        <tr-text property="player-final" class="player-final background-2 br df jc-c ai-c ta-c fs-n"></tr-text>
-                        <tr-toggle property="toggle-winner" class="player-winner background-2 br df jc-c ai-c ta-c fs-n fw-b">
+                        <tr-text property="player-final" class="player-final"></tr-text>
+                        <tr-toggle property="toggle-winner" class="player-winner">
                             <div>WINNER</div>
                         </tr-toggle>
                     </div>
-                    <tr-template class="player-best-of abs" href="../shared/bestof.html"></tr-template>
                 </div>
             </template>
             <div class="player-info">      
