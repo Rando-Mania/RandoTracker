@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="two.css?v=10252025">
     <link rel="preload" href="images/characters.webp" as="image" type="image/webp">
     <link rel="preload" href="images/wc_logo.avif" as="image" type="image/avif">
+    <script type="module">
+        if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+        }
+    </script>
 </head>
 <body>
     <template id="player_info_template">

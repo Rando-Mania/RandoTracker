@@ -10,6 +10,11 @@
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="two.css">
+    <script type="module">
+        if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+        }
+    </script>
 </head>
 <body>
     <div class="two-loading">

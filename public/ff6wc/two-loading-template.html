@@ -155,6 +155,7 @@ display: block;
     font-size: 64px;
     height: auto;
     filter: drop-shadow(1px 1px 1px #000) drop-shadow(-1px -1px 1px #000);
+    anchor-name: --anchor;
 }
 
 .loadscreen .player-pronoun{
@@ -181,6 +182,7 @@ display: block;
     top: initial;
     bottom: 100%;
     right: -40px;
+    right: calc(anchor(--anchor right) - 40px);
 }
 .loadscreen [player="1"] .player-best-of {
     top: initial;
@@ -192,6 +194,7 @@ display: block;
     top: initial;
     bottom: 100%;
     left: -40px;
+    left: calc(anchor(--anchor left) - 40px);
 }
 .loadscreen [player="2"] .player-best-of {
     top: initial;
