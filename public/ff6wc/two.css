@@ -119,28 +119,31 @@
             url("images/CI_BACKGROUND.avif") type("image/avif"),
             url("images/CI_BACKGROUND.webp") type("image/webp")
     );
+    --ci-white: #fffbfc;
 }
 .chocobo .layout .background-1{
     background-color: #616178;
     background-image:
-        linear-gradient(-135deg, #0000 0 4px, #fffbfc 4px 6px, #0000 0),
-        linear-gradient(45deg, #0000 0 4px, #fffbfc 4px 6px, #0000 0), 
-        repeating-linear-gradient(45deg, rgb(255 255 255 / .1) 0 3px, transparent 3px 6px), 
-        repeating-linear-gradient(-45deg, rgb(255 255 255 / .1) 0 3px, transparent 3px 6px);
-    border-image: repeating-linear-gradient(#fffbfc 0 2px, #000 2px 3px, #fffbfc 3px calc(100% - 5px)) 2 / 2px;
+        linear-gradient(-135deg, #0000 0 4px, var(--ci-white) 4px 6px, #0000 0),
+        linear-gradient(45deg, #0000 0 4px, var(--ci-white) 4px 6px, #0000 0), 
+        repeating-linear-gradient(45deg, rgb(255 255 255 / .1) 0 3px, #0000 3px 6px), 
+        repeating-linear-gradient(-45deg, rgb(255 255 255 / .1) 0 3px, #0000 3px 6px);
+    border-image: repeating-linear-gradient(var(--ci-white) 0 2px, #0000 2px 3px, var(--ci-white) 3px calc(100% - 5px)) 2 / 2px;
 }
 
 .cocobo .border-1{
-    border: var(--border) solid #fffbfc;
+    border: var(--border) solid var(--ci-white);
 }
 
 .chocobo tr-timer span {
     background-image: none;
-    color: #fffbfc;
+    color: var(--ci-white);
 }
 
-.chocobo [player="1"] .player-name.br{border-radius: 0;}
-.chocobo [player="2"] .player-name.br{border-radius: 0;}
+.chocobo .layout .player-grid-back.br,
+.chocobo .layout .player-name.br{
+    border-radius: 0;
+}
 
 .chocobo .player-winner, .chocobo .player-final{
     background-image: url(images/sky-small-white.webp), linear-gradient(to top, #db1500, orange 54%, #fffef1 141%);
