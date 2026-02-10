@@ -1,0 +1,95 @@
+    <style>
+        /* Loading Screen */
+
+.loadscreen-contain, .four-loading{
+    width: 1280px;
+    height: 720px;
+    color: #fff;
+    text-align: center;
+    z-index: 50;
+    display: none;
+    font: normal 18px Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-variant: small-caps;
+}
+
+.four-loading{
+    display: block;
+}
+
+.loadscreen-contain.show{
+    animation: zoomIn .5s;
+    display: block;
+}
+
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+      transform-origin: 50% 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to{
+        transform-origin: 50% 50%;
+    }
+  }
+
+.loadscreen{
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 1fr auto;
+    grid-gap: 1em;
+    place-items: center;
+    padding: 1em;
+    background-color: #000;
+}
+
+.notavif .loadscreen{background-image: url('../shared/images/rm-generic-half.png');}
+.avif .loadscreen{background-image: url('../shared/images/rm-generic-half.avif');}
+
+.loadscreen-main{
+    display: grid;
+    grid-gap: 1em;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.loadscreen .player-name{
+    width: 100%;
+}
+
+.loadscreen-main *{
+    justify-content: center;
+}    
+
+.load-and{
+    margin: 1em auto;
+    display: none;
+}
+
+.show-and .load-and{display: block;}
+.show-and .load-vs{display: none;}
+
+    </style>
+    <div class="loadscreen">
+        <div class="loadscreen-main">
+            <h1>
+                Game Name
+            </h1>
+            <h2>
+                <tr-text player="1" class="player-name" property="player-name">Dummy</tr-text>
+                vs.
+                <tr-text player="2" class="player-name" property="player-name">Text</tr-text>
+                <span class="load-and-vs">
+                    <span class="load-vs">vs.</span>
+                    <span class="load-and">and</span>
+                </span>
+                <tr-text player="3" class="player-name" property="player-name">Text</tr-text>
+                vs.
+                <tr-text player="4" class="player-name" property="player-name">Text</tr-text>
+            </h2>
+        </div>
+    </div>

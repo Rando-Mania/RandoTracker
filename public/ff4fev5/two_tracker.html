@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <title>Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../shared/global.css">
+    <link rel="stylesheet" type="text/css" href="../shared/components.css">
+    <link rel="stylesheet" type="text/css" href="../shared/menu.css">
+    <link rel="stylesheet" type="text/css" href="two.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        :root{
+            --nameWidth: 200px;
+        }
+        body{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 16px;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+        }
+        .tracker-layout{
+            background-color: #000;
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 24px;
+            padding: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker-layout">
+        <template id="player_tracker_template">
+            <div class="player-name df ta-c ai-c fs-l border-1 background-1">
+                <tr-text scale-to-fit-x property="player-name"></tr-text>
+            </div>
+            <tr-template class="player-grid dg border-1 background-1" href="icons.html"></tr-template>
+            <tr-toggle property="toggle-speaker" class="player-speaker">
+                <img src="../shared/images/icons/blank.svg" alt="">
+            </tr-toggle>
+            <div class="final-winner-contain fs-m">
+                <tr-text property="player-final" class="player-final df jc-c ai-c ta-c fs-n border-1 background-1"></tr-text>
+                <tr-toggle property="toggle-winner" class="player-winner df jc-c ai-c ta-c fs-l fw-b border-1 background-1">
+                    <div>Winner</div>
+                </tr-toggle>
+            </div>
+        </template>
+        
+        <tr-player player="1">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+        <tr-player player="2">
+            <tr-template source="#player_tracker_template"></tr-template>
+        </tr-player>
+    </div>
+    
+    <tr-template href="../shared/two-menus-contain.html"></tr-template>
+
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+    <script>
+       const firebaseApp = firebase.initializeApp({ 
+          apiKey: "AIzaSyAD6gMbqP2bjv67qQeeEZQT3F4ndNKK53A",
+          authDomain: "rando-tracker.firebaseapp.com",
+          databaseURL: "https://rando-tracker.firebaseio.com",
+          projectId: "rando-tracker",
+          storageBucket: "rando-tracker.appspot.com",
+          messagingSenderId: "702318798371",
+          appId: "1:702318798371:web:2cc16ec64401f48854f396"
+    });
+       const db = firebaseApp.firestore();
+       const auth = firebaseApp.auth();
+    </script>
+    <script src="../components/components.js"></script>
+    <script src="../components/tracker.js"></script>
+    <script src="../shared/script/two_game.js"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+/*  =============
+    global styles
+    ============= */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    
+    --vidWidth: 580px;
+    --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) / (var(--vidAspect)) );
+
+    --fontColor: #f2f2f2;
+    --backgroundColor1: #0c0946;
+    --border: 1px;
+    --borderImage: url(images/border-sprite.svg) 4 / 4px / 1px;
+
+    --videoX: 36px; --videoY: 16px;
+    --offset: 14px;
+
+    --row-two: 465px;
+    --row-three: 520px;
+
+}
+
+/* helper classes */
+
+.border-1{
+    outline: var(--border) solid var(--fontColor);
+}
+.border-2{
+    border: solid 1px var(--fontColor);
+}
+@supports (corner-shape: notch) {
+    .border-2{
+        border-radius: 1px;
+        corner-shape: notch;
+        corner: notch 1px;
+        box-shadow: 
+            inset 0 0 0 1px #737373,
+            0 0 0 1px #737373;
+    }
+}
+@supports not (corner-shape: notch) {
+    .border-2{
+        border-image: var(--borderImage);
+    }
+}
+
+.background-1{
+    background-color: var(--backgroundColor1);
+}
+
+/*  ==========
+    Typography
+    ========== */
+
+@font-face {
+    font-family: "FF4";
+    src: url("fonts/final_fantasy_iv-webfont.woff2") format("woff2");
+}
+
+/*  ==========
+    Components
+    ========== */
+
+.layout{
+    /* background image and color in html */
+    position: relative;
+    font-family: "FF4", sans-serif;
+    color: var(--fontColor);
+}
+
+.layout.transparent-background{
+    --red: linear-gradient(red 0 0);
+    --video-size: var(--vidWidth) var(--vidHeight);
+
+    mask-image: var(--red), var(--red), var(--red);
+    mask-repeat: no-repeat;
+    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+    mask-size: 100% 100%, var(--video-size), var(--video-size);
+    mask-composite: exclude;
+}
+
+.transparent-background{background-color: #0000;}
+
+/*  ==========
+    player-video
+    ========== */
+
+[player] .player-video{anchor-name: --video;}
+
+[player="1"] .player-video {
+    left: var(--videoX); 
+    top: var(--videoY); 
+}
+
+[player="2"] .player-video {
+    right: var(--videoX); 
+    top: var(--videoY);
+}
+
+.layout.black-background .player-video{
+    background-color: #000;
+    background-image: url(images/The-End.webp);
+}
+
+.layout.tech-diff-background .player-video{
+    background-image: url(images/2p/TechDifficulties-RM.webp);
+    background-image:
+        image-set(
+            url("images/2p/TechDifficulties-RM.avif") type("image/avif"),
+            url("images/2p/TechDifficulties-RM.webp") type("image/webp")
+        );
+}
+
+/*  ==========
+    player-name
+    ========== */
+
+.player-name{
+    --nameWidth: 319px;
+    anchor-name: --name;
+    width: calc(var(--nameWidth) + 8px * 2);
+    height: 50px;
+    padding: 0 8px;
+}
+
+[player="1"] .player-name {
+    top: var(--row-two);
+    left: 184px;
+}
+
+[player="2"] .player-name {
+    top: var(--row-two);
+    right: 184px;
+}
+
+.player-name tr-text{
+    width: var(--nameWidth);
+}
+
+/*  ==========
+    player-grid
+    ========== */
+
+.player-grid{
+    top: var(--row-three);
+    grid-template-columns: auto;
+    padding: 2px;
+}
+
+[player="1"] .player-grid {
+    top: var(--videoY);
+    left: 4px;
+}
+
+[player="2"] .player-grid {
+    top: var(--videoY);
+    right: 4px;
+}
+
+.player-grid img, .dialog img{
+    width: 24px;
+    display: block;
+    /* background image and color in html */
+    background-size: 500% 500%;
+}
+
+[property="pass"] img{background-position: 25% 0;}
+[property="hook"] img{background-position: 50% 0;}
+[property="dark-crystal"] img{background-position: 75% 0;}
+
+[property="earth-crystal"] img{background-position: 0 25%;}
+[property="twin-harp"] img{background-position: 25% 25%;}
+[property="package"] img{background-position: 50% 25%;}
+[property="sand-ruby"] img{background-position: 75% 25%;}
+
+[property="baron-key"] img{background-position: 0 50%;}
+[property="magma-key"] img{background-position: 25% 50%;}
+[property="tower-key"] img{background-position: 50% 50%;}
+[property="luca-key"] img{background-position: 75% 50%;}
+
+[property="adamant"] img{background-position: 0 75%;}
+[property="legend-sword"] img{background-position: 25% 75%;}
+[property="pan"] img{background-position: 50% 75%;}
+[property="spoon"] img{background-position: 75% 75%;}
+
+[property="rat-tail"] img{background-position: 25% 100%;}
+[property="pink-tail"] img{background-position: 50% 100%;}
+
+/*  ==========
+    player-speaker
+    ========== */
+
+[player] .player-speaker{
+    position-anchor: --name;
+    padding: 4px;
+}
+
+[player="1"] .player-speaker {
+    inset-area: left center;
+    position-area: left center;
+    right: var(--offset);
+    transform: rotateY(180deg);
+}
+
+[player="2"] .player-speaker {
+    inset-area: right center;
+    position-area: right center;
+    left: var(--offset);
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
+}
+
+/*  ==========
+    player-final-winner-contain
+    ========== */
+
+.player-final-winner-contain{
+    position-anchor: --name;
+    top: var(--offset);
+}
+
+[player="1"] .player-final-winner-contain {
+    inset-area: span-left bottom;
+    position-area: span-left bottom;
+}
+
+[player="2"] .player-final-winner-contain {
+    inset-area: span-right bottom;
+    position-area: span-right bottom;
+}
+
+/*  ==========
+    player-winner
+    ========== */
+
+.player-winner{
+    color: #f8b800;
+    font-weight: bold;
+    height: 50px;
+    width: 216px;
+    padding: 0 .5em;
+    z-index: 2;
+    position: relative;
+    top: 2px;
+}
+
+/*  ==========
+    player-final
+    ========== */
+
+.player-final{
+    color: #f8b800;
+    height: 50px;
+    width: 216px;
+    z-index: 2;
+}
+
+.player-final:empty{
+    display:none;
+}
+
+/*  ==========
+    player-bestof
+    ========== */
+
+.player-best-of{
+    position-anchor: --name;
+    top: var(--offset);
+    display: grid;
+    display: none;
+}
+
+[player="1"] .player-best-of {
+    inset-area: right bottom;
+    position-area: right bottom;
+    left: var(--offset);
+}
+
+[player="2"] .player-best-of {
+    inset-area: left bottom;
+    position-area: left bottom;
+    right: var(--offset);
+}
+
+.player-best-of img{
+    width: 32px;
+    height: 32px;
+    background-image: url('images/ff4fe-spritesheet.png');
+    background-size: 500% 500%;
+    background-position: 0 100%;
+}
+
+.best-of-3, .best-of-5, .best-of-7{
+    display: grid;
+}
+.best-of-3 tr-toggle-class:nth-child(n+3),
+.best-of-5 tr-toggle-class:nth-child(n+4),
+.best-of-7 tr-toggle-class:nth-child(n+5){
+    display: none;
+}
+
+tr-timer{
+    width: 11em;
+    height: 52px;
+    z-index: 1;
+    top: var(--row-two);
+    left: 50%;
+    transform: translateX(-50%);
+}
+tr-timer span {
+    width: 26px;
+    text-align: center;
+}
+
+.staff{
+    /* top: 552px; */
+    top: var(--row-three);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid 2px currentColor;
+    z-index: 3;
+}
+
+.display-none{ display: none; }
+
+.show{ display: block; }
+
+/*  ==========
+    Menu
+    ========== */

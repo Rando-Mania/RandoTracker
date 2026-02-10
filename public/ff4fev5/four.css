@@ -1,0 +1,187 @@
+/* root */
+
+:root{
+    font-family: Arial, sans-serif;
+    --vidWidth: 440px;
+    --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) / (var(--vidAspect)) );
+ 
+    --gap-size: 12px;
+    --nameWidth: 140px;
+    --borderWidth: 2px;
+    --backgroundColor1: #000;
+    
+    --videoX: 12px; --videoY: 12px;
+    --offset: 12px;
+}
+
+/* helper classes */
+
+.border-1{outline: var(--borderWidth) solid currentColor;}
+.background-1{background-color: var(--backgroundColor1);}
+
+/*  ==========
+    Typography
+    ========== */
+
+/* @font-face {
+    font-family: "PressStart2P";
+    src: local('PressStart2P'),
+         url('../shared/fonts/pressstart2p.woff2') format('woff2'),
+	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
+         url('../shared/fonts/pressstart2p.ttf') format('truetype');
+}*/
+
+/*  ==========
+    Positioning
+    ========== */
+
+[player] .player-video{anchor-name: --video;}
+[player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
+[player="2"] .player-video {right: var(--videoX); top: var(--videoY);}
+[player="3"] .player-video {left: var(--videoX); bottom: var(--videoY);}
+[player="4"] .player-video {right: var(--videoX); bottom: var(--videoY);}
+
+[player] .player-name{anchor-name: --name; position-anchor: --video;}
+[player="1"] .player-name {inset-area: right span-bottom; position-area: right span-bottom;}
+[player="2"] .player-name {inset-area: left span-bottom; position-area: left span-bottom;}
+[player="3"] .player-name {inset-area: right span-top; position-area: right span-top;}
+[player="4"] .player-name {inset-area: left span-top; position-area: left span-top;}
+
+[player] .player-grid{anchor-name: --grid; position-anchor: --name;}
+[player="1"] .player-grid {inset-area: span-right bottom; position-area: span-right bottom;}
+[player="2"] .player-grid {inset-area: span-left bottom; position-area: span-left bottom;}
+[player="3"] .player-grid {inset-area: span-right top; position-area: span-right top;}
+[player="4"] .player-grid {inset-area: span-left top; position-area: span-left top;}
+
+[player] .player-speaker{position-anchor: --name;}
+[player="1"] .player-speaker {inset-area: bottom span-left; position-area: bottom span-left;}
+[player="2"] .player-speaker {inset-area: bottom span-right; position-area: bottom span-right;}
+[player="3"] .player-speaker {inset-area: top span-left; position-area: top span-left;}
+[player="4"] .player-speaker {inset-area: top span-right; position-area: top span-right;}
+
+[player] .player-final-winner-contain{position-anchor: --name;}
+[player="1"] .player-final-winner-contain {inset-area: span-left bottom; position-area: span-left bottom;}
+[player="2"] .player-final-winner-contain {inset-area: span-right bottom; position-area: span-right bottom;}
+[player="3"] .player-final-winner-contain {inset-area: span-left top; position-area: span-left top;}
+[player="4"] .player-final-winner-contain {inset-area: span-right top; position-area: span-right top;}
+
+/*  ==========
+    Components
+    ========== */
+
+.layout{
+    /* background image and color in html */
+    display: block;
+    padding: 0;
+    position: relative;
+}
+
+.player-info-contain{
+    position: relative;
+    grid-template-columns: auto 1fr;
+    justify-self: start;
+}
+
+.player-name{
+    height: 50px;
+    width: calc(var(--nameWidth) + 8px * 2);
+    padding: 0 8px;
+}
+
+.player-grid{
+    grid-template-columns: repeat(3, min-content);
+    padding: 4px;
+    grid-gap: 4px;
+}
+
+.player-grid img, .dialog img{
+    width: 24px;
+    height: 24px;
+    display: block;
+    /* background-image in html */
+    background-size: 500% 500%;
+}
+
+.sword{background-position: 25% 75%;}
+.objective-1 {background-position: 100% 0;}
+.objective-2 {background-position: 100% 25%;}
+.yang {background-position: 75% 100%;}
+
+.player-speaker{
+    padding: 4px;
+    justify-self: end;
+    grid-area: ps;
+}
+
+.player-speaker img{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../shared/images/icons/sprite.svg") no-repeat 100% 0% / 500% 400%;
+}
+
+.player-final-winner-contain{
+    color: #f8b800;
+}
+
+.player-winner{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.player-winner, .player-final{
+    height: 34px;
+    padding: 0 .5em;
+}
+
+tr-timer{
+    margin-bottom: 32px;
+}
+
+.timer-staff{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.vs{
+    padding: 12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+#vs_1 {top: 8px;}
+#vs_2 {bottom: 8px;}
+
+/* dialog styles */
+    
+.dialog{
+    text-align: center;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 7px;
+    padding: 7px;
+    border: solid var(--borderWidth) currentColor;
+    z-index: 3;
+}
+
+/* menu */
+
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{grid-area: team;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+
+#menu_credits{
+    grid-area: credits;
+    z-index: 1;
+}
+#menu_players_extra{grid-area: players2;}
+
+.menu-contain{
+    grid-template-areas:
+        "players2 players layout team"
+        "reset    timer   view   credits";
+    }
