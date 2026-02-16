@@ -3,3 +3,4 @@ firebase-debug.log
 .cache
 .firebase
 **/node_modules
+/public/shared/script/index.js
