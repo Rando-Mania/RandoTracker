@@ -26,6 +26,7 @@
 
     --row-two: 465px;
     --row-three: 520px;
+    font-family: "FF4", sans-serif;
 
 }
 
@@ -73,7 +74,6 @@
 .layout{
     /* background image and color in html */
     position: relative;
-    font-family: "FF4", sans-serif;
     color: var(--fontColor);
 }
 
@@ -227,20 +227,32 @@
 /*  ==========
     player-final-winner-contain
     ========== */
+.final-winner-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    pointer-events: none;
+}
 
 .player-final-winner-contain{
-    position-anchor: --name;
-    top: var(--offset);
+    display: flex;
+    gap: 12px;
 }
 
 [player="1"] .player-final-winner-contain {
-    inset-area: span-left bottom;
-    position-area: span-left bottom;
+    bottom: 275px;
+    left: 39px;
 }
 
 [player="2"] .player-final-winner-contain {
-    inset-area: span-right bottom;
-    position-area: span-right bottom;
+    bottom: 275px;
+    right: 39px;
+}
+
+[player="2"] .player-final-winner-contain {
+    flex-direction: row-reverse;
 }
 
 /*  ==========
@@ -254,8 +266,6 @@
     width: 216px;
     padding: 0 .5em;
     z-index: 2;
-    position: relative;
-    top: 2px;
 }
 
 /*  ==========
@@ -296,12 +306,29 @@
     right: var(--offset);
 }
 
+.player-best-of{
+    /* width: 216px; */
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: none;
+}
+
 .player-best-of img{
     width: 32px;
     height: 32px;
-    background-image: url('images/ff4fe-spritesheet.png');
-    background-size: 500% 500%;
-    background-position: 0 100%;
+    background-image: url('images/2p/ff4fe-sparkle-crystal.png');
+    background-size: 1000% 100%;
+}
+
+.player-best-of .active img{
+    animation: crystal-sparkle 1.9s steps(8) forwards;
+}
+
+@keyframes crystal-sparkle {
+    from{ background-position-x: -32px; }
+    to{ background-position-x: -288px; }
 }
 
 .best-of-3, .best-of-5, .best-of-7{
@@ -327,11 +354,132 @@ tr-timer span {
 }
 
 .staff{
-    /* top: 552px; */
     top: var(--row-three);
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    width: auto;
 }
+
+.staff tr-template{
+    display: contents;
+}
+
+.staff-panel{
+    height: 46px;
+    width: 167px;
+    font-size: 12px;
+}
+
+.commentators-contain, .restreamers-contain, .trackers-contain {
+    gap: 4px;
+    padding: 4px;
+    grid-template-columns: 32px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.staff-panel svg{
+    grid-row: span 2;
+    height: 2.4em;
+}
+
+.objective-row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 565px;
+}
+
+.objectives-contain{
+    left: 457px;
+    top: 542px;
+    display: flex;
+    flex-direction: column;
+}
+
+.objectives-contain > *{
+    margin-bottom: -2px;
+}
+
+.objective-contain{
+    visibility: collapse;
+    display: flex;
+}
+.objective-contain.show-objective{
+    visibility: initial;
+}
+
+.objective-label{
+    font-size: 18px;
+    width: 22px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-left: 2px;
+    padding-top: 2px;
+    --stroke-color: #252525;
+    background-color: var(--stroke-color);
+    color: var(--stroke-color);
+    position: relative;
+    text-shadow: 1px 1px var(--stroke-color), -1px -1px var(--stroke-color), -1px 1px var(--stroke-color), 1px -1px var(--stroke-color);
+}
+
+.objective-contain tr-toggle-class, .objective-contain .in-active {
+    opacity: 1;
+    filter: none;
+}
+
+.active .objective-label{
+    color: #fff;
+    animation: objective-blink .5s steps(1) 3;
+}
+
+@keyframes objective-blink{
+    50%{
+        background-color: #252525;
+        color: #a7a7a7;
+        --stroke-color: #000;
+    }
+}
+
+.objective-1.active .objective-label{background-color: #ad170c; --stroke-color: #470909;}
+.objective-2.active .objective-label{background-color: #ad5601; --stroke-color: #472a09;}
+.objective-3.active .objective-label{background-color: #a59002; --stroke-color: #474509;}
+.objective-4.active .objective-label{background-color: #0c6527; --stroke-color: #09470f;}
+.objective-5.active .objective-label{background-color: #0050b0; --stroke-color: #003789;}
+.objective-6.active .objective-label{background-color: #741d87; --stroke-color: #440557;}
+.objective-7.active .objective-label{background-color: #dc2584; --stroke-color: #70014c;}
+.objective-8.active .objective-label{background-color: #dc2584; --stroke-color: #70014c;}
+
+.eblan .objective-1.active .objective-label{background-color: #ad170c; --stroke-color: #570c06;}
+.eblan .objective-2.active .objective-label{background-color: #ad5601; --stroke-color: #572b01;}
+.eblan .objective-3.active .objective-label{background-color: #a59002; --stroke-color: #534801;}
+.eblan .objective-4.active .objective-label{background-color: #0c6527; --stroke-color: #063314;}
+.eblan .objective-5.active .objective-label{background-color: #1f9485; --stroke-color: #104a43;}
+.eblan .objective-6.active .objective-label{background-color: #0050b0; --stroke-color: #002858;}
+.eblan .objective-7.active .objective-label{background-color: #3200b0; --stroke-color: #190058;}
+.eblan .objective-8.active .objective-label{background-color: #741d87; --stroke-color: #3a0f44;}
+
+.objective-text-contain{
+    height: 24px;
+    width: 323px;
+    margin-left: -1px;
+    text-align: center;
+    z-index: 2;
+}
+
+.objectives-contain tr-text{
+    font-size: 14px;
+    padding: 6px 6px 4px;
+    z-index: 2;
+    width: 322px;
+    height: 24px;
+}
+
 
 /* dialog styles */
     
