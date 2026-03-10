@@ -1,5 +1,5 @@
 const firebaseApp = firebase.initializeApp({ 
-   apiKey: "AIzaSyAD6gMbqP2bjv67qQeeEZQT3F4ndNKK53A",
+   apiKey: "AIzaSyC4NvceVKeICqLGiU3ttXamyxXwge6kpsg",
    authDomain: "rando-tracker.firebaseapp.com",
    databaseURL: "https://rando-tracker.firebaseio.com",
    projectId: "rando-tracker",
