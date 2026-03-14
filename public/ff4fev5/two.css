@@ -340,6 +340,10 @@
     display: none;
 }
 
+/*  ==========
+    timer
+    ========== */
+
 tr-timer{
     width: 11em;
     height: 52px;
@@ -352,6 +356,10 @@ tr-timer span {
     width: 26px;
     text-align: center;
 }
+
+/*  ==========
+    staff
+    ========== */
 
 .staff{
     top: var(--row-three);
@@ -382,6 +390,10 @@ tr-timer span {
     grid-row: span 2;
     height: 2.4em;
 }
+
+/*  ==========
+    objectives
+    ========== */
 
 .objective-row{
     width: 100%;
@@ -480,6 +492,46 @@ tr-timer span {
     height: 24px;
 }
 
+/*  ==========
+    hero select
+    ========== */
+
+.hero-name {
+    display: none;
+    width: 73px;
+    height: 88px;
+    left: 604px;
+    top: 281px;
+    background-image: url(images/2p/OurHero.webp);
+}
+
+.hero-indicator {
+    background-image: url('images/2p/HeroSheet.png');
+    background-size: 400% 300%;
+    display: none;
+    left: 617px;
+    top: 378px;
+    width: 48px;
+    height: 72px;
+}
+
+.hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
+.hero-palom, .hero-porom, .hero-edge, .hero-fusoya {
+    display: initial;
+}
+
+.hero-indicator.hero-cecil {background-position: 0 0;}
+.hero-indicator.hero-rosa {background-position: 33.3% 0;}
+.hero-indicator.hero-kain {background-position: 66.6% 0;}
+.hero-indicator.hero-rydia {background-position: 100% 0;}
+.hero-indicator.hero-tellah {background-position: 0 50%;}
+.hero-indicator.hero-edward {background-position: 33.3% 50%;}
+.hero-indicator.hero-yang {background-position: 66.6% 50%;}
+.hero-indicator.hero-cid {background-position: 100% 50%;}
+.hero-indicator.hero-palom {background-position: 0 100%;}
+.hero-indicator.hero-porom {background-position: 33.3% 100%;}
+.hero-indicator.hero-edge {background-position: 66.6% 100%;}
+.hero-indicator.hero-fusoya {background-position: 100% 100%;}
 
 /* dialog styles */
     

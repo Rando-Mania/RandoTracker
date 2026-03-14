@@ -16,17 +16,22 @@
         }
     </script>
     <style>
-        .layout{
+        .community-open .layout{
             background-color: var(--backgroundColor1);
-            background-image: linear-gradient(rgb(255 255 255/.5)), url('images/2p/5point0_Tracker_Layout_with_color_headers-1.webp');
+            background-image: linear-gradient(rgb(255 255 255/.5)), url('images/2p/backgrounds/5point0_Tracker_Layout_with_color_headers-1.webp');
             background-size: 100% 100%;
             /* background-image: image-set(
                 url("../shared/images/checkerboard.jxl") type("image/jxl"),
                 url("../shared/images/checkerboard.webp") type("image/webp")
             ); */
         }
+
+        .ccs-shi .layout{
+            background-color: #053505; 
+            background-image: url(images/2p/backgrounds/ccs/winter-2023/Layout_SHI.webp);
+        }
         .player-grid img, .dialog img{
-            background-image: url(images/2p/ff4fe-spritesheet.png);
+            background-image: url(images/2p/ff4fe-spritesheet.webp);
         }
     </style>
 </head>
@@ -62,6 +67,9 @@
         <div class="abs objective-row">
             <tr-template class="objectives-contain" href="objective_tracker.html"></tr-template>
         </div>
+
+        <div class="abs hero-name"></div>
+        <div class="abs hero-indicator"></div>
     </div>
 
     <template id="player_final_winner_template">
