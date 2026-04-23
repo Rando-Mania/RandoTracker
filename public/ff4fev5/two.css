@@ -578,10 +578,79 @@ tr-timer span {
 
 .groups-contain{
   display: flex;
-  gap: 1em;
+  gap: .5em;
+}
+
+.group-contain{
+    padding: 0 .5em;
+}
+.groups-contain div:nth-of-type(even){
+    background-color: rgb(255 255 255 / 0.3);
+    border-radius: 4px;
+    /* corner-shape: notch; */
+}
+
+.group-contain h4{
+    margin-left: 1em;
 }
 
 .group-contain li{
     margin-bottom: 1em;
     margin-left: 1em;
 }
+
+.menu-general #menu_players {
+    grid-area: initial;
+}
+
+#menu_production_two{
+    grid-area: team2;
+    background-color: #000;
+    z-index: 2;
+}
+#menu_production_two h4{
+    margin-bottom: 0.3em;
+}
+#menu_production_two div div{
+    display: flex;
+    justify-content: space-between;
+}
+#menu_credits{grid-area: credits; z-index: 3;}
+#menu_players_extra{grid-area: players2;}
+#menu_objectives{grid-area: objectives;}
+#menu_backgrounds{grid-area: backgrounds;}
+#menu_hero{grid-area: hero; z-index: 1}
+#menu_flags{grid-area: flags; z-index: 1}
+
+.menu-general #menu_players,
+.menu-general #menu_layout,
+.menu-general #menu_production,
+.menu-general #menu_timer,
+.menu-general #menu_view,
+.menu-general #menu_reset{grid-area: initial;}
+
+.menu-general #menu_players{grid-area: players;}
+.menu-general #menu_timer{grid-area: timer;}
+.menu-general #menu_view{grid-area: view;}
+.menu-general #menu_reset{grid-area: reset;}
+.menu-general #menu_layout{grid-area: layout;}
+.menu-general #menu_production{display: none;}
+/*.menu-contain{
+    grid-template-areas:
+        "objectives players2    players layout  layout  team"
+        "objectives backgrounds timer   view    reset   credits"
+        "objectives tourney     timer   view    reset   credits";
+    }*/
+
+.menu-contain{
+    grid-template-areas:
+        "players    players     players2   layout   team2"
+        "backgrounds hero       flags       timer team2 "
+        "objectives  objectives objectives objectives view"
+        "objectives  objectives objectives objectives reset"
+        "objectives  objectives objectives objectives credits";
+    }
+
+    .objectives-list-menu{
+        display: none;
+    }
