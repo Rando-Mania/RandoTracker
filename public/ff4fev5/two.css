@@ -395,18 +395,42 @@ tr-timer span {
     objectives
     ========== */
 
+.object-group-label{
+    width: 220px;
+    height: 14px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+    padding: 4px;
+}
+.group-a-color{background-color: #950c21;}
+.group-b-color{background-color: #008686;}
+.group-c-color{background-color: #0c9429;}
+.group-d-color{background-color: #7519a2;}
+.group-e-color{background-color: #0659d8;}
+
 .objective-row{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    top: 565px;
+    top: 566px;
+    height: 152px;
 }
 
 .objectives-contain{
-    left: 457px;
-    top: 542px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    height: 151px;
+}
+
+.objectives-contain > div{
     display: flex;
     flex-direction: column;
+    width: 251px;
+}
+
+.objectives-contain > div:nth-of-type(odd){
+    align-self: end;
 }
 
 .objectives-contain > *{
@@ -422,9 +446,9 @@ tr-timer span {
 }
 
 .objective-label{
-    font-size: 18px;
-    width: 22px;
-    height: 24px;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,19 +501,17 @@ tr-timer span {
 .eblan .objective-8.active .objective-label{background-color: #741d87; --stroke-color: #3a0f44;}
 
 .objective-text-contain{
-    height: 24px;
-    width: 323px;
     margin-left: -1px;
     text-align: center;
     z-index: 2;
 }
 
 .objectives-contain tr-text{
-    font-size: 14px;
-    padding: 6px 6px 4px;
+    font-size: 10px;
+    padding: 4px 0 0 0;
     z-index: 2;
-    width: 322px;
-    height: 24px;
+    width: 220px;
+    height: 14px;
 }
 
 /*  ==========
@@ -553,3 +575,13 @@ tr-timer span {
 /*  ==========
     Menu
     ========== */
+
+.groups-contain{
+  display: flex;
+  gap: 1em;
+}
+
+.group-contain li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
