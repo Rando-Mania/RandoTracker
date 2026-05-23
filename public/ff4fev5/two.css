@@ -386,6 +386,11 @@ tr-timer span {
     grid-template-rows: repeat(2, 1fr);
 }
 
+.commentators, .restreamers, .trackers {
+    width: 116px;
+    justify-self: start;
+}
+
 .staff-panel svg{
     grid-row: span 2;
     height: 2.4em;
