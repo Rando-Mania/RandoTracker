@@ -16,20 +16,52 @@
         }
     </script>
     <style>
-        .community-open .layout{
-            background-color: gray;
-            /* background-image: url('images/2p/backgrounds/5point0_Tracker_Layout_with_color_headers-1.webp'); */
-            background-size: 100% 100%;
-            /* background-image: image-set(
-                url("../shared/images/checkerboard.jxl") type("image/jxl"),
-                url("../shared/images/checkerboard.webp") type("image/webp")
-            ); */
-        }
-
         .ccs-shi .layout{
             background-color: #053505; 
             background-image: url(images/2p/backgrounds/ccs/winter-2023/Layout_SHI.webp);
+            background-image: image(url(images/2p/backgrounds/ccs/winter-2023/Layout_SHI.webp), #053505);
         }
+
+        .ccs-ms .layout{
+            background-color: #000; 
+            background-image: url(images/2p/backgrounds/ccs/winter-2023/Layout_MS_New.webp);
+        }
+
+        .ccs-lrc .layout{
+            background-color: #4d0627;
+            background-image: url(images/2p/backgrounds/ccs/winter-2023/Layout_LRC.webp);
+        }
+
+        .ccs-baron-hero .layout{
+            background-color: #053505;
+            background-image: url(images/2p/backgrounds/ccs/summer-2022/Layout-BHJ.webp);
+            background-image:
+                image-set(
+                    url("images/2p/backgrounds/ccs/summer-2022/Layout-BHJ.avif") type("image/avif"),
+                    url("images/2p/backgrounds/ccs/summer-2022/Layout-BHJ.webp") type("image/webp")
+                );
+        }
+
+        .ccs-special-feature .layout{
+            background-color: #4d0627;
+            background-image: url(images/2p/backgrounds/ccs/CCS-BG-SpecialFeature.webp);
+        }
+
+        .community-open .layout{
+            background-color: #006a02;
+            background-image: url(images/2p/backgrounds/community-race/Community_Race_Live_BG.webp);
+        }
+
+        .zz6 .layout{
+            background-color: #110b02;
+            background-image: url(images/2p/backgrounds/zz6/ZZ2p_live.webp);    
+            background-image:
+                image-set(
+                    url("images/2p/backgrounds/zz6/ZZ2p_live.avif") type("image/avif"),
+                    url("images/2p/backgrounds/zz6/ZZ2p_live.webp") type("image/webp")
+                );
+        }
+
         .player-grid img, .dialog img{
             background-image: url(images/2p/ff4fe-spritesheet.webp);
         }
