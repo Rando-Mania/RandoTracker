@@ -523,23 +523,26 @@ tr-timer span {
     hero select
     ========== */
 
+.hero-name, .hero-indicator{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+}
+
 .hero-name {
     display: none;
-    width: 73px;
-    height: 88px;
-    left: 604px;
+    height: 86px;
     top: 281px;
     background-image: url(images/2p/OurHero.webp);
+    background-size: 100% 100%;
 }
 
 .hero-indicator {
+    display: none;
+    height: 68px;
+    top: 382px;
     background-image: url('images/2p/HeroSheet.png');
     background-size: 400% 300%;
-    display: none;
-    left: 617px;
-    top: 378px;
-    width: 48px;
-    height: 72px;
 }
 
 .hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
