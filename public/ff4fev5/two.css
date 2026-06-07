@@ -154,15 +154,16 @@
     top: var(--row-three);
     grid-template-columns: auto;
     padding: 2px;
+    height: 437px;
 }
 
 [player="1"] .player-grid {
-    top: var(--videoY);
+    top: calc( var(--videoY) - var(--border));
     left: 4px;
 }
 
 [player="2"] .player-grid {
-    top: var(--videoY);
+    top: calc( var(--videoY) - var(--border));
     right: 4px;
 }
 
@@ -171,6 +172,7 @@
     display: block;
     /* background image and color in html */
     background-size: 500% 500%;
+    image-rendering: pixelated;
 }
 
 [property="pass"] img{background-position: 25% 0;}
@@ -194,6 +196,33 @@
 
 [property="rat-tail"] img{background-position: 25% 100%;}
 [property="pink-tail"] img{background-position: 50% 100%;}
+
+/* .player-grid tr-toggle-class:nth-child(1),
+.player-grid tr-toggle-class:nth-child(5),
+.player-grid tr-toggle-class:nth-child(9),
+.player-grid tr-toggle-class:nth-child(13){
+    order: 1;
+}
+.player-grid tr-toggle-class:nth-child(2),
+.player-grid tr-toggle-class:nth-child(6),
+.player-grid tr-toggle-class:nth-child(10),
+.player-grid tr-toggle-class:nth-child(14),
+.player-grid tr-toggle-class:nth-child(17){
+    order: 2;
+}
+.player-grid tr-toggle-class:nth-child(3),
+.player-grid tr-toggle-class:nth-child(7),
+.player-grid tr-toggle-class:nth-child(11),
+.player-grid tr-toggle-class:nth-child(15),
+.player-grid tr-toggle-class:nth-child(18){
+    order: 3;
+}
+.player-grid tr-toggle-class:nth-child(4),
+.player-grid tr-toggle-class:nth-child(8),
+.player-grid tr-toggle-class:nth-child(12),
+.player-grid tr-toggle-class:nth-child(16){
+    order: 4;
+} */
 
 /*  ==========
     player-speaker
@@ -543,6 +572,7 @@ tr-timer span {
     top: 382px;
     background-image: url('images/2p/HeroSheet.png');
     background-size: 400% 300%;
+    image-rendering: pixelated;
 }
 
 .hero-cecil, .hero-rosa, .hero-kain, .hero-rydia, .hero-tellah, .hero-edward, .hero-yang, .hero-cid,
