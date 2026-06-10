@@ -66,7 +66,6 @@
     width: 1280px;
     height: 720px;
     background-color: #202028;
-    background-image: var(--bgFallback);
 }
 .layout.transparent-background .background-layer{
     -webkit-mask:
@@ -95,7 +94,60 @@
     mask-repeat: no-repeat
 }
 
-.jot-default .background-layer{background-image: url('images/3p/base-background.webp'),  var(--bgFallback);}
+.jot-default .background-layer{
+    background-image: url('images/3p/base-background.webp'),  var(--bgFallback);
+}
+
+.none .background-layer{
+    background: none;
+}
+
+.lost-worlds .background-layer{
+    background-image: none;
+    background-color: var(--backgroundColor1);
+}
+
+.lost-worlds .border-1{
+    border: var(--border) solid #b1b1b1;
+    border-width: 2px 1px 1px 2px;
+    border-radius: 4px;
+    border-image: none;
+}
+.lost-worlds .player-grid{
+    background-color: #000;
+}
+
+/* .layout.lost-worlds .player-grid img {
+    width: 22px;
+    height: 22px;
+} */
+
+.lost-worlds .player-grid :where([property="hilt"], [property="blade"], [property="melchior"], [property="key"], [property="pop"], [property="shell"], [property="pop"], [property="moonstone"], [property="jerky"], [property="magic"], [property="tools"], [property="kitty"]){
+    display: none;
+}
+
+.lost-worlds .player-grid [property="doll"]{grid-area: 2 / 1; }
+.lost-worlds .player-grid [property="trigger"]{grid-area: 2 / 2;}
+.lost-worlds .player-grid [property="rock"]{grid-area: 2 / 3;}
+.lost-worlds .player-grid [property="knife"]{grid-area: 2 / 4;}
+.lost-worlds .player-grid [property="go"]{
+    grid-area: 2 / 6; 
+    top: 63%;
+}
+.lost-worlds .player-grid [property="pendant"]{grid-area: 3 / 1;}
+.lost-worlds .player-grid [property="masamune"]{grid-area: 3 / 2;}
+.lost-worlds .player-grid [property="badge"]{grid-area: 3 / 3;}
+.lost-worlds .player-grid [property="ribbon"]{grid-area: 3 / 4;}
+.lost-worlds .player-grid [property="chest"]{grid-area: 3 / 6;}
+
+.lost-worlds .player-grid tr-toggle-class:nth-child(n+8){
+    position: relative;
+    left: 50%;
+}
+
+.lost-worlds .background-1{
+    --backgroundColor2: #7e7e7e;
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -156,6 +208,10 @@
 }
 
 .player-grid img, .dialog img{background-image: url('images/retro_tracker/ctr-items-sprite-2020.webp');}
+
+.trigger, .badge{
+    scale: 1.35;
+}
 
 .crono{background-position: 0 0;}
 .marle{background-position: 16.6% 0;}
