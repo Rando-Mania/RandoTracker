@@ -5,13 +5,13 @@
 }
 
 :root{
-    --vidWidth: 435px;
+    --vidWidth: 420px;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
-    --videoX: 12px; --videoY: 12px;
-    --nameWidth: 173px;
-    --nameX: 449px; --nameY: 12px;
-    --gridX: 449px; --gridY: 64px;
+    --videoX: 18px; --videoY: 18px;
+    --nameWidth: 169px;
+    --nameX: 449px; --nameY: 18px;
+    --gridX: 449px; --gridY: 73px;
     --pronounX: 548px; --pronounY: 64px;
     --rankX: 548px; --rankY: 100px;
     --speakerX: 445px; --speakerY: 160px;
@@ -25,17 +25,10 @@
     --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
     --border: 6px;
-
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{
-    border: var(--border) solid #b1b1b1;
-    border-radius: 8px;
-    border-image: url('images/border.png') 4;
+    border-image: url('images/border.svg') 4 / 4px / 4px;
 }
 
 .border-bottom{border-top: none;}
@@ -67,31 +60,15 @@
     height: 720px;
     background-color: #202028;
 }
+
 .layout.transparent-background .background-layer{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1),
-        /* cover "4p" */
-        linear-gradient(red,red) bottom var(--videoY) right var(--videoY) / var(--vidWidth) var(--vidHeight);
-    -webkit-mask-repeat: no-repeat;
-    webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1),
-        /* cover "4p" */
-        linear-gradient(red,red) bottom var(--videoY) right var(--videoY) / var(--vidWidth) var(--vidHeight);
-    mask-repeat: no-repeat
+    --red: linear-gradient(red 0 0);
+    --video-size: var(--vidWidth) var(--vidHeight);
+    mask-image: var(--red), var(--red), var(--red), var(--red);
+    mask-repeat: no-repeat;
+    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), left var(--videoX) bottom var(--videoY);
+    mask-size: 100% 100%, var(--video-size), var(--video-size), var(--video-size);
+    mask-composite: exclude;
 }
 
 .jot-default .background-layer{
@@ -103,18 +80,17 @@
 }
 
 .lost-worlds .background-layer{
+    --backgroundColor1: #1f1f26;
     background-image: none;
     background-color: var(--backgroundColor1);
 }
 
-.lost-worlds .border-1{
-    border: var(--border) solid #b1b1b1;
-    border-width: 2px 1px 1px 2px;
-    border-radius: 4px;
-    border-image: none;
-}
 .lost-worlds .player-grid{
     background-color: #000;
+}
+
+.lost-worlds .player-name{
+    background-color: #065072;
 }
 
 /* .layout.lost-worlds .player-grid img {
@@ -159,7 +135,7 @@
 
 .player-name{
     font-size: 26px;
-    height: 50px;
+    height: 43px;
     width: calc(var(--nameWidth) + 8px * 2);
     color: #fff;
     display: flex;
@@ -275,8 +251,8 @@
 }
 
 tr-timer{
-	width: 11em;
-    height: 53px;
+	width: 236px;
+    height: 43px;
     z-index: 1;
 	font-size: 24px;
 }
@@ -289,8 +265,8 @@ tr-timer span {
 .staff{
     overflow: hidden;
     font-size: 24px;
-	width: 280px;
-	height: 75px;
+	width: 270px;
+	height: 65px;
 }
 
 .staff svg{
