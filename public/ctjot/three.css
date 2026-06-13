@@ -251,15 +251,23 @@
 }
 
 tr-timer{
-	width: 236px;
+	width: 200px;
     height: 43px;
     z-index: 1;
-	font-size: 24px;
+	font-size: 42px;
+    bottom: 70px;
+    left: 960px;
 }
 
 tr-timer span {
-    width: 26px;
+    position: relative;
+    top: 4px;
+    width: 20px;
     text-align: center;
+}
+
+tr-timer :is(.dot, .ms) {
+    display: none;
 }
 
 .staff{
@@ -267,6 +275,8 @@ tr-timer span {
     font-size: 24px;
 	width: 270px;
 	height: 65px;
+    bottom: 130px; 
+    left: 927px;
 }
 
 .staff svg{
