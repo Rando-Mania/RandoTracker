@@ -11,11 +11,11 @@
     
     --videoX: 20px; --videoY: 94px;
     --nameWidth: 360px;
-    --nameX: 20px; --nameY: 5px;
+    --nameX: 20px; --nameY: 41px;
     --gridX: 20px; --gridY: 554px;
     --pronounX: 20px; --pronounY: 57px;
     --rankX: 131px; --rankY: 57px;
-    --speakerX: 245px; --speakerY: 56px;
+    --speakerX: 396px; --speakerY: 47px;
     --winX: 385px; --winY: 554px;
     --finalX: 287px; --finalY: 554px;
     --bestX: 285px; --bestY: 58px;
@@ -46,8 +46,7 @@
 
 .border-1{
     border: var(--border) solid #b1b1b1;
-    border-radius: 8px;
-    border-image: url('images/border.png') 4;
+    border-image: url('images/border.svg') 4;
 }
 
 .border-bottom{border-top: none;}
@@ -73,8 +72,6 @@
     height: 720px;
     color: #fff;
     position: relative;
-    background-color: #202028;
-    background-image: var(--bgFallback);
 }
 
 .layout.transparent-background{
@@ -90,6 +87,56 @@
 }
 
 .jot-default{background-image: url('images/2p/base-background.webp'),  var(--bgFallback);}
+
+.none.layout{
+    background: none;
+}
+
+.lost-worlds.layout{
+    --backgroundColor1: #1f1f26;
+    background-image: none;
+    background-color: var(--backgroundColor1);
+}
+
+.lost-worlds .player-grid{
+    background-color: #000;
+}
+
+.lost-worlds .player-name{
+    background-color: #065072;
+}
+
+/* .layout.lost-worlds .player-grid img {
+    width: 22px;
+    height: 22px;
+} */
+
+.lost-worlds .player-grid :where([property="hilt"], [property="blade"], [property="melchior"], [property="key"], [property="pop"], [property="shell"], [property="pop"], [property="moonstone"], [property="jerky"], [property="magic"], [property="tools"], [property="kitty"]){
+    display: none;
+}
+
+.lost-worlds .player-grid [property="doll"]{grid-area: 2 / 1; }
+.lost-worlds .player-grid [property="trigger"]{grid-area: 2 / 2;}
+.lost-worlds .player-grid [property="rock"]{grid-area: 2 / 3;}
+.lost-worlds .player-grid [property="knife"]{grid-area: 2 / 4;}
+.lost-worlds .player-grid [property="go"]{
+    grid-area: 2 / 6; 
+    top: 63%;
+}
+.lost-worlds .player-grid [property="pendant"]{grid-area: 3 / 1;}
+.lost-worlds .player-grid [property="masamune"]{grid-area: 3 / 2;}
+.lost-worlds .player-grid [property="badge"]{grid-area: 3 / 3;}
+.lost-worlds .player-grid [property="ribbon"]{grid-area: 3 / 4;}
+.lost-worlds .player-grid [property="chest"]{grid-area: 3 / 6;}
+
+.lost-worlds .player-grid tr-toggle-class:nth-child(n+8){
+    position: relative;
+    left: 50%;
+}
+
+.lost-worlds .background-1{
+    --backgroundColor2: #7e7e7e;
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -215,6 +262,7 @@
 
 .player-speaker{
     padding: 4px;
+    filter: drop-shadow(0 0 2px black);
 }
 
 .player-speaker img{
@@ -272,12 +320,12 @@
 }
 
 tr-timer{
-	width: 11em;
+	width: 192px;
     height: 53px;
     z-index: 1;
-	font-size: 24px;
 	top: 565px;
-	left: 505px;
+	left: 547px;
+    font-size: 42px;
 }
 
 .layout.show-cams tr-timer{
@@ -288,16 +336,22 @@ tr-timer{
 }
 
 tr-timer span {
-    width: 26px;
+    position: relative;
+    top: 4px;
+    width: 20px;
     text-align: center;
+}
+
+tr-timer :is(.dot, .ms) {
+    display: none;
 }
 
 .staff{
     font-size: 24px;
-    width: 450px;
-    height: 78px;
-	top: 13px; 
-	left: 413px; 
+    width: 350px;
+    height: 68px;
+    top: 21px;
+    left: 467px;
     text-align: center;
     border-bottom: none;
 }
@@ -310,7 +364,7 @@ tr-timer span {
 }
 
 .commentators, .restreamers, .trackers{
-    width: 400px;
+    width: 307px;
 }
 
 
