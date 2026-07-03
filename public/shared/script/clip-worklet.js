@@ -2,23 +2,22 @@ class maskImage {
     static get inputProperties() { 
       return [
         '--vidWidth',
-        '--vidAspect', 
-        '--vidHeight',
+        '--vidAspect',
         '--videoX',
         '--videoY',
         '--border'
       ];
     }
     
-    paint(ctx, properties) {
+    paint(ctx, size, props) {
 
-      let border = parseFloat(properties.get("--border"));
-      let vidWidth = parseFloat(properties.get("--vidWidth")) - 2 * border;
-      let vidAspect = parseFloat(properties.get("--vidAspect"));
-      let vidX = parseFloat(properties.get("--videoX")) + border;
-      let vidY = parseFloat(properties.get("--videoY")) + border;
+      let border = parseFloat(props.get("--border"));
+      let vidWidth = parseFloat(props.get("--vidWidth")) - 2 * border;
+      let vidAspect = parseFloat(props.get("--vidAspect"));
+      let vidX = parseFloat(props.get("--videoX")) + border;
+      let vidY = parseFloat(props.get("--videoY")) + border;
 
-      let vidHeight = vidWidth * (1 / vidAspect) - .5 * border;
+      let vidHeight = vidWidth * (1 / vidAspect);
 
       const vidX2 = 1280 - vidX - vidWidth;
 

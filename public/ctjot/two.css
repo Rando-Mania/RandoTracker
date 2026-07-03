@@ -5,14 +5,14 @@
 }
 
 :root{
-    --vidWidth: 610px;
+    --vidWidth: 604px;
     --vidAspect: 4 / 3;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     
-    --videoX: 20px; --videoY: 94px;
-    --nameWidth: 360px;
-    --nameX: 20px; --nameY: 41px;
-    --gridX: 20px; --gridY: 554px;
+    --videoX: 24px; --videoY: 98px;
+    --nameWidth: 352px;
+    --nameX: 24px; --nameY: 45px;
+    --gridX: 24px; --gridY: 561px;
     --pronounX: 20px; --pronounY: 57px;
     --rankX: 131px; --rankY: 57px;
     --speakerX: 396px; --speakerY: 47px;
@@ -25,11 +25,6 @@
     --bgFallback: linear-gradient(to right, #202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
     --border: 4px;
-
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .layout.show-cams{
@@ -45,8 +40,7 @@
 }
 
 .border-1{
-    border: var(--border) solid #b1b1b1;
-    border-image: url('images/border.svg') 4;
+    border-image: url('images/border.svg') 4 / 4px / 4px;
 }
 
 .border-bottom{border-top: none;}
@@ -74,16 +68,72 @@
     position: relative;
 }
 
-.layout.transparent-background{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) right / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) bottom / 100% calc(100% - var(--clipY2));
-    -webkit-mask-repeat: no-repeat
+@supports not (background-image: paint()){
+    .layout{
+        mask-composite: exclude;
+        mask-repeat: no-repeat;
+        --red: linear-gradient(red 0 0);
+        --video-size: var(--vidWidth) var(--vidHeight);
+    }
+    .layout.transparent-background{
+        mask-image: var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+        mask-size: 100% 100%, var(--video-size), var(--video-size);
+    }
+
+    .layout.clip-grid{
+        mask-image: var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+        mask-size: 100% 100%, 258px 150px, 258px 150px;
+    }
+
+    .layout.lost-worlds.clip-grid{
+        mask-size: 100% 100%, 258px 114px, 258px 114px;
+    }
+
+    .layout.transparent-background.clip-grid{
+        mask-image: var(--red), var(--red), var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 150px, 258px 150px;
+    }
+
+    .layout.transparent-background.lost-worlds.clip-grid{
+        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 114px, 258px 114px;
+    }
+}
+
+@supports (background-image: paint()){
+    .layout{
+        mask-composite: exclude;
+        mask-repeat: no-repeat;
+        --red: linear-gradient(red 0 0);
+        --video-size: var(--vidWidth) var(--vidHeight);
+    }
+    .layout.transparent-background{
+        mask-image: var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+        mask-size: 100% 100%, var(--video-size), var(--video-size);
+    }
+
+    .layout.clip-grid{
+        mask-image: var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+        mask-size: 100% 100%, 258px 150px, 258px 150px;
+    }
+
+    .layout.lost-worlds.clip-grid{
+        mask-size: 100% 100%, 258px 114px, 258px 114px;
+    }
+
+    .layout.transparent-background.clip-grid{
+        mask-image: var(--red), var(--red), var(--red), var(--red), var(--red);
+        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 150px, 258px 150px;
+    }
+
+    .layout.transparent-background.lost-worlds.clip-grid{
+        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 114px, 258px 114px;
+    }
 }
 
 .jot-default{background-image: url('images/2p/base-background.webp'),  var(--bgFallback);}
@@ -169,7 +219,7 @@
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
-    height: 50px;
+    height: 44px;
 	color: #fff;
     display: flex;
     align-items: center;
@@ -324,7 +374,8 @@ tr-timer{
     height: 53px;
     z-index: 1;
 	top: 565px;
-	left: 547px;
+	left: 50%;
+    transform: translateX(-50%);
     font-size: 42px;
 }
 
@@ -348,19 +399,21 @@ tr-timer :is(.dot, .ms) {
 
 .staff{
     font-size: 24px;
-    width: 350px;
-    height: 68px;
-    top: 21px;
-    left: 467px;
+    width: 342px;
+    height: 64px;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    border-bottom: none;
+    clip-path: inset(-4px -4px 0 -4px);
 }
 
 .layout.show-cams .staff{
     border-bottom: solid 6px;
     height: 85px;
     top: 626px;
-	left: 285px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .commentators, .restreamers, .trackers{

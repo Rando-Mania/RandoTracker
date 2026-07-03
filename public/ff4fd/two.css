@@ -14,7 +14,7 @@
     font-family: Arial, sans-serif;
     font-size: 1em;
     --vidWidth: 640px;
-    --vidAspect: 16 / 10;
+    --vidAspect: 1.6;
     --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
 
     --nameWidth: 375px;
@@ -109,7 +109,7 @@
 }
 
 .layout.transparent-background{
-    -webkit-mask-image: paint(clipMask);
+    mask-image: paint(clipMask);
 }
 
 .player-name{
