@@ -66,74 +66,35 @@
     height: 720px;
     color: #fff;
     position: relative;
+    mask-composite: exclude;
+    mask-repeat: no-repeat;
+    --red: linear-gradient(red 0 0);
+    --video-size: var(--vidWidth) var(--vidHeight);
+    --grid-size: var(--gridWidth) var(--gridHeight);
+    --gridWidth: 258px;
+    --gridHeight: 150px;
 }
 
-@supports not (background-image: paint()){
-    .layout{
-        mask-composite: exclude;
-        mask-repeat: no-repeat;
-        --red: linear-gradient(red 0 0);
-        --video-size: var(--vidWidth) var(--vidHeight);
-    }
-    .layout.transparent-background{
-        mask-image: var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
-        mask-size: 100% 100%, var(--video-size), var(--video-size);
-    }
-
-    .layout.clip-grid{
-        mask-image: var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
-        mask-size: 100% 100%, 258px 150px, 258px 150px;
-    }
-
-    .layout.lost-worlds.clip-grid{
-        mask-size: 100% 100%, 258px 114px, 258px 114px;
-    }
-
-    .layout.transparent-background.clip-grid{
-        mask-image: var(--red), var(--red), var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
-        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 150px, 258px 150px;
-    }
-
-    .layout.transparent-background.lost-worlds.clip-grid{
-        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 114px, 258px 114px;
-    }
+.layout.transparent-background{
+    mask-image: var(--red), var(--red), var(--red);
+    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+    mask-size: 100% 100%, var(--video-size), var(--video-size);
 }
 
-@supports (background-image: paint()){
-    .layout{
-        mask-composite: exclude;
-        mask-repeat: no-repeat;
-        --red: linear-gradient(red 0 0);
-        --video-size: var(--vidWidth) var(--vidHeight);
-    }
-    .layout.transparent-background{
-        mask-image: var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
-        mask-size: 100% 100%, var(--video-size), var(--video-size);
-    }
+.layout.clip-grid{
+    mask-image: var(--red), var(--red), var(--red);
+    mask-position: 0 0, var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+    mask-size: 100% 100%, var(--grid-size), var(--grid-size);
+}
 
-    .layout.clip-grid{
-        mask-image: var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
-        mask-size: 100% 100%, 258px 150px, 258px 150px;
-    }
+.layout.lost-worlds.clip-grid{
+    --gridHeight: 114px;
+}
 
-    .layout.lost-worlds.clip-grid{
-        mask-size: 100% 100%, 258px 114px, 258px 114px;
-    }
-
-    .layout.transparent-background.clip-grid{
-        mask-image: var(--red), var(--red), var(--red), var(--red), var(--red);
-        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
-        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 150px, 258px 150px;
-    }
-
-    .layout.transparent-background.lost-worlds.clip-grid{
-        mask-size: 100% 100%, var(--video-size), var(--video-size), 258px 114px, 258px 114px;
-    }
+.layout.transparent-background.clip-grid{
+    mask-image: var(--red), var(--red), var(--red), var(--red), var(--red);
+    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), var(--gridX) var(--gridY), right var(--gridX) top var(--gridY);
+    mask-size: 100% 100%, var(--video-size), var(--video-size), var(--grid-size), var(--grid-size);
 }
 
 .jot-default{background-image: url('images/2p/base-background.webp'),  var(--bgFallback);}
