@@ -1,0 +1,28 @@
+<svg width='1280' height='720' viewBox='0 0 1280 720' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+  <style>
+    .player-1, .player-2, .player-3, .player-4{fill: #000;}
+    .grid{
+      x: 449px;
+      y: 73px;
+      width: 146px;
+      height: 86px;
+    }
+	.player-2, .player-3, .player-4{
+		transform-origin: 50% 50%;
+	}
+    .player-2{
+      transform: rotateY(180deg);
+    }
+	.player-3{
+      transform: rotateX(180deg);
+    }
+	.player-4{
+      transform: rotateX(180deg) rotateY(180deg);
+    }
+  </style>
+  <rect fill="#fff" width="1280" height="720"/>
+  <rect class="grid player-1"/>
+  <rect class="grid player-2"/>
+  <rect class="grid player-3"/>
+  <rect class="grid player-4"/>
+</svg>

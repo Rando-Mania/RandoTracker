@@ -6,8 +6,9 @@
 
 :root{
     --vidWidth: 420px;
-    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
     --vidAspect: 4 / 3;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
     --videoX: 18px; --videoY: 18px;
     --nameWidth: 169px;
     --nameX: 449px; --nameY: 18px;
@@ -61,15 +62,18 @@
     background-color: #202028;
 }
 
-.layout.transparent-background .background-layer{
-    --red: linear-gradient(red 0 0);
-    --video-size: var(--vidWidth) var(--vidHeight);
-    mask-image: var(--red), var(--red), var(--red), var(--red);
+.layout{
     mask-repeat: no-repeat;
-    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY), left var(--videoX) bottom var(--videoY);
-    mask-size: 100% 100%, var(--video-size), var(--video-size), var(--video-size);
-    mask-composite: exclude;
+    --gridWidth: 146px;
+    --gridHeight: 86px;
 }
+
+.background-layer{mask-mode: luminance; mask-composite: intersect;}
+.layout.transparent-background .background-layer{mask-image: url('images/3p/video-mask.svg');}
+.layout.clip-grid .background-layer{mask-image: url('images/3p/grid-mask.svg');}
+.layout.lost-worlds.clip-grid .background-layer{mask-image: url('images/3p/grid-mask-lost-worlds.svg');}
+.layout.transparent-background.clip-grid .background-layer{mask-image:url('images/3p/video-mask.svg'),url('images/3p/grid-mask.svg');}
+.layout.transparent-background.clip-grid.lost-worlds .background-layer{mask-image:url('images/3p/video-mask.svg'),url('images/3p/grid-mask-lost-worlds.svg');}
 
 .jot-default .background-layer{
     background-image: url('images/3p/base-background.webp'),  var(--bgFallback);

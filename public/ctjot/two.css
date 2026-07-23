@@ -73,7 +73,17 @@
     --grid-size: var(--gridWidth) var(--gridHeight);
     --gridWidth: 258px;
     --gridHeight: 150px;
+    background: var(--bgFallback);
 }
+
+/* 
+.layout{mask-mode: luminance; mask-composite: intersect;}
+.layout.transparent-background{mask-image: url('images/2p/video-mask.svg');}
+.layout.clip-grid{mask-image: url('images/2p/grid-mask.svg');}
+.layout.lost-worlds.clip-grid{mask-image: url('images/2p/grid-mask-lost-worlds.svg');}
+.layout.transparent-background.clip-grid{mask-image:url('images/2p/video-mask.svg'),url('images/2p/grid-mask.svg');}
+.layout.transparent-background.clip-grid.lost-worlds{mask-image:url('images/2p/video-mask.svg'),url('images/2p/grid-mask-lost-worlds.svg');
+} */
 
 .layout.transparent-background{
     mask-image: var(--red), var(--red), var(--red);

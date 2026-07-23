@@ -1,0 +1,18 @@
+<svg width='1280' height='720' viewBox='0 0 1280 720' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+  <style>
+    .player-1, .player-2{fill: #000;}
+    .video{
+      x: 24px;
+      y: 98px;
+      width: 604px;
+      height: 453px;
+    }
+    .player-2{
+      transform: rotateY(180deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+  <rect fill="#fff" x="0" y="0" width="1280" height="720"/>
+  <rect class="video player-1"/>
+  <rect class="video player-2"/>
+</svg>
