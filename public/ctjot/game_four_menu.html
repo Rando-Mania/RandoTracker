@@ -39,7 +39,13 @@
             <label>Layout:</label>
             <tr-select-toggle property="layout-back-select">
                 <tr-option selected target=".layout, .tracker-layout" toggle-class="jot-default" value="1">Default</tr-option>
+                <tr-option target=".layout, .tracker-layout" toggle-class="lost-worlds" value="2">Lost Worlds</tr-option>
+                <tr-option target=".layout, .tracker-layout" toggle-class="none" value="3">None</tr-option>
             </tr-select-toggle>
+        </div>
+        <div>
+            <label for="clip-grid">Clip Icon Grids:</label>
+            <tr-input-toggle-class id="clip-grid" class="clip-grid-toggle-input" target=".layout" toggle-class="clip-grid" property="toggle-grid-clip"></tr-input-toggle-class>
         </div>
     </div>
     <div id="menu_credits" class="fieldset">

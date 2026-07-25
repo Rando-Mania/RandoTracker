@@ -5,7 +5,7 @@
       x: 449px;
       y: 73px;
       width: 146px;
-      height: 86px;
+      height: 66px;
     }
 	.player-2, .player-3, .player-4{
 		transform-origin: 50% 50%;

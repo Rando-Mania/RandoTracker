@@ -5,19 +5,19 @@
 }
 
 :root{
-    --border1: 1px solid #fff;
-    --vidWidth: 435px;
-    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    --vidWidth: 420px;
     --vidAspect: 4 / 3;
-    --videoX: 12px; --videoY: 12px;
-    --nameWidth: 173px;
-    --nameX: 449px; --nameY: 12px;
-    --gridX: 449px; --gridY: 64px;
+    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+
+    --videoX: 18px; --videoY: 18px;
+    --nameWidth: 169px;
+    --nameX: 449px; --nameY: 18px;
+    --gridX: 449px; --gridY: 73px;
     --pronounX: 548px; --pronounY: 64px;
     --rankX: 548px; --rankY: 100px;
     --speakerX: 445px; --speakerY: 160px;
-    --winX: 400px; --winY: 120px;
-    --finalX: 400px; --finalY: 80px;
+    --winX: 400px; --winY: 124px;
+    --finalX: 400px; --finalY: 84px;
     --vsX: 50%; --vsY: 140px;
 
     --backgroundColor1: #000;
@@ -35,9 +35,7 @@
 }
 
 .border-1{
-    border: var(--border) solid #b1b1b1;
-    border-radius: 8px;
-    border-image: url('images/border.png') 4;
+    border-image: url('images/border.svg') 4 / 4px / 4px;
 }
 
 .border-bottom{border-top: none;}
@@ -72,35 +70,80 @@
     background-image: var(--bgFallback);
 }
 
-.layout.transparent-background .background-layer{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1);
-    -webkit-mask-repeat: no-repeat;
+.layout{
+    mask-repeat: no-repeat;
+    --gridWidth: 146px;
+    --gridHeight: 86px;
 }
 
-.hide-p4 .layout.transparent-background .background-layer{
-    -webkit-mask:
-        /* vertical lines */
-        linear-gradient(red,red) left / var(--clipX1),
-        linear-gradient(red,red) center / calc(100% - var(--clipX2) * 2),
-        linear-gradient(red,red) right / var(--clipX1),
-        /* horizontal lines */
-        linear-gradient(red,red) top / 100% var(--clipY1),
-        linear-gradient(red,red) center / 100% calc(100% - var(--clipY2) * 2),
-        linear-gradient(red,red) bottom / 100% var(--clipY1),
-        /* cover "4p" */
-        linear-gradient(red,red) bottom var(--videoY) right var(--videoX) / var(--vidWidth) var(--vidHeight);
-    -webkit-mask-repeat: no-repeat
+.background-layer{mask-mode: luminance; mask-composite: intersect;}
+
+.layout.transparent-background .background-layer{mask-image: url('images/4p/video-mask.svg');}
+.layout.clip-grid .background-layer{mask-image: url('images/4p/grid-mask.svg');}
+.layout.lost-worlds.clip-grid .background-layer{mask-image: url('images/4p/grid-mask-lost-worlds.svg');}
+.layout.transparent-background.clip-grid .background-layer{mask-image:url('images/4p/video-mask.svg'),url('images/4p/grid-mask.svg');}
+.layout.transparent-background.clip-grid.lost-worlds .background-layer{mask-image:url('images/4p/video-mask.svg'),url('images/4p/grid-mask-lost-worlds.svg');}
+
+.hide-p4 .layout.transparent-background .background-layer{mask-image: url('images/3p/video-mask.svg');}
+.hide-p4 .layout.clip-grid .background-layer{mask-image: url('images/3p/grid-mask.svg');}
+.hide-p4 .layout.lost-worlds.clip-grid .background-layer{mask-image: url('images/3p/grid-mask-lost-worlds.svg');}
+.hide-p4 .layout.transparent-background.clip-grid .background-layer{mask-image:url('images/3p/video-mask.svg'),url('images/3p/grid-mask.svg');}
+.hide-p4 .layout.transparent-background.clip-grid.lost-worlds .background-layer{mask-image:url('images/3p/video-mask.svg'),url('images/3p/grid-mask-lost-worlds.svg');}
+
+
+.jot-default .background-layer{
+    background-image: url('images/4p/base-background.webp'),  var(--bgFallback);
 }
 
-.jot-default .background-layer{background-image: url('images/4p/base-background.webp'),  var(--bgFallback);}
+.none .background-layer{
+    background: none;
+}
+
+.lost-worlds .background-layer{
+    --backgroundColor1: #1f1f26;
+    background-image: none;
+    background-color: var(--backgroundColor1);
+}
+
+.lost-worlds .player-grid{
+    background-color: #000;
+}
+
+.lost-worlds .player-name{
+    background-color: #065072;
+}
+
+/* .layout.lost-worlds .player-grid img {
+    width: 22px;
+    height: 22px;
+} */
+
+.lost-worlds .player-grid :where([property="hilt"], [property="blade"], [property="melchior"], [property="key"], [property="pop"], [property="shell"], [property="pop"], [property="moonstone"], [property="jerky"], [property="magic"], [property="tools"], [property="kitty"]){
+    display: none;
+}
+
+.lost-worlds .player-grid [property="doll"]{grid-area: 2 / 1; }
+.lost-worlds .player-grid [property="trigger"]{grid-area: 2 / 2;}
+.lost-worlds .player-grid [property="rock"]{grid-area: 2 / 3;}
+.lost-worlds .player-grid [property="knife"]{grid-area: 2 / 4;}
+.lost-worlds .player-grid [property="go"]{
+    grid-area: 2 / 6; 
+    top: 63%;
+}
+.lost-worlds .player-grid [property="pendant"]{grid-area: 3 / 1;}
+.lost-worlds .player-grid [property="masamune"]{grid-area: 3 / 2;}
+.lost-worlds .player-grid [property="badge"]{grid-area: 3 / 3;}
+.lost-worlds .player-grid [property="ribbon"]{grid-area: 3 / 4;}
+.lost-worlds .player-grid [property="chest"]{grid-area: 3 / 6;}
+
+.lost-worlds .player-grid tr-toggle-class:nth-child(n+8){
+    position: relative;
+    left: 50%;
+}
+
+.lost-worlds .background-1{
+    --backgroundColor2: #7e7e7e;
+}
 
 .player-video{
     width: var(--vidWidth);
@@ -113,7 +156,7 @@
 
 .player-name{
     font-size: 26px;
-    height: 50px;
+    height: 43px;
     width: calc(var(--nameWidth) + 8px * 2);
     color: #fff;
     display: flex;
@@ -255,15 +298,24 @@
 }
 
 tr-timer{
-	width: 11em;
-    height: 53px;
+	width: 200px;
+    height: 43px;
     z-index: 1;
-	font-size: 24px;
+	font-size: 42px;
+    bottom: 175px; 
+    transform: translate(-50%);
+    left: 50%;
 }
 
 tr-timer span {
-    width: 26px;
+    position: relative;
+    top: 4px;
+    width: 20px;
     text-align: center;
+}
+
+tr-timer :is(.dot, .ms) {
+    display: none;
 }
 
 .staff{

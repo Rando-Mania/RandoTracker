@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../shared/production.css">
     <link rel="stylesheet" type="text/css" href="../shared/menu.css">
     <link rel="stylesheet" type="text/css" href="four.css">
-    <link rel="preload" href="images/border.png" as="image" type="image/png">
+    <link rel="preload" href="images/border.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="images/retro_tracker/ctr-items-sprite-2020.webp" as="image" type="image/webp">
     <style>
         [player="1"] .player-video {left: var(--videoX); top: var(--videoY);}
@@ -59,7 +59,6 @@
             <div class="player-name abs border-1 background-1">
                 <tr-text scale-to-fit-x property="player-name"></tr-text>
             </div>
-            <tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
             <tr-text property="player-pronoun" class="player-pronoun abs border-1 background-1"></tr-text>
 			<tr-text property="player-number" class="record-contain abs border-1 background-1"></tr-text>
             <tr-text property="player-final" class="player-final abs border-1 background-2"></tr-text>     
@@ -74,6 +73,7 @@
         </template>
         <template id="background_layer_template">
             <div class="border-1 player-video abs"></div>
+            <tr-template class="player-grid abs border-1 background-1" href="icons-2020.html"></tr-template>
         </template>
         <div class="background-layer">
             <tr-player player="1">
@@ -108,7 +108,7 @@
 
 <!-- timer/staff -->
 
-        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable" style="bottom: 175px; left: 508px;"></tr-timer>
+        <tr-timer class="abs border-1 background-2" property="timer-test" target="[title='Dummy Text'], input[value='screen']" toggle-class="disable"></tr-timer>
         <tr-hide-if-empty class="staff abs border-1 background-2" style="top: 175px; left: 500px;" toggle-class="wtf">
             <tr-template href="../shared/production-team.html"></tr-template>
         </tr-hide-if-empty>
