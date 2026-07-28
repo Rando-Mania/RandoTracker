@@ -85,6 +85,15 @@
     left: 360px;
     top: 245px;
 }
+
+.npc{
+    left: 600px;
+    top: 245px;
+    object-fit: cover;
+    object-position: 0 0;
+    object-position: random(0%, 100%, 25%) 0;
+}
+
 .flame-right{
     left: 840px;
     top: 245px;
@@ -126,6 +135,7 @@ h2{
     <div class="loadscreen-main">
         <tr-text property="header" class="header"></tr-text>
         <img class="flame abs flame-left" width="80" src="images/zelda-flame-animation.webp" alt="flame">
+        <img class="npc abs" width="80" height="80" src="images/npc-options.png" alt="npc">
         <img class="flame abs flame-right" width="80" src="images/zelda-flame-animation.webp" alt="flame">
         <picture>
             <source srcset="images/RandoLogo.avif" type="image/avif">
