@@ -5,9 +5,9 @@
 }
 
 :root{
-    --vidWidth: 855px;
+    --vidWidth: 848px;
     --vidAspect: 4 / 3;
-    --vidHeight: calc( var(--vidWidth) * (1 / (var(--vidAspect))) );
+    --vidHeight: calc(var(--vidWidth) * (1 / (var(--vidAspect))) );
     --videoX: 20px; --videoY: 20px;
     --nameWidth: 368px;
     --nameX: 880px; --nameY: 20px;
@@ -18,18 +18,11 @@
     --backgroundColor2: #000a62;
     --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
-    --border: 6px;
-
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
+    --border: 4px;
 }
 
 .border-1{
-    border: var(--border) solid #b1b1b1;
-    border-radius: 8px;
-    border-image: url('images/border.png') 4;
+    border-image: url('images/border.svg') 4 / 4px / 4px;
 }
 
 .border-bottom{border-top: none;}
@@ -56,18 +49,35 @@
     position: relative;
     background-color: #202028;
     background-image: var(--bgFallback);
+    mask-composite: exclude;
+    mask-repeat: no-repeat;
+    --video-size: var(--vidWidth) var(--vidHeight);
+    --red: linear-gradient(red, red);
+    --grid-width: 258px;
+    --grid-height: 145px;
+    --grid-size: var(--grid-width) var(--grid-height);
 }
 
 .layout.transparent-background{
-    --solid: linear-gradient(#000, #000);
-    -webkit-mask: var(--solid),
-        var(--solid) var(--clipX1) var(--clipY1);
-    -webkit-mask-size: 
-        100% 100%, 
-        calc(var(--vidWidth) - 2 * var(--border)) calc(var(--vidHeight) - 2 * var(--border));
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    mask-image: var(--red), var(--red);
+    mask-position: 0 0, var(--videoX) var(--videoY);
+    mask-size: 100% 100%, var(--video-size);
+}
+
+.layout.clip-grid{
+    mask-image: var(--red), var(--red);
+    mask-position: 0 0, var(--gridX) var(--gridY);
+    mask-size: 100% 100%, var(--grid-size);
+}
+
+.layout.lost-worlds.clip-grid{
+    --grid-height: 109px;
+}
+
+.layout.transparent-background.clip-grid{
+    mask-image: var(--red), var(--red), var(--red);
+    mask-position: 0 0, var(--videoX) var(--videoY), var(--gridX) var(--gridY);
+    mask-size: 100% 100%, var(--video-size), var(--grid-size);
 }
 
 .jot-default{
@@ -77,6 +87,56 @@
             url('images/1p/base-background.avif') type('image/avif'),
             url('images/1p/base-background.webp') type('image/webp')
         ), var(--bgFallback);
+}
+
+.none{
+    background: none;
+}
+
+.lost-worlds{
+    --backgroundColor1: #1f1f26;
+    background-image: none;
+    background-color: var(--backgroundColor1);
+}
+
+.lost-worlds .player-grid{
+    background-color: #000;
+}
+
+.lost-worlds .player-name{
+    background-color: #065072;
+}
+
+/* .layout.lost-worlds .player-grid img {
+    width: 22px;
+    height: 22px;
+} */
+
+.lost-worlds .player-grid :where([property="hilt"], [property="blade"], [property="melchior"], [property="key"], [property="pop"], [property="shell"], [property="pop"], [property="moonstone"], [property="jerky"], [property="magic"], [property="tools"], [property="kitty"]){
+    display: none;
+}
+
+.lost-worlds .player-grid [property="doll"]{grid-area: 2 / 1; }
+.lost-worlds .player-grid [property="trigger"]{grid-area: 2 / 2;}
+.lost-worlds .player-grid [property="rock"]{grid-area: 2 / 3;}
+.lost-worlds .player-grid [property="knife"]{grid-area: 2 / 4;}
+.lost-worlds .player-grid [property="go"]{
+    grid-area: 2 / 6; 
+    top: 63%;
+}
+.lost-worlds .player-grid [property="pendant"]{grid-area: 3 / 1;}
+.lost-worlds .player-grid [property="masamune"]{grid-area: 3 / 2;}
+.lost-worlds .player-grid [property="badge"]{grid-area: 3 / 3;}
+.lost-worlds .player-grid [property="ribbon"]{grid-area: 3 / 4;}
+.lost-worlds .player-grid [property="chest"]{grid-area: 3 / 6;}
+
+.lost-worlds .player-grid tr-toggle-class:nth-child(n+8){
+    position: relative;
+    left: 50%;
+}
+
+.lost-worlds .background-1{
+    --backgroundColor2: #7e7e7e;
 }
 
 .player-video{
@@ -90,7 +150,7 @@
 .player-name{
     font-size: 26px;
     width: calc(var(--nameWidth) + 8px * 2);
-    height: 50px;
+    height: 42px;
 	color: #fff;
     display: flex;
     align-items: center;
@@ -174,25 +234,33 @@
 }
 
 tr-timer, .player-final{
-	width: 11em;
-    height: 53px;
-	font-size: 24px;
+	height: auto;
+    width: 384px;
+    padding: 0.25em;
+	font-size: 42px;
 	top: 330px;
-	left: 945px;
+	left: 880px;
 }
+
 tr-timer span {
-    width: 26px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 4px;
+    width: 20px;
+    text-align: center;
+}
+
+tr-timer :is(.dot, .ms) {
+    display: none;
 }
 
 .player-final{
     text-align: center;
     z-index: 2;
     letter-spacing: 7px;
-    line-height: 1.75;
 }
 
 .player-final:empty{
@@ -205,7 +273,7 @@ tr-timer span {
 .staff{
     font-size: 24px;
     width: 385px;
-	height: 72px;
+	height: 64px;
 	top: 250px; 
 	left: 880px; 
 	text-align: center;

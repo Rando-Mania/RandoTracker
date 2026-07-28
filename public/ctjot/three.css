@@ -24,8 +24,6 @@
     --backgroundColor2: #000a62;
     --backgroundImg: url('images/3p/base-background.png');
     --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
-
-    --border: 6px;
 }
 
 .border-1{

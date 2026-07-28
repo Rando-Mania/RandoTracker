@@ -25,13 +25,7 @@
     --backgroundImg: url('images/4p/base-background.png');
     --bgFallback: linear-gradient(#202028 0 20%,#17203c 0 40%,#10192d 0 60%,#181820 0 80%,#000a62 0 100%);
 
-
     --border: 4px;
-
-    --clipX1: calc(var(--videoX) + var(--border));
-    --clipX2: calc(var(--videoX) + var(--vidWidth) - var(--border));
-    --clipY1: calc(var(--videoY) + var(--border));
-    --clipY2: calc(var(--videoY) + var(--vidHeight) - var(--border));
 }
 
 .border-1{
@@ -149,9 +143,7 @@
     width: var(--vidWidth);
     height: var(--vidHeight);
     z-index: 2;
-    border-radius: 8px;
     background-color: #000; 
-    transition: background-color .5s;
 }
 
 .player-name{
