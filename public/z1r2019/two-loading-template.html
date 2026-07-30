@@ -5,8 +5,7 @@
     font-family: "PressStart2P";
     src: local('PressStart2P'),
          url('../shared/fonts/pressstart2p.woff2') format('woff2'),
-	     url('../shared/fonts/pressstart2p.woff') format('woff'),         
-         url('../shared/fonts/pressstart2p.ttf') format('truetype');
+	     url('../shared/fonts/pressstart2p.woff') format('woff');
 }
 
 .loadscreen-contain, .two-loading{
@@ -18,12 +17,7 @@
     z-index: 50;
     display: none;
     background-color: #000;
-    background-image: url("images/old-man-loading.png");
-    background-image: image-set(
-        "images/old-man-loading.avif" type("image/avif"),
-        "images/old-man-loading.webp" type("image/webp"),
-        "images/old-man-loading.png" type("image/png")
-    );
+    background-image: url("images/overworld-shop-background.webp");
     background-size: cover;
     background-position: center;
 }
@@ -33,25 +27,32 @@
 }
 
 .loadscreen-contain.show{
-    -webkit-mask: linear-gradient(red, red) no-repeat center / 100%;
-    mask: linear-gradient(red, red) no-repeat center / 100%;
+    mask: linear-gradient(red 0 0) no-repeat center / 100%;
     animation: stepped-curtain 1s steps(16);
     display: block;
 }
 
 @keyframes stepped-curtain { 
     from {
-        -webkit-mask-size: 0;
         mask-size: 0;
     } 
 }
 
 .player-name{
-   border: solid 3px var(--player-color); 
+   border: solid 3px var(--player-color);
 }
-.player-name[player="1"] {--player-color: #40ff00;}
-.player-name[player="2"] {--player-color: #f00;}
- 
+
+@supports (corner-shape: notch){
+    .loadscreen .player-name{
+        corner-shape: notch;
+        border-radius: 4px;
+        corner: notch 4px;
+    }
+}
+
+div:nth-child(1 of .player-name) {--player-color: #40ff00;}
+div:nth-child(2 of .player-name) {--player-color: #f00;}
+
 .loadscreen{
     height: 100%;
     display: grid;
@@ -65,6 +66,10 @@
     height: 100%;
     width: 100%;
     position: relative;
+    padding: 103px 161px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .loadscreen-main *{
@@ -73,47 +78,39 @@
 
 .loadscreen-main .header{
     font: normal 42px 'PressStart2P', Arial, Helvetica, sans-serif;
-    position: absolute;
-    transform: translate(-50%,-50%); 
-    top: 169px;
-    left: 50%;
     border: none;
     font-size: 1.5em;
 }
 
-.flame-left{
-    left: 360px;
-    top: 245px;
+.flame-npc-contain{
+    display: flex;
+    gap: 160px;
+}
+
+.flame{
+    animation: flicker .25s infinite steps(1);
+}
+
+@keyframes flicker {
+    50%{transform: rotateY(180deg);}
 }
 
 .npc{
-    left: 600px;
-    top: 245px;
     object-fit: cover;
     object-position: 0 0;
-    object-position: random(-320px, 0px, 80px) 0px;
+    object-position: random(-1120px, 0px, 80px) 0px;
+    animation: --cloud 2s steps(1);
 }
 
-.flame-right{
-    left: 840px;
-    top: 245px;
-}
-
-.z1r-logo{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    top: 352px;
+@keyframes --cloud {
+    from{object-position: -1200px 0px;}
+    to{object-position: auto;}
 }
 
 h2{
     display: flex;
     gap: 16px;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    top: 511px;
 }
 .loadscreen-main .player-name{
     font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
@@ -134,18 +131,24 @@ h2{
 <div class="loadscreen">
     <div class="loadscreen-main">
         <tr-text property="header" class="header"></tr-text>
-        <img class="flame abs flame-left" width="80" src="images/zelda-flame-animation.webp" alt="flame">
-        <img class="npc abs" width="80" height="80" src="images/npc-options.png" alt="npc">
-        <img class="flame abs flame-right" width="80" src="images/zelda-flame-animation.webp" alt="flame">
+        <div class="flame-npc-contain">
+            <img class="flame" width="80" src="images/zelda-flame.png" alt="flame">
+            <img class="npc" width="80" height="80" src="images/random-character-sprite.webp" alt="npc">
+            <img class="flame" width="80" src="images/zelda-flame.png" alt="flame">
+        </div>
         <picture>
             <source srcset="images/RandoLogo.avif" type="image/avif">
             <source srcset="images/RandoLogo.webp" type="image/webp">
-            <img class="z1r-logo abs" width="400" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
+            <img class="z1r-logo" width="400" src="images/RandoLogo.png" alt="Zelda 1 Randomizer">
         </picture>
         <h2>
-            <tr-text player="1" scale-to-fit-x class="player-name" property="player-name">Dummy</tr-text>
+            <div class="player-name">
+                <tr-text player="1" scale-to-fit-x property="player-name"></tr-text>
+            </div>
             <div class="load-vs">VS</div>
-            <tr-text player="2" scale-to-fit-x class="player-name" property="player-name">Text</tr-text>
+            <div class="player-name">
+                <tr-text player="2" scale-to-fit-x property="player-name"></tr-text>
+            </div>
         </h2>
         <div class="load-best-of">
             <p class="best-of-3">Best of 3</p>
