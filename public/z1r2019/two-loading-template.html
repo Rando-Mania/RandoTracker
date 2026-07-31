@@ -8,6 +8,9 @@
 	     url('../shared/fonts/pressstart2p.woff') format('woff');
 }
 
+.abs{
+    position: absolute;
+}
 .loadscreen-contain, .two-loading{
     width: 1280px;
     height: 720px;
@@ -39,7 +42,7 @@
 }
 
 .player-name{
-   border: solid 3px var(--player-color);
+   border: solid 2px var(--player-color);
 }
 
 @supports (corner-shape: notch){
@@ -52,6 +55,37 @@
 
 div:nth-child(1 of .player-name) {--player-color: #40ff00;}
 div:nth-child(2 of .player-name) {--player-color: #f00;}
+
+.player-name:has([player="1"]){anchor-name: --player-name-1;}
+.player-name:has([player="2"]){anchor-name: --player-name-2;}
+
+.loadscreen .player-winner{
+    border: solid 2px;
+    border-bottom: none;
+    width: auto;
+    clip-path: inset(0 0 3px 0);
+    border-radius: 4px;
+    corner-shape: notch;
+    position-area: top center;
+}
+
+.loadscreen .player-winner[player="1"]{
+    position-anchor: --player-name-1;
+}
+.loadscreen .player-winner[player="2"]{
+    position-anchor: --player-name-2;
+}
+
+.loadscreen .player-winner:before, .loadscreen .player-winner:after{
+    content: '';
+    width: 32px;
+    aspect-ratio: 1;
+    background-image: url(images/link-zelda-winner.png);
+    background-size: cover;
+    margin: 0 1em;
+}
+
+.loadscreen .player-winner:after{background-position: right;}
 
 .loadscreen{
     height: 100%;
@@ -145,10 +179,16 @@ h2{
             <div class="player-name">
                 <tr-text player="1" scale-to-fit-x property="player-name"></tr-text>
             </div>
+            <tr-toggle player="1" property="toggle-winner" class="abs player-winner border-background-3">
+                <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div>
+            </tr-toggle>
             <div class="load-vs">VS</div>
             <div class="player-name">
                 <tr-text player="2" scale-to-fit-x property="player-name"></tr-text>
             </div>
+            <tr-toggle player="2" property="toggle-winner" class="abs player-winner border-background-3"> 
+                <div><span>W</span><span>I</span><span>N</span><span>N</span><span>E</span><span>R</span></div>
+            </tr-toggle>
         </h2>
         <div class="load-best-of">
             <p class="best-of-3">Best of 3</p>
