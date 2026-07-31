@@ -63,18 +63,20 @@ div:nth-child(2 of .player-name) {--player-color: #f00;}
     border: solid 2px;
     border-bottom: none;
     width: auto;
-    clip-path: inset(0 0 3px 0);
+    mask: linear-gradient(to top, #0000 0 3px, red 0);
     border-radius: 4px;
-    corner-shape: notch;
+    corner-shape: notch notch square square;
     position-area: top center;
+    animation: .75s slide-in steps(3);
 }
 
-.loadscreen .player-winner[player="1"]{
-    position-anchor: --player-name-1;
+@keyframes slide-in {
+    from{clip-path: inset(100% 0 0 0);}
+    to{clip-path: inset(0 0 0 0);}
 }
-.loadscreen .player-winner[player="2"]{
-    position-anchor: --player-name-2;
-}
+
+.loadscreen .player-winner[player="1"]{position-anchor: --player-name-1;}
+.loadscreen .player-winner[player="2"]{position-anchor: --player-name-2;}
 
 .loadscreen .player-winner:before, .loadscreen .player-winner:after{
     content: '';
