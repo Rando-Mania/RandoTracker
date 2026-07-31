@@ -8,7 +8,7 @@
 	     url('../shared/fonts/pressstart2p.woff') format('woff');
 }
 
-.abs{
+.loadscreen .abs{
     position: absolute;
 }
 .loadscreen-contain, .two-loading{
@@ -41,7 +41,7 @@
     } 
 }
 
-.player-name{
+.loadscreen .player-name{
    border: solid 2px var(--player-color);
 }
 
@@ -53,21 +53,27 @@
     }
 }
 
-div:nth-child(1 of .player-name) {--player-color: #40ff00;}
-div:nth-child(2 of .player-name) {--player-color: #f00;}
+.loadscreen div:nth-child(1 of .player-name) {--player-color: #40ff00;}
+.loadscreen div:nth-child(2 of .player-name) {--player-color: #f00;}
 
-.player-name:has([player="1"]){anchor-name: --player-name-1;}
-.player-name:has([player="2"]){anchor-name: --player-name-2;}
+.loadscreen .player-name:has([player="1"]){anchor-name: --player-name-1;}
+.loadscreen .player-name:has([player="2"]){anchor-name: --player-name-2;}
 
 .loadscreen .player-winner{
     border: solid 2px;
     border-bottom: none;
     width: auto;
     mask: linear-gradient(to top, #0000 0 3px, red 0);
-    border-radius: 4px;
-    corner-shape: notch notch square square;
+    inset-area: center top;
     position-area: top center;
     animation: .75s slide-in steps(3);
+}
+
+@supports (corner-shape: notch) {
+    .loadscreen .player-winner{
+        border-radius: 4px;
+        corner-shape: notch notch square square;
+    }
 }
 
 @keyframes slide-in {
@@ -143,7 +149,7 @@ div:nth-child(2 of .player-name) {--player-color: #f00;}
     to{object-position: auto;}
 }
 
-h2{
+.loadscreen h2{
     display: flex;
     gap: 16px;
     align-items: center;

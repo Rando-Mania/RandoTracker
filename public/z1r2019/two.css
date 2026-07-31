@@ -285,7 +285,7 @@ tr-image-toggle img.active, tr-toggle-class.active {
 .player-winner img{
     height: 32px;
     width: auto;
-    background: url('images/items/z1-item-sprite-sheet-180.png') no-repeat -0px -127px / 110px 159px;
+    background: url('images/items/z1-item-sprite-sheet-180.png') no-repeat 0 -127px / 110px 159px;
 }
 
 .player-winner.tada{
