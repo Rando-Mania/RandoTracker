@@ -41,16 +41,11 @@
     } 
 }
 
-.loadscreen .player-name{
-   border: solid 2px var(--player-color);
-}
-
-@supports (corner-shape: notch){
-    .loadscreen .player-name{
-        corner-shape: notch;
-        border-radius: 4px;
-        corner: notch 4px;
-    }
+.loadscreen .player-name, .loadscreen .player-winner{
+   border: solid var(--border) var(--player-color);
+   --notch-depth: 1.5px;
+   --notch-depth-minus: calc(100% - var(--notch-depth));
+   clip-path: polygon(0% var(--notch-depth), var(--notch-depth) var(--notch-depth), var(--notch-depth) 0%, var(--notch-depth-minus) 0%, var(--notch-depth-minus) var(--notch-depth), 100% var(--notch-depth), 100% var(--notch-depth-minus), var(--notch-depth-minus) var(--notch-depth-minus), var(--notch-depth-minus) 100%, var(--notch-depth) 100%, var(--notch-depth) var(--notch-depth-minus), 0% var(--notch-depth-minus));
 }
 
 .loadscreen div:nth-child(1 of .player-name) {--player-color: #40ff00;}
@@ -67,13 +62,6 @@
     inset-area: center top;
     position-area: top center;
     animation: .75s slide-in steps(3);
-}
-
-@supports (corner-shape: notch) {
-    .loadscreen .player-winner{
-        border-radius: 4px;
-        corner-shape: notch notch square square;
-    }
 }
 
 @keyframes slide-in {
@@ -154,12 +142,8 @@
     gap: 16px;
     align-items: center;
 }
-.loadscreen-main .player-name{
+.loadscreen-main :is(.player-name, .load-vs){
     font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
-}
-
-.loadscreen-main .load-vs{
-    font: normal 42px 'PressStart2P', Arial, Helvetica, sans-serif;
 }
 
 .load-best-of.best-of-no, .loadscreen .best-of-3, .loadscreen .best-of-5, .loadscreen .best-of-7{

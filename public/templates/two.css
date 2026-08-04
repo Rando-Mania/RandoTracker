@@ -143,15 +143,34 @@
     position: relative;
 }
 
-.layout.transparent-background{
-    --red: linear-gradient(red 0 0);
-    --video-size: var(--vidWidth) var(--vidHeight);
+@supports not (link-parameters: param(--x-pos, 2px)){
+    .layout.transparent-background{
+        --red: linear-gradient(red 0 0);
+        --video-size: var(--vidWidth) var(--vidHeight);
 
-    mask-image: var(--red), var(--red), var(--red);
-    mask-repeat: no-repeat;
-    mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
-    mask-size: 100% 100%, var(--video-size), var(--video-size);
-    mask-composite: exclude;
+        mask-image: var(--red), var(--red), var(--red);
+        mask-repeat: no-repeat;
+        mask-position: 0 0, var(--videoX) var(--videoY), right var(--videoX) top var(--videoY);
+        mask-size: 100% 100%, var(--video-size), var(--video-size);
+        mask-composite: exclude;
+    }
+}
+
+@supports (link-parameters: param(--x-pos, var(--videoX))){
+    .layout.transparent-background{
+        mask-image: url(../shared/images/video-mask-2p.svg);
+        mask-mode: luminance;
+        link-parameters: 
+            param(--x-pos, 2px), 
+            param(--y-pos, 2px),
+            param(--video-width, 400px),
+            param(--video-height, 300px);
+        link-parameters: 
+            param(--x-pos, var(--videoX)), 
+            param(--y-pos, var(--videoY)),
+            param(--video-width, var(--vidWidth)),
+            param(--video-height, var(--vidHeight));
+    }
 }
 
 .player-name{

@@ -91,6 +91,13 @@ h2{
     align-items: center;
 }
 
+.loadscreen .player-name, .loadscreen .player-winner{
+   border: solid var(--border) var(--player-color);
+   --notch-depth: 1.5px;
+   --notch-depth-minus: calc(100% - var(--notch-depth));
+   clip-path: polygon(0% var(--notch-depth), var(--notch-depth) var(--notch-depth), var(--notch-depth) 0%, var(--notch-depth-minus) 0%, var(--notch-depth-minus) var(--notch-depth), 100% var(--notch-depth), 100% var(--notch-depth-minus), var(--notch-depth-minus) var(--notch-depth-minus), var(--notch-depth-minus) 100%, var(--notch-depth) 100%, var(--notch-depth) var(--notch-depth-minus), 0% var(--notch-depth-minus));
+}
+
 .loadscreen-main .player-name{
     font: normal 24px 'PressStart2P', Arial, Helvetica, sans-serif;
 }
@@ -98,14 +105,6 @@ h2{
 .loadscreen-main .player-name{
    border: solid 3px var(--player-color); 
    --nameWidth: 390px;
-}
-
-@supports (corner-shape: notch){
-    .loadscreen .player-name{
-        corner-shape: notch;
-        border-radius: 4px;
-        corner: notch 4px;
-    }
 }
 
 div:nth-child(1 of .player-name) {--player-color: #40ff00;}
