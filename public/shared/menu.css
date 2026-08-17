@@ -17,7 +17,7 @@ textarea:placeholder-shown {
     background-position: 0 0;
   }
 
-textarea, select, input, button { outline: none; vertical-align: middle;}
+textarea, select, input, button { vertical-align: middle;}
 
 .menu-general select{
     min-width: 121px;
@@ -27,8 +27,11 @@ input[type="number"]{
     width: 3rem;
 }
 
-input[type="checkbox"]:hover,
-input[type="radio"]:hover,
+input[type="checkbox"]{
+    height: 18px;
+    aspect-ratio: 1;
+}
+
 input[type="radio"]:checked,
 select:hover,
 button:hover,
@@ -63,8 +66,16 @@ button.dummy-text-button.disable,
     height: 12px;
     border: none;
     box-shadow: none;
-    background-color: rgba(255,255,255,.5);
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    background-color: rgb(255 255 255 / .5);
+    border-top-left-radius: 100%;
+    corner-shape: bevel;
+    corner-top-left: bevel 100%;
+}
+
+#menu_video_background #screen tr-input-radio{
+    width: 12px;
+    height: 12px;
+    border: none;
 }
 
 #menu_video_background #screen{
@@ -100,6 +111,7 @@ button.dummy-text-button:hover,
     height: min-content;
     --highlight-color: #f8b800;
     accent-color: var(--highlight-color);
+    outline-color: var(--highlight-color);
 }
 
 .menu-contain > tr-template, 
@@ -127,7 +139,21 @@ button.dummy-text-button:hover,
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    margin: 0 0 -1px -1px;  
+    margin: 0 0 -1px -1px;
+}
+
+@supports(rule: solid){
+    .menu-contain{
+        --gap-size: 1px;
+        gap: var(--gap-size);
+        rule: var(--gap-size) solid;
+        outline: var(--gap-size) solid;
+        outline-offset: -1em;
+    }
+    .menu-contain .fieldset {
+        border-color: #0000;
+        margin: 0;
+    }
 }
 
 .fieldset > div:not(:last-of-type){
