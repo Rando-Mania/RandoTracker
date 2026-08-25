@@ -6,10 +6,12 @@
 
 input[type="text"], textarea{
     font-family: Arial, Helvetica, sans-serif;
-    padding: 1px;
+    padding: 1px 2px;
     background-image: linear-gradient(-145deg, #111 7px, #0000 8px);
     background-repeat: no-repeat;
     background-position: 16px 0;
+    width: 157px;
+    field-sizing: content;
 }
   
 input[type="text"]:placeholder-shown,
@@ -258,7 +260,7 @@ button.dummy-text-button:hover,
 }
 
 #menu_production textarea{
-    height: 3.2rem;
+    min-height: calc(1lh + 4px);
 }
 #menu_production.fieldset{
     padding-bottom: 1em;

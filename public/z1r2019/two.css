@@ -364,6 +364,7 @@ tr-timer span {
     .header, .production-team-swap{
         border-radius: var(--corner-size);
         corner-shape: bevel;
+        corner: bevel var(--corner-size);
         background-color: var(--background-color);
         border: var(--border-width) solid var(--border-color);
     }
