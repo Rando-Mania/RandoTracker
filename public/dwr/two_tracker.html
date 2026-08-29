@@ -24,12 +24,13 @@
 
         .tracker-layout {
             padding: 1.5em;
-            background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(images/transparent-texture.png) #002e97;
+            background: linear-gradient(rgb(0 0 0 /.3) 0 0), url(images/transparent-texture.png) #002e97;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            grid-template-columns: 1fr 1fr;
             grid-gap: 2em;
             font-family: "DWR", sans-serif;
-            color: #fff;         
+            color: #fff;
+            width: fit-content;
         }
 
         .tracker-layout tr-template{
