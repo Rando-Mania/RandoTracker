@@ -67,6 +67,7 @@ tr-timer:nth-of-type(2), [player="2"] {--player-color: #f00;}
         "images/all-backgrounds-2.avif" type("image/avif"),
         "images/all-backgrounds-2.webp" type("image/webp")
     );
+    overflow: hidden;
 }
 
 .player-video{
@@ -292,6 +293,30 @@ tr-image-toggle img.active, tr-toggle-class.active {
     display: flex;
 }
 
+.layout .player-winner:after{
+    content: url(images/fairy-animation.gif);
+    position: absolute;
+    offset-path: border-box;
+    offset-rotate: 0deg;
+    offset-distance: 47%;
+}
+
+.layout [player="1"] .player-winner:after{
+    animation: --fairy-path 3s linear forwards, --fairy-hide 3s forwards;
+}
+
+.layout [player="2"] .player-winner:after{
+    animation: --fairy-path 3s linear reverse forwards, --fairy-hide 3s forwards;
+}
+
+@keyframes --fairy-hide {
+    from, 99%{opacity: 1;} 
+    to{opacity: 0;}
+}
+
+@keyframes --fairy-path {
+    to{offset-distance: 100%;} 
+}
 
 .player-best-of{
     display: grid;
