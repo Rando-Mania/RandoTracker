@@ -200,6 +200,10 @@ html{
 
 .player-video.tourney-background{
     background-image: url('images/video-background/summer_tourney.png');
+    background-image: image-set(
+      url("images/video-background/summer_tourney.avif") type("image/avif"),
+      url("images/video-background/summer_tourney.png") type("image/png")
+    );
     background-position: 0 0;
 }
 /* .player-video.tourney-background{

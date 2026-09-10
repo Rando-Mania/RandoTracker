@@ -13,7 +13,7 @@
     --nameWidth: 367px;
     --nameX: -2px; --nameY: 480px;
     --gridX: -2px; --gridY: 1px;
-    --speakerX: 406px; --speakerY: 491px;
+    --speakerX: 419px; --speakerY: 491px;
     --finalX: 5px; --finalY: -23px;
     --winX: 43px; --winY: 128px;
     --bestX: 471px; --bestY: 487px;
@@ -196,7 +196,13 @@
 
 
 .player-video.weekly-background{background-image: url('images/video-background/dwr-weekly.png');}
-.player-video.tourney-background{background-image: url('images/video-background/summer_tourney.png');}
+.player-video.tourney-background{
+    background-image: url('images/video-background/summer_tourney.png');
+    background-image: image-set(
+      url("images/video-background/summer_tourney.avif") type("image/avif"),
+      url("images/video-background/summer_tourney.png") type("image/png")
+    );
+}
 .layout:not(.tech-diff-background) .player-video.tourney-background:after{
     content: '2026';
     font-size: 2.5em;
@@ -271,11 +277,8 @@
     align-content: center;
     display: flex;
     flex-wrap: wrap;
+    gap: .25em .5em;
     width: var(--nameWidth);
-}
-
-.player-info-right tr-text:not(:first-child){
-    margin-right: .5em;
 }
 
 .player-name-contain{
@@ -409,22 +412,22 @@
 
 .player-final{
     color: #fc9838;
-    border: solid 1px;
+    border: solid 2px;
     position: relative;
     bottom: 1.5em;
     font-size: 16px;
     width: 136px;
-    padding: 0 1em;
+    padding: 2px 1em 0 1em;
     line-height: 2;
     text-align: center;
     z-index: 2;
 }
 
-@supports (corner-shape:scoop){
+@supports (corner-shape:notch){
     .player-final{
-        corner-shape: scoop;
-        border-radius: 3px;
-        corner: scoop 3px;
+        corner-shape: notch;
+        border-radius: 4px;
+        corner: notch 4px;
     }
 }
 
@@ -437,7 +440,7 @@
     position: absolute;
     bottom: 0;
     pointer-events: none;
-    background-image: url('images/fire-frames.png');
+    background-image: url('images/fire-frames.webp');
     background-size: auto 100%;
     background-repeat: no-repeat;
     width: 192px;
@@ -458,12 +461,12 @@
     to {background-position: -1728px 0;}
 }
 
-.player-speaker{
+/* .player-speaker{
     font-size: 24px;
     padding: 2px 4px;
     width: 40px;
     height: 40px;
-}
+} */
 
 [player="2"] .player-speaker{
     transform: rotateY(180deg);
@@ -617,11 +620,6 @@ img[src*="ring"]{
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    xanimation: stat-warning 2s steps(2) infinite;
-}
-@keyframes stat-warning {
-    from{ color:#f88019;}
-    to{color:#d01000;}
 }
 
 .stat-low {color: #d01000;}
@@ -764,7 +762,7 @@ td:nth-of-type(2){
     
 .coordinates-contain{
     overflow: hidden;
-    max-width: 246px;
+    max-width: 190px;
     padding: .5em .75rem;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -799,39 +797,65 @@ tr-text#coordinates{
 tr-timer{
         min-width: 200px;
         padding: 0 .5em;
-    }
-    tr-timer span {
-        width: 0.7em;
-    }
- 
-    .colon{
         position: relative;
-    }
-    
-    .dot, .ms{
-        display:none;
+}
+
+@supports( corner-shape:scoop){
+    tr-timer:before, tr-timer:after{
+        content:'';
+        position: absolute;
+        height: 12px;
+        aspect-ratio: 1;
+        box-shadow: inset 0 0 0 2px rgb(255 255 255 / .1);
+        border-radius: 50% 50% 0 50%;
+        corner-shape: scoop;
+        offset-path: inset(0 round .01px);
+        offset-anchor: top -2px left -2px;
+        -webkit-box-reflect: below 20px; 
     }
 
-    #menu_timer, #menu_playlist{
-        display: grid;
-        justify-items: center;
+    tr-timer:after{
+        border-radius: 50% 50% 0 50%;
     }
 
-    #coordinates:empty{
-        display: none;
+    tr-timer:before{
+        border-radius: 50% 50% 50% 0;
+        offset-distance: 37%;
     }
+}
+
+tr-timer span {
+    width: 0.7em;
+}
+
+.colon{
+    position: relative;
+}
+
+.dot, .ms{
+    display:none;
+}
+
+#menu_timer, #menu_playlist{
+    display: grid;
+    justify-items: center;
+}
+
+#coordinates:empty{
+    display: none;
+}
 
 
-    .rm{
-        font-family: "Orbitron", sans-serif;
-        mix-blend-mode: hard-light;
-        opacity: .5;
-        text-align: center;
-    }
+.rm{
+    font-family: "Orbitron", sans-serif;
+    mix-blend-mode: hard-light;
+    opacity: .5;
+    text-align: center;
+}
 
-    [property="hurt+"]{
-        position: relative;
-    }
+[property="hurt+"]{
+    position: relative;
+}
 
 [property="hurt+"].active:after{
     content: '';
