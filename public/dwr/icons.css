@@ -4,6 +4,10 @@
 	object-fit: cover;
 }
 
+.sprite-coordinatesguy{
+	background-position: -96px 0;
+}
+
 .sprite-merchant {
     background-position: -256px 0;
 }
