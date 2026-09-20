@@ -63,18 +63,14 @@ html{
     font-family: "Warrior Quest I and II";
     src: 
         local('Warrior Quest I and II'),
-        url("fonts/warrior_quest_i_and_ii.woff2") format("woff2"),
-        url("fonts/warrior_quest_i_and_ii.woff") format("woff"),
-        url("fonts/Warrior Quest I and II.ttf") format("truetype");
+        url("fonts/warrior_quest_i_and_ii.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "Press Start 2P";
     src: 
         local('Press Start 2P'),
-        url("../shared/fonts/pressstart2p.woff2") format("woff2"),
-        url("../shared/fonts/pressstart2p.woff") format("woff"),
-        url("../shared/fonts/PressStart2P.ttf") format("truetype");
+        url("../shared/fonts/pressstart2p.woff2") format("woff2");
 }
 
 .layout{
@@ -217,7 +213,7 @@ html{
 } */
 
 .background-layer:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2026';
+    content: '2027';
     font-size: 1.7em;
     position: absolute;
     left: 166px;
@@ -250,7 +246,7 @@ html{
     background-size: cover;
 }
 .player-video.league-background::after{
-    content: '2026';
+    content: '2027';
     font-size: 1em;
     position: absolute;
     right: 24%;

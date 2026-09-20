@@ -479,7 +479,6 @@ tr-timer .dot, tr-timer .ms {
     --border-color: #f0f;
     --border-width: 2px;
     --corner-size: 26px / 22px;
-    --corner-shape: angle;
 }
 
 @supports (corner-shape: bevel){

@@ -37,7 +37,7 @@
     background-color: #473b25;
     border: solid 1px #624438;
     background-image: url('images/transparent-texture.png');
-    border-radius: 5px;
+    border-radius: 8px;
     corner-shape: scoop;
     box-shadow: 0 0 0 1px #000, inset 0 0 0 1px black;
 }
@@ -67,9 +67,7 @@
     font-family: "Warrior Quest I and II";
     src: 
         local('Warrior Quest I and II'),
-        url("fonts/warrior_quest_i_and_ii.woff2") format("woff2"),
-        url("fonts/warrior_quest_i_and_ii.woff") format("woff"),
-        url("fonts/Warrior Quest I and II.ttf") format("truetype");
+        url("fonts/warrior_quest_i_and_ii.woff2") format("woff2");
 }
 
 .layout{
@@ -204,7 +202,7 @@
     );
 }
 .layout:not(.tech-diff-background) .player-video.tourney-background:after{
-    content: '2026';
+    content: '2027';
     font-size: 2.5em;
     position: absolute;
     bottom: 15px;
@@ -227,7 +225,7 @@
 }
 
 .player-video.league-background::after{
-    content: '2026';
+    content: '2027';
     font-size: 1.4em;
     position: absolute;
     right: 24%;
@@ -330,14 +328,12 @@
     background-color: rgba(0,0,0,.5);
     width: max-content;
     border: double 8px;
-    border-image: url('images/winner-border-small.png') repeat 8 / 8px;
     border-image: paint(dq9Stamp) 8 / 8px;
     --border-color: #fc9838;
     padding: 7px 8px 3px;
     font-size: 1.25em;
     font-style: italic;
     line-height: 1;
-    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     z-index: 2;
 }
@@ -367,7 +363,7 @@
     grid-gap: 2px;
     display: none;
     z-index: 5;
-    padding: .25em;
+    padding: .4em .25em;
 }
 .player-best-of img{
     width: 32px;
@@ -762,7 +758,7 @@ td:nth-of-type(2){
     
 .coordinates-contain{
     overflow: hidden;
-    max-width: 190px;
+    max-width: 167px;
     padding: .5em .75rem;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -772,7 +768,7 @@ td:nth-of-type(2){
     text-align: center;
     z-index: -1;
     margin-top: -8px;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 8px 8px;
     font-size: 16px;
 }
 
@@ -798,30 +794,6 @@ tr-timer{
         min-width: 200px;
         padding: 0 .5em;
         position: relative;
-}
-
-@supports( corner-shape:scoop){
-    tr-timer:before, tr-timer:after{
-        content:'';
-        position: absolute;
-        height: 12px;
-        aspect-ratio: 1;
-        box-shadow: inset 0 0 0 2px rgb(255 255 255 / .1);
-        border-radius: 50% 50% 0 50%;
-        corner-shape: scoop;
-        offset-path: inset(0 round .01px);
-        offset-anchor: top -2px left -2px;
-        -webkit-box-reflect: below 20px; 
-    }
-
-    tr-timer:after{
-        border-radius: 50% 50% 0 50%;
-    }
-
-    tr-timer:before{
-        border-radius: 50% 50% 50% 0;
-        offset-distance: 37%;
-    }
 }
 
 tr-timer span {

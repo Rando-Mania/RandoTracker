@@ -4,16 +4,12 @@
   font-family: "Warrior Quest I and II";
   src: 
       local('Warrior Quest I and II'),
-      url("fonts/warrior_quest_i_and_ii.woff2") format("woff2"),
-      url("fonts/warrior_quest_i_and_ii.woff") format("woff"),
-      url("fonts/Warrior Quest I and II.ttf") format("truetype");
+      url("fonts/warrior_quest_i_and_ii.woff2") format("woff2");
 }
 @font-face {
   font-family: "Lobster";
   src: local('Lobster'),
-      url("../shared/fonts/lobster-regular.woff2") format("woff2"),
-      url("../shared/fonts/lobster-regular.woff") format("woff"),
-      url('../shared/fonts/Lobster-Regular.ttf') format('truetype');
+      url("../shared/fonts/lobster-regular.woff2") format("woff2");
 }
 
 .loadscreen-contain{

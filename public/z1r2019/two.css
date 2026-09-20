@@ -293,25 +293,34 @@ tr-image-toggle img.active, tr-toggle-class.active {
     display: flex;
 }
 
-.layout .player-winner:after{
-    content: url(images/fairy-animation.gif);
-    position: absolute;
-    offset-path: border-box;
-    offset-rotate: 0deg;
-    offset-distance: 47%;
+[player="1"] .player-winner.path-animation:after{
+    offset-path: path("M350 0 v42 h-350");
 }
 
-.layout [player="1"] .player-winner:after{
+[player="2"] .player-winner.path-animation:after{
+    offset-path: path("M0 0 v42 h350");
+}
+
+.layout .path-animation:after{
+    content: url(images/animation-fairy.gif);
+    content: random-item(--a, url(images/animation-fairy.gif), url(images/animation-pehat.gif), url(images/animation-pols-voice.gif));
+    position: absolute;
+    top: 0;
+    left: 0;
+    offset-rotate: 0deg;
+}
+
+.layout [player="1"] .path-animation:after{
     animation: --fairy-path 3s linear forwards, --fairy-hide 3s forwards;
 }
 
-.layout [player="2"] .player-winner:after{
-    animation: --fairy-path 3s linear reverse forwards, --fairy-hide 3s forwards;
+.layout [player="2"] .path-animation:after{
+    animation: --fairy-path 3s linear forwards, --fairy-hide 3s forwards;
 }
 
 @keyframes --fairy-hide {
-    from, 99%{opacity: 1;} 
-    to{opacity: 0;}
+    from, 99%{display: block;} 
+    to{display: none;}
 }
 
 @keyframes --fairy-path {
@@ -371,7 +380,17 @@ tr-timer, .player-final{
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 10;
 }
+
+[player="1"] .player-final.path-animation:after{
+    offset-path: path("M165 43 v-43 h-165");
+}
+
+[player="2"] .player-final.path-animation:after{
+    offset-path: path("M0 43 v-43 h165");
+}
+
 tr-timer span {
     text-align: center;
 }
@@ -382,7 +401,6 @@ tr-timer span {
     --border-color: #40ff00;
     --border-width: 2px;
     --corner-size: 26px / 22px;
-    --corner-shape: angle;
 }
 
 @supports (corner-shape: bevel){
