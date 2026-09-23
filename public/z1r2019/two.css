@@ -294,11 +294,11 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 [player="1"] .player-winner.path-animation:after{
-    offset-path: path("M350 0 v42 h-350");
+    offset-path: ray(at bottom left 90deg farthest-side);
 }
 
 [player="2"] .player-winner.path-animation:after{
-    offset-path: path("M0 0 v42 h350");
+    offset-path: ray(at bottom right -90deg farthest-side);
 }
 
 .layout .path-animation:after{
@@ -311,19 +311,19 @@ tr-image-toggle img.active, tr-toggle-class.active {
 }
 
 .layout [player="1"] .path-animation:after{
-    animation: --fairy-path 3s linear forwards, --fairy-hide 3s forwards;
+    animation: --sprite-path 3s linear forwards, --sprite-hide 3s forwards;
 }
 
 .layout [player="2"] .path-animation:after{
-    animation: --fairy-path 3s linear forwards, --fairy-hide 3s forwards;
+    animation: --sprite-path 3s linear forwards, --sprite-hide 3s forwards;
 }
 
-@keyframes --fairy-hide {
+@keyframes --sprite-hide {
     from, 99%{display: block;} 
     to{display: none;}
 }
 
-@keyframes --fairy-path {
+@keyframes --sprite-path {
     to{offset-distance: 100%;} 
 }
 
@@ -384,11 +384,13 @@ tr-timer, .player-final{
 }
 
 [player="1"] .player-final.path-animation:after{
-    offset-path: path("M165 43 v-43 h-165");
+    offset-path: path("M0 0 h165");
+    offset-path: ray(at top left 90deg farthest-side);
 }
 
 [player="2"] .player-final.path-animation:after{
-    offset-path: path("M0 43 v-43 h165");
+    offset-path: path("M165 0 h-165");
+    offset-path: ray(at top right -90deg farthest-side);
 }
 
 tr-timer span {
@@ -524,4 +526,8 @@ tr-timer span {
 
 #menu_overlays_contain div{
     margin-bottom: .75em;
+}
+
+#menu_layout textarea {
+    min-height: calc(2lh + 4px);
 }

@@ -260,7 +260,7 @@ button.dummy-text-button:hover,
 }
 
 #menu_production textarea{
-    min-height: calc(1lh + 4px);
+    min-height: calc(2lh + 4px);
 }
 #menu_production.fieldset{
     padding-bottom: 1em;

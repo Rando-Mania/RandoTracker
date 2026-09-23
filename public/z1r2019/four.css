@@ -558,3 +558,7 @@ tr-timer .dot, tr-timer .ms {
 tr-input-text[property="player-count"] input{
     width: 4em;
 }
+
+#menu_layout textarea {
+    min-height: calc(2lh + 4px);
+}
