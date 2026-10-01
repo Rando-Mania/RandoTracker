@@ -825,6 +825,7 @@ tr-timer span {
         padding: 2em 1em 1em;
         background-color: #000;
         color: #fff;
+        border: solid 4px;
         border-image: url('images/dw-border.svg') 4 / 4px;
         -webkit-mask-image: url('images/monsters/dw-spiral.png');
         mask-image: url('images/monsters/dw-spiral.png');

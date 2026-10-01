@@ -905,7 +905,7 @@ figcaption{
 	padding: 2em 1em 1em;
 	background-color: #000;
 	color: #fff;
-    border: 2px solid;
+    border: solid 3px;
     border-image: url('images/dw-border.svg') 4 / 4px;
 	-webkit-mask-image: url('images/monsters/dw-spiral.png');
     mask-image: url('images/monsters/dw-spiral.png');
