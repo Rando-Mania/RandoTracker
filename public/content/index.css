@@ -141,6 +141,26 @@ article.star-background{
   }
 }
 
+[data-console="gb"]{
+  background:
+    repeating-linear-gradient(var(--back-sec) 0 10%, #0000 10% 20%) no-repeat 0 10% / 100% 15%,
+    linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 75% / 75% 60%;
+}
+
+@supports not (corner-shape: notch){
+  [data-console="gb"]{
+    mask: conic-gradient(at 90% 5%, #0000 0 25%, red 0);
+  }
+}
+
+@supports (corner-shape: notch){
+  [data-console="gb"]{
+    corner-shape: notch;
+    border-top-right-radius: 10% 5%;
+    corner-top-right: notch 10% / 5%;
+  }
+}
+
 [data-console="snes"]{
   background: 
   repeating-linear-gradient(to right, #0000 0 10%, var(--back-sec) 10% 12%) no-repeat 0 0 / 100% 15%,
@@ -159,26 +179,6 @@ article.star-background{
     corner-shape: notch;
     border-radius: 0 5% 5% 0 / 0 15% 15% 0;
     corner-right: notch 5% / 15%;
-  }
-}
-
-[data-console="gb"]{
-  background:
-    repeating-linear-gradient(var(--back-sec) 0 10%, #0000 10% 20%) no-repeat 0 10% / 100% 15%,
-    linear-gradient(var(--back-sec), var(--back-sec)) no-repeat 50% 75% / 75% 60%;
-}
-
-@supports not (corner-shape: notch){
-  [data-console="gb"]{
-    mask: conic-gradient(at 90% 5%, #0000 0 25%, red 0);
-  }
-}
-
-@supports (corner-shape: notch){
-  [data-console="gb"]{
-    corner-shape: notch;
-    border-top-right-radius: 10% 5%;
-    corner-top-right: notch 10% / 5%;
   }
 }
 

@@ -1,6 +1,6 @@
 .sprite-dw-trumpet-guy {
-    object-position: random(-230px, 0px, -32px) 0;
-	object-position: -96px 0;
+	object-position: -160px 0;
+    object-position: random(-512px, 0px, 32px) 0;
 	object-fit: cover;
 }
 

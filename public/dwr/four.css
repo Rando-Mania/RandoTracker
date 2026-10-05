@@ -256,6 +256,14 @@ html{
     font-weight: bold;
 }
 
+.player-video.aa-background{
+    background-image: url('images/video-background/Alefgard_Apprentice_4.webp');
+    background-image: image-set(
+      url("images/video-background/Alefgard_Apprentice_4.avif") type("image/avif"),
+      url("images/video-background/Alefgard_Apprentice_4.webp") type("image/webp")
+    );
+}
+
 .player-info{
     height: 50px;
     align-items: center;
