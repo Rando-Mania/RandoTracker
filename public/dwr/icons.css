@@ -1,7 +1,10 @@
 .sprite-dw-trumpet-guy {
 	object-position: -160px 0;
-    object-position: random(-480px, 0px, 32px) 0;
+    object-position: random(property-scoped, -480px, 0px, 32px) 0;
 	object-fit: cover;
+}
+.chaos-background.sprite-dw-trumpet-guy {
+    object-position: random(-224px, -32px, 32px) 0;
 }
 
 .sprite-coordinatesguy{
